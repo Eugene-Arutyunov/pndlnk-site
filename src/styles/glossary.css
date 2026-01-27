@@ -1,6 +1,6 @@
 .term {
   font-family: var(--serif);
-  text-align: justify;
+
   hyphens: auto;
 
   & strong {
