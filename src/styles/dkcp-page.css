@@ -1,10 +1,12 @@
 .dkcp-splash-container {
   position: absolute;
-  right: -17em;
+  right: -14em;
   top: -10em;
   width: 85%;
   aspect-ratio: 1/1;
   pointer-events: none;
+
+  overflow: hidden;
 
   @media (width < 768px) {
     position: relative;
@@ -12,13 +14,12 @@
     width: 100%;
     top: 0;
     right: 0;
-    overflow: hidden;
   }
 
   & .illustration-container {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 3em;
     width: 100%;
     height: 100%;
 
@@ -78,4 +79,81 @@
 .divider {
   border-bottom: 0.125em solid #e5e5e5;
   margin: 1.875em 0;
+}
+
+.methodology-section {
+  --methodology-gap: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--methodology-gap);
+  margin-bottom: calc(var(--methodology-gap) * 1.5);
+
+  /* Моноширинный шрифт для всех aside */
+  aside {
+    font-family: var(--mono);
+  }
+
+  &:not(.methodology-section--center) .methodology-column {
+    width: calc((100% - 3 * var(--methodology-gap)) / 4);
+  }
+
+  &.methodology-section--center {
+    .methodology-column-side {
+      width: calc((100% - 3 * var(--methodology-gap)) / 4);
+    }
+
+    .methodology-column-center {
+      width: calc((100% - var(--methodology-gap)) / 2);
+
+      /* Обёртка для картинки с паддингами */
+      .methodology-image-wrapper {
+        padding: 4em;
+
+        @media (width < 768px) {
+          padding: 2em;
+        }
+      }
+
+      /* Обёртка для "Нарративное конструирование" - выравнивание по центру */
+      .methodology-item-wrapper {
+        display: flex;
+        justify-content: center;
+
+        aside {
+          width: calc((100% - 2 * var(--methodology-gap)) / 4);
+        }
+      }
+    }
+  }
+
+  @media (width < 768px) {
+    &:not(.methodology-section--center) {
+      .methodology-column {
+        width: calc((100% - var(--methodology-gap)) / 2);
+      }
+    }
+
+    &.methodology-section--center {
+      flex-direction: column;
+
+      .methodology-column-center {
+        width: 100%;
+
+        .methodology-item-wrapper aside {
+          width: calc((100% - var(--methodology-gap)) / 2);
+        }
+      }
+
+      .methodology-column-side {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--methodology-gap);
+        width: 100%;
+
+        aside {
+          width: calc((100% - var(--methodology-gap)) / 2);
+        }
+      }
+    }
+  }
 }
