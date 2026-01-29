@@ -77,8 +77,8 @@
 }
 
 .divider {
-  border-bottom: 0.125em solid #e5e5e5;
-  margin: 1.875em 0;
+  border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.4);
+  margin: 0.5em 0;
 }
 
 .pndlnk-promo-grid {
@@ -162,8 +162,53 @@
             text-decoration-color 0s ease;
         }
       }
+
+      &.dark {
+        & aside {
+          background: rgb(45, 47, 48);
+          border-color: transparent;
+          color: rgba(240, 240, 240, 1);
+
+          & h6 {
+            color: rgba(240, 240, 240, 1);
+          }
+
+          & h3 {
+            color: rgba(240, 240, 240, 1);
+            text-decoration-color: rgba(240, 240, 240, 0.2);
+          }
+
+          & p {
+            color: rgba(240, 240, 240, 1);
+          }
+        }
+
+        &:hover aside {
+          background: rgb(245, 65, 55);
+          transition: background-color 0s ease;
+        }
+
+        &:not(:hover) aside {
+          transition: background-color 0.5s ease;
+        }
+      }
     }
   }
+}
+
+.methodology-wrapper {
+  background: rgba(var(--ids__surface-RGB), 0.3);
+  padding: calc(var(--ids__density) * 1em);
+}
+
+.methodology-section-caption {
+  font-family: var(--mono);
+  font-size: 0.55em;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin: 0.5em 0;
+  opacity: 0.5;
 }
 
 .methodology-section {
@@ -176,6 +221,17 @@
   /* Моноширинный шрифт для всех aside */
   aside {
     font-family: var(--mono);
+    background: none;
+    border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    padding-top: calc(var(--ids__density) * 0.25em);
+    padding-right: calc(var(--ids__density) * 0.75em);
+    padding-bottom: calc(var(--ids__density) * 0.25em);
+    padding-left: calc(var(--ids__density) * 0.35em);
+    font-size: 0.85em;
+
+    @media (width < 768px) {
+      padding-right: calc(var(--ids__density) * 0.5em);
+    }
   }
 
   &:not(.methodology-section--center) .methodology-column {
@@ -192,10 +248,10 @@
 
       /* Обёртка для картинки с паддингами */
       .methodology-image-wrapper {
-        padding: 4em;
+        padding: 4em 4em 1em 4em;
 
         @media (width < 768px) {
-          padding: 2em;
+          padding: 2em 2em 1em 2em;
         }
       }
 
