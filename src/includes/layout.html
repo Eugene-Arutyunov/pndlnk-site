@@ -7,6 +7,10 @@
     <title>{{ pageTitle if pageTitle else 'Понедельник' }}</title>
     <meta name="description" content="{{ pageDesc if pageDesc else 'опыто-конструкторское бюро' }}" />
 
+    {% if pageDesc %}
+    <meta property="og:description" content="{{ pageDesc }}" />
+    {% endif %}
+
     {% if ogImage %}
     <meta property="og:image" content="{{ ogImage }}" />
     <meta name="twitter:card" content="summary_large_image" />
