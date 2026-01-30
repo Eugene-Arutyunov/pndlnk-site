@@ -28,7 +28,7 @@
       const lesson1 = parseInt(computedStyle.getPropertyValue('--lesson-1-duration').trim()) || 55;
       const lesson2 = parseInt(computedStyle.getPropertyValue('--lesson-2-duration').trim()) || 75;
       const lesson3 = parseInt(computedStyle.getPropertyValue('--lesson-3-duration').trim()) || 35;
-      const lesson4 = parseInt(computedStyle.getPropertyValue('--lesson-4-duration').trim()) || 55;
+      const lesson4 = parseInt(computedStyle.getPropertyValue('--lesson-4-duration').trim()) || 42;
       const lesson5 = parseInt(computedStyle.getPropertyValue('--lesson-5-duration').trim()) || 75;
       totalDuration = lesson1 + lesson2 + lesson3 + lesson4 + lesson5;
     } else {
@@ -121,9 +121,9 @@
       slide: { x: 0, y: 0, width: 80 }
     },
     4: {
-      speaker1: { x: 66.67, y: 0, width: 33.33 },
-      speaker2: { x: 66.67, y: 50, width: 33.33 },
-      slide: { x: 0, y: 0, width: 66.67 }
+      speaker1: { x: 82, y: 14, width: 12 },
+      speaker2: { x: 80, y: 55, width: 14 },
+      slide: { x: 1, y: 2, width: 72 }
     },
     5: {
       speaker1: { x: 66.67, y: 0, width: 33.33 },
