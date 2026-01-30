@@ -1,4 +1,4 @@
-{% extends 'layout.html' %} {% set pageTitle = 'База ДКЦП' %} {% block content
+{% extends 'layout.html' %} {% set pageTitle = 'База ДКЦП' %} {% import 'dkcp-component.html' as dkcp %} {% block content
 %}
 <div class="ids__space top-screen-space M"></div>
 
@@ -252,8 +252,18 @@
       занятых родителей без компромиссов'] %} {% set priceConditions = ['500₽ за
       порцию', 'Скидка при подписке'] %} {% set exchangeConditions = ['Доставка
       в день заказа', 'Возврат в течение недели'] %} {% set companyAttrs = ['10
-      лет на рынке', 'Сертификат качества'] %} {% set draft = true %} {% include
-      'dkcp.html' %}
+      лет на рынке', 'Сертификат качества'] %} {% set draft = true %} {{ dkcp.dkcp(
+      values=values,
+      segment=segment,
+      conflict=conflict,
+      artifact=artifact,
+      artifactAttrs=artifactAttrs,
+      arguments=arguments,
+      priceConditions=priceConditions,
+      exchangeConditions=exchangeConditions,
+      companyAttrs=companyAttrs,
+      draft=draft
+    ) }}
 
       <p>
         Это упрощённый пример. В реальной работе детализация выше: описания
@@ -318,7 +328,7 @@
       </p>
     </div>
   </div>
-  <div class="ids__wrapper">{% include 'dkcp-base/lessons-gantt.html' %}</div>
+  <div class="ids__wrapper">{% include 'sections/lessons-gantt.html' %}</div>
   <div id="authors" class="ids__wrapper L">
     <div class="ids__space L"></div>
     <h2>Авторы</h2>

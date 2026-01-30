@@ -1,4 +1,11 @@
+{% import 'dkcp-component.html' as dkcp %}
 <div class="methodology-wrapper">
+  <div class="methodology-section-logo methodology-section-logo--small">
+    {% include 'assets/pndlnk-logo.html' %}
+  </div>
+  <div class="ids__space S"></div>
+  <h3>Бизнес-процессы на базе методологии ДКЦП</h3>
+  <div class="ids__space M"></div>
   <div class="methodology-section">
     <div class="methodology-column">
       <aside>
@@ -18,11 +25,9 @@
       </aside>
     </div>
   </div>
-  <div class="ids__space S"></div>
-  <p class="methodology-section-caption">Поддерживающий процесс</p>
+  <div class="methodology-section-caption">Поддерживающий процесс</div>
   <div class="divider"></div>
-  <p class="methodology-section-caption">Моделирование</p>
-  <div class="ids__space S"></div>
+  <div class="methodology-section-caption">Моделирование</div>
   <div class="methodology-section methodology-section--center">
     <div class="methodology-column methodology-column-side">
       <aside>
@@ -48,15 +53,11 @@
 
     <div class="methodology-column methodology-column-center">
       <div class="ids__space S"></div>
-      <div class="methodology-image-wrapper">
-        <img
-          src="/assets/dkcp/dkcp-pic-dasha.png"
-          alt="Модель ДКЦП"
-          class="ids__sequence-image" />
+      <div class="methodology-image-wrapper">{{ dkcp.dkcp(mini="true") }}</div>
+
+      <div class="methodology-section-caption">
+        Ядро методологии: модель ДКЦП
       </div>
-      <div class="ids__space S"></div>
-      <p class="methodology-section-caption">Ядро методологии: модель ДКЦП</p>
-      <div class="ids__space S"></div>
     </div>
 
     <div class="methodology-column methodology-column-side">
@@ -73,7 +74,7 @@
       </aside>
 
       <aside>
-        <p>CJM: картирование и моделирование</p>
+        <p>CJM: картирование и моделирование</p>
       </aside>
 
       <aside>
@@ -81,11 +82,9 @@
       </aside>
     </div>
   </div>
-  <div class="ids__space S"></div>
-  <p class="methodology-section-caption">Моделирование</p>
+
   <div class="divider"></div>
-  <p class="methodology-section-caption">Реализация</p>
-  <div class="ids__space S"></div>
+  <div class="methodology-section-caption">Реализация</div>
   <div class="methodology-section">
     <div class="methodology-column">
       <aside>

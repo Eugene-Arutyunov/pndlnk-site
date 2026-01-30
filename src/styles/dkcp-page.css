@@ -77,7 +77,7 @@
 }
 
 .divider {
-  border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.4);
+  border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
   margin: 0.5em 0;
 }
 
@@ -140,9 +140,7 @@
           text-underline-offset: 0.2em;
           text-decoration-skip-ink: none;
           text-decoration-color: rgba(var(--ids__link-RGB), 0.2);
-          transition:
-            color 0.5s ease,
-            text-decoration-color 0.5s ease;
+          transition: color 0.5s ease, text-decoration-color 0.5s ease;
 
           & span {
             font-size: 0.8em;
@@ -157,9 +155,7 @@
         & h3 {
           color: rgb(var(--ids__hover-RGB));
           text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
-          transition:
-            color 0s ease,
-            text-decoration-color 0s ease;
+          transition: color 0s ease, text-decoration-color 0s ease;
         }
       }
 
@@ -199,35 +195,55 @@
 .methodology-wrapper {
   background: rgba(var(--ids__surface-RGB), 0.3);
   padding: calc(var(--ids__density) * 1em);
+
+  & h3 {
+    text-align: center;
+    font-family: var(--mono);
+    opacity: 0.5;
+  }
+}
+
+.methodology-section-logo--small {
+  display: flex;
+  justify-content: center;
+  width: 7em;
+  margin: 0 auto;
+  opacity: 0.2;
+
+  svg {
+    fill: rgba(var(--ids__text-RGB), 1);
+    width: 100%;
+    height: auto;
+  }
 }
 
 .methodology-section-caption {
   font-family: var(--mono);
   font-size: 0.55em;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   text-align: center;
-  margin: 0.5em 0;
-  opacity: 0.5;
+  margin: 1.5em 0;
+  opacity: 0.4;
 }
 
 .methodology-section {
-  --methodology-gap: 0.5em;
+  --methodology-gap: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: var(--methodology-gap);
   margin-bottom: calc(var(--methodology-gap) * 1.5);
 
-  /* Моноширинный шрифт для всех aside */
-  aside {
+  @media (width < 768px) {
+    --methodology-gap: 0.4rem;
+  }
+
+  & aside {
+    font-size: 0.75em;
     font-family: var(--mono);
     background: none;
     border: 1px solid rgba(var(--ids__text-RGB), 0.2);
-    padding-top: calc(var(--ids__density) * 0.25em);
-    padding-right: calc(var(--ids__density) * 0.75em);
-    padding-bottom: calc(var(--ids__density) * 0.25em);
-    padding-left: calc(var(--ids__density) * 0.35em);
-    font-size: 0.85em;
+    padding: 0.31em 0.92em 0.31em 0.43em;
 
     @media (width < 768px) {
       padding-right: calc(var(--ids__density) * 0.5em);
@@ -248,7 +264,7 @@
 
       /* Обёртка для картинки с паддингами */
       .methodology-image-wrapper {
-        padding: 4em 4em 1em 4em;
+        padding: 0em 2em 1em 2em;
 
         @media (width < 768px) {
           padding: 2em 2em 1em 2em;
@@ -285,13 +301,14 @@
         }
       }
 
-      .methodology-column-side {
+      & .methodology-column-side {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
         gap: var(--methodology-gap);
         width: 100%;
 
-        aside {
+        & aside {
           width: calc((100% - var(--methodology-gap)) / 2);
         }
       }

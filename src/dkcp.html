@@ -1,4 +1,4 @@
-{% extends 'layout.html' %} {% set pageTitle = 'ДКЦП' %} {% block content %}
+{% extends 'layout.html' %} {% set pageTitle = 'ДКЦП' %} {% import 'dkcp-component.html' as dkcp %} {% block content %}
 <div class="ids__space XL"></div>
 <div class="ids__wrapper">
   <h1>ДКЦП помогает компаниям понять, что и кому они продают</h1>
@@ -136,8 +136,18 @@
     занятых родителей без компромиссов'] %} {% set priceConditions = ['500₽ за
     порцию', 'Скидка при подписке'] %} {% set exchangeConditions = ['Доставка в
     день заказа', 'Возврат в течение недели'] %} {% set companyAttrs = ['10 лет
-    на рынке', 'Сертификат качества'] %} {% set draft = true %} {% include
-    'dkcp.html' %}
+    на рынке', 'Сертификат качества'] %} {% set draft = true %} {{ dkcp.dkcp(
+    values=values,
+    segment=segment,
+    conflict=conflict,
+    artifact=artifact,
+    artifactAttrs=artifactAttrs,
+    arguments=arguments,
+    priceConditions=priceConditions,
+    exchangeConditions=exchangeConditions,
+    companyAttrs=companyAttrs,
+    draft=draft
+  ) }}
 
     <p>
       Чтобы работать с моделью ДКЦП, команда должна владеть методологией:
@@ -169,7 +179,7 @@
 
 <div class="ids__space S"></div>
 
-<div class="ids__wrapper">{% include 'sections/dkcp-methodology.html' %}</div>
+<div class="ids__wrapper centered">{% include 'sections/dkcp-methodology.html' %}</div>
 
 <div class="ids__space XL"></div>
 
