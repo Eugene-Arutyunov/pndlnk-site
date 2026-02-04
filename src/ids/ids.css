@@ -7,12 +7,16 @@
     text-underline-offset: 0.2em;
     text-decoration-skip-ink: none;
     text-decoration-color: rgba(var(--ids__link-RGB), 0.2);
-    transition: color 0.5s ease, text-decoration 0.5s ease;
+    transition:
+      color 0.5s ease,
+      text-decoration 0.5s ease;
 
     &:hover {
       color: rgb(var(--ids__hover-RGB));
       text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
-      transition: color 0s ease, text-decoration 0s ease;
+      transition:
+        color 0s ease,
+        text-decoration 0s ease;
     }
   }
 
@@ -124,11 +128,14 @@
   }
 
   & h6 {
-    font-size: 0.8em;
+    font-size: 0.75em;
+    font-family: var(--mono);
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     line-height: var(--ids__density);
     margin-bottom: 0.5em;
+    opacity: 0.7;
   }
 
   & strong,

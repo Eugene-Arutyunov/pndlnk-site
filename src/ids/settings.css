@@ -44,8 +44,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src:
-    url("fonts/Newton/Newton_Book.woff2") format("woff2"),
+  src: url("fonts/Newton/Newton_Book.woff2") format("woff2"),
     url("fonts/Newton/Newton_Book.woff") format("woff"),
     url("fonts/Newton/Newton_Book.ttf") format("truetype");
 }
@@ -55,8 +54,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src:
-    url("fonts/Newton/Newton_Italic.woff2") format("woff2"),
+  src: url("fonts/Newton/Newton_Italic.woff2") format("woff2"),
     url("fonts/Newton/Newton_Italic.woff") format("woff"),
     url("fonts/Newton/Newton_Italic.ttf") format("truetype");
 }
@@ -66,8 +64,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src:
-    url("fonts/Newton/Newton_Bold.woff2") format("woff2"),
+  src: url("fonts/Newton/Newton_Bold.woff2") format("woff2"),
     url("fonts/Newton/Newton_Bold.woff") format("woff"),
     url("fonts/Newton/Newton_Bold.ttf") format("truetype");
 }
@@ -77,8 +74,7 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src:
-    url("fonts/Newton/Newton_Bold Italic.woff2") format("woff2"),
+  src: url("fonts/Newton/Newton_Bold Italic.woff2") format("woff2"),
     url("fonts/Newton/Newton_Bold Italic.woff") format("woff"),
     url("fonts/Newton/Newton_Bold Italic.ttf") format("truetype");
 }
@@ -88,8 +84,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src:
-    url("fonts/Newton/Newton_Extra Bold.woff2") format("woff2"),
+  src: url("fonts/Newton/Newton_Extra Bold.woff2") format("woff2"),
     url("fonts/Newton/Newton_Extra Bold.woff") format("woff"),
     url("fonts/Newton/Newton_Extra Bold.ttf") format("truetype");
 }
@@ -136,11 +131,25 @@ html {
   font-size: calc(var(--mobile-font-size-min) * 1px);
 
   @media screen and (min-width: 320px) {
-    font-size: calc(var(--mobile-font-size-min) * 1px + (var(--mobile-font-size-max) - var(--mobile-font-size-min)) * ((100vw - var(--mobile-viewport-min) * 1px) / (var(--mobile-desktop-breakpoint) - var(--mobile-viewport-min))));
+    font-size: calc(
+      var(--mobile-font-size-min) * 1px +
+        (var(--mobile-font-size-max) - var(--mobile-font-size-min)) *
+        (
+          (100vw - var(--mobile-viewport-min) * 1px) /
+            (var(--mobile-desktop-breakpoint) - var(--mobile-viewport-min))
+        )
+    );
   }
 
   @media screen and (min-width: 768px) {
-    font-size: calc(var(--desktop-font-size-min) * 1px + (var(--desktop-font-size-max) - var(--desktop-font-size-min)) * ((100vw - var(--mobile-desktop-breakpoint) * 1px) / (var(--desktop-viewport-max) - var(--mobile-desktop-breakpoint))));
+    font-size: calc(
+      var(--desktop-font-size-min) * 1px +
+        (var(--desktop-font-size-max) - var(--desktop-font-size-min)) *
+        (
+          (100vw - var(--mobile-desktop-breakpoint) * 1px) /
+            (var(--desktop-viewport-max) - var(--mobile-desktop-breakpoint))
+        )
+    );
   }
 
   @media screen and (min-width: 1500px) {

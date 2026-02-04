@@ -1,0 +1,115 @@
+{# Компонент ДКЦП (Дворец культуры ценностного предложения) Макрос для изоляции
+переменных и предотвращения их "протекания" между инклюдами Параметры: - values:
+Ценность (массив) - segment: Клиентский сегмент (массив) - conflict: Ключевой
+мотивационный конфликт (массив) - artifact: Артефакт (массив) - artifactAttrs:
+Атрибуты артефакта (массив) - exchangeConditions: Условия обмена (массив) -
+priceConditions: Ценовые условия (массив) - companyAttrs: Атрибуты компании
+(массив) - arguments: Аргументы (массив) - draft: Режим черновика (boolean, по
+умолчанию false) - mini: Мини-режим (boolean, по умолчанию false) #} {% macro dkcp( values=[], segment=[], conflict=[],
+artifact=[], artifactAttrs=[], exchangeConditions=[], priceConditions=[],
+companyAttrs=[], arguments=[], draft=false, mini=false ) %}
+<div class="dkcp-component{% if draft %} dkcp-component--draft{% endif %}{% if mini %} dkcp-component--mini{% endif %}">
+  <div class="dkcp-top">
+    <div class="dkcp-block values">
+      <div class="dkcp-digit">8</div>
+      <div class="dkcp-title">Ценность</div>
+      <div class="dkcp-definition">
+        {% if values %} {% for item in values %}
+        <p>{{ item }}</p>
+        {% endfor %} {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="dkcp-facade">
+    <div class="dkcp-row columns">
+      <div class="dkcp-block segment">
+        <div class="dkcp-digit">1</div>
+        <div class="dkcp-title">Клиентский сегмент</div>
+        <div class="dkcp-definition">
+          {% if segment %} {% for item in segment %}
+          <p>{{ item }}</p>
+          {% endfor %} {% endif %}
+        </div>
+        <div class="dkcp-hint"></div>
+      </div>
+
+      <div class="dkcp-block conflict">
+        <div class="dkcp-digit">2</div>
+        <div class="dkcp-title">Мотивационный конфликт</div>
+        <div class="dkcp-definition">
+          {% if conflict %} {% for item in conflict %}
+          <p>{{ item }}</p>
+          {% endfor %} {% endif %}
+        </div>
+        <div class="dkcp-hint"></div>
+      </div>
+
+      <div class="dkcp-block arguments">
+        <div class="dkcp-digit">9</div>
+        <div class="dkcp-title">Аргументы</div>
+        <div class="dkcp-definition">
+          {% if arguments %} {% for item in arguments %}
+          <p>{{ item }}</p>
+          {% endfor %} {% endif %}
+        </div>
+        <div class="dkcp-hint"></div>
+      </div>
+
+      <div class="dkcp-block artifact-attrs">
+        <div class="dkcp-digit">4</div>
+        <div class="dkcp-title">Атрибуты артефакта</div>
+        <div class="dkcp-definition">
+          {% if artifactAttrs %} {% for item in artifactAttrs %}
+          <p>{{ item }}</p>
+          {% endfor %} {% endif %}
+        </div>
+        <div class="dkcp-hint"></div>
+      </div>
+      <div class="dkcp-block artifact">
+        <div class="dkcp-digit">3</div>
+        <div class="dkcp-title">Артефакт</div>
+        <div class="dkcp-definition">
+          {% if artifact %} {% for item in artifact %}
+          <p>{{ item }}</p>
+          {% endfor %} {% endif %}
+        </div>
+        <div class="dkcp-hint"></div>
+      </div>
+    </div>
+
+    <div class="dkcp-row bottom-row">
+      <div class="dkcp-block price">
+        <div class="dkcp-digit">5</div>
+        <div class="dkcp-title">Вклад клиента</div>
+        <div class="dkcp-definition">
+          {% if priceConditions %} {% for item in priceConditions %}
+          <p>{{ item }}</p>
+          {% endfor %} {% endif %}
+        </div>
+      </div>
+      <div class="dkcp-block exchange">
+        <div class="dkcp-digit">6</div>
+        <div class="dkcp-title">Условия обмена</div>
+        <div class="dkcp-definition">
+          {% if exchangeConditions %} {% for item in exchangeConditions %}
+          <p>{{ item }}</p>
+          {% endfor %} {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dkcp-bottom">
+    <div class="dkcp-block company">
+      <div class="dkcp-digit">7</div>
+      <div class="dkcp-title">Атрибуты компании</div>
+      <div class="dkcp-definition">
+        {% if companyAttrs %} {% for item in companyAttrs %}
+        <p>{{ item }}</p>
+        {% endfor %} {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}

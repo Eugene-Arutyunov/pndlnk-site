@@ -60,6 +60,10 @@
     padding: 0 calc(var(--ids__density) * 0.4em);
   }
 
+  &.centered {
+    margin: 0 auto;
+  }
+
   &.L {
     width: 84%;
     margin: 0 8%;
