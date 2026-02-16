@@ -1,4 +1,66 @@
-{% extends 'layout.html' %} {% set pageTitle = 'Понедельник' %} {% block content %}
+{% extends 'layout.html' %} {% set pageTitle = 'Понедельник' %} {% block content
+%}
+<div class="ids__space XL"></div>
+<div class="ids__wrapper">
+  <p>
+    Понедельник — это опыто-конструкторское бюро. Команда исследователей,
+    аналитиков, стратегов и проектировщиков. Мы создаём лучший опыт для
+    покупателей и сотрудников и делаем его конкурентным преимуществом наших
+    заказчиков уже 15 лет.
+  </p>
+  <p>Вот кому и в чём мы можем быть полезны в 2026 году.</p>
+  <table class="promo-table">
+    <thead>
+      <tr>
+        <th class="ids__table-head">Стороны</th>
+        <th class="ids__table-head">Ситуация</th>
+        <th class="ids__table-head">Продукт</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Лидер функции создания ценности и клиенты.</td>
+        <td><p>Запуск нового продукта.</p><p>Решение нарушений обменных процессов в существующем продукте.</p></td>
+        <td><p>Стратсессия «Цели».</p><p>Стратсессия «Ценность».</p><p>Интенсив-2026.</p><p>«Начну с понедельника».</p><p>Игра Понедельника.</p><p>Экселенц.</p><p>Эталон-М.</p></td>
+      </tr>
+      <tr>
+        <td>Новый лидер трансформации и сотрудники.</td>
+        <td><p>Наладка обменной функции.</p><p>Объединение портфеля в экосистему.</p></td>
+        <td><p>Стратсессия «Ценность».</p><p>«Начну с понедельника».</p><p>Игра Понедельника.</p><p>Экселенц.</p><p>Культура Создания Ценности.</p></td>
+      </tr>
+      <tr>
+        <td>Творческий/ маркетинговый специалист в2в и заказчик.</td>
+        <td><p>Запуск проекта, зависимого от цп.</p></td>
+        <td><p>База дкцп.</p><p>CX:SL.</p></td>
+      </tr>
+      <tr>
+        <td>HRD и соискатель.</td>
+        <td><p>Закрытие места в компании.</p></td>
+        <td><p>«Начну с понедельника».</p><p>Разработка evp.</p></td>
+      </tr>
+      <tr>
+        <td>Консультант и клиент.</td>
+        <td><p>Продажа консалтингового проекта.</p></td>
+        <td><p>«Начну с понедельника».</p><p>Сертификация дкцп.</p><p>База знаний.</p></td>
+      </tr>
+      <tr>
+        <td>Фаундер, топ-менеджеры.</td>
+        <td><p>Выход фаундера из операционки.</p></td>
+        <td><p>«Начну с понедельника».</p><p>СЦП.</p></td>
+      </tr>
+      <tr>
+        <td>Фаундер, топ-менеджеры.</td>
+        <td><p>Выход фаундера из операционки.</p></td>
+        <td><p>«Начну с понедельника».</p><p>База ДКЦП (версия для топов).</p></td>
+      </tr>
+      <tr>
+        <td>Инвестор, фаундер.</td>
+        <td><p>Решение об инвестициях.</p></td>
+        <td><p>«Начну с понедельника».</p><p>ДКЦП-DD.</p></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <div class="ids__space XL"></div>
 <div class="ids__wrapper">
   {% include 'glossary/ponedelnik.html' %}
@@ -7,26 +69,44 @@
   <!-- <h4>Продукты</h4> -->
   <div class="ids__sequence XL gap-L">
     <div class="ids__sequence-item">{% include 'glossary/function.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/processes.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/interaction.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/experience.html' %}</div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/processes.html' %}
+    </div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/interaction.html' %}
+    </div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/experience.html' %}
+    </div>
 
     <div class="ids__sequence-item">{% include 'glossary/artifact.html' %}</div>
 
-    <div class="ids__sequence-item">{% include 'glossary/artifact-attributes.html' %}</div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/artifact-attributes.html' %}
+    </div>
     <div class="ids__sequence-item">{% include 'glossary/activity.html' %}</div>
     <div class="ids__sequence-item">{% include 'glossary/action.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/operation.html' %}</div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/operation.html' %}
+    </div>
     <div class="ids__sequence-item">{% include 'glossary/idea.html' %}</div>
     <div class="ids__sequence-item">{% include 'glossary/goal.html' %}</div>
     <div class="ids__sequence-item">{% include 'glossary/task.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/phenomenon.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/mental-model.html' %}</div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/phenomenon.html' %}
+    </div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/mental-model.html' %}
+    </div>
     <div class="ids__sequence-item">{% include 'glossary/dkcp.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/exchange-invariants.html' %}</div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/exchange-invariants.html' %}
+    </div>
     <div class="ids__sequence-item">{% include 'glossary/kmc.html' %}</div>
     <div class="ids__sequence-item">{% include 'glossary/job.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/function-2.html' %}</div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/function-2.html' %}
+    </div>
   </div>
 </div>
 

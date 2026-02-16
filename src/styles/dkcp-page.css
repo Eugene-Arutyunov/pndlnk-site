@@ -81,6 +81,44 @@
   margin: 0.5em 0;
 }
 
+/* Таблица в стиле блока методологии: плашка, моно, тонкие линейки */
+
+.ids {
+  .promo-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: var(--mono);
+    font-size: 0.75em;
+    background: rgba(var(--ids__surface-RGB), 0.3);
+    padding: 1em;
+
+    @media (width < 768px) {
+      font-size: 0.7em;
+    }
+
+    & thead th {
+      text-align: left;
+      border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+      padding: 0.5em 1em 0.5em 0;
+
+      @media (width < 768px) {
+        padding-top: 0.8em;
+      }
+    }
+
+    & tbody td {
+      padding: 0.5em 1em 0.8em 0;
+      border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+      vertical-align: top;
+    }
+
+    & tbody tr:last-child td {
+      border-bottom: none;
+    }
+  }
+}
+
 .pndlnk-promo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -140,7 +178,9 @@
           text-underline-offset: 0.2em;
           text-decoration-skip-ink: none;
           text-decoration-color: rgba(var(--ids__link-RGB), 0.2);
-          transition: color 0.5s ease, text-decoration-color 0.5s ease;
+          transition:
+            color 0.5s ease,
+            text-decoration-color 0.5s ease;
 
           & span {
             font-size: 0.8em;
@@ -155,7 +195,9 @@
         & h3 {
           color: rgb(var(--ids__hover-RGB));
           text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
-          transition: color 0s ease, text-decoration-color 0s ease;
+          transition:
+            color 0s ease,
+            text-decoration-color 0s ease;
         }
       }
 
