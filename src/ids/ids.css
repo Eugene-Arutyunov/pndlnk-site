@@ -27,7 +27,6 @@
     &.loud {
       font-size: 1.5em;
       line-height: 1.15;
-      font-weight: 350;
 
       & em {
         font-size: 1.02em;
@@ -64,7 +63,7 @@
   & h5,
   & h6 {
     margin: 0;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   & h1 {
@@ -96,8 +95,8 @@
   }
 
   & h2 {
-    font-size: 3.2em;
-    font-weight: 550;
+    font-size: 2.8em;
+
     line-height: 1;
     margin-bottom: 0.3em;
 
@@ -109,20 +108,20 @@
   & h3 {
     font-size: 1.15em;
     line-height: 1.08;
-    font-weight: 550;
+
     margin-bottom: 0.4em;
   }
 
   & h4 {
     font-size: 1.05em;
-    font-weight: 550;
+
     line-height: 1.2;
     margin-bottom: 0.4em;
   }
 
   & h5 {
     font-size: 1.08em;
-    font-weight: 450;
+    font-weight: 500;
     line-height: 1.2;
     margin-bottom: 0.5em;
   }
@@ -140,7 +139,7 @@
 
   & strong,
   & b {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   & mark {
@@ -232,7 +231,7 @@
     font-size: 0.9em;
     font-family: var(--mono);
     letter-spacing: 0.02em;
-    font-weight: 450;
+    font-weight: 400;
     padding: 0.1em 0.25em;
     border-radius: 0.2em;
     color: rgba(var(--ids__code-RGB), 1);

@@ -109,18 +109,6 @@
   & .author-portrait {
     position: relative;
     margin-bottom: 0.3em;
-
-    & .author-name {
-      font-size: 1.05em;
-      font-weight: 550;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      padding: 0.1em 0.3em 0.1em 0em;
-
-      background-color: rgba(var(--ids__text-RGB), 1);
-      color: rgba(var(--ids__inverted-text-RGB), 1);
-    }
   }
 
   & p {
@@ -140,10 +128,9 @@
 
   @media (width < 768px) {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(8, auto) calc(var(--ids__density) * 2.4em) repeat(
-        8,
-        auto
-      );
+    grid-template-rows:
+      repeat(8, auto) calc(var(--ids__density) * 2.4em)
+      repeat(8, auto);
   }
 }
 
@@ -390,7 +377,7 @@
   padding: 0.6em 1em;
   background-color: rgba(var(--ids__text-RGB), 0.05);
   border-radius: 999px;
-  
+
   & img {
     height: 1.2em;
     width: auto;
