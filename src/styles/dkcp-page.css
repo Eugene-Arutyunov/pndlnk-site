@@ -84,18 +84,21 @@
 /* Таблица в стиле блока методологии: плашка, моно, тонкие линейки */
 
 .ids {
-  .promo-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    font-family: var(--mono);
-    font-size: 0.75em;
+  .promo-table-container {
     background: rgba(var(--ids__surface-RGB), 0.3);
     padding: 1em;
+    font-family: var(--mono);
+    font-size: 0.75em;
 
     @media (width < 768px) {
       font-size: 0.7em;
     }
+  }
+
+  .promo-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
 
     & thead th {
       text-align: left;
@@ -115,6 +118,136 @@
 
     & tbody tr:last-child td {
       border-bottom: none;
+    }
+  }
+
+  /* Аккордеон promo-rows */
+
+  .promo-rows {
+    margin-top: 0.75em;
+  }
+
+  .promo-row {
+    display: flex;
+    cursor: pointer;
+    border-top: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    transition: background 0.2s ease;
+
+    &:last-child {
+      border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    }
+
+    &:hover {
+      background: rgba(var(--ids__text-RGB), 0.04);
+    }
+
+    &.is-open {
+      background: rgba(var(--ids__text-RGB), 0.04);
+    }
+  }
+
+  .promo-row__situation,
+  .promo-row__products {
+    width: 50%;
+    padding: 0.6em 1em 0.6em 0;
+
+    &:first-child {
+      padding-right: 2em;
+    }
+  }
+
+  .promo-row__situation-main {
+    line-height: 1.4;
+  }
+
+  .promo-row__situation-detail {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+
+    .is-open & {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  .promo-row__situation-detail-inner {
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease 0s;
+    padding-top: 0.5em;
+    color: rgba(var(--ids__text-RGB), 0.6);
+
+    .is-open & {
+      opacity: 1;
+      transition: opacity 0.3s ease 0.15s;
+    }
+  }
+
+  .promo-row__products-summary {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    line-height: 1.4;
+
+    .is-open & {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+    }
+  }
+
+  .promo-row__products-detail {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+
+    .is-open & {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  .promo-row__products-detail-inner {
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease 0s;
+
+    .is-open & {
+      opacity: 1;
+      transition: opacity 0.3s ease 0.15s;
+    }
+  }
+
+  .promo-row__product-item {
+    display: flex;
+    gap: 1em;
+    padding: 0.25em 0;
+    border-top: 1px solid rgba(var(--ids__text-RGB), 0.1);
+
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  .promo-row__condition {
+    flex: 1 1 55%;
+    color: rgba(var(--ids__text-RGB), 0.5);
+    line-height: 1.35;
+  }
+
+  .promo-row__product-link {
+    flex: 1 1 45%;
+    color: rgb(var(--ids__link-RGB));
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: rgba(var(--ids__link-RGB), 0.2);
+    line-height: 1.35;
+    transition: color 0.5s ease, text-decoration-color 0.5s ease;
+
+    &:hover {
+      color: rgb(var(--ids__hover-RGB));
+      text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
+      transition: color 0s, text-decoration-color 0s;
     }
   }
 }

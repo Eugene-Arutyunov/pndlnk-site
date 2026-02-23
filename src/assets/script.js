@@ -119,15 +119,37 @@ function initLogoDownloads() {
   });
 }
 
+function initPromoRows() {
+  const rows = document.querySelectorAll(".promo-row");
+
+  if (rows.length === 0) return;
+
+  rows.forEach((row) => {
+    row.addEventListener("click", (e) => {
+      if (e.target.closest(".promo-row__product-link")) return;
+      row.classList.toggle("is-open");
+    });
+
+    row.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        row.classList.toggle("is-open");
+      }
+    });
+  });
+}
+
 // Инициализируем когда DOM готов
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     initStickyObserver();
     initSleepyObserver();
     initLogoDownloads();
+    initPromoRows();
   });
 } else {
   initStickyObserver();
   initSleepyObserver();
   initLogoDownloads();
+  initPromoRows();
 }
