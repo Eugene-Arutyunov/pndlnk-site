@@ -315,3 +315,58 @@
     }
   }
 }
+
+.dkcp-reviews-grid {
+  --reviews-gap: 1em;
+  --reviews-col: calc((100% - 2 * var(--reviews-gap)) / 3);
+}
+
+.dkcp-reviews-row {
+  display: flex;
+  gap: var(--reviews-gap);
+  border-top: 1px solid rgba(var(--ids__text-RGB), 0.15);
+  padding-top: calc(var(--ids__density) * 0.5em);
+  padding-bottom: calc(var(--ids__density) * 0.5em);
+}
+
+.dkcp-reviews-module--narrow {
+  width: var(--reviews-col);
+}
+
+.dkcp-reviews-module--wide {
+  width: calc(var(--reviews-col) * 2 + var(--reviews-gap));
+}
+
+.dkcp-reviews-module--large .review-text {
+  font-size: 1.5em;
+  line-height: 1.15;
+}
+
+.dkcp-reviews-module .review-text p:last-child,
+.dkcp-reviews-module .review-text ul:last-child {
+  margin-bottom: 0;
+}
+
+@media (width < 768px) {
+  .dkcp-reviews-grid {
+    --reviews-gap: 0.5em;
+  }
+
+  .dkcp-reviews-module .review-text {
+    font-size: 0.85em;
+  }
+
+  .dkcp-reviews-module--large .review-text {
+    font-size: 1.1em;
+    line-height: 1.2;
+  }
+
+  .dkcp-reviews-module .review-author .review-author-portrait img {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .dkcp-reviews-module .review-author .review-name {
+    font-size: 0.6rem;
+  }
+}
