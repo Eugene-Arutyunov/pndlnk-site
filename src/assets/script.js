@@ -121,6 +121,7 @@ function initLogoDownloads() {
 
 function initPromoRows() {
   const rows = document.querySelectorAll(".promo-row");
+  const switcherItems = document.querySelectorAll(".promo-switcher__item");
 
   if (rows.length === 0) return;
 
@@ -135,6 +136,31 @@ function initPromoRows() {
         e.preventDefault();
         row.classList.toggle("is-open");
       }
+    });
+  });
+
+  switcherItems.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const isAlreadyActive = btn.classList.contains("is-active");
+
+      switcherItems.forEach((b) => b.classList.remove("is-active"));
+
+      if (isAlreadyActive) return;
+
+      btn.classList.add("is-active");
+
+      const role = btn.dataset.role;
+
+      rows.forEach((row) => {
+        const rowRoles = (row.dataset.roles || "").split(" ");
+        if (role === "all") {
+          row.classList.add("is-open");
+        } else if (rowRoles.includes(role)) {
+          row.classList.add("is-open");
+        } else {
+          row.classList.remove("is-open");
+        }
+      });
     });
   });
 }

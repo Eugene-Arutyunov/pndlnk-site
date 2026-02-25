@@ -121,49 +121,105 @@
     }
   }
 
+  /* Переключатель ролей */
+
+  .promo-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid rgba(var(--ids__text-RGB), 1);
+    margin-bottom: 0.75em;
+    width: fit-content;
+  }
+
+  .promo-switcher__item {
+    appearance: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0.3em 0.6em 0.2em;
+    border: none;
+    border-right: 1px solid rgba(var(--ids__text-RGB), 0.25);
+    color: rgb(var(--ids__text-RGB));
+    transition: color 0.5s ease;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover:not(.is-active) {
+      color: rgb(var(--ids__accent-RGB));
+      transition: color 0s;
+    }
+
+    &.is-active {
+      background: rgba(var(--ids__text-RGB), 0.06);
+    }
+  }
+
   /* Аккордеон promo-rows */
 
+  .promo-rows-header {
+    display: flex;
+    margin: 0.75em 0;
+  }
+
+  .promo-rows-header__label {
+    width: 50%;
+
+    font-weight: 700;
+  }
+
   .promo-rows {
-    margin-top: 0.75em;
+    margin-top: 0;
   }
 
   .promo-row {
     display: flex;
     cursor: pointer;
     border-top: 1px solid rgba(var(--ids__text-RGB), 0.2);
-    transition: background 0.2s ease;
+    transition: background 0.5s ease;
 
     &:last-child {
-      border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+      border-bottom: none;
     }
 
     &:hover {
       background: rgba(var(--ids__text-RGB), 0.04);
+      transition: background 0s;
     }
 
     &.is-open {
-      background: rgba(var(--ids__text-RGB), 0.04);
+      border-top: 2px solid rgba(var(--ids__text-RGB), 1);
     }
   }
 
   .promo-row__situation,
   .promo-row__products {
     width: 50%;
-    padding: 0.6em 1em 0.6em 0;
+    padding: 0.4em 0 0.9em 0;
 
-    &:first-child {
-      padding-right: 2em;
+    .is-open & {
+      padding-bottom: 1.6em;
     }
   }
 
+  .promo-row__situation {
+    padding-right: 2em;
+  }
+
   .promo-row__situation-main {
-    line-height: 1.4;
+    line-height: 1.3em;
+
+    .is-open & {
+      font-weight: 700;
+    }
   }
 
   .promo-row__situation-detail {
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.35s ease;
+    min-height: 0;
 
     .is-open & {
       grid-template-rows: 1fr;
@@ -172,10 +228,11 @@
 
   .promo-row__situation-detail-inner {
     overflow: hidden;
+    min-height: 0;
     opacity: 0;
     transition: opacity 0.25s ease 0s;
     padding-top: 0.5em;
-    color: rgba(var(--ids__text-RGB), 0.6);
+    line-height: 1.3em;
 
     .is-open & {
       opacity: 1;
@@ -186,7 +243,7 @@
   .promo-row__products-summary {
     opacity: 1;
     transition: opacity 0.2s ease;
-    line-height: 1.4;
+    line-height: 1.3em;
 
     .is-open & {
       opacity: 0;
@@ -217,9 +274,10 @@
   }
 
   .promo-row__product-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1em;
-    padding: 0.25em 0;
+    padding: 0.35em 0 0.6em;
     border-top: 1px solid rgba(var(--ids__text-RGB), 0.1);
 
     &:first-child {
@@ -229,25 +287,60 @@
   }
 
   .promo-row__condition {
-    flex: 1 1 55%;
-    color: rgba(var(--ids__text-RGB), 0.5);
-    line-height: 1.35;
+    min-width: 0;
+    line-height: 1.3em;
   }
 
   .promo-row__product-link {
-    flex: 1 1 45%;
+    min-width: 0;
+
+    .is-open & {
+      font-weight: 700;
+    }
+
     color: rgb(var(--ids__link-RGB));
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
     text-decoration-color: rgba(var(--ids__link-RGB), 0.2);
-    line-height: 1.35;
-    transition: color 0.5s ease, text-decoration-color 0.5s ease;
+    line-height: 1.3em;
+    transition:
+      color 0.5s ease,
+      text-decoration-color 0.5s ease;
 
     &:hover {
       color: rgb(var(--ids__hover-RGB));
       text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
-      transition: color 0s, text-decoration-color 0s;
+      transition:
+        color 0s,
+        text-decoration-color 0s;
+    }
+
+    .promo-row__products-detail & {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4em;
+      text-decoration: none;
+
+      & span {
+        min-width: 0;
+        flex: 1;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+
+  .promo-row__product-icon {
+    flex-shrink: 0;
+    width: 2.8em;
+    height: 2.8em;
+    border-radius: 0.25em;
+    background: rgb(var(--ids__text-RGB));
+    transition: background 0.5s ease;
+
+    .promo-row__product-link:hover & {
+      background: rgb(var(--ids__hover-RGB));
+      transition: background 0s;
     }
   }
 }
