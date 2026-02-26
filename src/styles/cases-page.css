@@ -1,0 +1,36 @@
+.cases-reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cases-reviews-item {
+  border-top: 1px solid rgba(var(--ids__text-RGB), 0.15);
+  padding-top: calc(var(--ids__density) * 1em);
+  padding-bottom: calc(var(--ids__density) * 1em);
+}
+
+.cases-reviews-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.cases-reviews-item .review-text p:last-child,
+.cases-reviews-item .review-text ul:last-child {
+  margin-bottom: 0;
+}
+
+@media (width < 768px) {
+  .cases-reviews-item .review-author .review-author-portrait img {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .cases-reviews-item .review-author .review-name {
+    font-size: 0.6rem;
+  }
+
+  .cases-reviews-item .review-text {
+    font-size: 0.85em;
+  }
+}
