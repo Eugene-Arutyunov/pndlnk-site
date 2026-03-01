@@ -190,6 +190,47 @@
       }
     }
   }
+
+  /* glossary-table: контент из инклюдов глоссария, стиль как на DKCP (оранжевый термин, без lowercase/готика) */
+  &.glossary-table .pndlnk-promo-link {
+    & aside h3 {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    & aside .term {
+      font-family: inherit;
+      margin: 0;
+
+      & p strong:not(.secondary) {
+        display: block;
+        color: rgba(var(--ids__accent-RGB), 1);
+        text-transform: lowercase;
+        font-family: inherit;
+      }
+
+      & .links {
+        display: none;
+      }
+    }
+
+    &.glossary-card--artifact aside .term p:nth-child(2) {
+      display: none;
+    }
+
+    & aside p strong {
+      color: rgba(var(--ids__accent-RGB), 1);
+    }
+
+    &:hover aside {
+      border-color: rgba(var(--ids__text-RGB), 0.2);
+
+      & h3 {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .methodology-wrapper {

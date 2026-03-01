@@ -61,7 +61,7 @@
         </p>
       </div>
       <div class="ids__space M"></div>
-      <p>Мы условно называем ДКЦП только методологией, но это ещё модель и специальный язык.</p>
+      <p>ДКЦП только методологией, но это ещё модель и специальный язык.</p>
 
     </div>
   </div>
@@ -82,23 +82,6 @@
         {% include 'glossary/value-proposition.html' %}
       </div>
     </div>
-    <div class="ids__space S"></div>
-  </div>
-
-  <!-- Первая схема после короткого определения -->
-  <div class="ids__text-width">
-    {% set values = [] %} {% set segment = [] %} {% set conflict = [] %} {% set artifact = [] %} {% set artifactAttrs = [] %} {% set arguments = [] %} {% set priceConditions = [] %} {% set exchangeConditions = [] %} {% set companyAttrs = [] %} {% set draft = true %} {{ dkcp.dkcp(
-    values=values,
-    segment=segment,
-    conflict=conflict,
-    artifact=artifact,
-    artifactAttrs=artifactAttrs,
-    arguments=arguments,
-    priceConditions=priceConditions,
-    exchangeConditions=exchangeConditions,
-    companyAttrs=companyAttrs,
-    draft=draft
-  ) }}
   </div>
 
   <!-- Текстовое объяснение между схемами -->
@@ -162,78 +145,52 @@
         <p><a href="/">Глоссарий Понедельника →</a></p>
       </div>
     </div>
-    <p>
-      Язык ДКЦП универсален, поэтому на нём можно говорить в большом количестве разных ситуаций.
-    </p>
-    <div class="ids__space M"></div>
   </div>
 
-  <table>
-      <thead>
-        <tr>
-          <th class="ids__table-head">В какой ситуации применять</th>
-          <th class="ids__table-head">Кто применяет</th>
-          <th class="ids__table-head">Зачем применяет</th>
-          <!-- <th class="ids__table-head">Продукт Понедельника</th> -->
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Запуск нового продукта</td>
-          <td>Компания и её клиент</td>
-          <td>Покупка или понимание причины непокупки</td>
-          <!-- <td>Эталон-М</td> -->
-        </tr>
-        <tr>
-          <td>Объединение портфеля в экосистему</td>
-          <td>Лидер трансформации и его сотрудники</td>
-          <td>Согласованные действия руководителей продукта во имя клиента</td>
-          <!-- <td>КСЦ-интенсив<br />CXSL<br />Экселенц</td> -->
-        </tr>
-        <tr>
-          <td>Выход фаундера из операционки</td>
-          <td>Фаундер и топ-менеджеры</td>
-          <td>Перенятие и развитие видения компании</td>
-          <!-- <td>КСЦ-интенсив<br />База ДКЦП (для топов)</td> -->
-        </tr>
-        <tr>
-          <td>Запуск проекта, зависимого от ЦП</td>
-          <td>Творческий специалист B2B и заказчик</td>
-          <td>Понимание Заказчиком своего вклада в проект</td>
-          <!-- <td>База ДКЦП<br />CXSL</td> -->
-        </tr>
-        <tr>
-          <td>Запуск проекта, зависимого от ЦП</td>
-          <td>Заказчик и творческий специалист B2B</td>
-          <td>Избегание шаблонных, неработающих решений</td>
-          <!-- <td>База ДКЦП<br />CXSL</td> -->
-        </tr>
-        <tr>
-          <td>Питчинг инвестору</td>
-          <td>Компания и инвестор</td>
-          <td>Решение инвестора вложиться</td>
-          <!-- <td><em>придумать</em></td> -->
-        </tr>
-        <tr>
-          <td>Кризис в компании</td>
-          <td>Фаундер сам с собой</td>
-          <td>Принятие управленческих решений и корректировка курса</td>
-          <!-- <td></td> -->
-        </tr>
-        <tr>
-          <td>Закрытие места</td>
-          <td>HR и соискатель</td>
-          <td>Принятие оффера, удержание</td>
-          <!-- <td><em>придумать</em></td> -->
-        </tr>
-        <tr>
-          <td>Участие в акселераторе</td>
-          <td>Фаундер и ментор</td>
-          <td>Разрешение узких мест</td>
-          <!-- <td><em>придумать</em></td> -->
-        </tr>
-      </tbody>
-  </table>
+  <div class="pndlnk-promo-grid glossary-table">
+    <div class="pndlnk-promo-column">
+      <div class="pndlnk-promo-link">
+        <aside>{% include 'glossary/action.html' %}</aside>
+      </div>
+
+      <div class="pndlnk-promo-link">
+        <aside>{% include 'glossary/activity.html' %}</aside>
+      </div>
+
+      <div class="pndlnk-promo-link">
+        <aside>{% include 'glossary/exchange-invariants.html' %}</aside>
+      </div>
+
+    </div>
+
+    <div class="pndlnk-promo-column">
+      <div class="pndlnk-promo-link glossary-card--artifact">
+        <aside>{% include 'glossary/artifact.html' %}</aside>
+      </div>
+
+      <div class="pndlnk-promo-link">
+        <aside>{% include 'glossary/artifact-attributes.html' %}</aside>
+      </div>
+
+      <div class="pndlnk-promo-link">
+        <aside>{% include 'glossary/function.html' %}</aside>
+      </div>
+
+    </div>
+
+    <div class="pndlnk-promo-column">
+
+      <div class="pndlnk-promo-link">
+        <aside>{% include 'glossary/experience.html' %}</aside>
+      </div>
+
+      <div class="pndlnk-promo-link">
+        <aside>{% include 'glossary/kmc.html' %}</aside>
+      </div>
+    </div>
+  </div>
+
+  <div class="ids__space M"></div>
 
   <div class="ids__text-width">
     <p>
