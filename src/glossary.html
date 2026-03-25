@@ -1,0 +1,51 @@
+{% extends 'layout.html' %} {% set pageTitle = 'Глоссарий' %} {% block content
+%}
+<div class="ids__space XL"></div>
+<div class="ids__wrapper">
+  {% include 'glossary/ponedelnik.html' %}
+
+  <div class="ids__space L"></div>
+  <div class="ids__sequence XL gap-L">
+    <div class="ids__sequence-item">{% include 'glossary/function.html' %}</div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/processes.html' %}
+    </div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/interaction.html' %}
+    </div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/experience.html' %}
+    </div>
+
+    <div class="ids__sequence-item">{% include 'glossary/artifact.html' %}</div>
+
+    <div class="ids__sequence-item">
+      {% include 'glossary/artifact-attributes.html' %}
+    </div>
+    <div class="ids__sequence-item">{% include 'glossary/activity.html' %}</div>
+    <div class="ids__sequence-item">{% include 'glossary/action.html' %}</div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/operation.html' %}
+    </div>
+    <div class="ids__sequence-item">{% include 'glossary/idea.html' %}</div>
+    <div class="ids__sequence-item">{% include 'glossary/goal.html' %}</div>
+    <div class="ids__sequence-item">{% include 'glossary/task.html' %}</div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/phenomenon.html' %}
+    </div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/mental-model.html' %}
+    </div>
+    <div class="ids__sequence-item">{% include 'glossary/dkcp.html' %}</div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/exchange-invariants.html' %}
+    </div>
+    <div class="ids__sequence-item">{% include 'glossary/kmc.html' %}</div>
+    <div class="ids__sequence-item">{% include 'glossary/job.html' %}</div>
+    <div class="ids__sequence-item">
+      {% include 'glossary/function-2.html' %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

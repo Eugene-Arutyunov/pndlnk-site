@@ -179,8 +179,6 @@
   }
 
   & ul.inline-block {
-    margin-top: 1em;
-
     & li {
       display: inline-block;
       padding: 0.3em 0.5em 0.2em;

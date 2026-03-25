@@ -1,3 +1,61 @@
+/* Главная: заголовок в фирменном красном */
+h1.home-hero-title--brand {
+  color: rgb(var(--ids__hover-RGB));
+}
+
+/* Главная: две колонки 40% / 60% (с учётом gap), на мобиле — столбик */
+.home-hero-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+  gap: 1.1em;
+  align-items: start;
+}
+
+.home-hero-columns__col {
+  min-width: 0;
+}
+
+.home-hero-columns__col--list {
+  padding-top: 0.2em;
+}
+
+@media (width < 768px) {
+  .home-hero-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.home-hero-columns .logo-wall {
+  margin-top: 0;
+  margin-bottom: 0.45em;
+  gap: 0.3em;
+}
+
+.home-hero-columns .logo-wall-item {
+  padding: 0.4em 0.6em;
+}
+
+.home-hero-columns .logo-wall-item img {
+  height: 1.05em;
+}
+
+.home-hero-columns .logo-wall-item .logo-wall-label {
+  font-size: 0.8em;
+}
+
+.author-portrait--placeholder {
+  aspect-ratio: 1;
+  background-color: rgba(var(--ids__surface-RGB), 1);
+}
+
+.draft-placeholder {
+  padding: 1.5em;
+  border: 1px dashed rgba(var(--ids__text-RGB), 0.3);
+  background-color: rgba(var(--ids__surface-RGB), 0.3);
+  font-family: var(--mono);
+  font-size: var(--smaller);
+}
+
 .logo-downloads {
   display: flex;
   flex-wrap: wrap;
@@ -79,7 +137,9 @@
           background-color: rgba(var(--ids__background-RGB), 1);
           box-shadow: 0 1em 2em 0 rgba(var(--ids__surface-RGB), 1);
           opacity: 0;
-          transition: top 0.2s ease, opacity 0.2s ease;
+          transition:
+            top 0.2s ease,
+            opacity 0.2s ease;
           pointer-events: none;
 
           @media (width < 768px) {
