@@ -1,6 +1,6 @@
 /* Главная: заголовок в фирменном красном */
 h1.home-hero-title--brand {
-  color: rgb(var(--ids__hover-RGB));
+  color: rgb(var(--ids__accent-RGB));
 }
 
 /* Главная: две колонки 40% / 60% (с учётом gap), на мобиле — столбик */

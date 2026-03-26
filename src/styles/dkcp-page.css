@@ -226,18 +226,30 @@
     }
   }
 
-  .promo-row__situation-detail-inner {
+  .promo-row__situation-detail-body {
     overflow: hidden;
     min-height: 0;
     opacity: 0;
     transition: opacity 0.25s ease 0s;
     padding-top: 0.5em;
-    line-height: 1.3em;
 
     .is-open & {
       opacity: 1;
       transition: opacity 0.3s ease 0.15s;
     }
+  }
+
+  .promo-row__situation-detail-inner {
+    line-height: 1.3em;
+  }
+
+  .promo-row__roles {
+    margin-top: 0.65em;
+    padding-top: 0.5em;
+    border-top: 1px solid rgba(var(--ids__text-RGB), 0.12);
+    font-size: 0.88em;
+    line-height: 1.35;
+    color: rgba(var(--ids__text-RGB), 0.62);
   }
 
   .promo-row__products-summary {
