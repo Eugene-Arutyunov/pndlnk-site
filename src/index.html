@@ -104,11 +104,44 @@
 
 <div class="ids__space L"></div>
 
-<div class="ids__wrapper">
-  <div class="ids__text-width">
-    <aside class="draft-placeholder">
-      <p>Улучшили опыт [людей] во взаимодействии с [компаниями].</p>
-    </aside>
+<div class="ids__wrapper L">
+  <div class="project-catalog-panel">
+    <ul class="project-grid" role="list">
+      {% for project in projects %}
+      <li class="project-grid__cell">
+        <article class="project-card">
+          <div class="project-card__cover" aria-hidden="true"></div>
+          <div class="project-card__body">
+            <div class="project-card__title-row">
+              <span class="project-card__mark" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none">
+                  <path
+                    d="M1 12L7 2l6 10H1z"
+                    fill="currentColor"
+                    opacity="0.35" />
+                </svg>
+              </span>
+              <h3 class="project-card__title">{{ project.name }}</h3>
+            </div>
+            <div class="project-card__tags">
+              {% for tag in project.tags %}
+              <span
+                class="project-card__tag project-card__tag--{{ tag.kind }} project-card__tag--p{{ tag.palette }}"
+                >{{ tag.text }}</span
+              >
+              {% endfor %}
+            </div>
+            <p class="project-card__year">{{ project.year }}</p>
+          </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
 </div>
 

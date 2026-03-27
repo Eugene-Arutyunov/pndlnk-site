@@ -121,6 +121,175 @@
     }
   }
 
+  /* Каталог проектов (главная) */
+
+  .project-catalog-panel {
+    background: rgba(var(--ids__surface-RGB), 0.3);
+    padding: 1em;
+    font-family: inherit;
+    font-size: 0.8125rem;
+    line-height: 1.35;
+
+    @media (width < 768px) {
+      font-size: 0.75rem;
+    }
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (width < 1100px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (width < 720px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width < 420px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .project-grid__cell {
+    margin: 0;
+    min-width: 0;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(var(--ids__text-RGB), 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(var(--ids__surface-RGB), 0.45);
+    transition:
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+
+    &:hover {
+      box-shadow: 0 0.35em 1.2em rgba(var(--ids__text-RGB), 0.08);
+      transform: translateY(-2px);
+    }
+  }
+
+  .project-card__cover {
+    flex: 0 0 auto;
+    min-height: 5.5em;
+    background: rgba(var(--ids__text-RGB), 0.06);
+    border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.06);
+  }
+
+  .project-card__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 1em;
+    gap: 0.65em;
+    min-height: 0;
+  }
+
+  .project-card__title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45em;
+  }
+
+  .project-card__mark {
+    flex: 0 0 auto;
+    margin-top: 0.15em;
+    color: rgb(var(--ids__text-RGB));
+    line-height: 0;
+  }
+
+  .project-card__title {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1.25;
+    color: rgb(var(--ids__text-RGB));
+  }
+
+  .project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35em 0.45em;
+  }
+
+  .project-card__tag {
+    display: inline-block;
+    padding: 0.2em 0.45em 0.22em;
+    border-radius: 5px;
+    font-size: 0.78em;
+    line-height: 1.25;
+    color: rgba(var(--ids__text-RGB), 0.92);
+  }
+
+  .project-card__tag--type {
+    &.project-card__tag--p0 {
+      background: #d8f0e0;
+    }
+
+    &.project-card__tag--p1 {
+      background: #d5ebe4;
+    }
+
+    &.project-card__tag--p2 {
+      background: #e0efd4;
+    }
+
+    &.project-card__tag--p3 {
+      background: #d4f0e8;
+    }
+
+    &.project-card__tag--p4 {
+      background: #dff2e0;
+    }
+
+    &.project-card__tag--p5 {
+      background: #e2f4ea;
+    }
+  }
+
+  .project-card__tag--industry {
+    &.project-card__tag--p0 {
+      background: #fce4ec;
+    }
+
+    &.project-card__tag--p1 {
+      background: #fff0e0;
+    }
+
+    &.project-card__tag--p2 {
+      background: #ede7f6;
+    }
+
+    &.project-card__tag--p3 {
+      background: #e8eaf6;
+    }
+
+    &.project-card__tag--p4 {
+      background: #ffebee;
+    }
+
+    &.project-card__tag--p5 {
+      background: #fff8e1;
+    }
+  }
+
+  .project-card__year {
+    margin: auto 0 0;
+    padding-top: 0.25em;
+    font-size: 0.78em;
+    color: rgba(var(--ids__text-RGB), 0.45);
+  }
+
   /* Переключатель вида таблицы (задачи / продукты) */
 
   .promo-switcher {
