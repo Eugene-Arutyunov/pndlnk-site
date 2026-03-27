@@ -119,9 +119,27 @@ function initLogoDownloads() {
   });
 }
 
+function initPromoViewSwitcher() {
+  const items = document.querySelectorAll(".promo-switcher__item");
+  if (items.length === 0) return;
+
+  items.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("is-active")) return;
+
+      items.forEach((b) => {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-pressed", "false");
+      });
+
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-pressed", "true");
+    });
+  });
+}
+
 function initPromoRows() {
   const rows = document.querySelectorAll(".promo-row");
-  const switcherItems = document.querySelectorAll(".promo-switcher__item");
 
   if (rows.length === 0) return;
 
@@ -138,31 +156,6 @@ function initPromoRows() {
       }
     });
   });
-
-  switcherItems.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const isAlreadyActive = btn.classList.contains("is-active");
-
-      switcherItems.forEach((b) => b.classList.remove("is-active"));
-
-      if (isAlreadyActive) return;
-
-      btn.classList.add("is-active");
-
-      const role = btn.dataset.role;
-
-      rows.forEach((row) => {
-        const rowRoles = (row.dataset.roles || "").split(" ");
-        if (role === "all") {
-          row.classList.add("is-open");
-        } else if (rowRoles.includes(role)) {
-          row.classList.add("is-open");
-        } else {
-          row.classList.remove("is-open");
-        }
-      });
-    });
-  });
 }
 
 // Инициализируем когда DOM готов
@@ -171,11 +164,13 @@ if (document.readyState === "loading") {
     initStickyObserver();
     initSleepyObserver();
     initLogoDownloads();
+    initPromoViewSwitcher();
     initPromoRows();
   });
 } else {
   initStickyObserver();
   initSleepyObserver();
   initLogoDownloads();
+  initPromoViewSwitcher();
   initPromoRows();
 }

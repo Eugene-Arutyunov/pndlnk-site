@@ -107,80 +107,62 @@
 <div class="ids__wrapper">
   <div class="ids__text-width">
     <aside class="draft-placeholder">
-      <p>
-        <em
-          >Табличка с кейсами и фильтрами: улучшение опыта {клиентов /
-          сотрудников / партнёров} для {ит-компаний / девелоперов / ритейла /
-          вендоров}</em
-        >
-      </p>
+      <p>Улучшили опыт [людей] во взаимодействии с [компаниями].</p>
     </aside>
   </div>
 </div>
 
 <div class="ids__space L"></div>
 
-<div class="ids__wrapper">
+<!-- <div class="ids__wrapper">
   <div class="ids__text-width">
     <h2>Культура создания ценности</h2>
     <p>
-      Мы разработали универсальную методологию, которая одинаково хорошо
-      работает для улучшения взаимодействия компании с любыми людьми: с
-      клиентами, сотрудниками, партнёрами. Она строится на идее обмена. Люди
-      отдают вам свои деньги, время и труд, а взамен получают опыт
-      взаимодействия с вами и вашими продуктами. Если этот опыт «с заусенцами» —
-      неприятный, непонятный, непредсказуемый — люди уходят к конкурентам. Если
-      опыт приятный – остаются и продолжают обмен.
+      У нас есть методология, позволяющая системно улучшать взаимодействие
+      компании с кем угодно — с клиентами, с сотрудниками, с партнёрами.
     </p>
 
-    <!--Вот это нужно переписать, не нравится -->
-
     <p>
-      Для нас приятный опыт — это когда продукт работает, обязательства
-      выполняются, дизайн доносит смыслы, а компания знает и понимает своё
-      будущее. Когда компании не нужно казаться хорошей, потому что она является
-      такой на самом деле. Часто компании пытаются замазать проблемы красивым
-      маркетингом. Это путь имитации. Мы выбираем путь подлиности.
+      Эта методология строится на идее обмена: люди отдают вам свои деньги,
+      время и труд, а взамен получают опыт взаимодействия с вами и вашими
+      продуктами. Если опыт получается неприятным, непонятным, непредсказуемым —
+      люди уходят к конкурентам. Если опыт качественный — люди остаются и
+      продолжают участвовать в этом обмене.
     </p>
 
-    <!--Вот до сюда -->
+    <p>
+      Проблема в том, что взаимодействие — это объективно сложно, на него влияют
+      десятки нюансов, и чтобы достоверно их смоделировать, не подходят простые
+      модели в квадратиках 2х2. Простые модели могут казаться убедительными, но
+      по факту приводят к случайным решениям. А мы знаем, как структурировать
+      всю сложность взаимодейтсвия, не утонов при этом в деталях.
+    </p>
 
     <p>
-      Мы уверены, что попытка объяснить сложные проблемы простыми моделями,
-      приводит к простым понятным и неправильным решениям.
-    </p>
-    <p>
-      Нежелание разбираться в сложности — главная причина неценных продуктов и
-      неискреннего сервиса.
-    </p>
-    <div class="ids__space S"></div>
-    <p>
-      <a href="#" class="promo-link"
-        >Скачайте нашу презентацию, чтобы кому-нибудь показать</a
-      >
+      <a href="#">Подробнее о культуре создания ценности</a>
     </p>
   </div>
-</div>
-
-<div class="ids__space XL"></div>
+</div> -->
 
 <div class="ids__wrapper">
   <h2>Что мы предлагаем</h2>
   <div class="ids__space S"></div>
   <div class="promo-table-container">
-    <div class="promo-switcher">
-      <button class="promo-switcher__item" data-role="ceo">CEO</button>
-      <button class="promo-switcher__item" data-role="cmo">CMO</button>
-      <button class="promo-switcher__item" data-role="consultant">
-        Консультант
+    <div class="promo-switcher" role="group" aria-label="Вид таблицы">
+      <button
+        type="button"
+        class="promo-switcher__item is-active"
+        aria-pressed="true"
+        data-promo-view="tasks">
+        От задач
       </button>
-      <button class="promo-switcher__item" data-role="agency">Агентство</button>
-      <button class="promo-switcher__item" data-role="hrd">HRD</button>
-      <button class="promo-switcher__item" data-role="founder">Фаундер</button>
-      <button class="promo-switcher__item" data-role="investor">
-        Инвестор
+      <button
+        type="button"
+        class="promo-switcher__item"
+        aria-pressed="false"
+        data-promo-view="products">
+        От продуктов
       </button>
-      <button class="promo-switcher__item" data-role="all">Все</button>
     </div>
     <div class="ids__space S"></div>
     <div class="promo-rows-header">
@@ -188,7 +170,7 @@
       <span class="promo-rows-header__label">Что предлагаем</span>
     </div>
     <div class="promo-rows">
-      <div class="promo-row" role="button" tabindex="0" data-roles="ceo cmo">
+      <div class="promo-row" role="button" tabindex="0">
         <div class="promo-row__situation">
           <div class="promo-row__situation-main">
             Объединить разрозненные продукты в единую экосистему, понятную для
@@ -255,7 +237,7 @@
         </div>
       </div>
 
-      <div class="promo-row" role="button" tabindex="0" data-roles="ceo cmo">
+      <div class="promo-row" role="button" tabindex="0">
         <div class="promo-row__situation">
           <div class="promo-row__situation-main">
             Объединить маркетинг, продажи, продукт и саппорт в сквозной
@@ -310,7 +292,7 @@
         </div>
       </div>
 
-      <div class="promo-row" role="button" tabindex="0" data-roles="ceo cmo">
+      <div class="promo-row" role="button" tabindex="0">
         <div class="promo-row__situation">
           <div class="promo-row__situation-main">
             Запустить новый продукт или внутренний стартап
@@ -361,7 +343,7 @@
         </div>
       </div>
 
-      <div class="promo-row" role="button" tabindex="0" data-roles="ceo cmo">
+      <div class="promo-row" role="button" tabindex="0">
         <div class="promo-row__situation">
           <div class="promo-row__situation-main">
             Внедрить ИИ в сложные продажи, так, чтобы это работало эффективно
@@ -403,7 +385,7 @@
         </div>
       </div>
       <!--
-      <div class="promo-row" role="button" tabindex="0" data-roles="ceo">
+      <div class="promo-row" role="button" tabindex="0">
         <div class="promo-row__situation">
           <div class="promo-row__situation-main">
             Подружить Discovery- и Delivery-функции, чтобы они согласованно
@@ -457,7 +439,7 @@
         </div>
       </div>
 -->
-      <div class="promo-row" role="button" tabindex="0" data-roles="hrd">
+      <div class="promo-row" role="button" tabindex="0">
         <div class="promo-row__situation">
           <div class="promo-row__situation-main">
             Создать привлекательный бренд работодателя
@@ -521,11 +503,7 @@
         </div>
       </div>
 
-      <div
-        class="promo-row"
-        role="button"
-        tabindex="0"
-        data-roles="agency consultant">
+      <div class="promo-row" role="button" tabindex="0">
         <div class="promo-row__situation">
           <div class="promo-row__situation-main">
             Научиться подходам Понедельника
@@ -581,11 +559,7 @@
         </div>
       </div>
 
-      <div
-        class="promo-row"
-        role="button"
-        tabindex="0"
-        data-roles="ceo cmo consultant agency hrd founder investor">
+      <div class="promo-row" role="button" tabindex="0">
         <div class="promo-row__situation">
           <div class="promo-row__situation-main">
             Нестандартная или несформулированная задача, в сфере взаимодействия
