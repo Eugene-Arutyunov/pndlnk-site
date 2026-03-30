@@ -384,6 +384,10 @@
       }
     }
   }
+
+  & .case-cp-table {
+    width: 100%;
+  }
 }
 
 @keyframes form-submit-pulse {
