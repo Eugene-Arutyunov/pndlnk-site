@@ -389,6 +389,11 @@
     width: 100%;
   }
 
+  & mark a,
+  & mark a:hover {
+    text-decoration: none;
+  }
+
   & .case-meta-plate {
     /* как aside у .pndlnk-promo-link на странице ДКЦП */
     background: none;
@@ -408,6 +413,18 @@
 
     & p:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  & .case-context-quote {
+    font-size: 1.2em;
+    line-height: 1.45;
+    margin: 1em 0;
+    margin-inline: 0;
+
+    & p {
+      margin-bottom: 0;
+      font-weight: 400;
     }
   }
 
