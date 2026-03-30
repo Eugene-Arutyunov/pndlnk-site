@@ -138,6 +138,51 @@ function initPromoViewSwitcher() {
   });
 }
 
+function initProjectCatalogFilter() {
+  const panel = document.querySelector(".project-catalog-filter");
+  if (!panel) return;
+
+  const audienceSel = panel.querySelector("#project-filter-audience");
+  const segmentSel = panel.querySelector("#project-filter-segment");
+  const statusEl = panel.querySelector("#project-filter-status");
+  const cards = document.querySelectorAll(".project-catalog-panel .project-card");
+
+  if (!audienceSel || !segmentSel || cards.length === 0) return;
+
+  const total = cards.length;
+
+  function splitDataset(value) {
+    return (value || "").trim().split(/\s+/).filter(Boolean);
+  }
+
+  function apply() {
+    const aud = audienceSel.value;
+    const seg = segmentSel.value;
+    let shown = 0;
+
+    cards.forEach((card) => {
+      const audList = splitDataset(card.dataset.audience);
+      const segList = splitDataset(card.dataset.segment);
+      const audOk =
+        aud === "all" || (audList.length > 0 && audList.includes(aud));
+      const segOk =
+        seg === "all" || (segList.length > 0 && segList.includes(seg));
+      const visible = audOk && segOk;
+      card.classList.toggle("is-hidden", !visible);
+      if (visible) shown += 1;
+    });
+
+    if (statusEl) {
+      const isDefault = aud === "all" && seg === "all";
+      statusEl.textContent = isDefault ? String(total) : `${shown} / ${total}`;
+    }
+  }
+
+  audienceSel.addEventListener("change", apply);
+  segmentSel.addEventListener("change", apply);
+  apply();
+}
+
 function initPromoRows() {
   const rows = document.querySelectorAll(".promo-row");
 
@@ -166,6 +211,7 @@ if (document.readyState === "loading") {
     initLogoDownloads();
     initPromoViewSwitcher();
     initPromoRows();
+    initProjectCatalogFilter();
   });
 } else {
   initStickyObserver();
@@ -173,4 +219,5 @@ if (document.readyState === "loading") {
   initLogoDownloads();
   initPromoViewSwitcher();
   initPromoRows();
+  initProjectCatalogFilter();
 }
