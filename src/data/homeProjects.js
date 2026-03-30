@@ -10,23 +10,6 @@ function splitList(value) {
     .filter(Boolean);
 }
 
-function paletteIndex(label) {
-  let h = 0;
-  const s = String(label);
-  for (let i = 0; i < s.length; i += 1) {
-    h = (h * 31 + s.charCodeAt(i)) >>> 0;
-  }
-  return h % 6;
-}
-
-function tagsFor(labels, kind) {
-  return splitList(labels).map((text) => ({
-    text,
-    kind,
-    palette: paletteIndex(text),
-  }));
-}
-
 module.exports = function loadHomeProjects() {
   const csvPath = path.join(__dirname, "cases.csv");
   const raw = fs.readFileSync(csvPath, "utf8");
@@ -38,12 +21,10 @@ module.exports = function loadHomeProjects() {
   });
 
   return rows.map((row) => {
-    const typeTags = tagsFor(row["Тип"], "type");
-    const industryTags = tagsFor(row["Отрасль"], "industry");
     return {
       name: row.Name,
       year: row["Год выполнения"],
-      tags: [...typeTags, ...industryTags],
+      tags: [...splitList(row["Тип"]), ...splitList(row["Отрасль"])],
       inKp: row["В КП"],
       progress: row["Прогресс"],
       description: row["Описание"],
