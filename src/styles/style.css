@@ -43,6 +43,58 @@ h1.home-hero-title--brand {
   font-size: 0.8em;
 }
 
+.unisender-form {
+  max-width: 28em;
+}
+
+.unisender-form-field {
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.1);
+  background-color: rgba(var(--ids__surface-RGB), 1);
+  cursor: text;
+  transition: background-color 0.5s ease;
+
+  &:focus-within {
+    background-color: rgba(var(--ids__surface-RGB), 0.5);
+  }
+
+  & label {
+    flex-shrink: 0;
+    padding: 0.5em 0.67em;
+    font-size: 1em;
+    font-family: var(--mono);
+    color: rgba(var(--ids__text-RGB), 0.6);
+    pointer-events: none;
+    white-space: nowrap;
+
+    & b {
+      font-weight: normal;
+      color: rgba(var(--ids__accent-RGB), 1);
+    }
+  }
+
+  & input {
+    flex: 1;
+    width: 100%;
+    padding: 0.5em 0.67em 0.6em 0;
+    font-size: 1em;
+    font-family: var(--mono);
+    border: none;
+    background-color: transparent;
+    color: rgba(var(--ids__text-RGB), 1);
+    outline: none;
+
+    &::placeholder {
+      color: rgba(var(--ids__text-RGB), 0.4);
+    }
+  }
+}
+
+.unisender-form-submit {
+  margin-top: 1em;
+}
+
 .author-portrait--placeholder {
   aspect-ratio: 1;
   background-color: rgba(var(--ids__surface-RGB), 1);

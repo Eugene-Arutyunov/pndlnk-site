@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% set pageTitle = 'Дайджест — Понедельник' %}
+{% set pageDesc = 'Ежемесячный дайджест проектировании взаимодействий и создании ценности' %}
+
+
+{% block content %}
+
+<div class="ids__space XL"></div>
+
+<div class="ids__wrapper">
+  <div class="ids__text-width">
+    <h1>Дайджест Понедельника</h1>
+    <div class="ids__space XS"></div>
+    <p class="loud">В нынешние турбулентные времена мы возвращаемся к истокам, чтобы продолжать делиться с вами тем, что считаем важным и ценным.</p>
+  </div>
+
+  <div class="ids__space M"></div>
+
+  <div class="ids__text-width">
+    <p>
+      В дайджесте будет самое интересное: посты из канала, записи эфирова, кейсы и новости. Не чаще двух раз в месяц.
+    </p>
+    <p>
+      Тематика выпусков — ценностные предложения, клиентский опыт, продуктовая стратегия, исследования потребителей, стратегирование и организационные изменения.
+    </p>
+  </div>
+
+  <div class="ids__space M"></div>
+
+  <div class="ids__text-width">
+    <form class="unisender-form" method="POST" action="https://cp.unisender.com/ru/subscribe?hash=6z8a8ynrtgoaq1k68chacg6w8xif5pjutox9dyir6x4j8keofotwy" name="subscribtion_form">
+      <div class="unisender-form-field">
+        <label for="us_name">Имя</label>
+        <input type="text" id="us_name" name="f_1" value="">
+      </div>
+      <div class="unisender-form-field">
+        <label for="us_email">E-mail</label>
+        <input type="text" id="us_email" name="email" value="">
+      </div>
+      <div class="unisender-form-submit">
+        <button type="submit" class="promo-link">Подписаться</button>
+      </div>
+      <input type="hidden" name="charset" value="UTF-8">
+      <input type="hidden" name="default_list_id" value="78">
+      <input type="hidden" name="overwrite" value="2">
+      <input type="hidden" name="is_v5" value="1">
+    </form>
+  </div>
+
+</div>
+
+<div class="ids__space XL"></div>
+
+{% endblock %}
