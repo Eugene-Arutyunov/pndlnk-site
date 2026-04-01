@@ -126,9 +126,9 @@
       slide: { x: 1, y: 2, width: 72 }
     },
     5: {
-      speaker1: { x: 66.67, y: 0, width: 33.33 },
-      speaker2: { x: 66.67, y: 50, width: 33.33 },
-      slide: { x: 0, y: 0, width: 66.67 }
+      speaker1: { x: 80, y: 8, width: 17 },
+      speaker2: { x: 80, y: 52, width: 17 },
+      slide: { x: 0, y: 2, width: 77 }
     }
   };
 
