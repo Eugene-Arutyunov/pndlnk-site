@@ -49,23 +49,30 @@
 
     <!-- Signature -->
     <mj-section background-color="#FFFFFF" padding="0 32px 32px">
-      <mj-column width="80px" padding="0" vertical-align="middle">
-        <mj-image
-          src="https://new.ponedelnik.ru/assets/mike-rudenko.jpg"
-          alt="Михаил Руденко"
-          width="64px"
-          border-radius="50%"
-          align="left"
-          padding="0"
-        />
-      </mj-column>
-      <mj-column padding="0 0 0 16px" vertical-align="middle">
-        <mj-text font-size="14px" color="#232526" line-height="1.5" padding="0" align="left">
-          <strong style="font-weight:700;">Михаил Руденко</strong><br />
-          <span style="color:#888888;">Основатель Понедельника</span><br />
-          <a href="https://t.me/MikeRdnk" style="color:#888888;text-decoration:none;">@MikeRdnk</a>
-          &nbsp;·&nbsp;
-          <a href="mailto:okb@ponedelnik.ru" style="color:#888888;text-decoration:none;">okb@ponedelnik.ru</a>
+      <mj-column>
+        <mj-text padding="0">
+          <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+            <tr>
+              <td style="width:72px;vertical-align:middle;padding:0;">
+                <img
+                  src="https://new.ponedelnik.ru/assets/mike-rudenko.jpg"
+                  alt="Михаил Руденко"
+                  width="64"
+                  height="64"
+                  style="display:block;border-radius:50%;width:64px;height:64px;object-fit:cover;"
+                />
+              </td>
+              <td style="vertical-align:middle;padding:0 0 0 16px;">
+                <span style="display:block;font-size:14px;font-weight:700;color:#232526;line-height:1.5;">Михаил Руденко</span>
+                <span style="display:block;font-size:14px;color:#888888;line-height:1.5;">Основатель Понедельника</span>
+                <span style="display:block;font-size:14px;color:#888888;line-height:1.5;">
+                  <a href="https://t.me/MikeRdnk" style="color:#888888;text-decoration:none;">@MikeRdnk</a>
+                  &nbsp;·&nbsp;
+                  <a href="mailto:okb@ponedelnik.ru" style="color:#888888;text-decoration:none;">okb@ponedelnik.ru</a>
+                </span>
+              </td>
+            </tr>
+          </table>
         </mj-text>
       </mj-column>
     </mj-section>
