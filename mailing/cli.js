@@ -46,7 +46,7 @@ async function run() {
       const result = await createMessage({ subject: frontMatter.subject, html });
 
       console.log(`Отправляю тест на: ${emails}...`);
-      await testSend({ messageId: result.id, emails: emails.split(',') });
+      await testSend({ messageId: result.message_id, emails: emails.split(',') });
 
       console.log('✓ Тестовое письмо отправлено');
       break;
@@ -73,7 +73,7 @@ async function run() {
         console.log('Отправляю немедленно...');
       }
 
-      const campaign = await createCampaign({ messageId: result.id, startTime });
+      const campaign = await createCampaign({ messageId: result.message_id, startTime });
       console.log(`✓ Кампания запущена, ID: ${campaign.campaign_id}`);
       break;
     }

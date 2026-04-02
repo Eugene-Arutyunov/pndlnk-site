@@ -12,33 +12,67 @@ function config() {
   };
 }
 
+function parseResponse(raw) {
+  try {
+    return JSON.parse(raw);
+  } catch {
+    throw new Error('Не удалось распарсить ответ: ' + raw.substring(0, 200));
+  }
+}
+
 function get(url) {
   return new Promise((resolve, reject) => {
     https.get(url, (res) => {
       let data = '';
       res.on('data', (chunk) => (data += chunk));
-      res.on('end', () => {
-        try {
-          resolve(JSON.parse(data));
-        } catch {
-          reject(new Error('Не удалось распарсить ответ: ' + data.substring(0, 200)));
-        }
-      });
+      res.on('end', () => { try { resolve(parseResponse(data)); } catch (e) { reject(e); } });
     }).on('error', reject);
   });
 }
 
-async function apiCall(method, params) {
+// multipart/form-data — не URL-кодирует бинарные данные и большой текст
+function postMultipart(url, fields) {
+  const boundary = '----FormBoundary' + Math.random().toString(36).slice(2);
+  const parts = Object.entries(fields).map(([name, value]) =>
+    `--${boundary}\r\nContent-Disposition: form-data; name="${name}"\r\n\r\n${value}`
+  );
+  const body = parts.join('\r\n') + `\r\n--${boundary}--\r\n`;
+  const bodyBuf = Buffer.from(body, 'utf8');
+  const urlObj = new URL(url);
+
+  return new Promise((resolve, reject) => {
+    const req = https.request({
+      hostname: urlObj.hostname,
+      path: urlObj.pathname + urlObj.search,
+      method: 'POST',
+      headers: {
+        'Content-Type': `multipart/form-data; boundary=${boundary}`,
+        'Content-Length': bodyBuf.length,
+      },
+    }, (res) => {
+      let data = '';
+      res.on('data', (chunk) => (data += chunk));
+      res.on('end', () => { try { resolve(parseResponse(data)); } catch (e) { reject(e); } });
+    });
+    req.on('error', reject);
+    req.write(bodyBuf);
+    req.end();
+  });
+}
+
+async function apiCall(method, params, useMultipart = false) {
   const { apiKey } = config();
 
   if (!apiKey) {
     throw new Error('UNISENDER_API_KEY не задан в .env');
   }
 
-  const qs = querystring.stringify({ format: 'json', api_key: apiKey, ...params });
-  const url = `${BASE_URL}/${method}?${qs}`;
+  const allParams = { format: 'json', api_key: apiKey, ...params };
+  const url = `${BASE_URL}/${method}`;
 
-  const data = await get(url);
+  const data = useMultipart
+    ? await postMultipart(url, allParams)
+    : await get(`${url}?${querystring.stringify(allParams)}`);
 
   if (data.error) {
     throw new Error(`Unisender ошибка: ${data.error}`);
@@ -47,7 +81,7 @@ async function apiCall(method, params) {
   return data.result;
 }
 
-// Создать сообщение в Unisender (нужно для test-send и send)
+// Создать сообщение в Unisender
 async function createMessage({ subject, html }) {
   const { senderName, senderEmail, listId } = config();
   return apiCall('createEmailMessage', {
@@ -57,7 +91,7 @@ async function createMessage({ subject, html }) {
     body: html,
     list_id: listId,
     lang: 'ru',
-  });
+  }, true); // multipart для большого HTML
 }
 
 // Тестовая отправка по message_id
