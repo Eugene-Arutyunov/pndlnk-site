@@ -1,0 +1,36 @@
+<div id="contact-form-overlay" class="contact-form-overlay" hidden>
+  <div class="contact-form-popover">
+    <button class="contact-form-close" aria-label="Закрыть">✕</button>
+    <h2 class="contact-form-title"></h2>
+    <p class="contact-form-subtitle" hidden></p>
+    <p class="contact-form-description" hidden></p>
+    <form id="contactForm" class="contact-form-form" novalidate>
+      <div class="form-field">
+        <label for="cf-name">Ваше имя:</label>
+        <input type="text" id="cf-name" name="name" required />
+      </div>
+      <div class="form-field">
+        <label for="cf-company">Название компании:</label>
+        <input type="text" id="cf-company" name="company" />
+      </div>
+      <div class="form-field">
+        <label for="cf-telegram">Ваш ник в телеграме:</label>
+        <input type="text" id="cf-telegram" name="telegram" />
+      </div>
+      <div class="form-field">
+        <label for="cf-email">Эл. почта:</label>
+        <input type="email" id="cf-email" name="email" required />
+      </div>
+      <div class="contact-form-extra" hidden>
+        <div class="form-field">
+          <label for="cf-headcount">Количество человек:</label>
+          <input type="number" id="cf-headcount" name="headcount" min="1" />
+        </div>
+      </div>
+      <div class="form-submit-wrapper">
+        <button type="submit" class="promo-link contact-form-submit"></button>
+        <div class="form-status" id="cf-status"></div>
+      </div>
+    </form>
+  </div>
+</div>
