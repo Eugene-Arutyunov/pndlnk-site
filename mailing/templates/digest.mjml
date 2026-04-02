@@ -1,0 +1,104 @@
+<mjml>
+  <mj-head>
+    <mj-preview>{{PREHEADER}}</mj-preview>
+
+    <mj-attributes>
+      <mj-all font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" />
+      <mj-body background-color="#FFFFFF" />
+      <mj-section padding="0" />
+      <mj-column padding="0" />
+      <mj-text font-size="16px" line-height="1.6" color="#232526" padding="0" />
+    </mj-attributes>
+
+    <mj-style>
+      a { color: #232526; }
+      a:hover { color: #FF6969; }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#FFFFFF">
+
+    <!-- Top bar -->
+    <mj-section background-color="#232526" padding="14px 32px">
+      <mj-column>
+        <mj-text
+          font-size="11px"
+          letter-spacing="0.12em"
+          color="#FFFFFF"
+          font-weight="400"
+          text-transform="uppercase"
+        >
+          Понедельник · Дайджест
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Logo -->
+    <mj-section background-color="#FFFFFF" padding="32px 32px 24px">
+      <mj-column>
+        <mj-text padding="0">
+          <a href="https://ponedelnik.ru" style="display:block;text-decoration:none;">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1730.887 98.179"
+              style="width:240px;height:auto;display:block;"
+              role="img"
+              aria-label="Понедельник"
+            >
+              <path
+                fill="#232526"
+                d="M735.707,98.179h53.552v-42.077h-9.563V1.913h-138.981c0,38.252-3.825,54.19-15.301,54.19v42.077h53.552v-15.301h56.74v15.301M722.956,28.689v27.414h-38.252c2.55-5.1,3.825-19.126,3.825-27.414h34.426M237.798,84.791c55.465,0,79.691-12.751,79.691-42.077,0-29.964-24.226-42.714-79.691-42.714-56.102,0-79.691,12.751-79.691,42.714,0,29.326,23.589,42.077,79.691,42.077M237.798,29.964c18.488,0,26.139,3.825,26.139,12.113,0,8.925-7.65,12.113-26.139,12.113-17.851,0-25.501-3.188-25.501-12.113,0-8.288,7.65-12.113,25.501-12.113M1472.689,40.164V1.913h-53.552v80.966h57.377l38.252-38.252v38.252h53.552V1.913h-57.377l-38.252,38.252M538.073,59.928v-7.013h73.316v-21.038h-73.316v-7.013h83.516V1.913h-140.256v80.966h140.256v-22.951h-83.516M1316.494,28.051V1.913h-57.377v80.966h57.377v-26.139h39.527v26.139h57.377V1.913h-57.377v26.139h-39.527M935.253,1.913h-140.256v80.966h140.256v-22.951h-82.879v-7.013h72.678v-21.038h-72.678v-7.013h82.879V1.913M1157.112,17.213V1.913h-57.377v80.966h103.279c36.339,0,52.277-10.2,52.277-33.151s-15.938-32.514-52.277-32.514h-45.902M1157.112,56.102v-12.113h25.501c10.838,0,15.301,1.913,15.301,6.375,0,3.825-4.463,5.738-15.301,5.738h-25.501M57.377,82.879V30.601h39.527v52.277h57.377V1.913H0v80.966h57.377M418.218,56.74v26.139h57.377V1.913h-57.377v26.139h-39.527V1.913h-57.377v80.966h57.377v-26.139h39.527M1665.859,1.913l-19.126,26.139h-15.301V1.913h-57.377v80.966h57.377v-26.139h15.301l19.126,26.139h65.028l-34.426-43.352,30.601-37.614h-61.203M958.841,82.879c33.789,0,48.452-15.938,48.452-52.277h29.326v52.277h57.377V1.913h-132.606v8.925c0,22.951-5.1,29.964-20.401,29.964v42.077h17.851"
+              />
+            </svg>
+          </a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider under logo -->
+    <mj-section padding="0 32px 32px">
+      <mj-column>
+        <mj-divider border-color="#E6E4E4" border-width="1px" padding="0" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Content -->
+    <mj-section padding="0 32px 40px">
+      <mj-column>
+        <mj-text padding="0">
+          {{CONTENT}}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer divider -->
+    <mj-section padding="0 32px">
+      <mj-column>
+        <mj-divider border-color="#E6E4E4" border-width="1px" padding="0" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section background-color="#FFFFFF" padding="24px 32px 32px">
+      <mj-column>
+        <mj-text font-size="13px" color="#888888" line-height="1.5" padding="0">
+          Вы получили это письмо, потому что подписались на дайджест ОКБ Понедельник.
+          <br />
+          <a href="{{UnsubscribeUrl}}" style="color:#888888;text-decoration:underline;">Отписаться</a>
+          &nbsp;·&nbsp;
+          <a href="https://ponedelnik.ru" style="color:#888888;text-decoration:underline;">ponedelnik.ru</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Bottom bar -->
+    <mj-section background-color="#E6E4E4" padding="12px 32px">
+      <mj-column>
+        <mj-text font-size="11px" color="#888888" letter-spacing="0.05em" padding="0">
+          ООО «УМП» · Екатеринбург · okb@ponedelnik.ru
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>
