@@ -1,4 +1,5 @@
-const axios = require('axios');
+const https = require('https');
+const querystring = require('querystring');
 
 const BASE_URL = 'https://api.unisender.com/ru/api';
 
@@ -8,26 +9,42 @@ function config() {
     listId: process.env.UNISENDER_LIST_ID || '78',
     senderName: process.env.SENDER_NAME || 'ОКБ Понедельник',
     senderEmail: process.env.SENDER_EMAIL || 'okb@ponedelnik.ru',
-    platform: 'pndlnk',
   };
 }
 
+function get(url) {
+  return new Promise((resolve, reject) => {
+    https.get(url, (res) => {
+      let data = '';
+      res.on('data', (chunk) => (data += chunk));
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch {
+          reject(new Error('Не удалось распарсить ответ: ' + data.substring(0, 200)));
+        }
+      });
+    }).on('error', reject);
+  });
+}
+
 async function apiCall(method, params) {
-  const { apiKey, platform } = config();
+  const { apiKey } = config();
 
   if (!apiKey) {
     throw new Error('UNISENDER_API_KEY не задан в .env');
   }
 
-  const response = await axios.post(`${BASE_URL}/${method}`, null, {
-    params: { format: 'json', api_key: apiKey, platform, ...params },
-  });
+  const qs = querystring.stringify({ format: 'json', api_key: apiKey, ...params });
+  const url = `${BASE_URL}/${method}?${qs}`;
 
-  if (response.data.error) {
-    throw new Error(`Unisender ошибка: ${response.data.error}`);
+  const data = await get(url);
+
+  if (data.error) {
+    throw new Error(`Unisender ошибка: ${data.error}`);
   }
 
-  return response.data.result;
+  return data.result;
 }
 
 // Создать сообщение в Unisender (нужно для test-send и send)

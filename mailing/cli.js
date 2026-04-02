@@ -83,7 +83,7 @@ async function run() {
       console.log('Проверяю подключение...');
       const lists = await ping();
       console.log('✓ Подключение работает. Списки:');
-      lists.forEach((l) => console.log(`  [${l.id}] ${l.title} (${l.active_contacts_count} контактов)`));
+      lists.forEach((l) => console.log(`  [${l.id}] ${l.title}`));
       break;
     }
 
