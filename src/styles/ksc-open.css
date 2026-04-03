@@ -445,3 +445,59 @@ table.ksc-open-schedule {
     }
   }
 }
+
+.contour.ksc-course-requests-panel {
+  margin-top: calc(var(--ids__density) * 1.25em);
+  margin-bottom: calc(var(--ids__density) * 0.5em);
+  padding-top: calc(var(--ids__density) * 0.4em);
+  padding-right: calc(var(--ids__density) * 1.5em);
+  padding-bottom: calc(var(--ids__density) * 0.4em);
+  padding-left: calc(var(--ids__density) * 0.5em);
+  border-radius: 0.2em;
+  background: transparent;
+
+  @media (width < 768px) {
+    padding-right: calc(var(--ids__density) * 0.75em);
+  }
+}
+
+.ksc-course-requests {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.ksc-course-requests__actions {
+  margin-top: 0.65em;
+  margin-bottom: 0;
+}
+
+.ksc-course-requests__next {
+  font: inherit;
+  font-family: var(--mono);
+  font-size: 0.9em;
+  font-weight: 500;
+  padding: 0.35em 0.75em 0.3em;
+  color: rgb(var(--ids__text-RGB));
+  background: rgba(var(--ids__surface-RGB), 1);
+  border: 2px solid rgba(var(--ids__text-RGB), 0.35);
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+.ksc-course-requests__next:hover {
+  border-color: rgba(var(--ids__link-RGB), 0.6);
+  color: rgb(var(--ids__link-RGB));
+}
+
+.ksc-course-requests__counter {
+  font-family: var(--mono);
+  font-size: 0.75em;
+  opacity: 0.65;
+  margin-bottom: 0.35em;
+}
+
+.ksc-course-requests__quote {
+  font-size: 1.2em;
+  line-height: var(--ids__density);
+  margin-bottom: 0;
+}

@@ -1,0 +1,57 @@
+<div class="contour ksc-course-requests-panel">
+  <div class="ksc-course-requests" id="ksc-course-requests">
+    <p class="ksc-course-requests__counter" id="ksc-course-requests-counter" aria-live="polite"></p>
+    <p class="ksc-course-requests__quote" id="ksc-course-requests-quote"></p>
+    <p class="ksc-course-requests__actions">
+      <button type="button" class="ksc-course-requests__next" id="ksc-course-requests-next">Еще запрос</button>
+    </p>
+  </div>
+</div>
+<script type="application/json" id="ksc-course-requests-data">
+[
+  "«Почему наш продукт плохо продается, хотя он лучше, чем у конкурентов?»",
+  "«Как нам убедить клиентов, что наш продукт стоит своих денег?»",
+  "«мы постоянно обсуждаем и никак не можем договориться, что и кому мы в конце концов продаём»",
+  "«Наши менеджеры по продажам не могут четко объяснить, чем мы отличаемся от конкурентов»",
+  "«Нам нужно обновить тексты на сайте, чтобы было понятнее, что мы предлагаем»",
+  "«нам нужно сформулировать наши преимущества для рекламы»",
+  "«Как правильно описать наш продукт в презентации?»",
+  "«Наша целевая аудитория не понимает, зачем им наш продукт»",
+  "«Нам нужно понять, какие функции добавить в следующую версию»",
+  "«Как нам выделиться среди конкурентов?»",
+  "«Мы не знаем, какие проблемы клиентов решает наш продукт»",
+  "«Клиенты не видят разницы между нами и конкурентами»",
+  "«Как нам лучше подать себя на рынке?»",
+  "«Нам нужно переосмыслить, для кого мы делаем этот продукт»",
+  "«Как объяснить, почему наша цена выше, чем у конкурентов?»",
+  "«Мы не понимаем, на каких клиентов нам стоит ориентироваться»",
+  "«У нас хороший трафик на сайте, но мало заявок. Почему?»",
+  "«Нам нужно увеличить конверсию на странице продукта»",
+  "«Люди приходят, смотрят и уходят. Как сделать, чтобы они покупали?»",
+  "«Мы много тратим на рекламу, но результат не соответствует ожиданиям»",
+  "«Как сделать, чтобы клиенты возвращались к нам снова?»",
+  "«Нам нужно снизить отток клиентов»",
+  "«Клиенты не видят ценности в продолжении работы с нами»"
+]
+</script>
+<script>
+(function () {
+  var dataEl = document.getElementById("ksc-course-requests-data");
+  var counterEl = document.getElementById("ksc-course-requests-counter");
+  var quoteEl = document.getElementById("ksc-course-requests-quote");
+  var btn = document.getElementById("ksc-course-requests-next");
+  if (!dataEl || !counterEl || !quoteEl || !btn) return;
+  var quotes = JSON.parse(dataEl.textContent);
+  var n = quotes.length;
+  var i = Math.floor(Math.random() * n);
+  function show() {
+    counterEl.textContent = "Запрос " + (i + 1) + " из " + n;
+    quoteEl.textContent = quotes[i];
+  }
+  show();
+  btn.addEventListener("click", function () {
+    i = (i + 1) % n;
+    show();
+  });
+})();
+</script>

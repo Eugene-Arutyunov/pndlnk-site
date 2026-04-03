@@ -186,6 +186,10 @@
     & li {
       list-style: decimal inside none;
     }
+
+    & li ul li {
+      list-style: none;
+    }
   }
 
   & ul.inline-block {
