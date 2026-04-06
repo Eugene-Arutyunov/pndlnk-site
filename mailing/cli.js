@@ -55,7 +55,9 @@ async function run() {
     case 'send': {
       const atIdx = args.indexOf('--at');
       const startTime = atIdx !== -1 ? args[atIdx + 1] : null;
-      const contentFile = args.find((a) => !a.startsWith('--') && a !== startTime);
+      const listIdx = args.indexOf('--list');
+      const listId = listIdx !== -1 ? args[listIdx + 1] : null;
+      const contentFile = args.find((a) => !a.startsWith('--') && a !== startTime && a !== listId);
 
       const { compile } = require('./lib/compile');
       const { createMessage, createCampaign } = require('./lib/unisender');
@@ -65,7 +67,7 @@ async function run() {
       const { html, frontMatter } = compile(file);
 
       console.log(`Создаю сообщение: "${frontMatter.subject}"...`);
-      const result = await createMessage({ subject: frontMatter.subject, html });
+      const result = await createMessage({ subject: frontMatter.subject, html, listId });
 
       if (startTime) {
         console.log(`Планирую на: ${startTime}...`);

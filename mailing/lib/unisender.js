@@ -82,8 +82,9 @@ async function apiCall(method, params, useMultipart = false) {
 }
 
 // Создать сообщение в Unisender
-async function createMessage({ subject, html }) {
-  const { senderName, senderEmail, listId } = config();
+async function createMessage({ subject, html, listId: listIdOverride }) {
+  const { senderName, senderEmail, listId: listIdDefault } = config();
+  const listId = listIdOverride || listIdDefault;
   return apiCall('createEmailMessage', {
     sender_name: senderName,
     sender_email: senderEmail,
