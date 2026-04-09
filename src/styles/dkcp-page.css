@@ -609,6 +609,44 @@
     height: 100%;
     display: block;
   }
+
+  .promo-row__product-description {
+    margin-top: 0.65em;
+    line-height: 1.3em;
+    color: rgba(var(--ids__text-RGB), 0.62);
+  }
+
+  .promo-row__task-item {
+    padding: 0.35em 0 0.6em;
+    border-top: 1px solid rgba(var(--ids__text-RGB), 0.1);
+    line-height: 1.3em;
+
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  [data-promo-content="products"] {
+    & .is-open .promo-row__situation-main {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    & .promo-row__situation-detail-inner .promo-row__product-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4em;
+      text-decoration: none;
+
+      & span {
+        min-width: 0;
+        flex: 1;
+        overflow-wrap: break-word;
+      }
+    }
+  }
 }
 
 .pndlnk-promo-grid {

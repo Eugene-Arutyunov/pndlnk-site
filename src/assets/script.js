@@ -123,6 +123,19 @@ function initPromoViewSwitcher() {
   const items = document.querySelectorAll(".promo-switcher__item");
   if (items.length === 0) return;
 
+  const container = items[0].closest(".promo-table-container");
+  if (!container) return;
+
+  function switchView(view) {
+    container.querySelectorAll(".promo-row.is-open").forEach((row) => {
+      row.classList.remove("is-open");
+    });
+
+    container.querySelectorAll("[data-promo-content]").forEach((el) => {
+      el.style.display = el.dataset.promoContent === view ? "" : "none";
+    });
+  }
+
   items.forEach((btn) => {
     btn.addEventListener("click", () => {
       if (btn.classList.contains("is-active")) return;
@@ -134,6 +147,8 @@ function initPromoViewSwitcher() {
 
       btn.classList.add("is-active");
       btn.setAttribute("aria-pressed", "true");
+
+      switchView(btn.dataset.promoView);
     });
   });
 }
