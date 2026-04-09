@@ -77,6 +77,18 @@
       font-size: 2.5em;
     }
 
+    &.accent {
+      font-size: 4em;
+      line-height: 0.9;
+      font-family: var(--mono);
+      color: rgb(var(--ids__accent-RGB));
+      letter-spacing: -0.03em;
+
+      @media (width < 768px) {
+        font-size: 2.5em;
+      }
+    }
+
     &.L {
       font-size: 4em;
 

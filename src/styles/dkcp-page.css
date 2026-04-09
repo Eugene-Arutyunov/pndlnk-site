@@ -150,6 +150,13 @@
     background: color-mix(in srgb, rgb(var(--ids__surface-RGB)) 30%, white 70%);
   }
 
+  .project-catalog-intro {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 0.75em;
+    line-height: 1.4;
+  }
+
   .project-catalog-filter__sentence {
     margin: 0;
     flex: 1;

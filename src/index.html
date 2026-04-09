@@ -1,11 +1,9 @@
 {% extends 'layout.html' %} {% set pageTitle = 'Понедельник' %} {% block content
 %}
-<div class="ids__space XL"></div>
+<div class="ids__space L"></div>
 <div class="ids__wrapper L">
-  <h1 class="home-hero-title home-hero-title--brand">
-    Помогаем быть компанией, с которой приятно иметь дело
-  </h1>
-  <div class="ids__space S"></div>
+  <h1 class="accent">Помогаем быть компанией, с которой приятно иметь дело</h1>
+  <!-- <div class="ids__space S"></div> -->
   <div class="home-hero-columns">
     <div class="home-hero-columns__col home-hero-columns__col--list">
       <ul class="inline-block">
@@ -18,60 +16,56 @@
     </div>
     <div class="home-hero-columns__col home-hero-columns__col--logos">
       <div class="logo-wall">
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/dodo-pizza.svg" alt="Додо Пицца" />
+        <div class="logo-wall-item" aria-label="Додо Пицца">
+          {% include 'assets/dodo-pizza-logo.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/vkusvill.svg" alt="ВкусВилл" />
+        <div class="logo-wall-item" aria-label="ВкусВилл">
+          {% include 'assets/home-client-vkusvill.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/yandex.svg" alt="Яндекс" />
+        <div class="logo-wall-item" aria-label="Яндекс">
+          {% include 'assets/home-client-yandex.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/mts.svg" alt="МТС" />
+        <div class="logo-wall-item" aria-label="МТС">
+          {% include 'assets/home-client-mts.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/roza-khutor.svg" alt="Роза Хутор" />
+        <div class="logo-wall-item" aria-label="Роза Хутор">
+          {% include 'assets/home-client-roza-khutor.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/x5.svg" alt="X5" />
+        <div class="logo-wall-item" aria-label="X5">
+          {% include 'assets/home-client-x5.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/magnit.svg" alt="Магнит" />
+        <div class="logo-wall-item" aria-label="Магнит">
+          {% include 'assets/home-client-magnit.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/leroy-merlin.svg" alt="Leroy Merlin" />
+        <div class="logo-wall-item" aria-label="Leroy Merlin">
+          {% include 'assets/home-client-leroy-merlin.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/kontur.svg" alt="Контур" />
+        <div class="logo-wall-item" aria-label="Контур">
+          {% include 'assets/home-client-kontur.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/lanit.svg" alt="Ланит" />
+        <div class="logo-wall-item" aria-label="Ланит">
+          {% include 'assets/home-client-lanit.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img
-            src="/assets/home/clients/rmk.svg"
-            alt="Русская Медная Компания" />
+        <div class="logo-wall-item" aria-label="Русская Медная Компания">
+          {% include 'assets/home-client-rmk.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/sbermarket.svg" alt="СберМаркет" />
+        <div class="logo-wall-item" aria-label="СберМаркет">
+          {% include 'assets/home-client-sbermarket.html' %}
         </div>
         <div class="logo-wall-item">
           <span class="logo-wall-label">Страна Девелопмент</span>
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/pik.svg" alt="ПИК" />
+        <div class="logo-wall-item" aria-label="ПИК">
+          {% include 'assets/home-client-pik.html' %}
         </div>
-        <div class="logo-wall-item">
-          <img src="/assets/home/clients/t2.svg" alt="T2" />
+        <div class="logo-wall-item" aria-label="T2">
+          {% include 'assets/home-client-t2.html' %}
         </div>
         <div class="logo-wall-item">
           <span class="logo-wall-label">Autodesk</span>
         </div>
-        <div class="logo-wall-item">
-          <img
-            src="/assets/dkcp-base/logos/MANGO OFFICE.svg"
-            alt="Mango Telecom" />
+        <div class="logo-wall-item" aria-label="Mango Telecom">
+          {% include 'assets/home-client-mango-office.html' %}
         </div>
       </div>
     </div>
@@ -94,11 +88,6 @@
       найти места, где у вас ломается обмен ценностью. И в итоге делаем так,
       чтобы иметь с вами дело было приятно — по-настоящему и надолго.
     </p>
-    <p>
-      Наши проекты — это очень разные истории, от разработки тележек для
-      супермаркетов до процессов найма в крупнейшие российские корпорации.
-      Их объединяет одно: желание компании улучшить взаимодействие с людьми.
-    </p>
   </div>
 </div>
 
@@ -107,6 +96,14 @@
 <div class="ids__wrapper L">
   <div class="project-catalog-panel">
     <div class="project-catalog-filter">
+      <div class="ids__text-width">
+        <p class="project-catalog-intro">
+          Наши проекты — это очень разные истории, от разработки тележек для
+          супермаркетов до процессов найма в крупнейшие российские корпорации.
+          Их объединяет одно: желание компании улучшить взаимодействие с людьми.
+        </p>
+      </div>
+      <div class="ids__space S"></div>
       <div
         class="project-catalog-filter__row"
         role="region"

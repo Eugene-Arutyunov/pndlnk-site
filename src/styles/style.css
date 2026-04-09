@@ -1,8 +1,3 @@
-/* Главная: заголовок в фирменном красном */
-h1.home-hero-title--brand {
-  color: rgb(var(--ids__accent-RGB));
-}
-
 /* Главная: две колонки 40% / 60% (с учётом gap), на мобиле — столбик */
 .home-hero-columns {
   display: grid;
@@ -33,10 +28,28 @@ h1.home-hero-title--brand {
 
 .home-hero-columns .logo-wall-item {
   padding: 0.4em 0.6em;
+  color: rgba(var(--ids__text-RGB), 0.8);
 }
 
 .home-hero-columns .logo-wall-item img {
   height: 1.05em;
+}
+
+.home-hero-columns .logo-wall-item svg {
+  height: 1.05em;
+  width: auto;
+  display: block;
+}
+
+.home-hero-columns
+  .logo-wall-item
+  svg
+  [fill]:not([fill="none"]):not([fill="white"]) {
+  fill: currentColor;
+}
+
+.home-hero-columns .logo-wall-item svg [stroke]:not([stroke="none"]) {
+  stroke: currentColor;
 }
 
 .home-hero-columns .logo-wall-item .logo-wall-label {
