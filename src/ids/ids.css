@@ -338,5 +338,9 @@
       transition: background-color 0s;
       color: white;
     }
+
+    &.compact {
+      padding: 0.05em 0.5em;
+    }
   }
 }

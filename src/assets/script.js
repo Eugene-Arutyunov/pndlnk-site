@@ -120,37 +120,45 @@ function initLogoDownloads() {
 }
 
 function initPromoViewSwitcher() {
-  const items = document.querySelectorAll(".promo-switcher__item");
-  if (items.length === 0) return;
-
-  const container = items[0].closest(".promo-table-container");
+  const container = document.querySelector(".promo-table-container");
   if (!container) return;
 
-  function switchView(view) {
-    container.querySelectorAll(".promo-row.is-open").forEach((row) => {
-      row.classList.remove("is-open");
-    });
+  const viewButtons = container.querySelectorAll("[data-promo-view]");
+  const detailButtons = container.querySelectorAll("[data-promo-detail]");
 
+  function switchView(view) {
     container.querySelectorAll("[data-promo-content]").forEach((el) => {
       el.style.display = el.dataset.promoContent === view ? "" : "none";
     });
   }
 
-  items.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (btn.classList.contains("is-active")) return;
-
-      items.forEach((b) => {
-        b.classList.remove("is-active");
-        b.setAttribute("aria-pressed", "false");
-      });
-
-      btn.classList.add("is-active");
-      btn.setAttribute("aria-pressed", "true");
-
-      switchView(btn.dataset.promoView);
+  function switchDetail(mode) {
+    const open = mode === "full";
+    container.querySelectorAll(".promo-row").forEach((row) => {
+      row.classList.toggle("is-open", open);
     });
-  });
+  }
+
+  function bindGroup(buttons, callback, dataKey) {
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (btn.classList.contains("is-active")) return;
+
+        buttons.forEach((b) => {
+          b.classList.remove("is-active");
+          b.setAttribute("aria-pressed", "false");
+        });
+
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-pressed", "true");
+
+        callback(btn.dataset[dataKey]);
+      });
+    });
+  }
+
+  bindGroup(viewButtons, switchView, "promoView");
+  bindGroup(detailButtons, switchDetail, "promoDetail");
 }
 
 function initProjectCatalogFilter() {
@@ -198,25 +206,6 @@ function initProjectCatalogFilter() {
   apply();
 }
 
-function initPromoRows() {
-  const rows = document.querySelectorAll(".promo-row");
-
-  if (rows.length === 0) return;
-
-  rows.forEach((row) => {
-    row.addEventListener("click", (e) => {
-      if (e.target.closest(".promo-row__product-link")) return;
-      row.classList.toggle("is-open");
-    });
-
-    row.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        row.classList.toggle("is-open");
-      }
-    });
-  });
-}
 
 // Инициализируем когда DOM готов
 if (document.readyState === "loading") {
@@ -225,7 +214,6 @@ if (document.readyState === "loading") {
     initSleepyObserver();
     initLogoDownloads();
     initPromoViewSwitcher();
-    initPromoRows();
     initProjectCatalogFilter();
   });
 } else {
@@ -233,6 +221,5 @@ if (document.readyState === "loading") {
   initSleepyObserver();
   initLogoDownloads();
   initPromoViewSwitcher();
-  initPromoRows();
   initProjectCatalogFilter();
 }

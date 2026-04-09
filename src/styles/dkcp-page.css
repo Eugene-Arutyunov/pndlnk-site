@@ -367,11 +367,16 @@
 
   /* Переключатель вида таблицы (задачи / продукты) */
 
+  .promo-switchers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+
   .promo-switcher {
     display: flex;
     flex-wrap: wrap;
     border: 2px solid rgba(var(--ids__text-RGB), 1);
-    margin-bottom: 0.75em;
     width: fit-content;
   }
 
@@ -419,17 +424,10 @@
 
   .promo-row {
     display: flex;
-    cursor: pointer;
     border-top: 1px solid rgba(var(--ids__text-RGB), 0.2);
-    transition: background 0.5s ease;
 
     &:last-child {
       border-bottom: none;
-    }
-
-    &:hover {
-      background: rgba(var(--ids__text-RGB), 0.04);
-      transition: background 0s;
     }
 
     &.is-open {
