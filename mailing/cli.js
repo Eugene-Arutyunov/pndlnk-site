@@ -19,6 +19,8 @@ const HELP = `
   node cli.js test-send me@example.com,other@example.com content/draft.md
   node cli.js send content/2024-01-15.md
   node cli.js send content/2024-01-15.md --at "2024-01-15 10:00"
+  node cli.js upload-image assets/cover.png
+  node cli.js upload-image assets/cover.png assets/cover2.png
 `;
 
 async function run() {
@@ -77,6 +79,20 @@ async function run() {
 
       const campaign = await createCampaign({ messageId: result.message_id, startTime });
       console.log(`✓ Кампания запущена, ID: ${campaign.campaign_id}`);
+      break;
+    }
+
+    case 'upload-image': {
+      if (!args.length) {
+        console.error('Укажи файл(ы): node cli.js upload-image файл.png [файл2.png ...]');
+        process.exit(1);
+      }
+      const { uploadFile } = require('./lib/unisender');
+      for (const file of args) {
+        process.stdout.write(`Загружаю ${file}... `);
+        const url = await uploadFile(file);
+        console.log(url);
+      }
       break;
     }
 

@@ -28,6 +28,7 @@ module.exports = function preview([contentFile] = []) {
   recompile();
 
   const app = express();
+  app.use('/assets', express.static(path.resolve(__dirname, '../assets')));
   const clients = new Set();
 
   // SSE для live reload

@@ -31,13 +31,20 @@ function get(url) {
 }
 
 // multipart/form-data — не URL-кодирует бинарные данные и большой текст
-function postMultipart(url, fields) {
+function postMultipart(url, fields, filePart = null) {
   const boundary = '----FormBoundary' + Math.random().toString(36).slice(2);
   const parts = Object.entries(fields).map(([name, value]) =>
     `--${boundary}\r\nContent-Disposition: form-data; name="${name}"\r\n\r\n${value}`
   );
-  const body = parts.join('\r\n') + `\r\n--${boundary}--\r\n`;
-  const bodyBuf = Buffer.from(body, 'utf8');
+  let bodyBuf;
+  if (filePart) {
+    const header = parts.join('\r\n') + `\r\n--${boundary}\r\nContent-Disposition: form-data; name="${filePart.fieldName}"; filename="${filePart.filename}"\r\nContent-Type: ${filePart.contentType}\r\n\r\n`;
+    const footer = `\r\n--${boundary}--\r\n`;
+    bodyBuf = Buffer.concat([Buffer.from(header, 'utf8'), filePart.data, Buffer.from(footer, 'utf8')]);
+  } else {
+    const body = parts.join('\r\n') + `\r\n--${boundary}--\r\n`;
+    bodyBuf = Buffer.from(body, 'utf8');
+  }
   const urlObj = new URL(url);
 
   return new Promise((resolve, reject) => {
@@ -117,4 +124,28 @@ async function ping() {
   return apiCall('getLists', {});
 }
 
-module.exports = { createMessage, testSend, createCampaign, ping };
+// Загрузить файл на CDN Unisender, вернуть публичный URL
+async function uploadFile(filePath) {
+  const fs = require('fs');
+  const path = require('path');
+  const { apiKey } = config();
+  if (!apiKey) throw new Error('UNISENDER_API_KEY не задан в .env');
+
+  const data = fs.readFileSync(filePath);
+  const filename = path.basename(filePath);
+  const ext = path.extname(filename).slice(1).toLowerCase();
+  const contentType = ext === 'png' ? 'image/png' : ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : 'application/octet-stream';
+
+  // api_key и format передаём в query string, файл — в multipart body
+  const url = `${BASE_URL}/uploadFile?format=json&api_key=${encodeURIComponent(apiKey)}`;
+  const result = await postMultipart(
+    url,
+    {},
+    { fieldName: 'file', filename, contentType, data }
+  );
+
+  if (result.error) throw new Error(`Unisender ошибка: ${result.error}`);
+  return result.result.uploaded[0];
+}
+
+module.exports = { createMessage, testSend, createCampaign, ping, uploadFile };
