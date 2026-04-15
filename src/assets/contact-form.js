@@ -15,6 +15,7 @@
   let overlay, popover, titleEl, subtitleEl, descriptionEl, form, extraEl,
       submitBtn, statusEl, headcountInput;
   let currentSuccessUrl = null;
+  let currentSlug = null;
 
   function init() {
     overlay = document.getElementById('contact-form-overlay');
@@ -58,7 +59,8 @@
           description: btn.dataset.cfDescription || '',
           submitText: btn.dataset.cfSubmit || 'Отправить',
           showHeadCount: btn.dataset.cfShowHeadcount === 'true',
-          successUrl: btn.dataset.cfSuccessUrl || ''
+          successUrl: btn.dataset.cfSuccessUrl || '',
+          slug: btn.dataset.cfSlug || ''
         });
       });
     });
@@ -94,6 +96,7 @@
     }
 
     currentSuccessUrl = options.successUrl || null;
+    currentSlug = options.slug || null;
 
     resetForm();
 
@@ -200,25 +203,42 @@
     if (product) fields.Product = product;
     if (tariff) fields.Tariff = tariff;
 
-    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_ID)}`;
+    const leadData = {
+      name: fields.Name,
+      email: fields.Email,
+      telegram: telegram,
+      company: company,
+      headcount: headcount || null,
+      product: product || null,
+      tariff: tariff || null,
+      slug: currentSlug || null
+    };
 
     try {
-      const response = await fetch(url, {
+      const response = await fetch('https://apps.pndlnk.ru/webhook/lead', {
         method: 'POST',
-        headers: {
-          Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ records: [{ fields }] })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(leadData)
       });
 
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error?.message || `Ошибка ${response.status}`);
+        throw new Error(result.error || `Ошибка ${response.status}`);
       }
 
       setStatus('success');
+
+      // Бэкап в Airtable (раскомментировать чтобы включить)
+      // const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_ID)}`;
+      // fetch(airtableUrl, {
+      //   method: 'POST',
+      //   headers: {
+      //     Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
+      //     'Content-Type': 'application/json'
+      //   },
+      //   body: JSON.stringify({ records: [{ fields }] })
+      // }).catch(function (err) { console.warn('Airtable backup error:', err); });
 
       if (currentSuccessUrl) {
         window.open(currentSuccessUrl, '_blank');
