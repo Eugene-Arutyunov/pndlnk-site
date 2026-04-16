@@ -13,7 +13,7 @@
   };
 
   let overlay, popover, titleEl, subtitleEl, descriptionEl, form, extraEl,
-      submitBtn, statusEl, headcountInput;
+      submitBtn, submitWrap, statusEl, headcountInput;
   let currentSuccessUrl = null;
   let currentSlug = null;
 
@@ -28,6 +28,7 @@
     form = document.getElementById('contactForm');
     extraEl = overlay.querySelector('.contact-form-extra');
     submitBtn = overlay.querySelector('.contact-form-submit');
+    submitWrap = overlay.querySelector('.submit-btn-wrap');
     statusEl = document.getElementById('cf-status');
     headcountInput = document.getElementById('cf-headcount');
 
@@ -124,6 +125,8 @@
     form.querySelectorAll('.form-field').forEach(function (f) {
       f.classList.remove('form-field-error');
     });
+    submitWrap.style.width = '';
+    submitWrap.classList.remove('is-hiding');
     setStatus('idle');
   }
 
@@ -163,6 +166,10 @@
       statusEl.classList.add('status-sending');
       statusEl.textContent = message || MESSAGES.sending;
     } else if (state === 'success') {
+      submitWrap.style.width = submitWrap.offsetWidth + 'px';
+      requestAnimationFrame(function () {
+        submitWrap.classList.add('is-hiding');
+      });
       statusEl.classList.add('status-success');
       statusEl.textContent = message || MESSAGES.success;
     } else if (state === 'error') {
