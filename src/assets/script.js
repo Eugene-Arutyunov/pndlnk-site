@@ -119,15 +119,59 @@ function initLogoDownloads() {
   });
 }
 
+function initPromoViewSwitcher() {
+  const container = document.querySelector(".promo-table-container");
+  if (!container) return;
+
+  const viewButtons = container.querySelectorAll("[data-promo-view]");
+  const detailButtons = container.querySelectorAll("[data-promo-detail]");
+
+  function switchView(view) {
+    container.querySelectorAll("[data-promo-content]").forEach((el) => {
+      el.style.display = el.dataset.promoContent === view ? "" : "none";
+    });
+  }
+
+  function switchDetail(mode) {
+    const open = mode === "full";
+    container.querySelectorAll(".promo-row").forEach((row) => {
+      row.classList.toggle("is-open", open);
+    });
+  }
+
+  function bindGroup(buttons, callback, dataKey) {
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (btn.classList.contains("is-active")) return;
+
+        buttons.forEach((b) => {
+          b.classList.remove("is-active");
+          b.setAttribute("aria-pressed", "false");
+        });
+
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-pressed", "true");
+
+        callback(btn.dataset[dataKey]);
+      });
+    });
+  }
+
+  bindGroup(viewButtons, switchView, "promoView");
+  bindGroup(detailButtons, switchDetail, "promoDetail");
+}
+
 // Инициализируем когда DOM готов
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     initStickyObserver();
     initSleepyObserver();
     initLogoDownloads();
+    initPromoViewSwitcher();
   });
 } else {
   initStickyObserver();
   initSleepyObserver();
   initLogoDownloads();
+  initPromoViewSwitcher();
 }
