@@ -413,7 +413,13 @@
   }
 
   .promo-rows-header__label {
-    width: 50%;
+    &:first-child {
+      width: 33.333%;
+    }
+
+    &:last-child {
+      width: 66.667%;
+    }
 
     font-weight: 700;
   }
@@ -437,7 +443,6 @@
 
   .promo-row__situation,
   .promo-row__products {
-    width: 50%;
     padding: 0.4em 0 0.9em 0;
 
     .is-open & {
@@ -446,11 +451,20 @@
   }
 
   .promo-row__situation {
+    width: 33.333%;
+  }
+
+  .promo-row__products {
+    width: 66.667%;
+  }
+
+  .promo-row__situation {
     padding-right: 2em;
   }
 
   .promo-row__situation-main {
     line-height: 1.3em;
+    font-weight: 700;
 
     .is-open & {
       font-weight: 700;
