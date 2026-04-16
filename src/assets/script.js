@@ -159,6 +159,13 @@ function initPromoViewSwitcher() {
 
   bindGroup(viewButtons, switchView, "promoView");
   bindGroup(detailButtons, switchDetail, "promoDetail");
+
+  const activeDetailButton = Array.from(detailButtons).find((btn) =>
+    btn.classList.contains("is-active")
+  );
+  if (activeDetailButton) {
+    switchDetail(activeDetailButton.dataset.promoDetail);
+  }
 }
 
 function initProjectCatalogFilter() {
