@@ -206,6 +206,13 @@ function initApplicationForm() {
         throw new Error(result.error?.message || `Ошибка ${response.status}: ${response.statusText}`);
       }
 
+      // Параллельно отправляем лид в CRM (не блокируем UX при ошибке)
+      fetch("https://apps.pndlnk.ru/webhook/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      }).catch((err) => console.warn("CRM webhook error:", err));
+
       // Успешная отправка
       setFormState("success");
     } catch (error) {
