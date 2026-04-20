@@ -1,7 +1,36 @@
+.home-hero {
+  height: 79vh;
+  max-height: 35em;
+  padding: 1em 0;
+
+  display: flex;
+  flex-direction: column;
+
+  & .ids__wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.home-hero__title {
+  width: 70%;
+  max-width: 1200px;
+}
+
 /* Главная: две колонки 40% / 60% (с учётом gap), на мобиле — столбик */
+.home-hero .home-hero-columns {
+  margin-top: auto;
+  max-width: 1680px;
+}
+
+.home-hero .thin {
+  margin-bottom: 0;
+}
+
 .home-hero-columns {
   display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
   gap: 1.1em;
   align-items: start;
 }
@@ -11,7 +40,6 @@
 }
 
 .home-hero-columns__col--list {
-  padding-top: 0.2em;
 }
 
 @media (width < 768px) {
@@ -54,6 +82,60 @@
 
 .home-hero-columns .logo-wall-item .logo-wall-label {
   font-size: 0.8em;
+}
+
+.why-ponedelnik h2 {
+  font-size: 4em;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.4em;
+  border-bottom: 1px solid rgb(var(--ids__text-RGB));
+
+  @media (width < 768px) {
+    font-size: 2.2em;
+  }
+}
+
+.why-ponedelnik-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+  column-gap: 0.67em;
+  row-gap: 0.33em;
+  align-items: start;
+  font-size: 0.82em;
+
+  & > p:first-child {
+    font-weight: 700;
+    border-right: 1px solid rgb(var(--ids__text-RGB));
+    padding-right: 0.67em;
+  }
+
+  & > p.serif {
+    font-family: var(--serif);
+    border-right: 1px solid rgb(var(--ids__text-RGB));
+    padding-right: 0.67em;
+  }
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr 1fr;
+    font-size: 1em;
+
+    & > p:first-child {
+      border-right: 1px solid rgb(var(--ids__text-RGB));
+      padding-right: 0.67em;
+    }
+
+    & > p.serif {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    & > p:last-child {
+      grid-column: span 2;
+      border-top: 1px solid rgb(var(--ids__text-RGB));
+      padding-top: 0.67em;
+      margin-top: 0.2em;
+    }
+  }
 }
 
 .author-portrait--placeholder {

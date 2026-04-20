@@ -96,7 +96,7 @@
 
 :root {
   --gothic: "CoFoGothic";
-  --serif: "Robert";
+  --serif: "Newton";
   --mono: "CoFoSansSemi-Mono";
   --hand: "CoFoHand";
 
@@ -113,6 +113,11 @@ body {
 
 :root {
   --ids__density: 1.22;
+  --page-padding: calc(var(--ids__density) * 0.4em);
+
+  @media (width >= 768px) {
+    --page-padding: 1em;
+  }
 }
 
 body {

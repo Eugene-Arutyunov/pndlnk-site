@@ -1,79 +1,85 @@
 {% extends 'layout.html' %} {% set pageTitle = 'Понедельник' %} {% block content
 %}
-<div class="ids__space XL"></div>
-<div class="ids__wrapper L">
-  <h1 class="accent">Помогаем быть компанией, с которой приятно иметь дело</h1>
-  <!-- <div class="ids__space S"></div> -->
-  <div class="home-hero-columns">
-    <div class="home-hero-columns__col home-hero-columns__col--list">
-      <ul class="inline-block">
-        <li>
-          Проектируем взаимодействие с клиентами, сотрудниками и партнёрами
-        </li>
-        <li>10 лет на рынке</li>
-        <li>50+ проектов в портфолио</li>
-        <li>Знаем, как точно не надо делать</li>
-      </ul>
+<div style="height: 1.5vh"></div>
+<div class="home-hero dark-theme ids">
+  <div class="ids__wrapper full-width">
+    <div class="home-hero__title">
+      <h1 class="accent">
+        Помогаем быть компанией, с которой приятно иметь дело
+      </h1>
     </div>
-    <div class="home-hero-columns__col home-hero-columns__col--logos">
-      <div class="logo-wall">
-        <div class="logo-wall-item" aria-label="Додо Пицца">
-          {% include 'assets/dodo-pizza-logo.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="ВкусВилл">
-          {% include 'assets/home-client-vkusvill.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="Яндекс">
-          {% include 'assets/home-client-yandex.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="МТС">
-          {% include 'assets/home-client-mts.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="Роза Хутор">
-          {% include 'assets/home-client-roza-khutor.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="X5">
-          {% include 'assets/home-client-x5.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="Магнит">
-          {% include 'assets/home-client-magnit.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="Leroy Merlin">
-          {% include 'assets/home-client-leroy-merlin.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="Контур">
-          {% include 'assets/home-client-kontur.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="Ланит">
-          {% include 'assets/home-client-lanit.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="Русская Медная Компания">
-          {% include 'assets/home-client-rmk.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="СберМаркет">
-          {% include 'assets/home-client-sbermarket.html' %}
-        </div>
-        <div class="logo-wall-item">
-          <span class="logo-wall-label">Страна Девелопмент</span>
-        </div>
-        <div class="logo-wall-item" aria-label="ПИК">
-          {% include 'assets/home-client-pik.html' %}
-        </div>
-        <div class="logo-wall-item" aria-label="T2">
-          {% include 'assets/home-client-t2.html' %}
-        </div>
-        <div class="logo-wall-item">
-          <span class="logo-wall-label">Autodesk</span>
-        </div>
-        <div class="logo-wall-item" aria-label="Mango Telecom">
-          {% include 'assets/home-client-mango-office.html' %}
+    <!-- <div class="ids__space S"></div> -->
+    <div class="home-hero-columns">
+      <div class="home-hero-columns__col home-hero-columns__col--list">
+        <ul class="inline-block thin">
+          <li>
+            Проектируем взаимодействие с клиентами, сотрудниками и партнёрами
+          </li>
+          <li>10 лет на рынке</li>
+          <li>50+ проектов в портфолио</li>
+          <!-- <li>Знаем, как точно не надо делать</li> -->
+        </ul>
+      </div>
+      <div class="home-hero-columns__col home-hero-columns__col--logos">
+        <div class="logo-wall">
+          <div class="logo-wall-item" aria-label="Додо Пицца">
+            {% include 'assets/dodo-pizza-logo.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="ВкусВилл">
+            {% include 'assets/home-client-vkusvill.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="Яндекс">
+            {% include 'assets/home-client-yandex.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="МТС">
+            {% include 'assets/home-client-mts.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="Роза Хутор">
+            {% include 'assets/home-client-roza-khutor.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="X5">
+            {% include 'assets/home-client-x5.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="Магнит">
+            {% include 'assets/home-client-magnit.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="Leroy Merlin">
+            {% include 'assets/home-client-leroy-merlin.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="Контур">
+            {% include 'assets/home-client-kontur.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="Ланит">
+            {% include 'assets/home-client-lanit.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="Русская Медная Компания">
+            {% include 'assets/home-client-rmk.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="СберМаркет">
+            {% include 'assets/home-client-sbermarket.html' %}
+          </div>
+          <div class="logo-wall-item">
+            <span class="logo-wall-label">Страна Девелопмент</span>
+          </div>
+          <div class="logo-wall-item" aria-label="ПИК">
+            {% include 'assets/home-client-pik.html' %}
+          </div>
+          <div class="logo-wall-item" aria-label="T2">
+            {% include 'assets/home-client-t2.html' %}
+          </div>
+          <div class="logo-wall-item">
+            <span class="logo-wall-label">Autodesk</span>
+          </div>
+          <div class="logo-wall-item" aria-label="Mango Telecom">
+            {% include 'assets/home-client-mango-office.html' %}
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="ids__space L"></div>
+<div class="ids__space M"></div>
 
 <div class="ids__wrapper">
   <div class="ids__text-width">
@@ -106,6 +112,7 @@
 </div>
 
 <div class="ids__space L"></div>
+
 <div class="ids__wrapper">
   <h2>Что мы можем</h2>
   <div class="ids__space S"></div>
@@ -1227,24 +1234,24 @@
 
 <div class="ids__space XL"></div>
 
-<div class="ids__wrapper">
-  <div class="ids__text-width">
-    <h2>Кстати, почему понедельник?</h2>
+<div class="ids__wrapper L why-ponedelnik">
+  <h2>Кстати, почему Понедельник?</h2>
+  <div class="why-ponedelnik-grid">
     <p>
       По нескольким причинам. Во-первых, изменения в своей жизни люди стараются
       начинать с понедельника. Мы хотим, чтобы наши клиенты перед тем как
-      поменяться, обратились к нам за проработкой главных вопросов: а точно нам
-      надо? а туда ли мы хотим меняться? а как довести это до конца? Так будет
+      поменяться, обратились к нам за проработкой главных вопросов: А точно нам
+      надо? А туда ли мы хотим меняться? А как довести это до конца? Так будет
       проще.
     </p>
-    <p>
-      Во-вторых, понедельник – это в честь книги А.&nbsp;Б.&nbsp;Стругацких
+    <p class="serif">
+      Во-вторых, понедельник — это в честь книги А.&nbsp;Б.&nbsp;Стругацких
       «Понедельник начинается в субботу». Мы очень любим творчество братьев, нам
       близки идеи созидательного труда и честного творчества на благо людей.
       Нашей любимой цитатой и неофициальным манифестом служит следующая строчка:
     </p>
-    <blockquote>
-      <p>
+    <p>
+      <em>
         Сюда пришли люди, которым было приятнее быть друг с другом, чем порознь,
         которые терпеть не могли всякого рода воскресений, потому что в
         воскресенье им было скучно. Маги, Люди с большой буквы, и девизом их
@@ -1262,8 +1269,8 @@
         становится магом только тогда, когда начинает меньше думать о себе и
         больше о других, когда работать ему становится интереснее, чем
         развлекаться в старинном смысле этого слова.
-      </p>
-    </blockquote>
+      </em>
+    </p>
   </div>
 </div>
 
