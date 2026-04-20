@@ -45,8 +45,11 @@
   }
 }
 
-a.lets-talk-button {
+a.lets-talk-button,
+button.lets-talk-button {
   font-family: var(--mono);
+  background: none;
+  cursor: pointer;
   font-weight: 500;
   text-transform: uppercase;
   display: inline-block;

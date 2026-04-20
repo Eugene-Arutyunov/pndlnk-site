@@ -978,42 +978,7 @@
           Заполните форму, мы свяжемся и договоримся о коротком звонке, где расспросим о вашей компании, продукте и текущей ситуации.
         </p>
     
-        <div class="form-container" id="form-container">
-          <form id="kscApplicationForm" class="application-form" novalidate>
-            <div class="form-field">
-              <label for="form-name">Ваше имя:</label>
-              <input type="text" id="form-name" name="name" required />
-            </div>
-
-            <div class="form-field">
-              <label for="form-company">Название компании:</label>
-              <input type="text" id="form-company" name="company" />
-            </div>
-
-            <div class="form-field">
-              <label for="form-telegram">Ваш ник в телеграме:</label>
-              <input type="text" id="form-telegram" name="telegram" />
-            </div>
-
-            <div class="form-field">
-              <label for="form-email">Эл. почта:</label>
-              <input type="email" id="form-email" name="email" required />
-            </div>
-
-            <div class="form-submit-wrapper">
-              <button type="submit" class="promo-link form-submit" id="form-submit-btn">Отправить заявку</button>
-              <div class="form-status" id="form-status"></div>
-            </div>
-
-            <!-- Временная переключалка статусов для тестирования -->
-            <!-- <div style="margin-top: 1em; display: flex; gap: 0.5em; font-family: var(--mono); font-size: 0.8em;">
-              <button type="button" onclick="const c=document.getElementById('form-container'); const s=document.getElementById('form-status'); c.className='form-container'; s.className='form-status'; s.textContent=''">Сброс</button>
-              <button type="button" onclick="(function(){const c=document.getElementById('form-container'); const s=document.getElementById('form-status'); const m=window.FORM_MESSAGES||{}; c.className='form-container status-sending'; s.className='form-status status-sending'; s.textContent=m.sending||'Отправка заявки...';})()">Отправка</button>
-              <button type="button" onclick="(function(){const c=document.getElementById('form-container'); const s=document.getElementById('form-status'); const m=window.FORM_MESSAGES||{}; c.className='form-container status-success'; s.className='form-status status-success'; s.textContent=m.success||'Спасибо! Ваша заявка отправлена.';})()">Успех</button>
-              <button type="button" onclick="(function(){const c=document.getElementById('form-container'); const s=document.getElementById('form-status'); const m=window.FORM_MESSAGES||{}; c.className='form-container status-error'; s.className='form-status status-error'; s.textContent=m.error||'Произошла ошибка при отправке заявки.';})()">Ошибка</button>
-            </div> -->
-          </form>
-        </div>
+        <button class="promo-link contact-form-trigger" data-cf-title="Культура создания ценности" data-cf-submit="Отправить заявку" data-cf-show-headcount="true" data-cf-slug="ksc">Отправить заявку</button>
       </div>
       </div>
     </div>
@@ -1022,7 +987,6 @@
   <div class="ids__space M"></div>
 </div>
 
-<script src="/assets/form-application.js" defer></script>
 <script type="module" src="/assets/illustrations/init.js"></script>
 <script>
   // Обработка радиогруппы культуры

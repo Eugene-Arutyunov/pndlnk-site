@@ -331,6 +331,8 @@
     text-decoration: none;
     color: white;
     border-radius: 0.25em;
+    border: none;
+    cursor: pointer;
     transition: background-color 0.5s ease;
 
     &:hover {

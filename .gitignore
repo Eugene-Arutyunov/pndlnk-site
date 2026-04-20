@@ -24,6 +24,9 @@ $RECYCLE.BIN/
 .directory
 .Trash-*
 
+# Cursor
+.cursor/
+
 # IDE и редакторы
 .vscode/
 .idea/

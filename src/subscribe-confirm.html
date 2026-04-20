@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% set pageTitle = 'Подтвердите подписку — Понедельник' %}
+{% set pageDesc = 'Подтвердите подписку на дайджест Понедельника' %}
+
+{% block content %}
+
+<div class="ids__space XL"></div>
+
+<div class="ids__wrapper">
+  <div class="ids__text-width">
+    <h1>Почти готово</h1>
+    <div class="ids__space XS"></div>
+    <p class="loud">Мы отправили письмо с подтверждением на адрес <strong id="confirm-email"></strong></p>
+  </div>
+
+  <div class="ids__space M"></div>
+
+  <div class="ids__text-width">
+    <p>
+      Найдите письмо и нажмите на кнопку подтверждения — после этого вы начнёте получать дайджест.
+    </p>
+    <p>
+      Если письмо не пришло в течение нескольких минут — проверьте папку «Спам». Наши письма иногда туда попадают. Если найдёте там — отметьте как «Не спам», это поможет следующим письмам доходить в inbox.
+    </p>
+  </div>
+</div>
+
+<div class="ids__space XL"></div>
+
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var email = params.get('email') || params.get('Email') || params.get('EMAIL');
+    var el = document.getElementById('confirm-email');
+    if (el && email) {
+      el.textContent = decodeURIComponent(email);
+    } else if (el) {
+      el.parentElement.innerHTML = 'Мы отправили письмо с подтверждением на ваш адрес.';
+    }
+  })();
+</script>
+
+{% endblock %}

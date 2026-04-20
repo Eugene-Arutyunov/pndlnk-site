@@ -123,14 +123,14 @@
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(7, auto);
+  grid-template-rows: repeat(6, auto);
   gap: calc(var(--ids__density) * 0.3em) 0;
 
   @media (width < 768px) {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:
-      repeat(8, auto) calc(var(--ids__density) * 2.4em)
-      repeat(8, auto);
+    grid-template-rows: repeat(8, auto) calc(
+        var(--ids__density) * 2.4em
+      ) repeat(8, auto);
   }
 }
 

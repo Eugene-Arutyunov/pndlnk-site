@@ -43,12 +43,12 @@
       }
     },
     {
-      "frames": null,
-      "rows": null,
+      "frames": 53,
+      "rows": 6,
       "sprite": {
         "url": "/assets/dkcp-base/preview5.webp",
         "width": 4800,
-        "height": null
+        "height": 1620
       }
     }
   ]
