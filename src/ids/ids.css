@@ -78,8 +78,8 @@
     }
 
     &.accent {
-      font-size: 3em;
-      line-height: 1;
+      font-size: 4.3em;
+      line-height: 0.9;
       color: rgb(var(--ids__accent-RGB));
 
       @media (width < 768px) {

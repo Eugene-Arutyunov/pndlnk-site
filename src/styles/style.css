@@ -1,5 +1,5 @@
 .home-hero {
-  height: 79vh;
+  height: 95vh;
   max-height: 35em;
   padding: 1em 0;
 
@@ -14,7 +14,7 @@
 }
 
 .home-hero__title {
-  width: 70%;
+  width: 100%;
   max-width: 1200px;
 }
 
