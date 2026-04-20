@@ -350,6 +350,12 @@ table.ksc-open-schedule {
   gap: var(--gap);
   margin-bottom: 1em;
 
+  & > img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   & .deliverables-item {
     width: calc((100% - var(--gap) * (var(--columns) - 1)) / var(--columns));
     @media (width < 768px) {
