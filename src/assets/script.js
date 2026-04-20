@@ -166,6 +166,20 @@ function initPromoViewSwitcher() {
   if (activeDetailButton) {
     switchDetail(activeDetailButton.dataset.promoDetail);
   }
+
+  const productRows = container.querySelectorAll(
+    '[data-promo-content="products"] .promo-row'
+  );
+  productRows.forEach((row) => {
+    row.classList.add("promo-row--inline-detail");
+    row.addEventListener("click", (event) => {
+      const link = event.target.closest("a");
+      if (link) {
+        event.preventDefault();
+      }
+      row.classList.toggle("is-open");
+    });
+  });
 }
 
 function initProjectCatalogFilter() {
