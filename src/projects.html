@@ -1,9 +1,77 @@
 {% extends 'layout.html' %} {% set pageTitle = 'Проекты' %} {% block content %}
-<div class="ids__space XL"></div>
-<div class="ids__wrapper">
-  <div class="ids__text-width">
-    <p>Проекты — это опыто-конструкторское бюро. Без буквы «н», ага.</p>
+<div class="ids__wrapper L">
+  <div class="project-catalog-panel">
+    <div class="project-catalog-filter">
+      <div class="ids__text-width">
+        <p class="project-catalog-intro">
+          Наши проекты — это очень разные истории, от разработки тележек для
+          супермаркетов до процессов найма в крупнейшие российские корпорации.
+          Их объединяет одно: желание компании улучшить взаимодействие с людьми.
+        </p>
+      </div>
+      <div class="ids__space S"></div>
+      <div
+        class="project-catalog-filter__row"
+        role="region"
+        aria-label="Фильтр каталога проектов по аудитории и сегменту компаний">
+        <p class="project-catalog-filter__sentence">
+          Улучшили опыт
+          <label class="project-catalog-filter__field">
+            <span class="visually-hidden">Аудитория</span>
+            <span class="project-catalog-filter__select-wrap">
+              <select
+                id="project-filter-audience"
+                class="project-catalog-filter__select"
+                aria-label="Аудитория проектов">
+                <option value="all">людей</option>
+                <option value="clients">клиентов</option>
+                <option value="employees">сотрудников</option>
+                <option value="partners">партнёров</option>
+              </select>
+            </span>
+          </label>
+          во взаимодействии с
+          <label class="project-catalog-filter__field">
+            <span class="visually-hidden">Сегмент компаний</span>
+            <span class="project-catalog-filter__select-wrap">
+              <select
+                id="project-filter-segment"
+                class="project-catalog-filter__select"
+                aria-label="Сегмент компаний">
+                <option value="all">компаниями</option>
+                <option value="it">IT-компаниями</option>
+                <option value="developer">девелоперами</option>
+                <option value="retail">ритейлом</option>
+                <option value="vendor">вендорами</option>
+              </select>
+            </span>
+          </label>
+        </p>
+        <p
+          class="project-catalog-filter__status"
+          id="project-filter-status"
+          aria-live="polite"></p>
+      </div>
+      <ul class="project-grid" role="list">
+        {% for project in projects %}
+        <li
+          class="project-card"
+          data-audience="{{ project.audience | join(' ') }}"
+          data-segment="{{ project.companySegment | join(' ') }}">
+          <div class="project-card__cover" aria-hidden="true"></div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">{{ project.name }}</h3>
+            <div class="project-card__tags">
+              {% for tag in project.tags %}
+              <span class="project-card__tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            <p class="project-card__year">{{ project.year }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </div>
-
 {% endblock %}
