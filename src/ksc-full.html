@@ -1,6 +1,7 @@
 {% extends 'layout.html' %} {% set pageTitle = 'КСЦ:ОИ' %} {% set pageDesc =
 'Культура создания ценности. Открытый интенсив' %} {% set ogImage =
-'/assets/ksc-open/IMG_7251.jpg' %} {% block content %}
+'/assets/ksc-open/IMG_7251.jpg' %} {% block content %} {% import
+'dkcp-component.html' as dkcp %}
 <div class="ids__space top-screen-space M"></div>
 
 <div class="article">
@@ -932,15 +933,691 @@
   <div class="ids__space L"></div>
 
   <div class="ids__wrapper L">
-    <div class="ids__text-width">
-      <h2>С чем уйдёте после</h2>
+    
+      <h2>С чем уйдёте после интенсива</h2>
+    
+    
+
+    {% set values = ['Экологичность'] %} {% set segment = ['Молодые родители в
+    крупных городах'] %} {% set conflict = ['Хотят здоровую еду для детей, но
+    нет времени готовить'] %} {% set artifact = ['Готовая органическая детская
+    еда'] %} {% set artifactAttrs = ['Без консервантов', 'Местные продукты',
+    'Возрастная маркировка'] %} {% set arguments = ['Здоровое питание для
+    занятых родителей без компромиссов'] %} {% set priceConditions = ['500₽ за
+    порцию', 'Скидка при подписке'] %} {% set exchangeConditions = ['Доставка в
+    день заказа', 'Возврат в течение недели'] %} {% set companyAttrs = ['10 лет
+    на рынке', 'Сертификат качества'] %}
+
+    <div class="outcomes">
+      <div class="outcomes__grid">
+        <figure class="outcomes__card outcomes__card--model">
+          <div class="outcomes__card-body">
+            <div class="outcomes__model">
+              <div class="outcomes__top">
+                <div class="outcomes__point">
+                  Поймёте, кто клиент, сегменты аудитории
+                </div>
+                <div class="outcomes__point">
+                  В чём его проблема и мотив, что заставляет его покупать
+                </div>
+                <div class="outcomes__point">
+                  В чём ценность нашего продукта для клиента
+                </div>
+                <div class="outcomes__point">
+                  На каком свойстве продукта делать акцент в продажах и чем
+                  отличаемся от конкурентов
+                </div>
+                <div class="outcomes__point">
+                  Что мы продаём и что мы не продаём, хотя могли бы
+                </div>
+              </div>
+
+              <div class="outcomes__bottom">
+                <div class="outcomes__side outcomes__side--left">
+                  <div class="outcomes__point">Какую цену ставить и почему</div>
+                  <div class="outcomes__point">
+                    Как нам вызвать доверие у клиента
+                  </div>
+                </div>
+
+                <div class="outcomes__center">
+                  {{ dkcp.dkcp( values=values, segment=segment,
+                  conflict=conflict, artifact=artifact,
+                  artifactAttrs=artifactAttrs, arguments=arguments,
+                  priceConditions=priceConditions,
+                  exchangeConditions=exchangeConditions,
+                  companyAttrs=companyAttrs, mini=true ) }}
+                </div>
+
+                <div class="outcomes__side outcomes__side--right">
+                  <div class="outcomes__point">Как нам организовать сделку</div>
+                  <div class="outcomes__point">Как сформулировать ЦП</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption class="outcomes__caption">Эталонная модель</figcaption>
+        </figure>
+
+        <div class="outcomes__side-stack">
+          <figure class="outcomes__card outcomes__card--narratives">
+            <div class="outcomes__card-body">
+              <div class="outcomes__pages">
+                <div class="outcomes__page outcomes__page--back">
+                  <svg
+                    class="outcomes__page-svg"
+                    viewBox="0 0 220 300"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                  <rect class="outcomes__page-sheet" width="220" height="300" />
+                  <rect
+                    class="outcomes__wire-block"
+                    x="18"
+                    y="18"
+                    width="34"
+                    height="8" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="170"
+                    y="20"
+                    width="14"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="188"
+                    y="20"
+                    width="14"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="60"
+                    y="55"
+                    width="100"
+                    height="5" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="70"
+                    y="65"
+                    width="80"
+                    height="3" />
+                  <g>
+                    <rect
+                      class="outcomes__wire-card"
+                      x="18"
+                      y="88"
+                      width="60"
+                      height="110" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="26"
+                      y="98"
+                      width="30"
+                      height="3" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="26"
+                      y="110"
+                      width="44"
+                      height="6" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="26"
+                      y="124"
+                      width="40"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="26"
+                      y="130"
+                      width="46"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="26"
+                      y="136"
+                      width="38"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-block"
+                      x="26"
+                      y="176"
+                      width="44"
+                      height="10" />
+                  </g>
+                  <g>
+                    <rect
+                      class="outcomes__wire-card outcomes__wire-card--accent"
+                      x="84"
+                      y="82"
+                      width="60"
+                      height="118" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="92"
+                      y="92"
+                      width="30"
+                      height="3" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="92"
+                      y="104"
+                      width="44"
+                      height="6" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="92"
+                      y="118"
+                      width="40"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="92"
+                      y="124"
+                      width="46"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="92"
+                      y="130"
+                      width="38"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="92"
+                      y="136"
+                      width="42"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-block outcomes__wire-block--cta"
+                      x="92"
+                      y="176"
+                      width="44"
+                      height="10" />
+                  </g>
+                  <g>
+                    <rect
+                      class="outcomes__wire-card"
+                      x="150"
+                      y="88"
+                      width="52"
+                      height="110" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="158"
+                      y="98"
+                      width="30"
+                      height="3" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="158"
+                      y="110"
+                      width="36"
+                      height="6" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="158"
+                      y="124"
+                      width="32"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="158"
+                      y="130"
+                      width="38"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-block"
+                      x="158"
+                      y="176"
+                      width="36"
+                      height="10" />
+                  </g>
+                  <rect
+                    class="outcomes__wire-line"
+                    x="18"
+                    y="220"
+                    width="120"
+                    height="4" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="18"
+                    y="240"
+                    width="184"
+                    height="2" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="18"
+                    y="246"
+                    width="170"
+                    height="2" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="18"
+                    y="252"
+                    width="120"
+                    height="2" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="18"
+                    y="266"
+                    width="184"
+                    height="2" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="18"
+                    y="272"
+                    width="170"
+                    height="2" />
+                </g>
+
+                  </svg>
+                </div>
+                <div class="outcomes__page outcomes__page--middle">
+                  <svg
+                    class="outcomes__page-svg"
+                    viewBox="0 0 220 300"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                  <rect class="outcomes__page-sheet" width="220" height="300" />
+                  <rect
+                    class="outcomes__wire-block"
+                    x="18"
+                    y="18"
+                    width="30"
+                    height="8" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="140"
+                    y="20"
+                    width="16"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="162"
+                    y="20"
+                    width="16"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="184"
+                    y="20"
+                    width="16"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="18"
+                    y="52"
+                    width="120"
+                    height="6" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="18"
+                    y="64"
+                    width="90"
+                    height="6" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="18"
+                    y="82"
+                    width="80"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="18"
+                    y="90"
+                    width="100"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-block outcomes__wire-block--cta"
+                    x="18"
+                    y="108"
+                    width="58"
+                    height="14" />
+                  <rect
+                    class="outcomes__wire-image"
+                    x="140"
+                    y="42"
+                    width="62"
+                    height="82" />
+                  <g transform="translate(18 150)">
+                    <rect
+                      class="outcomes__wire-icon"
+                      x="0"
+                      y="0"
+                      width="18"
+                      height="18" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="0"
+                      y="26"
+                      width="44"
+                      height="3" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="0"
+                      y="34"
+                      width="54"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="0"
+                      y="40"
+                      width="50"
+                      height="2" />
+                  </g>
+                  <g transform="translate(86 150)">
+                    <rect
+                      class="outcomes__wire-icon"
+                      x="0"
+                      y="0"
+                      width="18"
+                      height="18" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="0"
+                      y="26"
+                      width="44"
+                      height="3" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="0"
+                      y="34"
+                      width="54"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="0"
+                      y="40"
+                      width="46"
+                      height="2" />
+                  </g>
+                  <g transform="translate(154 150)">
+                    <rect
+                      class="outcomes__wire-icon"
+                      x="0"
+                      y="0"
+                      width="18"
+                      height="18" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="0"
+                      y="26"
+                      width="38"
+                      height="3" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="0"
+                      y="34"
+                      width="48"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="0"
+                      y="40"
+                      width="42"
+                      height="2" />
+                  </g>
+                  <rect
+                    class="outcomes__wire-card"
+                    x="18"
+                    y="220"
+                    width="184"
+                    height="58" />
+                  <rect
+                    class="outcomes__wire-icon"
+                    x="28"
+                    y="230"
+                    width="30"
+                    height="30" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="68"
+                    y="234"
+                    width="118"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="68"
+                    y="244"
+                    width="96"
+                    height="2" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="68"
+                    y="250"
+                    width="110"
+                    height="2" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="68"
+                    y="256"
+                    width="80"
+                    height="2" />
+                </g>
+
+                  </svg>
+                </div>
+                <div class="outcomes__page outcomes__page--front">
+                  <svg
+                    class="outcomes__page-svg"
+                    viewBox="0 0 250 310"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                  <rect class="outcomes__page-sheet" width="250" height="310" />
+                  <rect
+                    class="outcomes__wire-block"
+                    x="20"
+                    y="20"
+                    width="36"
+                    height="10" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="170"
+                    y="22"
+                    width="14"
+                    height="4" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="190"
+                    y="22"
+                    width="14"
+                    height="4" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="210"
+                    y="22"
+                    width="14"
+                    height="4" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="20"
+                    y="56"
+                    width="140"
+                    height="8" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="20"
+                    y="70"
+                    width="110"
+                    height="8" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="20"
+                    y="90"
+                    width="120"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="20"
+                    y="98"
+                    width="100"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-image"
+                    x="150"
+                    y="50"
+                    width="80"
+                    height="90" />
+                  <rect
+                    class="outcomes__wire-block outcomes__wire-block--cta"
+                    x="20"
+                    y="116"
+                    width="72"
+                    height="16" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="100"
+                    y="120"
+                    width="58"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-image"
+                    x="20"
+                    y="160"
+                    width="210"
+                    height="54" />
+                  <g>
+                    <rect
+                      class="outcomes__wire-line"
+                      x="20"
+                      y="228"
+                      width="60"
+                      height="4" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="20"
+                      y="238"
+                      width="56"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="20"
+                      y="244"
+                      width="62"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="20"
+                      y="250"
+                      width="48"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="20"
+                      y="256"
+                      width="58"
+                      height="2" />
+                  </g>
+                  <g>
+                    <rect
+                      class="outcomes__wire-line"
+                      x="95"
+                      y="228"
+                      width="60"
+                      height="4" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="95"
+                      y="238"
+                      width="56"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="95"
+                      y="244"
+                      width="50"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="95"
+                      y="250"
+                      width="58"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="95"
+                      y="256"
+                      width="42"
+                      height="2" />
+                  </g>
+                  <g>
+                    <rect
+                      class="outcomes__wire-line"
+                      x="170"
+                      y="228"
+                      width="60"
+                      height="4" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="170"
+                      y="238"
+                      width="50"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="170"
+                      y="244"
+                      width="56"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="170"
+                      y="250"
+                      width="44"
+                      height="2" />
+                    <rect
+                      class="outcomes__wire-line"
+                      x="170"
+                      y="256"
+                      width="52"
+                      height="2" />
+                  </g>
+                  <rect
+                    class="outcomes__wire-card"
+                    x="20"
+                    y="278"
+                    width="210"
+                    height="22" />
+                  <rect
+                    class="outcomes__wire-line"
+                    x="30"
+                    y="286"
+                    width="80"
+                    height="3" />
+                  <rect
+                    class="outcomes__wire-block outcomes__wire-block--cta"
+                    x="170"
+                    y="282"
+                    width="50"
+                    height="14" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <figcaption class="outcomes__caption">
+              Нарративы ценностного предложения
+            </figcaption>
+          </figure>
+
+          <figure class="outcomes__card outcomes__card--team">
+            <div class="outcomes__card-body">
+              <img
+                class="outcomes__illustration outcomes__illustration--team"
+                src="/assets/ksc-open/outcomes-team.png"
+                alt="Иллюстрация команды: несколько человек разных специализаций стоят спиной, смотрят вперёд" />
+            </div>
+            <figcaption class="outcomes__caption">
+              Синхронизированная команда
+            </figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
+
     <div class="ids__space S"></div>
-    <div class="deliverables">
-      <img
-        src="/assets/ksc-open/with-after-intensive.png"
-        alt="С чем уйдёте после интенсива" />
-    </div>
 
     <div class="ids__text-width">
       <p>
