@@ -58,16 +58,18 @@
           class="project-card"
           data-audience="{{ project.audience | join(' ') }}"
           data-segment="{{ project.companySegment | join(' ') }}">
-          <div class="project-card__cover" aria-hidden="true"></div>
-          <div class="project-card__body">
-            <h3 class="project-card__title">{{ project.name }}</h3>
-            <div class="project-card__tags">
-              {% for tag in project.tags %}
-              <span class="project-card__tag">{{ tag }}</span>
-              {% endfor %}
+          <a class="project-card__link" href="/projects/{{ project.slug }}/">
+            <div class="project-card__cover" aria-hidden="true"></div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">{{ project.name }}</h3>
+              <div class="project-card__tags">
+                {% for tag in project.tags %}
+                <span class="project-card__tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+              <p class="project-card__year">{{ project.year }}</p>
             </div>
-            <p class="project-card__year">{{ project.year }}</p>
-          </div>
+          </a>
         </li>
         {% endfor %}
       </ul>

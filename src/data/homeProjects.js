@@ -4,6 +4,41 @@ const { parse } = require("csv-parse/sync");
 
 const AUDIENCE_KEYS = new Set(["clients", "employees", "partners"]);
 const SEGMENT_KEYS = new Set(["it", "developer", "retail", "vendor"]);
+const TRANSLIT_MAP = {
+  а: "a",
+  б: "b",
+  в: "v",
+  г: "g",
+  д: "d",
+  е: "e",
+  ё: "e",
+  ж: "zh",
+  з: "z",
+  и: "i",
+  й: "y",
+  к: "k",
+  л: "l",
+  м: "m",
+  н: "n",
+  о: "o",
+  п: "p",
+  р: "r",
+  с: "s",
+  т: "t",
+  у: "u",
+  ф: "f",
+  х: "h",
+  ц: "ts",
+  ч: "ch",
+  ш: "sh",
+  щ: "sch",
+  ъ: "",
+  ы: "y",
+  ь: "",
+  э: "e",
+  ю: "yu",
+  я: "ya",
+};
 
 function splitList(value) {
   if (value == null || typeof value !== "string") return [];
@@ -15,6 +50,35 @@ function splitList(value) {
 
 function unique(arr) {
   return [...new Set(arr)];
+}
+
+function makeSlug(input, usedSlugs) {
+  const source = String(input || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[«»]/g, "");
+  let slug = "";
+
+  for (const ch of source) {
+    if (Object.prototype.hasOwnProperty.call(TRANSLIT_MAP, ch)) {
+      slug += TRANSLIT_MAP[ch];
+    } else if (/[a-z0-9]/.test(ch)) {
+      slug += ch;
+    } else {
+      slug += "-";
+    }
+  }
+
+  slug = slug.replace(/-+/g, "-").replace(/^-|-$/g, "") || "project";
+
+  let candidate = slug;
+  let index = 2;
+  while (usedSlugs.has(candidate)) {
+    candidate = `${slug}-${index++}`;
+  }
+  usedSlugs.add(candidate);
+
+  return candidate;
 }
 
 function inferAudience(name, typeStr, industryStr) {
@@ -144,10 +208,14 @@ module.exports = function loadHomeProjects() {
     relax_quotes: true,
   });
 
+  const usedSlugs = new Set();
+
   return rows.map((row) => {
     const { audience, companySegment } = parseAudienceSegment(row);
+    const name = row.Name || "";
     return {
-      name: row.Name,
+      name,
+      slug: makeSlug(name, usedSlugs),
       year: row["Год выполнения"],
       tags: [...splitList(row["Тип"]), ...splitList(row["Отрасль"])],
       inKp: row["В КП"],

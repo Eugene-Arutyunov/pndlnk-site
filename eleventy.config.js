@@ -1,7 +1,7 @@
 const loadHomeProjects = require("./src/data/homeProjects.js");
 
 module.exports = function (conf) {
-  conf.addGlobalData("projects", loadHomeProjects);
+  conf.addGlobalData("projects", loadHomeProjects());
 
   conf.addPassthroughCopy("./src/ids");
   conf.addPassthroughCopy("./src/index.js");
