@@ -1,4 +1,6 @@
-{% extends 'layout.html' %} {% set pageTitle = 'КСЦ:ОИ' %} {% set pageDesc = 'Культура создания ценности. Открытый интенсив' %} {% set ogImage = '/assets/ksc-open/IMG_7251.jpg' %} {% block content %}
+{% extends 'layout.html' %} {% set pageTitle = 'КСЦ:ОИ' %} {% set pageDesc =
+'Культура создания ценности. Открытый интенсив' %} {% set ogImage =
+'/assets/ksc-open/IMG_7251.jpg' %} {% block content %}
 <div class="ids__space top-screen-space M"></div>
 
 <div class="article">
@@ -10,22 +12,27 @@
 
       <div class="article-title-columns">
         <div class="article-title-column">
-          <p class="loud mono">Корпоративная трансформационная программа для&nbsp;продуктовых команд и&nbsp;их лидеров.
+          <p class="loud mono">
+            Корпоративная трансформационная программа для&nbsp;продуктовых
+            команд и&nbsp;их лидеров.
           </p>
         </div>
       </div>
 
       <div class="article-title-illustration">
-        <div class="illustration-container" 
-           data-illustration-type="layered-house"
-           data-background-color="--ids__surface-RGB"
-           style="background-color: rgba(var(--ids__surface-RGB), 1);">
+        <div
+          class="illustration-container"
+          data-illustration-type="layered-house"
+          data-background-color="--ids__surface-RGB"
+          style="background-color: rgba(var(--ids__surface-RGB), 1)">
           <canvas class="illustration-canvas"></canvas>
         </div>
       </div>
       <div class="ids__space XL mobile-only"></div>
       <div class="ids__space XL mobile-only"></div>
-      <p class="mobile-only" style="position: relative; z-index: 1;"><em></em></p>
+      <p class="mobile-only" style="position: relative; z-index: 1">
+        <em></em>
+      </p>
       <div id="problem" style="position: absolute; bottom: -1.5em"></div>
     </div>
   </div>
@@ -62,23 +69,39 @@
   <div class="ids__wrapper">
     <div class="ids__text-width">
       <div class="with-sidenote">
-        <p>Культура создания ценности — это программа для продуктовых команд, которые хотят научиться создавать ценностные предложения системно, а не интуитивно.</p>
+        <p>
+          Культура создания ценности — это программа для продуктовых команд,
+          которые хотят научиться создавать ценностные предложения системно, а
+          не интуитивно.
+        </p>
       </div>
-      <p>Если вы лидер этой транформации, вот как может звучать ваш запрос:</p>
-      {% include 'ksc-course-requests.html' %}
+      <!-- <p>Если вы лидер этой транформации, вот как может звучать ваш запрос:</p>
+      {% include 'ksc-course-requests.html' %} -->
 
       <div class="ids__space M"></div>
 
       <div class="with-sidenote">
-        <p>Программа обеспечивает максимальную связь с реальностью: обучение происходит на вашем реальном продукте, совместно всей командой, включая лидера.</p>
+        <p>
+          Программа обеспечивает максимальную связь с реальностью: обучение
+          происходит на вашем реальном продукте, совместно всей командой,
+          включая лидера.
+        </p>
       </div>
 
       <div class="ids__sequence XL gap-M">
         <div class="ids__sequence-item">
-          <p><em>Лидеры:</em> руководители, которые отвечают за построение или транс&shy;формацию продуктовой, маркетин&shy;говой или CX-функции.</p>
+          <p>
+            <em>Лидеры:</em> руководители, которые отвечают за построение
+            или транс&shy;формацию продуктовой, маркетин&shy;говой или
+            CX-функции.
+          </p>
         </div>
         <div class="ids__sequence-item">
-          <p><em>Команда:</em> стратеги, продакты, аналитики, иследователи, дизайнеры, маркетологи и редакторы, которые вместе создают ценность, но органи&shy;зационно изолированы друг от друга.</p>
+          <p>
+            <em>Команда:</em> стратеги, продакты, аналитики, иследователи,
+            дизайнеры, маркетологи и редакторы, которые вместе создают ценность,
+            но органи&shy;зационно изолированы друг от друга.
+          </p>
         </div>
       </div>
     </div>
@@ -89,725 +112,800 @@
   <div class="ids__wrapper">
     <h2>Программа</h2>
     <div class="ids__space S"></div>
-    <p>Это темы, в рамках которых мы будем работать на протяжении всей программы.</p>
+    <p>
+      Это темы, в рамках которых мы будем работать на протяжении всей программы.
+    </p>
     <div class="ids__space S"></div>
     <div class="promo-table-container ksc-program-table">
-        <div class="promo-switchers ksc-program-table__switchers" style="display: none">
-          <div class="promo-switcher ksc-program-table__switcher" role="group" aria-label="Детализация">
-            <button
-              type="button"
-              class="promo-switcher__item ksc-program-table__switcher-item is-active"
-              aria-pressed="true"
-              data-promo-detail="short"
-              data-ksc-program-table-detail="short">
-              Коротко
-            </button>
-            <button
-              type="button"
-              class="promo-switcher__item ksc-program-table__switcher-item"
-              aria-pressed="false"
-              data-promo-detail="full"
-              data-ksc-program-table-detail="full">
-              Подробно
-            </button>
-          </div>
-        </div>
-        <div class="ids__space S"></div>
+      <div
+        class="promo-switchers ksc-program-table__switchers"
+        style="display: none">
         <div
-          class="promo-rows-header ksc-program-table__rows-header"
-          data-promo-content="tasks"
-          data-ksc-program-table-content="tasks"
-          style="display: none">
-          <span class="promo-rows-header__label ksc-program-table__rows-header-label">Задача</span>
-          <span class="promo-rows-header__label ksc-program-table__rows-header-label">Что предлагаем</span>
+          class="promo-switcher ksc-program-table__switcher"
+          role="group"
+          aria-label="Детализация">
+          <button
+            type="button"
+            class="promo-switcher__item ksc-program-table__switcher-item is-active"
+            aria-pressed="true"
+            data-promo-detail="short"
+            data-ksc-program-table-detail="short">
+            Коротко
+          </button>
+          <button
+            type="button"
+            class="promo-switcher__item ksc-program-table__switcher-item"
+            aria-pressed="false"
+            data-promo-detail="full"
+            data-ksc-program-table-detail="full">
+            Подробно
+          </button>
         </div>
-        <div class="promo-rows-header ksc-program-table__rows-header" data-promo-content="products" data-ksc-program-table-content="products">
-          <span class="promo-rows-header__label ksc-program-table__rows-header-label">Модули</span>
-          <span class="promo-rows-header__label ksc-program-table__rows-header-label">Что внутри</span>
-        </div>
-        <div class="promo-rows" data-promo-content="tasks" data-ksc-program-table-content="tasks" style="display: none">
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">
-                Объединить разрозненные продукты в единую экосистему, понятную для
-                клиентов
-              </div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    Продукты в портфеле развиваются изолированно — каждый со своей
-                    командой и своими метриками. Для клиента это выглядит как набор
-                    несвязанных решений. При этом договориться о стыках сложно:
-                    любая «экосистемность» требует уступок по фокусу и фичам,
-                    поэтому её постоянно откладывают.
-                  </div>
-                  <div class="promo-row__roles">CEO, CMO</div>
-                </div>
-              </div>
+      </div>
+      <div class="ids__space S"></div>
+      <div
+        class="promo-rows-header ksc-program-table__rows-header"
+        data-promo-content="tasks"
+        data-ksc-program-table-content="tasks"
+        style="display: none">
+        <span
+          class="promo-rows-header__label ksc-program-table__rows-header-label"
+          >Задача</span
+        >
+        <span
+          class="promo-rows-header__label ksc-program-table__rows-header-label"
+          >Что предлагаем</span
+        >
+      </div>
+      <div
+        class="promo-rows-header ksc-program-table__rows-header"
+        data-promo-content="products"
+        data-ksc-program-table-content="products">
+        <span
+          class="promo-rows-header__label ksc-program-table__rows-header-label"
+          >Модули</span
+        >
+        <span
+          class="promo-rows-header__label ksc-program-table__rows-header-label"
+          >Что внутри</span
+        >
+      </div>
+      <div
+        class="promo-rows"
+        data-promo-content="tasks"
+        data-ksc-program-table-content="tasks"
+        style="display: none">
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">
+              Объединить разрозненные продукты в единую экосистему, понятную для
+              клиентов
             </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                <a href="#" class="promo-row__product-link">Подготовка</a>,
-                <a href="#" class="promo-row__product-link">Подготовка</a>,
-                <a href="/ksc" class="promo-row__product-link">Подготовка</a>.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Согласовать цели компании и декомпозировать их до метрик
-                      каждого продукта будущей экосистемы.</span
-                    >
-                    <a href="#" class="promo-row__product-link"
-                      ><span>Подготовка</span></a
-                    >
-                  </div>
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Продиагностировать продукты и найти проблемы в донесении
-                      ценности</span
-                    >
-                    <a href="#" class="promo-row__product-link"
-                      ><span>Подготовка</span></a
-                    >
-                  </div>
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Разработать ценностное предложение для всей экосистемы и
-                      логично вписать в него ценностные предложения отдельных
-                      продуктов.</span
-                    >
-                    <a href="/ksc" class="promo-row__product-link"
-                      ><span>Подготовка</span></a
-                    >
-                  </div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  Продукты в портфеле развиваются изолированно — каждый со своей
+                  командой и своими метриками. Для клиента это выглядит как
+                  набор несвязанных решений. При этом договориться о стыках
+                  сложно: любая «экосистемность» требует уступок по фокусу и
+                  фичам, поэтому её постоянно откладывают.
                 </div>
+                <div class="promo-row__roles">CEO, CMO</div>
               </div>
             </div>
           </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">
-                Объединить маркетинг, продажи, продукт и саппорт в сквозной
-                клиентский путь
-              </div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    Частая причина проблем в бизнесе – это несогласованность
-                    функций, отвечающих за доставку ценности. Маркетинг делает свои
-                    офферы, продажи продают по-своему, дизайнеры не вникая работают
-                    по гайдлайнам, продакты растят какие-то свои метрики, а
-                    разработка пилит бэклог, который придумал CPO. При этом клиенту
-                    всё равно на оргструктуру, он просто получает плохой опыт и
-                    уходит к конкурентам.
-                  </div>
-                  <div class="promo-row__roles">CEO, CMO</div>
-                </div>
-              </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              <a href="#" class="promo-row__product-link">Подготовка</a>,
+              <a href="#" class="promo-row__product-link">Подготовка</a>,
+              <a href="/ksc" class="promo-row__product-link">Подготовка</a>.
             </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                <a href="#" class="promo-row__product-link"
-                  >1. Компания</a
-                >, <a href="#" class="promo-row__product-link">1. Компания</a>.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Согласовать цели компании, определить метрики клиентского
-                      опыта, декомпозировать их до метрик подразделений.</span
-                    >
-                    <a href="#" class="promo-row__product-link"
-                      ><div class="promo-row__product-icon"></div>
-                      <span>1. Компания</span></a
-                    >
-                  </div>
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Провести исследование, разработать сквозную CJM и внедрить
-                      ИИ-ассистентов, чтобы они помогали департаментам
-                      взаимодействовать с клиентом.</span
-                    >
-                    <a href="#" class="promo-row__product-link"
-                      ><div class="promo-row__product-icon"></div>
-                      <span>1. Компания</span></a
-                    >
-                  </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Согласовать цели компании и декомпозировать их до метрик
+                    каждого продукта будущей экосистемы.</span
+                  >
+                  <a href="#" class="promo-row__product-link"
+                    ><span>Подготовка</span></a
+                  >
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">
-                Запустить новый продукт или внутренний стартап
-              </div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    Если целевой рынок сложный, конкурентный и с высоким порогом
-                    входа — действовать в режиме MVP не получится. Нужно
-                    продумывать стратегию.
-                  </div>
-                  <div class="promo-row__roles">CEO, CMO</div>
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Продиагностировать продукты и найти проблемы в донесении
+                    ценности</span
+                  >
+                  <a href="#" class="promo-row__product-link"
+                    ><span>Подготовка</span></a
+                  >
                 </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                <a href="/ksc" class="promo-row__product-link"
-                  >2. Клиент</a
-                >.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Довести идею до первых продаж: собрать MVP продукта,
-                      протестировать его на рынке, синхронизировать команду.</span
-                    >
-                    <a href="/ksc" class="promo-row__product-link"
-                      ><div class="promo-row__product-icon"></div>
-                      <span>2. Клиент</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">
-                Внедрить ИИ в сложные продажи, так, чтобы это работало эффективно
-              </div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    Сложные продажи – это когда средний чеком от 1М+, цикл сделки в
-                    несколько месяцев и несколько стейкхолдеров со стороны
-                    заказчика. В таких сделках стандартные ИИ-ассистенты не
-                    работают — дают слишком общие рекомендации. Чтобы ИИ реально
-                    помогал, его нужно учить на специально подготовленных данных —
-                    стратегии, ценностном предложении, CJM. Но в компаниях этих
-                    данных либо нет, либо они в хаосе.
-                  </div>
-                  <div class="promo-row__roles">CEO, CMO</div>
-                </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                <a href="#" class="promo-row__product-link">3. Продукт</a>.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Подготовить корпоративные данные к внедрению ИИ,
-                      спроектировать эталонную модель продаж и встроить
-                      ассистентов в ключевые точки взаимодействия с клиентом.</span
-                    >
-                    <a href="#" class="promo-row__product-link"
-                      ><div class="promo-row__product-icon"></div>
-                      <span>3. Продукт</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">
-                Создать привлекательный бренд работодателя
-              </div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    Все работодатели пишут в своих вакансиях примерно одно и то же.
-                    Кандидаты это чувствуют, поэтому HR-бренд не работает на
-                    уникальные отличия. Некоторые HR пытаются выделиться, но правда
-                    про реальные условия работы вызывает слишком много вопросов и
-                    согласований внутри. В итоге проще выпустить безопасный креатив
-                    про «дружный коллектив и печеньки».
-                  </div>
-                  <div class="promo-row__roles">HRD</div>
-                </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                <a href="#" class="promo-row__product-link">4. Вклад и обмен</a>,
-                <a href="#" class="promo-row__product-link">4. Вклад и обмен</a>,
-                <a href="#" class="promo-row__product-link">4. Вклад и обмен</a>.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Проанализировать ценностное предложение работодателя и его
-                      носители, найти в нем возможные несостыковки и предложить
-                      улучшения.</span
-                    >
-                    <a href="#" class="promo-row__product-link"
-                      ><div class="promo-row__product-icon"></div>
-                      <span>4. Вклад и обмен</span></a
-                    >
-                  </div>
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Разработать обновлённое EVP и весь комплекс HR-коммуникаций,
-                      внедрить в процессы найма и адаптации.</span
-                    >
-                    <a href="#" class="promo-row__product-link"
-                      ><div class="promo-row__product-icon"></div>
-                      <span>4. Вклад и обмен</span></a
-                    >
-                  </div>
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Провести исследование, составить сквозную EJM, найти
-                      барьеры в опыте сотрудника и предложить улучшения
-                      HR-процессов, в том числе с применением ИИ.</span
-                    >
-                    <a href="#" class="promo-row__product-link"
-                      ><div class="promo-row__product-icon"></div>
-                      <span>4. Вклад и обмен</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">
-                Научиться подходам Понедельника
-              </div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    Освоить подходы Понедельника — ДКЦП, CX-стратегии, — чтобы
-                    помогать своим клиентам и стать лучшим в своей нише. Это
-                    возможность получить доступ к уникальной авторской методологии,
-                    которая резонирует с ценностями и даёт конкурентное
-                    преимущество на рынке.
-                  </div>
-                  <div class="promo-row__roles">Агентство, Консультант</div>
-                </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                <a href="/dkcp" class="promo-row__product-link">5. Аргументы и нарратив</a>,
-                <a href="#" class="promo-row__product-link">5. Аргументы и нарратив</a>,
-                <a href="#" class="promo-row__product-link">5. Аргументы и нарратив</a>.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition">Освоить базу.</span>
-                    <a href="/dkcp" class="promo-row__product-link"
-                      ><div class="promo-row__product-icon"></div>
-                      <span>5. Аргументы и нарратив</span></a
-                    >
-                  </div>
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Освоить методологию на фундаментальном уровне.</span
-                    >
-                    <a href="#" class="promo-row__product-link"
-                      ><div class="promo-row__product-icon"></div>
-                      <span>5. Аргументы и нарратив</span></a
-                    >
-                  </div>
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Получить сертификат и право обучать других.</span
-                    >
-                    <a href="#" class="promo-row__product-link"
-                      ><div class="promo-row__product-icon"></div>
-                      <span>5. Аргументы и нарратив</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">
-                Нестандартная или несформулированная задача, в сфере
-                взаимодействия человека и бизнеса
-              </div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    Иногда задача ещё не сформулирована — и это нормально.
-                    Приходите поговорить: вместе разберёмся, что происходит, и что
-                    с этим делать.
-                  </div>
-                  <div class="promo-row__roles">
-                    CEO, CMO, Консультант, Агентство, HRD, Фаундер, Инвестор
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                <a href="#" class="promo-row__product-link"
-                  >6. Прототипирование</a
-                >
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__product-item">
-                    <span class="promo-row__condition"
-                      >Обсудить задачу, разобраться в вашей ситуации и предложить
-                      решение</span
-                    >
-                    <a href="#" class="promo-row__product-link"
-                      ><div class="promo-row__product-icon"></div>
-                      <span>6. Прототипирование</span></a
-                    >
-                  </div>
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Разработать ценностное предложение для всей экосистемы и
+                    логично вписать в него ценностные предложения отдельных
+                    продуктов.</span
+                  >
+                  <a href="/ksc" class="promo-row__product-link"
+                    ><span>Подготовка</span></a
+                  >
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="promo-rows" data-promo-content="products" data-ksc-program-table-content="products">
-          <div class="promo-row promo-row--inline-detail">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">Подготовка</div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    <a href="#" class="promo-row__product-link"
-                      ><span>Подготовка</span></a
-                    >
-                  </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">
+              Объединить маркетинг, продажи, продукт и саппорт в сквозной
+              клиентский путь
+            </div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  Частая причина проблем в бизнесе – это несогласованность
+                  функций, отвечающих за доставку ценности. Маркетинг делает
+                  свои офферы, продажи продают по-своему, дизайнеры не вникая
+                  работают по гайдлайнам, продакты растят какие-то свои метрики,
+                  а разработка пилит бэклог, который придумал CPO. При этом
+                  клиенту всё равно на оргструктуру, он просто получает плохой
+                  опыт и уходит к конкурентам.
                 </div>
+                <div class="promo-row__roles">CEO, CMO</div>
               </div>
             </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                Вводный модуль: разбираем основы ДКЦП, проходим стартовый чекап и&nbsp;собираем план работы.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="ids__space S"></div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Теория</strong></p>
-                    <p>Модель ДКЦП: основы</p>
-                    <p>Обмен как основа бизнеса</p>
-                    <p>Инварианты обмена</p>
-                    <p>Устройство модели ДКЦП</p>
-                    <p>Пример заполнения модели</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Самостоятельно</strong></p>
-                    <p>Проходим тестирование</p>
-                    <p>Устанавливаем Экселенца, ИИ-ассистента по&nbsp;ДКЦП</p>
-                    <p>Стартовый чекап: проверяем текущее ценностное предложение по&nbsp;критериям ДКЦП</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Точка сборки</strong></p>
-                    <p>Начинаем собирать новую модель ДКЦП</p>
-                    <p>Результаты чекапа и&nbsp;составление плана работы</p>
-                  </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              <a href="#" class="promo-row__product-link">1. Компания</a>,
+              <a href="#" class="promo-row__product-link">1. Компания</a>.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Согласовать цели компании, определить метрики клиентского
+                    опыта, декомпозировать их до метрик подразделений.</span
+                  >
+                  <a href="#" class="promo-row__product-link"
+                    ><div class="promo-row__product-icon"></div>
+                    <span>1. Компания</span></a
+                  >
+                </div>
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Провести исследование, разработать сквозную CJM и внедрить
+                    ИИ-ассистентов, чтобы они помогали департаментам
+                    взаимодействовать с клиентом.</span
+                  >
+                  <a href="#" class="promo-row__product-link"
+                    ><div class="promo-row__product-icon"></div>
+                    <span>1. Компания</span></a
+                  >
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">
-                1. Компания
-              </div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    <a href="/ksc" class="promo-row__product-link"
-                      ><span>1. Компания</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                Формулируем ценности и&nbsp;атрибуты компании, чтобы собрать фундамент модели и&nbsp;общий вектор команды.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__task-item">
-                    <p><strong>Теория</strong></p>
-                    <p>Фундамент и крыша ДКЦП: атрибуты и ценности компании</p>
-                    <p>Компания и&nbsp;продукт — не&nbsp;одно и&nbsp;то&nbsp;же</p>
-                    <p>Конкурентные дисциплины Трейси и&nbsp;Вирсемы: процессы, продукт или&nbsp;клиентоориентированность</p>
-                    <p>Ценности компании как фильтры для «своих» и «чужих»</p>
-                    <p>Доверие к компании как необходимое условие обмена</p>
-                    <p>Виды атрибутов компании с примерами из разных дисциплин</p>
-                    <p>Системы ценностей для b2b и b2c</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Практика</strong></p>
-                    <p>Учимся формулировать ценности и&nbsp;атрибуты компании</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Самостоятельно</strong></p>
-                    <p>Заполняем атрибуты компании</p>
-                    <p>Рисуем пирамиду ценностей</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Точка сборки</strong></p>
-                    <p>Обновляем модель ДКЦП и&nbsp;замеряем прогресс</p>
-                    <p>Ценности и&nbsp;атрибуты компании</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">2. Клиент</div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    <a href="#" class="promo-row__product-link"
-                      ><span>2. Клиент</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                Исследуем клиентские сегменты и&nbsp;мотивацию к&nbsp;покупке, чтобы уточнить конфликт и&nbsp;проверить гипотезы на&nbsp;интервью.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__task-item">
-                    <p><strong>Теория</strong></p>
-                    <p>Сегмент и&nbsp;конфликт</p>
-                    <p>Новый опыт как конечная цель обмена со&nbsp;стороны клиента</p>
-                    <p>Корреляции и каузальности</p>
-                    <p>Сегментация клиентов</p>
-                    <p>Что нужно знать про&nbsp;клиента, чтобы понять его мотивацию к&nbsp;покупке</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Практика</strong></p>
-                    <p>Исследуем клиентские сегменты и&nbsp;составляем гайд для&nbsp;интервью</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Самостоятельно</strong></p>
-                    <p>Формулируем гипотезы</p>
-                    <p>Дорабатываем гайд</p>
-                    <p>Проводим интервью с клиентами</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Точка сборки</strong></p>
-                    <p>Обновляем модель ДКЦП и&nbsp;замеряем прогресс</p>
-                    <p>Клиентский сегмент и&nbsp;мотивационный конфликт</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">
-                3. Продукт
-              </div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    <a href="#" class="promo-row__product-link"
-                      ><span>3. Продукт</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                Разбираем артефакт как решение конфликта и&nbsp;собираем заготовки продукта и&nbsp;его атрибутов.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__task-item">
-                    <p><strong>Теория</strong></p>
-                    <p>Теория артефакта</p>
-                    <p>Артефакт как решение конфликта</p>
-                    <p>Типичные формы артефакта: товары, услуги, информация</p>
-                    <p>Типовые логики создания ценности: цепочки, мастерские, сети</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Самостоятельно</strong></p>
-                    <p>Делаем заготовки для&nbsp;артефакта</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Точка сборки</strong></p>
-                    <p>Обновляем модель ДКЦП и&nbsp;замеряем прогресс</p>
-                    <p>Артефакт и&nbsp;его атрибуты</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">4. Вклад и обмен</div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    <a href="#" class="promo-row__product-link"
-                      ><span>4. Вклад и обмен</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                Определяем вклад клиента и&nbsp;условия обмена, чтобы собрать экономику и&nbsp;логику сделки.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__task-item">
-                    <p><strong>Теория</strong></p>
-                    <p>Вклад клиента, условия обмена</p>
-                    <p>Материальный и&nbsp;нематериальный вклады: почему денег недостаточно</p>
-                    <p>Оценка ущерба от&nbsp;мотивационного конфликта и&nbsp;материальный вклад</p>
-                    <p>Балансировка вклада условиями обмена и&nbsp;атрибутами</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Самостоятельно</strong></p>
-                    <p>Формулируем материальный и&nbsp;нематериальные вклады</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Точка сборки</strong></p>
-                    <p>Обновляем модель ДКЦП и&nbsp;замеряем прогресс</p>
-                    <p>Вклад клиента и&nbsp;условия обмена</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">5. Аргументы и нарратив</div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    <a href="#" class="promo-row__product-link"
-                      ><span>5. Аргументы и нарратив</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                Собираем аргументы и&nbsp;мастер-нарратив, чтобы превратить модель в&nbsp;понятный язык для&nbsp;коммуникации.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__task-item">
-                    <p><strong>Теория</strong></p>
-                    <p>Мастер-нарратив ДКЦП</p>
-                    <p>Элементы модели как строительные блоки для&nbsp;аргументов</p>
-                    <p>Типичные сочетания блоков</p>
-                    <p>Версии аргументов для&nbsp;разных каналов и&nbsp;разных стадий покупки</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Самостоятельно</strong></p>
-                    <p>Собираем нарратив о&nbsp;продукте или&nbsp;компании</p>
-                  </div>
-                  <div class="promo-row__task-item">
-                    <p><strong>Точка сборки</strong></p>
-                    <p>Собираем итоговую модель ДКЦП и&nbsp;замеряем прогресс</p>
-                    <p>Модель ДКЦП готова</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">6. Прототипирование</div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    <a href="/dkcp" class="promo-row__product-link"
-                      ><span>6. Прототипирование</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                Делаем и&nbsp;тестируем прототип лендинга, чтобы проверить ценностное предложение на&nbsp;реальных клиентах.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__task-item">
-                    <p><strong>Самостоятельно</strong></p>
-                    <p>Делаем прототип лендинга для&nbsp;продукта или&nbsp;компании</p>
-                    <p>Показываем лендинг клиентам и&nbsp;тестируем ценностное предложение</p>
-                    <p>Финализируем свою модель ДКЦП</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="promo-row is-open">
-            <div class="promo-row__situation">
-              <div class="promo-row__situation-main">Демо-день</div>
-              <div class="promo-row__situation-detail">
-                <div class="promo-row__situation-detail-body">
-                  <div class="promo-row__situation-detail-inner">
-                    <a href="#" class="promo-row__product-link"
-                      ><span>Демо-день</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="promo-row__products">
-              <div class="promo-row__products-summary">
-                Финальное мероприятие, на&nbsp;котором подводим итоги, показываем результаты и&nbsp;фиксируем следующие шаги.
-              </div>
-              <div class="promo-row__products-detail">
-                <div class="promo-row__products-detail-inner">
-                  <div class="promo-row__task-item">
-                    <p><strong>Демо-день</strong></p>
-                    <p><em>Финальное отчётное мероприятие</em></p>
-                    <p>Подводим итоги обучения, хвастаемся успехами, строим планы на&nbsp;будущее</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">
+              Запустить новый продукт или внутренний стартап
+            </div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  Если целевой рынок сложный, конкурентный и с высоким порогом
+                  входа — действовать в режиме MVP не получится. Нужно
+                  продумывать стратегию.
+                </div>
+                <div class="promo-row__roles">CEO, CMO</div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              <a href="/ksc" class="promo-row__product-link">2. Клиент</a>.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Довести идею до первых продаж: собрать MVP продукта,
+                    протестировать его на рынке, синхронизировать команду.</span
+                  >
+                  <a href="/ksc" class="promo-row__product-link"
+                    ><div class="promo-row__product-icon"></div>
+                    <span>2. Клиент</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">
+              Внедрить ИИ в сложные продажи, так, чтобы это работало эффективно
+            </div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  Сложные продажи – это когда средний чеком от 1М+, цикл сделки
+                  в несколько месяцев и несколько стейкхолдеров со стороны
+                  заказчика. В таких сделках стандартные ИИ-ассистенты не
+                  работают — дают слишком общие рекомендации. Чтобы ИИ реально
+                  помогал, его нужно учить на специально подготовленных данных —
+                  стратегии, ценностном предложении, CJM. Но в компаниях этих
+                  данных либо нет, либо они в хаосе.
+                </div>
+                <div class="promo-row__roles">CEO, CMO</div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              <a href="#" class="promo-row__product-link">3. Продукт</a>.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Подготовить корпоративные данные к внедрению ИИ,
+                    спроектировать эталонную модель продаж и встроить
+                    ассистентов в ключевые точки взаимодействия с
+                    клиентом.</span
+                  >
+                  <a href="#" class="promo-row__product-link"
+                    ><div class="promo-row__product-icon"></div>
+                    <span>3. Продукт</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">
+              Создать привлекательный бренд работодателя
+            </div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  Все работодатели пишут в своих вакансиях примерно одно и то
+                  же. Кандидаты это чувствуют, поэтому HR-бренд не работает на
+                  уникальные отличия. Некоторые HR пытаются выделиться, но
+                  правда про реальные условия работы вызывает слишком много
+                  вопросов и согласований внутри. В итоге проще выпустить
+                  безопасный креатив про «дружный коллектив и печеньки».
+                </div>
+                <div class="promo-row__roles">HRD</div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              <a href="#" class="promo-row__product-link">4. Вклад и обмен</a>,
+              <a href="#" class="promo-row__product-link">4. Вклад и обмен</a>,
+              <a href="#" class="promo-row__product-link">4. Вклад и обмен</a>.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Проанализировать ценностное предложение работодателя и его
+                    носители, найти в нем возможные несостыковки и предложить
+                    улучшения.</span
+                  >
+                  <a href="#" class="promo-row__product-link"
+                    ><div class="promo-row__product-icon"></div>
+                    <span>4. Вклад и обмен</span></a
+                  >
+                </div>
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Разработать обновлённое EVP и весь комплекс
+                    HR-коммуникаций, внедрить в процессы найма и
+                    адаптации.</span
+                  >
+                  <a href="#" class="promo-row__product-link"
+                    ><div class="promo-row__product-icon"></div>
+                    <span>4. Вклад и обмен</span></a
+                  >
+                </div>
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Провести исследование, составить сквозную EJM, найти
+                    барьеры в опыте сотрудника и предложить улучшения
+                    HR-процессов, в том числе с применением ИИ.</span
+                  >
+                  <a href="#" class="promo-row__product-link"
+                    ><div class="promo-row__product-icon"></div>
+                    <span>4. Вклад и обмен</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">
+              Научиться подходам Понедельника
+            </div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  Освоить подходы Понедельника — ДКЦП, CX-стратегии, — чтобы
+                  помогать своим клиентам и стать лучшим в своей нише. Это
+                  возможность получить доступ к уникальной авторской
+                  методологии, которая резонирует с ценностями и даёт
+                  конкурентное преимущество на рынке.
+                </div>
+                <div class="promo-row__roles">Агентство, Консультант</div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              <a href="/dkcp" class="promo-row__product-link"
+                >5. Аргументы и нарратив</a
+              >,
+              <a href="#" class="promo-row__product-link"
+                >5. Аргументы и нарратив</a
+              >,
+              <a href="#" class="promo-row__product-link"
+                >5. Аргументы и нарратив</a
+              >.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition">Освоить базу.</span>
+                  <a href="/dkcp" class="promo-row__product-link"
+                    ><div class="promo-row__product-icon"></div>
+                    <span>5. Аргументы и нарратив</span></a
+                  >
+                </div>
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Освоить методологию на фундаментальном уровне.</span
+                  >
+                  <a href="#" class="promo-row__product-link"
+                    ><div class="promo-row__product-icon"></div>
+                    <span>5. Аргументы и нарратив</span></a
+                  >
+                </div>
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Получить сертификат и право обучать других.</span
+                  >
+                  <a href="#" class="promo-row__product-link"
+                    ><div class="promo-row__product-icon"></div>
+                    <span>5. Аргументы и нарратив</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">
+              Нестандартная или несформулированная задача, в сфере
+              взаимодействия человека и бизнеса
+            </div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  Иногда задача ещё не сформулирована — и это нормально.
+                  Приходите поговорить: вместе разберёмся, что происходит, и что
+                  с этим делать.
+                </div>
+                <div class="promo-row__roles">
+                  CEO, CMO, Консультант, Агентство, HRD, Фаундер, Инвестор
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              <a href="#" class="promo-row__product-link"
+                >6. Прототипирование</a
+              >
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__product-item">
+                  <span class="promo-row__condition"
+                    >Обсудить задачу, разобраться в вашей ситуации и предложить
+                    решение</span
+                  >
+                  <a href="#" class="promo-row__product-link"
+                    ><div class="promo-row__product-icon"></div>
+                    <span>6. Прототипирование</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="promo-rows"
+        data-promo-content="products"
+        data-ksc-program-table-content="products">
+        <div class="promo-row promo-row--inline-detail">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">Подготовка</div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  <a href="#" class="promo-row__product-link"
+                    ><span>Подготовка</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              Вводный модуль: разбираем основы ДКЦП, проходим стартовый чекап
+              и&nbsp;собираем план работы.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="ids__space S"></div>
+                <div class="promo-row__task-item">
+                  <p><strong>Теория</strong></p>
+                  <p>Модель ДКЦП: основы</p>
+                  <p>Обмен как основа бизнеса</p>
+                  <p>Инварианты обмена</p>
+                  <p>Устройство модели ДКЦП</p>
+                  <p>Пример заполнения модели</p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Самостоятельно</strong></p>
+                  <p>Проходим тестирование</p>
+                  <p>Устанавливаем Экселенца, ИИ-ассистента по&nbsp;ДКЦП</p>
+                  <p>
+                    Стартовый чекап: проверяем текущее ценностное предложение
+                    по&nbsp;критериям ДКЦП
+                  </p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Точка сборки</strong></p>
+                  <p>Начинаем собирать новую модель ДКЦП</p>
+                  <p>Результаты чекапа и&nbsp;составление плана работы</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">1. Компания</div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  <a href="/ksc" class="promo-row__product-link"
+                    ><span>1. Компания</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              Формулируем ценности и&nbsp;атрибуты компании, чтобы собрать
+              фундамент модели и&nbsp;общий вектор команды.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__task-item">
+                  <p><strong>Теория</strong></p>
+                  <p>Фундамент и крыша ДКЦП: атрибуты и ценности компании</p>
+                  <p>
+                    Компания и&nbsp;продукт — не&nbsp;одно и&nbsp;то&nbsp;же
+                  </p>
+                  <p>
+                    Конкурентные дисциплины Трейси и&nbsp;Вирсемы: процессы,
+                    продукт или&nbsp;клиентоориентированность
+                  </p>
+                  <p>Ценности компании как фильтры для «своих» и «чужих»</p>
+                  <p>Доверие к компании как необходимое условие обмена</p>
+                  <p>Виды атрибутов компании с примерами из разных дисциплин</p>
+                  <p>Системы ценностей для b2b и b2c</p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Практика</strong></p>
+                  <p>Учимся формулировать ценности и&nbsp;атрибуты компании</p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Самостоятельно</strong></p>
+                  <p>Заполняем атрибуты компании</p>
+                  <p>Рисуем пирамиду ценностей</p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Точка сборки</strong></p>
+                  <p>Обновляем модель ДКЦП и&nbsp;замеряем прогресс</p>
+                  <p>Ценности и&nbsp;атрибуты компании</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">2. Клиент</div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  <a href="#" class="promo-row__product-link"
+                    ><span>2. Клиент</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              Исследуем клиентские сегменты и&nbsp;мотивацию к&nbsp;покупке,
+              чтобы уточнить конфликт и&nbsp;проверить гипотезы
+              на&nbsp;интервью.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__task-item">
+                  <p><strong>Теория</strong></p>
+                  <p>Сегмент и&nbsp;конфликт</p>
+                  <p>
+                    Новый опыт как конечная цель обмена со&nbsp;стороны клиента
+                  </p>
+                  <p>Корреляции и каузальности</p>
+                  <p>Сегментация клиентов</p>
+                  <p>
+                    Что нужно знать про&nbsp;клиента, чтобы понять его мотивацию
+                    к&nbsp;покупке
+                  </p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Практика</strong></p>
+                  <p>
+                    Исследуем клиентские сегменты и&nbsp;составляем гайд
+                    для&nbsp;интервью
+                  </p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Самостоятельно</strong></p>
+                  <p>Формулируем гипотезы</p>
+                  <p>Дорабатываем гайд</p>
+                  <p>Проводим интервью с клиентами</p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Точка сборки</strong></p>
+                  <p>Обновляем модель ДКЦП и&nbsp;замеряем прогресс</p>
+                  <p>Клиентский сегмент и&nbsp;мотивационный конфликт</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">3. Продукт</div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  <a href="#" class="promo-row__product-link"
+                    ><span>3. Продукт</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              Разбираем артефакт как решение конфликта и&nbsp;собираем заготовки
+              продукта и&nbsp;его атрибутов.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__task-item">
+                  <p><strong>Теория</strong></p>
+                  <p>Теория артефакта</p>
+                  <p>Артефакт как решение конфликта</p>
+                  <p>Типичные формы артефакта: товары, услуги, информация</p>
+                  <p>
+                    Типовые логики создания ценности: цепочки, мастерские, сети
+                  </p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Самостоятельно</strong></p>
+                  <p>Делаем заготовки для&nbsp;артефакта</p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Точка сборки</strong></p>
+                  <p>Обновляем модель ДКЦП и&nbsp;замеряем прогресс</p>
+                  <p>Артефакт и&nbsp;его атрибуты</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">4. Вклад и обмен</div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  <a href="#" class="promo-row__product-link"
+                    ><span>4. Вклад и обмен</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              Определяем вклад клиента и&nbsp;условия обмена, чтобы собрать
+              экономику и&nbsp;логику сделки.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__task-item">
+                  <p><strong>Теория</strong></p>
+                  <p>Вклад клиента, условия обмена</p>
+                  <p>
+                    Материальный и&nbsp;нематериальный вклады: почему денег
+                    недостаточно
+                  </p>
+                  <p>
+                    Оценка ущерба от&nbsp;мотивационного конфликта
+                    и&nbsp;материальный вклад
+                  </p>
+                  <p>Балансировка вклада условиями обмена и&nbsp;атрибутами</p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Самостоятельно</strong></p>
+                  <p>Формулируем материальный и&nbsp;нематериальные вклады</p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Точка сборки</strong></p>
+                  <p>Обновляем модель ДКЦП и&nbsp;замеряем прогресс</p>
+                  <p>Вклад клиента и&nbsp;условия обмена</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">5. Аргументы и нарратив</div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  <a href="#" class="promo-row__product-link"
+                    ><span>5. Аргументы и нарратив</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              Собираем аргументы и&nbsp;мастер-нарратив, чтобы превратить модель
+              в&nbsp;понятный язык для&nbsp;коммуникации.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__task-item">
+                  <p><strong>Теория</strong></p>
+                  <p>Мастер-нарратив ДКЦП</p>
+                  <p>
+                    Элементы модели как строительные блоки для&nbsp;аргументов
+                  </p>
+                  <p>Типичные сочетания блоков</p>
+                  <p>
+                    Версии аргументов для&nbsp;разных каналов и&nbsp;разных
+                    стадий покупки
+                  </p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Самостоятельно</strong></p>
+                  <p>Собираем нарратив о&nbsp;продукте или&nbsp;компании</p>
+                </div>
+                <div class="promo-row__task-item">
+                  <p><strong>Точка сборки</strong></p>
+                  <p>Собираем итоговую модель ДКЦП и&nbsp;замеряем прогресс</p>
+                  <p>Модель ДКЦП готова</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">6. Прототипирование</div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  <a href="/dkcp" class="promo-row__product-link"
+                    ><span>6. Прототипирование</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              Делаем и&nbsp;тестируем прототип лендинга, чтобы проверить
+              ценностное предложение на&nbsp;реальных клиентах.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__task-item">
+                  <p><strong>Самостоятельно</strong></p>
+                  <p>
+                    Делаем прототип лендинга для&nbsp;продукта или&nbsp;компании
+                  </p>
+                  <p>
+                    Показываем лендинг клиентам и&nbsp;тестируем ценностное
+                    предложение
+                  </p>
+                  <p>Финализируем свою модель ДКЦП</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-row is-open">
+          <div class="promo-row__situation">
+            <div class="promo-row__situation-main">Демо-день</div>
+            <div class="promo-row__situation-detail">
+              <div class="promo-row__situation-detail-body">
+                <div class="promo-row__situation-detail-inner">
+                  <a href="#" class="promo-row__product-link"
+                    ><span>Демо-день</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-row__products">
+            <div class="promo-row__products-summary">
+              Финальное мероприятие, на&nbsp;котором подводим итоги, показываем
+              результаты и&nbsp;фиксируем следующие шаги.
+            </div>
+            <div class="promo-row__products-detail">
+              <div class="promo-row__products-detail-inner">
+                <div class="promo-row__task-item">
+                  <p><strong>Демо-день</strong></p>
+                  <p><em>Финальное отчётное мероприятие</em></p>
+                  <p>
+                    Подводим итоги обучения, хвастаемся успехами, строим планы
+                    на&nbsp;будущее
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -815,7 +913,10 @@
 
   <div class="ids__wrapper">
     <div class="ids__text-width">
-      <p>Мы можем адаптировать программу или отдельные её блоки для вашей компании:</p>
+      <p>
+        Мы можем адаптировать программу или отдельные её блоки для вашей
+        компании:
+      </p>
       <div class="ids__space XS"></div>
       <ul>
         <li>Адаптируем наш базовый учебный план под вашу задачу.</li>
@@ -827,8 +928,7 @@
   </div>
 
   <div class="ids__space L" id="schedule"></div>
-  
-  
+
   <div class="ids__space L"></div>
 
   <div class="ids__wrapper L">
@@ -837,11 +937,19 @@
     </div>
     <div class="ids__space S"></div>
     <div class="deliverables">
-      <img src="/assets/ksc-open/with-after-intensive.png" alt="С чем уйдёте после интенсива" />
+      <img
+        src="/assets/ksc-open/with-after-intensive.png"
+        alt="С чем уйдёте после интенсива" />
     </div>
 
     <div class="ids__text-width">
-      <p>И&nbsp;это только&nbsp;то, что можно оцифровать или&nbsp;потрогать. А&nbsp;ещё: общий язык и&nbsp;взаимопонимание в&nbsp;команде, атмосфера продуктивности и&nbsp;творчества, единение и&nbsp;кайф от&nbsp;покорения сложного. Это бесценно, поэтому всем, даром&nbsp;— и&nbsp;пусть никто не&nbsp;уйдет обиженным.</p>
+      <p>
+        И&nbsp;это только&nbsp;то, что можно оцифровать или&nbsp;потрогать.
+        А&nbsp;ещё: общий язык и&nbsp;взаимопонимание в&nbsp;команде, атмосфера
+        продуктивности и&nbsp;творчества, единение и&nbsp;кайф от&nbsp;покорения
+        сложного. Это бесценно, поэтому всем, даром&nbsp;— и&nbsp;пусть никто
+        не&nbsp;уйдет обиженным.
+      </p>
     </div>
   </div>
 
@@ -858,18 +966,37 @@
         </div>
       </div>
       <p><strong>Контекст</strong></p>
-      <p>Участник — InAppStory — in-app коммуникация и сторис в мобильных приложениях.</p>
-      <p>Команда пришла на интенсив с ощущением внутреннего разрыва между текущим образом компании и желаемым. Запрос не был сведён к одной гипотезе заранее — скорее к необходимости «привести в порядок» самопонимание и ценностное предложение.</p>
+      <p>
+        Участник — InAppStory — in-app коммуникация и сторис в мобильных
+        приложениях.
+      </p>
+      <p>
+        Команда пришла на интенсив с ощущением внутреннего разрыва между текущим
+        образом компании и желаемым. Запрос не был сведён к одной гипотезе
+        заранее — скорее к необходимости «привести в порядок» самопонимание и
+        ценностное предложение.
+      </p>
 
       <blockquote class="case-meta-plate case-context-quote">
         <p>
-          «Ощущение, наши представление о себе не сходится с тем, мы хотим быть. Смутное чувство, что что-то не так, но без ясной формулировки.»
+          «Ощущение, наши представление о себе не сходится с тем, мы хотим быть.
+          Смутное чувство, что что-то не так, но без ясной формулировки.»
         </p>
       </blockquote>
 
-      <p>Первый шаг по фактуре: установили Cursor, запустили навык чекапа по ДКЦП, команда забрифовалась и получила ценностное предложение в том виде, каким оно было на старте. Часть команды была уверена, что всё о продукте уже известно; к собранной на выходе чекапа диаграмме ДКЦП относились без особого напряжения — «ну и ДКЦП».</p>
+      <p>
+        Первый шаг по фактуре: установили Cursor, запустили навык чекапа по
+        ДКЦП, команда забрифовалась и получила ценностное предложение в том
+        виде, каким оно было на старте. Часть команды была уверена, что всё о
+        продукте уже известно; к собранной на выходе чекапа диаграмме ДКЦП
+        относились без особого напряжения — «ну и ДКЦП».
+      </p>
       <div class="ids__space S"></div>
-      <p><a href="/cases/in-app-story/" class="promo-link">Читать полный кейс InAppStory</a></p>
+      <p>
+        <a href="/cases/in-app-story/" class="promo-link"
+          >Читать полный кейс InAppStory</a
+        >
+      </p>
     </div>
   </div>
 
@@ -880,7 +1007,7 @@
   <div id="authors" class="ids__wrapper L">
     <div class="ids__space L"></div>
     <h2>Команда</h2>
-    
+
     <div class="ids__space XS"></div>
 
     <div class="ids__sequence M">
@@ -889,8 +1016,10 @@
           <div class="author-portrait">
             <img src="/assets/ksc-open/m@2x-100.jpg" alt="Михаил Руденко" />
           </div>
-          <p class="author-description"><strong>Михаил Руденко.</strong> Предприниматель, преподаватель, консультант</p>
-          
+          <p class="author-description">
+            <strong>Михаил Руденко.</strong> Предприниматель, преподаватель,
+            консультант
+          </p>
         </div>
       </div>
       <div class="ids__sequence-item">
@@ -898,8 +1027,10 @@
           <div class="author-portrait">
             <img src="/assets/ksc-open/v@2x-100.jpg" alt="Вера Харченко" />
           </div>
-          <p class="author-description"><strong>Вера Харченко.</strong> Фасилитатор, наставник по исследованиям</p>
-         
+          <p class="author-description">
+            <strong>Вера Харченко.</strong> Фасилитатор, наставник
+            по исследованиям
+          </p>
         </div>
       </div>
       <div class="ids__sequence-item">
@@ -907,30 +1038,33 @@
           <div class="author-portrait">
             <img src="/assets/ksc-open/s@2x-100.jpg" alt="Сергей Степанов" />
           </div>
-          <p class="author-description"><strong>Сергей Степанов.</strong> Руководитель проекта и куратор</p>
-          
+          <p class="author-description">
+            <strong>Сергей Степанов.</strong> Руководитель проекта и куратор
+          </p>
         </div>
       </div>
-      
 
       <div class="ids__sequence-item">
         <div class="author">
           <div class="author-portrait">
             <img src="/assets/ksc-open/e@2x-100.jpg" alt="Женя Арутюнов" />
           </div>
-          <p class="author-description"><strong>Женя Арутюнов.</strong> Дизайнер, арт-директор, менеджер проектов и людей, лектор, наставник</p>
-          
+          <p class="author-description">
+            <strong>Женя Арутюнов.</strong> Дизайнер, арт-директор, менеджер
+            проектов и людей, лектор, наставник
+          </p>
         </div>
       </div>
-
 
       <div class="ids__sequence-item">
         <div class="author">
           <div class="author-portrait">
             <img src="/assets/ksc-open/k@2x-100.jpg" alt="Кристина Кострова" />
           </div>
-          <p class="author-description"><strong>Кристина Кострова.</strong> Администратор проекта, супервайзер поля</p>
-          
+          <p class="author-description">
+            <strong>Кристина Кострова.</strong> Администратор проекта,
+            супервайзер поля
+          </p>
         </div>
       </div>
       <div class="ids__sequence-item">
@@ -938,18 +1072,24 @@
           <div class="author-portrait">
             <img src="/assets/ksc-open/alina-raeva.png" alt="Алина" />
           </div>
-          <p class="author-description"><strong>Алина Раева.</strong> Приглашённый спикер. Ex-COO Muse Group и Tutu, руководитель трансформации в ОТП Банке и Магните. </p>
-         
+          <p class="author-description">
+            <strong>Алина Раева.</strong> Приглашённый спикер. Ex-COO Muse Group
+            и Tutu, руководитель трансформации в ОТП Банке и Магните.
+          </p>
         </div>
       </div>
-      
+
       <div class="ids__sequence-item">
         <div class="author">
           <div class="author-portrait">
-            <img src="/assets/ksc-open/rodionov-aleksandr.png" alt="Саша Родионов" />
+            <img
+              src="/assets/ksc-open/rodionov-aleksandr.png"
+              alt="Саша Родионов" />
           </div>
-          <p class="author-description"><strong>Саша Родионов.</strong> Приглашённый спикер. Вице-президент по продуктовому развитию, тренер, НЛП-мастер.</p>
-          
+          <p class="author-description">
+            <strong>Саша Родионов.</strong> Приглашённый спикер. Вице-президент
+            по продуктовому развитию, тренер, НЛП-мастер.
+          </p>
         </div>
       </div>
     </div>
@@ -963,20 +1103,22 @@
     <h2>Записаться</h2>
     <div class="application-columns">
       <div class="application-column">
+        <p class="loud">Программа КСЦ — групповое обучение.</p>
         <p class="loud">
-          Программа КСЦ — групповое обучение.
-        </p>
-        <p class="loud">
-          Чтобы получить максимум пользы и отработать методологию вместе со своей командой, приходите группой от 3 до 5 человек, и лидера не забудьте.
+          Чтобы получить максимум пользы и отработать методологию вместе
+          со своей командой, приходите группой от 3 до 5 человек, и лидера
+          не забудьте.
         </p>
         <p>
-          Если вы консультант или ментор и хотите пройти интенсив вместе со своими клиентами — мы поможем это организовать.
+          Если вы консультант или ментор и хотите пройти интенсив вместе
+          со своими клиентами — мы поможем это организовать.
         </p>
         <div class="ids__space S"></div>
-        <p class="loud">Участие стоит <strong>85&thinsp;000&thinsp;₽</strong> с человека.</p>
+        <p class="loud">
+          Участие стоит <strong>85&thinsp;000&thinsp;₽</strong> с человека.
+        </p>
 
         <ul class="inline-block S">
-
           <li>6 живых лекций</li>
           <li>5 групповых зянятий</li>
           <li>7 сессий с ответами на вопросы</li>
@@ -984,12 +1126,15 @@
           <li>14 заданий для самостоятельной работы</li>
           <li>Базовый ДКЦП-чекап вашего продукта</li>
         </ul>
-
       </div>
       <div class="application-column">
-        <p>Занятия проводятся в Зуме, длятся по два часа. Места ограничены, в этот раз пригласим не более 8 команд. </p>
         <p>
-          Нажмите кнопку ниже, мы свяжемся и договоримся о коротком звонке, где расспросим о вашей компании, продукте и текущей ситуации.
+          Занятия проводятся в Зуме, длятся по два часа. Места ограничены, в
+          этот раз пригласим не более 8 команд.
+        </p>
+        <p>
+          Нажмите кнопку ниже, мы свяжемся и договоримся о коротком звонке, где
+          расспросим о вашей компании, продукте и текущей ситуации.
         </p>
         <p>
           <button
@@ -1006,7 +1151,6 @@
     </div>
   </div>
   <div class="ids__space M"></div>
-
 </div>
 <script type="module" src="/assets/illustrations/init.js"></script>
 {% endblock %}
