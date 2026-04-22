@@ -91,20 +91,22 @@
     <div class="ids__space S"></div>
     <p>Это темы, в рамках которых мы будем работать на протяжении всей программы.</p>
     <div class="ids__space S"></div>
-    <div class="ksc-program-table">
-        <div class="ksc-program-table__switchers" style="display: none">
-          <div class="ksc-program-table__switcher" role="group" aria-label="Детализация">
+    <div class="promo-table-container ksc-program-table">
+        <div class="promo-switchers ksc-program-table__switchers" style="display: none">
+          <div class="promo-switcher ksc-program-table__switcher" role="group" aria-label="Детализация">
             <button
               type="button"
-              class="ksc-program-table__switcher-item is-active"
+              class="promo-switcher__item ksc-program-table__switcher-item is-active"
               aria-pressed="true"
+              data-promo-detail="short"
               data-ksc-program-table-detail="short">
               Коротко
             </button>
             <button
               type="button"
-              class="ksc-program-table__switcher-item"
+              class="promo-switcher__item ksc-program-table__switcher-item"
               aria-pressed="false"
+              data-promo-detail="full"
               data-ksc-program-table-detail="full">
               Подробно
             </button>
@@ -112,17 +114,18 @@
         </div>
         <div class="ids__space S"></div>
         <div
-          class="ksc-program-table__rows-header"
+          class="promo-rows-header ksc-program-table__rows-header"
+          data-promo-content="tasks"
           data-ksc-program-table-content="tasks"
           style="display: none">
-          <span class="ksc-program-table__rows-header-label">Задача</span>
-          <span class="ksc-program-table__rows-header-label">Что предлагаем</span>
+          <span class="promo-rows-header__label ksc-program-table__rows-header-label">Задача</span>
+          <span class="promo-rows-header__label ksc-program-table__rows-header-label">Что предлагаем</span>
         </div>
-        <div class="ksc-program-table__rows-header" data-ksc-program-table-content="products">
-          <span class="ksc-program-table__rows-header-label">Модули</span>
-          <span class="ksc-program-table__rows-header-label">Что внутри</span>
+        <div class="promo-rows-header ksc-program-table__rows-header" data-promo-content="products" data-ksc-program-table-content="products">
+          <span class="promo-rows-header__label ksc-program-table__rows-header-label">Модули</span>
+          <span class="promo-rows-header__label ksc-program-table__rows-header-label">Что внутри</span>
         </div>
-        <div class="promo-rows" data-ksc-program-table-content="tasks" style="display: none">
+        <div class="promo-rows" data-promo-content="tasks" data-ksc-program-table-content="tasks" style="display: none">
           <div class="promo-row is-open">
             <div class="promo-row__situation">
               <div class="promo-row__situation-main">
@@ -481,7 +484,7 @@
             </div>
           </div>
         </div>
-        <div class="promo-rows" data-ksc-program-table-content="products">
+        <div class="promo-rows" data-promo-content="products" data-ksc-program-table-content="products">
           <div class="promo-row promo-row--inline-detail">
             <div class="promo-row__situation">
               <div class="promo-row__situation-main">Подготовка</div>
