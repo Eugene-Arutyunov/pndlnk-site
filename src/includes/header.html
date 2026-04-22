@@ -1,8 +1,8 @@
 {% set nav = [{ title: 'ДКЦП', href: '/dkcp/' }, { title: 'База', href:
-'/dkcp-base/' }, { title: 'Чекап ↗', href: 'https://ponedelnik.ru/checkup' }, {
-title: 'Логика ↗', href: 'https://www.cxstrategy.ru/' }, { title: 'КСЦ ↗', href:
+'/dkcp-base/' }, { title: 'Чекап ↗', href: 'https://ponedelnik.ru/checkup' }, {
+title: 'Логика ↗', href: 'https://www.cxstrategy.ru/' }, { title: 'КСЦ ↗', href:
 'https://ponedelnik.ru/ksc' }, { title: 'КСЦ:ОИ', href: '/ksc-open/' }, { title:
-'Блог ↗', href: 'https://blog.buro.cx/' } ] %}
+'Блог ↗', href: 'https://blog.buro.cx/' } ] %}
 
 <!--   { title: 'Мы', href: '/about/' }, { title: 'Среда', href: '/sreda' } -->
 
@@ -16,6 +16,13 @@ title: 'Логика ↗', href: 'https://www.cxstrategy.ru/' }, { title: 'К�
     {% else %}
     <a href="{{ link.href }}">{{ link.title }}</a>
     {% endif %} {% endfor %}
+    <div class="nav-spacer"></div>
+    <button
+      class="lets-talk-button compact contact-form-trigger"
+      data-cf-title="Обсудить проект"
+      data-cf-submit="Отправить">
+      Обсудить проект
+    </button>
   </nav>
 
   <!-- <nav class="nav">

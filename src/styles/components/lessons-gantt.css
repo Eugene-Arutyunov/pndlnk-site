@@ -7,8 +7,8 @@
   --lesson-1-duration: 55;
   --lesson-2-duration: 75;
   --lesson-3-duration: 35;
-  --lesson-4-duration: 55;
-  --lesson-5-duration: 45;
+  --lesson-4-duration: 42;
+  --lesson-5-duration: 59;
   --total-duration: calc(
     var(--lesson-1-duration) + var(--lesson-2-duration) +
       var(--lesson-3-duration) + var(--lesson-4-duration) +
@@ -46,7 +46,8 @@
     (
         var(--lesson-1-duration) + var(--lesson-2-duration) +
           var(--lesson-3-duration)
-      ) / var(--total-duration) * 100%
+      ) /
+      var(--total-duration) * 100%
   );
 
   --lesson-5-width: calc(
@@ -56,7 +57,8 @@
     (
         var(--lesson-1-duration) + var(--lesson-2-duration) +
           var(--lesson-3-duration) + var(--lesson-4-duration)
-      ) / var(--total-duration) * 100%
+      ) /
+      var(--total-duration) * 100%
   );
 }
 
@@ -226,6 +228,14 @@
   font-size: 0.6em;
   font-family: var(--mono);
   padding: 0 0.1em;
+
+  &.gantt-bar-label-compact {
+    @media (width < 768px) {
+      .gantt-bar-number-text {
+        display: none;
+      }
+    }
+  }
 }
 
 .gantt-bar-description {
@@ -246,7 +256,7 @@
 
   &[data-lesson="3"] {
     margin-left: var(--lesson-3-left);
-    width: 27em;
+    width: 22em;
   }
 
   &[data-lesson="4"] {

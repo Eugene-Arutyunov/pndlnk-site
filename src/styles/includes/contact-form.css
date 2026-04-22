@@ -86,8 +86,13 @@
     display: flex;
     align-items: baseline;
     border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    /* background-color: rgba(var(--ids__surface-RGB), 1); */
     cursor: text;
     transition: background-color 0.5s ease;
+
+    /* &:last-of-type {
+      border-bottom: none;
+    } */
 
     &.form-field-error {
       background-color: rgba(var(--ids__accent-RGB), 0.3);

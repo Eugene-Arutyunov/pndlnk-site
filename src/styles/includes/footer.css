@@ -9,34 +9,43 @@
     padding: 0.5em calc(var(--ids__density) * 0.4em);
   }
 
-  & .footer-logo {
-    width: 20em;
-    margin-top: 0.25em;
-
-  }
-
-  & .footer-logo-caption {
-    margin-top: -0.2em;
+  & .footer-hero-logo {
+    width: 100%;
+    padding-top: 0.3em;
+    padding-bottom: 1em;
     margin-bottom: 2em;
-  }
+    opacity: 0.1;
 
-  & .footer-columns {
-    font-size: var(--smaller);
-    display: flex;
-    gap: 0.5em 3em;
+    & svg {
+      width: 100%;
+      height: auto;
+      display: block;
 
-    @media (width < 768px) {
-      flex-wrap: wrap;
-      gap: 0.5em;
-    }
-
-    &:nth-child(1) {
-      @media (width < 768px) {
-        width: 100%;
+      & .cls-1 {
+        fill: rgba(var(--ids__text-RGB), 1);
       }
     }
   }
 
+  & .footer-grid {
+    font-size: var(--smaller);
+    display: grid;
+    grid-template-columns: 16em auto auto auto;
+    gap: 3em 3em;
+    padding-right: 10em;
+    padding-bottom: 2em;
+
+    @media (width < 768px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 2em 0.5em;
+      padding-right: 0;
+    }
+
+    & .footer-column:first-child {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
 
   & .footer-nav-item {
     margin-bottom: 0.5em;
@@ -50,39 +59,24 @@
     }
   }
 
-  & .footer-nav {
-    & .footer-column {
-      &:nth-child(2n) {
-        @media (width < 768px) {
-          width: 35%;
-        }
-      }
+  & .footer-year {
+    & p {
+      font-size: var(--smaller);
+      opacity: 0.7;
     }
   }
 
+  & .footer-address {
+    grid-column: 2 / -1;
 
-  & .footer-footer {
-    margin-top: 3em;
-
-    /* display: flex; */
-    /* gap: 1em; */
-
-    & .footer-column:first-child {
-      width: 20em;
+    @media (width < 768px) {
+      grid-column: 1 / -1;
     }
 
-    & .footer-column {
-      & p {
-
-        font-size: var(--smaller);
-        opacity: 0.7;
-      }
+    & p {
+      font-size: var(--smaller);
+      opacity: 0.7;
     }
-
-    /* @media (width < 768px) {
-      flex-direction: column;
-    } */
-
   }
 
   & .corner-arrow {
