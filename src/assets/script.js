@@ -120,15 +120,28 @@ function initLogoDownloads() {
 }
 
 function initPromoViewSwitcher() {
-  const container = document.querySelector(".promo-table-container");
+  const container =
+    document.querySelector(".ksc-program-table") ||
+    document.querySelector(".promo-table-container");
   if (!container) return;
 
+  const isKscProgramTable = container.classList.contains("ksc-program-table");
+  const detailAttr = isKscProgramTable
+    ? "data-ksc-program-table-detail"
+    : "data-promo-detail";
+  const contentAttr = isKscProgramTable
+    ? "data-ksc-program-table-content"
+    : "data-promo-content";
+
   const viewButtons = container.querySelectorAll("[data-promo-view]");
-  const detailButtons = container.querySelectorAll("[data-promo-detail]");
+  const detailButtons = container.querySelectorAll(`[${detailAttr}]`);
 
   function switchView(view) {
-    container.querySelectorAll("[data-promo-content]").forEach((el) => {
-      el.style.display = el.dataset.promoContent === view ? "" : "none";
+    container.querySelectorAll(`[${contentAttr}]`).forEach((el) => {
+      const value = isKscProgramTable
+        ? el.dataset.kscProgramTableContent
+        : el.dataset.promoContent;
+      el.style.display = value === view ? "" : "none";
     });
   }
 
@@ -158,17 +171,27 @@ function initPromoViewSwitcher() {
   }
 
   bindGroup(viewButtons, switchView, "promoView");
-  bindGroup(detailButtons, switchDetail, "promoDetail");
+  bindGroup(
+    detailButtons,
+    switchDetail,
+    isKscProgramTable ? "kscProgramTableDetail" : "promoDetail"
+  );
 
   const activeDetailButton = Array.from(detailButtons).find((btn) =>
     btn.classList.contains("is-active")
   );
   if (activeDetailButton) {
-    switchDetail(activeDetailButton.dataset.promoDetail);
+    switchDetail(
+      isKscProgramTable
+        ? activeDetailButton.dataset.kscProgramTableDetail
+        : activeDetailButton.dataset.promoDetail
+    );
   }
 
   const productRows = container.querySelectorAll(
-    '[data-promo-content="products"] .promo-row'
+    isKscProgramTable
+      ? '[data-ksc-program-table-content="products"] .promo-row'
+      : '[data-promo-content="products"] .promo-row'
   );
   productRows.forEach((row) => {
     row.classList.add("promo-row--inline-detail");
