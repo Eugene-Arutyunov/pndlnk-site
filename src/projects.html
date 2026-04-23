@@ -46,6 +46,10 @@
               </select>
             </span>
           </label>
+          <label class="project-catalog-filter__checkbox">
+            <input type="checkbox" id="project-filter-featured" />
+            <span>избранные кейсы</span>
+          </label>
         </p>
         <p
           class="project-catalog-filter__status"
@@ -57,9 +61,28 @@
         <li
           class="project-card"
           data-audience="{{ project.audience | join(' ') }}"
-          data-segment="{{ project.companySegment | join(' ') }}">
-          <a class="project-card__link" href="/projects/{{ project.slug }}/">
-            <div class="project-card__cover" aria-hidden="true"></div>
+          data-segment="{{ project.companySegment | join(' ') }}"
+          data-featured="{{ project.isFeatured and 'true' or 'false' }}">
+          <a
+            class="project-card__link"
+            href="/projects/{{ project.slug }}/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <div class="project-card__cover" aria-hidden="true">
+              {% if project.slug == "pyaterochka-razrabotka-idealnoy-telezhki" %}
+              <img
+                src="/assets/projects/pyaterochka-razrabotka-idealnoy-telezhki/1.jpg"
+                alt="" />
+              {% elseif project.slug == "vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma" %}
+              <img
+                src="/assets/projects/vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma/1.jpg"
+                alt="" />
+              {% elseif project.slug == "mavt-vinoteka-issledovanie-opyta-pokupateley" %}
+              <img
+                src="/assets/projects/mavt-vinoteka-issledovanie-opyta-pokupateley/1.jpg"
+                alt="" />
+              {% endif %}
+            </div>
             <div class="project-card__body">
               <h3 class="project-card__title">{{ project.name }}</h3>
               <div class="project-card__tags">

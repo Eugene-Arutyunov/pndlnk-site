@@ -211,10 +211,12 @@ function initProjectCatalogFilter() {
 
   const audienceSel = panel.querySelector("#project-filter-audience");
   const segmentSel = panel.querySelector("#project-filter-segment");
+  const featuredCheckbox = panel.querySelector("#project-filter-featured");
   const statusEl = panel.querySelector("#project-filter-status");
   const cards = document.querySelectorAll(".project-catalog-panel .project-card");
 
-  if (!audienceSel || !segmentSel || cards.length === 0) return;
+  if (!audienceSel || !segmentSel || !featuredCheckbox || cards.length === 0)
+    return;
 
   const total = cards.length;
 
@@ -225,28 +227,33 @@ function initProjectCatalogFilter() {
   function apply() {
     const aud = audienceSel.value;
     const seg = segmentSel.value;
+    const onlyFeatured = featuredCheckbox.checked;
     let shown = 0;
 
     cards.forEach((card) => {
       const audList = splitDataset(card.dataset.audience);
       const segList = splitDataset(card.dataset.segment);
+      const isFeatured = card.dataset.featured === "true";
       const audOk =
         aud === "all" || (audList.length > 0 && audList.includes(aud));
       const segOk =
         seg === "all" || (segList.length > 0 && segList.includes(seg));
-      const visible = audOk && segOk;
+      const featuredOk = !onlyFeatured || isFeatured;
+      const visible = audOk && segOk && featuredOk;
       card.classList.toggle("is-hidden", !visible);
       if (visible) shown += 1;
     });
 
     if (statusEl) {
-      const isDefault = aud === "all" && seg === "all";
+      const isDefault = aud === "all" && seg === "all" && !onlyFeatured;
       statusEl.textContent = isDefault ? String(total) : `${shown} / ${total}`;
     }
   }
 
   audienceSel.addEventListener("change", apply);
   segmentSel.addEventListener("change", apply);
+  featuredCheckbox.addEventListener("change", apply);
+  window.addEventListener("pageshow", apply);
   apply();
 }
 

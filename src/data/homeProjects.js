@@ -198,6 +198,37 @@ function parseAudienceSegment(row) {
   };
 }
 
+function stripMarkup(source) {
+  return String(source || "")
+    .replace(/\{#[\s\S]*?#\}/g, " ")
+    .replace(/\{%\s*[\s\S]*?%\}/g, " ")
+    .replace(/\{\{\s*[\s\S]*?\}\}/g, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function hasMeaningfulCaseContent(slug) {
+  const casePath = path.join(__dirname, "..", "projects", `${slug}.html`);
+  if (!fs.existsSync(casePath)) return false;
+
+  const raw = fs.readFileSync(casePath, "utf8");
+  const plainText = stripMarkup(raw).toLowerCase();
+
+  if (!plainText) return false;
+  if (/ещ[её]\s+(не\s+описан|в\s+работе|скоро)/i.test(plainText)) return false;
+
+  return plainText.length >= 220;
+}
+
+const FORCED_FEATURED_SLUGS = new Set([
+  "pyaterochka-razrabotka-idealnoy-telezhki",
+  "vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma",
+  "mavt-vinoteka-issledovanie-opyta-pokupateley",
+  "sozdanie-partnerskoy-programmy-dlya-vendora-onlayn-kass",
+]);
+
 module.exports = function loadHomeProjects() {
   const csvPath = path.join(__dirname, "cases.csv");
   const raw = fs.readFileSync(csvPath, "utf8");
@@ -213,14 +244,18 @@ module.exports = function loadHomeProjects() {
   return rows.map((row) => {
     const { audience, companySegment } = parseAudienceSegment(row);
     const name = row.Name || "";
+    const slug = makeSlug(name, usedSlugs);
     return {
       name,
-      slug: makeSlug(name, usedSlugs),
+      slug,
       year: row["Год выполнения"],
       tags: [...splitList(row["Тип"]), ...splitList(row["Отрасль"])],
       inKp: row["В КП"],
       progress: row["Прогресс"],
       description: row["Описание"],
+      isFeatured: FORCED_FEATURED_SLUGS.has(slug)
+        ? true
+        : hasMeaningfulCaseContent(slug),
       audience,
       companySegment,
     };
