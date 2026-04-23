@@ -970,3 +970,46 @@
     }
   }
 }
+
+.ids .case-featured h1 {
+  font-size: 3em;
+  line-height: 0.98;
+}
+
+.ids .case-featured h2 {
+  margin-top: calc(var(--ids__density) * 1em);
+}
+
+.ids .case-featured h3 {
+  margin-top: calc(var(--ids__density) * 1.5em);
+}
+
+.ids .case-featured figure {
+  margin-top: calc(var(--ids__density) * 1.1em);
+}
+
+.ids .case-featured figure figcaption {
+  margin-bottom: calc(var(--ids__density) * 0.9em);
+}
+
+.ids .case-featured .case-featured__links {
+  margin-top: calc(var(--ids__density) * 1em);
+  padding: 0.8em;
+  background: rgba(var(--ids__text-RGB), 0.06);
+}
+
+.ids .case-featured .case-featured__links h3 {
+  margin-top: 0;
+}
+
+.ids .case-featured .case-featured__review-portrait {
+  width: 4em;
+  height: 4em;
+  background: rgba(var(--ids__text-RGB), 0.22);
+}
+
+@media (width < 768px) {
+  .ids .case-featured h1 {
+    font-size: 2.35em;
+  }
+}
