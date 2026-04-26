@@ -112,6 +112,14 @@
     & .with-sidenote {
       position: relative;
 
+      &.with-sidenote--illustration {
+        & .sidenote {
+          @media (width > 767px) {
+            margin-top: -1em;
+          }
+        }
+      }
+
       & .sidenote {
         font-size: 0.7em;
         width: 90%;

@@ -53,7 +53,8 @@
     });
 
     document.querySelectorAll('.contact-form-trigger').forEach(function (btn) {
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
         ContactForm.open({
           title: btn.dataset.cfTitle || '',
           tariff: btn.dataset.cfTariff || '',

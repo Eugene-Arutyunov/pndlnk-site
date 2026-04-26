@@ -93,6 +93,18 @@
     @media (width < 768px) {
       font-size: 0.7em;
     }
+
+    & > h2 {
+      font-size: 2em;
+    }
+
+    & .promo-table-footer {
+      line-height: 1.4;
+    }
+  }
+
+  .ids__wrapper.L .promo-table-container {
+    padding-right: 15%;
   }
 
   .promo-table {
@@ -589,6 +601,7 @@
     width: 2.8em;
     height: 2.8em;
     border-radius: 0.25em;
+    overflow: hidden;
     background: rgb(var(--ids__text-RGB));
     transition: background 0.5s ease;
     display: flex;
@@ -622,6 +635,39 @@
     &:first-child {
       border-top: none;
       padding-top: 0;
+    }
+  }
+
+  [data-promo-content="tasks"] {
+    @media (width < 768px) {
+      & .promo-row__situation {
+        width: 40%;
+      }
+      & .promo-row__products {
+        width: 60%;
+      }
+
+      & .promo-rows-header__label:first-child {
+        width: 40%;
+      }
+      & .promo-rows-header__label:last-child {
+        width: 60%;
+      }
+
+      & .promo-row__product-item {
+        grid-template-columns: 2fr 1fr;
+      }
+
+      & .promo-row__products-detail .promo-row__product-link {
+        flex-direction: column;
+        gap: 0.3em;
+      }
+
+      & .promo-row__situation-main,
+      & .promo-row__condition {
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
     }
   }
 

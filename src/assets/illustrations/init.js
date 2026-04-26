@@ -5,12 +5,14 @@
 import { SphereIllustration } from './sphere/sphere.js';
 import { LayeredHouseIllustration } from './layered-house/layered-house.js';
 import { SplashIllustration } from './splash/splash.js';
+import { PndlnkIllustration } from './pndlnk/pndlnk.js';
 
 // Реестр типов иллюстраций
 const illustrationTypes = {
   sphere: SphereIllustration,
   'layered-house': LayeredHouseIllustration,
-  splash: SplashIllustration
+  splash: SplashIllustration,
+  pndlnk: PndlnkIllustration
 };
 
 // Хранилище экземпляров иллюстраций
@@ -122,5 +124,5 @@ if (document.readyState === 'loading') {
 }
 
 // Экспортируем для ручного управления
-export { SphereIllustration, LayeredHouseIllustration, SplashIllustration };
+export { SphereIllustration, LayeredHouseIllustration, SplashIllustration, PndlnkIllustration };
 

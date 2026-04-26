@@ -13,7 +13,10 @@
       <div class="home-hero-columns__col home-hero-columns__col--list">
         <ul class="inline-block thin">
           <li>
-            Проектируем взаимодействие с клиентами, сотрудниками и партнёрами
+            <a href="#hero-next"
+              >Проектируем взаимодействие с клиентами, сотрудниками и
+              партнёрами</a
+            >
           </li>
           <li>10 лет на рынке</li>
           <li>50+ проектов в портфолио</li>
@@ -79,16 +82,30 @@
   </div>
 </div>
 
-<div class="ids__space M"></div>
+<div class="ids__space M" id="hero-next"></div>
 
 <div class="ids__wrapper">
   <div class="ids__text-width">
     <!-- <p class="loud">Привет!</p> -->
-    <p class="loud">
-      Понедельник — это опыто-конструкторское бюро. Мы проектируем
-      взаимодействия людей и компаний так, чтобы они были логичными, честными и
-      выгодными для обеих сторон.
-    </p>
+    <div class="with-sidenote with-sidenote--illustration">
+      <p class="loud">
+        Понедельник — это опыто-конструк&shy;торское бюро. Мы проектируем
+        взаимодействия людей и компаний так, чтобы они были логичными, честными
+        и выгодными для обеих сторон.
+      </p>
+      <div class="sidenote">
+        <div
+          class="illustration-container"
+          data-illustration-type="pndlnk"
+          data-background-color="--ids__background-RGB"
+          style="
+            background-color: rgba(var(--ids__background-RGB), 1);
+            aspect-ratio: 2 / 1;
+          ">
+          <canvas class="illustration-canvas"></canvas>
+        </div>
+      </div>
+    </div>
     <div class="with-sidenote">
       <p>
         Мы лезем под капот вашего бизнеса: в структуру, в культуру, в принятие
@@ -99,11 +116,11 @@
       <div class="sidenote">
         <p>
           Иногда Понедельник ошибочно называют
-          <em>опытно-конструкторским</em> бюро.
+          <em>опытно-конструк&shy;торским</em> бюро.
         </p>
         <p>
-          Разница в том, что опытно-конструкторское бюро конструирует и
-          испытывает опытные образцы, а <em>опыто-конструкторское</em> бюро
+          Разница в том, что опытно-конструкторское бюро конструирует
+          и испытывает опытные образцы, а <em>опыто-конструкторское</em> бюро
           конструирует человеческий опыт. Не перепутайте!
         </p>
       </div>
@@ -111,12 +128,13 @@
   </div>
 </div>
 
-<div class="ids__space L"></div>
+<div class="ids__space M"></div>
 
-<div class="ids__wrapper">
-  <h2>Что мы можем</h2>
+<div class="ids__wrapper L">
   <div class="ids__space S"></div>
   <div class="promo-table-container">
+    <h2>Что мы делаем</h2>
+    <div class="ids__space S"></div>
     <div class="promo-switchers">
       <div class="promo-switcher" role="group" aria-label="Вид таблицы">
         <button
@@ -185,12 +203,26 @@
         </div>
         <div class="promo-row__products">
           <div class="promo-row__products-summary">
-            <a href="#" class="promo-row__product-link"
-              >Стратсессия «Цели Компании»</a
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
+              >Стратсессия «Цели компании»</a
             >,
-            <a href="#" class="promo-row__product-link">Продуктовый Чекап</a>,
-            <a href="/ksc" class="promo-row__product-link"
-              >Культура Создания Ценности</a
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
+              >Продуктовый чекап</a
+            >,
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
+              >Культура создания ценности</a
             >.
           </div>
           <div class="promo-row__products-detail">
@@ -200,11 +232,15 @@
                   >Согласовать цели компании и декомпозировать их до метрик
                   каждого продукта будущей экосистемы.</span
                 >
-                <a href="#" class="promo-row__product-link"
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-goals.html' %}
                   </div>
-                  <span>Стратсессия «Цели Компании»</span></a
+                  <span>Стратсессия «Цели компании»</span></a
                 >
               </div>
               <div class="promo-row__product-item">
@@ -212,8 +248,14 @@
                   >Продиагностировать продукты и найти проблемы в донесении
                   ценности</span
                 >
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
+                  ><div class="promo-row__product-icon">
+                    {% include 'assets/product-icon-checkup.html' %}
+                  </div>
                   <span>Продуктовый чекап</span></a
                 >
               </div>
@@ -223,11 +265,15 @@
                   логично вписать в него ценностные предложения отдельных
                   продуктов.</span
                 >
-                <a href="/ksc" class="promo-row__product-link"
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-ksc.html' %}
                   </div>
-                  <span>Культура Создания Ценности</span></a
+                  <span>Культура создания ценности</span></a
                 >
               </div>
             </div>
@@ -238,7 +284,7 @@
       <div class="promo-row is-open">
         <div class="promo-row__situation">
           <div class="promo-row__situation-main">
-            Объединить маркетинг, продажи, продукт и саппорт в сквозной
+            Объединить маркетинг, продажи, продукт и саппорт в сквозной
             клиентский путь
           </div>
           <div class="promo-row__situation-detail">
@@ -258,9 +304,20 @@
         </div>
         <div class="promo-row__products">
           <div class="promo-row__products-summary">
-            <a href="#" class="promo-row__product-link"
-              >Стратсессия «Цели Компании»</a
-            >, <a href="#" class="promo-row__product-link">Эталон-М</a>.
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
+              >Стратсессия «Цели компании»</a
+            >,
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
+              >Эталон-М</a
+            >.
           </div>
           <div class="promo-row__products-detail">
             <div class="promo-row__products-detail-inner">
@@ -269,11 +326,15 @@
                   >Согласовать цели компании, определить метрики клиентского
                   опыта, декомпозировать их до метрик подразделений.</span
                 >
-                <a href="#" class="promo-row__product-link"
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-goals.html' %}
                   </div>
-                  <span>Стратсессия «Цели Компании»</span></a
+                  <span>Стратсессия «Цели компании»</span></a
                 >
               </div>
               <div class="promo-row__product-item">
@@ -282,7 +343,11 @@
                   ИИ-ассистентов, чтобы они помогали департаментам
                   взаимодействовать с клиентом.</span
                 >
-                <a href="#" class="promo-row__product-link"
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-etalon.html' %}
                   </div>
@@ -312,8 +377,12 @@
         </div>
         <div class="promo-row__products">
           <div class="promo-row__products-summary">
-            <a href="/ksc" class="promo-row__product-link"
-              >Культура Создания Ценности</a
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
+              >Культура создания ценности</a
             >.
           </div>
           <div class="promo-row__products-detail">
@@ -323,11 +392,15 @@
                   >Довести идею до первых продаж: собрать MVP продукта,
                   протестировать его на рынке, синхронизировать команду.</span
                 >
-                <a href="/ksc" class="promo-row__product-link"
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-ksc.html' %}
                   </div>
-                  <span>Культура Создания Ценности</span></a
+                  <span>Культура создания ценности</span></a
                 >
               </div>
             </div>
@@ -357,7 +430,13 @@
         </div>
         <div class="promo-row__products">
           <div class="promo-row__products-summary">
-            <a href="#" class="promo-row__product-link">Эталон-М</a>.
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
+              >Эталон-М</a
+            >.
           </div>
           <div class="promo-row__products-detail">
             <div class="promo-row__products-detail-inner">
@@ -367,7 +446,11 @@
                   спроектировать эталонную модель продаж и встроить ассистентов
                   в ключевые точки взаимодействия с клиентом.</span
                 >
-                <a href="#" class="promo-row__product-link"
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-etalon.html' %}
                   </div>
@@ -400,9 +483,27 @@
         </div>
         <div class="promo-row__products">
           <div class="promo-row__products-summary">
-            <a href="#" class="promo-row__product-link">Чекап EVP</a>,
-            <a href="#" class="promo-row__product-link">Разработка EVP</a>,
-            <a href="#" class="promo-row__product-link">Эталон-М</a>.
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
+              >Чекап EVP</a
+            >,
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
+              >Разработка EVP</a
+            >,
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
+              >Эталон-М</a
+            >.
           </div>
           <div class="promo-row__products-detail">
             <div class="promo-row__products-detail-inner">
@@ -412,8 +513,14 @@
                   носители, найти в нем возможные несостыковки и предложить
                   улучшения.</span
                 >
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
+                  ><div class="promo-row__product-icon">
+                    {% include 'assets/product-icon-evp-checkup.html' %}
+                  </div>
                   <span>Чекап EVP</span></a
                 >
               </div>
@@ -422,8 +529,14 @@
                   >Разработать обновлённое EVP и весь комплекс HR-коммуникаций,
                   внедрить в процессы найма и адаптации.</span
                 >
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
+                  ><div class="promo-row__product-icon">
+                    {% include 'assets/product-icon-evp-dev.html' %}
+                  </div>
                   <span>Разработка EVP</span></a
                 >
               </div>
@@ -433,7 +546,11 @@
                   в опыте сотрудника и предложить улучшения HR-процессов, в том
                   числе с применением ИИ.</span
                 >
-                <a href="#" class="promo-row__product-link"
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-etalon.html' %}
                   </div>
@@ -465,15 +582,23 @@
         </div>
         <div class="promo-row__products">
           <div class="promo-row__products-summary">
-            <a href="/dkcp" class="promo-row__product-link">База ДКЦП</a>,
-            <a href="#" class="promo-row__product-link">CX:SL</a>,
-            <a href="#" class="promo-row__product-link">ДКЦП-Сертификация</a>.
+            <a href="/dkcp-base" class="promo-row__product-link">База ДКЦП</a>,
+            <a href="https://www.cxstrategy.ru/" class="promo-row__product-link"
+              >CX:SL</a
+            >,
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
+              >ДКЦП-сертификация</a
+            >.
           </div>
           <div class="promo-row__products-detail">
             <div class="promo-row__products-detail-inner">
               <div class="promo-row__product-item">
                 <span class="promo-row__condition">Освоить базу.</span>
-                <a href="/dkcp" class="promo-row__product-link"
+                <a href="/dkcp-base" class="promo-row__product-link"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-base.html' %}
                   </div>
@@ -484,8 +609,12 @@
                 <span class="promo-row__condition"
                   >Освоить методологию на фундаментальном уровне.</span
                 >
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
+                <a
+                  href="https://www.cxstrategy.ru/"
+                  class="promo-row__product-link"
+                  ><div class="promo-row__product-icon">
+                    {% include 'assets/product-icon-cxsl.html' %}
+                  </div>
                   <span>CX:SL</span></a
                 >
               </div>
@@ -493,9 +622,15 @@
                 <span class="promo-row__condition"
                   >Получить сертификат и право обучать других.</span
                 >
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
-                  <span>ДКЦП-Сертификация</span></a
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
+                  ><div class="promo-row__product-icon">
+                    {% include 'assets/product-icon-dkcp-cert.html' %}
+                  </div>
+                  <span>ДКЦП-сертификация</span></a
                 >
               </div>
             </div>
@@ -524,7 +659,11 @@
         </div>
         <div class="promo-row__products">
           <div class="promo-row__products-summary">
-            <a href="#" class="promo-row__product-link"
+            <a
+              href="#"
+              class="promo-row__product-link contact-form-trigger"
+              data-cf-title="Обсудить проект"
+              data-cf-submit="Отправить"
               >Индивидуальный проект</a
             >
           </div>
@@ -535,8 +674,21 @@
                   >Обсудить задачу, разобраться в вашей ситуации и предложить
                   решение</span
                 >
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
+                  ><div class="promo-row__product-icon">
+                    <div
+                      class="illustration-container"
+                      data-illustration-type="sphere"
+                      data-line-width="15"
+                      data-point-radius="20"
+                      style="color: #fff">
+                      <canvas class="illustration-canvas"></canvas>
+                    </div>
+                  </div>
                   <span>Индивидуальный проект</span></a
                 >
               </div>
@@ -552,7 +704,11 @@
           <div class="promo-row__situation-detail">
             <div class="promo-row__situation-detail-body">
               <div class="promo-row__situation-detail-inner">
-                <a href="#" class="promo-row__product-link"
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-etalon.html' %}
                   </div>
@@ -577,7 +733,7 @@
           <div class="promo-row__products-detail">
             <div class="promo-row__products-detail-inner">
               <div class="promo-row__task-item">
-                Объединить маркетинг, продажи, продукт и саппорт в сквозной
+                Объединить маркетинг, продажи, продукт и саппорт в сквозной
                 клиентский путь
               </div>
               <div class="promo-row__task-item">
@@ -595,16 +751,20 @@
       <div class="promo-row is-open">
         <div class="promo-row__situation">
           <div class="promo-row__situation-main">
-            Культура Создания Ценности
+            Культура создания ценности
           </div>
           <div class="promo-row__situation-detail">
             <div class="promo-row__situation-detail-body">
               <div class="promo-row__situation-detail-inner">
-                <a href="/ksc" class="promo-row__product-link"
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-ksc.html' %}
                   </div>
-                  <span>Культура Создания Ценности</span></a
+                  <span>Культура создания ценности</span></a
                 >
               </div>
               <div class="promo-row__product-description">
@@ -637,13 +797,19 @@
 
       <div class="promo-row is-open">
         <div class="promo-row__situation">
-          <div class="promo-row__situation-main">Продуктовый Чекап</div>
+          <div class="promo-row__situation-main">Продуктовый чекап</div>
           <div class="promo-row__situation-detail">
             <div class="promo-row__situation-detail-body">
               <div class="promo-row__situation-detail-inner">
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
-                  <span>Продуктовый Чекап</span></a
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
+                  ><div class="promo-row__product-icon">
+                    {% include 'assets/product-icon-checkup.html' %}
+                  </div>
+                  <span>Продуктовый чекап</span></a
                 >
               </div>
               <div class="promo-row__product-description">
@@ -671,16 +837,20 @@
       <div class="promo-row is-open">
         <div class="promo-row__situation">
           <div class="promo-row__situation-main">
-            Стратсессия «Цели Компании»
+            Стратсессия «Цели компании»
           </div>
           <div class="promo-row__situation-detail">
             <div class="promo-row__situation-detail-body">
               <div class="promo-row__situation-detail-inner">
-                <a href="#" class="promo-row__product-link"
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-goals.html' %}
                   </div>
-                  <span>Стратсессия «Цели Компании»</span></a
+                  <span>Стратсессия «Цели компании»</span></a
                 >
               </div>
               <div class="promo-row__product-description">
@@ -694,7 +864,7 @@
         <div class="promo-row__products">
           <div class="promo-row__products-summary">
             Объединить разрозненные продукты в единую экосистему, Объединить
-            маркетинг, продажи, продукт и саппорт в сквозной клиентский путь.
+            маркетинг, продажи, продукт и саппорт в сквозной клиентский путь.
           </div>
           <div class="promo-row__products-detail">
             <div class="promo-row__products-detail-inner">
@@ -703,7 +873,7 @@
                 для клиентов
               </div>
               <div class="promo-row__task-item">
-                Объединить маркетинг, продажи, продукт и саппорт в сквозной
+                Объединить маркетинг, продажи, продукт и саппорт в сквозной
                 клиентский путь
               </div>
             </div>
@@ -717,8 +887,14 @@
           <div class="promo-row__situation-detail">
             <div class="promo-row__situation-detail-body">
               <div class="promo-row__situation-detail-inner">
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
+                  ><div class="promo-row__product-icon">
+                    {% include 'assets/product-icon-evp-checkup.html' %}
+                  </div>
                   <span>Чекап EVP</span></a
                 >
               </div>
@@ -749,8 +925,14 @@
           <div class="promo-row__situation-detail">
             <div class="promo-row__situation-detail-body">
               <div class="promo-row__situation-detail-inner">
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
+                  ><div class="promo-row__product-icon">
+                    {% include 'assets/product-icon-evp-dev.html' %}
+                  </div>
                   <span>Разработка EVP</span></a
                 >
               </div>
@@ -781,7 +963,7 @@
           <div class="promo-row__situation-detail">
             <div class="promo-row__situation-detail-body">
               <div class="promo-row__situation-detail-inner">
-                <a href="/dkcp" class="promo-row__product-link"
+                <a href="/dkcp-base" class="promo-row__product-link"
                   ><div class="promo-row__product-icon">
                     {% include 'assets/product-icon-base.html' %}
                   </div>
@@ -816,8 +998,12 @@
           <div class="promo-row__situation-detail">
             <div class="promo-row__situation-detail-body">
               <div class="promo-row__situation-detail-inner">
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
+                <a
+                  href="https://www.cxstrategy.ru/"
+                  class="promo-row__product-link"
+                  ><div class="promo-row__product-icon">
+                    {% include 'assets/product-icon-cxsl.html' %}
+                  </div>
                   <span>CX:SL</span></a
                 >
               </div>
@@ -845,13 +1031,19 @@
 
       <div class="promo-row is-open">
         <div class="promo-row__situation">
-          <div class="promo-row__situation-main">ДКЦП-Сертификация</div>
+          <div class="promo-row__situation-main">ДКЦП-сертификация</div>
           <div class="promo-row__situation-detail">
             <div class="promo-row__situation-detail-body">
               <div class="promo-row__situation-detail-inner">
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
-                  <span>ДКЦП-Сертификация</span></a
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
+                  ><div class="promo-row__product-icon">
+                    {% include 'assets/product-icon-dkcp-cert.html' %}
+                  </div>
+                  <span>ДКЦП-сертификация</span></a
                 >
               </div>
               <div class="promo-row__product-description">
@@ -881,8 +1073,21 @@
           <div class="promo-row__situation-detail">
             <div class="promo-row__situation-detail-body">
               <div class="promo-row__situation-detail-inner">
-                <a href="#" class="promo-row__product-link"
-                  ><div class="promo-row__product-icon"></div>
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
+                  ><div class="promo-row__product-icon">
+                    <div
+                      class="illustration-container"
+                      data-illustration-type="sphere"
+                      data-line-width="15"
+                      data-point-radius="20"
+                      style="color: #fff">
+                      <canvas class="illustration-canvas"></canvas>
+                    </div>
+                  </div>
                   <span>Индивидуальный проект</span></a
                 >
               </div>
@@ -908,22 +1113,29 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="ids__space M"></div>
-  <div class="ids__text-width">
-    <p>
-      Это запросы, с которыми к нам обращаются чаще всего. Однако, мы понимаем,
-      что любой бизнес – уникальное сочетание неуникальных проблем. Поэтому если
-      вам ничего не подошло из готового, но вы все равно хотите поработать –
-      оставьте заявку, мы соберем для вас персональное предложение под вашу
-      ситуацию.
-    </p>
-    <div class="ids__space S"></div>
-    <p><a href="#" class="promo-link">Поработать вместе</a></p>
+    <div class="ids__space M"></div>
+    <div class="promo-table-footer ids__text-width">
+      <p>
+        Это запросы, с которыми к нам обращаются чаще всего. Однако, мы
+        понимаем, что любой бизнес — уникальное сочетание неуникальных проблем.
+        Поэтому если вам ничего не подошло из готового, но вы всё равно хотите
+        поработать — оставьте заявку, мы соберём для вас персональное
+        предложение под вашу ситуацию.
+      </p>
+      <div class="ids__space S"></div>
+      <p>
+        <button
+          class="lets-talk-button contact-form-trigger"
+          data-cf-title="Обсудить проект"
+          data-cf-submit="Отправить">
+          Поработать вместе
+        </button>
+      </p>
+    </div>
   </div>
 </div>
 <div class="ids__space L"></div>
-
+<!-- 
 <div class="ids__wrapper L">
   <div class="project-catalog-panel">
     <div class="project-catalog-filter">
@@ -998,47 +1210,13 @@
       </ul>
     </div>
   </div>
-</div>
-
-<div class="ids__space L"></div>
-
-<!-- <div class="ids__wrapper">
-  <div class="ids__text-width">
-    <h2>Культура создания ценности</h2>
-    <p>
-      У нас есть методология, позволяющая системно улучшать взаимодействие
-      компании с кем угодно — с клиентами, с сотрудниками, с партнёрами.
-    </p>
-
-    <p>
-      Эта методология строится на идее обмена: люди отдают вам свои деньги,
-      время и труд, а взамен получают опыт взаимодействия с вами и вашими
-      продуктами. Если опыт получается неприятным, непонятным, непредсказуемым —
-      люди уходят к конкурентам. Если опыт качественный — люди остаются и
-      продолжают участвовать в этом обмене.
-    </p>
-
-    <p>
-      Проблема в том, что взаимодействие — это объективно сложно, на него влияют
-      десятки нюансов, и чтобы достоверно их смоделировать, не подходят простые
-      модели в квадратиках 2х2. Простые модели могут казаться убедительными, но
-      по факту приводят к случайным решениям. А мы знаем, как структурировать
-      всю сложность взаимодейтсвия, не утонов при этом в деталях.
-    </p>
-
-    <p>
-      <a href="#">Подробнее о культуре создания ценности</a>
-    </p>
-  </div>
 </div> -->
-
-<div class="ids__space XL"></div>
 
 <div class="ids__wrapper L">
   <h2>Люди</h2>
   <div class="ids__text-width">
     <p>
-      Понедельник – это коллектив единомышленников. К нам можно легко
+      Понедельник — это коллектив единомышленников. К нам можно легко
       присоединиться и поработать вместе на один проект или остаться надолго.
     </p>
   </div>
@@ -1239,43 +1417,59 @@
 <div class="ids__wrapper L why-ponedelnik">
   <h2>Кстати, почему Понедельник?</h2>
   <div class="why-ponedelnik-grid">
-    <p>
-      По нескольким причинам. Во-первых, изменения в своей жизни люди стараются
-      начинать с понедельника. Мы хотим, чтобы наши клиенты перед тем как
-      поменяться, обратились к нам за проработкой главных вопросов: А точно нам
-      надо? А туда ли мы хотим меняться? А как довести это до конца? Так будет
-      проще.
-    </p>
-    <p class="serif">
-      Во-вторых, понедельник — это в честь книги А.&nbsp;Б.&nbsp;Стругацких
-      «Понедельник начинается в субботу». Мы очень любим творчество братьев, нам
-      близки идеи созидательного труда и честного творчества на благо людей.
-      Нашей любимой цитатой и неофициальным манифестом служит следующая строчка:
-    </p>
-    <p>
-      <em>
-        Сюда пришли люди, которым было приятнее быть друг с другом, чем порознь,
-        которые терпеть не могли всякого рода воскресений, потому что в
-        воскресенье им было скучно. Маги, Люди с большой буквы, и девизом их
-        было — «Понедельник начинается в субботу». Да, они знали кое-какие
-        заклинания, умели превращать воду в вино, и каждый из них не затруднился
-        бы накормить пятью хлебами тысячу человек. Но магами они были не
-        поэтому. Это была шелуха, внешнее. Они были магами потому, что очень
-        много знали, так много, что количество перешло у них, наконец, в
-        качество, и они стали с миром в другие отношения, нежели обычные люди.
-        Они работали в институте, который занимался прежде всего проблемами
-        человеческого счастья и смысла человеческой жизни, но даже среди них
-        никто точно не знал, что такое счастье и в чём именно смысл жизни. И они
-        приняли рабочую гипотезу, что счастье в непрерывном познании
-        неизвестного и смысл жизни в том же. Каждый человек — маг в душе, но он
-        становится магом только тогда, когда начинает меньше думать о себе и
-        больше о других, когда работать ему становится интереснее, чем
-        развлекаться в старинном смысле этого слова.
-      </em>
-    </p>
+    <div>
+      <p>По нескольким причинам.</p>
+      <p>
+        Во-первых, изменения в своей жизни люди стараются начинать
+        с понедельника.
+      </p>
+      <p>
+        Мы хотим, чтобы наши клиенты перед тем как поменяться, обратились к нам
+        за проработкой главных вопросов: А точно нам надо? А туда ли мы хотим
+        меняться? А как довести это до конца?
+      </p>
+      <p>Так будет проще.</p>
+    </div>
+    <div class="serif">
+      <p>
+        Во-вторых, Понедельник — это в честь книги А.&nbsp;Б.&nbsp;Стругацких
+        «Понедельник начинается в субботу».
+      </p>
+      <p>
+        Мы очень любим творчество братьев, нам близки идеи созидательного труда
+        и честного творчества на благо людей.
+      </p>
+      <p>
+        Нашей любимой цитатой и неофициальным манифестом служит следующая
+        строчка:
+      </p>
+    </div>
+    <div>
+      <p>
+        <em>
+          «Сюда пришли люди, которым было приятнее быть друг с другом, чем
+          порознь, которые терпеть не могли всякого рода воскресений, потому что
+          в воскресенье им было скучно. Маги, Люди с большой буквы, и девизом их
+          было — «Понедельник начинается в субботу». Да, они знали кое-какие
+          заклинания, умели превращать воду в вино, и каждый из них не
+          затруднился бы накормить пятью хлебами тысячу человек. Но магами они
+          были не поэтому. Это была шелуха, внешнее. Они были магами потому, что
+          очень много знали, так много, что количество перешло у них, наконец, в
+          качество, и они стали с миром в другие отношения, нежели обычные люди.
+          Они работали в институте, который занимался прежде всего проблемами
+          человеческого счастья и смысла человеческой жизни, но даже среди них
+          никто точно не знал, что такое счастье и в чём именно смысл жизни. И
+          они приняли рабочую гипотезу, что счастье в непрерывном познании
+          неизвестного и смысл жизни в том же. Каждый человек — маг в душе, но
+          он становится магом только тогда, когда начинает меньше думать о себе
+          и больше о других, когда работать ему становится интереснее, чем
+          развлекаться в старинном смысле этого слова.»
+        </em>
+      </p>
+    </div>
   </div>
+  <div class="why-ponedelnik-rule"></div>
 </div>
 
-<div class="ids__space XL"></div>
-
+<script type="module" src="/assets/illustrations/init.js"></script>
 {% endblock %}
