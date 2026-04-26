@@ -105,6 +105,9 @@
 
   .ids__wrapper.L .promo-table-container {
     padding-right: 15%;
+    @media (width < 768px) {
+      padding-right: 1em;
+    }
   }
 
   .promo-table {
