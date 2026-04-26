@@ -367,7 +367,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.4em;
-  margin: 1em 0;
+  /* margin: 1em 0; */
 }
 
 .logo-wall-item {
@@ -375,9 +375,9 @@
   align-items: center;
   justify-content: center;
   padding: 0.6em 1em;
-  border: 1px solid rgba(var(--ids__text-RGB), 0.3);
+  /* border: 1px solid rgba(var(--ids__text-RGB), 0.3);
   border-right: none;
-  border-bottom: none;
+  border-bottom: none; */
 
   & img {
     height: 1.2em;
