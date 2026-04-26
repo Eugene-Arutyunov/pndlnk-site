@@ -161,6 +161,53 @@ function initPromoViewSwitcher() {
   bindGroup(detailButtons, switchDetail, "promoDetail");
 }
 
+function formatRgbColorValue(color) {
+  const rgbMatch = color.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+  if (rgbMatch) {
+    return `rgb(${rgbMatch[1]}, ${rgbMatch[2]}, ${rgbMatch[3]})`;
+  }
+
+  const srgbMatch = color.match(
+    /color\(srgb\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)/
+  );
+  if (srgbMatch) {
+    return `rgb(${Math.round(parseFloat(srgbMatch[1]) * 255)}, ${Math.round(parseFloat(srgbMatch[2]) * 255)}, ${Math.round(parseFloat(srgbMatch[3]) * 255)})`;
+  }
+
+  return color;
+}
+
+function initColorPlates() {
+  const plates = document.querySelectorAll(".guide-color-plate");
+  if (plates.length === 0) return;
+
+  plates.forEach((plate) => {
+    const btn = plate.querySelector(".guide-color-plate__value");
+    if (!btn) return;
+
+    const computed = getComputedStyle(plate).backgroundColor;
+    const rgb = formatRgbColorValue(computed);
+    btn.textContent = rgb;
+
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(rgb);
+      } catch (error) {
+        return;
+      }
+
+      const flash = document.createElement("span");
+      flash.className = "guide-color-plate__flash";
+      flash.textContent = rgb;
+      btn.appendChild(flash);
+      flash.addEventListener("animationend", () => {
+        flash.remove();
+      });
+    });
+  });
+}
+
+
 function initProjectCatalogFilter() {
   const panel = document.querySelector(".project-catalog-filter");
   if (!panel) return;
@@ -214,6 +261,7 @@ if (document.readyState === "loading") {
     initSleepyObserver();
     initLogoDownloads();
     initPromoViewSwitcher();
+    initColorPlates();
     initProjectCatalogFilter();
   });
 } else {
@@ -221,5 +269,6 @@ if (document.readyState === "loading") {
   initSleepyObserver();
   initLogoDownloads();
   initPromoViewSwitcher();
+  initColorPlates();
   initProjectCatalogFilter();
 }

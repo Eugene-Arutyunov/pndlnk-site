@@ -1,111 +1,468 @@
-{% extends 'layout.html' %} {% set pageTitle = 'ДКЦП' %} {% block content %}
+{% extends 'layout.html' %} {% set pageTitle = 'Визуальный стиль' %} {% block
+content %}
 <div class="ids__space XL"></div>
 <div class="ids__wrapper">
-  <div class="ids__text-width">
-    <div class="logo-downloads">
-      <div class="logo-download L">
-        <div class="download-plate">
-          <div class="download-plate-container">
-            <img src="/assets/logo/pndlnk-full-logo_RGB.svg" />
-            <div class="download-caption">Скачать</div>
-          </div>
-          <div class="download-menu">
-            <div class="download-menu-plate">
-              <div class="logo-download-links">
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-full-logo_RGB.png" download
-                    >pndlnk-full-logo_RGB.png</a
-                  >
-                </p>
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-full-logo_RGB.svg" download
-                    >pndlnk-full-logo_RGB.svg</a
-                  >
-                </p>
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-full-logo_CMYK.eps" download
-                    >pndlnk-full-logo_CMYK.eps</a
-                  >
-                </p>
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-full-logo_CMYK.pdf" download
-                    >pndlnk-full-logo_CMYK.pdf</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="logo-download M">
-        <div class="download-plate">
-          <div class="download-plate-container">
-            <img src="/assets/logo/pndlnk-compact-logo_RGB.svg" />
-            <div class="download-caption">Скачать</div>
-          </div>
-          <div class="download-menu">
-            <div class="download-menu-plate">
-              <div class="logo-download-links">
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-compact-logo_RGB.png" download
-                    >pndlnk-compact-logo_RGB.png</a
-                  >
-                </p>
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-compact-logo_RGB.svg" download
-                    >pndlnk-compact-logo_RGB.svg</a
-                  >
-                </p>
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-compact-logo_CMYK.eps" download
-                    >pndlnk-compact-logo_CMYK.eps</a
-                  >
-                </p>
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-compact-logo_CMYK.pdf" download
-                    >pndlnk-compact-logo_CMYK.pdf</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="logo-download M">
-        <div class="download-plate">
-          <div class="download-plate-container">
-            <img src="/assets/logo/pndlnk-stella-logo_RGB.svg" />
-            <div class="download-caption">Скачать</div>
-          </div>
-          <div class="download-menu">
-            <div class="download-menu-plate">
-              <div class="logo-download-links">
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-stella-logo_RGB.png" download
-                    >pndlnk-stella-logo_RGB.png</a
-                  >
-                </p>
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-stella-logo_RGB.svg" download
-                    >pndlnk-stella-logo_RGB.svg</a
-                  >
-                </p>
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-stella-logo_CMYK.eps" download
-                    >pndlnk-stella-logo_CMYK.eps</a
-                  >
-                </p>
-                <p class="logo-download-link">
-                  <a href="/assets/logo/pndlnk-stella-logo_CMYK.pdf" download
-                    >pndlnk-stella-logo_CMYK.pdf</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="ids style-page">
+    <h1></h1>
+    <div class="ids__text-width">
+      <p>
+        <strong>Визуальный стиль и дизайн-система Понедельника.</strong>
+        Графические константы, цвета, шрифты, иллюстрации и веб-компоненты для
+        оформления носителей.
+      </p>
     </div>
+
+    <ids-navbar></ids-navbar>
+    <div class="ids__space L"></div>
+
+    <ids-nav-item id="logo" label="Логотип">
+      <div class="ids__space S"></div>
+      <h2 class="accent">Логотип</h2>
+      <div class="ids__text-width">
+        <p>
+          Есть четыре версии логотипа: горазонтальная, компактная, сокращённая
+          и специальная стелла-версия
+        </p>
+      </div>
+
+      <div class="logo-downloads style-logo-grid">
+        <div class="logo-download L style-logo-item style-logo-item--full">
+          <div class="download-plate">
+            <div class="download-plate-container">
+              <img src="/assets/logo/pndlnk-full-logo_RGB.svg" />
+              <div class="download-caption">Скачать</div>
+            </div>
+            <div class="download-menu">
+              <div class="download-menu-plate">
+                <div class="logo-download-links">
+                  <p class="logo-download-link">
+                    <a href="/assets/logo/pndlnk-full-logo_RGB.png" download
+                      >pndlnk-full-logo_RGB.png</a
+                    >
+                  </p>
+                  <p class="logo-download-link">
+                    <a href="/assets/logo/pndlnk-full-logo_RGB.svg" download
+                      >pndlnk-full-logo_RGB.svg</a
+                    >
+                  </p>
+                  <p class="logo-download-link">
+                    <a href="/assets/logo/pndlnk-full-logo_CMYK.eps" download
+                      >pndlnk-full-logo_CMYK.eps</a
+                    >
+                  </p>
+                  <p class="logo-download-link">
+                    <a href="/assets/logo/pndlnk-full-logo_CMYK.pdf" download
+                      >pndlnk-full-logo_CMYK.pdf</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="style-logo-left-col">
+          <div
+            class="logo-download M style-logo-item style-logo-item--compact-main">
+            <div class="download-plate">
+              <div class="download-plate-container">
+                <img src="/assets/logo/pndlnk-compact-logo_RGB.svg" />
+                <div class="download-caption">Скачать</div>
+              </div>
+              <div class="download-menu">
+                <div class="download-menu-plate">
+                  <div class="logo-download-links">
+                    <p class="logo-download-link">
+                      <a
+                        href="/assets/logo/pndlnk-compact-logo_RGB.png"
+                        download
+                        >pndlnk-compact-logo_RGB.png</a
+                      >
+                    </p>
+                    <p class="logo-download-link">
+                      <a
+                        href="/assets/logo/pndlnk-compact-logo_RGB.svg"
+                        download
+                        >pndlnk-compact-logo_RGB.svg</a
+                      >
+                    </p>
+                    <p class="logo-download-link">
+                      <a
+                        href="/assets/logo/pndlnk-compact-logo_CMYK.eps"
+                        download
+                        >pndlnk-compact-logo_CMYK.eps</a
+                      >
+                    </p>
+                    <p class="logo-download-link">
+                      <a
+                        href="/assets/logo/pndlnk-compact-logo_CMYK.pdf"
+                        download
+                        >pndlnk-compact-logo_CMYK.pdf</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="logo-download M style-logo-item style-logo-item--abbr">
+            <div class="download-plate">
+              <div class="download-plate-container">
+                <img src="/assets/logo/pndlnk-compact-logo_RGB.svg" />
+                <div class="download-caption">Скачать</div>
+              </div>
+              <div class="download-menu">
+                <div class="download-menu-plate">
+                  <div class="logo-download-links">
+                    <p class="logo-download-link">
+                      <a
+                        href="/assets/logo/pndlnk-compact-logo_RGB.png"
+                        download
+                        >pndlnk-compact-logo_RGB.png</a
+                      >
+                    </p>
+                    <p class="logo-download-link">
+                      <a
+                        href="/assets/logo/pndlnk-compact-logo_RGB.svg"
+                        download
+                        >pndlnk-compact-logo_RGB.svg</a
+                      >
+                    </p>
+                    <p class="logo-download-link">
+                      <a
+                        href="/assets/logo/pndlnk-compact-logo_CMYK.eps"
+                        download
+                        >pndlnk-compact-logo_CMYK.eps</a
+                      >
+                    </p>
+                    <p class="logo-download-link">
+                      <a
+                        href="/assets/logo/pndlnk-compact-logo_CMYK.pdf"
+                        download
+                        >pndlnk-compact-logo_CMYK.pdf</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="logo-download M style-logo-item style-logo-item--stella">
+          <div class="download-plate">
+            <div class="download-plate-container">
+              <img src="/assets/logo/pndlnk-stella-logo_RGB.svg" />
+              <div class="download-caption">Скачать</div>
+            </div>
+            <div class="download-menu">
+              <div class="download-menu-plate">
+                <div class="logo-download-links">
+                  <p class="logo-download-link">
+                    <a href="/assets/logo/pndlnk-stella-logo_RGB.png" download
+                      >pndlnk-stella-logo_RGB.png</a
+                    >
+                  </p>
+                  <p class="logo-download-link">
+                    <a href="/assets/logo/pndlnk-stella-logo_RGB.svg" download
+                      >pndlnk-stella-logo_RGB.svg</a
+                    >
+                  </p>
+                  <p class="logo-download-link">
+                    <a href="/assets/logo/pndlnk-stella-logo_CMYK.eps" download
+                      >pndlnk-stella-logo_CMYK.eps</a
+                    >
+                  </p>
+                  <p class="logo-download-link">
+                    <a href="/assets/logo/pndlnk-stella-logo_CMYK.pdf" download
+                      >pndlnk-stella-logo_CMYK.pdf</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ids-nav-item>
+
+    <div class="ids__space L"></div>
+    <ids-nav-item id="colors" label="Цвета">
+      <div class="ids__space S"></div>
+      <section>
+        <h2>Цвета</h2>
+      </section>
+      <h3>Интерфейсная палитра</h3>
+      <div class="style-color-grid">
+        <div
+          class="guide-color-plate guide-color-plate--dark"
+          style="background-color: rgb(var(--ids__text-RGB))">
+          <p class="guide-color-plate__name">--ids__text-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate guide-color-plate--dark"
+          style="background-color: rgb(var(--ids__link-RGB))">
+          <p class="guide-color-plate__name">--ids__link-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate"
+          style="background-color: rgb(var(--ids__hover-RGB))">
+          <p class="guide-color-plate__name">--ids__hover-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate"
+          style="background-color: rgb(var(--ids__accent-RGB))">
+          <p class="guide-color-plate__name">--ids__accent-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate"
+          style="background-color: rgb(var(--ids__mark-RGB))">
+          <p class="guide-color-plate__name">--ids__mark-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate"
+          style="background-color: rgb(var(--ids__surface-RGB))">
+          <p class="guide-color-plate__name">--ids__surface-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate"
+          style="background-color: rgb(var(--ids__background-RGB))">
+          <p class="guide-color-plate__name">--ids__background-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate"
+          style="background-color: rgb(var(--ids__inverted-text-RGB))">
+          <p class="guide-color-plate__name">--ids__inverted-text-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+      </div>
+      <div class="ids__space M"></div>
+      <h3>Брендовая палитра</h3>
+      <div class="style-color-grid">
+        <div
+          class="guide-color-plate guide-color-plate--dark"
+          style="background-color: rgb(var(--ids__pndlnk-black-RGB))">
+          <p class="guide-color-plate__name">--ids__pndlnk-black-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate guide-color-plate--dark"
+          style="background-color: rgb(var(--ids__pndlnk-dark-gray-RGB))">
+          <p class="guide-color-plate__name">--ids__pndlnk-dark-gray-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate"
+          style="background-color: rgb(var(--ids__pndlnk-red-RGB))">
+          <p class="guide-color-plate__name">--ids__pndlnk-red-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate"
+          style="background-color: rgb(var(--ids__pndlnk-red-tinted-RGB))">
+          <p class="guide-color-plate__name">--ids__pndlnk-red-tinted-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate guide-color-plate--dark"
+          style="background-color: rgb(var(--ids__ink-RGB))">
+          <p class="guide-color-plate__name">--ids__ink-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate"
+          style="background-color: rgb(var(--ids__pndlnk-light-gray-RGB))">
+          <p class="guide-color-plate__name">--ids__pndlnk-light-gray-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate"
+          style="background-color: rgb(var(--ids__pndlnk-gold-RGB))">
+          <p class="guide-color-plate__name">--ids__pndlnk-gold-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+        <div
+          class="guide-color-plate"
+          style="background-color: rgb(var(--ids__pndlnk-gold-tinted-RGB))">
+          <p class="guide-color-plate__name">--ids__pndlnk-gold-tinted-RGB</p>
+          <button class="guide-color-plate__value"></button>
+        </div>
+      </div>
+    </ids-nav-item>
+
+    <div class="ids__space L"></div>
+    <ids-nav-item id="typography" label="Типографика">
+      <div class="ids__space S"></div>
+      <h2>Типографика</h2>
+      <div class="ids__text-width">
+        <ul>
+          <li>
+            Основной шрифт для текста и заголовков — CoFo Gothic, начертания
+            Regular (400), Medium (500), Bold (700)
+          </li>
+          <li>
+            Дополнительный шрифт — CoFo Sans Semi-Mono, начертания Regular (400)
+            и Bold (700)
+          </li>
+          <li>
+            Шрифт для глоссария и сравочной информации — Newton, начертания
+            Regular (400), Italic, Bold (700), Bold Italic.
+          </li>
+          <li>Шрифт для имитации рукописного текста — CoFo Hand.</li>
+        </ul>
+      </div>
+
+      <div class="ids__sequence XL gap-S">
+        <div class="ids__sequence-item">
+          <div class="style-font-sample style-font-sample--gothic">
+            <h3>CoFo Gothic</h3>
+            <p>
+              Понедельник — это опыто-конструкторское бюро. Мы проектируем
+              взаимодействия людей и компаний так, чтобы они были логичными,
+              честными и выгодными для обеих сторон.
+            </p>
+          </div>
+        </div>
+        <div class="ids__sequence-item">
+          <div class="style-font-sample style-font-sample--mono">
+            <h3>CoFo Sans Semi-Mono</h3>
+            <p>
+              Наши проекты — это очень разные истории, от дизайна тележек для
+              супермаркетов до дизайна процессов найма в крупнейшие корпорации.
+              Их объединяет одно: желание компании улучшить взаимодействие с
+              людьми.
+            </p>
+          </div>
+        </div>
+        <div class="ids__sequence-item">
+          <div class="style-font-sample style-font-sample--serif term">
+            <h3>Newton</h3>
+            <p>
+              <em>Ценностное предложение</em> — это совокупность ответов на
+              основные вопросы об обмене: кто клиент; что его приводит к
+              покупке; что компания ему предлагает; почему нужно купить именно у
+              нее, а не у конкурентов; каков денежный и неденежный вклад
+              клиента; как организован обмен во времени; какой смысл покупка
+              имеет для сторон.
+            </p>
+          </div>
+        </div>
+        <div class="ids__sequence-item">
+          <div class="style-font-sample style-font-sample--hand">
+            <h3>CoFo Hand</h3>
+
+            <p class="style-font-sample-hand-note">
+              Совместные сессии решают проблему «понять задачу, чтобы выбрать
+              агентство» за счёт вводного интервью и карты открытых вопросов.
+              Так создаётся понимание задачи, с которым согласен клиент, и
+              которое понятно агентствам.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ids__space M"></div>
+      <h3>Текстовые компоненты</h3>
+      <div class="style-typography-grid">
+        <div class="style-typography-item">
+          <p class="caption">Заголовок страницы, <code>h1.L</code></p>
+          <h1 class="L">Дизайн-система</h1>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">Акцентный заголовок, <code>h1.accent</code></p>
+          <h1 class="accent">Понедельник</h1>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">Заголовок раздела, <code>h2</code></p>
+          <h2>Логотип и графика</h2>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">Подзаголовок, <code>h3</code></p>
+          <h3>Единый визуальный язык для всех носителей</h3>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">Основной абзац, <code>p</code></p>
+          <p>
+            Мы используем системную типографику как основу для интерфейсов,
+            презентаций и продуктовых материалов.
+          </p>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">Крупный абзац, <code>p.loud</code></p>
+          <p class="loud">
+            Важные мысли и вводные тезисы выделяются более крупным набором.
+          </p>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">Маркированный список, <code>ul li</code></p>
+          <ul>
+            <li>Логика иерархии заголовков</li>
+            <li>Единые интервалы и ритм</li>
+            <li>Читаемость в длинных текстах</li>
+          </ul>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">Текстовая ссылка, <code>a</code></p>
+          <p><a href="/type">Перейти на страницу типографики</a></p>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">Промо-кнопка, <code>a.promo-link</code></p>
+          <p><a class="promo-link" href="/course">Промо-кнопка</a></p>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">
+            Инлайновые компоненты, <code>em</code>, <code>strong</code>,
+            <code>mark</code>, <code>code</code>
+          </p>
+          <p>
+            Текст может содержать <em>акцент</em>, <strong>усиление</strong>,
+            <mark>подсветку</mark> и <code>кодовый фрагмент</code>.
+          </p>
+        </div>
+      </div>
+    </ids-nav-item>
+
+    <ids-nav-item id="graphics" label="Графика">
+      <div class="ids__space XL"></div>
+      <section>
+        <h2>Графика</h2>
+      </section>
+      <div class="ids__sequence XL gap-S">
+        <div class="ids__sequence-item">
+          <div
+            class="illustration-container dark-theme"
+            data-illustration-type="sphere">
+            <canvas class="illustration-canvas"></canvas>
+          </div>
+        </div>
+        <div class="ids__sequence-item">
+          <div
+            class="illustration-container"
+            data-illustration-type="layered-house"
+            data-background-color="--ids__surface-RGB"
+            style="background-color: rgba(var(--ids__surface-RGB), 1)">
+            <canvas class="illustration-canvas"></canvas>
+          </div>
+        </div>
+        <div class="ids__sequence-item">
+          <div
+            class="illustration-container"
+            data-illustration-type="splash"
+            data-background-color="--ids__surface-RGB"
+            style="background-color: rgba(var(--ids__surface-RGB), 1)">
+            <canvas class="illustration-canvas"></canvas>
+          </div>
+        </div>
+        <div class="ids__sequence-item">
+          <div class="three-icons"></div>
+        </div>
+      </div>
+    </ids-nav-item>
   </div>
 </div>
 
@@ -113,5 +470,6 @@
 <div class="ids__space XL"></div>
 <div class="ids__space XL"></div>
 
+<script src="/assets/navbar.js"></script>
 <script type="module" src="/assets/illustrations/init.js"></script>
 {% endblock %}

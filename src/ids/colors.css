@@ -1,14 +1,23 @@
 :root {
-  --ids__text-RGB: 35, 37, 38;
+  --ids__text-RGB: 44, 44, 44;
 
   --ids__link-RGB: 44, 44, 44;
   --ids__hover-RGB: 245, 65, 55;
   --ids__accent-RGB: 255, 105, 105;
-  --ids__pen-RGB: 0, 65, 205;
+  --ids__ink-RGB: 0, 65, 205;
   --ids__mark-RGB: 230, 228, 228;
   --ids__surface-RGB: 230, 228, 228;
+  --ids__code-RGB: 44, 44, 44;
   --ids__background-RGB: 255, 255, 255;
   --ids__inverted-text-RGB: 255, 255, 255;
+
+  --ids__pndlnk-black-RGB: var(--ids__text-RGB);
+  --ids__pndlnk-red-RGB: var(--ids__hover-RGB);
+  --ids__pndlnk-dark-gray-RGB: 77, 77, 77;
+  --ids__pndlnk-red-tinted-RGB: var(--ids__accent-RGB);
+  --ids__pndlnk-light-gray-RGB: var(--ids__surface-RGB);
+  --ids__pndlnk-gold-RGB: 223, 146, 39;
+  --ids__pndlnk-gold-tinted-RGB: 227, 169, 65;
 }
 
 body {
