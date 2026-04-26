@@ -424,6 +424,161 @@ content %}
             <mark>подсветку</mark> и <code>кодовый фрагмент</code>.
           </p>
         </div>
+        <div class="style-typography-item">
+          <p class="caption">
+            Тегообразный список, <code>ul.inline-block</code>
+          </p>
+          <ul class="inline-block S">
+            <li>Что продаётся?</li>
+            <li>Какие у этого свойства?</li>
+            <li>Кто продаёт?</li>
+            <li>Почему ему можно доверять?</li>
+            <li>Кому он это продаёт?</li>
+            <li>Какие это люди?</li>
+            <li>Зачем или почему они это покупают?</li>
+            <li>Сколько это стоит?</li>
+            <li>Когда и как платить?</li>
+            <li>Что ещё нужно сделать, кроме денег?</li>
+            <li>Зачем это нужно «на самом деле», в чём истинный смысл?</li>
+          </ul>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">
+            Крупный моно с акцентом, <code>p.loud.mono</code> +
+            <code>mark</code>
+          </p>
+          <p class="loud mono" style="font-family: var(--mono)">
+            <mark
+              style="
+                background-color: transparent;
+                text-decoration: underline;
+                text-decoration-thickness: 0.3em;
+                text-decoration-skip-ink: none;
+                text-decoration-color: rgba(var(--ids__accent-RGB), 1);
+              "
+              >Открытый интенсив.</mark
+            >
+            Серия лекций и практик по сборке ценностного предложения.
+          </p>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">Таблица, <code>table.promo-table</code></p>
+          <div class="promo-table-container">
+            <table class="promo-table">
+              <thead>
+                <tr>
+                  <th class="ids__table-head">В какой ситуации применять</th>
+                  <th class="ids__table-head">Кто применяет</th>
+                  <th class="ids__table-head">Зачем применяет</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Запуск нового продукта</td>
+                  <td>Компания и её клиент</td>
+                  <td>Покупка или понимание причины непокупки</td>
+                </tr>
+                <tr>
+                  <td>Объединение портфеля в экосистему</td>
+                  <td>Лидер трансформации и его сотрудники</td>
+                  <td>Согласованные действия руководителей продукта</td>
+                </tr>
+                <tr>
+                  <td>Выход фаундера из операционки</td>
+                  <td>Фаундер и топ-менеджеры</td>
+                  <td>Перенятие и развитие видения компании</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="ids__space M"></div>
+      <h3>Интерфейсные компоненты</h3>
+      <div class="style-typography-grid">
+        <div class="style-typography-item">
+          <p class="caption">CTA-кнопка, <code>button.promo-link</code></p>
+          <button type="button" class="promo-link">
+            Заказать за 14&thinsp;900&thinsp;₽
+          </button>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">
+            CTA-кнопка тёмная, <code>button.promo-link.third</code>
+          </p>
+          <button type="button" class="promo-link third">Запросить счёт</button>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">
+            Outlined-кнопка, <code>button.lets-talk-button</code>
+          </p>
+          <button
+            type="button"
+            class="lets-talk-button"
+            style="font-size: var(--smaller)">
+            Обсудить проект
+          </button>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">Текстфилд, <code>div.form-field</code></p>
+          <div class="ids__text-width">
+            <div class="contact-form-form">
+              <div
+                class="form-field"
+                style="background-color: rgba(var(--ids__surface-RGB), 1)">
+                <label>Ваше имя:</label>
+                <input type="text" placeholder="" />
+              </div>
+              <div
+                class="form-field"
+                style="background-color: rgba(var(--ids__surface-RGB), 1)">
+                <label>Название компании:</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">
+            Сегментед-контрол, <code>div.promo-switcher</code>
+          </p>
+          <div
+            class="promo-table-container"
+            style="padding: 0; background: none">
+            <div class="promo-switcher" role="group">
+              <button
+                type="button"
+                class="promo-switcher__item is-active"
+                aria-pressed="true">
+                По продуктам
+              </button>
+              <button
+                type="button"
+                class="promo-switcher__item"
+                aria-pressed="false">
+                По задачам
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">
+            Карточка материала, <code>a.pndlnk-promo-link</code>
+          </p>
+          <div class="pndlnk-promo-column" style="max-width: 14em">
+            <a class="pndlnk-promo-link" href="/glossary/">
+              <aside>
+                <h6>Статья</h6>
+                <h3>Архитектоника ценностного предложения</h3>
+                <p>
+                  Как системно создавать ценностные предложения, которые
+                  выдерживают проверку логикой и рынком.
+                </p>
+              </aside>
+            </a>
+          </div>
+        </div>
       </div>
     </ids-nav-item>
 

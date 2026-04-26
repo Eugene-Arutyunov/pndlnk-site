@@ -335,7 +335,7 @@
     background-color: rgb(var(--ids__accent-RGB));
     text-decoration: none;
     color: white;
-    border-radius: 0.25em;
+    border-radius: 0;
     border: none;
     cursor: pointer;
     transition: background-color 0.5s ease;
