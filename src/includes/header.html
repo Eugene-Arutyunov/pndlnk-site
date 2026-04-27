@@ -1,8 +1,7 @@
 {% set nav = [{ title: 'ДКЦП', href: '/dkcp/' }, { title: 'База', href:
 '/dkcp-base/' }, { title: 'Чекап ↗', href: 'https://ponedelnik.ru/checkup' }, {
-title: 'Логика ↗', href: 'https://www.cxstrategy.ru/' }, { title: 'КСЦ ↗', href:
-'https://ponedelnik.ru/ksc' }, { title: 'КСЦ:ОИ', href: '/ksc-open/' }, { title:
-'Блог ↗', href: 'https://blog.buro.cx/' } ] %}
+title: 'Логика ↗', href: 'https://www.cxstrategy.ru/' }, { title: 'КСЦ', href:
+'/ksc-full/' }, { title: 'Блог ↗', href: 'https://blog.buro.cx/' } ] %}
 
 <!--   { title: 'Мы', href: '/about/' }, { title: 'Среда', href: '/sreda' } -->
 
@@ -11,7 +10,7 @@ title: 'Логика ↗', href: 'https://www.cxstrategy.ru/' }, { title: 'КС�
     <div class="logo">
       <a href="/"> {% include 'assets/pndlnk-logo.html' %} </a>
     </div>
-    {% for link in nav %} {% if link.href == page.url %}
+    {% for link in nav %} {% if link.href == page.url and link.title != 'КСЦ' %}
     <span>{{ link.title }}</span>
     {% else %}
     <a href="{{ link.href }}">{{ link.title }}</a>
