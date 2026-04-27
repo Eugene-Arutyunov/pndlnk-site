@@ -67,13 +67,73 @@
             class="project-card__link"
             href="/projects/{{ project.slug }}/">
             <div class="project-card__cover" aria-hidden="true">
-              {% if project.slug == "pyaterochka-razrabotka-idealnoy-telezhki" %}
+              {% if project.slug == "dodo-pitstsa-opyt-semey-s-detmi" %}
+              <div class="project-card__logo">
+                {% include 'assets/dodo-pizza-logo.html' %}
+              </div>
+              {% elseif project.slug == "vkusvill-gipersegmentatsiya-i-dizayn-sistema" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-vkusvill.html' %}
+              </div>
+              {% elseif project.slug == "vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-vkusvill.html' %}
+              </div>
+              {% elseif project.slug == "roza-hutor-servisnaya-strategiya" %}
+              <div class="project-card__logo project-card__logo--wide">
+                {% include 'assets/home-client-roza-khutor.html' %}
+              </div>
+              {% elseif project.slug == "yandeks-opyt-voditeley-taksi" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-yandex.html' %}
+              </div>
+              {% elseif project.slug == "x5-club-cjm-polzovatelya-programmy-loyalnosti" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-x5.html' %}
+              </div>
+              {% elseif project.slug == "mts-issledovanie-opyta-agentov-po-prodazham" %}
+              <div class="project-card__logo project-card__logo--mts">
+                {% include 'assets/home-client-mts.html' %}
+              </div>
+              {% elseif project.slug == "mts-issledovanie-opyta-produktovyh-komand" %}
+              <div class="project-card__logo project-card__logo--mts">
+                {% include 'assets/home-client-mts.html' %}
+              </div>
+              {% elseif project.slug == "rmk-arena-opyt-gostya" %}
+              <div class="project-card__logo project-card__logo--rmk">
+                {% include 'assets/home-client-rmk.html' %}
+              </div>
+              {% elseif project.slug == "pik-uluchshenie-puti-klienta" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-pik.html' %}
+              </div>
+              {% elseif project.slug == "sbermarket-issledovanie-motivatsii-b2b-klientov" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-sbermarket.html' %}
+              </div>
+              {% elseif project.slug == "sbermarket-issledovanie-motivatsii-b2c-klientov" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-sbermarket.html' %}
+              </div>
+              {% elseif project.slug == "leroy-merlin-issledovanie-opyta-pokupateley-gruppy-otdelka-sten" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-leroy-merlin.html' %}
+              </div>
+              {% elseif project.slug == "magnit-issledovanie-opyta-sotrudnikov-roznitsy" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-magnit.html' %}
+              </div>
+              {% elseif project.slug == "kontur-issledovanie-sellerov-marketpleysov" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-kontur.html' %}
+              </div>
+              {% elseif project.slug == "skb-kontur-razrabotka-kontseptsii-dlya-kontur-buhgalterii" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-kontur.html' %}
+              </div>
+              {% elseif project.slug == "pyaterochka-razrabotka-idealnoy-telezhki" %}
               <img
                 src="/assets/projects/pyaterochka-razrabotka-idealnoy-telezhki/1.jpg"
-                alt="" />
-              {% elseif project.slug == "vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma" %}
-              <img
-                src="/assets/projects/vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma/1.jpg"
                 alt="" />
               {% elseif project.slug == "mavt-vinoteka-issledovanie-opyta-pokupateley" %}
               <img
