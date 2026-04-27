@@ -105,57 +105,65 @@
   font-size: 0.8em;
 }
 
-.why-ponedelnik h2 {
-  padding-bottom: 0.2em;
-  margin-bottom: 0.2em;
-  border-bottom: 2px solid rgb(var(--ids__text-RGB));
-}
-
-.why-ponedelnik-rule {
-  border: none;
-  border-top: 1px solid rgb(var(--ids__text-RGB));
-  margin: 0.4em 0 0;
-}
-
-.why-ponedelnik-grid {
-  display: grid;
-  grid-template-columns: 10fr 12fr 28fr;
-  column-gap: 0.67em;
-  row-gap: 0.33em;
-  align-items: stretch;
-  font-size: 0.82em;
-
-  & > div:first-child {
-    font-weight: 700;
-    border-right: 2px solid rgb(var(--ids__text-RGB));
-    padding-right: 0.67em;
-  }
-
-  & > div.serif {
-    font-family: var(--serif);
-    border-right: 1px solid rgb(var(--ids__text-RGB));
-    padding-right: 0.67em;
-  }
+.why-ponedelnik {
+  transform: rotate(-1deg);
 
   @media (width < 768px) {
-    grid-template-columns: 1fr 1fr;
-    font-size: 1em;
+    transform: none;
+  }
+
+  & h2 {
+    padding-bottom: 0.2em;
+    margin-bottom: 0.2em;
+    border-bottom: 2px solid rgb(var(--ids__text-RGB));
+  }
+
+  & .why-ponedelnik-rule {
+    border: none;
+    border-top: 1px solid rgb(var(--ids__text-RGB));
+    margin: 0.4em 0 0;
+  }
+
+  & .why-ponedelnik-grid {
+    display: grid;
+    grid-template-columns: 10fr 12fr 28fr;
+    column-gap: 0.67em;
+    row-gap: 0.33em;
+    align-items: stretch;
+    font-size: 0.82em;
 
     & > div:first-child {
-      border-right: 1px solid rgb(var(--ids__text-RGB));
+      font-weight: 700;
+      border-right: 2px solid rgb(var(--ids__text-RGB));
       padding-right: 0.67em;
     }
 
     & > div.serif {
-      border-right: none;
-      padding-right: 0;
+      font-family: var(--serif);
+      border-right: 1px solid rgb(var(--ids__text-RGB));
+      padding-right: 0.67em;
     }
 
-    & > div:last-child {
-      grid-column: span 2;
-      border-top: 1px solid rgb(var(--ids__text-RGB));
-      padding-top: 0.67em;
-      margin-top: 0.2em;
+    @media (width < 768px) {
+      grid-template-columns: 1fr 1fr;
+      font-size: 1em;
+
+      & > div:first-child {
+        border-right: 1px solid rgb(var(--ids__text-RGB));
+        padding-right: 0.67em;
+      }
+
+      & > div.serif {
+        border-right: none;
+        padding-right: 0;
+      }
+
+      & > div:last-child {
+        grid-column: span 2;
+        border-top: 1px solid rgb(var(--ids__text-RGB));
+        padding-top: 0.67em;
+        margin-top: 0.2em;
+      }
     }
   }
 }
