@@ -820,3 +820,59 @@ table.ksc-open-schedule {
   object-fit: cover;
   object-position: center bottom;
 }
+
+.ksc-narrative-plate {
+  & h3 {
+    text-align: left;
+    opacity: 1;
+    margin-bottom: 0;
+  }
+
+  & h6 {
+    font-family: var(--mono);
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: normal;
+    opacity: 0.4;
+    margin: 2em 0 0.5em;
+  }
+}
+
+.ksc-narrative-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 1fr);
+  gap: calc(var(--ids__density) * 2em);
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ksc-narrative-main {
+  & p {
+    font-family: var(--mono);
+    font-size: 0.85em;
+  }
+}
+
+.ksc-narrative-aside {
+  font-family: var(--mono);
+  font-size: 0.85em;
+
+  @media (width < 768px) {
+    padding-top: 0;
+  }
+}
+
+.ksc-narrative-client-logo {
+  filter: grayscale(1);
+  opacity: 0.7;
+  margin-bottom: 1em;
+
+  svg {
+    height: 2em;
+    width: auto;
+    display: block;
+  }
+}
