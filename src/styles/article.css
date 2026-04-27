@@ -384,57 +384,6 @@
       }
     }
   }
-
-  & .case-cp-table {
-    width: 100%;
-  }
-
-  & mark a,
-  & mark a:hover {
-    text-decoration: none;
-  }
-
-  & .case-meta-plate {
-    /* как aside у .pndlnk-promo-link на странице ДКЦП */
-    background: none;
-    border: 1px solid rgba(var(--ids__text-RGB), 0.2);
-    border-radius: 0.2em;
-    box-sizing: border-box;
-    padding-top: calc(var(--ids__density) * 0.4em);
-    padding-right: calc(var(--ids__density) * 1.5em);
-    padding-bottom: calc(var(--ids__density) * 0.4em);
-    padding-left: calc(var(--ids__density) * 0.5em);
-    margin-bottom: 0;
-    transition: border-color 0.5s ease;
-
-    @media (width < 768px) {
-      padding-right: calc(var(--ids__density) * 0.75em);
-    }
-
-    & p:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  & .case-context-quote {
-    font-size: 1.2em;
-    line-height: 1.45;
-    margin: 1em 0;
-    margin-inline: 0;
-
-    & p {
-      margin-bottom: 0;
-      font-weight: 400;
-    }
-  }
-
-  & .review-author-portrait--placeholder {
-    display: block;
-    flex-shrink: 0;
-    width: 4em;
-    height: 4em;
-    background: rgba(var(--ids__text-RGB), 0.22);
-  }
 }
 
 @keyframes form-submit-pulse {

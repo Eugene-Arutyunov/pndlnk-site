@@ -76,6 +76,13 @@
     }
   }
 
+  &.full-width {
+    width: 100%;
+    margin: 0;
+    max-width: none;
+    padding: 0 var(--page-padding);
+  }
+
   &.XL {
     width: 100%;
     margin: 0 auto;
@@ -105,6 +112,14 @@
     & .with-sidenote {
       position: relative;
 
+      &.with-sidenote--illustration {
+        & .sidenote {
+          @media (width > 767px) {
+            margin-top: -1em;
+          }
+        }
+      }
+
       & .sidenote {
         font-size: 0.7em;
         width: 90%;
@@ -117,6 +132,7 @@
           left: 110%;
 
           font-size: 0.7em;
+          margin-bottom: 1em;
         }
       }
     }

@@ -116,7 +116,7 @@
     font-size: 1.2em;
     font-family: var(--mono);
     letter-spacing: -0.01em;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1;
     margin-bottom: 0.5em;
 
@@ -141,7 +141,7 @@
 
   & .dkcp-hint {
     font-family: var(--hand);
-    color: rgba(var(--ids__pen-RGB), 1);
+    color: rgba(var(--ids__ink-RGB), 1);
   }
 }
 
@@ -240,7 +240,7 @@
 
     & .dkcp-definition {
       font-family: var(--hand);
-      color: rgba(var(--ids__pen-RGB), 1);
+      color: rgba(var(--ids__ink-RGB), 1);
 
       @media (width < 768px) {
         /*font-size: 0.5em;*/

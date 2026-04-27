@@ -81,10 +81,10 @@
   margin: 0.5em 0;
 }
 
+/* Таблица в стиле блока методологии: плашка, моно, тонкие линейки */
+
 .ids {
-  /* ksc-program-table: контейнер таблицы */
-  .promo-table-container,
-  .ksc-program-table {
+  .promo-table-container {
     background: rgba(var(--ids__surface-RGB), 0.3);
     padding: 1em;
     font-family: var(--mono);
@@ -93,26 +93,309 @@
     @media (width < 768px) {
       font-size: 0.7em;
     }
+
+    & > h2 {
+      font-size: 2em;
+    }
+
+    & .promo-table-footer {
+      line-height: 1.4;
+    }
   }
 
-  /* ksc-program-table: переключатели режимов */
-  .promo-switchers,
-  .ksc-program-table__switchers {
+  .ids__wrapper.L .promo-table-container {
+    padding-right: 15%;
+    @media (width < 768px) {
+      padding-right: 1em;
+    }
+  }
+
+  .promo-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    & thead th {
+      text-align: left;
+      border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+      padding: 0.5em 1em 0.5em 0;
+
+      @media (width < 768px) {
+        padding-top: 0.8em;
+      }
+    }
+
+    & tbody td {
+      padding: 0.5em 1em 0.8em 0;
+      border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+      vertical-align: top;
+    }
+
+    & tbody tr:last-child td {
+      border-bottom: none;
+    }
+  }
+
+  /* Каталог проектов (главная) */
+
+  .project-catalog-panel {
+    background: color-mix(in srgb, rgb(var(--ids__surface-RGB)) 30%, white 70%);
+    padding: 1em;
+    line-height: 1.35;
+  }
+
+  .project-catalog-filter {
+    margin-bottom: 0;
+  }
+
+  .project-catalog-filter__row {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75em 1em;
+    margin-bottom: 3em;
+    padding-top: 0.15em;
+    padding-bottom: 0.35em;
+    font-family: var(--mono);
+    font-size: 0.75em;
+    line-height: 1.4;
+    background: color-mix(in srgb, rgb(var(--ids__surface-RGB)) 30%, white 70%);
+  }
+
+  .project-catalog-intro {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 0.75em;
+    line-height: 1.4;
+  }
+
+  .project-catalog-filter__sentence {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25em 0.35em;
+  }
+
+  .project-catalog-filter__field {
+    display: inline-flex;
+    margin: 0;
+    align-items: baseline;
+  }
+
+  /* Шеврон (modulate header): M2 4.5l4 4 4-4; select и ::after в одной grid-ячейке */
+  .project-catalog-filter__select-wrap {
+    display: inline-grid;
+    grid-template-columns: minmax(0, max-content);
+    align-items: center;
+    justify-items: stretch;
+    vertical-align: baseline;
+    max-width: 100%;
+    padding: 0.1em 0.12em;
+    border-radius: 0.12em;
+    background-color: rgba(var(--ids__surface-RGB), 0.62);
+    transition: background-color 0.28s ease;
+  }
+
+  .project-catalog-filter__select-wrap:hover {
+    transition-duration: 0s;
+    background-color: rgba(var(--ids__surface-RGB), 0.75);
+  }
+
+  .project-catalog-filter__select-wrap::after {
+    content: "";
+    grid-area: 1 / 1;
+    width: 0.65em;
+    height: 0.65em;
+    margin-right: 0.18em;
+    justify-self: end;
+    align-self: center;
+    pointer-events: none;
+    background-color: rgb(var(--ids__text-RGB));
+    opacity: 0.85;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25' d='M2 4.5l4 4 4-4'/%3E%3C/svg%3E");
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25' d='M2 4.5l4 4 4-4'/%3E%3C/svg%3E");
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  .project-catalog-filter__select {
+    grid-area: 1 / 1;
+    font: inherit;
+    font-size: 1em;
+    line-height: 1.25;
+    min-width: max-content;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 0.95em 0 0;
+    border: none;
+    border-radius: 0.12em;
+    background-color: transparent;
+    background-image: none;
+    color: rgb(var(--ids__text-RGB));
+    appearance: none;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .project-catalog-filter__select:focus-visible {
+    outline: 1px solid rgb(var(--ids__hover-RGB));
+    outline-offset: 1px;
+  }
+
+  .project-catalog-filter__status {
+    margin: 0;
+    flex-shrink: 0;
+    align-self: flex-start;
+    font-size: 0.65em;
+    line-height: 1.35;
+    color: rgba(var(--ids__text-RGB), 0.55);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .project-card.is-hidden {
+    display: none;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (width < 1100px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (width < 720px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width < 420px) {
+      grid-template-columns: 1fr;
+    }
+
+    & > li {
+      padding-left: 0;
+      margin-bottom: 0;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    border: 1px solid rgba(var(--ids__text-RGB), 0.06);
+    border-radius: 0;
+    overflow: hidden;
+    background: rgba(var(--ids__surface-RGB), 0.45);
+    font-family: var(--mono);
+    font-size: 1em;
+    transition: border-color 0.28s ease;
+
+    &:hover {
+      transition-duration: 0s;
+
+      border-color: rgb(var(--ids__hover-RGB));
+
+      .project-card__title,
+      .project-card__year,
+      .project-card__tag {
+        color: rgb(var(--ids__hover-RGB));
+        transition-duration: 0s;
+      }
+    }
+  }
+
+  .project-card__cover {
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    min-height: 0;
+    background: rgba(var(--ids__text-RGB), 0.06);
+  }
+
+  .project-card__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 0.3em;
+    gap: 0.3em;
+    min-height: 0;
+  }
+
+  .project-card__title {
+    margin: 0;
+    width: 100%;
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1.25;
+    color: rgb(var(--ids__text-RGB));
+    transition: color 0.28s ease;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  .project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1em;
+  }
+
+  .project-card__tag {
+    display: inline-block;
+    padding: 0.1em 0.2em;
+    border-radius: 0;
+    font-size: 0.6em;
+    line-height: 1.25;
+    color: rgba(var(--ids__text-RGB), 0.92);
+    background: rgba(var(--ids__surface-RGB), 0.55);
+    transition: color 0.28s ease;
+  }
+
+  .project-card__year {
+    margin: auto 0 0;
+    padding-top: 0.15em;
+    font-size: 0.6em;
+    color: rgba(var(--ids__text-RGB), 0.45);
+    transition: color 0.28s ease;
+  }
+
+  /* Переключатель вида таблицы (задачи / продукты) */
+
+  .promo-switchers {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5em;
   }
 
-  .promo-switcher,
-  .ksc-program-table__switcher {
+  .promo-switcher {
     display: flex;
     flex-wrap: wrap;
     border: 2px solid rgba(var(--ids__text-RGB), 1);
     width: fit-content;
   }
 
-  .promo-switcher__item,
-  .ksc-program-table__switcher-item {
+  .promo-switcher__item {
     appearance: none;
     background: none;
     font: inherit;
@@ -137,27 +420,19 @@
     }
   }
 
-  /* ksc-program-table: шапка таблицы */
-  .promo-rows-header,
-  .ksc-program-table__rows-header {
+  /* Аккордеон promo-rows */
+
+  .promo-rows-header {
     display: flex;
     margin: 0.75em 0;
   }
 
-  .promo-rows-header__label,
-  .ksc-program-table__rows-header-label {
-    &:first-child {
-      width: 33.333%;
-    }
-
-    &:last-child {
-      width: 66.667%;
-    }
+  .promo-rows-header__label {
+    width: 50%;
 
     font-weight: 700;
   }
 
-  /* ksc-program-table: строки и поведение раскрытия */
   .promo-rows {
     margin-top: 0;
   }
@@ -175,23 +450,9 @@
     }
   }
 
-  /* ksc-program-table: hover в режиме products */
-  .promo-rows[data-promo-content="products"] .promo-row,
-  .promo-rows[data-ksc-program-table-content="products"] .promo-row {
-    cursor: pointer;
-
-    &:hover {
-      color: rgb(var(--ids__accent-RGB));
-    }
-
-    &:hover .promo-row__product-link {
-      color: rgb(var(--ids__accent-RGB));
-    }
-  }
-
-  /* ksc-program-table: левая/правая колонки строки */
   .promo-row__situation,
   .promo-row__products {
+    width: 50%;
     padding: 0.4em 0 0.9em 0;
 
     .is-open & {
@@ -200,20 +461,11 @@
   }
 
   .promo-row__situation {
-    width: 33.333%;
-  }
-
-  .promo-row__products {
-    width: 66.667%;
-  }
-
-  .promo-row__situation {
     padding-right: 2em;
   }
 
   .promo-row__situation-main {
     line-height: 1.3em;
-    font-weight: 700;
 
     .is-open & {
       font-weight: 700;
@@ -269,13 +521,6 @@
     }
   }
 
-  .promo-row--inline-detail .promo-row__products-summary {
-    opacity: 1;
-    pointer-events: auto;
-    position: static;
-  }
-
-  /* ksc-program-table: содержимое раскрывающихся блоков */
   .promo-row__products-detail {
     display: grid;
     grid-template-rows: 0fr;
@@ -297,14 +542,6 @@
     }
   }
 
-  .promo-rows[data-promo-content="products"] .promo-row.is-open .promo-row__products-detail-inner,
-  .promo-rows[data-ksc-program-table-content="products"] .promo-row.is-open .promo-row__products-detail-inner {
-    margin-top: 0.55em;
-    padding-top: calc(var(--ids__density) * 1.4em);
-    border-top: 1px solid rgba(var(--ids__text-RGB), 0.12);
-  }
-
-  /* ksc-program-table: содержимое карточек внутри строки */
   .promo-row__product-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -323,7 +560,6 @@
     line-height: 1.3em;
   }
 
-  /* ksc-program-table: ссылки и иконки */
   .promo-row__product-link {
     min-width: 0;
 
@@ -368,6 +604,7 @@
     width: 2.8em;
     height: 2.8em;
     border-radius: 0.25em;
+    overflow: hidden;
     background: rgb(var(--ids__text-RGB));
     transition: background 0.5s ease;
     display: flex;
@@ -404,9 +641,40 @@
     }
   }
 
-  /* ksc-program-table: специфичное поведение для products */
-  [data-promo-content="products"],
-  [data-ksc-program-table-content="products"] {
+  [data-promo-content="tasks"] {
+    @media (width < 768px) {
+      & .promo-row__situation {
+        width: 40%;
+      }
+      & .promo-row__products {
+        width: 60%;
+      }
+
+      & .promo-rows-header__label:first-child {
+        width: 40%;
+      }
+      & .promo-rows-header__label:last-child {
+        width: 60%;
+      }
+
+      & .promo-row__product-item {
+        grid-template-columns: 2fr 1fr;
+      }
+
+      & .promo-row__products-detail .promo-row__product-link {
+        flex-direction: column;
+        gap: 0.3em;
+      }
+
+      & .promo-row__situation-main,
+      & .promo-row__condition {
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
+    }
+  }
+
+  [data-promo-content="products"] {
     & .is-open .promo-row__situation-main {
       opacity: 0;
       pointer-events: none;
@@ -487,7 +755,9 @@
           text-underline-offset: 0.2em;
           text-decoration-skip-ink: none;
           text-decoration-color: rgba(var(--ids__link-RGB), 0.2);
-          transition: color 0.5s ease, text-decoration-color 0.5s ease;
+          transition:
+            color 0.5s ease,
+            text-decoration-color 0.5s ease;
 
           & span {
             font-size: 0.8em;
@@ -502,7 +772,9 @@
         & h3 {
           color: rgb(var(--ids__hover-RGB));
           text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
-          transition: color 0s ease, text-decoration-color 0s ease;
+          transition:
+            color 0s ease,
+            text-decoration-color 0s ease;
         }
       }
 

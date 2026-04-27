@@ -1,11 +1,11 @@
 .header {
-  padding: 0.5em 0.5em 0.5em 1em;
+  padding: 0.5em var(--page-padding);
 
   display: flex;
   justify-content: space-between;
 
   @media (width < 768px) {
-    padding: 0.5em calc(var(--ids__density) * 0.4em);
+    padding: 0.5em var(--page-padding);
     flex-wrap: wrap;
   }
 

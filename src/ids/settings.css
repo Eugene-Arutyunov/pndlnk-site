@@ -44,7 +44,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/Newton/Newton_Book.woff2") format("woff2"),
+  src:
+    url("fonts/Newton/Newton_Book.woff2") format("woff2"),
     url("fonts/Newton/Newton_Book.woff") format("woff"),
     url("fonts/Newton/Newton_Book.ttf") format("truetype");
 }
@@ -54,7 +55,8 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/Newton/Newton_Italic.woff2") format("woff2"),
+  src:
+    url("fonts/Newton/Newton_Italic.woff2") format("woff2"),
     url("fonts/Newton/Newton_Italic.woff") format("woff"),
     url("fonts/Newton/Newton_Italic.ttf") format("truetype");
 }
@@ -64,7 +66,8 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("fonts/Newton/Newton_Bold.woff2") format("woff2"),
+  src:
+    url("fonts/Newton/Newton_Bold.woff2") format("woff2"),
     url("fonts/Newton/Newton_Bold.woff") format("woff"),
     url("fonts/Newton/Newton_Bold.ttf") format("truetype");
 }
@@ -74,7 +77,8 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url("fonts/Newton/Newton_Bold Italic.woff2") format("woff2"),
+  src:
+    url("fonts/Newton/Newton_Bold Italic.woff2") format("woff2"),
     url("fonts/Newton/Newton_Bold Italic.woff") format("woff"),
     url("fonts/Newton/Newton_Bold Italic.ttf") format("truetype");
 }
@@ -84,14 +88,15 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url("fonts/Newton/Newton_Extra Bold.woff2") format("woff2"),
+  src:
+    url("fonts/Newton/Newton_Extra Bold.woff2") format("woff2"),
     url("fonts/Newton/Newton_Extra Bold.woff") format("woff"),
     url("fonts/Newton/Newton_Extra Bold.ttf") format("truetype");
 }
 
 :root {
   --gothic: "CoFoGothic";
-  --serif: "Robert";
+  --serif: "Newton";
   --mono: "CoFoSansSemi-Mono";
   --hand: "CoFoHand";
 
@@ -101,13 +106,18 @@
 body {
   font-family: var(--gothic);
   -webkit-font-smoothing: antialiased;
-  font-weight: 350;
+  font-weight: 400;
 }
 
 /* Density */
 
 :root {
   --ids__density: 1.22;
+  --page-padding: calc(var(--ids__density) * 0.4em);
+
+  @media (width >= 768px) {
+    --page-padding: 1em;
+  }
 }
 
 body {
