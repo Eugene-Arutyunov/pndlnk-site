@@ -57,7 +57,7 @@
           aria-live="polite"></p>
       </div>
       <ul class="project-grid" role="list">
-        {% for project in projects %}
+        {% for project in projectsCatalog.default %}
         <li
           class="project-card"
           data-audience="{{ project.audience | join(' ') }}"

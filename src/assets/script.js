@@ -254,6 +254,9 @@ function initProjectCatalogFilter() {
   segmentSel.addEventListener("change", apply);
   featuredCheckbox.addEventListener("change", apply);
   window.addEventListener("pageshow", apply);
+  audienceSel.value = "all";
+  segmentSel.value = "all";
+  featuredCheckbox.checked = false;
   apply();
 }
 
