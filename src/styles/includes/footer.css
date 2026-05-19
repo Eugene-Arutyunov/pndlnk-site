@@ -30,20 +30,15 @@
   & .footer-grid {
     font-size: var(--smaller);
     display: grid;
-    grid-template-columns: 16em auto auto auto;
-    gap: 3em 3em;
+    grid-template-columns: auto auto auto auto;
+    gap: 12em 3em;
     padding-right: 10em;
-    padding-bottom: 2em;
+    padding-bottom: 0em;
 
     @media (width < 768px) {
       grid-template-columns: 1fr 1fr;
       gap: 2em 0.5em;
       padding-right: 0;
-    }
-
-    & .footer-column:first-child {
-      display: flex;
-      align-items: flex-start;
     }
   }
 

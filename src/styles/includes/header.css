@@ -27,7 +27,7 @@
     & .logo {
       display: block;
       width: 15.3em;
-      margin-bottom: -0.17em;
+      margin-bottom: -0.1em;
       align-self: flex-end;
 
       svg {
@@ -55,7 +55,7 @@ button.lets-talk-button {
   display: inline-block;
   padding: 0.1em 0.6em 0.05em;
   border: 2px solid black;
-  border-radius: 0.25em;
+
   text-decoration: none;
   color: inherit;
   transition:
@@ -71,6 +71,6 @@ button.lets-talk-button {
   }
 
   &.compact {
-    font-size: 0.7em;
+    font-size: 0.8em;
   }
 }
