@@ -3,7 +3,30 @@ const path = require("path");
 const { parse } = require("csv-parse/sync");
 
 const AUDIENCE_KEYS = new Set(["clients", "employees", "partners"]);
-const SEGMENT_KEYS = new Set(["it", "developer", "retail", "vendor"]);
+
+/** Слуги для выпадающего списка «во взаимодействии с» на /projects/ */
+const INDUSTRY_FILTER_KEYS = new Set([
+  "it-vendor",
+  "it-integrator",
+  "it-outsourcing",
+  "infosec",
+  "telecom",
+  "finance",
+  "retail",
+  "fmcg",
+  "development",
+  "industry-manufacturing",
+  "medicine",
+  "logistics",
+  "consulting",
+  "education",
+  "media-marketing",
+  "hr-recruiting",
+  "energy",
+  "public-sector",
+  "agro",
+  "other",
+]);
 const TRANSLIT_MAP = {
   а: "a",
   б: "b",
@@ -39,6 +62,26 @@ const TRANSLIT_MAP = {
   ю: "yu",
   я: "ya",
 };
+
+/** Точные URL slug по полному названию из CSV (брендовая латиница и т. п.). */
+const SLUG_OVERRIDES_BY_NAME = {
+  "Яндекс: Опыт водителей такси": "yandex-opyt-voditeley-taksi",
+};
+
+function resolveSlug(name, usedSlugs) {
+  const key = String(name || "").trim();
+  const override = SLUG_OVERRIDES_BY_NAME[key];
+  if (override) {
+    let candidate = override;
+    let index = 2;
+    while (usedSlugs.has(candidate)) {
+      candidate = `${override}-${index++}`;
+    }
+    usedSlugs.add(candidate);
+    return candidate;
+  }
+  return makeSlug(name, usedSlugs);
+}
 
 function splitList(value) {
   if (value == null || typeof value !== "string") return [];
@@ -81,19 +124,21 @@ function makeSlug(input, usedSlugs) {
   return candidate;
 }
 
-function inferAudience(name, typeStr, industryStr) {
-  const hay = `${name} ${typeStr} ${industryStr}`.toLowerCase();
+function inferAudience(name, typeStr, industryStr, caseText = "") {
+  const hay = `${name} ${typeStr} ${industryStr} ${caseText}`.toLowerCase();
   const out = [];
 
   const employeesHints =
-    /\bex\b|ux-исследование|\bux\b|сотрудник|директор|логистик|найм|продуктовых команд|агентов по продажам|функционер|job-портала/i.test(
+    /\bex\b|ux-исследование|\bux\b|сотрудник|директор|логистик|найм|продуктовых команд|агентов по продажам|функционер|job-портала|кадров|персонал|внутренн/i.test(
       hay,
     );
   const clientsHints =
-    /\bcx\b|cjm|клиент|покупател|гость|водител|болельщик|потребител|семей|лояльност|селлер|b2c|сапр/i.test(
+    /\bcx\b|cjm|клиент|покупател|гость|водител|болельщик|потребител|семей|лояльност|селлер|b2c|b2b|сапр/i.test(
       hay,
     );
-  const partnersHints = /партнёр/i.test(hay);
+  const partnersHints = /партнёр|франчайзи|дилерск|дистриб|канал продаж/i.test(
+    hay,
+  );
 
   if (employeesHints) out.push("employees");
   if (clientsHints) out.push("clients");
@@ -112,89 +157,126 @@ function inferAudience(name, typeStr, industryStr) {
   return unique(out);
 }
 
-function inferCompanySegment(industryStr, name, typeStr) {
-  const hay = `${name} ${typeStr} ${industryStr}`.toLowerCase();
-  const ind = splitList(industryStr).map((s) => s.toLowerCase());
+function inferIndustryFilters(industryStr, name, typeStr, caseText = "") {
+  const nameStr = String(name || "");
+  const hay = `${nameStr} ${typeStr} ${industryStr} ${caseText}`.toLowerCase();
+  const ind = splitList(industryStr).map((s) => s.toLowerCase().trim());
+
+  const hasInd = (sub) =>
+    ind.some((i) => i === sub || i.includes(sub));
   const out = new Set();
 
-  const hasInd = (sub) => ind.some((i) => i === sub || i.includes(sub));
-
-  if (hasInd("девелопмент") || /квартир|страна девелопмент|^пик:/i.test(name)) {
-    out.add("developer");
-  }
-
-  if (
-    hasInd("it") ||
-    hasInd("телеком") ||
-    /netangels|хостинг|data darvin|рембот/i.test(hay) ||
-    (/контур/i.test(name) && /селлер|маркетплейс|бухгалтер/i.test(hay))
-  ) {
-    out.add("it");
-  }
-
-  if (hasInd("diy") && hasInd("it")) {
-    out.add("it");
-    out.add("retail");
+  if (hasInd("fmcg") || hasInd("grocery")) {
+    out.add("fmcg");
   }
 
   if (
     hasInd("розница") ||
-    hasInd("fmcg") ||
-    hasInd("grocery") ||
     hasInd("horeca") ||
-    (hasInd("diy") && !hasInd("it")) ||
-    /пятёрочка|х5 club|вкусвилл|магнит|leroy|europharma|floris|автомобил|винотек|даркстор|супермаркет|магазинов у дома/i.test(
+    hasInd("diy") ||
+    /пятёрочка|х5 club|вкусвилл|магнит|leroy|europharma|floris|сбермаркет|винотек|даркстор|магазинов у дома|магазин/i.test(
       hay,
-    )
+    ) ||
+    /продажа автомобил/i.test(industryStr)
   ) {
     out.add("retail");
   }
 
+  if (hasInd("девелопмент") || /страна девелопмент|^пик:/i.test(nameStr)) {
+    out.add("development");
+  }
+
+  if (hasInd("телеком")) {
+    out.add("telecom");
+  }
+
+  if (hasInd("it")) {
+    if (/хостинг|netangels|аутсорс|outsourc/i.test(hay)) {
+      out.add("it-outsourcing");
+    } else if (/интегратор|интеграц|внедрен/i.test(hay)) {
+      out.add("it-integrator");
+    } else {
+      out.add("it-vendor");
+    }
+  }
+
+  if (/информационн(ой|ая)\s+безопасност|инфобез|иб\b/i.test(hay)) {
+    out.add("infosec");
+  }
+  if (/банк|финанс|страхов/i.test(hay)) {
+    out.add("finance");
+  }
+  if (hasInd("медицина")) {
+    out.add("medicine");
+  }
+  if (hasInd("консалтинг") || hasInd("стартапы") || /company builder/i.test(hay)) {
+    out.add("consulting");
+  }
+  if (hasInd("образован") || /университет|школ/i.test(hay)) {
+    out.add("education");
+  }
   if (
-    hasInd("консалтинг") ||
-    hasInd("стартапы") ||
-    /company builder/i.test(hay) ||
-    hasInd("медицина") ||
-    hasInd("туризм") ||
-    hasInd("спорт") ||
+    hasInd("производство") ||
     hasInd("освещение") ||
-    (hasInd("производство") && !hasInd("fmcg") && !hasInd("grocery")) ||
-    (/autodesk|сапр/i.test(hay) && hasInd("производство"))
+    (/сапр|autodesk/i.test(hay) && hasInd("производство"))
   ) {
-    out.add("vendor");
+    out.add("industry-manufacturing");
+  }
+  if (/логистик/i.test(hay)) {
+    out.add("logistics");
+  }
+  if (hasInd("маркетинг") || /медиа|ads|реклам/i.test(hay)) {
+    out.add("media-marketing");
+  }
+  if (
+    /найм|кэдо|кадров|recruit|hr\b|людских ресурс/i.test(hay)
+  ) {
+    out.add("hr-recruiting");
+  }
+  if (/энерг|энергетик|электроэнерг/i.test(hay)) {
+    out.add("energy");
+  }
+  if (/гос|муниципал|государств/i.test(hay)) {
+    out.add("public-sector");
+  }
+  if (/агро|сельскохоз/i.test(hay)) {
+    out.add("agro");
+  }
+  if (hasInd("туризм") || hasInd("спорт") || /роза хутор|гора белая/i.test(hay)) {
+    out.add("other");
   }
 
-  if (hasInd("услуги") && /мотивац|b2b|b2c/i.test(hay)) {
-    out.add("retail");
+  const filtered = [...out].filter((s) => INDUSTRY_FILTER_KEYS.has(s));
+  if (filtered.length === 0) {
+    return ["other"];
   }
-
-  return [...out].filter((s) => SEGMENT_KEYS.has(s));
+  return unique(filtered);
 }
 
-function parseAudienceSegment(row) {
+function parseAudienceIndustry(row, caseText = "") {
   const explicitA = row["Аудитория"];
-  const explicitS = row["Сегмент"];
+  const explicitIndustries = row["Сегмент"];
   let audience = splitList(explicitA)
     .map((s) => s.trim().toLowerCase())
     .filter((s) => AUDIENCE_KEYS.has(s));
-  let companySegment = splitList(explicitS)
+  let industryFilters = splitList(explicitIndustries)
     .map((s) => s.trim().toLowerCase())
-    .filter((s) => SEGMENT_KEYS.has(s));
+    .filter((s) => INDUSTRY_FILTER_KEYS.has(s));
 
   const name = row.Name || "";
   const typeStr = row["Тип"] || "";
   const industryStr = row["Отрасль"] || "";
 
   if (audience.length === 0) {
-    audience = inferAudience(name, typeStr, industryStr);
+    audience = inferAudience(name, typeStr, industryStr, caseText);
   }
-  if (companySegment.length === 0) {
-    companySegment = inferCompanySegment(industryStr, name, typeStr);
+  if (industryFilters.length === 0) {
+    industryFilters = inferIndustryFilters(industryStr, name, typeStr, caseText);
   }
 
   return {
     audience: unique(audience),
-    companySegment: unique(companySegment),
+    industryFilters: unique(industryFilters),
   };
 }
 
@@ -207,6 +289,16 @@ function stripMarkup(source) {
     .replace(/&nbsp;/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+/** Текст страницы кейса для эвристик аудитории/отрасли (обрезка по объёму). */
+function readCaseInferenceText(slug) {
+  const casePath = path.join(__dirname, "..", "projects", `${slug}.html`);
+  if (!fs.existsSync(casePath)) return "";
+
+  const raw = fs.readFileSync(casePath, "utf8");
+  const plain = stripMarkup(raw).toLowerCase();
+  return plain.length <= 14000 ? plain : plain.slice(0, 14000);
 }
 
 function hasMeaningfulCaseContent(slug) {
@@ -227,6 +319,7 @@ const FORCED_FEATURED_SLUGS = new Set([
   "vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma",
   "mavt-vinoteka-issledovanie-opyta-pokupateley",
   "sozdanie-partnerskoy-programmy-dlya-vendora-onlayn-kass",
+  "partnerskaya-programma-dlya-vendora",
 ]);
 
 module.exports = function loadHomeProjects() {
@@ -242,9 +335,10 @@ module.exports = function loadHomeProjects() {
   const usedSlugs = new Set();
 
   return rows.map((row) => {
-    const { audience, companySegment } = parseAudienceSegment(row);
     const name = row.Name || "";
-    const slug = makeSlug(name, usedSlugs);
+    const slug = resolveSlug(name, usedSlugs);
+    const caseText = readCaseInferenceText(slug);
+    const { audience, industryFilters } = parseAudienceIndustry(row, caseText);
     return {
       name,
       slug,
@@ -257,7 +351,7 @@ module.exports = function loadHomeProjects() {
         ? true
         : hasMeaningfulCaseContent(slug),
       audience,
-      companySegment,
+      industryFilters,
     };
   });
 };

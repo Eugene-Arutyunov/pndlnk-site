@@ -1,0 +1,180 @@
+/* Единые заголовки кейсов */
+.ids .case-page:not(.article) h1,
+.ids .case-page:not(.article) .case-standard__title {
+  font-size: 2.8em;
+  line-height: 1;
+  margin-left: 0;
+  margin-bottom: 0.3em;
+  font-weight: 500;
+}
+
+/* Отступ M перед h1 (высота как у .ids__space.M) */
+.ids .case-page:not(.article) .ids__text-width > h1.case-standard__title {
+  margin-top: calc(var(--ids__density) * 1.4em);
+}
+
+@media (width < 768px) {
+  .ids .case-page:not(.article) h1,
+  .ids .case-page:not(.article) .case-standard__title {
+    font-size: 2.5em;
+  }
+}
+
+/* Было: H2 из IDS при H1 кейса 3.75em; коэффициент 2.8/3.75 — сохраняем пропорцию */
+.ids .case-page:not(.article) h2 {
+  font-size: 2.093em;
+  line-height: 1;
+  font-weight: 500; /* ниже общего 700 у IDS для заголовков */
+  margin-top: calc(var(--ids__density) * 1em);
+  margin-bottom: 0.3em;
+}
+
+@media (width < 768px) {
+  .ids .case-page:not(.article) h2 {
+    font-size: 1.867em;
+  }
+}
+
+/* Подзаголовок-плашка сразу под «Контекст» (второй блок исследования и т. п.) */
+.ids .case-page:not(.article) .case-standard__section-kicker {
+  display: inline-block;
+  margin: -0.35em 0 0.75em;
+  padding: 0.12em 0.35em;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  line-height: 1.35;
+  font-weight: 400;
+  color: rgba(var(--ids__text-RGB), 0.5);
+  text-transform: lowercase;
+  border: 1px solid rgba(var(--ids__text-RGB), 0.22);
+  background: transparent;
+}
+
+/*
+ * Оформление как у case-standard для всех кейсов с .case-page.
+ */
+.ids .case-page:not(.article) .case-standard__label {
+  display: inline-block;
+  margin-bottom: 0.45em;
+  padding: 0.12em 0.35em;
+  font-family: var(--mono);
+  font-size: 0.62em;
+  line-height: 1.2;
+  text-transform: lowercase;
+  border: 1px solid rgba(var(--ids__text-RGB), 0.22);
+  background: transparent;
+}
+
+/* Плашка без принудительного lowercase (год, бренд) */
+.ids .case-page:not(.article) .case-standard__badge {
+  display: inline-block;
+  padding: 0.12em 0.35em;
+  font-family: var(--mono);
+  font-size: 0.62em;
+  line-height: 1.2;
+  border: 1px solid rgba(var(--ids__text-RGB), 0.22);
+  background: transparent;
+}
+
+.ids .case-page:not(.article) .case-standard__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.ids .case-page:not(.article) .case-standard__badges .case-standard__badge {
+  margin-bottom: 0;
+}
+
+/* Одна плашка с обводкой (год + бренд под заголовком) */
+.ids .case-page:not(.article) .case-standard__badges--outlined {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65em;
+  margin-top: 0.35em;
+  margin-bottom: 0.85em;
+  padding: 0.4em 0.55em;
+  border: 1px solid rgba(var(--ids__text-RGB), 0.35);
+  background: transparent;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.ids .case-page:not(.article) .case-standard__badges--outlined .case-standard__badge {
+  border: none;
+  padding: 0;
+}
+
+.ids .case-page:not(.article) .case-standard__meta,
+.ids .case-page:not(.article) .ids__text-width p.loud.mono {
+  margin-top: -0.1em;
+  margin-bottom: 0.9em;
+  color: rgba(var(--ids__text-RGB), 0.55);
+  font-style: italic;
+}
+
+.ids .case-page:not(.article) figure {
+  margin-top: calc(var(--ids__density) * 1.1em);
+}
+
+.ids .case-page:not(.article) .case-standard__figure-images {
+  display: grid;
+  gap: 0.6em;
+}
+
+.ids .case-page:not(.article) .case-standard__figure-images.is-1 {
+  grid-template-columns: 1fr;
+}
+
+.ids .case-page:not(.article) .case-standard__figure-images.is-2,
+.ids .case-page:not(.article) .case-standard__figure-images.is-3 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ids .case-page:not(.article) .case-standard__figure-images.is-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ids .case-page:not(.article) .case-standard__figure-images.is-4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ids .case-page:not(.article) .case-standard__figure-images img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ids .case-page:not(.article) figure figcaption {
+  margin-bottom: calc(var(--ids__density) * 0.9em);
+}
+
+.ids .case-page:not(.article) blockquote {
+  font-style: italic;
+}
+
+.ids .case-page:not(.article) .case-standard__review-portrait {
+  width: 4em;
+  height: 4em;
+  background: rgba(var(--ids__text-RGB), 0.22);
+}
+
+.ids .case-page:not(.article) .review-author {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5em;
+}
+
+.ids .case-page:not(.article) .review-name {
+  width: 70%;
+  font-size: 0.8rem;
+}
+
+@media (width < 768px) {
+  .ids .case-page:not(.article) .case-standard__figure-images {
+    grid-template-columns: 1fr;
+  }
+}

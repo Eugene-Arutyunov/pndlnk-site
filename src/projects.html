@@ -13,7 +13,7 @@
       <div
         class="project-catalog-filter__row"
         role="region"
-        aria-label="Фильтр каталога проектов по аудитории и сегменту компаний">
+        aria-label="Фильтр каталога проектов по аудитории и отрасли компаний">
         <p class="project-catalog-filter__sentence">
           Улучшили опыт
           <label class="project-catalog-filter__field">
@@ -32,17 +32,33 @@
           </label>
           во взаимодействии с
           <label class="project-catalog-filter__field">
-            <span class="visually-hidden">Сегмент компаний</span>
+            <span class="visually-hidden">Отрасль компаний</span>
             <span class="project-catalog-filter__select-wrap">
               <select
-                id="project-filter-segment"
+                id="project-filter-industry"
                 class="project-catalog-filter__select"
-                aria-label="Сегмент компаний">
+                aria-label="Отрасль компаний">
                 <option value="all">компаниями</option>
-                <option value="it">IT-компаниями</option>
-                <option value="developer">девелоперами</option>
-                <option value="retail">ритейлом</option>
-                <option value="vendor">вендорами</option>
+                <option value="it-vendor">ИТ: вендор</option>
+                <option value="it-integrator">ИТ: интегратор</option>
+                <option value="it-outsourcing">ИТ: аутсорсинг</option>
+                <option value="infosec">Инфобез</option>
+                <option value="telecom">Телеком</option>
+                <option value="finance">Финансы и банки</option>
+                <option value="retail">Ритейл</option>
+                <option value="fmcg">FMCG</option>
+                <option value="development">Девелопмент</option>
+                <option value="industry-manufacturing">Промышленность</option>
+                <option value="medicine">Медицина</option>
+                <option value="logistics">Логистика</option>
+                <option value="consulting">Консалтинг</option>
+                <option value="education">Образование</option>
+                <option value="media-marketing">Медиа и маркетинг</option>
+                <option value="hr-recruiting">HR и рекрутинг</option>
+                <option value="energy">Энергетика</option>
+                <option value="public-sector">Госсектор</option>
+                <option value="agro">Агро</option>
+                <option value="other">Другое</option>
               </select>
             </span>
           </label>
@@ -57,11 +73,11 @@
           aria-live="polite"></p>
       </div>
       <ul class="project-grid" role="list">
-        {% for project in projectsCatalog.default %}
+        {% for project in projects %}
         <li
           class="project-card"
           data-audience="{{ project.audience | join(' ') }}"
-          data-segment="{{ project.companySegment | join(' ') }}"
+          data-industry="{{ project.industryFilters | join(' ') }}"
           data-featured="{{ project.isFeatured and 'true' or 'false' }}">
           <a
             class="project-card__link"
@@ -83,7 +99,11 @@
               <div class="project-card__logo project-card__logo--wide">
                 {% include 'assets/home-client-roza-khutor.html' %}
               </div>
-              {% elseif project.slug == "yandeks-opyt-voditeley-taksi" %}
+              {% elseif project.slug == "inappstory" %}
+              <div class="project-card__logo">
+                {% include 'assets/inappstory-logo.html' %}
+              </div>
+              {% elseif project.slug == "yandex-opyt-voditeley-taksi" %}
               <div class="project-card__logo">
                 {% include 'assets/home-client-yandex.html' %}
               </div>
