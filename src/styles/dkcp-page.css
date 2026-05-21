@@ -357,13 +357,21 @@
     display: block;
     width: auto;
     height: auto;
-    max-width: 72%;
-    max-height: 38%;
+    max-width: min(68%, 10em);
+    max-height: min(34%, 4.25em);
+    object-fit: contain;
+    margin-inline: auto;
+  }
+
+  .project-card__logo--compact svg,
+  .project-card__logo--compact img {
+    max-width: min(58%, 8em);
+    max-height: min(28%, 3.25em);
   }
 
   .project-card__logo--wide svg,
   .project-card__logo--wide img {
-    max-width: 84%;
+    max-width: min(78%, 12em);
   }
 
   .project-card__body {
