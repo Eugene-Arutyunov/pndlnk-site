@@ -13,6 +13,27 @@
   margin-top: calc(var(--ids__density) * 1.4em);
 }
 
+/* Теги кейса (как на карточке каталога), под h1 */
+.ids .case-page:not(.article) .case-page__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1em;
+  list-style: none;
+  margin: 0 0 calc(var(--ids__density) * 0.85em);
+  padding: 0;
+}
+
+.ids .case-page:not(.article) .case-page__tag {
+  display: inline-block;
+  padding: 0.1em 0.2em;
+  border-radius: 0;
+  font-family: var(--mono);
+  font-size: 0.6em;
+  line-height: 1.25;
+  color: rgba(var(--ids__text-RGB), 0.92);
+  background: rgba(var(--ids__surface-RGB), 0.55);
+}
+
 @media (width < 768px) {
   .ids .case-page:not(.article) h1,
   .ids .case-page:not(.article) .case-standard__title {
@@ -35,10 +56,10 @@
   }
 }
 
-/* Подзаголовок-плашка сразу под «Контекст» (второй блок исследования и т. п.) */
+/* Плашка-ярлык перед повторяющимся заголовком «Контекст» (второй блок исследования и т. п.) */
 .ids .case-page:not(.article) .case-standard__section-kicker {
   display: inline-block;
-  margin: -0.35em 0 0.75em;
+  margin: 1em 0 0.4em;
   padding: 0.12em 0.35em;
   font-family: var(--mono);
   font-size: 0.875rem;

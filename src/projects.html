@@ -217,7 +217,7 @@
             <div class="project-card__body">
               <h3 class="project-card__title">{{ project.name }}</h3>
               <div class="project-card__tags">
-                {% for tag in project.tags %}
+                {% for tag in project.displayTags %}
                 <span class="project-card__tag">{{ tag }}</span>
                 {% endfor %}
               </div>

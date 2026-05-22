@@ -322,6 +322,156 @@ const FORCED_FEATURED_SLUGS = new Set([
   "partnerskaya-programma-dlya-vendora",
 ]);
 
+/** Подпись компании во втором фильтре каталога /projects/ (как группировка в базе кейсов). */
+const COMPANY_SLUG_LABELS = {
+  autodesk: "Autodesk",
+  cosmobeauty: "CosmoBeauty",
+  "company-builder": "Company Builder",
+  datadarvin: "DataDarvin",
+  dodo: "Додо Пицца",
+  europharma: "EuroPharma",
+  "fk-spartak": "ФК «Спартак»",
+  floris: "Floris",
+  "gora-belaya": "Туристический кластер «Гора Белая»",
+  inappstory: "InAppStory",
+  kontur: "Контур",
+  lanit: "Ланит",
+  "leroy-merlin": "Leroy Merlin",
+  magnit: "Магнит",
+  maskoholic: "Maskoholic",
+  mango: "Манго Телеком",
+  mavt: "МАВТ-Винотека",
+  megafon: "МегаФон",
+  mts: "МТС",
+  netangels: "NetAngels",
+  other: "Другое",
+  "partner-program": "Партнёрская программа (вендор)",
+  perekrestok: "Перекрёсток",
+  pik: "ПИК",
+  pyaterochka: "Пятёрочка",
+  rembot: "Рембот",
+  rolf: "Рольф",
+  "rmk-arena": "РМК Арена",
+  "roza-khutor": "Роза Хутор",
+  sbermarket: "Сбермаркет",
+  sdvet: "SDSvet",
+  seniorgroup: "SeniorGroup",
+  shalash: "Шалаш",
+  sipuni: "Сипуни",
+  sokolov: "SOKOLOV",
+  streets: "Streets",
+  "strana-development": "Страна Девелопмент",
+  t2: "T2",
+  tochka: "Банк Точка",
+  tutu: "Tutu.ru",
+  unicorngo: "UnicornGo",
+  vkusvill: "ВкусВилл",
+  "x5-club": "X5 Club",
+  yandex: "Яндекс",
+};
+
+/**
+ * Первый тег на странице кейса — бренд/заказчик (как в названии в CSV).
+ */
+function extractBrand(name) {
+  const s0 = String(name || "").trim();
+  if (!s0) return "Проект";
+  const unquoted = s0.replace(/^"(.*)"$/s, "$1").trim();
+
+  if (/^ФК\s*«Спартак»/i.test(unquoted)) return "ФК «Спартак»";
+  if (/^Leroy\s+Merlin:/i.test(unquoted)) return "Leroy Merlin";
+
+  const ci = unquoted.indexOf(":");
+  if (ci !== -1) return unquoted.slice(0, ci).trim();
+
+  if (/^InAppStory\b/i.test(unquoted)) return "InAppStory";
+  if (/^Разработка концепции Company Builder/i.test(unquoted)) return "Company Builder";
+  if (/Туристический кластер/i.test(unquoted)) {
+    return "Туристический кластер «Гора Белая»";
+  }
+  if (/^Партнёрская программа/i.test(unquoted)) return "Партнёрская программа";
+  if (/^Партнерская программа/i.test(unquoted)) return "Партнёрская программа";
+
+  return unquoted;
+}
+
+/**
+ * Ключ фильтра «компания» (как в выгрузке кейсов по заказчику).
+ */
+function inferCompanySlug(name) {
+  const raw = String(name || "").trim();
+  const n = raw.toLowerCase();
+
+  if (n.includes("пятёрочка") || n.includes("пятерочка")) return "pyaterochka";
+  if (n.includes("перекрёсток") || n.includes("перекресток")) return "perekrestok";
+  if (n.includes("x5 club")) return "x5-club";
+  if (n.includes("вкусвилл")) return "vkusvill";
+  if (n.includes("яндекс")) return "yandex";
+  if (n.includes("додо")) return "dodo";
+  if (n.includes("скб контур") || n.includes("контур")) return "kontur";
+  if (/^inappstory/i.test(n)) return "inappstory";
+  if (n.includes("мтс")) return "mts";
+  if (n.includes("рмк")) return "rmk-arena";
+  if (n.includes("страна девелопмент")) return "strana-development";
+  if (n.startsWith("пик:") || n.includes("пик: ")) return "pik";
+  if (n.includes("рольф")) return "rolf";
+  if (n.includes("europharma")) return "europharma";
+  if (n.includes("мегафон")) return "megafon";
+  if (n.includes("сбермаркет")) return "sbermarket";
+  if (n.includes("floris")) return "floris";
+  if (n.includes("leroy") || n.includes("merlin")) return "leroy-merlin";
+  if (n.includes("магнит")) return "magnit";
+  if (n.includes("спартак")) return "fk-spartak";
+  if (n.includes("autodesk")) return "autodesk";
+  if (n.includes("datadarvin")) return "datadarvin";
+  if (n.includes("netangels")) return "netangels";
+  if (n.includes("sdsvet") || raw.includes("SDSvet")) return "sdvet";
+  if (n.includes("seniorgroup")) return "seniorgroup";
+  if (n.includes("роза хутор")) return "roza-khutor";
+  if (n.includes("гора белая") || n.includes("туристический кластер")) return "gora-belaya";
+  if (n.includes("мавт") || n.includes("винотека")) return "mavt";
+  if (/партнёрская программа|партнерская программа/i.test(raw)) return "partner-program";
+  if (n.includes("cosmobeauty")) return "cosmobeauty";
+  if (n.includes("maskoholic")) return "maskoholic";
+  if (n.includes("sokolov")) return "sokolov";
+  if (n.includes("streets")) return "streets";
+  if (/^t2[:.\s]/i.test(raw)) return "t2";
+  if (n.includes("tutu")) return "tutu";
+  if (n.includes("unicorngo")) return "unicorngo";
+  if (n.includes("банк точка") || n.includes("точка:")) return "tochka";
+  if (n.includes("ланит")) return "lanit";
+  if (n.includes("манго телеком")) return "mango";
+  if (n.includes("сипуни")) return "sipuni";
+  if (n.includes("шалаш")) return "shalash";
+  if (n.includes("company builder")) return "company-builder";
+  if (n.includes("рембот")) return "rembot";
+  return "other";
+}
+
+function normTag(s) {
+  return String(s || "")
+    .trim()
+    .toLowerCase()
+    .replace(/ё/g, "е");
+}
+
+function buildDisplayTags(name, typeStr, industryStr) {
+  const brand = extractBrand(name);
+  const parts = [...splitList(typeStr), ...splitList(industryStr)].map((t) =>
+    String(t).trim(),
+  );
+  const out = [brand];
+  const seen = new Set([normTag(brand)]);
+  for (const t of parts) {
+    if (!t) continue;
+    const k = normTag(t);
+    if (seen.has(k)) continue;
+    seen.add(k);
+    out.push(t);
+  }
+  return out;
+}
+
 module.exports = function loadHomeProjects() {
   const csvPath = path.join(__dirname, "cases.csv");
   const raw = fs.readFileSync(csvPath, "utf8");
@@ -339,11 +489,25 @@ module.exports = function loadHomeProjects() {
     const slug = resolveSlug(name, usedSlugs);
     const caseText = readCaseInferenceText(slug);
     const { audience, industryFilters } = parseAudienceIndustry(row, caseText);
+    const brand = extractBrand(name);
+    const companySlug = inferCompanySlug(name);
+    const companyLabel =
+      COMPANY_SLUG_LABELS[companySlug] || brand;
+    const displayTags = buildDisplayTags(
+      name,
+      row["Тип"] || "",
+      row["Отрасль"] || "",
+    );
+
     return {
       name,
       slug,
       year: row["Год выполнения"],
       tags: [...splitList(row["Тип"]), ...splitList(row["Отрасль"])],
+      brand,
+      companySlug,
+      companyLabel,
+      displayTags,
       inKp: row["В КП"],
       progress: row["Прогресс"],
       description: row["Описание"],

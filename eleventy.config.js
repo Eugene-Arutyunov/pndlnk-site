@@ -1,8 +1,14 @@
 const loadHomeProjects = require("./src/data/homeProjects.js");
 
 module.exports = function (conf) {
-  conf.addGlobalData("projects", loadHomeProjects());
-  conf.addGlobalData("homeProjects", loadHomeProjects());
+  const projects = loadHomeProjects();
+  conf.addGlobalData("projects", projects);
+  conf.addGlobalData("homeProjects", projects);
+
+  conf.addFilter("projectBySlug", (list, slug) => {
+    if (!Array.isArray(list) || slug == null || slug === "") return null;
+    return list.find((p) => p.slug === slug) || null;
+  });
 
   conf.addPassthroughCopy("./src/ids");
   conf.addPassthroughCopy("./src/index.js");
