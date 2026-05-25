@@ -330,7 +330,48 @@
     width: 100%;
     aspect-ratio: 5 / 4;
     min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65em;
     background: rgba(var(--ids__text-RGB), 0.06);
+  }
+
+  .project-card__cover > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .project-card__logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-card__logo svg,
+  .project-card__logo img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: min(68%, 10em);
+    max-height: min(34%, 4.25em);
+    object-fit: contain;
+    margin-inline: auto;
+  }
+
+  .project-card__logo--compact svg,
+  .project-card__logo--compact img {
+    max-width: min(58%, 8em);
+    max-height: min(28%, 3.25em);
+  }
+
+  .project-card__logo--wide svg,
+  .project-card__logo--wide img {
+    max-width: min(78%, 12em);
   }
 
   .project-card__body {
@@ -632,13 +673,32 @@
 
   .promo-row__task-item {
     padding: 0.35em 0 0.6em;
-    border-top: 1px solid rgba(var(--ids__text-RGB), 0.1);
     line-height: 1.3em;
 
     &:first-child {
-      border-top: none;
       padding-top: 0;
     }
+  }
+
+  .promo-row__task-checklist {
+    margin: 0.3em 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .promo-row__task-checklist li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .promo-row__task-checklist li::before {
+    content: "— ";
+    color: inherit;
+  }
+
+  .promo-row--textual .promo-row__task-item {
+    border-top: none;
+    padding-top: 0;
   }
 
   [data-promo-content="tasks"] {
@@ -675,6 +735,49 @@
   }
 
   [data-promo-content="products"] {
+    & .promo-row__situation {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45em;
+    }
+
+    & .promo-row__situation::before {
+      content: "";
+      width: 3.2em;
+      height: 2.1em;
+      background: url("/assets/ksc-open/dkcp-slide8.svg") center / contain
+        no-repeat;
+      flex-shrink: 0;
+    }
+
+    & .is-open .promo-row__products-detail {
+      margin-top: 0.8em;
+      padding-top: 0.8em;
+      border-top: 1px solid rgba(var(--ids__text-RGB), 0.22);
+    }
+
+    & .promo-row__products-summary {
+      font-style: italic;
+    }
+
+    & .is-open .promo-row__products-summary {
+      opacity: 1;
+      pointer-events: auto;
+      position: static;
+    }
+
+    & .promo-row__task-item--practice,
+    & .promo-row__task-item--practice p,
+    & .promo-row__task-item--practice li {
+      color: rgb(64, 116, 255);
+      font-style: italic;
+    }
+
+    & .promo-row__task-item p strong {
+      color: rgb(var(--ids__text-RGB));
+      font-style: normal;
+    }
+
     & .is-open .promo-row__situation-main {
       opacity: 0;
       pointer-events: none;

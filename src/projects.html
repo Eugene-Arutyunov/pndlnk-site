@@ -1,9 +1,233 @@
 {% extends 'layout.html' %} {% set pageTitle = 'Проекты' %} {% block content %}
-<div class="ids__space XL"></div>
-<div class="ids__wrapper">
-  <div class="ids__text-width">
-    <p>Проекты — это опыто-конструкторское бюро. Без буквы «н», ага.</p>
+<div class="ids__wrapper L">
+  <div class="project-catalog-panel">
+    <div class="project-catalog-filter">
+      <div class="ids__text-width">
+        <p class="project-catalog-intro">
+          Наши проекты — это очень разные истории, от разработки тележек для
+          супермаркетов до процессов найма в крупнейшие российские корпорации.
+          Их объединяет одно: желание компании улучшить взаимодействие с людьми.
+        </p>
+      </div>
+      <div class="ids__space S"></div>
+      <div
+        class="project-catalog-filter__row"
+        role="region"
+        aria-label="Фильтр каталога проектов по аудитории и отрасли компаний">
+        <p class="project-catalog-filter__sentence">
+          Улучшили опыт
+          <label class="project-catalog-filter__field">
+            <span class="visually-hidden">Аудитория</span>
+            <span class="project-catalog-filter__select-wrap">
+              <select
+                id="project-filter-audience"
+                class="project-catalog-filter__select"
+                aria-label="Аудитория проектов">
+                <option value="all">людей</option>
+                <option value="clients">клиентов</option>
+                <option value="employees">сотрудников</option>
+                <option value="partners">партнёров</option>
+              </select>
+            </span>
+          </label>
+          во взаимодействии с
+          <label class="project-catalog-filter__field">
+            <span class="visually-hidden">Отрасль компаний</span>
+            <span class="project-catalog-filter__select-wrap">
+              <select
+                id="project-filter-industry"
+                class="project-catalog-filter__select"
+                aria-label="Отрасль компаний">
+                <option value="all">компаниями</option>
+                <option value="it-vendor">ИТ: вендор</option>
+                <option value="it-integrator">ИТ: интегратор</option>
+                <option value="it-outsourcing">ИТ: аутсорсинг</option>
+                <option value="infosec">Инфобез</option>
+                <option value="telecom">Телеком</option>
+                <option value="finance">Финансы и банки</option>
+                <option value="retail">Ритейл</option>
+                <option value="fmcg">FMCG</option>
+                <option value="development">Девелопмент</option>
+                <option value="industry-manufacturing">Промышленность</option>
+                <option value="medicine">Медицина</option>
+                <option value="logistics">Логистика</option>
+                <option value="consulting">Консалтинг</option>
+                <option value="education">Образование</option>
+                <option value="media-marketing">Медиа и маркетинг</option>
+                <option value="hr-recruiting">HR и рекрутинг</option>
+                <option value="energy">Энергетика</option>
+                <option value="public-sector">Госсектор</option>
+                <option value="agro">Агро</option>
+                <option value="other">Другое</option>
+              </select>
+            </span>
+          </label>
+          <label class="project-catalog-filter__checkbox">
+            <input type="checkbox" id="project-filter-featured" />
+            <span>избранные кейсы</span>
+          </label>
+        </p>
+        <p
+          class="project-catalog-filter__status"
+          id="project-filter-status"
+          aria-live="polite"></p>
+      </div>
+      <ul class="project-grid" role="list">
+        {% for project in projects %}
+        <li
+          class="project-card"
+          data-audience="{{ project.audience | join(' ') }}"
+          data-industry="{{ project.industryFilters | join(' ') }}"
+          data-featured="{{ project.isFeatured and 'true' or 'false' }}">
+          <a
+            class="project-card__link"
+            href="/projects/{{ project.slug }}/">
+            <div class="project-card__cover" aria-hidden="true">
+              {% if project.slug == "dodo-pitstsa-opyt-semey-s-detmi" %}
+              <div class="project-card__logo">
+                {% include 'assets/dodo-pizza-logo.html' %}
+              </div>
+              {% elseif project.slug == "vkusvill-gipersegmentatsiya-i-dizayn-sistema" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-vkusvill.html' %}
+              </div>
+              {% elseif project.slug == "vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-vkusvill.html' %}
+              </div>
+              {% elseif project.slug == "roza-hutor-servisnaya-strategiya" %}
+              <div class="project-card__logo project-card__logo--wide">
+                {% include 'assets/home-client-roza-khutor.html' %}
+              </div>
+              {% elseif project.slug == "inappstory" %}
+              <div class="project-card__logo">
+                {% include 'assets/inappstory-logo.html' %}
+              </div>
+              {% elseif project.slug == "maskoholic-chekap-tsennostnogo-predlozheniya" %}
+              <div class="project-card__logo">
+                <img
+                  src="/assets/dkcp-base/logos/Maskoholic.svg"
+                  alt="" />
+              </div>
+              {% elseif project.slug == "yandex-opyt-voditeley-taksi" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-yandex.html' %}
+              </div>
+              {% elseif project.slug == "yandeks-issledovanie-brenda-rabotodatelya" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-yandex.html' %}
+              </div>
+              {% elseif project.slug == "x5-club-cjm-polzovatelya-programmy-loyalnosti" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-x5.html' %}
+              </div>
+              {% elseif project.slug == "perekrestok-problemy-personala-magazinov" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-x5.html' %}
+              </div>
+              {% elseif project.slug == "pyaterochka-issledovanie-mehanik-os" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-x5.html' %}
+              </div>
+              {% elseif project.slug == "mts-issledovanie-opyta-agentov-po-prodazham" %}
+              <div class="project-card__logo project-card__logo--mts">
+                {% include 'assets/home-client-mts.html' %}
+              </div>
+              {% elseif project.slug == "mts-issledovanie-opyta-produktovyh-komand" %}
+              <div class="project-card__logo project-card__logo--mts">
+                {% include 'assets/home-client-mts.html' %}
+              </div>
+              {% elseif project.slug == "t2-opyt-sotrudnikov-i-brend-rabotodatelya" %}
+              <div
+                class="project-card__logo project-card__logo--compact">
+                {% include 'assets/home-client-t2.html' %}
+              </div>
+              {% elseif project.slug == "rmk-arena-opyt-gostya" %}
+              <div class="project-card__logo project-card__logo--rmk">
+                {% include 'assets/home-client-rmk.html' %}
+              </div>
+              {% elseif project.slug == "pik-uluchshenie-puti-klienta" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-pik.html' %}
+              </div>
+              {% elseif project.slug == "sbermarket-issledovanie-motivatsii-b2b-klientov" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-sbermarket.html' %}
+              </div>
+              {% elseif project.slug == "sbermarket-issledovanie-motivatsii-b2c-klientov" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-sbermarket.html' %}
+              </div>
+              {% elseif project.slug == "leroy-merlin-issledovanie-opyta-pokupateley-gruppy-otdelka-sten" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-leroy-merlin.html' %}
+              </div>
+              {% elseif project.slug == "bank-tochka-issledovanie-korporativnoy-kultury" %}
+              <div class="project-card__logo">
+                <img
+                  src="/assets/dkcp-base/logos/ТОЧКА.svg"
+                  alt="" />
+              </div>
+              {% elseif project.slug == "mango-telekom-kultura-sozdaniya-tsennosti" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-mango-office.html' %}
+              </div>
+              {% elseif project.slug == "lanit-issledovanie-polzovateley-kedo" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-lanit.html' %}
+              </div>
+              {% elseif project.slug == "lanit-issledovanie-posledstviy-uhoda-zapadnyh-vendorov" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-lanit.html' %}
+              </div>
+              {% elseif project.slug == "lanit-barery-perehoda-na-kedo" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-lanit.html' %}
+              </div>
+              {% elseif project.slug == "magnit-issledovanie-opyta-sotrudnikov-roznitsy" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-magnit.html' %}
+              </div>
+              {% elseif project.slug == "magnit-razrabotka-brenda-rabotodatelya-evp" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-magnit.html' %}
+              </div>
+              {% elseif project.slug == "kontur-issledovanie-sellerov-marketpleysov" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-kontur.html' %}
+              </div>
+              {% elseif project.slug == "kontur-diagnostika-trekov-vnutrikarernogo-razvitiya-ekspertov" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-kontur.html' %}
+              </div>
+              {% elseif project.slug == "skb-kontur-razrabotka-kontseptsii-dlya-kontur-buhgalterii" %}
+              <div class="project-card__logo">
+                {% include 'assets/home-client-kontur.html' %}
+              </div>
+              {% elseif project.slug == "pyaterochka-razrabotka-idealnoy-telezhki" %}
+              <img
+                src="/assets/projects/pyaterochka-razrabotka-idealnoy-telezhki/1.jpg"
+                alt="" />
+              {% elseif project.slug == "mavt-vinoteka-issledovanie-opyta-pokupateley" %}
+              <img
+                src="/assets/projects/mavt-vinoteka-issledovanie-opyta-pokupateley/1.jpg"
+                alt="" />
+              {% endif %}
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">{{ project.name }}</h3>
+              <div class="project-card__tags">
+                {% for tag in project.displayTags %}
+                <span class="project-card__tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+              <p class="project-card__year">{{ project.year }}</p>
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </div>
-
 {% endblock %}

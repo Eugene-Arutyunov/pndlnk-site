@@ -120,15 +120,28 @@ function initLogoDownloads() {
 }
 
 function initPromoViewSwitcher() {
-  const container = document.querySelector(".promo-table-container");
+  const container =
+    document.querySelector(".ksc-program-table") ||
+    document.querySelector(".promo-table-container");
   if (!container) return;
 
+  const isKscProgramTable = container.classList.contains("ksc-program-table");
+  const detailAttr = isKscProgramTable
+    ? "data-ksc-program-table-detail"
+    : "data-promo-detail";
+  const contentAttr = isKscProgramTable
+    ? "data-ksc-program-table-content"
+    : "data-promo-content";
+
   const viewButtons = container.querySelectorAll("[data-promo-view]");
-  const detailButtons = container.querySelectorAll("[data-promo-detail]");
+  const detailButtons = container.querySelectorAll(`[${detailAttr}]`);
 
   function switchView(view) {
-    container.querySelectorAll("[data-promo-content]").forEach((el) => {
-      el.style.display = el.dataset.promoContent === view ? "" : "none";
+    container.querySelectorAll(`[${contentAttr}]`).forEach((el) => {
+      const value = isKscProgramTable
+        ? el.dataset.kscProgramTableContent
+        : el.dataset.promoContent;
+      el.style.display = value === view ? "" : "none";
     });
   }
 
@@ -158,7 +171,38 @@ function initPromoViewSwitcher() {
   }
 
   bindGroup(viewButtons, switchView, "promoView");
-  bindGroup(detailButtons, switchDetail, "promoDetail");
+  bindGroup(
+    detailButtons,
+    switchDetail,
+    isKscProgramTable ? "kscProgramTableDetail" : "promoDetail"
+  );
+
+  const activeDetailButton = Array.from(detailButtons).find((btn) =>
+    btn.classList.contains("is-active")
+  );
+  if (activeDetailButton) {
+    switchDetail(
+      isKscProgramTable
+        ? activeDetailButton.dataset.kscProgramTableDetail
+        : activeDetailButton.dataset.promoDetail
+    );
+  }
+
+  const productRows = container.querySelectorAll(
+    isKscProgramTable
+      ? '[data-ksc-program-table-content="products"] .promo-row'
+      : '[data-promo-content="products"] .promo-row'
+  );
+  productRows.forEach((row) => {
+    row.classList.add("promo-row--inline-detail");
+    row.addEventListener("click", (event) => {
+      const link = event.target.closest("a");
+      if (link) {
+        event.preventDefault();
+      }
+      row.classList.toggle("is-open");
+    });
+  });
 }
 
 function formatRgbColorValue(color) {
@@ -207,49 +251,89 @@ function initColorPlates() {
   });
 }
 
-
 function initProjectCatalogFilter() {
-  const panel = document.querySelector(".project-catalog-filter");
-  if (!panel) return;
+  const root = document.querySelector(".project-catalog-panel");
+  if (!root) return;
 
-  const audienceSel = panel.querySelector("#project-filter-audience");
-  const segmentSel = panel.querySelector("#project-filter-segment");
-  const statusEl = panel.querySelector("#project-filter-status");
-  const cards = document.querySelectorAll(".project-catalog-panel .project-card");
+  const grid = root.querySelector(".project-grid");
+  if (!grid) return;
 
-  if (!audienceSel || !segmentSel || cards.length === 0) return;
+  const audienceSel = root.querySelector("#project-filter-audience");
+  const industrySel = root.querySelector("#project-filter-industry");
+  const featuredCheckbox = root.querySelector("#project-filter-featured");
+  const statusEl = root.querySelector("#project-filter-status");
+  const cards = Array.from(grid.querySelectorAll(".project-card"));
+
+  if (!audienceSel || !industrySel || !featuredCheckbox || cards.length === 0)
+    return;
 
   const total = cards.length;
+
+  cards.forEach((card, index) => {
+    if (card.dataset.originalOrder == null) {
+      card.dataset.originalOrder = String(index);
+    }
+  });
 
   function splitDataset(value) {
     return (value || "").trim().split(/\s+/).filter(Boolean);
   }
 
+  function cardMatches(card) {
+    const aud = audienceSel.value;
+    const ind = industrySel.value;
+    const onlyFeatured = featuredCheckbox.checked;
+
+    const audList = splitDataset(card.dataset.audience);
+    const indList = splitDataset(card.dataset.industry);
+    const isFeatured = card.dataset.featured === "true";
+
+    const audOk =
+      aud === "all" || (audList.length > 0 && audList.includes(aud));
+    const indOk =
+      ind === "all" || (indList.length > 0 && indList.includes(ind));
+    const featOk = !onlyFeatured || isFeatured;
+    return audOk && indOk && featOk;
+  }
+
   function apply() {
     const aud = audienceSel.value;
-    const seg = segmentSel.value;
-    let shown = 0;
+    const ind = industrySel.value;
+    const onlyFeatured = featuredCheckbox.checked;
+    const isFilterActive =
+      aud !== "all" || ind !== "all" || onlyFeatured;
 
-    cards.forEach((card) => {
-      const audList = splitDataset(card.dataset.audience);
-      const segList = splitDataset(card.dataset.segment);
-      const audOk =
-        aud === "all" || (audList.length > 0 && audList.includes(aud));
-      const segOk =
-        seg === "all" || (segList.length > 0 && segList.includes(seg));
-      const visible = audOk && segOk;
-      card.classList.toggle("is-hidden", !visible);
-      if (visible) shown += 1;
+    const sorted = [...cards].sort((a, b) => {
+      if (!isFilterActive) {
+        return Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
+      }
+      const ma = cardMatches(a);
+      const mb = cardMatches(b);
+      if (ma !== mb) return ma ? -1 : 1;
+      return Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
+    });
+
+    sorted.forEach((c) => grid.appendChild(c));
+
+    let shown = 0;
+    sorted.forEach((card) => {
+      const m = cardMatches(card);
+      if (m) shown += 1;
+      card.classList.toggle("is-hidden", isFilterActive && !m);
     });
 
     if (statusEl) {
-      const isDefault = aud === "all" && seg === "all";
-      statusEl.textContent = isDefault ? String(total) : `${shown} / ${total}`;
+      statusEl.textContent = isFilterActive ? `${shown} / ${total}` : String(total);
     }
   }
 
   audienceSel.addEventListener("change", apply);
-  segmentSel.addEventListener("change", apply);
+  industrySel.addEventListener("change", apply);
+  featuredCheckbox.addEventListener("change", apply);
+  window.addEventListener("pageshow", apply);
+  audienceSel.value = "all";
+  industrySel.value = "all";
+  featuredCheckbox.checked = false;
   apply();
 }
 
