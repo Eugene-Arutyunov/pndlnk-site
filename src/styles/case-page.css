@@ -87,7 +87,10 @@
   box-sizing: border-box;
 }
 
-.ids .case-page:not(.article) .case-standard__badges--outlined .case-standard__badge {
+.ids
+  .case-page:not(.article)
+  .case-standard__badges--outlined
+  .case-standard__badge {
   border: none;
   padding: 0;
 }
