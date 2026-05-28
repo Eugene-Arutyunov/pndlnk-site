@@ -115,27 +115,25 @@
       Это темы, в рамках которых мы будем работать на протяжении всей программы.
     </p>
     <div class="ids__space S"></div>
-    <div class="promo-table-container ksc-program-table">
+    <div class="ksc-program-table">
       <div
-        class="promo-switchers ksc-program-table__switchers"
+        class="ksc-program-switchers"
         style="display: none">
         <div
-          class="promo-switcher ksc-program-table__switcher"
+          class="ksc-program-switcher"
           role="group"
           aria-label="Детализация">
           <button
             type="button"
-            class="promo-switcher__item ksc-program-table__switcher-item is-active"
+            class="ksc-program-switcher__item is-active"
             aria-pressed="true"
-            data-promo-detail="short"
             data-ksc-program-table-detail="short">
             Коротко
           </button>
           <button
             type="button"
-            class="promo-switcher__item ksc-program-table__switcher-item"
+            class="ksc-program-switcher__item"
             aria-pressed="false"
-            data-promo-detail="full"
             data-ksc-program-table-detail="full">
             Подробно
           </button>
@@ -143,89 +141,86 @@
       </div>
       <div class="ids__space S"></div>
       <div
-        class="promo-rows-header ksc-program-table__rows-header"
-        data-promo-content="tasks"
+        class="ksc-program-rows-header"
         data-ksc-program-table-content="tasks"
         style="display: none">
         <span
-          class="promo-rows-header__label ksc-program-table__rows-header-label"
+          class="ksc-program-rows-header__label"
           >Задача</span
         >
         <span
-          class="promo-rows-header__label ksc-program-table__rows-header-label"
+          class="ksc-program-rows-header__label"
           >Что предлагаем</span
         >
       </div>
       <div
-        class="promo-rows-header ksc-program-table__rows-header"
-        data-promo-content="products"
+        class="ksc-program-rows-header"
         data-ksc-program-table-content="products">
         <span
-          class="promo-rows-header__label ksc-program-table__rows-header-label"
+          class="ksc-program-rows-header__label"
           >Модули</span
         >
         <span
-          class="promo-rows-header__label ksc-program-table__rows-header-label"
+          class="ksc-program-rows-header__label"
           >Что внутри</span
         >
       </div>
       <div
-        class="promo-rows"
-        data-promo-content="tasks"
+        class="ksc-program-rows"
         data-ksc-program-table-content="tasks"
         style="display: none">
-        <div class="promo-row is-open promo-row--textual">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">
+        <div class="ksc-program-row is-open ksc-program-row--textual">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">
               Объединить разрозненные продукты в единую экосистему, понятную для
               клиентов
             </div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
                   Продукты в портфеле развиваются изолированно — каждый со своей
                   командой и своими метриками. Для клиента это выглядит как
                   набор несвязанных решений. При этом договориться о стыках
                   сложно: любая «экосистемность» требует уступок по фокусу и
                   фичам, поэтому её постоянно откладывают.
                 </div>
-                <div class="promo-row__roles">CEO, CMO</div>
+                <div class="ksc-program-row__roles">CEO, CMO</div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
-              <a href="#" class="promo-row__product-link">Подготовка</a>,
-              <a href="#" class="promo-row__product-link">Подготовка</a>,
-              <a href="/ksc" class="promo-row__product-link">Подготовка</a>.
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
+              <a href="#" class="ksc-program-row__link">Подготовка</a>,
+              <a href="#" class="ksc-program-row__link">Подготовка</a>,
+              <a href="/ksc" class="ksc-program-row__link">Подготовка</a>.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Согласовать цели компании и декомпозировать их до метрик
                     каждого продукта будущей экосистемы.</span
                   >
-                  <a href="#" class="promo-row__product-link"
+                  <a href="#" class="ksc-program-row__link"
                     ><span>Подготовка</span></a
                   >
                 </div>
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Продиагностировать продукты и найти проблемы в донесении
                     ценности</span
                   >
-                  <a href="#" class="promo-row__product-link"
+                  <a href="#" class="ksc-program-row__link"
                     ><span>Подготовка</span></a
                   >
                 </div>
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Разработать ценностное предложение для всей экосистемы и
                     логично вписать в него ценностные предложения отдельных
                     продуктов.</span
                   >
-                  <a href="/ksc" class="promo-row__product-link"
+                  <a href="/ksc" class="ksc-program-row__link"
                     ><span>Подготовка</span></a
                   >
                 </div>
@@ -234,15 +229,15 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">
               Объединить маркетинг, продажи, продукт и саппорт в сквозной
               клиентский путь
             </div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
                   Частая причина проблем в бизнесе – это несогласованность
                   функций, отвечающих за доставку ценности. Маркетинг делает
                   свои офферы, продажи продают по-своему, дизайнеры не вникая
@@ -251,39 +246,39 @@
                   клиенту всё равно на оргструктуру, он просто получает плохой
                   опыт и уходит к конкурентам.
                 </div>
-                <div class="promo-row__roles">CEO, CMO</div>
+                <div class="ksc-program-row__roles">CEO, CMO</div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
-              <a href="#" class="promo-row__product-link"
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
+              <a href="#" class="ksc-program-row__link"
                 >Модуль 1 — Компания</a
               >,
-              <a href="#" class="promo-row__product-link"
+              <a href="#" class="ksc-program-row__link"
                 >Модуль 1 — Компания</a
               >.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Согласовать цели компании, определить метрики клиентского
                     опыта, декомпозировать их до метрик подразделений.</span
                   >
-                  <a href="#" class="promo-row__product-link"
-                    ><div class="promo-row__product-icon"></div>
+                  <a href="#" class="ksc-program-row__link"
+                    ><div class="ksc-program-row__icon"></div>
                     <span>Модуль 1 — Компания</span></a
                   >
                 </div>
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Провести исследование, разработать сквозную CJM и внедрить
                     ИИ-ассистентов, чтобы они помогали департаментам
                     взаимодействовать с клиентом.</span
                   >
-                  <a href="#" class="promo-row__product-link"
-                    ><div class="promo-row__product-icon"></div>
+                  <a href="#" class="ksc-program-row__link"
+                    ><div class="ksc-program-row__icon"></div>
                     <span>Модуль 1 — Компания</span></a
                   >
                 </div>
@@ -292,37 +287,37 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">
               Запустить новый продукт или внутренний стартап
             </div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
                   Если целевой рынок сложный, конкурентный и с высоким порогом
                   входа — действовать в режиме MVP не получится. Нужно
                   продумывать стратегию.
                 </div>
-                <div class="promo-row__roles">CEO, CMO</div>
+                <div class="ksc-program-row__roles">CEO, CMO</div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
-              <a href="/ksc" class="promo-row__product-link"
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
+              <a href="/ksc" class="ksc-program-row__link"
                 >Модуль 2 — Клиент</a
               >.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Довести идею до первых продаж: собрать MVP продукта,
                     протестировать его на рынке, синхронизировать команду.</span
                   >
-                  <a href="/ksc" class="promo-row__product-link"
-                    ><div class="promo-row__product-icon"></div>
+                  <a href="/ksc" class="ksc-program-row__link"
+                    ><div class="ksc-program-row__icon"></div>
                     <span>Модуль 2 — Клиент</span></a
                   >
                 </div>
@@ -331,14 +326,14 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">
               Внедрить ИИ в сложные продажи, так, чтобы это работало эффективно
             </div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
                   Сложные продажи – это когда средний чеком от 1М+, цикл сделки
                   в несколько месяцев и несколько стейкхолдеров со стороны
                   заказчика. В таких сделках стандартные ИИ-ассистенты не
@@ -347,27 +342,27 @@
                   стратегии, ценностном предложении, CJM. Но в компаниях этих
                   данных либо нет, либо они в хаосе.
                 </div>
-                <div class="promo-row__roles">CEO, CMO</div>
+                <div class="ksc-program-row__roles">CEO, CMO</div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
-              <a href="#" class="promo-row__product-link"
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
+              <a href="#" class="ksc-program-row__link"
                 >Модуль 3 — Продукт</a
               >.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Подготовить корпоративные данные к внедрению ИИ,
                     спроектировать эталонную модель продаж и встроить
                     ассистентов в ключевые точки взаимодействия с
                     клиентом.</span
                   >
-                  <a href="#" class="promo-row__product-link"
-                    ><div class="promo-row__product-icon"></div>
+                  <a href="#" class="ksc-program-row__link"
+                    ><div class="ksc-program-row__icon"></div>
                     <span>Модуль 3 — Продукт</span></a
                   >
                 </div>
@@ -376,14 +371,14 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">
               Создать привлекательный бренд работодателя
             </div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
                   Все работодатели пишут в своих вакансиях примерно одно и то
                   же. Кандидаты это чувствуют, поэтому HR-бренд не работает на
                   уникальные отличия. Некоторые HR пытаются выделиться, но
@@ -391,54 +386,54 @@
                   вопросов и согласований внутри. В итоге проще выпустить
                   безопасный креатив про «дружный коллектив и печеньки».
                 </div>
-                <div class="promo-row__roles">HRD</div>
+                <div class="ksc-program-row__roles">HRD</div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
-              <a href="#" class="promo-row__product-link"
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
+              <a href="#" class="ksc-program-row__link"
                 >Модуль 4 — Вклад и обмен</a
               >,
-              <a href="#" class="promo-row__product-link"
+              <a href="#" class="ksc-program-row__link"
                 >Модуль 4 — Вклад и обмен</a
               >,
-              <a href="#" class="promo-row__product-link"
+              <a href="#" class="ksc-program-row__link"
                 >Модуль 4 — Вклад и обмен</a
               >.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Проанализировать ценностное предложение работодателя и его
                     носители, найти в нем возможные несостыковки и предложить
                     улучшения.</span
                   >
-                  <a href="#" class="promo-row__product-link"
-                    ><div class="promo-row__product-icon"></div>
+                  <a href="#" class="ksc-program-row__link"
+                    ><div class="ksc-program-row__icon"></div>
                     <span>Модуль 4 — Вклад и обмен</span></a
                   >
                 </div>
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Разработать обновлённое EVP и весь комплекс
                     HR-коммуникаций, внедрить в процессы найма и
                     адаптации.</span
                   >
-                  <a href="#" class="promo-row__product-link"
-                    ><div class="promo-row__product-icon"></div>
+                  <a href="#" class="ksc-program-row__link"
+                    ><div class="ksc-program-row__icon"></div>
                     <span>Модуль 4 — Вклад и обмен</span></a
                   >
                 </div>
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Провести исследование, составить сквозную EJM, найти
                     барьеры в опыте сотрудника и предложить улучшения
                     HR-процессов, в том числе с применением ИИ.</span
                   >
-                  <a href="#" class="promo-row__product-link"
-                    ><div class="promo-row__product-icon"></div>
+                  <a href="#" class="ksc-program-row__link"
+                    ><div class="ksc-program-row__icon"></div>
                     <span>Модуль 4 — Вклад и обмен</span></a
                   >
                 </div>
@@ -447,60 +442,60 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">
               Научиться подходам Понедельника
             </div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
                   Освоить подходы Понедельника — ДКЦП, CX-стратегии, — чтобы
                   помогать своим клиентам и стать лучшим в своей нише. Это
                   возможность получить доступ к уникальной авторской
                   методологии, которая резонирует с ценностями и даёт
                   конкурентное преимущество на рынке.
                 </div>
-                <div class="promo-row__roles">Агентство, Консультант</div>
+                <div class="ksc-program-row__roles">Агентство, Консультант</div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
-              <a href="/dkcp" class="promo-row__product-link"
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
+              <a href="/dkcp" class="ksc-program-row__link"
                 >Модуль 5 — Аргументы и нарратив</a
               >,
-              <a href="#" class="promo-row__product-link"
+              <a href="#" class="ksc-program-row__link"
                 >Модуль 5 — Аргументы и нарратив</a
               >,
-              <a href="#" class="promo-row__product-link"
+              <a href="#" class="ksc-program-row__link"
                 >Модуль 5 — Аргументы и нарратив</a
               >.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition">Освоить базу.</span>
-                  <a href="/dkcp" class="promo-row__product-link"
-                    ><div class="promo-row__product-icon"></div>
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition">Освоить базу.</span>
+                  <a href="/dkcp" class="ksc-program-row__link"
+                    ><div class="ksc-program-row__icon"></div>
                     <span>Модуль 5 — Аргументы и нарратив</span></a
                   >
                 </div>
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Освоить методологию на фундаментальном уровне.</span
                   >
-                  <a href="#" class="promo-row__product-link"
-                    ><div class="promo-row__product-icon"></div>
+                  <a href="#" class="ksc-program-row__link"
+                    ><div class="ksc-program-row__icon"></div>
                     <span>Модуль 5 — Аргументы и нарратив</span></a
                   >
                 </div>
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Получить сертификат и право обучать других.</span
                   >
-                  <a href="#" class="promo-row__product-link"
-                    ><div class="promo-row__product-icon"></div>
+                  <a href="#" class="ksc-program-row__link"
+                    ><div class="ksc-program-row__icon"></div>
                     <span>Модуль 5 — Аргументы и нарратив</span></a
                   >
                 </div>
@@ -509,40 +504,40 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">
               Нестандартная или несформулированная задача, в сфере
               взаимодействия человека и бизнеса
             </div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
                   Иногда задача ещё не сформулирована — и это нормально.
                   Приходите поговорить: вместе разберёмся, что происходит, и что
                   с этим делать.
                 </div>
-                <div class="promo-row__roles">
+                <div class="ksc-program-row__roles">
                   CEO, CMO, Консультант, Агентство, HRD, Фаундер, Инвестор
                 </div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
-              <a href="#" class="promo-row__product-link"
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
+              <a href="#" class="ksc-program-row__link"
                 >Модуль 6 — Прототипирование</a
               >
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__product-item">
-                  <span class="promo-row__condition"
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__product-item">
+                  <span class="ksc-program-row__condition"
                     >Обсудить задачу, разобраться в вашей ситуации и предложить
                     решение</span
                   >
-                  <a href="#" class="promo-row__product-link"
-                    ><div class="promo-row__product-icon"></div>
+                  <a href="#" class="ksc-program-row__link"
+                    ><div class="ksc-program-row__icon"></div>
                     <span>Модуль 6 — Прототипирование</span></a
                   >
                 </div>
@@ -552,32 +547,31 @@
         </div>
       </div>
       <div
-        class="promo-rows"
-        data-promo-content="products"
+        class="ksc-program-rows"
         data-ksc-program-table-content="products">
-        <div class="promo-row promo-row--inline-detail promo-row--textual">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">Подготовка</div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
-                  <a href="#" class="promo-row__product-link"
+        <div class="ksc-program-row ksc-program-row--inline-detail ksc-program-row--textual">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">Подготовка</div>
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
+                  <a href="#" class="ksc-program-row__link"
                     ><span>Подготовка</span></a
                   >
                 </div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
               Вводный модуль: разбираем основы ДКЦП, проходим стартовый чекап
               и&nbsp;собираем план работы.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__task-item">
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__task-item">
                   <p><strong>Практика</strong></p>
-                  <ul class="promo-row__task-checklist">
+                  <ul class="ksc-program-row__task-checklist">
                     <li>Изучить основы модели ДКЦП и&nbsp;инварианты обмена.</li>
                     <li>Пройти тестирование.</li>
                     <li>
@@ -598,29 +592,29 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">Модуль 1 — Компания</div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
-                  <a href="/ksc" class="promo-row__product-link"
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">Модуль 1 — Компания</div>
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
+                  <a href="/ksc" class="ksc-program-row__link"
                     ><span>Модуль 1 — Компания</span></a
                   >
                 </div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
               Формулируем ценности и&nbsp;атрибуты компании, чтобы собрать
               фундамент модели и&nbsp;общий вектор команды.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__task-item">
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__task-item">
                   <p><strong>Теория</strong></p>
-                  <ul class="promo-row__task-checklist">
+                  <ul class="ksc-program-row__task-checklist">
                     <li>Разобрать фундамент и крышу ДКЦП: ценности и атрибуты.</li>
                     <li>Развести понятия компании и продукта.</li>
                     <li>
@@ -631,9 +625,9 @@
                     <li>Понять роль доверия как условия обмена.</li>
                   </ul>
                 </div>
-                <div class="promo-row__task-item promo-row__task-item--practice">
+                <div class="ksc-program-row__task-item ksc-program-row__task-item--practice">
                   <p><strong>Практика</strong></p>
-                  <ul class="promo-row__task-checklist">
+                  <ul class="ksc-program-row__task-checklist">
                     <li>Сформулировать ценности и атрибуты компании.</li>
                     <li>Заполнить атрибуты компании.</li>
                     <li>Собрать пирамиду ценностей.</li>
@@ -646,39 +640,39 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">Модуль 2 — Клиент</div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
-                  <a href="#" class="promo-row__product-link"
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">Модуль 2 — Клиент</div>
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
+                  <a href="#" class="ksc-program-row__link"
                     ><span>Модуль 2 — Клиент</span></a
                   >
                 </div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
               Исследуем клиентские сегменты и&nbsp;мотивацию к&nbsp;покупке,
               чтобы уточнить конфликт и&nbsp;проверить гипотезы
               на&nbsp;интервью.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__task-item">
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__task-item">
                   <p><strong>Теория</strong></p>
-                  <ul class="promo-row__task-checklist">
+                  <ul class="ksc-program-row__task-checklist">
                     <li>Разобрать сегмент и мотивационный конфликт.</li>
                     <li>Понять новый опыт как цель обмена для клиента.</li>
                     <li>Отличить корреляции от каузальностей.</li>
                     <li>Изучить подходы к сегментации клиентов.</li>
                   </ul>
                 </div>
-                <div class="promo-row__task-item promo-row__task-item--practice">
+                <div class="ksc-program-row__task-item ksc-program-row__task-item--practice">
                   <p><strong>Практика</strong></p>
-                  <ul class="promo-row__task-checklist">
+                  <ul class="ksc-program-row__task-checklist">
                     <li>Исследовать клиентские сегменты.</li>
                     <li>Составить и доработать гайд для интервью.</li>
                     <li>Сформулировать гипотезы.</li>
@@ -692,27 +686,27 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">Модуль 3 — Продукт</div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
-                  <a href="#" class="promo-row__product-link"
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">Модуль 3 — Продукт</div>
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
+                  <a href="#" class="ksc-program-row__link"
                     ><span>Модуль 3 — Продукт</span></a
                   >
                 </div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
               Разбираем артефакт как решение конфликта и&nbsp;собираем заготовки
               продукта и&nbsp;его атрибутов.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__task-item">
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__task-item">
                   <p><strong>Теория</strong></p>
                   <p>Теория артефакта</p>
                   <p>Артефакт как решение конфликта</p>
@@ -721,7 +715,7 @@
                     Типовые логики создания ценности: цепочки, мастерские, сети
                   </p>
                 </div>
-                <div class="promo-row__task-item promo-row__task-item--practice">
+                <div class="ksc-program-row__task-item ksc-program-row__task-item--practice">
                   <p><strong>Практика</strong></p>
                   <p>Делаем заготовки для&nbsp;артефакта</p>
                   <p>Обновляем модель ДКЦП и&nbsp;замеряем прогресс</p>
@@ -732,27 +726,27 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">Модуль 4 — Вклад и обмен</div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
-                  <a href="#" class="promo-row__product-link"
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">Модуль 4 — Вклад и обмен</div>
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
+                  <a href="#" class="ksc-program-row__link"
                     ><span>Модуль 4 — Вклад и обмен</span></a
                   >
                 </div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
               Определяем вклад клиента и&nbsp;условия обмена, чтобы собрать
               экономику и&nbsp;логику сделки.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__task-item">
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__task-item">
                   <p><strong>Теория</strong></p>
                   <p>Вклад клиента, условия обмена</p>
                   <p>
@@ -765,7 +759,7 @@
                   </p>
                   <p>Балансировка вклада условиями обмена и&nbsp;атрибутами</p>
                 </div>
-                <div class="promo-row__task-item promo-row__task-item--practice">
+                <div class="ksc-program-row__task-item ksc-program-row__task-item--practice">
                   <p><strong>Практика</strong></p>
                   <p>Формулируем материальный и&nbsp;нематериальные вклады</p>
                   <p>Обновляем модель ДКЦП и&nbsp;замеряем прогресс</p>
@@ -776,29 +770,29 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">
               Модуль 5 — Аргументы и нарратив
             </div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
-                  <a href="#" class="promo-row__product-link"
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
+                  <a href="#" class="ksc-program-row__link"
                     ><span>Модуль 5 — Аргументы и нарратив</span></a
                   >
                 </div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
               Собираем аргументы и&nbsp;мастер-нарратив, чтобы превратить модель
               в&nbsp;понятный язык для&nbsp;коммуникации.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__task-item">
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__task-item">
                   <p><strong>Теория</strong></p>
                   <p>Мастер-нарратив ДКЦП</p>
                   <p>
@@ -810,7 +804,7 @@
                     стадий покупки
                   </p>
                 </div>
-                <div class="promo-row__task-item promo-row__task-item--practice">
+                <div class="ksc-program-row__task-item ksc-program-row__task-item--practice">
                   <p><strong>Практика</strong></p>
                   <p>Собираем нарратив о&nbsp;продукте или&nbsp;компании</p>
                   <p>Собираем итоговую модель ДКЦП и&nbsp;замеряем прогресс</p>
@@ -821,27 +815,27 @@
           </div>
         </div>
 
-        <div class="promo-row is-open">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">Модуль 6 — Прототипирование</div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
-                  <a href="/dkcp" class="promo-row__product-link"
+        <div class="ksc-program-row is-open">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">Модуль 6 — Прототипирование</div>
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
+                  <a href="/dkcp" class="ksc-program-row__link"
                     ><span>Модуль 6 — Прототипирование</span></a
                   >
                 </div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
               Делаем и&nbsp;тестируем прототип лендинга, чтобы проверить
               ценностное предложение на&nbsp;реальных клиентах.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__task-item promo-row__task-item--practice">
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__task-item ksc-program-row__task-item--practice">
                   <p><strong>Практика</strong></p>
                   <p>
                     Делаем прототип лендинга для&nbsp;продукта или&nbsp;компании
@@ -857,27 +851,27 @@
           </div>
         </div>
 
-        <div class="promo-row is-open promo-row--textual">
-          <div class="promo-row__situation">
-            <div class="promo-row__situation-main">Демо-день</div>
-            <div class="promo-row__situation-detail">
-              <div class="promo-row__situation-detail-body">
-                <div class="promo-row__situation-detail-inner">
-                  <a href="#" class="promo-row__product-link"
+        <div class="ksc-program-row is-open ksc-program-row--textual">
+          <div class="ksc-program-row__situation">
+            <div class="ksc-program-row__situation-main">Демо-день</div>
+            <div class="ksc-program-row__situation-detail">
+              <div class="ksc-program-row__situation-detail-body">
+                <div class="ksc-program-row__situation-detail-inner">
+                  <a href="#" class="ksc-program-row__link"
                     ><span>Демо-день</span></a
                   >
                 </div>
               </div>
             </div>
           </div>
-          <div class="promo-row__products">
-            <div class="promo-row__products-summary">
+          <div class="ksc-program-row__products">
+            <div class="ksc-program-row__summary">
               Финальное мероприятие, на&nbsp;котором подводим итоги, показываем
               результаты и&nbsp;фиксируем следующие шаги.
             </div>
-            <div class="promo-row__products-detail">
-              <div class="promo-row__products-detail-inner">
-                <div class="promo-row__task-item">
+            <div class="ksc-program-row__products-detail">
+              <div class="ksc-program-row__products-detail-inner">
+                <div class="ksc-program-row__task-item">
                   <p><strong>Демо-день</strong></p>
                   <p><em>Финальное отчётное мероприятие</em></p>
                   <p>

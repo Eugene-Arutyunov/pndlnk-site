@@ -119,29 +119,18 @@ function initLogoDownloads() {
   });
 }
 
-function initPromoViewSwitcher() {
-  const container =
-    document.querySelector(".ksc-program-table") ||
-    document.querySelector(".promo-table-container");
+function initPromoTable() {
+  const container = document.querySelector(
+    ".promo-table-container:not(.ksc-program-table)"
+  );
   if (!container) return;
 
-  const isKscProgramTable = container.classList.contains("ksc-program-table");
-  const detailAttr = isKscProgramTable
-    ? "data-ksc-program-table-detail"
-    : "data-promo-detail";
-  const contentAttr = isKscProgramTable
-    ? "data-ksc-program-table-content"
-    : "data-promo-content";
-
   const viewButtons = container.querySelectorAll("[data-promo-view]");
-  const detailButtons = container.querySelectorAll(`[${detailAttr}]`);
+  const detailButtons = container.querySelectorAll("[data-promo-detail]");
 
   function switchView(view) {
-    container.querySelectorAll(`[${contentAttr}]`).forEach((el) => {
-      const value = isKscProgramTable
-        ? el.dataset.kscProgramTableContent
-        : el.dataset.promoContent;
-      el.style.display = value === view ? "" : "none";
+    container.querySelectorAll("[data-promo-content]").forEach((el) => {
+      el.style.display = el.dataset.promoContent === view ? "" : "none";
     });
   }
 
@@ -171,30 +160,52 @@ function initPromoViewSwitcher() {
   }
 
   bindGroup(viewButtons, switchView, "promoView");
-  bindGroup(
-    detailButtons,
-    switchDetail,
-    isKscProgramTable ? "kscProgramTableDetail" : "promoDetail"
+  bindGroup(detailButtons, switchDetail, "promoDetail");
+}
+
+function initKscProgramTable() {
+  const container = document.querySelector(".ksc-program-table");
+  if (!container) return;
+
+  const detailButtons = container.querySelectorAll(
+    "[data-ksc-program-table-detail]"
   );
+
+  function switchDetail(mode) {
+    const open = mode === "full";
+    container.querySelectorAll(".ksc-program-row").forEach((row) => {
+      row.classList.toggle("is-open", open);
+    });
+  }
+
+  detailButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("is-active")) return;
+
+      detailButtons.forEach((b) => {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-pressed", "false");
+      });
+
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-pressed", "true");
+
+      switchDetail(btn.dataset.kscProgramTableDetail);
+    });
+  });
 
   const activeDetailButton = Array.from(detailButtons).find((btn) =>
     btn.classList.contains("is-active")
   );
   if (activeDetailButton) {
-    switchDetail(
-      isKscProgramTable
-        ? activeDetailButton.dataset.kscProgramTableDetail
-        : activeDetailButton.dataset.promoDetail
-    );
+    switchDetail(activeDetailButton.dataset.kscProgramTableDetail);
   }
 
   const productRows = container.querySelectorAll(
-    isKscProgramTable
-      ? '[data-ksc-program-table-content="products"] .promo-row'
-      : '[data-promo-content="products"] .promo-row'
+    '[data-ksc-program-table-content="products"] .ksc-program-row'
   );
   productRows.forEach((row) => {
-    row.classList.add("promo-row--inline-detail");
+    row.classList.add("ksc-program-row--inline-detail");
     row.addEventListener("click", (event) => {
       const link = event.target.closest("a");
       if (link) {
@@ -344,7 +355,8 @@ if (document.readyState === "loading") {
     initStickyObserver();
     initSleepyObserver();
     initLogoDownloads();
-    initPromoViewSwitcher();
+    initPromoTable();
+    initKscProgramTable();
     initColorPlates();
     initProjectCatalogFilter();
   });
@@ -352,7 +364,8 @@ if (document.readyState === "loading") {
   initStickyObserver();
   initSleepyObserver();
   initLogoDownloads();
-  initPromoViewSwitcher();
+  initPromoTable();
+  initKscProgramTable();
   initColorPlates();
   initProjectCatalogFilter();
 }
