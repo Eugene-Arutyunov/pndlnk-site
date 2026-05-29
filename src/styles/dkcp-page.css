@@ -889,9 +889,9 @@
   width: 7em;
   margin: 0 auto;
   opacity: 0.2;
+  color: rgba(var(--ids__text-RGB), 1);
 
   svg {
-    fill: rgba(var(--ids__text-RGB), 1);
     width: 100%;
     height: auto;
   }

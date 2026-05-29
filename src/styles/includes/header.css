@@ -30,8 +30,15 @@
       margin-bottom: -0.1em;
       align-self: flex-end;
 
-      svg {
-        fill: rgba(var(--ids__text-RGB), 1);
+      a {
+        color: rgba(var(--ids__text-RGB), 1);
+        text-decoration: none;
+        transition: color 0.5s ease;
+
+        &:hover {
+          color: rgb(var(--ids__hover-RGB));
+          transition: color 0s;
+        }
       }
 
       @media (width < 768px) {
