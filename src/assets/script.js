@@ -348,41 +348,15 @@ function initProjectCatalogFilter() {
   apply();
 }
 
-function getCopyTableCellText(cell) {
-  const value = cell.querySelector(".copy-table__value");
-  return (value ? value.textContent : cell.textContent).trim();
-}
-
-function showCopyTableFlash(cell, text) {
-  cell.querySelector(".copy-table__flash")?.remove();
-  cell.classList.remove("is-copying-animate-in");
-  cell.classList.add("is-copying");
-
-  const flash = document.createElement("span");
-  flash.className = "copy-table__flash";
-
-  const flashText = document.createElement("span");
-  flashText.className = "copy-table__flash-text";
-  flashText.textContent = text;
-  flash.appendChild(flashText);
-
-  cell.appendChild(flash);
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      cell.classList.add("is-copying-animate-in");
-    });
-  });
-
-  flashText.addEventListener("animationend", () => {
-    flash.remove();
-    cell.classList.remove("is-copying", "is-copying-animate-in");
-  });
-}
-
 function initCopyTable() {
   const template = document.querySelector(".copy-table__icon-template");
   if (!template) return;
+
+  const copyClasses = {
+    flash: "copy-table__flash",
+    flashText: "copy-table__flash-text",
+    value: "copy-table__value",
+  };
 
   document.querySelectorAll(".copy-table").forEach((table) => {
     const rows = table.querySelectorAll("tbody tr");
@@ -400,26 +374,47 @@ function initCopyTable() {
       }
       cell.appendChild(value);
 
-      const icon = template.content.firstElementChild.cloneNode(true);
       cell.classList.add("copy-table__cell");
-      cell.appendChild(icon);
+      if (!appendCopyIcon(cell, ".copy-table__icon-template", ".copy-table__icon")) {
+        return;
+      }
 
-      cell.addEventListener("click", (event) => {
-        if (event.target.closest("a")) return;
-
-        const text = getCopyTableCellText(cell);
-        if (!text) return;
-
-        navigator.clipboard.writeText(text).then(() => {
-          showCopyTableFlash(cell, text);
-
-          cell.classList.add("is-copied");
-          window.setTimeout(() => {
-            cell.classList.remove("is-copied");
-          }, 1200);
-        });
-      });
+      cell.addEventListener(
+        "click",
+        copyFromContainer(cell, {
+          valueSelector: ".copy-table__value",
+          classes: copyClasses,
+        }),
+      );
     });
+  });
+}
+
+function initCopyField() {
+  const template = document.querySelector(".copy-field__icon-template");
+  if (!template) return;
+
+  const copyClasses = {
+    flash: "copy-field__flash",
+    flashText: "copy-field__flash-text",
+    value: "copy-field__value",
+  };
+
+  document.querySelectorAll(".copy-field").forEach((field) => {
+    const value = field.querySelector(".copy-field__value");
+    if (!value) return;
+
+    if (!appendCopyIcon(field, ".copy-field__icon-template", ".copy-field__icon")) {
+      return;
+    }
+
+    field.addEventListener(
+      "click",
+      copyFromContainer(field, {
+        valueSelector: ".copy-field__value",
+        classes: copyClasses,
+      }),
+    );
   });
 }
 
@@ -435,6 +430,7 @@ if (document.readyState === "loading") {
     initColorPlates();
     initProjectCatalogFilter();
     initCopyTable();
+    initCopyField();
   });
 } else {
   initStickyObserver();
@@ -445,4 +441,5 @@ if (document.readyState === "loading") {
   initColorPlates();
   initProjectCatalogFilter();
   initCopyTable();
+  initCopyField();
 }

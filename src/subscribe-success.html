@@ -1,27 +1,27 @@
-{% extends 'layout.html' %}
-{% set pageTitle = 'Подписка оформлена — Понедельник' %}
-{% set pageDesc = 'Вы подписались на дайджест Понедельника' %}
-
+{% extends 'layout.html' %} {% set pageTitle = 'Подписка оформлена —
+Понедельник' %} {% set pageDesc = 'Вы подписались на дайджест Понедельника' %}
 {% block content %}
 
 <div class="ids__space XL"></div>
 
 <div class="ids__wrapper">
   <div class="ids__text-width">
-    <h1>Вы великолепны</h1>
-    <div class="ids__space XS"></div>
-    <p class="loud">Подписка оформлена. Ждите дайджест.</p>
-  </div>
+    <h1>Дайджест</h1>
 
-  <div class="ids__space M"></div>
+    <p class="loud">Вы великолепны! Подписка оформлена.</p>
+  </div>
 
   <div class="ids__text-width">
     <p>
-      Письма будут приходить с адреса <strong>okb@ponedelnik.ru</strong> — добавьте его в адресную книгу, чтобы дайджест точно попадал в inbox.
+      Чтобы письма не попадали в спам, добавьте
+      <span class="copy-field"
+        ><span class="copy-field__value">okb@ponedelnik.ru</span></span
+      >
+      в адресную книгу своего почтового сервиса.
     </p>
   </div>
 </div>
 
 <div class="ids__space XL"></div>
 
-{% endblock %}
+{% include 'components/copy-field-setup.html' %} {% endblock %}

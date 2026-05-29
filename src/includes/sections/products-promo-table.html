@@ -1,0 +1,1017 @@
+<div class="promo-table-container">
+  <div class="promo-switchers">
+    <div class="promo-switcher" role="group" aria-label="Вид таблицы">
+      <button
+        type="button"
+        class="promo-switcher__item is-active"
+        aria-pressed="true"
+        data-promo-view="products">
+        Сгруппировать по продуктам
+      </button>
+      <button
+        type="button"
+        class="promo-switcher__item"
+        aria-pressed="false"
+        data-promo-view="tasks">
+        по задачам
+      </button>
+    </div>
+    <div class="promo-switcher" role="group" aria-label="Детализация">
+      <button
+        type="button"
+        class="promo-switcher__item is-active"
+        aria-pressed="true"
+        data-promo-detail="full">
+        Подробно
+      </button>
+      <button
+        type="button"
+        class="promo-switcher__item"
+        aria-pressed="false"
+        data-promo-detail="short">
+        Коротко
+      </button>
+    </div>
+  </div>
+  <div class="ids__space S"></div>
+  <div
+    class="promo-rows-header"
+    data-promo-content="tasks"
+    style="display: none">
+    <span class="promo-rows-header__label">Задача</span>
+    <span class="promo-rows-header__label">Что предлагаем</span>
+  </div>
+  <div class="promo-rows-header" data-promo-content="products">
+    <span class="promo-rows-header__label">Продукт Понедельника</span>
+    <span class="promo-rows-header__label">Зачем он нужен</span>
+  </div>
+  <div class="promo-rows" data-promo-content="tasks" style="display: none">
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">
+          Объединить разрозненные продукты в&nbsp;единую экосистему, понятную
+          для&nbsp;клиентов
+        </div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              Когда продукты в&nbsp;портфеле не&nbsp;связаны между собой,
+              клиенту всё равно, чем заменить любой из&nbsp;них&nbsp;— вашим или
+              чужим. Каждый продукт конкурирует сам по&nbsp;себе,
+              и&nbsp;компания теряет возможности для кросс-продаж, там, где они
+              потенциально удобны клиентам.
+            </div>
+            <div class="promo-row__roles">Для&nbsp;CEO, CPO, CMO</div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          <a
+            href="#"
+            class="promo-row__product-link contact-form-trigger"
+            data-cf-title="Обсудить проект"
+            data-cf-submit="Отправить"
+            >Стратсессия «Цели компании»</a
+          >,
+          <a
+            href="#"
+            class="promo-row__product-link contact-form-trigger"
+            data-cf-title="Обсудить проект"
+            data-cf-submit="Отправить"
+            >Продуктовый чекап</a
+          >,
+          <a
+            href="#"
+            class="promo-row__product-link contact-form-trigger"
+            data-cf-title="Обсудить проект"
+            data-cf-submit="Отправить"
+            >Культура создания ценности</a
+          >.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Согласовать цели компании и&nbsp;декомпозировать их
+                до&nbsp;метрик каждого продукта будущей экосистемы.</span
+              >
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-goals.html' %}
+                </div>
+                <span>Стратсессия «Цели компании»</span></a
+              >
+            </div>
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Продиагностировать продукты и&nbsp;найти где ценность
+                несогласована</span
+              >
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-checkup.html' %}
+                </div>
+                <span>Продуктовый чекап</span></a
+              >
+            </div>
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Разработать ценностное предложение для всей экосистемы и
+                логично вписать в&nbsp;него предложения отдельных
+                продуктов.</span
+              >
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-ksc.html' %}
+                </div>
+                <span>Культура создания ценности</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">
+          Построить сквозной клиентский путь
+        </div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              Частая причина проблем в&nbsp;бизнесе&nbsp;— это несогласованность
+              функций, отвечающих за&nbsp;доставку ценности. Маркетинг делает
+              свои офферы, продажи продают по-своему, дизайнеры, не&nbsp;вникая,
+              работают по&nbsp;гайдлайнам, продакты растят какие-то свои
+              метрики, а разработка пилит бэклог, который придумал CPO. При этом
+              клиенту всё равно на&nbsp;оргструктуру, он просто получает плохой
+              опыт и уходит к&nbsp;конкурентам.
+            </div>
+            <div class="promo-row__roles">Для&nbsp;CEO, CXO, CMO, CPO</div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          <a
+            href="#"
+            class="promo-row__product-link contact-form-trigger"
+            data-cf-title="Обсудить проект"
+            data-cf-submit="Отправить"
+            >Стратсессия «Цели компании»</a
+          >,
+          <a
+            href="#"
+            class="promo-row__product-link contact-form-trigger"
+            data-cf-title="Обсудить проект"
+            data-cf-submit="Отправить"
+            >Эталон-М</a
+          >.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Согласовать цели компании, определить метрики клиентского
+                опыта, декомпозировать их до&nbsp;метрик подразделений.</span
+              >
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-goals.html' %}
+                </div>
+                <span>Стратсессия «Цели компании»</span></a
+              >
+            </div>
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Провести исследование, разработать сквозную CJM и&nbsp;внедрить
+                ИИ-ассистентов, чтобы они помогали отделам согласованно
+                взаимодействовать с&nbsp;клиентом, храня общий контекст.</span
+              >
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-etalon.html' %}
+                </div>
+                <span>Эталон-М</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">
+          Запустить новый продукт или внутренний стартап
+        </div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              Если вы запускаете новый продукт внутри крупной компании
+              и&nbsp;нужно найти целевой рынок, сформулировать предложение
+              и&nbsp;позиционирование.
+            </div>
+            <div class="promo-row__roles">CEO, CMO</div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          <a
+            href="#"
+            class="promo-row__product-link contact-form-trigger"
+            data-cf-title="Обсудить проект"
+            data-cf-submit="Отправить"
+            >Культура создания ценности</a
+          >.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >За&nbsp;9&nbsp;недель изучим рынок и&nbsp;клиентов,
+                сформулируем и&nbsp;оформим ценностное предложение
+                и&nbsp;проверим его на&nbsp;рынок.</span
+              >
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-ksc.html' %}
+                </div>
+                <span>Культура создания ценности</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">
+          Внедрить ИИ в сложные продажи
+        </div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              Сложные продажи&nbsp;— это когда средний чек от&nbsp;1&nbsp;М+,
+              цикл сделки в несколько месяцев и&nbsp;несколько стейкхолдеров
+              со&nbsp;стороны заказчика. В&nbsp;таких сделках эффективность
+              ИИ-ассистента очень сильно зависит от&nbsp;того, насколько
+              в&nbsp;порядке информация, которую ИИ использует в&nbsp;качестве
+              контекста: стратегии, процессы, стандарты.
+            </div>
+            <div class="promo-row__roles">Для&nbsp;CEO, CSO, CMO</div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          <a
+            href="#"
+            class="promo-row__product-link contact-form-trigger"
+            data-cf-title="Обсудить проект"
+            data-cf-submit="Отправить"
+            >Эталон-М</a
+          >.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Подготовить корпоративные данные к&nbsp;внедрению ИИ,
+                спроектировать эталонную модель продаж и&nbsp;встроить
+                ассистентов в&nbsp;ключевые точки взаимодействия
+                с&nbsp;клиентом.</span
+              >
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-etalon.html' %}
+                </div>
+                <span>Эталон-М</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">
+          Создать привлекательный бренд работодателя
+        </div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              Все работодатели пишут в&nbsp;своих вакансиях примерно одно
+              и&nbsp;то&nbsp;же. Кандидаты это знают, поэтому игнорируют общие
+              слова про «дружный коллектив» и&nbsp;«карьерный рост».
+            </div>
+            <div class="promo-row__roles">Для&nbsp;HRD</div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          <a
+            href="#"
+            class="promo-row__product-link contact-form-trigger"
+            data-cf-title="Обсудить проект"
+            data-cf-submit="Отправить"
+            >Чекап EVP</a
+          >,
+          <a
+            href="#"
+            class="promo-row__product-link contact-form-trigger"
+            data-cf-title="Обсудить проект"
+            data-cf-submit="Отправить"
+            >Разработка EVP</a
+          >
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Проанализировать ценностное предложение работодателя, найти
+                в&nbsp;нём возможные несостыковки и&nbsp;предложить
+                улучшения.</span
+              >
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-evp-checkup.html' %}
+                </div>
+                <span>Чекап EVP</span></a
+              >
+            </div>
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Разработать новое, конкурентное EVP и&nbsp;весь набор
+                HR-коммуникаций, внедрить в&nbsp;процессы найма
+                и&nbsp;адаптации.</span
+              >
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-evp-dev.html' %}
+                </div>
+                <span>Разработка EVP</span></a
+              >
+            </div>
+            <!-- <div class="promo-row__product-item">
+                <span class="promo-row__condition"
+                  >Провести исследование, составить сквозную EJM, найти барьеры
+                  в опыте сотрудника и предложить улучшения HR-процессов, в том
+                  числе с применением ИИ.</span
+                >
+                
+                <a
+                  href="#"
+                  class="promo-row__product-link contact-form-trigger"
+                  data-cf-title="Обсудить проект"
+                  data-cf-submit="Отправить"
+                  ><div class="promo-row__product-icon">
+                    {% include 'assets/product-icon-etalon.html' %}
+                  </div>
+                  <span>Эталон-М</span></a
+                >
+              </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">
+          Научиться подходам Понедельника
+        </div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              Освоить подходы Понедельника, чтобы помочь своим клиентам или
+              работодателям стать клиентоцентричными компаниями, с&nbsp;которыми
+              приятно иметь дело.
+            </div>
+            <div class="promo-row__roles">
+              Для&nbsp;агентств, консультантов и&nbsp;штатных специалистов
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          <a href="/dkcp-base" class="promo-row__product-link">База ДКЦП</a>,
+          <a href="https://www.cxstrategy.ru/" class="promo-row__product-link"
+            >CX:SL</a
+          >,
+          <a
+            href="#"
+            class="promo-row__product-link contact-form-trigger"
+            data-cf-title="Обсудить проект"
+            data-cf-submit="Отправить"
+            >ДКЦП-сертификация</a
+          >.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Освоить базу, разобраться с&nbsp;понятиями, научиться работать
+                с&nbsp;моделью ДКЦП.</span
+              >
+              <a href="/dkcp-base" class="promo-row__product-link"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-base.html' %}
+                </div>
+                <span>База ДКЦП</span></a
+              >
+            </div>
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Освоить методологию на фундаментальном уровне.</span
+              >
+              <a
+                href="https://www.cxstrategy.ru/"
+                class="promo-row__product-link"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-cxsl.html' %}
+                </div>
+                <span>CX:SL</span></a
+              >
+            </div>
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Получить сертификат и право обучать других.</span
+              >
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-dkcp-cert.html' %}
+                </div>
+                <span>ДКЦП-сертификация</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">
+          Нестандартная или несформулированная задача в&nbsp;сфере
+          взаимодействия человека и&nbsp;бизнеса
+        </div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              Иногда задача нестандартная или нужно над&nbsp;ней подумать
+              вместе, чтобы хорошо поставить ТЗ. Приходите поговорить: вместе
+              разберёмся, что происходит, и&nbsp;что с&nbsp;этим делать.
+            </div>
+            <div class="promo-row__roles">
+              CEO, CMO, CPO, CSO, HRD, Фаундер, Инвестор
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          <a
+            href="#"
+            class="promo-row__product-link contact-form-trigger"
+            data-cf-title="Обсудить проект"
+            data-cf-submit="Отправить"
+            >Индивидуальный проект</a
+          >
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__product-item">
+              <span class="promo-row__condition"
+                >Обсудить, что беспокоит, разобраться в&nbsp;вашей ситуации
+                и&nbsp;предложить решение.</span
+              >
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  <div
+                    class="illustration-container"
+                    data-illustration-type="sphere"
+                    data-line-width="15"
+                    data-point-radius="20"
+                    style="color: #fff">
+                    <canvas class="illustration-canvas"></canvas>
+                  </div>
+                </div>
+                <span>Индивидуальный проект</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="promo-rows" data-promo-content="products">
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">Эталон-М</div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-etalon.html' %}
+                </div>
+                <span>Эталон-М</span></a
+              >
+            </div>
+            <div class="promo-row__product-description">
+              Изучим, как устроено взаимодействие компании с&nbsp;её клиентами
+              или сотрудниками. Найдём проблемы и&nbsp;разрывы, предложим
+              приоритетные, коммерчески обоснованные изменения. Опишем целевое
+              взаимодействие в&nbsp;виде Эталонной Модели&nbsp;— специального
+              формата на&nbsp;основе CJM, который могут читать и&nbsp;люди,
+              и&nbsp;AI-ассистенты. Настроим ассистентов, чтобы они помогали
+              создавать лучший опыт для клиентов и&nbsp;сотрудников.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          Согласовать маркетинг, продажи, продукт и&nbsp;саппорт вокруг
+          сквозного пути клиента. Создать бесшовный клиентский опыт.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__task-item">
+              Объединить разрозненные департаменты вокруг единого понимания
+              клиентского пути, чтобы не&nbsp;терять клиентов на&nbsp;стыках.
+            </div>
+            <div class="promo-row__task-item">
+              Внедрить ИИ-ассистентов в&nbsp;сложные и&nbsp;длинные продажи,
+              чтобы подразделения не&nbsp;теряли контекст клиента.
+            </div>
+            <div class="promo-row__task-item">
+              Создать привлекательный бренд работодателя, чтобы легче нанимать
+              тех,&nbsp;кто нужен.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">Культура создания ценности</div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-ksc.html' %}
+                </div>
+                <span>Культура создания ценности</span></a
+              >
+            </div>
+            <div class="promo-row__product-description">
+              Трансформационная программа для кросс-функциональных продуктовых
+              команд. За&nbsp;9&nbsp;недель собираем новое или пересобираем
+              существующее ценностное предложение: закладываем фундамент,
+              находим клиента, пересобираем продукт, позиционирование
+              и&nbsp;маркетинг. Синхронизируем продактов, исследователей,
+              маркетологов, сейлов и&nbsp;дизайнеров вокруг единого понимания
+              ценности для клиента.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          Объединить отдельные продукты в&nbsp;экосистему. Запустить новый
+          продукт или внутренний стартап.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__task-item">
+              Объединить отдельные продукты в&nbsp;единую экосистему, понятную
+              для клиентов и&nbsp;работающую на&nbsp;кросс-продажи продуктов.
+            </div>
+            <div class="promo-row__task-item">
+              Запустить новый продукт или стартап внутри большой компании так,
+              чтобы не&nbsp;сжечь инвестиции.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">Продуктовый чекап</div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-checkup.html' %}
+                </div>
+                <span>Продуктовый чекап</span></a
+              >
+            </div>
+            <div class="promo-row__product-description">
+              Диагностический продукт. Разложим ценностное предложение
+              на&nbsp;ДКЦП-модель и&nbsp;проверим её корректность
+              и&nbsp;сходимость.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          Найти причину плохих продаж или&nbsp;быстро проверить гипотезу нового
+          продукта.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__task-item">
+              Увидеть ценностное предложение глазами команды, определить,
+              насколько одинаково команда понимает, что и кому она продаёт.
+            </div>
+            <div class="promo-row__task-item">
+              Увидеть ценностное предложение глазами клиента, определить,
+              насколько понятно команда доносит ценность.
+            </div>
+            <div class="promo-row__task-item">
+              Быстро проверить гипотезу нового продукта, чтобы
+              в&nbsp;исследованиях и&nbsp;экспериментах действовать более
+              эффективно.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">Стратсессия «Цели компании»</div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-goals.html' %}
+                </div>
+                <span>Стратсессия «Цели компании»</span></a
+              >
+            </div>
+            <div class="promo-row__product-description">
+              Проведём стратегическую сессию по&nbsp;OKR. Поможем команде
+              сформулировать цели и&nbsp;ключевые результаты, декомпозировать их
+              до&nbsp;проектов с&nbsp;метриками. Распределим ответственность,
+              поможем настроить процессы отчётности и&nbsp;контроля.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          Договориться о&nbsp;целях и&nbsp;приоритетах до&nbsp;начала
+          трансформации.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__task-item">
+              Договориться о&nbsp;целях и&nbsp;приоритетах до&nbsp;начала
+              трансформации&nbsp;— чтобы изменения не&nbsp;разошлись
+              по&nbsp;дороге и&nbsp;дошли до&nbsp;конца.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">Чекап EVP</div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-evp-checkup.html' %}
+                </div>
+                <span>Чекап EVP</span></a
+              >
+            </div>
+            <div class="promo-row__product-description">
+              Диагностический продукт для ценностного предложения работодателя.
+              Разложим текущее EVP на&nbsp;модель ДКЦП, проверим
+              на&nbsp;корректность и&nbsp;сходимость. Предложим инициативы для
+              улучшения ценностного предложения.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          Найти места,&nbsp;где можно улучшить HR-процессы.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__task-item">
+              Найти, где ценностное предложение работодателя расходится
+              с&nbsp;реальным опытом сотрудников и&nbsp;составить план
+              улучшений.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">Разработка EVP</div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-evp-dev.html' %}
+                </div>
+                <span>Разработка EVP</span></a
+              >
+            </div>
+            <div class="promo-row__product-description">
+              Разберёмся, кого компания хочет привлекать и&nbsp;что реально
+              может предложить. Разработаем EVP и&nbsp;весь комплекс
+              HR-коммуникаций&nbsp;— от&nbsp;вакансий до&nbsp;онбординга.
+              Поможем встроить новое предложение в&nbsp;HR-процессы.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          Создать привлекательный бренд работодателя.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__task-item">
+              Построить бренд работодателя,&nbsp;который отражает реальные
+              сильные стороны компании.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">База ДКЦП</div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              <a href="/dkcp-base" class="promo-row__product-link"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-base.html' %}
+                </div>
+                <span>База ДКЦП</span></a
+              >
+            </div>
+            <div class="promo-row__product-description">
+              Онлайн-курс в&nbsp;записи для специалистов помогающих профессий.
+              Учит диагностировать ценностные предложения клиентов
+              и&nbsp;аргументированно помогать им с&nbsp;проработкой.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          Научиться подходам Понедельника.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__task-item">
+              Научиться подходам Понедельника.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">CX:SL 2.0</div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              <a
+                href="https://www.cxstrategy.ru/"
+                class="promo-row__product-link"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-cxsl.html' %}
+                </div>
+                <span>CX:SL 2.0</span></a
+              >
+            </div>
+            <div class="promo-row__product-description">
+              Онлайн-курс «CX: Стратегическая логика» для CX-специалистов,
+              продакт-менеджеров и&nbsp;предпринимателей. Фундаментальное
+              погружение в&nbsp;методологии Понедельника.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          Научиться подходам Понедельника.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__task-item">
+              Научиться подходам Понедельника.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">ДКЦП-сертификация</div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  {% include 'assets/product-icon-dkcp-cert.html' %}
+                </div>
+                <span>ДКЦП-сертификация</span></a
+              >
+            </div>
+            <div class="promo-row__product-description">
+              Программа сертификации по&nbsp;методологии ДКЦП. Подтверждает
+              экспертизу и&nbsp;даёт право обучать других.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          Научиться подходам Понедельника.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__task-item">
+              Научиться подходам Понедельника.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-row is-open">
+      <div class="promo-row__situation">
+        <div class="promo-row__situation-main">Индивидуальный проект</div>
+        <div class="promo-row__situation-detail">
+          <div class="promo-row__situation-detail-body">
+            <div class="promo-row__situation-detail-inner">
+              <a
+                href="#"
+                class="promo-row__product-link contact-form-trigger"
+                data-cf-title="Обсудить проект"
+                data-cf-submit="Отправить"
+                ><div class="promo-row__product-icon">
+                  <div
+                    class="illustration-container"
+                    data-illustration-type="sphere"
+                    data-line-width="15"
+                    data-point-radius="20"
+                    style="color: #fff">
+                    <canvas class="illustration-canvas"></canvas>
+                  </div>
+                </div>
+                <span>Индивидуальный проект</span></a
+              >
+            </div>
+            <div class="promo-row__product-description">
+              Персональный проектный формат для нестандартных задач. Вместе
+              разбираемся в&nbsp;вашей ситуации и&nbsp;предлагаем решение
+              в&nbsp;рамках нашей экспертизы. Приходите с&nbsp;любой задачей,
+              если она касается улучшения опыта клиентов или сотрудников.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-row__products">
+        <div class="promo-row__products-summary">
+          Решить нестандартную задачу в&nbsp;сфере CX и&nbsp;EX.
+        </div>
+        <div class="promo-row__products-detail">
+          <div class="promo-row__products-detail-inner">
+            <div class="promo-row__task-item">
+              Помочь сформулировать задачу или решить нестандартную проблему
+              в&nbsp;области взаимодействия человека и&nbsp;бизнеса.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ids__space M"></div>
+  <div class="promo-table-footer ids__text-width">
+    <p>
+      Это запросы, с&nbsp;которыми к&nbsp;нам обращаются чаще всего. Однако мы
+      понимаем, что любой бизнес&nbsp;— уникальное сочетание неуникальных
+      проблем. Поэтому если вам ничего не&nbsp;подошло из&nbsp;готового,
+      но&nbsp;вы всё равно хотите поработать&nbsp;— оставьте заявку, мы соберём
+      для&nbsp;вас персональное предложение под вашу ситуацию.
+    </p>
+    <div class="ids__space S"></div>
+    <!--
+      <p>
+        <button
+          class="lets-talk-button contact-form-trigger"
+          data-cf-title="Обсудить проект"
+          data-cf-submit="Отправить">
+          Поработать вместе
+        </button>
+      </p>
+    -->
+  </div>
+</div>
