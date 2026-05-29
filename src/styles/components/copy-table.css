@@ -1,0 +1,165 @@
+.ids {
+  .promo-table-container:has(.copy-table) {
+    @media (width < 768px) {
+      font-size: 0.88em;
+      padding: 1.15em;
+    }
+  }
+
+  .copy-table {
+    &.promo-table tbody td {
+      padding-top: 0.85em;
+      padding-bottom: 0.95em;
+
+      @media (width < 768px) {
+        padding-top: 1em;
+        padding-bottom: 1.15em;
+      }
+    }
+
+    & tbody td:last-child {
+      position: relative;
+      padding-right: 2.6em;
+
+      @media (width < 768px) {
+        padding-right: 3.1em;
+      }
+    }
+
+    & .copy-table__cell {
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+
+      &:hover:not(:has(a:hover)) {
+        background-color: rgba(var(--ids__surface-RGB), 0.28);
+        transition: background-color 0s;
+      }
+
+      &.is-copied {
+        background-color: rgba(var(--ids__surface-RGB), 0.28);
+      }
+    }
+
+    & .copy-table__icon {
+      position: absolute;
+      top: 0.7em;
+      right: 0.7em;
+      z-index: 1;
+      width: 1.4em;
+      height: 1.4em;
+      color: rgba(var(--ids__text-RGB), 0.55);
+      line-height: 0;
+      transition: color 0.5s ease;
+
+      @media (width < 768px) {
+        top: 0.85em;
+        right: 0.85em;
+        width: 1.65em;
+        height: 1.65em;
+      }
+
+      & .copy-icon {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        & svg {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    & .copy-table__cell:hover:not(:has(a:hover)) .copy-table__icon {
+      color: rgba(var(--ids__text-RGB), 0.75);
+      transition: color 0s;
+    }
+
+    & .copy-table__icon:hover,
+    & .copy-table__cell:hover:not(:has(a:hover)) .copy-table__icon:hover {
+      color: rgb(var(--ids__hover-RGB));
+      transition: color 0s;
+    }
+
+    & .copy-table__cell.is-copied .copy-table__icon {
+      color: rgb(var(--ids__text-RGB));
+    }
+
+    & .copy-table__value {
+      display: block;
+    }
+
+    & .copy-table__cell.is-copying .copy-table__value {
+      opacity: 0;
+      transition: opacity 0s;
+    }
+
+    & .copy-table__cell.is-copying.is-copying-animate-in .copy-table__value {
+      opacity: 1;
+      transition: opacity 0.48s ease-in;
+    }
+
+    & .copy-table__flash {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      padding-top: 0.85em;
+      padding-bottom: 0.95em;
+      padding-right: 2.6em;
+      pointer-events: none;
+      display: flex;
+      align-items: flex-start;
+
+      @media (width < 768px) {
+        padding-top: 1em;
+        padding-bottom: 1.15em;
+        padding-right: 3.1em;
+      }
+    }
+
+    & .copy-table__flash-text {
+      display: inline-block;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: rgb(var(--ids__text-RGB));
+      transform-origin: center center;
+      animation: copy-table-copy-flash 0.48s ease-in-out forwards;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      & .copy-table__icon {
+        opacity: 0;
+        pointer-events: auto;
+      }
+
+      & .copy-table__cell:hover:not(:has(a:hover)) .copy-table__icon {
+        opacity: 0.65;
+      }
+
+      & .copy-table__icon:hover {
+        opacity: 1;
+      }
+    }
+
+    @media (hover: none), (width < 768px) {
+      & .copy-table__icon {
+        opacity: 0.65;
+        pointer-events: auto;
+      }
+    }
+  }
+}
+
+@keyframes copy-table-copy-flash {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.12);
+    opacity: 0;
+  }
+}

@@ -348,6 +348,81 @@ function initProjectCatalogFilter() {
   apply();
 }
 
+function getCopyTableCellText(cell) {
+  const value = cell.querySelector(".copy-table__value");
+  return (value ? value.textContent : cell.textContent).trim();
+}
+
+function showCopyTableFlash(cell, text) {
+  cell.querySelector(".copy-table__flash")?.remove();
+  cell.classList.remove("is-copying-animate-in");
+  cell.classList.add("is-copying");
+
+  const flash = document.createElement("span");
+  flash.className = "copy-table__flash";
+
+  const flashText = document.createElement("span");
+  flashText.className = "copy-table__flash-text";
+  flashText.textContent = text;
+  flash.appendChild(flashText);
+
+  cell.appendChild(flash);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      cell.classList.add("is-copying-animate-in");
+    });
+  });
+
+  flashText.addEventListener("animationend", () => {
+    flash.remove();
+    cell.classList.remove("is-copying", "is-copying-animate-in");
+  });
+}
+
+function initCopyTable() {
+  const template = document.querySelector(".copy-table__icon-template");
+  if (!template) return;
+
+  document.querySelectorAll(".copy-table").forEach((table) => {
+    const rows = table.querySelectorAll("tbody tr");
+
+    rows.forEach((row, rowIndex) => {
+      if (rowIndex === rows.length - 1) return;
+
+      const cell = row.querySelector("td:last-child");
+      if (!cell || cell.querySelector(".copy-table__icon")) return;
+
+      const value = document.createElement("span");
+      value.className = "copy-table__value";
+      while (cell.firstChild) {
+        value.appendChild(cell.firstChild);
+      }
+      cell.appendChild(value);
+
+      const icon = template.content.firstElementChild.cloneNode(true);
+      cell.classList.add("copy-table__cell");
+      cell.appendChild(icon);
+
+      cell.addEventListener("click", (event) => {
+        if (event.target.closest("a")) return;
+
+        const text = getCopyTableCellText(cell);
+        if (!text) return;
+
+        navigator.clipboard.writeText(text).then(() => {
+          showCopyTableFlash(cell, text);
+
+          cell.classList.add("is-copied");
+          window.setTimeout(() => {
+            cell.classList.remove("is-copied");
+          }, 1200);
+        });
+      });
+    });
+  });
+}
+
 
 // Инициализируем когда DOM готов
 if (document.readyState === "loading") {
@@ -359,6 +434,7 @@ if (document.readyState === "loading") {
     initKscProgramTable();
     initColorPlates();
     initProjectCatalogFilter();
+    initCopyTable();
   });
 } else {
   initStickyObserver();
@@ -368,4 +444,5 @@ if (document.readyState === "loading") {
   initKscProgramTable();
   initColorPlates();
   initProjectCatalogFilter();
+  initCopyTable();
 }

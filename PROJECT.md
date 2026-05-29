@@ -32,8 +32,18 @@
 1. **Предзагрузка в HTML** (в `src/includes/layout.html`):
 
 ```html
-<link rel="preload" href="/fonts/CoFoGothic-VF-Trial.ttf" as="font" type="font/ttf" crossorigin />
-<link rel="preload" href="/fonts/CoFoSansSemi-Mono-VF-Trial.ttf" as="font" type="font/ttf" crossorigin />
+<link
+  rel="preload"
+  href="/fonts/CoFoGothic-VF-Trial.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin />
+<link
+  rel="preload"
+  href="/fonts/CoFoSansSemi-Mono-VF-Trial.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin />
 ```
 
 2. **Объявление в CSS** (в `src/ids/settings.css`):
@@ -81,7 +91,9 @@ filter: blur(2px);
 ```css
 /* Правильно */
 transition: background-color 0.5s ease;
-transition: opacity 0.5s ease, transform 0.5s ease;
+transition:
+  opacity 0.5s ease,
+  transform 0.5s ease;
 
 /* Неправильно */
 transition: all 0.2s ease;
@@ -160,4 +172,4 @@ img {
 1. Устанавливаются зависимости
 2. Результат деплоится на поддомен
 
-Сайт доступен: `https://pndlnk.dev.intuition.team/`
+Сайт доступен: `https://new.ponedelnik.ru/`
