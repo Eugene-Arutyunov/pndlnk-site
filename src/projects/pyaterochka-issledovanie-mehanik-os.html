@@ -1,30 +1,68 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'Пятёрочка: исследование механик ОС' %}
+{% set pageTitle = 'Исследование механик ОС' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/pyaterochka.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CX-Исследование</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Розница</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2021</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       Розничная сеть с развитой повесткой по работе с обратной связью гостей. Помимо проектирования целостных систем сбора отзывов существует линия вопросов про сами механики обратной связи: как люди откликаются, что мотивирует делиться мнением и что искажает картину.
     </p>
-<h2>Запрос</h2>
-<p>
-      Исследовать механики обратной связи как отдельный объект. Это не дублирует проект по проектированию систем сбора обратной связи в магазинах, а уточняет поведенческий и инструментальный слой «как именно собираем и что получаем».
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Исследовать механики обратной связи как отдельный объект. Это не дублирует проект по проектированию систем сбора обратной связи в магазинах, а уточняет поведенческий и инструментальный слой «как именно собираем и что получаем».</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p>
       Полевые и аналитические методы по согласованной с заказчиком рамке (в рабочих материалах проекта детализировались гипотезы и метрики механик).
     </p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Материалы для доработки конкретных механик ОС и их места в общей архитектуре обратной связи сети. Проект пересекается по теме с исследованием системы сбора отзывов, но концентрируется на работе отдельных инструментов и стимулов, а не на полной карте каналов.
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

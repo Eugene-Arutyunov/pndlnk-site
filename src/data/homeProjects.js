@@ -96,6 +96,13 @@ function unique(arr) {
   return [...new Set(arr)];
 }
 
+/** Первая буква заголовка — заглавная (для карточек каталога). */
+function capitalizeFirst(value) {
+  const s = String(value || "").trim();
+  if (!s) return s;
+  return s.charAt(0).toLocaleUpperCase("ru-RU") + s.slice(1);
+}
+
 function makeSlug(input, usedSlugs) {
   const source = String(input || "")
     .trim()
@@ -319,8 +326,6 @@ const FORCED_FEATURED_SLUGS = new Set([
   "pyaterochka-razrabotka-idealnoy-telezhki",
   "vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma",
   "mavt-vinoteka-issledovanie-opyta-pokupateley",
-  "sozdanie-partnerskoy-programmy-dlya-vendora-onlayn-kass",
-  "partnerskaya-programma-dlya-vendora",
 ]);
 
 /** Подпись компании во втором фильтре каталога /projects/ (как группировка в базе кейсов). */
@@ -387,6 +392,7 @@ const COMPANY_LOGO_INCLUDES = new Set([
   "magnit",
   "maskoholic",
   "mango",
+  "mavt",
   "megafon",
   "mts",
   "netangels",
@@ -415,6 +421,7 @@ const COMPANY_LOGO_INCLUDES = new Set([
 ]);
 
 const COMPANY_LOGO_MODIFIERS = {
+  mavt: "project-card__logo--wide",
   "roza-khutor": "project-card__logo--wide",
   t2: "project-card__logo--compact",
   mts: "project-card__logo--mts",
@@ -423,10 +430,7 @@ const COMPANY_LOGO_MODIFIERS = {
 
 const COMPANY_LOGO_MONO = new Set(["lanit", "sokolov"]);
 
-const PHOTO_COVER_SLUGS = new Set([
-  "pyaterochka-razrabotka-idealnoy-telezhki",
-  "mavt-vinoteka-issledovanie-opyta-pokupateley",
-]);
+const PHOTO_COVER_SLUGS = new Set([]);
 
 function resolveProjectCover(slug, companySlug) {
   if (PHOTO_COVER_SLUGS.has(slug)) {
@@ -487,6 +491,17 @@ function extractBrand(name) {
   if (/^Партнерская программа/i.test(unquoted)) return "Партнёрская программа";
 
   return unquoted;
+}
+
+/** Заголовок карточки в каталоге: название кейса без префикса «Компания:». */
+function extractCatalogTitle(name) {
+  const unquoted = String(name || "")
+    .trim()
+    .replace(/^"(.*)"$/s, "$1")
+    .trim();
+  const ci = unquoted.indexOf(":");
+  const title = ci !== -1 ? unquoted.slice(ci + 1).trim() : unquoted;
+  return capitalizeFirst(title);
 }
 
 /**
@@ -596,8 +611,11 @@ module.exports = function loadHomeProjects() {
 
     return {
       name,
+      catalogTitle: extractCatalogTitle(name),
       slug,
       year: row["Год выполнения"],
+      typeTags: splitList(row["Тип"] || ""),
+      industryTags: splitList(row["Отрасль"] || ""),
       tags: [...splitList(row["Тип"]), ...splitList(row["Отрасль"])],
       brand,
       companySlug,

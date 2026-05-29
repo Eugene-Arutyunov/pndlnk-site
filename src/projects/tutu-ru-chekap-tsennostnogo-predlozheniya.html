@@ -1,34 +1,71 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'Tutu.ru: чекап ценностного предложения' %}
+{% set pageTitle = 'Чекап ценностного предложения' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/tutu.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">Стратегия</span></li>
+  <li><span class="case-page__tag">Трансформация</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Туризм</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2025</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       Онлайн-сервис в сфере путешествий и мобильности. Продуктоцентричная команда с сильной экспертизой
       в устройстве платформы — и расхождениями в том, как каждый видит аудиторию и ценность сервиса
       для рынка.
     </p>
-<h2>Запрос</h2>
-<p>
-      Управление клиентским опытом и построение CJM: понять, что происходит с пользователем до и после
-      продукта. На старте пересобрали задачу: прежде проверить, кто клиент и зачем он выбирает сервис —
-      без этого карта пути не даст управляемого результата.
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Управление клиентским опытом и построение CJM: понять, что происходит с пользователем до и после продукта. На старте пересобрали задачу: прежде проверить, кто клиент и зачем он выбирает сервис — без этого карта пути не даст управляемого результата.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p><strong>Чекап ценностного предложения.</strong> Вместо длинного CX-проекта — диагностика по ДКЦП: быстро показать, где команда расходится в понимании клиента и ценности продукта.</p><p><strong>Два цикла брифа.</strong> Команда дважды заполнила бриф; на разборе зафиксировали пробелы и точки расхождения между продуктовой логикой и реальными мотивами аудитории.</p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Согласованная карта пробелов в ценностном предложении и понимании клиента. Следующий этап — изменения
       в продукте и коммуникациях — не был запущен: у команды не было приоритета переводить выводы
       в системную работу с клиентским опытом.
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

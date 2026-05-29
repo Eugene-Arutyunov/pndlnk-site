@@ -1,30 +1,67 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'РМК Арена: Опыт гостя' %}
+{% set pageTitle = 'Опыт гостя' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/rmk-arena.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CX-Исследование</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Спорт</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2023</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       РМК строила спортивный комплекс и планировала множество интегрированных ИТ-систем. Требования
       к системам нужно было заложить заранее, но не было ясного целевого клиентского пути.
     </p>
-<h2>Запрос</h2>
-<p>
-      Сформулировать требования к ИТ-системам (в форме user story), опираясь на процессы и целевой
-      клиентский опыт.
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Сформулировать требования к ИТ-системам (в форме user story), опираясь на процессы и целевой клиентский опыт.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p><strong>Сборка контекста и карты систем.</strong> Зафиксировали перечень систем и точек интеграции.</p><p><strong>Проработка клиентских путей и процессов.</strong> Определили, какие сценарии должны поддерживаться ИТ-ландшафтом.</p><p><strong>Формулирование требований.</strong> Перевели потребности и сценарии в формат требований.</p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Подготовлены требования к ИТ-системам, ориентированные на целевой клиентский опыт.
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

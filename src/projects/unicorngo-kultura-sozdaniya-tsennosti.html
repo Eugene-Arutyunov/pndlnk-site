@@ -1,34 +1,73 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'UnicornGo: культура создания ценности' %}
+{% set pageTitle = 'Культура создания ценности' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/unicorngo.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">Стратегия</span></li>
+  <li><span class="case-page__tag">Трансформация</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Логистика</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Услуги</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2025</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       UnicornGo — сервис логистики и закупки брендовых товаров: от кроссовок и streetwear до других
       лимитированных позиций. Основатель участвовал во всех процессах и пытался синхронизировать команду
       сам, но не мог выйти из операционки: как только отходил от ежедневного управления, решения
       расходились с его видением развития бизнеса.
     </p>
-<h2>Запрос</h2>
-<p>
-      Прорастить в команде ДКЦП-мышление и общий формализованный язык о ценности, чтобы основатель мог
-      описывать своё видение развития компании понятным для команды способом и опираться на него в управлении.
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Прорастить в команде ДКЦП-мышление и общий формализованный язык о ценности, чтобы основатель мог описывать своё видение развития компании понятным для команды способом и опираться на него в управлении.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p><strong>Диагностика и сессии.</strong> Интервью и рабочие встречи с ключевыми ролями, опора на методологию ДКЦП и КСЦ.</p><p><strong>Стратегический документ.</strong> Совместная сборка ценностного предложения и стратегической карты — как основы для согласования видения внутри компании.</p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Собран стратегический документ по ДКЦП. Следующий шаг — доработать и принять его внутри команды —
       компания не довела артефакт до финальной версии, но зафиксировала направление работы с ценностью
       и общим языком о продукте.
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

@@ -1,3 +1,42 @@
+/* Кнопки внизу кейса — в одну строку (2 колонки XL) */
+.ids .case-page:not(.article) .case-page__actions-row .ids__sequence-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Логотип и теги в одной строке под заголовком */
+.ids .case-page:not(.article) .case-page__meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4em 0.55em;
+  margin-top: calc(var(--ids__density) * 0.45em);
+  margin-bottom: calc(var(--ids__density) * 0.85em);
+}
+
+.ids .case-page:not(.article) .case-page__meta-row .case-page__brand-logo {
+  margin-top: 0;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.ids .case-page:not(.article) .case-page__meta-row .case-page__tags {
+  margin: 0;
+}
+
+.ids .case-page:not(.article) .case-page__brand-logo svg,
+.ids .case-page:not(.article) .case-page__brand-logo img {
+  display: block;
+  width: auto;
+  height: 1.15em;
+  max-width: 7.5em;
+}
+
+.ids .case-page:not(.article) .case-page__brand-logo--dodo svg {
+  height: 1.35em;
+  max-width: 11em;
+}
+
 /* Теги кейса (как на карточке каталога), под h1 */
 .ids .case-page:not(.article) .case-page__tags {
   display: flex;
@@ -16,7 +55,52 @@
   font-size: 0.6em;
   line-height: 1.25;
   color: rgba(var(--ids__text-RGB), 0.92);
+  background: rgba(var(--ids__accent-RGB), 0.35);
+}
+
+/* Без глобальных ⋅ у ul li между тегами */
+.ids .case-page:not(.article) .case-page__tags > li {
+  padding-left: 0;
+}
+
+.ids .case-page:not(.article) .case-page__tags > li::before {
+  content: none;
+}
+
+.ids .case-page:not(.article) .case-page__tag--industry,
+.ids .case-page:not(.article) .case-page__tag--year,
+.ids .case-page:not(.article) .case-page__tag--brand {
   background: rgba(var(--ids__surface-RGB), 0.55);
+}
+
+/* Ссылка «назад» над заголовком — обычный p, без уменьшения */
+.ids .case-page:not(.article) .ids__text-width > p > a[href="/projects/"] {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.ids .case-page:not(.article) .ids__text-width > p > a[href="/projects/"]:hover {
+  color: rgba(var(--ids__accent-RGB), 1);
+}
+
+/* Две колонки: слева контекст / запрос / результат, справа процесс */
+.ids .case-page:not(.article) .case-page__body-columns {
+  align-items: flex-start;
+}
+
+/* Вертикальный стек секций внутри колонки (каждый h2.S — sequence-item) */
+.ids .case-page:not(.article) .case-page__sections-stack {
+  width: 100%;
+}
+
+.ids .case-page:not(.article) .case-page__sections-stack .ids__sequence-item {
+  --columns: 1;
+  width: 100%;
+}
+
+.ids .case-page:not(.article) .case-page__sections-stack .ids__sequence-item > :first-child {
+  margin-top: 0;
 }
 
 /* Плашка-ярлык перед повторяющимся заголовком «Контекст» (второй блок исследования и т. п.) */

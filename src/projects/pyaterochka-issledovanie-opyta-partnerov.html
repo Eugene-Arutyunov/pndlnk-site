@@ -1,33 +1,71 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'Пятёрочка: исследование опыта партнёров' %}
+{% set pageTitle = 'Исследование опыта партнёров' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/pyaterochka.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CJM</span></li>
+  <li><span class="case-page__tag">CX-Исследование</span></li>
+  <li><span class="case-page__tag">EX-Исследование</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Розница</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2021</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       Тысячи поставщиков и партнёров обеспечивают ассортимент и часть собственных брендов сети (СТМ). Качество
       коллаборации с партнёрами влияет на скорость вывода продукта, маржинальность и устойчивость отношений, но
       остаётся мало видно конечному покупателю без специальной работы с опытом B2B-взаимодействия.
     </p>
-<h2>Запрос</h2>
-<p>
-      Понять, как сегодня устроен опыт поставщиков СТМ при работе с «Пятёрочкой»: пройти путь от первого контакта
-      до стабильных поставок; выявить барьеры и зоны быстрых улучшений; визуализировать полную схему прохождения
-      соглашения.
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Понять, как сегодня устроен опыт поставщиков СТМ при работе с «Пятёрочкой»: пройти путь от первого контакта до стабильных поставок; выявить барьеры и зоны быстрых улучшений; визуализировать полную схему прохождения соглашения.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p><strong>Внутренний контур.</strong> Интервью с экспертами сети, разбор процессов и культуры сотрудничества.</p><p><strong>Внешний контур.</strong> Интервью с партнёрами, сбор описания опыта и ожиданий «со стороны поставщика».</p><p><strong>Путь партнёра.</strong> Построение PJM AS IS, каталог барьеров и совместная приоритизация с заказчиком.</p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       PJM AS IS опыта партнёра-поставщика СТМ; пул барьеров; преимущества и рекомендации; дорожная карта мероприятий
       по улучшению опыта партнёра на горизонте 1–2 лет (совместно с заказчиком).
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

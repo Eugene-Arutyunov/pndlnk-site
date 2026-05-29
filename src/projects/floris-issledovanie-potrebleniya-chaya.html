@@ -1,32 +1,70 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'Floris: исследование потребления чая' %}
+{% set pageTitle = 'Исследование потребления чая' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/floris.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CJM</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">FMCG</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Производство</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2020</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       Floris развивал линейку продуктов вокруг чая и смежных сценариев потребления, в том числе тестировал спрос
       на травяные купажи для настаивания на алкоголе. Нужна была опора на реальные привычки и контексты, а не только
       дегустации и фокус-группы.
     </p>
-<h2>Запрос</h2>
-<p>
-      Исследовать потребление чая и близких форматов: контексты, барьеры, язык потребителя; проверить гипотезы
-      нового продукта и дать рекомендации по позиционированию и каналам.
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Исследовать потребление чая и близких форматов: контексты, барьеры, язык потребителя; проверить гипотезы нового продукта и дать рекомендации по позиционированию и каналам.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p><strong>Качественный сбор.</strong> Интервью и этнографические элементы в бытовых сценариях.</p><p><strong>Сегментация ситуаций.</strong> JTBD-логика: когда и зачем люди «нанимают» чай и купажи.</p><p><strong>Продуктовые выводы.</strong> Связка инсайтов с упаковкой, ассортиментом и коммуникацией.</p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Картина потребления и тестируемая гипотеза продукта (включая травяные купажи для настаивания) с рекомендациями
       по запуску и развитию линейки.
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

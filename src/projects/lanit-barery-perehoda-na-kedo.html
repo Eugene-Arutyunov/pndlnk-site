@@ -1,31 +1,70 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'Ланит: Барьеры перехода на КЭДО' %}
+{% set pageTitle = 'Барьеры перехода на КЭДО' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/lanit.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CX-Исследование</span></li>
+  <li><span class="case-page__tag">EX-Исследование</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">IT</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Услуги</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2024</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       Нужно было понять, почему кадровые службы крупных производственных компаний продолжают
       предпочитать бумажный кадровый документооборот.
     </p>
-<h2>Запрос</h2>
-<p>
-      Выявить причины и барьеры перехода на КЭДО и зафиксировать ключевые выводы, которые помогают
-      выстроить коммуникацию и продуктовые решения.
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Выявить причины и барьеры перехода на КЭДО и зафиксировать ключевые выводы, которые помогают выстроить коммуникацию и продуктовые решения.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p><strong>Сбор и анализ данных.</strong> Собрали факторы, влияющие на решения о переходе.</p><p><strong>Интервью.</strong> Провели интервью с руководителями/представителями функций, вовлечённых в документооборот.</p><p><strong>Аналитика.</strong> Систематизировали барьеры и установки, мешающие переходу.</p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Сформулированы ключевые барьеры и установки, из-за которых компании откладывают переход на
       КЭДО; подготовлены выводы для дальнейшей работы с рынком.
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

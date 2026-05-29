@@ -1,22 +1,65 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'Сбермаркет: исследование мотивации b2c-клиентов' %}
+{% set pageTitle = 'Исследование мотивации b2c-клиентов' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
-<p>Проект выполнялся в период активного масштабирования СберМаркета после интеграции в экосистему Сбера. Команде было важно глубже понять мотивацию b2c-аудитории и зафиксировать рабочую модель сегментации для продуктовых и коммуникационных решений.</p>
-<h2>Запрос</h2>
-<p>Сформировать практичную сегментацию клиентской базы и описать ключевые Jobs-to-be-Done, чтобы команда могла опираться на единые принципы при развитии сервиса.</p>
-<h2>Процесс</h2>
-<p>Собрали и описали сегменты b2c-аудитории.</p><p>Сформулировали JTBD-логику по основным сценариям покупки.</p><p>Подготовили рабочие материалы для продуктовой и маркетинговой команд.</p>
-<h2>Результат</h2>
-<p>Сегментация и JTBD-рамка были приняты в работу и использовались в дальнейших продуктовых инициативах.</p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/sbermarket.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CX-Исследование</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Grocery</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Услуги</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2020</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
+<p>Проект выполнялся в период активного масштабирования СберМаркета после интеграции в экосистему Сбера. Команде было важно глубже понять мотивацию b2c-аудитории и зафиксировать рабочую модель сегментации для продуктовых и коммуникационных решений.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Сформировать практичную сегментацию клиентской базы и описать ключевые Jobs-to-be-Done, чтобы команда могла опираться на единые принципы при развитии сервиса.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
+<p>
+      Собрали и описали сегменты b2c-аудитории. Сформулировали JTBD-логику по основным сценариям покупки.
+      Подготовили рабочие материалы для продуктовой и маркетинговой команд.
+    </p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
+<p>
+      Сформирована сегментация и JTBD-рамка, принятые в работу и использовавшиеся в дальнейших
+      продуктовых инициативах.
+    </p>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

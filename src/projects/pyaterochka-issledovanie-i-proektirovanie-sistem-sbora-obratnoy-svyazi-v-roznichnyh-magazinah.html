@@ -1,33 +1,70 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'Пятёрочка: исследование и проектирование систем сбора обратной связи в розничных магазинах' %}
+{% set pageTitle = 'Исследование и проектирование систем сбора обратной связи в розничных магазинах' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/pyaterochka.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CJM</span></li>
+  <li><span class="case-page__tag">CX-Исследование</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Розница</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2022</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       ТС «Пятёрочка» усиливала эффективность процессов в магазинах. Сбор и использование обратной связи от
       гостей при этом выглядели недостаточно выверенными: каналы, точки контакта и логика работы с отзывами
       требовали пересмотра с опорой на фактический опыт покупателей.
     </p>
-<h2>Запрос</h2>
-<p>
-      Изучить опыт гостей в части обратной связи о взаимодействии с магазином и компанией; выявить,
-      что мешает или помогает оставлять обратную связь и как её лучше обрабатывать; подготовить основу для
-      проектирования оптимальной системы сбора ОС и работы с ней.
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Изучить опыт гостей в части обратной связи о взаимодействии с магазином и компанией; выявить, что мешает или помогает оставлять обратную связь и как её лучше обрабатывать; подготовить основу для проектирования оптимальной системы сбора ОС и работы с ней.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p><strong>Полевые методы.</strong> Интервью и наблюдения с гостями и в торговом зале.</p><p><strong>Экспертиза сети.</strong> Интервью с экспертами компании по текущим процессам ОС.</p><p><strong>Синтез.</strong> Формулировка требований к каналам, сценариям и операционной модели ОС.</p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Требования к формату организации сбора обратной связи (точки контакта, каналы, сценарии использования);
       список инициатив по улучшению системы ОС ТС5; карта опыта (CJM AS IS) гостя розничного магазина в связке с ОС.
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

@@ -1,14 +1,14 @@
-{% set lookupSlug = page.fileSlug %}
-{% if page.fileSlug == "sozdanie-partnerskoy-programmy-dlya-vendora-onlayn-kass" %}
-{% set lookupSlug = "partnerskaya-programma-dlya-vendora" %}
-{% endif %}
-{% set proj = projects | projectBySlug(lookupSlug) %}
-{% if proj and proj.displayTags and proj.displayTags.length %}
+{% set proj = projects | projectBySlug(page.fileSlug) %}
+{% if proj and (proj.typeTags.length or proj.industryTags.length or proj.year) %}
 <ul class="case-page__tags" aria-label="Теги кейса">
-  {% for tag in proj.displayTags %}
-  <li>
-    <span class="case-page__tag">{{ tag }}</span>
-  </li>
+  {% for tag in proj.typeTags %}
+  <li><span class="case-page__tag">{{ tag }}</span></li>
   {% endfor %}
+  {% for tag in proj.industryTags %}
+  <li><span class="case-page__tag case-page__tag--industry">{{ tag }}</span></li>
+  {% endfor %}
+  {% if proj.year %}
+  <li><span class="case-page__tag case-page__tag--year">{{ proj.year }}</span></li>
+  {% endif %}
 </ul>
 {% endif %}

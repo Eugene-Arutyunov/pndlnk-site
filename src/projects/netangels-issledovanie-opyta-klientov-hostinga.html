@@ -1,32 +1,69 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'NetAngels: исследование опыта клиентов хостинга' %}
+{% set pageTitle = 'Исследование опыта клиентов хостинга' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/netangels.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CX-Исследование</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">IT</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2019</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       Личный кабинет клиента хостинга — центральный интерфейс для биллинга, услуг и поддержки. Понимание того,
       где пользователи теряются и что для них «боль» в self-service, необходимо для развития продукта и снижения
       нагрузки на саппорт.
     </p>
-<h2>Запрос</h2>
-<p>
-      Разобраться в опыте клиентов с личным кабинетом: какие задачи они решают, где возникают проблемы; провести
-      этнографические элементы исследования использования кабинета.
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Разобраться в опыте клиентов с личным кабинетом: какие задачи они решают, где возникают проблемы; провести этнографические элементы исследования использования кабинета.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p><strong>Этнография и интервью.</strong> Работа с реальными пользователями и их сценариями в кабинете.</p><p><strong>Разбор барьеров.</strong> Каталог проблем по этапам пути клиента.</p><p><strong>Рекомендации по UX.</strong> Приоритеты для продуктовой и саппорт-команды.</p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Описание опыта клиентов NetAngels в личном кабинете и приоритетный список улучшений интерфейса, коммуникаций
       и поддержки для повышения самообслуживания.
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

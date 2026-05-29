@@ -1,32 +1,72 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'Магнит: исследование опыта сотрудников розницы' %}
+{% set pageTitle = 'Исследование опыта сотрудников розницы' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/magnit.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CJM</span></li>
+  <li><span class="case-page__tag">EX-Исследование</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">FMCG</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Grocery</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Розница</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2020</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       «Магнит» перестраивал портфель форматов (включая разделение направлений); для сотрудников это разные рабочие
       реалии, хотя бренд работодателя воспринимается как единый. Крупное исследование EX охватывало несколько
       форматов розницы и помогло увидеть, где опыт сходится, а где расходится.
     </p>
-<h2>Запрос</h2>
-<p>
-      Стандартный для Бюро опытный проект (OKP): описать опыт сотрудников розницы в разных форматах, выявить барьеры
-      и драйверы вовлечённости, подготовить основу для HR и операционных программ.
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Стандартный для Бюро опытный проект (OKP): описать опыт сотрудников розницы в разных форматах, выявить барьеры и драйверы вовлечённости, подготовить основу для HR и операционных программ.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p><strong>Полевой этап.</strong> Интервью, наблюдения, проходки типовых смен.</p><p><strong>Кросс-форматный анализ.</strong> Сопоставление паттернов между форматами магазинов.</p><p><strong>Инициативы.</strong> Приоритизация изменений совместно с заказчиком.</p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Системное описание опыта сотрудников розницы «Магнит» с учётом различий форматов и пакет рекомендаций для
       улучшения EX и операционных практик на местах.
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

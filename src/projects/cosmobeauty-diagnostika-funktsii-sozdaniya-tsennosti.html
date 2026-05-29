@@ -1,34 +1,72 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'CosmoBeauty: диагностика функции создания ценности' %}
+{% set pageTitle = 'Диагностика функции создания ценности' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/cosmobeauty.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">Стратегия</span></li>
+  <li><span class="case-page__tag">Трансформация</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Косметика</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">FMCG</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2025</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       Ритейлер косметики и товаров для красоты. Компания долго росла за счёт блогеров и инфлюенсеров, но
       к 2022 году этот канал перестал давать прежний прирост. Параллельно команда искала новые точки роста
       и пробовала ребрендинг, не имея внутри устойчивого процесса создания ценности.
     </p>
-<h2>Запрос</h2>
-<p>
-      Разобраться с клиентским опытом и понять, почему продуктовые решения не дают ожидаемого эффекта.
-      На практике задача свелась к диагностике: как устроена функция создания ценности и насколько
-      ценностное предложение связано с реальностью продукта.
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Разобраться с клиентским опытом и понять, почему продуктовые решения не дают ожидаемого эффекта. На практике задача свелась к диагностике: как устроена функция создания ценности и насколько ценностное предложение связано с реальностью продукта.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p><strong>Глубокий чекап по ДКЦП.</strong> Один из первых проектов, где методология применялась системно: разложили ценностное предложение, проверили аргументы и мотивационный конфликт.</p><p><strong>Диагностика процесса.</strong> Увидели, что новые продукты запускаются «на глазок» — по аналогии с конкурентами, без верификации на внутреннюю логику и без общего языка о клиенте.</p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Зафиксированы проблемы ценностного предложения: нерелевантные аргументы, неясный конфликт, отсутствие
       процесса создания ценности. Команда получила карту того, что нужно чинить в первую очередь — от
       понимания клиента до правил запуска продуктов.
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

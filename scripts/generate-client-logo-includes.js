@@ -26,6 +26,7 @@ const LOGO_BY_COMPANY = {
   magnit: "Магнит.svg",
   maskoholic: "Maskoholic.svg",
   mango: "Mango Office.svg",
+  mavt: "МАВТ-Винотека.svg",
   megafon: "МегаФон.svg",
   mts: "МТС.svg",
   netangels: "NetAngels.svg",

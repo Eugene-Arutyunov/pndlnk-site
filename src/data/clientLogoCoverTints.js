@@ -6,6 +6,7 @@ module.exports = {
   "leroy-merlin": "123, 181, 28",
   "magnit": "230, 0, 14",
   "mango": "55, 83, 97",
+  "mavt": "140, 26, 66",
   "megafon": "0, 185, 86",
   "mts": "255, 0, 50",
   "netangels": "0, 102, 255",

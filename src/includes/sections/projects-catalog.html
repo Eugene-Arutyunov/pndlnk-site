@@ -20,7 +20,7 @@
             </select>
           </span>
         </label>
-        во взаимодействии с
+        в отрасли 
         <label class="project-catalog-filter__field">
           <span class="visually-hidden">Отрасль компаний</span>
           <span class="project-catalog-filter__select-wrap">
@@ -29,9 +29,9 @@
               class="project-catalog-filter__select"
               aria-label="Отрасль компаний">
               <option value="all">компаниями</option>
-              <option value="it-vendor">ИТ: вендор</option>
-              <option value="it-integrator">ИТ: интегратор</option>
-              <option value="it-outsourcing">ИТ: аутсорсинг</option>
+              <option value="it-vendor">Вендор</option>
+              <option value="it-integrator">Интегратор</option>
+              <option value="it-outsourcing">Аутсорсинг</option>
               <option value="infosec">Инфобез</option>
               <option value="telecom">Телеком</option>
               <option value="finance">Финансы и банки</option>
@@ -48,7 +48,6 @@
               <option value="energy">Энергетика</option>
               <option value="public-sector">Госсектор</option>
               <option value="agro">Агро</option>
-              <option value="other">Другое</option>
             </select>
           </span>
         </label>
@@ -90,7 +89,7 @@
             {% endif %}
           </div>
           <div class="project-card__body">
-            <h3 class="project-card__title">{{ project.name }}</h3>
+            <h3 class="project-card__title">{% if catalogTitlesWithoutBrand %}{{ project.catalogTitle }}{% else %}{{ project.name }}{% endif %}</h3>
             <div class="project-card__tags">
               {% for tag in project.displayTags %}
               <span class="project-card__tag">{{ tag }}</span>

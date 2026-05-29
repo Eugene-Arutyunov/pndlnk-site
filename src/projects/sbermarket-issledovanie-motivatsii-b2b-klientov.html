@@ -1,32 +1,71 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'Сбермаркет: исследование мотивации B2B-клиентов' %}
+{% set pageTitle = 'Исследование мотивации b2b-клиентов' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/sbermarket.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CX-Исследование</span></li>
+  <li><span class="case-page__tag">Стратегия</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Grocery</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Услуги</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2021</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       Сбермаркет выходил в B2B: сценарии закупки и доставки для бизнеса отличаются от потребительских по мотивации,
       SLA, документообороту и критериям доверия. Без качественной картины «зачем и как» выбирают корпоративные клиенты
       сложно выстроить продукт и коммерцию.
     </p>
-<h2>Запрос</h2>
-<p>
-      Исследовать мотивацию и типовые сценарии B2B-клиентов: заказы из магазинов, доставка, отношения к сервису;
-      подготовить основу для стратегии и CX в корпоративном сегменте.
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Исследовать мотивацию и типовые сценарии B2B-клиентов: заказы из магазинов, доставка, отношения к сервису; подготовить основу для стратегии и CX в корпоративном сегменте.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p><strong>Качественное исследование.</strong> Глубинные интервью с представителями бизнес-клиентов.</p><p><strong>Сегментация сценариев.</strong> Выделение типовых Job и контекстов закупки.</p><p><strong>Сведение к решениям.</strong> Рекомендации по продукту, коммуникациям и операционной модели B2B.</p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Описание мотивации и сценариев B2B-покупателей Сбермаркета и приоритетные направления развития предложения
       для бизнеса (в формате CX/стратегического отчёта проекта).
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

@@ -125,6 +125,17 @@
     @media (width < 768px) {
       font-size: 2.5em;
     }
+
+    &.S {
+      font-size: 1.65em;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 0.35em;
+
+      @media (width < 768px) {
+        font-size: 1.45em;
+      }
+    }
   }
 
   & h3 {

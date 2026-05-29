@@ -1,30 +1,69 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'Streets: исследование потребителей фастфуда' %}
+{% set pageTitle = 'Исследование потребителей фастфуда' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/streets.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CX-Исследование</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Horeca</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">FMCG</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2022</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>
       Сеть развивала новую продуктовую линейку и усиливала позиционирование в сегменте фастфуда. Параллельно на рынке усиливались игроки с собственным производством еды, в том числе внутри крупных ритейльных экосистем.
     </p>
-<h2>Запрос</h2>
-<p>
-      Поддержать запуск линейки и конкурентную стратегию за счёт исследовательских методов. Нужны были данные о восприятии предложения, поведении потребителей и контекстах выбора относительно сетевых форматов «готовая еда у ритейлера».
-    </p>
-<h2>Процесс</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Поддержать запуск линейки и конкурентную стратегию за счёт исследовательских методов. Нужны были данные о восприятии предложения, поведении потребителей и контекстах выбора относительно сетевых форматов «готовая еда у ритейлера».</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
 <p>
       Фокус-группы с потребителями, коридорное тестирование, анализ реакции на продукт и коммуникации в сравнении с референсными моделями рынка.
     </p>
-<h2>Результат</h2>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
 <p>
       Практические выводы для продуктовой и маркетинговой команд: как новая линейка воспринимается в конкурентном поле, какие смыслы и атрибуты усиливают выбор в пользу бренда и что требует доработки до масштабирования.
     </p>
 <div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__space L"></div>
+</div>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>

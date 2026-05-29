@@ -1,21 +1,68 @@
 {% extends 'layout.html' %}
-{% set pageTitle = 'Autodesk: исследование опыта покупки САПР' %}
+{% set pageTitle = 'Исследование опыта покупки САПР' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
 <div class="ids__space top-screen-space M"></div>
 <div class="ids__text-width">
-<h1 class="case-standard__title">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
-
-<h2>Контекст</h2>
+<div class="ids__space L"></div>
+<p><a href="/projects/">← все проекты</a></p>
+<div class="ids__space L"></div>
+<h1 class="S">{{ pageTitle }}</h1>
+<div class="case-page__meta-row">
+<div class="case-page__brand-logo" aria-hidden="true">
+{% include 'assets/client-logos/autodesk.html' %}
+</div>
+<ul class="case-page__tags" aria-label="Теги кейса">
+  <li><span class="case-page__tag">CJM</span></li>
+  <li><span class="case-page__tag">CX-Исследование</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">IT</span></li>
+  <li><span class="case-page__tag case-page__tag--industry">Производство</span></li>
+  <li><span class="case-page__tag case-page__tag--year">2019</span></li>
+</ul>
+</div>
+</div>
+<div class="ids__space M"></div>
+<div class="ids__sequence XL gap-L mobile-XL">
+<div class="ids__sequence-item">
+<h2 class="S">Контекст</h2>
 <p>Компания Autodesk обратилась в Бюро, чтобы разобраться как лучше сегментировать сложную целевую аудиторию (внутриотраслевая сегментация) и построить цепочки коммуникаций, приводящие к покупкам сложных и дорогих программных продуктов Autodesk.</p>
-<h2>Запрос</h2>
-<p>Изучить опыт выбора сложных продуктов САПР.</p><p>Дать рекомендации по улучшению опыта выбора и покупки САПР.</p>
-<h2>Процесс</h2>
-<p>Анализ лучших практик</p><p>Сегментирование целевой аудитории</p><p>Экспертные интервью</p><p>Глубинные интервью с потребителями</p><p>Разработана Customer Journey Map</p><p>Сформулированы рекомендации по улучшению клиентского опыта</p>
-<h2>Результат</h2>
-<p>Составлены рекомендации по сегментированию аудитории.</p><p>Построена карта выбора клиента (Consumer Decision Journey).</p><p>На основании сегментации запущена рекламная кампания, увеличившая рост конверсии в обращения в отдел продаж на 12,6%.</p><div class="ids__space L"></div>
-<p><a href="/projects/">← обратно ко всем проектам</a></p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Запрос</h2>
+<p>Изучить опыт выбора сложных продуктов САПР. Дать рекомендации по улучшению опыта выбора и покупки САПР.</p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Процесс</h2>
+<p>
+      Провели анализ лучших практик. Сегментировали целевую аудиторию. Провели экспертные и глубинные
+      интервью с потребителями. Разработали Customer Journey Map и сформулировали рекомендации
+      по улучшению клиентского опыта.
+    </p>
+</div>
+<div class="ids__sequence-item">
+<h2 class="S">Результат</h2>
+<p>
+      Составлены рекомендации по сегментированию аудитории. Построена карта выбора клиента
+      (Consumer Decision Journey). На основании сегментации запущена рекламная кампания,
+      увеличившая рост конверсии в обращения в отдел продаж на 12,6%.
+    </p>
+</div>
+</div>
+<div class="ids__text-width">
+<div class="ids__space L"></div>
+<div class="case-page__actions-row">
+<div class="ids__sequence-item">
+</div>
+<div class="ids__sequence-item">
+<button
+  class="lets-talk-button compact contact-form-trigger"
+  type="button"
+  data-cf-title="Обсудить проект"
+  data-cf-submit="Отправить">
+  Обсудить проект
+</button>
+</div>
+</div>
 </div>
 <div class="ids__space L"></div>
 </div>
