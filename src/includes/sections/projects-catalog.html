@@ -70,153 +70,23 @@
         data-industry="{{ project.industryFilters | join(' ') }}"
         data-featured="{{ project.isFeatured and 'true' or 'false' }}">
         <a class="project-card__link" href="/projects/{{ project.slug }}/">
-          <div class="project-card__cover" aria-hidden="true">
-            {% if project.slug == "dodo-pitstsa-opyt-semey-s-detmi" %}
-            <div class="project-card__logo">
-              {% include 'assets/dodo-pizza-logo.html' %}
-            </div>
-            {% elseif project.slug ==
-            "vkusvill-gipersegmentatsiya-i-dizayn-sistema" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-vkusvill.html' %}
-            </div>
-            {% elseif project.slug ==
-            "vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-vkusvill.html' %}
-            </div>
-            {% elseif project.slug == "roza-hutor-servisnaya-strategiya" %}
-            <div class="project-card__logo project-card__logo--wide">
-              {% include 'assets/home-client-roza-khutor.html' %}
-            </div>
-            {% elseif project.slug == "inappstory" %}
-            <div class="project-card__logo">
-              {% include 'assets/inappstory-logo.html' %}
-            </div>
-            {% elseif project.slug ==
-            "maskoholic-chekap-tsennostnogo-predlozheniya" %}
-            <div class="project-card__logo">
-              <img src="/assets/dkcp-base/logos/Maskoholic.svg" alt="" />
-            </div>
-            {% elseif project.slug == "yandex-opyt-voditeley-taksi" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-yandex.html' %}
-            </div>
-            {% elseif project.slug ==
-            "yandeks-issledovanie-brenda-rabotodatelya" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-yandex.html' %}
-            </div>
-            {% elseif project.slug ==
-            "x5-club-cjm-polzovatelya-programmy-loyalnosti" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-x5.html' %}
-            </div>
-            {% elseif project.slug == "perekrestok-problemy-personala-magazinov"
+          <div
+            class="project-card__cover{% if project.coverTint %} project-card__cover--tinted{% endif %}"
+            {%
+            if
+            project.coverTint
+            %}style="--project-card-cover-tint: {{ project.coverTint }}"
+            {%
+            endif
             %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-x5.html' %}
+            aria-hidden="true">
+            {% if project.coverPhoto %}
+            <img src="{{ project.coverPhoto }}" alt="" />
+            {% elseif project.logoInclude %}
+            <div
+              class="project-card__logo{{ project.logoModifier and ' ' ~ project.logoModifier or '' }}">
+              {% include project.logoInclude %}
             </div>
-            {% elseif project.slug == "pyaterochka-issledovanie-mehanik-os" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-x5.html' %}
-            </div>
-            {% elseif project.slug ==
-            "mts-issledovanie-opyta-agentov-po-prodazham" %}
-            <div class="project-card__logo project-card__logo--mts">
-              {% include 'assets/home-client-mts.html' %}
-            </div>
-            {% elseif project.slug ==
-            "mts-issledovanie-opyta-produktovyh-komand" %}
-            <div class="project-card__logo project-card__logo--mts">
-              {% include 'assets/home-client-mts.html' %}
-            </div>
-            {% elseif project.slug ==
-            "t2-opyt-sotrudnikov-i-brend-rabotodatelya" %}
-            <div class="project-card__logo project-card__logo--compact">
-              {% include 'assets/home-client-t2.html' %}
-            </div>
-            {% elseif project.slug == "rmk-arena-opyt-gostya" %}
-            <div class="project-card__logo project-card__logo--rmk">
-              {% include 'assets/home-client-rmk.html' %}
-            </div>
-            {% elseif project.slug == "pik-uluchshenie-puti-klienta" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-pik.html' %}
-            </div>
-            {% elseif project.slug ==
-            "sbermarket-issledovanie-motivatsii-b2b-klientov" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-sbermarket.html' %}
-            </div>
-            {% elseif project.slug ==
-            "sbermarket-issledovanie-motivatsii-b2c-klientov" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-sbermarket.html' %}
-            </div>
-            {% elseif project.slug ==
-            "leroy-merlin-issledovanie-opyta-pokupateley-gruppy-otdelka-sten" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-leroy-merlin.html' %}
-            </div>
-            {% elseif project.slug ==
-            "bank-tochka-issledovanie-korporativnoy-kultury" %}
-            <div class="project-card__logo">
-              <img src="/assets/dkcp-base/logos/ТОЧКА.svg" alt="" />
-            </div>
-            {% elseif project.slug ==
-            "mango-telekom-kultura-sozdaniya-tsennosti" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-mango-office.html' %}
-            </div>
-            {% elseif project.slug == "lanit-issledovanie-polzovateley-kedo" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-lanit.html' %}
-            </div>
-            {% elseif project.slug ==
-            "lanit-issledovanie-posledstviy-uhoda-zapadnyh-vendorov" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-lanit.html' %}
-            </div>
-            {% elseif project.slug == "lanit-barery-perehoda-na-kedo" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-lanit.html' %}
-            </div>
-            {% elseif project.slug ==
-            "magnit-issledovanie-opyta-sotrudnikov-roznitsy" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-magnit.html' %}
-            </div>
-            {% elseif project.slug ==
-            "magnit-razrabotka-brenda-rabotodatelya-evp" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-magnit.html' %}
-            </div>
-            {% elseif project.slug ==
-            "kontur-issledovanie-sellerov-marketpleysov" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-kontur.html' %}
-            </div>
-            {% elseif project.slug ==
-            "kontur-diagnostika-trekov-vnutrikarernogo-razvitiya-ekspertov" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-kontur.html' %}
-            </div>
-            {% elseif project.slug ==
-            "skb-kontur-razrabotka-kontseptsii-dlya-kontur-buhgalterii" %}
-            <div class="project-card__logo">
-              {% include 'assets/home-client-kontur.html' %}
-            </div>
-            {% elseif project.slug == "pyaterochka-razrabotka-idealnoy-telezhki"
-            %}
-            <img
-              src="/assets/projects/pyaterochka-razrabotka-idealnoy-telezhki/1.jpg"
-              alt="" />
-            {% elseif project.slug ==
-            "mavt-vinoteka-issledovanie-opyta-pokupateley" %}
-            <img
-              src="/assets/projects/mavt-vinoteka-issledovanie-opyta-pokupateley/1.jpg"
-              alt="" />
             {% endif %}
           </div>
           <div class="project-card__body">

@@ -337,6 +337,14 @@
     background: rgba(var(--ids__text-RGB), 0.06);
   }
 
+  .project-card__cover--tinted {
+    background: color-mix(
+      in srgb,
+      rgb(var(--project-card-cover-tint)) 22%,
+      color-mix(in srgb, rgb(var(--ids__surface-RGB)) 55%, white 45%)
+    );
+  }
+
   .project-card__cover > img {
     width: 100%;
     height: 100%;
@@ -372,6 +380,18 @@
   .project-card__logo--wide svg,
   .project-card__logo--wide img {
     max-width: min(78%, 12em);
+  }
+
+  .project-card__logo--mono {
+    color: rgb(var(--ids__text-RGB));
+
+    & svg [fill]:not([fill="none"]) {
+      fill: currentColor;
+    }
+
+    & svg [stroke]:not([stroke="none"]) {
+      stroke: currentColor;
+    }
   }
 
   .project-card__body {

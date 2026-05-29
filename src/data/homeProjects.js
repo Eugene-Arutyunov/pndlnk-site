@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { parse } = require("csv-parse/sync");
+const COMPANY_LOGO_COVER_TINT = require("./clientLogoCoverTints.js");
 
 const AUDIENCE_KEYS = new Set(["clients", "employees", "partners"]);
 
@@ -370,6 +371,99 @@ const COMPANY_SLUG_LABELS = {
   yandex: "Яндекс",
 };
 
+const COMPANY_LOGO_INCLUDES = new Set([
+  "autodesk",
+  "cosmobeauty",
+  "datadarvin",
+  "dodo",
+  "europharma",
+  "fk-spartak",
+  "floris",
+  "gora-belaya",
+  "inappstory",
+  "kontur",
+  "lanit",
+  "leroy-merlin",
+  "magnit",
+  "maskoholic",
+  "mango",
+  "megafon",
+  "mts",
+  "netangels",
+  "perekrestok",
+  "pik",
+  "pyaterochka",
+  "rembot",
+  "rolf",
+  "rmk-arena",
+  "roza-khutor",
+  "sbermarket",
+  "sdvet",
+  "seniorgroup",
+  "shalash",
+  "sipuni",
+  "sokolov",
+  "streets",
+  "strana-development",
+  "t2",
+  "tochka",
+  "tutu",
+  "unicorngo",
+  "vkusvill",
+  "x5-club",
+  "yandex",
+]);
+
+const COMPANY_LOGO_MODIFIERS = {
+  "roza-khutor": "project-card__logo--wide",
+  t2: "project-card__logo--compact",
+  mts: "project-card__logo--mts",
+  "rmk-arena": "project-card__logo--rmk",
+};
+
+const COMPANY_LOGO_MONO = new Set(["lanit", "sokolov"]);
+
+const PHOTO_COVER_SLUGS = new Set([
+  "pyaterochka-razrabotka-idealnoy-telezhki",
+  "mavt-vinoteka-issledovanie-opyta-pokupateley",
+]);
+
+function resolveProjectCover(slug, companySlug) {
+  if (PHOTO_COVER_SLUGS.has(slug)) {
+    return {
+      coverPhoto: `/assets/projects/${slug}/1.jpg`,
+      logoInclude: null,
+      logoModifier: "",
+      logoMono: false,
+      coverTint: null,
+    };
+  }
+
+  if (!COMPANY_LOGO_INCLUDES.has(companySlug)) {
+    return {
+      coverPhoto: null,
+      logoInclude: null,
+      logoModifier: "",
+      logoMono: false,
+      coverTint: null,
+    };
+  }
+
+  const modifier = COMPANY_LOGO_MODIFIERS[companySlug] || "";
+  const mono = COMPANY_LOGO_MONO.has(companySlug);
+  const monoClass = mono ? " project-card__logo--mono" : "";
+  const modifierClass = modifier ? ` ${modifier}` : "";
+  const coverTint = mono ? null : COMPANY_LOGO_COVER_TINT[companySlug] || null;
+
+  return {
+    coverPhoto: null,
+    logoInclude: `assets/client-logos/${companySlug}.html`,
+    logoModifier: `${modifierClass}${monoClass}`.trim(),
+    logoMono: mono,
+    coverTint,
+  };
+}
+
 /**
  * Первый тег на странице кейса — бренд/заказчик (как в названии в CSV).
  */
@@ -498,6 +592,7 @@ module.exports = function loadHomeProjects() {
       row["Тип"] || "",
       row["Отрасль"] || "",
     );
+    const cover = resolveProjectCover(slug, companySlug);
 
     return {
       name,
@@ -507,6 +602,10 @@ module.exports = function loadHomeProjects() {
       brand,
       companySlug,
       companyLabel,
+      coverPhoto: cover.coverPhoto,
+      logoInclude: cover.logoInclude,
+      logoModifier: cover.logoModifier,
+      coverTint: cover.coverTint,
       displayTags,
       inKp: row["В КП"],
       progress: row["Прогресс"],
