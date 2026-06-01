@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'МАВТ-Винотека: исследование опыта покупателей' %}
 {% block content %}
 <div class="ids__wrapper L case-standard case-page">
@@ -6,8 +7,7 @@
 <div class="ids__text-width">
 <p><a href="/projects/">← все проекты</a></p>
 <div class="ids__space L"></div>
-<h1 class="S">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
+{{ caseMeta(page) }}
 
 <p class="case-standard__meta">10 минут чтения · Михаил Руденко</p>
 <p>Для небольшого ритейла сейчас не самые лучшие времена. Федеральные сети, сами по себе опасные для небольших магазинов, еще и объединяют усилия, превращаясь в монструозные конгломераты, способные получать уникальные условия закупок у поставщиков.</p>

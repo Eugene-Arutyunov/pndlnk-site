@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'ВкусВилл: концепция новой сети магазинов у дома' %}
 {% block content %}
 <div class="ids__wrapper L case-standard case-page">
@@ -6,8 +7,7 @@
 <div class="ids__text-width">
 <p><a href="/projects/">← все проекты</a></p>
 <div class="ids__space L"></div>
-<h1 class="S">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
+{{ caseMeta(page) }}
 
 <p class="case-standard__meta">12 минут чтения · Михаил Руденко</p>
 <p>Я не очень верю в бирюзовость, холакратию и коллективную ответственность. Так уж вышло, что антипримеров внедрения такого менеджмента я наблюдал сильно больше, чем примеров успешных. Тем интереснее нам было включиться в проект, заказчиком в котором выступила компания ВкусВилл — настоящая бирюзовая организация с соответствующим стилем управления и сильной культурой. Наш проект — один из экспериментов по поиску новых форматов магазинов.</p>

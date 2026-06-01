@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Чекап ценностного предложения' %}
 {% block content %}
 <div class="ids__wrapper L case-featured case-page">
@@ -7,19 +8,7 @@
 <div class="ids__space L"></div>
 <p><a href="/projects/">← все проекты</a></p>
 <div class="ids__space L"></div>
-<h1 class="S">{{ pageTitle }}</h1>
-<div class="case-page__meta-row">
-<div class="case-page__brand-logo" aria-hidden="true">
-{% include 'assets/client-logos/maskoholic.html' %}
-</div>
-<ul class="case-page__tags" aria-label="Теги кейса">
-  <li><span class="case-page__tag">Стратегия</span></li>
-  <li><span class="case-page__tag">Трансформация</span></li>
-  <li><span class="case-page__tag case-page__tag--industry">Косметика</span></li>
-  <li><span class="case-page__tag case-page__tag--industry">FMCG</span></li>
-  <li><span class="case-page__tag case-page__tag--year">2025</span></li>
-</ul>
-</div>
+{{ caseMeta(page) }}
 </div>
 <div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">

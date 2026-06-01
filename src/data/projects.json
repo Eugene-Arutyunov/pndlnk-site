@@ -1,0 +1,3390 @@
+{
+  "projects": [
+    {
+      "slug": "autodesk-issledovanie-opyta-pokupki-sapr",
+      "title": "Исследование опыта покупки САПР",
+      "url": "/projects/autodesk-issledovanie-opyta-pokupki-sapr/",
+      "year": "2019",
+      "client": {
+        "key": "autodesk",
+        "label": "Autodesk"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/autodesk.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        },
+        {
+          "category": "industries",
+          "label": "Производство",
+          "key": "industry-manufacturing"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          },
+          {
+            "key": "industry-manufacturing",
+            "label": "Промышленность"
+          },
+          {
+            "key": "media-marketing",
+            "label": "Медиа и маркетинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "bank-tochka-issledovanie-korporativnoy-kultury",
+      "title": "Исследование корпоративной культуры",
+      "url": "/projects/bank-tochka-issledovanie-korporativnoy-kultury/",
+      "year": "2026",
+      "client": {
+        "key": "tochka",
+        "label": "Банк Точка"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/tochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "industries",
+          "label": "Финансы",
+          "key": "finance"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          },
+          {
+            "key": "finance",
+            "label": "Финансы и банки"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "cosmobeauty-diagnostika-funktsii-sozdaniya-tsennosti",
+      "title": "Диагностика функции создания ценности",
+      "url": "/projects/cosmobeauty-diagnostika-funktsii-sozdaniya-tsennosti/",
+      "year": "2025",
+      "client": {
+        "key": "cosmobeauty",
+        "label": "CosmoBeauty"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/cosmobeauty.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "type",
+          "label": "Трансформация"
+        },
+        {
+          "category": "industries",
+          "label": "Косметика",
+          "key": "other"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "other",
+            "label": "Косметика"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "datadarvin-razrabotka-kontseptsii-novogo-produkta",
+      "title": "Разработка концепции нового продукта",
+      "url": "/projects/datadarvin-razrabotka-kontseptsii-novogo-produkta/",
+      "year": "2019",
+      "client": {
+        "key": "datadarvin",
+        "label": "DataDarvin"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/datadarvin.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "Разработка концепции"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        },
+        {
+          "category": "industries",
+          "label": "Маркетинг",
+          "key": "media-marketing"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          },
+          {
+            "key": "media-marketing",
+            "label": "Медиа и маркетинг"
+          },
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "dodo-pitstsa-opyt-semey-s-detmi",
+      "title": "Опыт семей с детьми",
+      "url": "/projects/dodo-pitstsa-opyt-semey-s-detmi/",
+      "year": "2024",
+      "client": {
+        "key": "dodo",
+        "label": "Додо Пицца"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/dodo.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Horeca",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "europharma-razrabotka-kontseptsii-darkstorov",
+      "title": "Разработка концепции дарксторов",
+      "url": "/projects/europharma-razrabotka-kontseptsii-darkstorov/",
+      "year": "2021",
+      "client": {
+        "key": "europharma",
+        "label": "EuroPharma"
+      },
+      "coverColor": "168, 190, 24",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/europharma.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "Разработка концепции"
+        },
+        {
+          "category": "industries",
+          "label": "Grocery",
+          "key": "fmcg"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "europharma-razrabotka-kontseptsii-seti-magazinov-u-doma",
+      "title": "Разработка концепции сети магазинов у дома",
+      "url": "/projects/europharma-razrabotka-kontseptsii-seti-magazinov-u-doma/",
+      "year": "2020",
+      "client": {
+        "key": "europharma",
+        "label": "EuroPharma"
+      },
+      "coverColor": "168, 190, 24",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/europharma.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "Разработка концепции"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Grocery",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          },
+          {
+            "key": "partners",
+            "label": "Партнёры"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "logistics",
+            "label": "Логистика"
+          },
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "fk-spartak-issledovanie-opyta-bolelschikov-fanatov-i-sportivnyh-funktsionerov",
+      "title": "Исследование опыта болельщиков, фанатов и спортивных функционеров",
+      "url": "/projects/fk-spartak-issledovanie-opyta-bolelschikov-fanatov-i-sportivnyh-funktsionerov/",
+      "year": "2020",
+      "client": {
+        "key": "fk-spartak",
+        "label": "ФК «Спартак»"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/fk-spartak.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Спорт",
+          "key": "other"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          },
+          {
+            "key": "other",
+            "label": "Другое"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "floris-issledovanie-potrebleniya-chaya",
+      "title": "Исследование потребления чая",
+      "url": "/projects/floris-issledovanie-potrebleniya-chaya/",
+      "year": "2020",
+      "client": {
+        "key": "floris",
+        "label": "Floris"
+      },
+      "coverColor": "37, 47, 127",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/floris.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Производство",
+          "key": "industry-manufacturing"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "industry-manufacturing",
+            "label": "Промышленность"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "inappstory",
+      "title": "InAppStory",
+      "url": "/projects/inappstory/",
+      "year": "2025",
+      "client": {
+        "key": "inappstory",
+        "label": "InAppStory"
+      },
+      "coverColor": "17, 97, 231",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/inappstory.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "type",
+          "label": "Трансформация"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "kontur-diagnostika-trekov-vnutrikarernogo-razvitiya-ekspertov",
+      "title": "Диагностика треков внутрикарьерного развития экспертов",
+      "url": "/projects/kontur-diagnostika-trekov-vnutrikarernogo-razvitiya-ekspertov/",
+      "year": "2025",
+      "client": {
+        "key": "kontur",
+        "label": "Контур"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/kontur.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "kontur-issledovanie-sellerov-marketpleysov",
+      "title": "Исследование селлеров маркетплейсов",
+      "url": "/projects/kontur-issledovanie-sellerov-marketpleysov/",
+      "year": "2023",
+      "client": {
+        "key": "kontur",
+        "label": "Контур"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/kontur.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "lanit-barery-perehoda-na-kedo",
+      "title": "Барьеры перехода на КЭДО",
+      "url": "/projects/lanit-barery-perehoda-na-kedo/",
+      "year": "2024",
+      "client": {
+        "key": "lanit",
+        "label": "Ланит"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/lanit.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        },
+        {
+          "category": "industries",
+          "label": "Услуги",
+          "key": "hr-recruiting"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          },
+          {
+            "key": "other",
+            "label": "Услуги"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "lanit-issledovanie-polzovateley-kedo",
+      "title": "Исследование пользователей КЭДО",
+      "url": "/projects/lanit-issledovanie-polzovateley-kedo/",
+      "year": "2024",
+      "client": {
+        "key": "lanit",
+        "label": "Ланит"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/lanit.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        },
+        {
+          "category": "industries",
+          "label": "Услуги",
+          "key": "hr-recruiting"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-integrator",
+            "label": "Интегратор"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          },
+          {
+            "key": "it-vendor",
+            "label": "IT"
+          },
+          {
+            "key": "other",
+            "label": "Услуги"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "lanit-issledovanie-posledstviy-uhoda-zapadnyh-vendorov",
+      "title": "Исследование последствий ухода западных вендоров",
+      "url": "/projects/lanit-issledovanie-posledstviy-uhoda-zapadnyh-vendorov/",
+      "year": "2022",
+      "client": {
+        "key": "lanit",
+        "label": "Ланит"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/lanit.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          },
+          {
+            "key": "partners",
+            "label": "Партнёры"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-integrator",
+            "label": "Интегратор"
+          },
+          {
+            "key": "it-vendor",
+            "label": "IT"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "leroy-merlin-issledovanie-opyta-pokupateley-gruppy-otdelka-sten",
+      "title": "Исследование опыта покупателей группы «отделка стен»",
+      "url": "/projects/leroy-merlin-issledovanie-opyta-pokupateley-gruppy-otdelka-sten/",
+      "year": "2020",
+      "client": {
+        "key": "leroy-merlin",
+        "label": "Leroy Merlin"
+      },
+      "coverColor": "123, 181, 28",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/leroy-merlin.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "DIY",
+          "key": "retail"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "magnit-issledovanie-opyta-sotrudnikov-roznitsy",
+      "title": "Исследование опыта сотрудников розницы",
+      "url": "/projects/magnit-issledovanie-opyta-sotrudnikov-roznitsy/",
+      "year": "2020",
+      "client": {
+        "key": "magnit",
+        "label": "Магнит"
+      },
+      "coverColor": "230, 0, 14",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/magnit.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Grocery",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "magnit-razrabotka-brenda-rabotodatelya-evp",
+      "title": "Разработка бренда работодателя (EVP)",
+      "url": "/projects/magnit-razrabotka-brenda-rabotodatelya-evp/",
+      "year": "2026",
+      "client": {
+        "key": "magnit",
+        "label": "Магнит"
+      },
+      "coverColor": "230, 0, 14",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/magnit.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Grocery",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "mango-telekom-kultura-sozdaniya-tsennosti",
+      "title": "Культура создания ценности",
+      "url": "/projects/mango-telekom-kultura-sozdaniya-tsennosti/",
+      "year": "2025",
+      "client": {
+        "key": "mango",
+        "label": "Манго Телеком"
+      },
+      "coverColor": "55, 83, 97",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/mango.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "type",
+          "label": "Трансформация"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-integrator",
+            "label": "Интегратор"
+          },
+          {
+            "key": "it-vendor",
+            "label": "IT"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "maskoholic-chekap-tsennostnogo-predlozheniya",
+      "title": "Чекап ценностного предложения",
+      "url": "/projects/maskoholic-chekap-tsennostnogo-predlozheniya/",
+      "year": "2025",
+      "client": {
+        "key": "maskoholic",
+        "label": "Maskoholic"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/maskoholic.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "type",
+          "label": "Трансформация"
+        },
+        {
+          "category": "industries",
+          "label": "Косметика",
+          "key": "other"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "other",
+            "label": "Косметика"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "mavt-vinoteka-issledovanie-opyta-pokupateley",
+      "title": "Исследование опыта покупателей",
+      "url": "/projects/mavt-vinoteka-issledovanie-opyta-pokupateley/",
+      "year": "2018",
+      "client": {
+        "key": "mavt",
+        "label": "МАВТ-Винотека"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/mavt.html",
+        "modifier": "project-card__logo--wide"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "megafon-ux-issledovanie-job-portala",
+      "title": "UX-Исследование Job-портала",
+      "url": "/projects/megafon-ux-issledovanie-job-portala/",
+      "year": "2021",
+      "client": {
+        "key": "megafon",
+        "label": "МегаФон"
+      },
+      "coverColor": "0, 185, 86",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/megafon.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "UX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        },
+        {
+          "category": "industries",
+          "label": "Телеком",
+          "key": "telecom"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          }
+        ],
+        "industries": [
+          {
+            "key": "telecom",
+            "label": "Телеком"
+          },
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "mts-issledovanie-opyta-agentov-po-prodazham",
+      "title": "Исследование опыта агентов по продажам",
+      "url": "/projects/mts-issledovanie-opyta-agentov-po-prodazham/",
+      "year": "2023",
+      "client": {
+        "key": "mts",
+        "label": "МТС"
+      },
+      "coverColor": "255, 0, 50",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/mts.html",
+        "modifier": "project-card__logo--mts"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Телеком",
+          "key": "telecom"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "telecom",
+            "label": "Телеком"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "mts-issledovanie-opyta-produktovyh-komand",
+      "title": "Исследование опыта продуктовых команд",
+      "url": "/projects/mts-issledovanie-opyta-produktovyh-komand/",
+      "year": "2023",
+      "client": {
+        "key": "mts",
+        "label": "МТС"
+      },
+      "coverColor": "255, 0, 50",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/mts.html",
+        "modifier": "project-card__logo--mts"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "netangels-issledovanie-opyta-klientov-hostinga",
+      "title": "Исследование опыта клиентов хостинга",
+      "url": "/projects/netangels-issledovanie-opyta-klientov-hostinga/",
+      "year": "2019",
+      "client": {
+        "key": "netangels",
+        "label": "NetAngels"
+      },
+      "coverColor": "0, 102, 255",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/netangels.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-outsourcing"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-outsourcing",
+            "label": "Аутсорсинг"
+          },
+          {
+            "key": "it-vendor",
+            "label": "IT"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "perekrestok-problemy-personala-magazinov",
+      "title": "Проблемы персонала магазинов",
+      "url": "/projects/perekrestok-problemy-personala-magazinov/",
+      "year": "2024",
+      "client": {
+        "key": "perekrestok",
+        "label": "Перекрёсток"
+      },
+      "coverColor": "95, 175, 45",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/perekrestok.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pik-uluchshenie-puti-klienta",
+      "title": "Улучшение пути клиента",
+      "url": "/projects/pik-uluchshenie-puti-klienta/",
+      "year": "2022",
+      "client": {
+        "key": "pik",
+        "label": "ПИК"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pik.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Трансформация"
+        },
+        {
+          "category": "industries",
+          "label": "Девелопмент",
+          "key": "development"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "development",
+            "label": "Девелопмент"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-issledovanie-i-proektirovanie-sistem-sbora-obratnoy-svyazi-v-roznichnyh-magazinah",
+      "title": "Исследование и проектирование систем сбора обратной связи в розничных магазинах",
+      "url": "/projects/pyaterochka-issledovanie-i-proektirovanie-sistem-sbora-obratnoy-svyazi-v-roznichnyh-magazinah/",
+      "year": "2022",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pyaterochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-issledovanie-mehanik-os",
+      "title": "Исследование механик ОС",
+      "url": "/projects/pyaterochka-issledovanie-mehanik-os/",
+      "year": "2021",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pyaterochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-issledovanie-opyta-direktorov-magazinov",
+      "title": "Исследование опыта директоров магазинов",
+      "url": "/projects/pyaterochka-issledovanie-opyta-direktorov-magazinov/",
+      "year": "2022",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pyaterochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-issledovanie-opyta-nayma-u-konkurentov",
+      "title": "Исследование опыта найма у конкурентов",
+      "url": "/projects/pyaterochka-issledovanie-opyta-nayma-u-konkurentov/",
+      "year": "2021",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pyaterochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-issledovanie-opyta-partnerov",
+      "title": "Исследование опыта партнёров",
+      "url": "/projects/pyaterochka-issledovanie-opyta-partnerov/",
+      "year": "2021",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pyaterochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          },
+          {
+            "key": "partners",
+            "label": "Партнёры"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-issledovanie-opyta-polzovateley-sistemy-upravleniya-resursami",
+      "title": "Исследование опыта пользователей системы управления ресурсами",
+      "url": "/projects/pyaterochka-issledovanie-opyta-polzovateley-sistemy-upravleniya-resursami/",
+      "year": "2021",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pyaterochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-issledovanie-opyta-polzovateley-sistemy-upravleniya-zadachami",
+      "title": "Исследование опыта пользователей системы управления задачами",
+      "url": "/projects/pyaterochka-issledovanie-opyta-polzovateley-sistemy-upravleniya-zadachami/",
+      "year": "2022",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pyaterochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "UX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-issledovanie-opyta-produktovyh-komand",
+      "title": "Исследование опыта продуктовых команд",
+      "url": "/projects/pyaterochka-issledovanie-opyta-produktovyh-komand/",
+      "year": "2021",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pyaterochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-issledovanie-opyta-sotrudnikov-logistiki",
+      "title": "Исследование опыта сотрудников логистики",
+      "url": "/projects/pyaterochka-issledovanie-opyta-sotrudnikov-logistiki/",
+      "year": "2021",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pyaterochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "logistics",
+            "label": "Логистика"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-perehod-s-plastikovyh-kart-na-tsifrovuyu-programmu-loyalnost",
+      "title": "Переход с пластиковых карт на цифровую программу лояльности",
+      "url": "/projects/pyaterochka-perehod-s-plastikovyh-kart-na-tsifrovuyu-programmu-loyalnost/",
+      "year": "2023",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pyaterochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-razrabotka-idealnoy-telezhki",
+      "title": "Разработка идеальной тележки",
+      "url": "/projects/pyaterochka-razrabotka-idealnoy-telezhki/",
+      "year": "2022",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "asset",
+        "path": "/assets/projects/pyaterochka-razrabotka-idealnoy-telezhki/2.jpg"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "Разработка концепции"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Grocery",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          },
+          {
+            "key": "partners",
+            "label": "Партнёры"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pyaterochka-testirovanie-effektivnosti-razmeschenie-korzinok-v-torgovyh-zalah",
+      "title": "Тестирование эффективности размещение корзинок в торговых залах",
+      "url": "/projects/pyaterochka-testirovanie-effektivnosti-razmeschenie-korzinok-v-torgovyh-zalah/",
+      "year": "2022",
+      "client": {
+        "key": "pyaterochka",
+        "label": "Пятёрочка"
+      },
+      "coverColor": "235, 35, 22",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/pyaterochka.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Трансформация"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "razrabotka-kontseptsii-company-builder",
+      "title": "Разработка концепции Company Builder",
+      "url": "/projects/razrabotka-kontseptsii-company-builder/",
+      "year": "2021",
+      "client": {
+        "key": "company-builder",
+        "label": "Company Builder"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "Разработка концепции"
+        },
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "industries",
+          "label": "Консалтинг",
+          "key": "consulting"
+        },
+        {
+          "category": "industries",
+          "label": "Стартапы",
+          "key": "consulting"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "consulting",
+            "label": "Консалтинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "rembot-issledovanie-opyta-polzovatelya",
+      "title": "Исследование опыта пользователя",
+      "url": "/projects/rembot-issledovanie-opyta-polzovatelya/",
+      "year": "2019",
+      "client": {
+        "key": "rembot",
+        "label": "Рембот"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/rembot.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "UX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "DIY",
+          "key": "retail"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          },
+          {
+            "key": "media-marketing",
+            "label": "Медиа и маркетинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "rmk-arena-opyt-gostya",
+      "title": "Опыт гостя",
+      "url": "/projects/rmk-arena-opyt-gostya/",
+      "year": "2023",
+      "client": {
+        "key": "rmk-arena",
+        "label": "РМК Арена"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/rmk-arena.html",
+        "modifier": "project-card__logo--rmk"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Спорт",
+          "key": "public-sector"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          },
+          {
+            "key": "other",
+            "label": "Другое"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "rolf-issledovanie-opyta-pokupateley-avtomobiley-segmenta-premium-i-mass",
+      "title": "Исследование опыта покупателей автомобилей сегмента премиум и масс",
+      "url": "/projects/rolf-issledovanie-opyta-pokupateley-avtomobiley-segmenta-premium-i-mass/",
+      "year": "2022",
+      "client": {
+        "key": "rolf",
+        "label": "Рольф"
+      },
+      "coverColor": "229, 37, 33",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/rolf.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Продажа автомобилей",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          },
+          {
+            "key": "partners",
+            "label": "Партнёры"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "roza-hutor-servisnaya-strategiya",
+      "title": "Сервисная Стратегия",
+      "url": "/projects/roza-hutor-servisnaya-strategiya/",
+      "year": "2023",
+      "client": {
+        "key": "roza-khutor",
+        "label": "Роза Хутор"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/roza-khutor.html",
+        "modifier": "project-card__logo--wide"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "industries",
+          "label": "Туризм",
+          "key": "other"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          },
+          {
+            "key": "other",
+            "label": "Другое"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "sbermarket-issledovanie-motivatsii-b2b-klientov",
+      "title": "Исследование мотивации b2b-клиентов",
+      "url": "/projects/sbermarket-issledovanie-motivatsii-b2b-klientov/",
+      "year": "2021",
+      "client": {
+        "key": "sbermarket",
+        "label": "Сбермаркет"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/sbermarket.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "industries",
+          "label": "Grocery",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Услуги",
+          "key": "other"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "other",
+            "label": "Услуги"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "sbermarket-issledovanie-motivatsii-b2c-klientov",
+      "title": "Исследование мотивации b2c-клиентов",
+      "url": "/projects/sbermarket-issledovanie-motivatsii-b2c-klientov/",
+      "year": "2020",
+      "client": {
+        "key": "sbermarket",
+        "label": "Сбермаркет"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/sbermarket.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Grocery",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Услуги",
+          "key": "other"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          },
+          {
+            "key": "other",
+            "label": "Услуги"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "sdsvet-issledovanie-opyta-pokupateley-svetovyh-sistem",
+      "title": "Исследование опыта покупателей световых систем",
+      "url": "/projects/sdsvet-issledovanie-opyta-pokupateley-svetovyh-sistem/",
+      "year": "2019",
+      "client": {
+        "key": "sdvet",
+        "label": "SDSvet"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/sdvet.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "industries",
+          "label": "Освещение",
+          "key": "industry-manufacturing"
+        },
+        {
+          "category": "industries",
+          "label": "Производство",
+          "key": "industry-manufacturing"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "industry-manufacturing",
+            "label": "Промышленность"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "seniorgroup-uluchshenie-opyta-potrebiteley-i-pokupateley-geriatricheskih-uslug",
+      "title": "Улучшение опыта потребителей и покупателей гериатрических услуг",
+      "url": "/projects/seniorgroup-uluchshenie-opyta-potrebiteley-i-pokupateley-geriatricheskih-uslug/",
+      "year": "2019",
+      "client": {
+        "key": "seniorgroup",
+        "label": "SeniorGroup"
+      },
+      "coverColor": "142, 0, 30",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/seniorgroup.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Трансформация"
+        },
+        {
+          "category": "industries",
+          "label": "Медицина",
+          "key": "medicine"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "medicine",
+            "label": "Медицина"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "shalash-issledovanie-dlya-fonda",
+      "title": "Исследование для фонда",
+      "url": "/projects/shalash-issledovanie-dlya-fonda/",
+      "year": "2020",
+      "client": {
+        "key": "shalash",
+        "label": "Шалаш"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/shalash.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Благотворительность",
+          "key": "other"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "other",
+            "label": "Другое"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "sipuni-brend-rabotodatelya",
+      "title": "Бренд работодателя",
+      "url": "/projects/sipuni-brend-rabotodatelya/",
+      "year": "2025",
+      "client": {
+        "key": "sipuni",
+        "label": "Сипуни"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/sipuni.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "industries",
+          "label": "Телеком",
+          "key": "telecom"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "telecom",
+            "label": "Телеком"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "skb-kontur-razrabotka-kontseptsii-dlya-kontur-buhgalterii",
+      "title": "Разработка концепции для Контур.Бухгалтерии",
+      "url": "/projects/skb-kontur-razrabotka-kontseptsii-dlya-kontur-buhgalterii/",
+      "year": "2020",
+      "client": {
+        "key": "kontur",
+        "label": "Контур"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/kontur.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "Разработка концепции"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "sokolov-klientskiy-opyt",
+      "title": "Клиентский опыт",
+      "url": "/projects/sokolov-klientskiy-opyt/",
+      "year": "2026",
+      "client": {
+        "key": "sokolov",
+        "label": "SOKOLOV"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/sokolov.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "strana-development-opyt-pokupki-kvartir",
+      "title": "Опыт покупки квартир",
+      "url": "/projects/strana-development-opyt-pokupki-kvartir/",
+      "year": "2023",
+      "client": {
+        "key": "strana-development",
+        "label": "Страна Девелопмент"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/strana-development.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Девелопмент",
+          "key": "development"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "development",
+            "label": "Девелопмент"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "streets-issledovanie-potrebiteley-fastfuda",
+      "title": "Исследование потребителей фастфуда",
+      "url": "/projects/streets-issledovanie-potrebiteley-fastfuda/",
+      "year": "2022",
+      "client": {
+        "key": "streets",
+        "label": "Streets"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/streets.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Horeca",
+          "key": "retail"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "t2-opyt-sotrudnikov-i-brend-rabotodatelya",
+      "title": "Опыт сотрудников и бренд работодателя",
+      "url": "/projects/t2-opyt-sotrudnikov-i-brend-rabotodatelya/",
+      "year": "2026",
+      "client": {
+        "key": "t2",
+        "label": "T2"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/t2.html",
+        "modifier": "project-card__logo--compact"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "industries",
+          "label": "Телеком",
+          "key": "telecom"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "telecom",
+            "label": "Телеком"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "turisticheskiy-klaster-gora-belaya-razrabotka-cjm",
+      "title": "Разработка CJM",
+      "url": "/projects/turisticheskiy-klaster-gora-belaya-razrabotka-cjm/",
+      "year": "2019",
+      "client": {
+        "key": "gora-belaya",
+        "label": "Туристический кластер «Гора Белая»"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/gora-belaya.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Туризм",
+          "key": "other"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "public-sector",
+            "label": "Госсектор"
+          },
+          {
+            "key": "other",
+            "label": "Другое"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "tutu-ru-chekap-tsennostnogo-predlozheniya",
+      "title": "Чекап ценностного предложения",
+      "url": "/projects/tutu-ru-chekap-tsennostnogo-predlozheniya/",
+      "year": "2025",
+      "client": {
+        "key": "tutu",
+        "label": "Tutu.ru"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/tutu.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "type",
+          "label": "Трансформация"
+        },
+        {
+          "category": "industries",
+          "label": "Туризм",
+          "key": "other"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "other",
+            "label": "Другое"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "unicorngo-kultura-sozdaniya-tsennosti",
+      "title": "Культура создания ценности",
+      "url": "/projects/unicorngo-kultura-sozdaniya-tsennosti/",
+      "year": "2025",
+      "client": {
+        "key": "unicorngo",
+        "label": "UnicornGo"
+      },
+      "coverColor": "128, 128, 128",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/unicorngo.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "type",
+          "label": "Трансформация"
+        },
+        {
+          "category": "industries",
+          "label": "Логистика",
+          "key": "logistics"
+        },
+        {
+          "category": "industries",
+          "label": "Услуги",
+          "key": "other"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          }
+        ],
+        "industries": [
+          {
+            "key": "logistics",
+            "label": "Логистика"
+          },
+          {
+            "key": "other",
+            "label": "Услуги"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "vkusvill-gipersegmentatsiya-i-dizayn-sistema",
+      "title": "Гиперсегментация и дизайн-система",
+      "url": "/projects/vkusvill-gipersegmentatsiya-i-dizayn-sistema/",
+      "year": "2023",
+      "client": {
+        "key": "vkusvill",
+        "label": "ВкусВилл"
+      },
+      "coverColor": "45, 190, 100",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/vkusvill.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "Разработка концепции"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Grocery",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma",
+      "title": "Концепция новой сети магазинов у дома",
+      "url": "/projects/vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma/",
+      "year": "2019",
+      "client": {
+        "key": "vkusvill",
+        "label": "ВкусВилл"
+      },
+      "coverColor": "45, 190, 100",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/vkusvill.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CJM"
+        },
+        {
+          "category": "type",
+          "label": "Разработка концепции"
+        },
+        {
+          "category": "industries",
+          "label": "FMCG",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Grocery",
+          "key": "fmcg"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "fmcg",
+            "label": "FMCG"
+          },
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "x5-club-cjm-polzovatelya-programmy-loyalnosti",
+      "title": "CJM пользователя программы лояльности",
+      "url": "/projects/x5-club-cjm-polzovatelya-programmy-loyalnosti/",
+      "year": "2023",
+      "client": {
+        "key": "x5-club",
+        "label": "X5 Club"
+      },
+      "coverColor": "95, 175, 45",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/x5-club.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "CX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "Розница",
+          "key": "retail"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "retail",
+            "label": "Ритейл"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "yandeks-issledovanie-brenda-rabotodatelya",
+      "title": "Исследование бренда работодателя",
+      "url": "/projects/yandeks-issledovanie-brenda-rabotodatelya/",
+      "year": "2024",
+      "client": {
+        "key": "yandex",
+        "label": "Яндекс"
+      },
+      "coverColor": "252, 63, 29",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/yandex.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "type",
+          "label": "Стратегия"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "yandex-opyt-voditeley-taksi",
+      "title": "Опыт водителей такси",
+      "url": "/projects/yandex-opyt-voditeley-taksi/",
+      "year": "2024",
+      "client": {
+        "key": "yandex",
+        "label": "Яндекс"
+      },
+      "coverColor": "252, 63, 29",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/yandex.html"
+      },
+      "tags": [
+        {
+          "category": "type",
+          "label": "EX-Исследование"
+        },
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          }
+        ]
+      }
+    }
+  ]
+}

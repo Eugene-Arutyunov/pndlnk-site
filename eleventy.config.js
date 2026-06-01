@@ -1,13 +1,18 @@
-const loadHomeProjects = require("./src/data/homeProjects.js");
+const loadProjects = require("./src/data/loadProjects.js");
 
 module.exports = function (conf) {
-  const projects = loadHomeProjects();
+  const projects = loadProjects();
   conf.addGlobalData("projects", projects);
   conf.addGlobalData("homeProjects", projects);
 
   conf.addFilter("projectBySlug", (list, slug) => {
     if (!Array.isArray(list) || slug == null || slug === "") return null;
     return list.find((p) => p.slug === slug) || null;
+  });
+
+  conf.addFilter("projectSlugFromUrl", (url) => {
+    if (!url || typeof url !== "string") return "";
+    return url.replace(/^\/projects\//, "").replace(/\/$/, "");
   });
 
   conf.addPassthroughCopy("./src/ids");

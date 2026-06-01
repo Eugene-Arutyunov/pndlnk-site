@@ -3,7 +3,8 @@
     "prebuild": "rm -rf _site",
     "build": "eleventy",
     "build:clean": "eleventy",
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve",
+    "projects:build-json": "node scripts/build-projects-json.js"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0"

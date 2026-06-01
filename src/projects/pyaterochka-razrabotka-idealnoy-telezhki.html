@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Пятёрочка: разработка идеальной тележки' %}
 {% block content %}
 <div class="ids__wrapper L case-standard case-page">
@@ -6,8 +7,7 @@
 <div class="ids__text-width">
 <p><a href="/projects/">← все проекты</a></p>
 <div class="ids__space L"></div>
-<h1 class="S">{{ pageTitle }}</h1>
-{% include 'partials/case-tags.njk' %}
+{{ caseMeta(page) }}
 
 <p class="case-standard__meta">8 минут чтения · Михаил Руденко</p>
 <p>Эта история началась с того, что наш давний и любимый клиент «Пятёрочка» пришел к нам с задачей разработки новой тележки для сети. Вспомнив, что история сервис-дизайна как популярной дисциплины в некотором роде и началась с переосмысления тележки для супермаркета, мы с радостью согласились.</p>

@@ -1,0 +1,40 @@
+{% macro caseMeta(page) %}
+  {% set slug = page.url | projectSlugFromUrl %}
+  {% set p = projects | projectBySlug(slug) %}
+  {% if p %}
+  <h1 class="S">{{ p.title }}</h1>
+  <div class="case-page__meta-row">
+    {% if p.logo and p.logo.kind == 'include' and p.logo.path %}
+    <div class="case-page__brand-logo" aria-hidden="true">
+      {% include p.logo.path %}
+    </div>
+    {% elif p.logo and p.logo.kind == 'asset' and p.logo.path %}
+    <div class="case-page__brand-logo" aria-hidden="true">
+      <img src="{{ p.logo.path }}" alt="" />
+    </div>
+    {% elif p.logoInclude %}
+    <div class="case-page__brand-logo" aria-hidden="true">
+      {% include p.logoInclude %}
+    </div>
+    {% elif p.logoAsset %}
+    <div class="case-page__brand-logo" aria-hidden="true">
+      <img src="{{ p.logoAsset }}" alt="" />
+    </div>
+    {% endif %}
+
+    {% if p.typeTags.length or p.industryTags.length or p.year %}
+    <ul class="case-page__tags" aria-label="Теги кейса">
+      {% for tag in p.typeTags %}
+      <li><span class="case-page__tag">{{ tag }}</span></li>
+      {% endfor %}
+      {% for tag in p.industryTags %}
+      <li><span class="case-page__tag case-page__tag--industry">{{ tag }}</span></li>
+      {% endfor %}
+      {% if p.year %}
+      <li><span class="case-page__tag case-page__tag--year">{{ p.year }}</span></li>
+      {% endif %}
+    </ul>
+    {% endif %}
+  </div>
+  {% endif %}
+{% endmacro %}
