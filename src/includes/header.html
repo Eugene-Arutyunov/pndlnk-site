@@ -7,7 +7,10 @@ href: '/products/' }, { title: 'Проекты', href: '/projects/' }, { title: 
 <header class="header">
   <nav class="nav">
     <div class="logo">
-      <a href="/"> {% include 'assets/pndlnk-logo.html' %} </a>
+      {% if page.url == '/' %} {% include 'assets/pndlnk-logo.html' %} {% else
+      %}
+      <a href="/">{% include 'assets/pndlnk-logo.html' %}</a>
+      {% endif %}
     </div>
     {% for link in nav %} {% if link.href == page.url %}
     <span>{{ link.title }}</span>

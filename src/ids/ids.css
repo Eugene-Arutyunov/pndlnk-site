@@ -78,12 +78,14 @@
     }
 
     &.accent {
-      font-size: 4.3em;
+      font-family: var(--mono);
+      font-size: 3.9em;
       line-height: 0.9;
+      letter-spacing: -0.04em;
       color: rgb(var(--ids__accent-RGB));
 
       @media (width < 768px) {
-        font-size: 2em;
+        font-size: 2.55em;
       }
     }
 
@@ -123,7 +125,7 @@
     margin-bottom: 0.3em;
 
     @media (width < 768px) {
-      font-size: 2.5em;
+      font-size: 2em;
     }
 
     &.S {
@@ -227,11 +229,27 @@
     &.S {
       font-size: 0.8em;
     }
+  }
 
-    &.thin {
-      & li {
-        border-width: 1px;
-        border-color: rgba(var(--ids__text-RGB), 0.3);
+  & ul.tag-list {
+    display: grid;
+    grid-template-columns: 35fr 65fr;
+    gap: 0.45em 1.15em;
+    font-family: var(--mono);
+    font-size: var(--smaller);
+    font-weight: 700;
+
+    & li {
+      padding: 0.2em 0 0;
+      border: none;
+      border-top: 0.6em solid rgb(var(--ids__accent-RGB));
+
+      &:first-child {
+        grid-column: 1 / -1;
+      }
+
+      &:before {
+        content: none;
       }
     }
   }
