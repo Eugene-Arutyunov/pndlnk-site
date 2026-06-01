@@ -2,18 +2,11 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Разработка концепции нового продукта' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       ИТ-компания Pulse WiFi обратилась в Бюро для радикального переосмысления своего продукта. Она помогала бизнесу
       работать с гостями через публичный Wi‑Fi: подключение, реклама, сбор данных о посетителях. К моменту проекта
@@ -22,11 +15,11 @@
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Разработать концепцию нового продукта. Необходимо было предложить радикально новый смысл для продукта, но сохранить технологию, лежащую в основе продукта.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p>
       JTBD-Сегментирование и профилирование целевой аудитории. Экспертные интервью. Глубинные интервью
       с потребителями. Разработана концепция позиционирования. Разработана Customer Journey Map. Разработан нейм.
@@ -34,14 +27,14 @@
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Предложен новый смысл продукта: вместо «wifi реклама» — «создание клиентских сообществ на основе данных».
       Под новый смысл разработаны новое название (DataDarvin), новые функции и дизайн продукта, в том числе логотип.
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Отзыв клиента</h2>
+<h2 class="project-bento">Отзыв клиента</h2>
 <p>
       «Ну а если честно, вы создали не просто лого, а полностью перезагрузили всё. Разницу «между» до и «после»
       тяжело измерить, потому что это в принципе, разные плоскости. Пространство изменилось 😉  Конкурентная ситуация на рынке wi-fi очень сильно меняется, а мы со своей новой работой, находимся на несколько шагов впереди
@@ -49,22 +42,6 @@
     </p>
 </div>
 </div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

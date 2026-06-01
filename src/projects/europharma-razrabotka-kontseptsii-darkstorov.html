@@ -2,59 +2,32 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Разработка концепции дарксторов' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       Формат дарксторов для аптек и FMCG — ответ на спрос на быстрые доставки и переосмысление роли офлайн-точки.
       EuroPharma рассматривала развитие концепции «тёмного» склака и связанного с ним клиентского опыта.
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Проект на стыке стратегии и CX: сформировать концептуальные опоры для дарксторов — ценностное предложение, ключевые сценарии обслуживания и требования к операционной модели (в рамках доступного в проекте объёма).</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p><strong>Сбор входов.</strong> Интервью с заказчиком, разбор текущих гипотез и ограничений сети.</p><p><strong>Концептуальная проработка.</strong> Сценарии заказа, сборки, доставки и контроля качества сервиса.</p><p><strong>Фиксация решений.</strong> Оформление принципов концепции для передачи в продуктовые и операционные команды.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Согласованный пакет идей по концепции дарксторов: позиционирование формата, опорные сценарии клиента и
       направления развития операционной модели для последующей детализации внутри EuroPharma.
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

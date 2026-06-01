@@ -2,59 +2,32 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Бренд работодателя' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       Компания в телеком-сегменте на этапе созревания HR- и управленческой модели. Рост и смена ролей в топ-команде сделали актуальным осознанное целеполагание и связку EVP с реальной культурой и оргструктурой.
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Развить бренд работодателя: Employer Value Proposition, функциональные карты ключевых должностей, инициативы по повышению эффективности привлечения подходящих кандидатов. Нужна была не только внешняя коммуникация, но и внутренняя согласованность целей и ролей.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p>
       Построение дерева текущей реальности и дерева целей компании, функциональная карта HRD, список ценностей, ценностно-мотивационные профили сотрудников, описание типа корпоративной культуры. Отдельно сформулирован ключевой организационный инсайт о необходимости усиления операционного управления.
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Владелец компании вернулся к роли CEO и пересмотрел цели и подход к целеполаганию. Руководители ключевых направлений начали использовать дерево целей в совместной работе, что создало общую опору для найма, развития и внутренних коммуникаций.
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

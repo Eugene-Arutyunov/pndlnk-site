@@ -2,18 +2,11 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Исследование опыта покупателей световых систем' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       Компания производит световое оборудование; в B2B часть сделок проходит через тендеры, но есть жизнь контракта
       после поставки: внедрение, эксплуатация, влияние света на бизнес-показатели (в ритейле — косвенно на продажи).
@@ -21,41 +14,21 @@
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Исследовать, как клиенты покупают и используют световые решения, когда закупка не сводится к тендеру; выявить роль «светового маркетинга» и возможности позиционирования SDSvet как поставщика решений, а не только фитингов.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p><strong>Интервью с заказчиками.</strong> B2B-сценарии выбора, внедрения и оценки эффекта.</p><p><strong>Сборка ценности.</strong> Связка освещения с бизнес-задачами клиента (в т.ч. ритейл).</p><p><strong>Рекомендации по go-to-market.</strong> Язык продукта и точки контакта.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Картина пути B2B-покупателя световых систем и направления развития предложения «решения под эффект», включая
       идеи коммуникации ценности света для бизнеса клиента.
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

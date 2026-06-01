@@ -2,18 +2,11 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Тестирование эффективности размещение корзинок в торговых залах' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       Использование корзин в зале напрямую влияет на комфорт покупки и операционные метрики, но поведение
       гостей при входе и в пути по отделам не всегда очевидно без наблюдений. Сети нужны данные, а не только
@@ -21,41 +14,21 @@
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Выяснить, как и почему гости используют или не используют корзинки; проверить гипотезы о размещении «парковок» для корзин, навигации и визуальных акцентах в пилотных магазинах.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p><strong>Интервенция в зале.</strong> Дополнительные точки выдачи корзин, указатели на стенах и под потолком, партия корзин в фирменных цветах.</p><p><strong>Наблюдения и микроинтервью.</strong> Фиксация поведения и короткие беседы с гостями.</p><p><strong>Синтез.</strong> Оформление выводов по размещению и визуальной коммуникации «парковок».</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Инициативы по размещению и оформлению парковок для корзин; предложение расширенного эксперимента с более
       наглядной навигацией, чётко выделенными зонами и удобным паллетированием/столиками для взятия и сдачи корзин.
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

@@ -88,7 +88,7 @@ function normalizeProject(raw) {
     logoInclude,
   );
 
-  const coverTint = raw.coverColor || null;
+  const coverTint = raw.coverColor != null ? "128, 128, 128" : null;
 
   return {
     slug: raw.slug,

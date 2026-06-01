@@ -20,7 +20,7 @@
             </select>
           </span>
         </label>
-        в отрасли 
+        во&nbsp;взаимодействии
         <label class="project-catalog-filter__field">
           <span class="visually-hidden">Отрасль компаний</span>
           <span class="project-catalog-filter__select-wrap">
@@ -28,34 +28,40 @@
               id="project-filter-industry"
               class="project-catalog-filter__select"
               aria-label="Отрасль компаний">
-              <option value="all">компаниями</option>
-              <option value="it-vendor">Вендор</option>
-              <option value="it-integrator">Интегратор</option>
-              <option value="it-outsourcing">Аутсорсинг</option>
-              <option value="infosec">Инфобез</option>
-              <option value="telecom">Телеком</option>
-              <option value="finance">Финансы и банки</option>
-              <option value="retail">Ритейл</option>
-              <option value="fmcg">FMCG</option>
-              <option value="development">Девелопмент</option>
-              <option value="industry-manufacturing">Промышленность</option>
-              <option value="medicine">Медицина</option>
-              <option value="logistics">Логистика</option>
-              <option value="consulting">Консалтинг</option>
-              <option value="education">Образование</option>
-              <option value="media-marketing">Медиа и маркетинг</option>
-              <option value="hr-recruiting">HR и рекрутинг</option>
-              <option value="energy">Энергетика</option>
-              <option value="public-sector">Госсектор</option>
-              <option value="agro">Агро</option>
+              <option value="all">с&nbsp;компаниями</option>
+              <option value="it-vendor">с&nbsp;вендорами</option>
+              <option value="it-integrator">с&nbsp;интеграторами</option>
+              <option value="it-outsourcing">с&nbsp;аутсорсерами</option>
+              <option value="infosec">с&nbsp;инфобезом</option>
+              <option value="telecom">с&nbsp;телекомом</option>
+              <option value="finance">с&nbsp;банками и&nbsp;финансами</option>
+              <option value="retail">с&nbsp;ритейлом</option>
+              <option value="fmcg">с&nbsp;FMCG</option>
+              <option value="development">с&nbsp;девелоперами</option>
+              <option value="industry-manufacturing">
+                с&nbsp;промышленностью
+              </option>
+              <option value="medicine">с&nbsp;медициной</option>
+              <option value="logistics">с&nbsp;логистикой</option>
+              <option value="consulting">с&nbsp;консалтингом</option>
+              <option value="education">с&nbsp;образованием</option>
+              <option value="media-marketing">
+                с&nbsp;медиа и&nbsp;маркетингом
+              </option>
+              <option value="hr-recruiting">
+                с&nbsp;HR и&nbsp;рекрутингом
+              </option>
+              <option value="energy">с&nbsp;энергетикой</option>
+              <option value="public-sector">с&nbsp;госсектором</option>
+              <option value="agro">с&nbsp;агропромышленностью</option>
             </select>
           </span>
         </label>
-        <label class="project-catalog-filter__checkbox">
-          <input type="checkbox" id="project-filter-featured" />
-          <span>избранные кейсы</span>
-        </label>
       </p>
+      <label class="project-catalog-filter__checkbox">
+        <input type="checkbox" id="project-filter-featured" />
+        <span>Избранные проекты</span>
+      </label>
       <p
         class="project-catalog-filter__status"
         id="project-filter-status"
@@ -89,7 +95,10 @@
             {% endif %}
           </div>
           <div class="project-card__body">
-            <h3 class="project-card__title">{% if catalogTitlesWithoutBrand %}{{ project.catalogTitle }}{% else %}{{ project.name }}{% endif %}</h3>
+            <h3 class="project-card__title">
+              {% if catalogTitlesWithoutBrand %}{{ project.catalogTitle }}{%
+              else %}{{ project.name }}{% endif %}
+            </h3>
             <div class="project-card__tags">
               {% for tag in project.displayTags %}
               <span class="project-card__tag">{{ tag }}</span>

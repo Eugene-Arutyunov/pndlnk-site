@@ -4,46 +4,57 @@
   align-items: flex-start;
 }
 
-/* Логотип и теги в одной строке под заголовком */
-.ids .case-page:not(.article) .case-page__meta-row {
+/* Хедер проекта: ссылка, логотип, теги */
+.ids .case-page:not(.article) .case-page__header {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4em 0.55em;
-  margin-top: calc(var(--ids__density) * 0.45em);
-  margin-bottom: calc(var(--ids__density) * 0.85em);
+  align-items: baseline;
+  gap: 2em;
+  font-family: var(--mono);
+  font-size: var(--smaller);
 }
 
-.ids .case-page:not(.article) .case-page__meta-row .case-page__brand-logo {
-  margin-top: 0;
+.ids .case-page:not(.article) .case-page__header .case-page__brand-logo {
+  margin-top: 0.2em;
   line-height: 0;
   flex-shrink: 0;
+  align-self: flex-start;
 }
 
-.ids .case-page:not(.article) .case-page__meta-row .case-page__tags {
+.ids .case-page:not(.article) .case-page__header .case-page__tags {
   margin: 0;
 }
 
-.ids .case-page:not(.article) .case-page__brand-logo svg,
-.ids .case-page:not(.article) .case-page__brand-logo img {
+.ids .case-page:not(.article) .case-page__header .case-page__brand-logo svg {
   display: block;
   width: auto;
   height: 1.15em;
   max-width: 7.5em;
 }
 
-.ids .case-page:not(.article) .case-page__brand-logo--dodo svg {
+.ids .case-page:not(.article) .case-page__header .case-page__brand-logo img {
+  display: block;
+  width: auto;
+  height: 1.75em;
+  max-width: 9em;
+}
+
+.ids
+  .case-page:not(.article)
+  .case-page__header
+  .case-page__brand-logo--dodo
+  svg {
   height: 1.35em;
   max-width: 11em;
 }
 
-/* Теги кейса (как на карточке каталога), под h1 */
+/* Теги кейса */
 .ids .case-page:not(.article) .case-page__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.1em;
+  gap: 0.45em;
   list-style: none;
-  margin: 0 0 calc(var(--ids__density) * 0.85em);
+  margin: 0;
   padding: 0;
 }
 
@@ -51,11 +62,11 @@
   display: inline-block;
   padding: 0.1em 0.2em;
   border-radius: 0;
-  font-family: var(--mono);
-  font-size: 0.6em;
+  font-family: inherit;
+  font-size: inherit;
   line-height: 1.25;
   color: rgba(var(--ids__text-RGB), 0.92);
-  background: rgba(var(--ids__accent-RGB), 0.35);
+  background: rgba(var(--ids__surface-RGB), 0.55);
 }
 
 /* Без глобальных ⋅ у ul li между тегами */
@@ -67,21 +78,18 @@
   content: none;
 }
 
-.ids .case-page:not(.article) .case-page__tag--industry,
-.ids .case-page:not(.article) .case-page__tag--year,
-.ids .case-page:not(.article) .case-page__tag--brand {
-  background: rgba(var(--ids__surface-RGB), 0.55);
+/* Короткие проекты: заголовки секций в колонках */
+.ids .case-page:not(.article) h2.project-bento {
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.35em;
+  border-bottom: 2px solid rgb(var(--ids__text-RGB));
 }
 
-/* Ссылка «назад» над заголовком — обычный p, без уменьшения */
-.ids .case-page:not(.article) .ids__text-width > p > a[href="/projects/"] {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-}
-
-.ids .case-page:not(.article) .ids__text-width > p > a[href="/projects/"]:hover {
-  color: rgba(var(--ids__accent-RGB), 1);
+/* Длинные проекты: заголовки секций */
+.ids .case-page.case-standard:not(.article) .ids__text-width h2.S {
+  margin-top: calc(var(--ids__density) * 1.4em);
 }
 
 /* Две колонки: слева контекст / запрос / результат, справа процесс */
@@ -89,7 +97,7 @@
   align-items: flex-start;
 }
 
-/* Вертикальный стек секций внутри колонки (каждый h2.S — sequence-item) */
+/* Вертикальный стек секций внутри колонки (каждый h2.project-bento — sequence-item) */
 .ids .case-page:not(.article) .case-page__sections-stack {
   width: 100%;
 }
@@ -99,7 +107,11 @@
   width: 100%;
 }
 
-.ids .case-page:not(.article) .case-page__sections-stack .ids__sequence-item > :first-child {
+.ids
+  .case-page:not(.article)
+  .case-page__sections-stack
+  .ids__sequence-item
+  > :first-child {
   margin-top: 0;
 }
 

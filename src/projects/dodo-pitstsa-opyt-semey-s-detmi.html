@@ -2,18 +2,11 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Опыт семей с детьми' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       Сеть Додо Пицца росла и выходила на новые рынки, и параллельно усиливала образ «семейной
       пиццерии». Нужно было наглядно показать, как выглядит гостевой опыт для родителей с детьми
@@ -21,37 +14,21 @@
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Сформулировать концепцию клиентского опыта для гостей с детьми. На базовом уровне — понятные инициативы, которые можно внедрять без тотальной перестройки сети. На продвинутом — сильные ходы, которые помогают продавать франшизу и привлекать инвестиции на разных рынках.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p><strong>Сбор и анализ вторичных данных.</strong> Собрали и проанализировали имеющиеся данные и открытые источники.</p><p><strong>Экспертные интервью.</strong> Уточнили текущие ограничения и контекст работы пиццерий.</p><p><strong>Подготовка к полю.</strong> Определили фокусы и инструментарий исследования.</p><p><strong>Поле.</strong> Провели глубинные интервью и наблюдения, а также изучили опыт конкурентов.</p><p><strong>Аналитика.</strong> Выявили барьеры и причины их возникновения.</p><p><strong>Сессии с командой клиента.</strong> Совместно сформировали решения и инициативы.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Подготовлена концепция опыта гостей с детьми и набор инициатив по улучшению опыта на базовом
       и продвинутом уровнях, а также поддерживающие артефакты исследования.
     </p>
 </div>
 </div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

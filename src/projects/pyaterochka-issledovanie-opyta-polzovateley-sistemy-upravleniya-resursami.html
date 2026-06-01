@@ -2,18 +2,11 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Исследование опыта пользователей системы управления ресурсами' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       Сеть пилотировала WFM-решение для планирования рабочего времени сотрудников магазинов. Ручное планирование
       и алгоритмическое расписание по-разному ощущаются директорами и линейным персоналом — без исследования опыта
@@ -21,41 +14,21 @@
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Провести EX-исследование опыта директора и сотрудников розницы при планировании времени: сравнить «вручную» и с использованием WFM; найти способы улучшения опыта пользователей системы и самой системы.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p><strong>Поле в магазинах.</strong> Интервью и наблюдения с директорами и сотрудниками.</p><p><strong>Совместные сессии.</strong> Рабочие встречи с командой заказчика для уточнения фактов и гипотез.</p><p><strong>Картирование.</strong> Описание пути планирования и управления временем AS IS в обоих режимах.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Employee User Journey Map планирования и управления временем (с WFM и без); пул проблематик; перечень плюсов
       пилотной версии WFM; рекомендации по доработке системы; список инициатив по внедрению (совместно с заказчиком).
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

@@ -2,59 +2,32 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Исследование механик ОС' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       Розничная сеть с развитой повесткой по работе с обратной связью гостей. Помимо проектирования целостных систем сбора отзывов существует линия вопросов про сами механики обратной связи: как люди откликаются, что мотивирует делиться мнением и что искажает картину.
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Исследовать механики обратной связи как отдельный объект. Это не дублирует проект по проектированию систем сбора обратной связи в магазинах, а уточняет поведенческий и инструментальный слой «как именно собираем и что получаем».</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p>
       Полевые и аналитические методы по согласованной с заказчиком рамке (в рабочих материалах проекта детализировались гипотезы и метрики механик).
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Материалы для доработки конкретных механик ОС и их места в общей архитектуре обратной связи сети. Проект пересекается по теме с исследованием системы сбора отзывов, но концентрируется на работе отдельных инструментов и стимулов, а не на полной карте каналов.
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

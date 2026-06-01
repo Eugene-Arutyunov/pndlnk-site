@@ -2,26 +2,19 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Улучшение пути клиента' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>В период пандемии ПИК ускорял перенос ключевых этапов покупки квартиры в онлайн-канал. Для синхронизации команд требовалась целостная визуализация клиентского пути и понятная логика принятия решений по точкам контакта.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Описать целевой клиентский путь покупки квартиры в онлайн-формате и зафиксировать основу для пересборки внутренних процессов.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p>Собрали базовую карту пути клиента от первого интереса до оформления сделки.</p><p>Выделили ключевые этапы, где требовалась дополнительная проработка сервиса.</p><p>Подготовили набор проектных артефактов для последующей детализации.</p>
 <div class="ids__space S"></div>
 <p>Проект шел по стандартной схеме ОКП:</p>
@@ -46,30 +39,10 @@
 </ol>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>Материалы проекта стали рабочей основой для дальнейшего развития клиентского пути.</p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

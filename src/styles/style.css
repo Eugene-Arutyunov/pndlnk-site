@@ -145,6 +145,16 @@ body.logo-viewbox-debug .home-hero-columns .logo-wall-item svg {
     transform: none;
   }
 
+  & .why-ponedelnik-photo {
+    margin: 0 0 0.6em;
+
+    & img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
   & h2 {
     padding-bottom: 0.2em;
     margin-bottom: 0.2em;

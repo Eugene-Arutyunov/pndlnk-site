@@ -2,18 +2,11 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Исследование опыта директоров магазинов' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       В фокусе программы повышения эффективности розницы — директор магазина как узел множества процессов:
       операционка, люди, сервис и выполнение KPI. Без системного взгляда на барьеры в её опыде сложно понять,
@@ -21,42 +14,22 @@
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Выявить области для повышения эффективности работы директоров магазинов: барьеры и разрывы в опыте ДМ, их связь с бизнес-процессами магазина; подготовить основу для инициатив и обратной связи от ДМ по процессам, где они являются участниками или владельцами.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p><strong>Качественный сбор.</strong> Интервью и наблюдения в опыте директоров магазинов.</p><p><strong>Количественный слой.</strong> Опрос для проверки гипотез и приоритизации проблематик.</p><p><strong>Картирование.</strong> Построение карт опыта AS IS и TO BE, связывание с процессами.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Карты опыта директора магазина AS IS / TO BE; пул проблематик с указанием причин; инициативы по снятию
       барьеров и повышению продуктивности; рекомендации по организации сбора обратной связи от ДМ о «своих»
       процессах.
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

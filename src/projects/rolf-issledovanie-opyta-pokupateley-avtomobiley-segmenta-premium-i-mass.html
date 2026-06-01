@@ -2,18 +2,11 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Исследование опыта покупателей автомобилей сегмента премиум и масс' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       Авторынок и дилерский опыт сильно шлифовались пандемийными ограничениями: онлайн-коммуникации, сроки,
       ожидания по сервису и прозрачности. Для крупного дилера важно понимать, как сегодня устроен путь клиента
@@ -21,41 +14,21 @@
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Стандартный для Бюро CX-проект: описать опыт покупателей Рольф, выделить ключевые эпизоды, барьеры и ожидания в премиум- и масс-сегментах; подготовить основу для управленческих и маркетинговых решений.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p><strong>Качественные методы.</strong> Глубинные интервью и проходки по типовым сценариям покупки.</p><p><strong>Сопоставление сегментов.</strong> Отдельный разбор паттернов премиум и масс.</p><p><strong>Артефакты пути.</strong> Формулировка барьеров, инсайтов и зон ответственности бизнеса.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Согласованное с заказчиком описание опыта клиентов с выделением различий сегментов и приоритетных точек
       улучшения пути от интереса к покупке и послепродажному контакту.
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

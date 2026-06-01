@@ -2,18 +2,11 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Исследование опыта партнёров' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       Тысячи поставщиков и партнёров обеспечивают ассортимент и часть собственных брендов сети (СТМ). Качество
       коллаборации с партнёрами влияет на скорость вывода продукта, маржинальность и устойчивость отношений, но
@@ -21,41 +14,21 @@
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Понять, как сегодня устроен опыт поставщиков СТМ при работе с «Пятёрочкой»: пройти путь от первого контакта до стабильных поставок; выявить барьеры и зоны быстрых улучшений; визуализировать полную схему прохождения соглашения.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p><strong>Внутренний контур.</strong> Интервью с экспертами сети, разбор процессов и культуры сотрудничества.</p><p><strong>Внешний контур.</strong> Интервью с партнёрами, сбор описания опыта и ожиданий «со стороны поставщика».</p><p><strong>Путь партнёра.</strong> Построение PJM AS IS, каталог барьеров и совместная приоритизация с заказчиком.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       PJM AS IS опыта партнёра-поставщика СТМ; пул барьеров; преимущества и рекомендации; дорожная карта мероприятий
       по улучшению опыта партнёра на горизонте 1–2 лет (совместно с заказчиком).
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

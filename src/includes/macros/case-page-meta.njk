@@ -2,8 +2,9 @@
   {% set slug = page.url | projectSlugFromUrl %}
   {% set p = projects | projectBySlug(slug) %}
   {% if p %}
-  <h1 class="S">{{ p.title }}</h1>
-  <div class="case-page__meta-row">
+  <div class="ids__space XL"></div>
+  <div class="case-page__header">
+    <a href="/projects/">← Все проекты</a>
     {% if p.logo and p.logo.kind == 'include' and p.logo.path %}
     <div class="case-page__brand-logo" aria-hidden="true">
       {% include p.logo.path %}
@@ -36,5 +37,8 @@
     </ul>
     {% endif %}
   </div>
+  <div class="ids__space XS"></div>
+  <h1>{{ p.title }}</h1>
+  <div class="ids__space M"></div>
   {% endif %}
 {% endmacro %}

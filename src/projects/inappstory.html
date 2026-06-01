@@ -2,59 +2,32 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'InAppStory' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       InAppStory — in-app коммуникация и сторис в мобильных приложениях. У команды был разрыв между
       текущим образом компании и желаемым, плюс ценностное предложение не сводилось к одной ясной гипотезе.
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Собрать связку «сегмент — мотивационный конфликт» и ценности с общим ядром вместо склейки из графа работ и интуиции; развести SaaS-сервис и студию в оффере и согласовать смысл с тем, кем компания себя видит; вывести в коммуникацию то, что важно клиенту.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p><strong>Диагностика по ДКЦП.</strong> Зафиксировали исходное ценностное предложение и диаграмму; совместно навели порядок в ценностях, атрибутах и ресурсах; опорный смысл для модели — заметность клиента в коммуникации.</p><p><strong>Сегмент и конфликт.</strong> Показательное интервью по гайду с разбором дало опорную гипотезу; сместили фокус с линии «делать сами или через плагин» на вопрос, зачем менять статус-кво, затем — продуктовые развилки.</p><p><strong>Продукт и нарратив.</strong> Развели сервис и студию как отдельные артефакты, обновили атрибуты и оффер; собрали и доработали нарративы после обратной связи, прогнали внешнюю подачу.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Зафиксирован уровень мотивационного конфликта и приняты опорные гипотезы по сегменту; перестроены оффер
       и ценностные предложения для сервиса и студии, в коммуникации усилен акцент на свойствах, важных для клиента.
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

@@ -2,18 +2,11 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Исследование опыта пользователей системы управления задачами' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       «Пятёрочка» развивала автоматическую систему управления задачами (АСУЗ) для розницы. Команда продукта
       предполагала, что опыт директоров магазинов при работе с задачами в системе и вне неё далёк от
@@ -21,42 +14,22 @@
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Исследовать опыт директоров магазинов при работе с задачами в АСУЗ и параллельных каналах; выявить барьеры; подготовить рекомендации по текстам, настройкам и обратной связи от пользователей о системе.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p><strong>Экспертные интервью.</strong> С внутренними специалистами по АСУЗ и процессам.</p><p><strong>Работа с пользователями.</strong> Интервью, наблюдения, разбор текущих задач в системе.</p><p><strong>UX-тесты.</strong> Модерируемые сессии АСУЗ с директорами магазинов.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       Совместно с заказчиком сформированы инициативы по устранению барьеров; документ рекомендаций о формулировках,
       структуре и тональности задач; идеи по настройкам АСУЗ и индивидуализации под тип пользователя;
       требования к обратной связи от ДМ об опыте работы в АСУЗ; карта пользовательского опыта директора магазина.
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

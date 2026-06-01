@@ -153,9 +153,9 @@
     top: 0;
     z-index: 2;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 0.75em 1em;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 0.75em 2em;
     margin-bottom: 3em;
     padding-top: 0.15em;
     padding-bottom: 0.35em;
@@ -174,7 +174,7 @@
 
   .project-catalog-filter__sentence {
     margin: 0;
-    flex: 1;
+    flex: 0 1 auto;
     min-width: 0;
     display: flex;
     flex-wrap: wrap;
@@ -188,6 +188,45 @@
     align-items: baseline;
   }
 
+  .project-catalog-filter__checkbox {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35em;
+    margin: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+    user-select: none;
+
+    & input[type="checkbox"] {
+      appearance: none;
+      width: 1em;
+      height: 1em;
+      margin: 0;
+      border: 2px solid rgba(var(--ids__text-RGB), 1);
+      border-radius: 0;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 0.7em 0.7em;
+      cursor: pointer;
+      flex-shrink: 0;
+      align-self: baseline;
+      vertical-align: baseline;
+      position: relative;
+      top: 2px;
+      transition: background-color 0.28s ease;
+
+      &:checked {
+        background-color: rgba(var(--ids__text-RGB), 0.06);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath stroke='%23111' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25' d='M2.5 6l2.5 2.5 5-5'/%3E%3C/svg%3E");
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
   /* Шеврон (modulate header): M2 4.5l4 4 4-4; select и ::after в одной grid-ячейке */
   .project-catalog-filter__select-wrap {
     display: inline-grid;
@@ -196,33 +235,38 @@
     justify-items: stretch;
     vertical-align: baseline;
     max-width: 100%;
-    padding: 0.1em 0.12em;
-    border-radius: 0.12em;
-    background-color: rgba(var(--ids__surface-RGB), 0.62);
+    padding: 0.1em 0.2em 0.1em 0.3em;
+    border: 2px solid rgba(var(--ids__text-RGB), 1);
+    border-radius: 0;
+    background-color: transparent;
     transition: background-color 0.28s ease;
+
+    &:focus-within {
+      background-color: rgba(var(--ids__text-RGB), 0.06);
+    }
   }
 
   .project-catalog-filter__select-wrap:hover {
     transition-duration: 0s;
-    background-color: rgba(var(--ids__surface-RGB), 0.75);
+    background-color: rgba(var(--ids__text-RGB), 0.06);
   }
 
   .project-catalog-filter__select-wrap::after {
     content: "";
     grid-area: 1 / 1;
-    width: 0.65em;
-    height: 0.65em;
-    margin-right: 0.18em;
+    width: 0.85em;
+    height: 0.85em;
+    margin-right: 0.12em;
     justify-self: end;
     align-self: center;
     pointer-events: none;
     background-color: rgb(var(--ids__text-RGB));
     opacity: 0.85;
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25' d='M2 4.5l4 4 4-4'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25' d='M3 6l5 5 5-5'/%3E%3C/svg%3E");
     mask-size: contain;
     mask-position: center;
     mask-repeat: no-repeat;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25' d='M2 4.5l4 4 4-4'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25' d='M3 6l5 5 5-5'/%3E%3C/svg%3E");
     -webkit-mask-size: contain;
     -webkit-mask-position: center;
     -webkit-mask-repeat: no-repeat;
@@ -232,33 +276,35 @@
     grid-area: 1 / 1;
     font: inherit;
     font-size: 1em;
-    line-height: 1.25;
+    line-height: 1.4;
     min-width: max-content;
     width: 100%;
     max-width: 100%;
     margin: 0;
-    padding: 0 0.95em 0 0;
+    padding: 0 1.05em 0 0;
     border: none;
-    border-radius: 0.12em;
+    border-radius: 0;
     background-color: transparent;
     background-image: none;
     color: rgb(var(--ids__text-RGB));
     appearance: none;
     cursor: pointer;
     box-sizing: border-box;
-  }
+    outline: none;
+    box-shadow: none;
 
-  .project-catalog-filter__select:focus-visible {
-    outline: 1px solid rgb(var(--ids__hover-RGB));
-    outline-offset: 1px;
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      box-shadow: none;
+    }
   }
 
   .project-catalog-filter__status {
-    margin: 0;
+    margin: 0 0 0 auto;
     flex-shrink: 0;
-    align-self: flex-start;
     font-size: 0.65em;
-    line-height: 1.35;
+    line-height: 1.4;
     color: rgba(var(--ids__text-RGB), 0.55);
     text-align: right;
     white-space: nowrap;
@@ -461,7 +507,7 @@
     background: none;
     font: inherit;
     cursor: pointer;
-    padding: 0.3em 0.6em 0.2em;
+    padding: 0.2em 0.5em 0.2em;
     border: none;
     border-right: 1px solid rgba(var(--ids__text-RGB), 0.25);
     color: rgb(var(--ids__text-RGB));

@@ -2,59 +2,32 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Проблемы персонала магазинов' %}
 {% block content %}
-<div class="ids__wrapper L case-featured case-page">
-<div class="ids__space top-screen-space M"></div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<p><a href="/projects/">← все проекты</a></p>
-<div class="ids__space L"></div>
+<div class="ids__wrapper case-featured case-page">
 {{ caseMeta(page) }}
-</div>
-<div class="ids__space M"></div>
 <div class="ids__sequence XL gap-L mobile-XL">
 <div class="ids__sequence-item">
-<h2 class="S">Контекст</h2>
+<h2 class="project-bento">Контекст</h2>
 <p>
       Розничная сеть супермаркетов. Устойчивость операционной модели напрямую зависит от людей в магазине: от директора до линейных сотрудников. Руководство розницы и смежных департаментов сформировало длинный перечень вопросов о том, что происходит с персоналом «на земле».
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Запрос</h2>
+<h2 class="project-bento">Запрос</h2>
 <p>Найти ответы на вопросы заказчика через глубинные интервью и наблюдения в магазинах сети. Пул запросов собран от руководителей розницы и связанных направлений — нужна была не общая «тепловая карта», а адресные выводы по темам, которые волнуют бизнес.</p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Процесс</h2>
+<h2 class="project-bento">Процесс</h2>
 <p>
       Полевые интервью и наблюдения, отдельные рабочие сессии с авторами вопросов для уточнения фокуса и синтеза, совместная проверка гипотез внутри организации.
     </p>
 </div>
 <div class="ids__sequence-item">
-<h2 class="S">Результат</h2>
+<h2 class="project-bento">Результат</h2>
 <p>
       База записей интервью и дневников, база знаний с инсайтами из поля и ответами на поставленные заказчиком вопросы. Отдельно выделено одно крупное методологическое противоречие в роли директора магазина — как опорный инсайт для дальнейших HR- и операционных решений.
     </p>
-<div class="ids__space L"></div>
-</div>
-<div class="ids__space L"></div>
 </div>
 </div>
-</div>
-<div class="ids__text-width">
-<div class="ids__space L"></div>
-<div class="case-page__actions-row">
-<div class="ids__sequence-item">
-</div>
-<div class="ids__sequence-item">
-<button
-  class="lets-talk-button compact contact-form-trigger"
-  type="button"
-  data-cf-title="Обсудить проект"
-  data-cf-submit="Отправить">
-  Обсудить проект
-</button>
-</div>
-</div>
-</div>
-<div class="ids__space L"></div>
+{% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}
