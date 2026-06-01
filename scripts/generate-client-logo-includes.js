@@ -14,7 +14,7 @@ const LOGO_BY_COMPANY = {
   autodesk: "Autodesk.svg",
   cosmobeauty: "Cosmobeauty.PNG",
   datadarvin: "DataDarvin.png",
-  dodo: "Додо Пицца.svg",
+  dodo: "dodo.png",
   europharma: "Europharma.svg",
   "fk-spartak": "Спартак.svg",
   floris: "Floristea.svg",

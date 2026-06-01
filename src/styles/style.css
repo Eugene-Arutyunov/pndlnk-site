@@ -65,11 +65,11 @@
 .home-hero-columns .logo-wall {
   margin-top: 0;
   margin-bottom: 0.45em;
-  gap: 0.3em;
+  gap: 0.24em;
 }
 
 .home-hero-columns .logo-wall-item {
-  padding: 0.4em 0.6em;
+  padding: 0.32em 0.48em;
   color: rgba(var(--ids__text-RGB), 0.8);
 }
 
@@ -89,6 +89,10 @@
   @media (width < 768px) {
     height: 0.8em;
   }
+}
+
+body.logo-viewbox-debug .home-hero-columns .logo-wall-item svg {
+  background-color: #fff9b8;
 }
 
 .home-hero-columns

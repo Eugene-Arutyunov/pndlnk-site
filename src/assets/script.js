@@ -418,6 +418,16 @@ function initCopyField() {
   });
 }
 
+function initLogoViewboxDebug() {
+  document.addEventListener("keydown", (e) => {
+    if (e.code !== "KeyB" || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.target.closest("input, textarea, select, [contenteditable='true']")) return;
+
+    e.preventDefault();
+    document.body.classList.toggle("logo-viewbox-debug");
+  });
+}
+
 
 // Инициализируем когда DOM готов
 if (document.readyState === "loading") {
@@ -431,6 +441,7 @@ if (document.readyState === "loading") {
     initProjectCatalogFilter();
     initCopyTable();
     initCopyField();
+    initLogoViewboxDebug();
   });
 } else {
   initStickyObserver();
@@ -442,4 +453,5 @@ if (document.readyState === "loading") {
   initProjectCatalogFilter();
   initCopyTable();
   initCopyField();
+  initLogoViewboxDebug();
 }
