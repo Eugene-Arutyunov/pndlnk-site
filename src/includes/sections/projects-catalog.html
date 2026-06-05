@@ -104,11 +104,22 @@
               <span class="project-card__tag">{{ tag }}</span>
               {% endfor %}
             </div>
-            <p class="project-card__year">{{ project.year }}</p>
           </div>
         </a>
       </li>
       {% endfor %}
     </ul>
+    <div class="project-catalog-empty" id="project-catalog-empty" hidden>
+      <p class="project-catalog-empty__text">
+        Такого проекта мы пока не&nbsp;делали. Сделаем?
+      </p>
+      <button
+        class="lets-talk-button compact contact-form-trigger"
+        type="button"
+        data-cf-title="Обсудить проект"
+        data-cf-submit="Отправить">
+        Обсудить проект
+      </button>
+    </div>
   </div>
 </div>

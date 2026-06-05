@@ -151,7 +151,16 @@ const COMPANY_LOGO_INCLUDES = new Set([
 ]);
 
 const COMPANY_LOGO_MODIFIERS = {
-  mavt: "project-card__logo--wide",
+  cosmobeauty: "project-card__logo--large",
+  datadarvin: "project-card__logo--large",
+  "fk-spartak": "project-card__logo--large",
+  mango: "project-card__logo--large",
+  shalash: "project-card__logo--large",
+  yandex: "project-card__logo--small",
+  tochka: "project-card__logo--small",
+  sdvet: "project-card__logo--small",
+  mavt: "project-card__logo--small",
+  floris: "project-card__logo--wide",
   "roza-khutor": "project-card__logo--wide",
   t2: "project-card__logo--compact",
   mts: "project-card__logo--mts",

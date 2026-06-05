@@ -1155,7 +1155,7 @@
       "logo": {
         "kind": "include",
         "path": "assets/client-logos/mavt.html",
-        "modifier": "project-card__logo--wide"
+        "modifier": "project-card__logo--small"
       },
       "tags": [
         {

@@ -179,11 +179,53 @@ function unwrapSymbolSvg(svg) {
   return out;
 }
 
+function inlineSvgClassStyles(svg) {
+  const classFills = {};
+  for (const match of svg.matchAll(/\.([a-z0-9_-]+)\s*\{[^}]*fill:\s*([^;}\s]+)/gi)) {
+    classFills[match[1]] = match[2];
+  }
+  if (Object.keys(classFills).length === 0) return svg;
+
+  let out = svg;
+  for (const [cls, fill] of Object.entries(classFills)) {
+    out = out.replace(
+      /<(path|polygon|rect|circle|ellipse|polyline)\b([^>]*)\/?>/gi,
+      (full, tag, attrs) => {
+        const classMatch = attrs.match(
+          new RegExp(`\\bclass=(["'])((?:[^'"]*\\s)?${cls}(?:\\s[^'"]*)?)\\1`, "i"),
+        );
+        if (!classMatch || /fill\s*=/i.test(attrs)) return full;
+        return `<${tag} fill="${fill}"${attrs}>`;
+      },
+    );
+  }
+
+  out = out.replace(/<defs>\s*<style>[\s\S]*?<\/style>\s*<\/defs>/gi, "");
+  out = out.replace(/<style>[\s\S]*?<\/style>/gi, "");
+  out = out.replace(/<defs>\s*<\/defs>/gi, "");
+  return out;
+}
+
+function addSvgDimensionsFromViewBox(svg) {
+  if (/\bwidth\s*=/i.test(svg)) return svg;
+  const viewBoxMatch = svg.match(/viewBox=["']([^"']+)["']/i);
+  if (!viewBoxMatch) return svg;
+  const parts = viewBoxMatch[1].trim().split(/[\s,]+/).map(Number);
+  if (parts.length !== 4 || parts.some((n) => Number.isNaN(n) || n <= 0)) return svg;
+  const width = parts[2];
+  const height = parts[3];
+  const aspect = width / height;
+  if (aspect > 4 || aspect < 0.25) return svg;
+  return svg.replace(/<svg\b/, `<svg width="${width}" height="${height}"`);
+}
+
 function normalizeSvg(svg) {
   let s = svg.trim();
   s = s.replace(/<\?xml[\s\S]*?\?>/gi, "");
   s = s.replace(/<!--[\s\S]*?-->/g, "");
   s = unwrapSymbolSvg(s);
+  s = inlineSvgClassStyles(s);
+  s = addSvgDimensionsFromViewBox(s);
   if (!/aria-hidden/i.test(s)) {
     s = s.replace(/<svg\b/, '<svg aria-hidden="true" focusable="false"');
   }

@@ -273,6 +273,7 @@ function initProjectCatalogFilter() {
   const industrySel = root.querySelector("#project-filter-industry");
   const featuredCheckbox = root.querySelector("#project-filter-featured");
   const statusEl = root.querySelector("#project-filter-status");
+  const emptyEl = root.querySelector("#project-catalog-empty");
   const cards = Array.from(grid.querySelectorAll(".project-card"));
 
   if (!audienceSel || !industrySel || !featuredCheckbox || cards.length === 0)
@@ -335,6 +336,10 @@ function initProjectCatalogFilter() {
 
     if (statusEl) {
       statusEl.textContent = isFilterActive ? `${shown} / ${total}` : String(total);
+    }
+
+    if (emptyEl) {
+      emptyEl.hidden = !(isFilterActive && shown === 0);
     }
   }
 
