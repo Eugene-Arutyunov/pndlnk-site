@@ -1,44 +1,25 @@
-const fs = require("fs");
-const path = require("path");
-
 const FORCED_FEATURED_SLUGS = new Set([
+  "bank-tochka-issledovanie-korporativnoy-kultury",
+  "dodo-pitstsa-opyt-semey-s-detmi",
+  "yandex-opyt-voditeley-taksi",
+  "pyaterochka-testirovanie-effektivnosti-razmeschenie-korzinok-v-torgovyh-zalah",
+  "europharma-razrabotka-kontseptsii-seti-magazinov-u-doma",
+  "mango-telekom-kultura-sozdaniya-tsennosti",
+  "magnit-issledovanie-opyta-sotrudnikov-roznitsy",
+  "magnit-razrabotka-brenda-rabotodatelya-evp",
+  "t2-opyt-sotrudnikov-i-brend-rabotodatelya",
+  "sokolov-klientskiy-opyt",
+  "inappstory",
   "pyaterochka-razrabotka-idealnoy-telezhki",
   "vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma",
   "mavt-vinoteka-issledovanie-opyta-pokupateley",
 ]);
 
-function stripMarkup(source) {
-  return String(source || "")
-    .replace(/\{#[\s\S]*?#\}/g, " ")
-    .replace(/\{%\s*[\s\S]*?%\}/g, " ")
-    .replace(/\{\{\s*[\s\S]*?\}\}/g, " ")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&nbsp;/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function hasMeaningfulCaseContent(slug, projectsDir) {
-  const base = projectsDir || path.join(__dirname, "..", "projects");
-  const casePath = path.join(base, `${slug}.html`);
-  if (!fs.existsSync(casePath)) return false;
-
-  const raw = fs.readFileSync(casePath, "utf8");
-  const plainText = stripMarkup(raw).toLowerCase();
-
-  if (!plainText) return false;
-  if (/ещ[её]\s+(не\s+описан|в\s+работе|скоро)/i.test(plainText)) return false;
-
-  return plainText.length >= 220;
-}
-
-function isProjectFeatured(slug, projectsDir) {
-  if (FORCED_FEATURED_SLUGS.has(slug)) return true;
-  return hasMeaningfulCaseContent(slug, projectsDir);
+function isProjectFeatured(slug) {
+  return FORCED_FEATURED_SLUGS.has(slug);
 }
 
 module.exports = {
   FORCED_FEATURED_SLUGS,
-  hasMeaningfulCaseContent,
   isProjectFeatured,
 };

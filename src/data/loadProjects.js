@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { isProjectFeatured } = require("./projectFeatured.js");
+const { isProjectHidden } = require("./projectHidden.js");
 const {
   COMPANY_LOGO_MODIFIERS,
   PHOTO_COVER_SLUGS,
@@ -125,5 +126,7 @@ module.exports = function loadProjects() {
   const jsonPath = path.join(__dirname, "projects.json");
   const raw = fs.readFileSync(jsonPath, "utf8");
   const data = JSON.parse(raw);
-  return (data.projects || []).map(normalizeProject);
+  return (data.projects || [])
+    .filter((p) => !isProjectHidden(p.slug))
+    .map(normalizeProject);
 };

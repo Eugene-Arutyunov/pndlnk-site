@@ -8,6 +8,7 @@ const path = require("path");
 const { parse } = require("csv-parse/sync");
 const helpers = require("../src/data/projectMetaHelpers.js");
 const loadLegacyCsvProjects = require("../src/data/legacyCsvProjects.js");
+const { isProjectHidden } = require("../src/data/projectHidden.js");
 
 const PROJECTS_DIR = path.join(__dirname, "../src/projects");
 const OUT_PATH = path.join(__dirname, "../src/data/projects.json");
@@ -206,6 +207,8 @@ function main() {
 
   for (const file of files) {
     const slug = file.replace(/\.html$/, "");
+    if (isProjectHidden(slug)) continue;
+
     const html = fs.readFileSync(path.join(PROJECTS_DIR, file), "utf8");
     const entry = buildProjectEntry(slug, html, legacyBySlug);
 

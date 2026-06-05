@@ -1,6 +1,11 @@
 const loadProjects = require("./src/data/loadProjects.js");
+const { HIDDEN_PROJECT_SLUGS } = require("./src/data/projectHidden.js");
 
 module.exports = function (conf) {
+  for (const slug of HIDDEN_PROJECT_SLUGS) {
+    conf.ignores.add(`src/projects/${slug}.html`);
+  }
+
   const projects = loadProjects();
   conf.addGlobalData("projects", projects);
   conf.addGlobalData("homeProjects", projects);
