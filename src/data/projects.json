@@ -5,6 +5,11 @@
       "title": "Исследование опыта покупки САПР",
       "url": "/projects/autodesk-issledovanie-opyta-pokupki-sapr/",
       "year": "2019",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "CX-Исследование"
+      ],
       "client": {
         "key": "autodesk",
         "label": "Autodesk"
@@ -18,14 +23,6 @@
         "path": "assets/client-logos/autodesk.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -65,6 +62,11 @@
       "title": "Исследование корпоративной культуры",
       "url": "/projects/bank-tochka-issledovanie-korporativnoy-kultury/",
       "year": "2026",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование",
+        "Стратегия"
+      ],
       "client": {
         "key": "tochka",
         "label": "Банк Точка"
@@ -75,17 +77,10 @@
       },
       "logo": {
         "kind": "include",
-        "path": "assets/client-logos/tochka.html"
+        "path": "assets/client-logos/tochka.html",
+        "modifier": "project-card__logo--small"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
         {
           "category": "industries",
           "label": "Финансы",
@@ -102,6 +97,10 @@
           {
             "key": "employees",
             "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
           }
         ],
         "industries": [
@@ -112,10 +111,6 @@
           {
             "key": "finance",
             "label": "Финансы и банки"
-          },
-          {
-            "key": "hr-recruiting",
-            "label": "HR и рекрутинг"
           }
         ]
       }
@@ -125,6 +120,11 @@
       "title": "Диагностика функции создания ценности",
       "url": "/projects/cosmobeauty-diagnostika-funktsii-sozdaniya-tsennosti/",
       "year": "2025",
+      "product": "Продуктовый чекап",
+      "type": [
+        "Стратегия",
+        "Трансформация"
+      ],
       "client": {
         "key": "cosmobeauty",
         "label": "CosmoBeauty"
@@ -135,17 +135,10 @@
       },
       "logo": {
         "kind": "include",
-        "path": "assets/client-logos/cosmobeauty.html"
+        "path": "assets/client-logos/cosmobeauty.html",
+        "modifier": "project-card__logo--large"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
-        {
-          "category": "type",
-          "label": "Трансформация"
-        },
         {
           "category": "industries",
           "label": "Косметика",
@@ -159,10 +152,6 @@
       ],
       "filters": {
         "peopleSegment": [
-          {
-            "key": "employees",
-            "label": "Сотрудники"
-          },
           {
             "key": "clients",
             "label": "Клиенты"
@@ -185,6 +174,11 @@
       "title": "Разработка концепции нового продукта",
       "url": "/projects/datadarvin-razrabotka-kontseptsii-novogo-produkta/",
       "year": "2019",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "Разработка концепции"
+      ],
       "client": {
         "key": "datadarvin",
         "label": "DataDarvin"
@@ -195,17 +189,10 @@
       },
       "logo": {
         "kind": "include",
-        "path": "assets/client-logos/datadarvin.html"
+        "path": "assets/client-logos/datadarvin.html",
+        "modifier": "project-card__logo--large"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "Разработка концепции"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -245,6 +232,10 @@
       "title": "Опыт семей с детьми",
       "url": "/projects/dodo-pitstsa-opyt-semey-s-detmi/",
       "year": "2024",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "dodo",
         "label": "Додо Пицца"
@@ -258,10 +249,6 @@
         "path": "assets/client-logos/dodo.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Horeca",
@@ -292,6 +279,10 @@
       "title": "Разработка концепции дарксторов",
       "url": "/projects/europharma-razrabotka-kontseptsii-darkstorov/",
       "year": "2021",
+      "product": "Индивидуальный проект",
+      "type": [
+        "Разработка концепции"
+      ],
       "client": {
         "key": "europharma",
         "label": "EuroPharma"
@@ -305,10 +296,6 @@
         "path": "assets/client-logos/europharma.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "Разработка концепции"
-        },
         {
           "category": "industries",
           "label": "Grocery",
@@ -339,6 +326,11 @@
       "title": "Разработка концепции сети магазинов у дома",
       "url": "/projects/europharma-razrabotka-kontseptsii-seti-magazinov-u-doma/",
       "year": "2020",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "Разработка концепции"
+      ],
       "client": {
         "key": "europharma",
         "label": "EuroPharma"
@@ -352,14 +344,6 @@
         "path": "assets/client-logos/europharma.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "Разработка концепции"
-        },
         {
           "category": "industries",
           "label": "FMCG",
@@ -401,10 +385,6 @@
             "label": "Ритейл"
           },
           {
-            "key": "logistics",
-            "label": "Логистика"
-          },
-          {
             "key": "public-sector",
             "label": "Госсектор"
           }
@@ -416,6 +396,10 @@
       "title": "Исследование опыта болельщиков, фанатов и спортивных функционеров",
       "url": "/projects/fk-spartak-issledovanie-opyta-bolelschikov-fanatov-i-sportivnyh-funktsionerov/",
       "year": "2020",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "fk-spartak",
         "label": "ФК «Спартак»"
@@ -426,13 +410,10 @@
       },
       "logo": {
         "kind": "include",
-        "path": "assets/client-logos/fk-spartak.html"
+        "path": "assets/client-logos/fk-spartak.html",
+        "modifier": "project-card__logo--large"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Спорт",
@@ -452,10 +433,6 @@
         ],
         "industries": [
           {
-            "key": "public-sector",
-            "label": "Госсектор"
-          },
-          {
             "key": "other",
             "label": "Другое"
           }
@@ -467,6 +444,10 @@
       "title": "Исследование потребления чая",
       "url": "/projects/floris-issledovanie-potrebleniya-chaya/",
       "year": "2020",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM"
+      ],
       "client": {
         "key": "floris",
         "label": "Floris"
@@ -477,13 +458,10 @@
       },
       "logo": {
         "kind": "include",
-        "path": "assets/client-logos/floris.html"
+        "path": "assets/client-logos/floris.html",
+        "modifier": "project-card__logo--wide"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
         {
           "category": "industries",
           "label": "FMCG",
@@ -520,9 +498,14 @@
     },
     {
       "slug": "inappstory",
-      "title": "InAppStory",
+      "title": "Пересборка ценностного предложения",
       "url": "/projects/inappstory/",
       "year": "2025",
+      "product": "КСЦ",
+      "type": [
+        "Стратегия",
+        "Трансформация"
+      ],
       "client": {
         "key": "inappstory",
         "label": "InAppStory"
@@ -536,14 +519,6 @@
         "path": "assets/client-logos/inappstory.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
-        {
-          "category": "type",
-          "label": "Трансформация"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -570,6 +545,11 @@
       "title": "Диагностика треков внутрикарьерного развития экспертов",
       "url": "/projects/kontur-diagnostika-trekov-vnutrikarernogo-razvitiya-ekspertov/",
       "year": "2025",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование",
+        "Стратегия"
+      ],
       "client": {
         "key": "kontur",
         "label": "Контур"
@@ -583,14 +563,6 @@
         "path": "assets/client-logos/kontur.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -602,25 +574,29 @@
           {
             "key": "employees",
             "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
           }
         ],
         "industries": [
           {
             "key": "it-vendor",
             "label": "Вендор"
-          },
-          {
-            "key": "hr-recruiting",
-            "label": "HR и рекрутинг"
           }
         ]
       }
     },
     {
       "slug": "kontur-issledovanie-sellerov-marketpleysov",
-      "title": "Исследование селлеров маркетплейсов",
+      "title": "Исследование опыта селлеров маркетплейсов",
       "url": "/projects/kontur-issledovanie-sellerov-marketpleysov/",
       "year": "2023",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "kontur",
         "label": "Контур"
@@ -634,10 +610,6 @@
         "path": "assets/client-logos/kontur.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -664,6 +636,11 @@
       "title": "Барьеры перехода на КЭДО",
       "url": "/projects/lanit-barery-perehoda-na-kedo/",
       "year": "2024",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование",
+        "EX-Исследование"
+      ],
       "client": {
         "key": "lanit",
         "label": "Ланит"
@@ -677,14 +654,6 @@
         "path": "assets/client-logos/lanit.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -728,6 +697,10 @@
       "title": "Исследование пользователей КЭДО",
       "url": "/projects/lanit-issledovanie-polzovateley-kedo/",
       "year": "2024",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "lanit",
         "label": "Ланит"
@@ -741,10 +714,6 @@
         "path": "assets/client-logos/lanit.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -792,6 +761,11 @@
       "title": "Исследование последствий ухода западных вендоров",
       "url": "/projects/lanit-issledovanie-posledstviy-uhoda-zapadnyh-vendorov/",
       "year": "2022",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование",
+        "Стратегия"
+      ],
       "client": {
         "key": "lanit",
         "label": "Ланит"
@@ -805,14 +779,6 @@
         "path": "assets/client-logos/lanit.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -828,20 +794,16 @@
           {
             "key": "clients",
             "label": "Клиенты"
-          },
-          {
-            "key": "partners",
-            "label": "Партнёры"
           }
         ],
         "industries": [
           {
-            "key": "it-integrator",
-            "label": "Интегратор"
+            "key": "it-vendor",
+            "label": "Вендор"
           },
           {
-            "key": "it-vendor",
-            "label": "IT"
+            "key": "finance",
+            "label": "Финансы и банки"
           }
         ]
       }
@@ -851,6 +813,11 @@
       "title": "Исследование опыта покупателей группы «отделка стен»",
       "url": "/projects/leroy-merlin-issledovanie-opyta-pokupateley-gruppy-otdelka-sten/",
       "year": "2020",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "CX-Исследование"
+      ],
       "client": {
         "key": "leroy-merlin",
         "label": "Leroy Merlin"
@@ -865,14 +832,6 @@
       },
       "tags": [
         {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
-        {
           "category": "industries",
           "label": "DIY",
           "key": "retail"
@@ -885,6 +844,10 @@
       ],
       "filters": {
         "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
           {
             "key": "clients",
             "label": "Клиенты"
@@ -903,6 +866,11 @@
       "title": "Исследование опыта сотрудников розницы",
       "url": "/projects/magnit-issledovanie-opyta-sotrudnikov-roznitsy/",
       "year": "2020",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "EX-Исследование"
+      ],
       "client": {
         "key": "magnit",
         "label": "Магнит"
@@ -916,14 +884,6 @@
         "path": "assets/client-logos/magnit.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "FMCG",
@@ -972,6 +932,11 @@
       "title": "Разработка бренда работодателя (EVP)",
       "url": "/projects/magnit-razrabotka-brenda-rabotodatelya-evp/",
       "year": "2026",
+      "product": "Разработка EVP",
+      "type": [
+        "EX-Исследование",
+        "Стратегия"
+      ],
       "client": {
         "key": "magnit",
         "label": "Магнит"
@@ -985,14 +950,6 @@
         "path": "assets/client-logos/magnit.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
         {
           "category": "industries",
           "label": "FMCG",
@@ -1024,10 +981,6 @@
           {
             "key": "retail",
             "label": "Ритейл"
-          },
-          {
-            "key": "hr-recruiting",
-            "label": "HR и рекрутинг"
           }
         ]
       }
@@ -1037,6 +990,11 @@
       "title": "Культура создания ценности",
       "url": "/projects/mango-telekom-kultura-sozdaniya-tsennosti/",
       "year": "2025",
+      "product": "КСЦ",
+      "type": [
+        "Стратегия",
+        "Трансформация"
+      ],
       "client": {
         "key": "mango",
         "label": "Манго Телеком"
@@ -1047,17 +1005,10 @@
       },
       "logo": {
         "kind": "include",
-        "path": "assets/client-logos/mango.html"
+        "path": "assets/client-logos/mango.html",
+        "modifier": "project-card__logo--large"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
-        {
-          "category": "type",
-          "label": "Трансформация"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -1067,18 +1018,18 @@
       "filters": {
         "peopleSegment": [
           {
+            "key": "employees",
+            "label": "Сотрудники"
+          },
+          {
             "key": "clients",
             "label": "Клиенты"
           }
         ],
         "industries": [
           {
-            "key": "it-integrator",
-            "label": "Интегратор"
-          },
-          {
             "key": "it-vendor",
-            "label": "IT"
+            "label": "Вендор"
           }
         ]
       }
@@ -1088,6 +1039,11 @@
       "title": "Чекап ценностного предложения",
       "url": "/projects/maskoholic-chekap-tsennostnogo-predlozheniya/",
       "year": "2025",
+      "product": "Продуктовый чекап",
+      "type": [
+        "Стратегия",
+        "Трансформация"
+      ],
       "client": {
         "key": "maskoholic",
         "label": "Maskoholic"
@@ -1101,14 +1057,6 @@
         "path": "assets/client-logos/maskoholic.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
-        {
-          "category": "type",
-          "label": "Трансформация"
-        },
         {
           "category": "industries",
           "label": "Косметика",
@@ -1144,6 +1092,11 @@
       "title": "Исследование опыта покупателей",
       "url": "/projects/mavt-vinoteka-issledovanie-opyta-pokupateley/",
       "year": "2018",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "CX-Исследование"
+      ],
       "client": {
         "key": "mavt",
         "label": "МАВТ-Винотека"
@@ -1158,14 +1111,6 @@
         "modifier": "project-card__logo--small"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "FMCG",
@@ -1205,6 +1150,11 @@
       "title": "UX-Исследование Job-портала",
       "url": "/projects/megafon-ux-issledovanie-job-portala/",
       "year": "2021",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование",
+        "UX-Исследование"
+      ],
       "client": {
         "key": "megafon",
         "label": "МегаФон"
@@ -1218,14 +1168,6 @@
         "path": "assets/client-logos/megafon.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "UX-Исследование"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -1261,6 +1203,10 @@
       "title": "Исследование опыта агентов по продажам",
       "url": "/projects/mts-issledovanie-opyta-agentov-po-prodazham/",
       "year": "2023",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование"
+      ],
       "client": {
         "key": "mts",
         "label": "МТС"
@@ -1275,10 +1221,6 @@
         "modifier": "project-card__logo--mts"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Телеком",
@@ -1309,6 +1251,10 @@
       "title": "Исследование опыта продуктовых команд",
       "url": "/projects/mts-issledovanie-opyta-produktovyh-komand/",
       "year": "2023",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование"
+      ],
       "client": {
         "key": "mts",
         "label": "МТС"
@@ -1323,10 +1269,6 @@
         "modifier": "project-card__logo--mts"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -1361,6 +1303,10 @@
       "title": "Исследование опыта клиентов хостинга",
       "url": "/projects/netangels-issledovanie-opyta-klientov-hostinga/",
       "year": "2019",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "netangels",
         "label": "NetAngels"
@@ -1374,10 +1320,6 @@
         "path": "assets/client-logos/netangels.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -1412,6 +1354,10 @@
       "title": "Проблемы персонала магазинов",
       "url": "/projects/perekrestok-problemy-personala-magazinov/",
       "year": "2024",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование"
+      ],
       "client": {
         "key": "perekrestok",
         "label": "Перекрёсток"
@@ -1425,10 +1371,6 @@
         "path": "assets/client-logos/perekrestok.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -1463,6 +1405,12 @@
       "title": "Улучшение пути клиента",
       "url": "/projects/pik-uluchshenie-puti-klienta/",
       "year": "2022",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "CX-Исследование",
+        "Трансформация"
+      ],
       "client": {
         "key": "pik",
         "label": "ПИК"
@@ -1476,18 +1424,6 @@
         "path": "assets/client-logos/pik.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Трансформация"
-        },
         {
           "category": "industries",
           "label": "Девелопмент",
@@ -1518,6 +1454,11 @@
       "title": "Исследование и проектирование систем сбора обратной связи в розничных магазинах",
       "url": "/projects/pyaterochka-issledovanie-i-proektirovanie-sistem-sbora-obratnoy-svyazi-v-roznichnyh-magazinah/",
       "year": "2022",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "CX-Исследование"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -1531,14 +1472,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -1569,6 +1502,10 @@
       "title": "Исследование механик ОС",
       "url": "/projects/pyaterochka-issledovanie-mehanik-os/",
       "year": "2021",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -1582,10 +1519,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -1616,6 +1549,10 @@
       "title": "Исследование опыта директоров магазинов",
       "url": "/projects/pyaterochka-issledovanie-opyta-direktorov-magazinov/",
       "year": "2022",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -1629,10 +1566,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -1663,6 +1596,10 @@
       "title": "Исследование опыта найма у конкурентов",
       "url": "/projects/pyaterochka-issledovanie-opyta-nayma-u-konkurentov/",
       "year": "2021",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -1676,10 +1613,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "FMCG",
@@ -1719,6 +1652,12 @@
       "title": "Исследование опыта партнёров",
       "url": "/projects/pyaterochka-issledovanie-opyta-partnerov/",
       "year": "2021",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "CX-Исследование",
+        "EX-Исследование"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -1732,18 +1671,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -1778,6 +1705,10 @@
       "title": "Исследование опыта пользователей системы управления ресурсами",
       "url": "/projects/pyaterochka-issledovanie-opyta-polzovateley-sistemy-upravleniya-resursami/",
       "year": "2021",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -1791,10 +1722,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -1821,6 +1748,11 @@
       "title": "Исследование опыта пользователей системы управления задачами",
       "url": "/projects/pyaterochka-issledovanie-opyta-polzovateley-sistemy-upravleniya-zadachami/",
       "year": "2022",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование",
+        "UX-Исследование"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -1834,14 +1766,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "UX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -1868,6 +1792,11 @@
       "title": "Исследование опыта продуктовых команд",
       "url": "/projects/pyaterochka-issledovanie-opyta-produktovyh-komand/",
       "year": "2021",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "EX-Исследование"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -1881,14 +1810,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -1919,6 +1840,11 @@
       "title": "Исследование опыта сотрудников логистики",
       "url": "/projects/pyaterochka-issledovanie-opyta-sotrudnikov-logistiki/",
       "year": "2021",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "EX-Исследование"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -1932,14 +1858,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -1978,6 +1896,10 @@
       "title": "Переход с пластиковых карт на цифровую программу лояльности",
       "url": "/projects/pyaterochka-perehod-s-plastikovyh-kart-na-tsifrovuyu-programmu-loyalnost/",
       "year": "2023",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -1991,10 +1913,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -2021,6 +1939,10 @@
       "title": "Разработка идеальной тележки",
       "url": "/projects/pyaterochka-razrabotka-idealnoy-telezhki/",
       "year": "2022",
+      "product": "Индивидуальный проект",
+      "type": [
+        "Разработка концепции"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -2034,10 +1956,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "Разработка концепции"
-        },
         {
           "category": "industries",
           "label": "FMCG",
@@ -2090,6 +2008,11 @@
       "title": "Тестирование эффективности размещение корзинок в торговых залах",
       "url": "/projects/pyaterochka-testirovanie-effektivnosti-razmeschenie-korzinok-v-torgovyh-zalah/",
       "year": "2022",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование",
+        "Трансформация"
+      ],
       "client": {
         "key": "pyaterochka",
         "label": "Пятёрочка"
@@ -2103,14 +2026,6 @@
         "path": "assets/client-logos/pyaterochka.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Трансформация"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -2137,58 +2052,15 @@
       }
     },
     {
-      "slug": "razrabotka-kontseptsii-company-builder",
-      "title": "Разработка концепции Company Builder",
-      "url": "/projects/razrabotka-kontseptsii-company-builder/",
-      "year": "2021",
-      "client": {
-        "key": "company-builder",
-        "label": "Company Builder"
-      },
-      "coverColor": "128, 128, 128",
-      "cover": {
-        "kind": "logo"
-      },
-      "tags": [
-        {
-          "category": "type",
-          "label": "Разработка концепции"
-        },
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
-        {
-          "category": "industries",
-          "label": "Консалтинг",
-          "key": "consulting"
-        },
-        {
-          "category": "industries",
-          "label": "Стартапы",
-          "key": "consulting"
-        }
-      ],
-      "filters": {
-        "peopleSegment": [
-          {
-            "key": "clients",
-            "label": "Клиенты"
-          }
-        ],
-        "industries": [
-          {
-            "key": "consulting",
-            "label": "Консалтинг"
-          }
-        ]
-      }
-    },
-    {
       "slug": "rembot-issledovanie-opyta-polzovatelya",
       "title": "Исследование опыта пользователя",
       "url": "/projects/rembot-issledovanie-opyta-polzovatelya/",
       "year": "2019",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "UX-Исследование"
+      ],
       "client": {
         "key": "rembot",
         "label": "Рембот"
@@ -2202,14 +2074,6 @@
         "path": "assets/client-logos/rembot.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "UX-Исследование"
-        },
         {
           "category": "industries",
           "label": "DIY",
@@ -2253,6 +2117,10 @@
       "title": "Опыт гостя",
       "url": "/projects/rmk-arena-opyt-gostya/",
       "year": "2023",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "rmk-arena",
         "label": "РМК Арена"
@@ -2267,10 +2135,6 @@
         "modifier": "project-card__logo--rmk"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Спорт",
@@ -2301,6 +2165,11 @@
       "title": "Исследование опыта покупателей автомобилей сегмента премиум и масс",
       "url": "/projects/rolf-issledovanie-opyta-pokupateley-avtomobiley-segmenta-premium-i-mass/",
       "year": "2022",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "CX-Исследование"
+      ],
       "client": {
         "key": "rolf",
         "label": "Рольф"
@@ -2314,14 +2183,6 @@
         "path": "assets/client-logos/rolf.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Продажа автомобилей",
@@ -2352,6 +2213,11 @@
       "title": "Сервисная Стратегия",
       "url": "/projects/roza-hutor-servisnaya-strategiya/",
       "year": "2023",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование",
+        "Стратегия"
+      ],
       "client": {
         "key": "roza-khutor",
         "label": "Роза Хутор"
@@ -2366,14 +2232,6 @@
         "modifier": "project-card__logo--wide"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
         {
           "category": "industries",
           "label": "Туризм",
@@ -2408,6 +2266,11 @@
       "title": "Исследование мотивации b2b-клиентов",
       "url": "/projects/sbermarket-issledovanie-motivatsii-b2b-klientov/",
       "year": "2021",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование",
+        "Стратегия"
+      ],
       "client": {
         "key": "sbermarket",
         "label": "Сбермаркет"
@@ -2421,14 +2284,6 @@
         "path": "assets/client-logos/sbermarket.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
         {
           "category": "industries",
           "label": "Grocery",
@@ -2468,6 +2323,10 @@
       "title": "Исследование мотивации b2c-клиентов",
       "url": "/projects/sbermarket-issledovanie-motivatsii-b2c-klientov/",
       "year": "2020",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "sbermarket",
         "label": "Сбермаркет"
@@ -2481,10 +2340,6 @@
         "path": "assets/client-logos/sbermarket.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Grocery",
@@ -2524,6 +2379,10 @@
       "title": "Исследование опыта покупателей световых систем",
       "url": "/projects/sdsvet-issledovanie-opyta-pokupateley-svetovyh-sistem/",
       "year": "2019",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM"
+      ],
       "client": {
         "key": "sdvet",
         "label": "SDSvet"
@@ -2534,13 +2393,10 @@
       },
       "logo": {
         "kind": "include",
-        "path": "assets/client-logos/sdvet.html"
+        "path": "assets/client-logos/sdvet.html",
+        "modifier": "project-card__logo--small"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
         {
           "category": "industries",
           "label": "Освещение",
@@ -2572,6 +2428,12 @@
       "title": "Улучшение опыта потребителей и покупателей гериатрических услуг",
       "url": "/projects/seniorgroup-uluchshenie-opyta-potrebiteley-i-pokupateley-geriatricheskih-uslug/",
       "year": "2019",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "CX-Исследование",
+        "Трансформация"
+      ],
       "client": {
         "key": "seniorgroup",
         "label": "SeniorGroup"
@@ -2585,18 +2447,6 @@
         "path": "assets/client-logos/seniorgroup.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Трансформация"
-        },
         {
           "category": "industries",
           "label": "Медицина",
@@ -2627,6 +2477,10 @@
       "title": "Исследование для фонда",
       "url": "/projects/shalash-issledovanie-dlya-fonda/",
       "year": "2020",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "shalash",
         "label": "Шалаш"
@@ -2637,13 +2491,10 @@
       },
       "logo": {
         "kind": "include",
-        "path": "assets/client-logos/shalash.html"
+        "path": "assets/client-logos/shalash.html",
+        "modifier": "project-card__logo--large"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Благотворительность",
@@ -2674,6 +2525,11 @@
       "title": "Бренд работодателя",
       "url": "/projects/sipuni-brend-rabotodatelya/",
       "year": "2025",
+      "product": "Разработка EVP",
+      "type": [
+        "EX-Исследование",
+        "Стратегия"
+      ],
       "client": {
         "key": "sipuni",
         "label": "Сипуни"
@@ -2687,14 +2543,6 @@
         "path": "assets/client-logos/sipuni.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
         {
           "category": "industries",
           "label": "Телеком",
@@ -2729,6 +2577,10 @@
       "title": "Разработка концепции для Контур.Бухгалтерии",
       "url": "/projects/skb-kontur-razrabotka-kontseptsii-dlya-kontur-buhgalterii/",
       "year": "2020",
+      "product": "Индивидуальный проект",
+      "type": [
+        "Разработка концепции"
+      ],
       "client": {
         "key": "kontur",
         "label": "Контур"
@@ -2742,10 +2594,6 @@
         "path": "assets/client-logos/kontur.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "Разработка концепции"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -2776,6 +2624,10 @@
       "title": "Клиентский опыт",
       "url": "/projects/sokolov-klientskiy-opyt/",
       "year": "2026",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "sokolov",
         "label": "SOKOLOV"
@@ -2789,10 +2641,6 @@
         "path": "assets/client-logos/sokolov.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -2819,6 +2667,10 @@
       "title": "Опыт покупки квартир",
       "url": "/projects/strana-development-opyt-pokupki-kvartir/",
       "year": "2023",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "strana-development",
         "label": "Страна Девелопмент"
@@ -2832,10 +2684,6 @@
         "path": "assets/client-logos/strana-development.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Девелопмент",
@@ -2862,6 +2710,10 @@
       "title": "Исследование потребителей фастфуда",
       "url": "/projects/streets-issledovanie-potrebiteley-fastfuda/",
       "year": "2022",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "streets",
         "label": "Streets"
@@ -2875,10 +2727,6 @@
         "path": "assets/client-logos/streets.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Horeca",
@@ -2914,6 +2762,11 @@
       "title": "Опыт сотрудников и бренд работодателя",
       "url": "/projects/t2-opyt-sotrudnikov-i-brend-rabotodatelya/",
       "year": "2026",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование",
+        "Стратегия"
+      ],
       "client": {
         "key": "t2",
         "label": "T2"
@@ -2928,14 +2781,6 @@
         "modifier": "project-card__logo--compact"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
         {
           "category": "industries",
           "label": "Телеком",
@@ -2970,6 +2815,11 @@
       "title": "Разработка CJM",
       "url": "/projects/turisticheskiy-klaster-gora-belaya-razrabotka-cjm/",
       "year": "2019",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "CX-Исследование"
+      ],
       "client": {
         "key": "gora-belaya",
         "label": "Туристический кластер «Гора Белая»"
@@ -2983,14 +2833,6 @@
         "path": "assets/client-logos/gora-belaya.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Туризм",
@@ -3021,6 +2863,11 @@
       "title": "Чекап ценностного предложения",
       "url": "/projects/tutu-ru-chekap-tsennostnogo-predlozheniya/",
       "year": "2025",
+      "product": "Продуктовый чекап",
+      "type": [
+        "Стратегия",
+        "Трансформация"
+      ],
       "client": {
         "key": "tutu",
         "label": "Tutu.ru"
@@ -3034,14 +2881,6 @@
         "path": "assets/client-logos/tutu.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
-        {
-          "category": "type",
-          "label": "Трансформация"
-        },
         {
           "category": "industries",
           "label": "Туризм",
@@ -3068,6 +2907,11 @@
       "title": "Культура создания ценности",
       "url": "/projects/unicorngo-kultura-sozdaniya-tsennosti/",
       "year": "2025",
+      "product": "КСЦ",
+      "type": [
+        "Стратегия",
+        "Трансформация"
+      ],
       "client": {
         "key": "unicorngo",
         "label": "UnicornGo"
@@ -3081,14 +2925,6 @@
         "path": "assets/client-logos/unicorngo.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
-        {
-          "category": "type",
-          "label": "Трансформация"
-        },
         {
           "category": "industries",
           "label": "Логистика",
@@ -3124,6 +2960,10 @@
       "title": "Гиперсегментация и дизайн-система",
       "url": "/projects/vkusvill-gipersegmentatsiya-i-dizayn-sistema/",
       "year": "2023",
+      "product": "Индивидуальный проект",
+      "type": [
+        "Разработка концепции"
+      ],
       "client": {
         "key": "vkusvill",
         "label": "ВкусВилл"
@@ -3137,10 +2977,6 @@
         "path": "assets/client-logos/vkusvill.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "Разработка концепции"
-        },
         {
           "category": "industries",
           "label": "FMCG",
@@ -3181,6 +3017,11 @@
       "title": "Концепция новой сети магазинов у дома",
       "url": "/projects/vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma/",
       "year": "2019",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CJM",
+        "Разработка концепции"
+      ],
       "client": {
         "key": "vkusvill",
         "label": "ВкусВилл"
@@ -3194,14 +3035,6 @@
         "path": "assets/client-logos/vkusvill.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CJM"
-        },
-        {
-          "category": "type",
-          "label": "Разработка концепции"
-        },
         {
           "category": "industries",
           "label": "FMCG",
@@ -3246,6 +3079,10 @@
       "title": "CJM пользователя программы лояльности",
       "url": "/projects/x5-club-cjm-polzovatelya-programmy-loyalnosti/",
       "year": "2023",
+      "product": "Индивидуальный проект",
+      "type": [
+        "CX-Исследование"
+      ],
       "client": {
         "key": "x5-club",
         "label": "X5 Club"
@@ -3259,10 +3096,6 @@
         "path": "assets/client-logos/x5-club.html"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "CX-Исследование"
-        },
         {
           "category": "industries",
           "label": "Розница",
@@ -3293,6 +3126,11 @@
       "title": "Исследование бренда работодателя",
       "url": "/projects/yandeks-issledovanie-brenda-rabotodatelya/",
       "year": "2024",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование",
+        "Стратегия"
+      ],
       "client": {
         "key": "yandex",
         "label": "Яндекс"
@@ -3303,17 +3141,10 @@
       },
       "logo": {
         "kind": "include",
-        "path": "assets/client-logos/yandex.html"
+        "path": "assets/client-logos/yandex.html",
+        "modifier": "project-card__logo--small"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
-        {
-          "category": "type",
-          "label": "Стратегия"
-        },
         {
           "category": "industries",
           "label": "IT",
@@ -3344,6 +3175,10 @@
       "title": "Опыт водителей такси",
       "url": "/projects/yandex-opyt-voditeley-taksi/",
       "year": "2024",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование"
+      ],
       "client": {
         "key": "yandex",
         "label": "Яндекс"
@@ -3354,13 +3189,10 @@
       },
       "logo": {
         "kind": "include",
-        "path": "assets/client-logos/yandex.html"
+        "path": "assets/client-logos/yandex.html",
+        "modifier": "project-card__logo--small"
       },
       "tags": [
-        {
-          "category": "type",
-          "label": "EX-Исследование"
-        },
         {
           "category": "industries",
           "label": "IT",

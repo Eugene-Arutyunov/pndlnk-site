@@ -7,6 +7,16 @@ const {
   PHOTO_COVER_SLUGS,
 } = require("./projectMetaHelpers.js");
 
+const PRODUCT_INDIVIDUAL = "Индивидуальный проект";
+const PRODUCT_KSC = "КСЦ";
+
+function normalizeProductDisplay(rawProduct) {
+  const raw = String(rawProduct || "").trim();
+  if (!raw || raw === PRODUCT_INDIVIDUAL) return "";
+  if (raw === "Культура создания ценности") return PRODUCT_KSC;
+  return raw;
+}
+
 function normalizeLogoForCatalog(logo, clientKey) {
   if (!logo) {
     return { logoInclude: null, logoModifier: "", logoAsset: null };
@@ -49,13 +59,15 @@ function normalizeCover(cover, slug, logoInclude) {
   };
 }
 
-function buildDisplayTags(tags, year) {
+function buildDisplayTags(type, industryTags, product, year) {
   const out = [];
-  for (const tag of tags || []) {
-    if (tag.category === "type" || tag.category === "industries") {
-      out.push(tag.label);
-    }
+  for (const label of type || []) {
+    if (label) out.push(String(label));
   }
+  for (const label of industryTags || []) {
+    if (label) out.push(String(label));
+  }
+  if (product) out.push(String(product));
   if (year) out.push(String(year));
   return out;
 }
@@ -65,12 +77,14 @@ function normalizeProject(raw) {
   const clientLabel = raw.client?.label || "Другое";
   const tags = raw.tags || [];
 
-  const typeTags = tags
-    .filter((t) => t.category === "type")
-    .map((t) => t.label);
+  const type = (Array.isArray(raw.type) ? raw.type : [])
+    .map((label) => String(label).trim())
+    .filter(Boolean);
   const industryTags = tags
     .filter((t) => t.category === "industries")
     .map((t) => t.label);
+
+  const product = normalizeProductDisplay(raw.product);
 
   const audience = (raw.filters?.peopleSegment || [])
     .map((f) => f.key)
@@ -97,10 +111,11 @@ function normalizeProject(raw) {
     catalogTitle: raw.title,
     name: `${clientLabel}: ${raw.title}`,
     year: raw.year,
+    product,
+    type,
     url: raw.url || `/projects/${raw.slug}/`,
-    typeTags,
     industryTags,
-    tags: [...typeTags, ...industryTags],
+    tags: [...type, ...industryTags],
     brand: clientLabel,
     companySlug: clientKey,
     companyLabel: clientLabel,
@@ -112,7 +127,7 @@ function normalizeProject(raw) {
     logoAsset,
     logo: raw.logo,
     cover: raw.cover,
-    displayTags: buildDisplayTags(tags, raw.year),
+    displayTags: buildDisplayTags(type, industryTags, product, raw.year),
     client: raw.client,
     projectTags: tags,
     filters: raw.filters,

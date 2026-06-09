@@ -237,6 +237,7 @@ module.exports = function loadLegacyCsvProjects() {
       year: row["Год выполнения"],
       typeTags: splitList(row["Тип"] || ""),
       industryTags: splitList(row["Отрасль"] || ""),
+      productTag: (row["Продукт"] || "").trim() || "Индивидуальный проект",
       brand,
       companySlug,
       companyLabel,

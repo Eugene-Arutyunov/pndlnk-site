@@ -100,9 +100,18 @@
               else %}{{ project.name }}{% endif %}
             </h3>
             <div class="project-card__tags">
-              {% for tag in project.displayTags %}
+              {% for tag in project.type %}
               <span class="project-card__tag">{{ tag }}</span>
               {% endfor %}
+              {% for tag in project.industryTags %}
+              <span class="project-card__tag project-card__tag--industry">{{ tag }}</span>
+              {% endfor %}
+              {% if project.product %}
+              <span class="project-card__tag project-card__tag--product">{{ project.product }}</span>
+              {% endif %}
+              {% if project.year %}
+              <span class="project-card__tag project-card__tag--year">{{ project.year }}</span>
+              {% endif %}
             </div>
           </div>
         </a>

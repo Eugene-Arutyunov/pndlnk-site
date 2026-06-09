@@ -23,14 +23,17 @@
     </div>
     {% endif %}
 
-    {% if p.typeTags.length or p.industryTags.length or p.year %}
+    {% if p.type.length or p.industryTags.length or p.product or p.year %}
     <ul class="case-page__tags" aria-label="Теги кейса">
-      {% for tag in p.typeTags %}
+      {% for tag in p.type %}
       <li><span class="case-page__tag">{{ tag }}</span></li>
       {% endfor %}
       {% for tag in p.industryTags %}
       <li><span class="case-page__tag case-page__tag--industry">{{ tag }}</span></li>
       {% endfor %}
+      {% if p.product %}
+      <li><span class="case-page__tag case-page__tag--product">{{ p.product }}</span></li>
+      {% endif %}
       {% if p.year %}
       <li><span class="case-page__tag case-page__tag--year">{{ p.year }}</span></li>
       {% endif %}

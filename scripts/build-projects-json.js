@@ -131,6 +131,9 @@ function buildProjectEntry(slug, html, legacyBySlug) {
     industryLabels = legacy.industryTags;
   }
 
+  const productLabel =
+    legacy?.productTag?.trim() || "Индивидуальный проект";
+
   const typeStr = typeLabels.join(", ");
   const industryStr = industryLabels.join(", ");
   const caseText = html
@@ -154,14 +157,11 @@ function buildProjectEntry(slug, html, legacyBySlug) {
     );
   }
 
-  const tags = [
-    ...typeLabels.map((label) => ({ category: "type", label })),
-    ...industryLabels.map((label) => ({
-      category: "industries",
-      label,
-      key: inferIndustryKeyForLabel(label, brandSource, typeStr),
-    })),
-  ];
+  const tags = industryLabels.map((label) => ({
+    category: "industries",
+    label,
+    key: inferIndustryKeyForLabel(label, brandSource, typeStr),
+  }));
 
   let logo = parseLogoFromHtml(html);
   if (!logo) logo = buildLogoConfig(clientKey);
@@ -181,6 +181,8 @@ function buildProjectEntry(slug, html, legacyBySlug) {
     title,
     url: `/projects/${slug}/`,
     year: String(year || "").trim(),
+    product: productLabel,
+    type: typeLabels,
     client: { key: clientKey, label: clientLabel },
     coverColor,
     cover,
