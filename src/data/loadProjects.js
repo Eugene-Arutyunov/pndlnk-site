@@ -72,6 +72,42 @@ function buildDisplayTags(type, industryTags, product, year) {
   return out;
 }
 
+function parseYearForSort(value) {
+  const year = String(value || "").trim();
+  if (!/^\d{4}$/.test(year)) return null;
+  return Number(year);
+}
+
+function normalizeTitleForSort(value) {
+  return String(value || "")
+    .replace(/\u00ad/g, "")
+    .replace(/\u00a0/g, " ")
+    .trim();
+}
+
+function compareProjects(a, b) {
+  const yearA = parseYearForSort(a.year);
+  const yearB = parseYearForSort(b.year);
+  const hasYearA = yearA != null;
+  const hasYearB = yearB != null;
+
+  if (hasYearA && hasYearB && yearA !== yearB) {
+    return yearB - yearA;
+  }
+  if (hasYearA !== hasYearB) {
+    return hasYearA ? -1 : 1;
+  }
+
+  const titleA = normalizeTitleForSort(a.catalogTitle || a.title);
+  const titleB = normalizeTitleForSort(b.catalogTitle || b.title);
+  const byTitle = titleA.localeCompare(titleB, "ru", { sensitivity: "base" });
+  if (byTitle !== 0) return byTitle;
+
+  return String(a.slug || "").localeCompare(String(b.slug || ""), "ru", {
+    sensitivity: "base",
+  });
+}
+
 function normalizeProject(raw) {
   const clientKey = raw.client?.key || "other";
   const clientLabel = raw.client?.label || "Другое";
@@ -143,5 +179,6 @@ module.exports = function loadProjects() {
   const data = JSON.parse(raw);
   return (data.projects || [])
     .filter((p) => !isProjectHidden(p.slug))
-    .map(normalizeProject);
+    .map(normalizeProject)
+    .sort(compareProjects);
 };

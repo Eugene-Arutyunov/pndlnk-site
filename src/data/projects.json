@@ -1199,6 +1199,50 @@
       }
     },
     {
+      "slug": "mts-etnografiya-v-ekosistemah",
+      "title": "Этнография в экосистемах",
+      "url": "/projects/mts-etnografiya-v-ekosistemah/",
+      "year": "2023",
+      "product": "Индивидуальный проект",
+      "type": [
+        "EX-Исследование"
+      ],
+      "client": {
+        "key": "mts",
+        "label": "МТС"
+      },
+      "coverColor": "255, 0, 50",
+      "cover": {
+        "kind": "logo"
+      },
+      "logo": {
+        "kind": "include",
+        "path": "assets/client-logos/mts.html",
+        "modifier": "project-card__logo--mts"
+      },
+      "tags": [
+        {
+          "category": "industries",
+          "label": "IT",
+          "key": "it-vendor"
+        }
+      ],
+      "filters": {
+        "peopleSegment": [
+          {
+            "key": "employees",
+            "label": "Сотрудники"
+          }
+        ],
+        "industries": [
+          {
+            "key": "it-vendor",
+            "label": "Вендор"
+          }
+        ]
+      }
+    },
+    {
       "slug": "mts-issledovanie-opyta-agentov-po-prodazham",
       "title": "Исследование опыта агентов по продажам",
       "url": "/projects/mts-issledovanie-opyta-agentov-po-prodazham/",
@@ -1247,9 +1291,9 @@
       }
     },
     {
-      "slug": "mts-issledovanie-opyta-produktovyh-komand",
-      "title": "Исследование опыта продуктовых команд",
-      "url": "/projects/mts-issledovanie-opyta-produktovyh-komand/",
+      "slug": "mts-opyt-kandidatov-produktovogo-treugolnika",
+      "title": "Опыт кандидатов продуктового треугольника",
+      "url": "/projects/mts-opyt-kandidatov-produktovogo-treugolnika/",
       "year": "2023",
       "product": "Индивидуальный проект",
       "type": [
@@ -1280,10 +1324,6 @@
           {
             "key": "employees",
             "label": "Сотрудники"
-          },
-          {
-            "key": "clients",
-            "label": "Клиенты"
           }
         ],
         "industries": [
@@ -1328,10 +1368,6 @@
       ],
       "filters": {
         "peopleSegment": [
-          {
-            "key": "employees",
-            "label": "Сотрудники"
-          },
           {
             "key": "clients",
             "label": "Клиенты"
@@ -1382,20 +1418,12 @@
           {
             "key": "employees",
             "label": "Сотрудники"
-          },
-          {
-            "key": "clients",
-            "label": "Клиенты"
           }
         ],
         "industries": [
           {
             "key": "retail",
             "label": "Ритейл"
-          },
-          {
-            "key": "hr-recruiting",
-            "label": "HR и рекрутинг"
           }
         ]
       }
@@ -1451,7 +1479,7 @@
     },
     {
       "slug": "pyaterochka-issledovanie-i-proektirovanie-sistem-sbora-obratnoy-svyazi-v-roznichnyh-magazinah",
-      "title": "Исследование и проектирование систем сбора обратной связи в розничных магазинах",
+      "title": "Исследование сбора обратной связи в магазинах",
       "url": "/projects/pyaterochka-issledovanie-i-proektirovanie-sistem-sbora-obratnoy-svyazi-v-roznichnyh-magazinah/",
       "year": "2022",
       "product": "Индивидуальный проект",
@@ -1587,6 +1615,14 @@
           {
             "key": "retail",
             "label": "Ритейл"
+          },
+          {
+            "key": "logistics",
+            "label": "Логистика"
+          },
+          {
+            "key": "hr-recruiting",
+            "label": "HR и рекрутинг"
           }
         ]
       }
@@ -1893,7 +1929,7 @@
     },
     {
       "slug": "pyaterochka-perehod-s-plastikovyh-kart-na-tsifrovuyu-programmu-loyalnost",
-      "title": "Переход с пластиковых карт на цифровую программу лояльности",
+      "title": "Переход с пласти­ковых карт на циф­ровую прог­рамму лояльности",
       "url": "/projects/pyaterochka-perehod-s-plastikovyh-kart-na-tsifrovuyu-programmu-loyalnost/",
       "year": "2023",
       "product": "Индивидуальный проект",
@@ -2456,10 +2492,6 @@
       "filters": {
         "peopleSegment": [
           {
-            "key": "employees",
-            "label": "Сотрудники"
-          },
-          {
             "key": "clients",
             "label": "Клиенты"
           }
@@ -2474,7 +2506,7 @@
     },
     {
       "slug": "shalash-issledovanie-dlya-fonda",
-      "title": "Исследование для фонда",
+      "title": "Исследование для фонда",
       "url": "/projects/shalash-issledovanie-dlya-fonda/",
       "year": "2020",
       "product": "Индивидуальный проект",
@@ -2574,7 +2606,7 @@
     },
     {
       "slug": "skb-kontur-razrabotka-kontseptsii-dlya-kontur-buhgalterii",
-      "title": "Разработка концепции для Контур.Бухгалтерии",
+      "title": "Разработка концепции для Контур Бухгалтерии",
       "url": "/projects/skb-kontur-razrabotka-kontseptsii-dlya-kontur-buhgalterii/",
       "year": "2020",
       "product": "Индивидуальный проект",
@@ -2605,10 +2637,6 @@
           {
             "key": "employees",
             "label": "Сотрудники"
-          },
-          {
-            "key": "clients",
-            "label": "Клиенты"
           }
         ],
         "industries": [
@@ -2759,7 +2787,7 @@
     },
     {
       "slug": "t2-opyt-sotrudnikov-i-brend-rabotodatelya",
-      "title": "Опыт сотрудников и бренд работодателя",
+      "title": "Опыт сотрудников и бренд работодателя",
       "url": "/projects/t2-opyt-sotrudnikov-i-brend-rabotodatelya/",
       "year": "2026",
       "product": "Индивидуальный проект",
@@ -2792,20 +2820,12 @@
           {
             "key": "employees",
             "label": "Сотрудники"
-          },
-          {
-            "key": "clients",
-            "label": "Клиенты"
           }
         ],
         "industries": [
           {
             "key": "telecom",
             "label": "Телеком"
-          },
-          {
-            "key": "hr-recruiting",
-            "label": "HR и рекрутинг"
           }
         ]
       }
@@ -2941,6 +2961,10 @@
           {
             "key": "employees",
             "label": "Сотрудники"
+          },
+          {
+            "key": "clients",
+            "label": "Клиенты"
           }
         ],
         "industries": [
@@ -3104,10 +3128,6 @@
       ],
       "filters": {
         "peopleSegment": [
-          {
-            "key": "employees",
-            "label": "Сотрудники"
-          },
           {
             "key": "clients",
             "label": "Клиенты"

@@ -10,6 +10,8 @@ const FORCED_FEATURED_SLUGS = new Set([
   "t2-opyt-sotrudnikov-i-brend-rabotodatelya",
   "sokolov-klientskiy-opyt",
   "inappstory",
+  "mts-etnografiya-v-ekosistemah",
+  "mts-opyt-kandidatov-produktovogo-treugolnika",
   "pyaterochka-razrabotka-idealnoy-telezhki",
   "vkusvill-kontseptsiya-novoy-seti-magazinov-u-doma",
   "mavt-vinoteka-issledovanie-opyta-pokupateley",
