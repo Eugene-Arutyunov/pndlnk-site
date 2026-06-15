@@ -52,13 +52,22 @@
       });
     });
 
+    const descByTitle = {};
+    document.querySelectorAll('.promo-row__product-description').forEach(function (el) {
+      const body = el.closest('.promo-row__situation-detail-body');
+      const link = body && body.querySelector('[data-cf-title]');
+      if (link) {
+        descByTitle[link.dataset.cfTitle] = el.textContent.replace(/[ \t\n\r]+/g, ' ').trim();
+      }
+    });
+
     document.querySelectorAll('.contact-form-trigger').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         ContactForm.open({
           title: btn.dataset.cfTitle || '',
           tariff: btn.dataset.cfTariff || '',
-          description: btn.dataset.cfDescription || '',
+          description: btn.dataset.cfDescription || descByTitle[btn.dataset.cfTitle] || '',
           submitText: btn.dataset.cfSubmit || 'Отправить',
           showHeadCount: btn.dataset.cfShowHeadcount === 'true',
           successUrl: btn.dataset.cfSuccessUrl || '',
