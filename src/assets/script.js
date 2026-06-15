@@ -274,6 +274,7 @@ function initProjectCatalogFilter() {
   const featuredCheckbox = root.querySelector("#project-filter-featured");
   const statusEl = root.querySelector("#project-filter-status");
   const emptyEl = root.querySelector("#project-catalog-empty");
+  const showAllEl = root.querySelector("#project-catalog-show-all");
   const cards = Array.from(grid.querySelectorAll(".project-card"));
 
   if (!audienceSel || !industrySel || !featuredCheckbox || cards.length === 0)
@@ -341,15 +342,28 @@ function initProjectCatalogFilter() {
     if (emptyEl) {
       emptyEl.hidden = !(isFilterActive && shown === 0);
     }
+
+    if (showAllEl) {
+      showAllEl.hidden = !isFilterActive;
+    }
+  }
+
+  function showAll() {
+    audienceSel.value = "all";
+    industrySel.value = "all";
+    featuredCheckbox.checked = false;
+    apply();
   }
 
   audienceSel.addEventListener("change", apply);
   industrySel.addEventListener("change", apply);
   featuredCheckbox.addEventListener("change", apply);
+  if (showAllEl) showAllEl.addEventListener("click", showAll);
   window.addEventListener("pageshow", apply);
+  const defaultFeatured = root.dataset.defaultFeatured === "true";
   audienceSel.value = "all";
   industrySel.value = "all";
-  featuredCheckbox.checked = false;
+  featuredCheckbox.checked = defaultFeatured;
   apply();
 }
 

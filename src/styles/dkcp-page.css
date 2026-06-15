@@ -336,6 +336,38 @@
     color: rgba(var(--ids__text-RGB), 0.75);
   }
 
+  .project-catalog-show-all {
+    display: block;
+    width: 100%;
+    margin-top: 1.5em;
+    padding: 0.5em 0.6em;
+    border: 1px solid rgba(var(--ids__text-RGB), 0.3);
+    border-radius: 0;
+    background: none;
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 0.75em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    color: inherit;
+    transition:
+      border-color 0.5s ease,
+      color 0.5s ease;
+
+    &:hover {
+      border-color: rgb(var(--ids__hover-RGB));
+      color: rgb(var(--ids__hover-RGB));
+      transition:
+        border-color 0s,
+        color 0s;
+    }
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
   .project-card.is-hidden {
     display: none;
   }

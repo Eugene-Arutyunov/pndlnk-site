@@ -1,4 +1,6 @@
-<div class="project-catalog-panel">
+<div
+  class="project-catalog-panel"
+  data-default-featured="{{ catalogDefaultFeatured and 'true' or 'false' }}">
   <div class="project-catalog-filter">
     <div
       class="project-catalog-filter__row"
@@ -59,7 +61,15 @@
         </label>
       </p>
       <label class="project-catalog-filter__checkbox">
-        <input type="checkbox" id="project-filter-featured" />
+        <input
+          type="checkbox"
+          id="project-filter-featured"
+          {%
+          if
+          catalogDefaultFeatured
+          %}checked{%
+          endif
+          %} />
         <span>Избранные проекты</span>
       </label>
       <p
@@ -95,22 +105,22 @@
             {% endif %}
           </div>
           <div class="project-card__body">
-            <h3 class="project-card__title">
-              {% if catalogTitlesWithoutBrand %}{{ project.catalogTitle }}{%
-              else %}{{ project.name }}{% endif %}
-            </h3>
+            <h3 class="project-card__title">{{ project.catalogTitle }}</h3>
             <div class="project-card__tags">
               {% for tag in project.type %}
               <span class="project-card__tag">{{ tag }}</span>
-              {% endfor %}
-              {% for tag in project.industryTags %}
-              <span class="project-card__tag project-card__tag--industry">{{ tag }}</span>
-              {% endfor %}
-              {% if project.product %}
-              <span class="project-card__tag project-card__tag--product">{{ project.product }}</span>
-              {% endif %}
-              {% if project.year %}
-              <span class="project-card__tag project-card__tag--year">{{ project.year }}</span>
+              {% endfor %} {% for tag in project.industryTags %}
+              <span class="project-card__tag project-card__tag--industry"
+                >{{ tag }}</span
+              >
+              {% endfor %} {% if project.product %}
+              <span class="project-card__tag project-card__tag--product"
+                >{{ project.product }}</span
+              >
+              {% endif %} {% if project.year %}
+              <span class="project-card__tag project-card__tag--year"
+                >{{ project.year }}</span
+              >
               {% endif %}
             </div>
           </div>
@@ -130,5 +140,12 @@
         Обсудить проект
       </button>
     </div>
+    <button
+      type="button"
+      class="project-catalog-show-all"
+      id="project-catalog-show-all"
+      hidden>
+      Показать все
+    </button>
   </div>
 </div>

@@ -1,33 +1,37 @@
-{% extends 'layout.html' %}
-{% from 'macros/case-page-meta.njk' import caseMeta with context %}
-{% set pageTitle = 'Разработка бренда работодателя (EVP)' %}
-{% block content %}
+{% extends 'layout.html' %} {% from 'macros/case-page-meta.njk' import caseMeta
+with context %} {% set pageTitle = 'Разработка бренда работодателя' %} {% block
+content %}
 <div class="ids__wrapper case-featured case-page">
-{{ caseMeta(page) }}
-<div class="ids__sequence XL gap-L mobile-XL">
-<div class="ids__sequence-item">
-<h2 class="project-bento">Контекст</h2>
-<p>
-      «Магнит» открывает новое подразделение, для которого нужно нанять более 1500 сотрудников.
-    </p>
-</div>
-<div class="ids__sequence-item">
-<h2 class="project-bento">Запрос</h2>
-<p>Разработать конкурентоспособное ценностное предложение работодателя.</p>
-</div>
-<div class="ids__sequence-item">
-<h2 class="project-bento">Процесс</h2>
-<p>
-      Проект в работе прямо сейчас, пока не можем раскрыть подробности из-за NDA
-    </p>
-</div>
-<div class="ids__sequence-item">
-<h2 class="project-bento">Результат</h2>
-<p>
-  Проект в работе прямо сейчас, пока не можем раскрыть подробности из-за NDA
-    </p>
-</div>
-</div>
-{% include 'partials/case-page-actions.njk' %}
+  {{ caseMeta(page) }}
+  <div class="ids__sequence XL gap-L mobile-XL">
+    <div class="ids__sequence-item">
+      <h2 class="project-bento">Контекст</h2>
+      <p>
+        «Магнит» открывает новое подразделение, для которого нужно нанять более
+        1500 сотрудников.
+      </p>
+    </div>
+    <div class="ids__sequence-item">
+      <h2 class="project-bento">Запрос</h2>
+      <p>
+        Разработать конкурентоспособное ценностное предложение работодателя.
+      </p>
+    </div>
+    <div class="ids__sequence-item">
+      <h2 class="project-bento">Процесс</h2>
+      <p>
+        Проект в работе прямо сейчас, пока не можем раскрыть подробности из-за
+        NDA
+      </p>
+    </div>
+    <div class="ids__sequence-item">
+      <h2 class="project-bento">Результат</h2>
+      <p>
+        Проект в работе прямо сейчас, пока не можем раскрыть подробности из-за
+        NDA
+      </p>
+    </div>
+  </div>
+  {% include 'partials/case-page-actions.njk' %}
 </div>
 {% endblock %}

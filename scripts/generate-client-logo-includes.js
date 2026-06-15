@@ -184,7 +184,16 @@ function inlineSvgClassStyles(svg) {
   for (const match of svg.matchAll(/\.([a-z0-9_-]+)\s*\{[^}]*fill:\s*([^;}\s]+)/gi)) {
     classFills[match[1]] = match[2];
   }
-  if (Object.keys(classFills).length === 0) return svg;
+  const classClipPaths = {};
+  for (const match of svg.matchAll(/\.([a-z0-9_-]+)\s*\{[^}]*clip-path:\s*([^;}]+)/gi)) {
+    classClipPaths[match[1].trim()] = match[2].trim();
+  }
+  if (
+    Object.keys(classFills).length === 0 &&
+    Object.keys(classClipPaths).length === 0
+  ) {
+    return svg;
+  }
 
   let out = svg;
   for (const [cls, fill] of Object.entries(classFills)) {
@@ -196,6 +205,18 @@ function inlineSvgClassStyles(svg) {
         );
         if (!classMatch || /fill\s*=/i.test(attrs)) return full;
         return `<${tag} fill="${fill}"${attrs}>`;
+      },
+    );
+  }
+  for (const [cls, clip] of Object.entries(classClipPaths)) {
+    out = out.replace(
+      /<(g|path|polygon|rect|circle|ellipse|polyline|use)\b([^>]*?)>/gi,
+      (full, tag, attrs) => {
+        const classMatch = attrs.match(
+          new RegExp(`\\bclass=(["'])((?:[^'"]*\\s)?${cls}(?:\\s[^'"]*)?)\\1`, "i"),
+        );
+        if (!classMatch || /clip-path\s*=/i.test(attrs)) return full;
+        return `<${tag} clip-path="${clip}"${attrs}>`;
       },
     );
   }

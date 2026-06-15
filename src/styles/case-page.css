@@ -15,7 +15,7 @@
 }
 
 .ids .case-page:not(.article) .case-page__header .case-page__brand-logo {
-  margin-top: 0.2em;
+  margin-top: 0;
   line-height: 0;
   flex-shrink: 0;
   align-self: flex-start;
@@ -28,7 +28,7 @@
 .ids .case-page:not(.article) .case-page__header .case-page__brand-logo svg {
   display: block;
   width: auto;
-  height: 1.15em;
+  height: 1.35em;
   max-width: 7.5em;
 }
 
