@@ -14,9 +14,8 @@ Twenty CRM (crm.pndlnk.ru)
 — создаёт/находит контакт
 — создаёт сделку и прикрепляет заметку
      ↓
-Twenty Workflow
-— триггер: создание Opportunity
-— действие: Send Email → mr@pndlnk.team
+Telegram (бот @xlnce_bot → личка, chat_id 20439)
+— сообщение о новой заявке со ссылкой на сделку/контакт в CRM
 ```
 
 ---
@@ -149,33 +148,44 @@ Content-Type: application/json
 
 ---
 
-## Email-уведомления
+## Telegram-уведомления
 
-Реализовано через **Twenty Workflow**.
+Реализовано прямо в `server.py` (функция `send_telegram`). На каждую заявку
+шлётся сообщение в Telegram со ссылкой на созданную сделку (или контакт, если
+заявка без slug).
 
-**Воркфлоу:** «Уведомление о новой заявке с сайта»  
-**Триггер:** создание Opportunity  
-**Действие:** Send Email через аккаунт `cxburo@gmail.com`  
-**Получатель:** `mr@pndlnk.team`
+**Бот:** `@xlnce_bot` («Экселенц», общий с Unisender — конфликта нет, отправка
+не мешает приёму обновлений)  
+**Получатель:** личка, `chat_id = 20439`  
+**Конфиг:** константы `TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID` в начале `server.py`  
+Сбой отправки в Telegram логируется как WARNING и **не** ломает приём заявки.
 
-### Настройка email-аккаунта
+### ⚠️ Обходной путь для блокировки Telegram API
 
-Аккаунт `cxburo@gmail.com` подключён в Twenty через IMAP/SMTP с App Password.  
-Если перестанет работать (например, после смены App Password):
-- Settings → Accounts → cxburo@gmail.com → переподключить
+С серверов в РФ дефолтный IP `api.telegram.org` (149.154.166.110) недоступен
+(заблокирован). На `apps` прописан рабочий IP в `/etc/hosts`:
 
-### Если воркфлоу перестал работать
+```
+149.154.167.220 api.telegram.org
+```
+
+Если уведомления перестанут приходить (`Network is unreachable` / таймаут в
+логах) — проверь доступность IP и при необходимости подбери другой рабочий из
+диапазонов Telegram (`149.154.160.0/20`, `91.108.4.0/22`):
 
 ```bash
-# Проверить статус worker-контейнера
-ssh apps "docker compose -f /opt/twenty/docker-compose.yml ps"
-
-# Логи worker
-ssh apps "docker logs twenty-worker-1 2>&1 | tail -50"
-
-# Перезапустить worker
-ssh apps "cd /opt/twenty && docker compose restart worker"
+# найти живой IP
+for ip in 149.154.167.220 149.154.167.197 149.154.175.50; do
+  ssh apps "curl -4 -s -m 6 --resolve api.telegram.org:443:$ip -o /dev/null -w '$ip -> %{http_code}\n' https://api.telegram.org/"
+done
+# заменить в /etc/hosts на рабочий
 ```
+
+### Email-уведомления (выключены)
+
+В `server.py` есть готовая функция `send_notification` (Gmail SMTP →
+`mr@pndlnk.team`), но вызовы закомментированы. Чтобы включить — раскомментировать
+строки `send_notification(...)` в обоих обработчиках.
 
 ---
 
