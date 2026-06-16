@@ -157,28 +157,29 @@ Content-Type: application/json
 **Бот:** `@xlnce_bot` («Экселенц», общий с Unisender — конфликта нет, отправка
 не мешает приёму обновлений)  
 **Получатель:** личка, `chat_id = 20439`  
-**Конфиг:** константы `TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID` в начале `server.py`  
+**Конфиг:** константы `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `TELEGRAM_PROXY` в начале `server.py`  
 Сбой отправки в Telegram логируется как WARNING и **не** ломает приём заявки.
 
-### ⚠️ Обходной путь для блокировки Telegram API
+### Доставка через SOCKS5-прокси (обход блокировки Telegram)
 
-С серверов в РФ дефолтный IP `api.telegram.org` (149.154.166.110) недоступен
-(заблокирован). На `apps` прописан рабочий IP в `/etc/hosts`:
+`api.telegram.org` заблокирован с РФ-серверов (TCP до его IP таймаутит). Поэтому
+запрос к Bot API идёт **через SOCKS5-прокси в Хельсинки** (`relay-hel.pndlnk.ru`,
+`194.76.217.181:1080`). Реализовано через `curl -x socks5h://…` (см. `send_telegram`):
+схема `socks5h` резолвит DNS на стороне прокси, поэтому заблокированный IP не мешает.
 
+```python
+TELEGRAM_PROXY = "socks5h://bureau:…@194.76.217.181:1080"
 ```
-149.154.167.220 api.telegram.org
-```
 
-Если уведомления перестанут приходить (`Network is unreachable` / таймаут в
-логах) — проверь доступность IP и при необходимости подбери другой рабочий из
-диапазонов Telegram (`149.154.160.0/20`, `91.108.4.0/22`):
+> Детали прокси — в `~/admin/proxy2.md`. Резерв — локальный SOCKS5 на самом `apps`
+> `127.0.0.1:10808` (Xray → Франкфурт), но на момент настройки он не отвечал.
 
+Если уведомления перестанут приходить — проверь прокси:
 ```bash
-# найти живой IP
-for ip in 149.154.167.220 149.154.167.197 149.154.175.50; do
-  ssh apps "curl -4 -s -m 6 --resolve api.telegram.org:443:$ip -o /dev/null -w '$ip -> %{http_code}\n' https://api.telegram.org/"
-done
-# заменить в /etc/hosts на рабочий
+# Bot API через прокси должен вернуть {"ok":true,...}
+ssh apps "curl -s -m 12 -x 'socks5h://bureau:ПАРОЛЬ@194.76.217.181:1080' https://api.telegram.org/bot<TOKEN>/getMe"
+# статус прокси-сервисов
+ssh proxy2 "systemctl status danted xray"
 ```
 
 ### Email-уведомления (выключены)
