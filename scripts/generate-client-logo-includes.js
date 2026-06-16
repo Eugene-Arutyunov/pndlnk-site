@@ -30,7 +30,7 @@ const LOGO_BY_COMPANY = {
   megafon: "МегаФон.svg",
   mts: "МТС.svg",
   netangels: "NetAngels.svg",
-  perekrestok: "Х5.svg",
+  perekrestok: "Перекрёсток.svg",
   pik: "ПИК.svg",
   pyaterochka: "Пятёрочка.svg",
   rembot: "Rembot.svg",

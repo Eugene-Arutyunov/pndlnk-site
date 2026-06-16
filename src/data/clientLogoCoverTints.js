@@ -9,7 +9,7 @@ module.exports = {
   "megafon": "0, 185, 86",
   "mts": "255, 0, 50",
   "netangels": "0, 102, 255",
-  "perekrestok": "95, 175, 45",
+  "perekrestok": "0, 90, 40",
   "pyaterochka": "235, 35, 22",
   "rolf": "229, 37, 33",
   "seniorgroup": "142, 0, 30",

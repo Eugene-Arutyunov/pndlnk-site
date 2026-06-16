@@ -6,6 +6,16 @@
   }
 }
 
+.home-hero-wrapper {
+  height: 70vh;
+  max-height: 23em;
+
+  @media (width < 768px) {
+    height: auto;
+    max-height: none;
+  }
+}
+
 .home-hero {
   height: 95vh;
   max-height: 35em;

@@ -1398,7 +1398,7 @@
         "key": "perekrestok",
         "label": "Перекрёсток"
       },
-      "coverColor": "95, 175, 45",
+      "coverColor": "0, 90, 40",
       "cover": {
         "kind": "logo"
       },
