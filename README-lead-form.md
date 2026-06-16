@@ -14,9 +14,8 @@ Twenty CRM (crm.pndlnk.ru)
 — создаёт/находит контакт
 — создаёт сделку и прикрепляет заметку
      ↓
-Twenty Workflow
-— триггер: создание Opportunity
-— действие: Send Email → mr@pndlnk.team
+Telegram (бот @xlnce_bot → личка, chat_id 20439)
+— сообщение о новой заявке со ссылкой на сделку/контакт в CRM
 ```
 
 ---
@@ -149,33 +148,45 @@ Content-Type: application/json
 
 ---
 
-## Email-уведомления
+## Telegram-уведомления
 
-Реализовано через **Twenty Workflow**.
+Реализовано прямо в `server.py` (функция `send_telegram`). На каждую заявку
+шлётся сообщение в Telegram со ссылкой на созданную сделку (или контакт, если
+заявка без slug).
 
-**Воркфлоу:** «Уведомление о новой заявке с сайта»  
-**Триггер:** создание Opportunity  
-**Действие:** Send Email через аккаунт `cxburo@gmail.com`  
-**Получатель:** `mr@pndlnk.team`
+**Бот:** `@xlnce_bot` («Экселенц», общий с Unisender — конфликта нет, отправка
+не мешает приёму обновлений)  
+**Получатель:** личка, `chat_id = 20439`  
+**Конфиг:** константы `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `TELEGRAM_PROXY` в начале `server.py`  
+Сбой отправки в Telegram логируется как WARNING и **не** ломает приём заявки.
 
-### Настройка email-аккаунта
+### Доставка через SOCKS5-прокси (обход блокировки Telegram)
 
-Аккаунт `cxburo@gmail.com` подключён в Twenty через IMAP/SMTP с App Password.  
-Если перестанет работать (например, после смены App Password):
-- Settings → Accounts → cxburo@gmail.com → переподключить
+`api.telegram.org` заблокирован с РФ-серверов (TCP до его IP таймаутит). Поэтому
+запрос к Bot API идёт **через SOCKS5-прокси в Хельсинки** (`relay-hel.pndlnk.ru`,
+`194.76.217.181:1080`). Реализовано через `curl -x socks5h://…` (см. `send_telegram`):
+схема `socks5h` резолвит DNS на стороне прокси, поэтому заблокированный IP не мешает.
 
-### Если воркфлоу перестал работать
-
-```bash
-# Проверить статус worker-контейнера
-ssh apps "docker compose -f /opt/twenty/docker-compose.yml ps"
-
-# Логи worker
-ssh apps "docker logs twenty-worker-1 2>&1 | tail -50"
-
-# Перезапустить worker
-ssh apps "cd /opt/twenty && docker compose restart worker"
+```python
+TELEGRAM_PROXY = "socks5h://bureau:…@194.76.217.181:1080"
 ```
+
+> Детали прокси — в `~/admin/proxy2.md`. Резервного прокси пока нет (планируется
+> поднять позже), так что доставка зависит от доступности Хельсинки.
+
+Если уведомления перестанут приходить — проверь прокси:
+```bash
+# Bot API через прокси должен вернуть {"ok":true,...}
+ssh apps "curl -s -m 12 -x 'socks5h://bureau:ПАРОЛЬ@194.76.217.181:1080' https://api.telegram.org/bot<TOKEN>/getMe"
+# статус прокси-сервисов
+ssh proxy2 "systemctl status danted xray"
+```
+
+### Email-уведомления (выключены)
+
+В `server.py` есть готовая функция `send_notification` (Gmail SMTP →
+`mr@pndlnk.team`), но вызовы закомментированы. Чтобы включить — раскомментировать
+строки `send_notification(...)` в обоих обработчиках.
 
 ---
 
