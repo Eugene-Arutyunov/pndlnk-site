@@ -167,45 +167,7 @@ function initKscProgramTable() {
   const container = document.querySelector(".ksc-program-table");
   if (!container) return;
 
-  const detailButtons = container.querySelectorAll(
-    "[data-ksc-program-table-detail]"
-  );
-
-  function switchDetail(mode) {
-    const open = mode === "full";
-    container.querySelectorAll(".ksc-program-row").forEach((row) => {
-      row.classList.toggle("is-open", open);
-    });
-  }
-
-  detailButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (btn.classList.contains("is-active")) return;
-
-      detailButtons.forEach((b) => {
-        b.classList.remove("is-active");
-        b.setAttribute("aria-pressed", "false");
-      });
-
-      btn.classList.add("is-active");
-      btn.setAttribute("aria-pressed", "true");
-
-      switchDetail(btn.dataset.kscProgramTableDetail);
-    });
-  });
-
-  const activeDetailButton = Array.from(detailButtons).find((btn) =>
-    btn.classList.contains("is-active")
-  );
-  if (activeDetailButton) {
-    switchDetail(activeDetailButton.dataset.kscProgramTableDetail);
-  }
-
-  const productRows = container.querySelectorAll(
-    '[data-ksc-program-table-content="products"] .ksc-program-row'
-  );
-  productRows.forEach((row) => {
-    row.classList.add("ksc-program-row--inline-detail");
+  container.querySelectorAll(".ksc-program-row").forEach((row) => {
     row.addEventListener("click", (event) => {
       const link = event.target.closest("a");
       if (link) {
@@ -214,6 +176,93 @@ function initKscProgramTable() {
       row.classList.toggle("is-open");
     });
   });
+}
+
+function setDkcpPreviewActive(preview, blocks) {
+  if (!preview) return;
+
+  const active = new Set(blocks.map((block) => String(block).trim()).filter(Boolean));
+
+  preview.querySelectorAll("[data-dkcp-preview-block]").forEach((block) => {
+    const isActive = active.has(block.dataset.dkcpPreviewBlock);
+    block.setAttribute("fill", isActive ? "currentColor" : "none");
+  });
+
+  preview.dataset.dkcpPreviewActive = Array.from(active).join(",");
+}
+
+function initKscOutcomes() {
+  const root = document.querySelector("[data-ksc-outcomes]");
+  if (!root) return;
+
+  const linesLayer = root.querySelector("[data-ksc-outcomes-lines]");
+  const icon = root.querySelector("[data-ksc-outcomes-icon] .dkcp-preview");
+  const iconSvg = icon?.querySelector(".dkcp-preview-icon");
+  const anchors = Array.from(root.querySelectorAll("[data-ksc-outcomes-anchor]"));
+  const scenarios = Array.from(root.querySelectorAll("[data-ksc-outcome]"));
+  const defaultBlocks = icon?.dataset.dkcpPreviewActive
+    ? icon.dataset.dkcpPreviewActive.split(",")
+    : [];
+
+  if (!linesLayer || !icon || !iconSvg || anchors.length === 0) return;
+
+  function updateLines() {
+    const rootRect = root.getBoundingClientRect();
+    const iconRect = iconSvg.getBoundingClientRect();
+    const targetX = iconRect.left + iconRect.width / 2 - rootRect.left;
+    const targetY = iconRect.top + iconRect.height / 2 - rootRect.top;
+
+    linesLayer.setAttribute("viewBox", `0 0 ${rootRect.width} ${rootRect.height}`);
+    linesLayer.replaceChildren();
+
+    anchors.forEach((anchor) => {
+      const anchorRect = anchor.getBoundingClientRect();
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+
+      line.setAttribute("class", "ksc-outcomes__connector-line");
+      line.setAttribute("x1", anchorRect.left + anchorRect.width / 2 - rootRect.left);
+      line.setAttribute("y1", anchorRect.top + anchorRect.height / 2 - rootRect.top);
+      line.setAttribute("x2", targetX);
+      line.setAttribute("y2", targetY);
+      linesLayer.appendChild(line);
+    });
+  }
+
+  let rafId = null;
+  function scheduleUpdateLines() {
+    if (rafId !== null) return;
+
+    rafId = requestAnimationFrame(() => {
+      updateLines();
+      rafId = null;
+    });
+  }
+
+  scenarios.forEach((scenario) => {
+    const blocks = scenario.dataset.dkcpBlocks?.split(",") || [];
+
+    scenario.addEventListener("mouseenter", () => {
+      setDkcpPreviewActive(icon, blocks);
+    });
+
+    scenario.addEventListener("mouseleave", () => {
+      setDkcpPreviewActive(icon, defaultBlocks);
+    });
+
+    scenario.addEventListener("focusin", () => {
+      setDkcpPreviewActive(icon, blocks);
+    });
+
+    scenario.addEventListener("focusout", () => {
+      if (!scenario.contains(document.activeElement)) {
+        setDkcpPreviewActive(icon, defaultBlocks);
+      }
+    });
+  });
+
+  window.addEventListener("scroll", scheduleUpdateLines, { passive: true });
+  window.addEventListener("resize", scheduleUpdateLines);
+  updateLines();
 }
 
 function formatRgbColorValue(color) {
@@ -456,6 +505,7 @@ if (document.readyState === "loading") {
     initLogoDownloads();
     initPromoTable();
     initKscProgramTable();
+    initKscOutcomes();
     initColorPlates();
     initProjectCatalogFilter();
     initCopyTable();
@@ -468,6 +518,7 @@ if (document.readyState === "loading") {
   initLogoDownloads();
   initPromoTable();
   initKscProgramTable();
+  initKscOutcomes();
   initColorPlates();
   initProjectCatalogFilter();
   initCopyTable();
