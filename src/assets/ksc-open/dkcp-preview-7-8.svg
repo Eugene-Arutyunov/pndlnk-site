@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1059.623 713.143">
+  <defs>
+    <style>
+      .s {
+        fill: #232526;
+        stroke: #232526;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 10px;
+      }
+      .o {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <rect class="s o" x="22.561" y="210.373" width="177.611" height="301.497" />
+  <rect class="s o" x="22.561" y="535.651" width="488.957" height="69.966" />
+  <polygon class="s" points="1054.104 638.177 5.519 638.177 5.519 708.143 1054.623 708.143 1054.104 638.177" />
+  <polyline class="s" points="5.519 136.712 5.519 177.812 1054.623 177.812 1054.623 136.712 529.811 5 5 136.712" />
+  <rect class="s o" x="533.105" y="535.651" width="503.957" height="69.966" />
+  <rect class="s o" x="223.953" y="210.373" width="184.14" height="301.497" />
+  <rect class="s o" x="431.874" y="210.373" width="180.876" height="301.497" />
+  <rect class="s o" x="636.53" y="210.373" width="184.14" height="301.497" />
+  <rect class="s o" x="844.451" y="210.373" width="192.611" height="301.497" />
+</svg>
