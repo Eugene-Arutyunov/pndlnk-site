@@ -200,17 +200,53 @@ function initKscOutcomes() {
   const iconSvg = icon?.querySelector(".dkcp-preview-icon");
   const anchors = Array.from(root.querySelectorAll("[data-ksc-outcomes-anchor]"));
   const scenarios = Array.from(root.querySelectorAll("[data-ksc-outcome]"));
+  const sections = {
+    model: root.querySelector(".ksc-outcomes__section--model"),
+    team: root.querySelector(".ksc-outcomes__section--team"),
+  };
   const defaultBlocks = icon?.dataset.dkcpPreviewActive
     ? icon.dataset.dkcpPreviewActive.split(",")
     : [];
+  const allBlocks = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+  const zones = [
+    sections.model && { element: sections.model, blocks: allBlocks },
+    ...scenarios.map((scenario) => ({
+      element: scenario,
+      blocks: scenario.dataset.dkcpBlocks?.split(",") || defaultBlocks,
+    })),
+    sections.team && { element: sections.team, blocks: allBlocks },
+  ].filter(Boolean);
 
   if (!linesLayer || !icon || !iconSvg || anchors.length === 0) return;
 
+  function updateActiveBlocks() {
+    const iconRect = icon.getBoundingClientRect();
+    const referenceY = iconRect.top + iconRect.height / 2;
+    let blocks = defaultBlocks;
+
+    const sorted = zones
+      .map((zone) => ({
+        ...zone,
+        top: zone.element.getBoundingClientRect().top,
+      }))
+      .sort((a, b) => a.top - b.top);
+
+    for (const zone of sorted) {
+      if (referenceY >= zone.top) {
+        blocks = zone.blocks;
+      }
+    }
+
+    setDkcpPreviewActive(icon, blocks);
+  }
+
   function updateLines() {
     const rootRect = root.getBoundingClientRect();
-    const iconRect = iconSvg.getBoundingClientRect();
-    const targetX = iconRect.left + iconRect.width / 2 - rootRect.left;
-    const targetY = iconRect.top + iconRect.height / 2 - rootRect.top;
+    const iconRect = icon.getBoundingClientRect();
+    const cornerGap = Math.min(iconRect.width, iconRect.height) * 0.06;
+    const targetX = iconRect.right - cornerGap - rootRect.left;
+    const targetY = iconRect.bottom - cornerGap - rootRect.top;
 
     linesLayer.setAttribute("viewBox", `0 0 ${rootRect.width} ${rootRect.height}`);
     linesLayer.replaceChildren();
@@ -229,40 +265,20 @@ function initKscOutcomes() {
   }
 
   let rafId = null;
-  function scheduleUpdateLines() {
+  function scheduleUpdate() {
     if (rafId !== null) return;
 
     rafId = requestAnimationFrame(() => {
       updateLines();
+      updateActiveBlocks();
       rafId = null;
     });
   }
 
-  scenarios.forEach((scenario) => {
-    const blocks = scenario.dataset.dkcpBlocks?.split(",") || [];
-
-    scenario.addEventListener("mouseenter", () => {
-      setDkcpPreviewActive(icon, blocks);
-    });
-
-    scenario.addEventListener("mouseleave", () => {
-      setDkcpPreviewActive(icon, defaultBlocks);
-    });
-
-    scenario.addEventListener("focusin", () => {
-      setDkcpPreviewActive(icon, blocks);
-    });
-
-    scenario.addEventListener("focusout", () => {
-      if (!scenario.contains(document.activeElement)) {
-        setDkcpPreviewActive(icon, defaultBlocks);
-      }
-    });
-  });
-
-  window.addEventListener("scroll", scheduleUpdateLines, { passive: true });
-  window.addEventListener("resize", scheduleUpdateLines);
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
   updateLines();
+  updateActiveBlocks();
 }
 
 function formatRgbColorValue(color) {

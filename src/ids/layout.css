@@ -101,6 +101,25 @@
     }
   }
 
+  & > .with-sidenote {
+    position: relative;
+
+    & .sidenote {
+      font-size: 0.7em;
+      width: 90%;
+      margin-bottom: 2em;
+
+      @media (width > 767px) {
+        position: absolute;
+        top: 0;
+        width: 45%;
+        left: 112%;
+        font-size: 0.7em;
+        margin-bottom: 1em;
+      }
+    }
+  }
+
   & .ids__text-width {
     width: 80%;
     max-width: 816px;

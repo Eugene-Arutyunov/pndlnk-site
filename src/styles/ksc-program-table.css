@@ -71,10 +71,7 @@
   .ksc-program-row__situation-main {
     order: 0;
     line-height: 1.3em;
-
-    .is-open & {
-      font-weight: 700;
-    }
+    font-weight: 700;
   }
 
   .ksc-program-row__situation-detail {
@@ -178,12 +175,18 @@
 
   .ksc-program-row__task-checklist li {
     margin: 0;
-    padding: 0;
+    margin-bottom: 0;
+    padding: 0 0 0 1em;
+    text-indent: -1em;
+    position: static;
+    list-style: none;
   }
 
   .ksc-program-row__task-checklist li::before {
     content: "— ";
     color: inherit;
+    position: static;
+    left: auto;
   }
 
   .ksc-program-row--textual .ksc-program-row__task-item {
