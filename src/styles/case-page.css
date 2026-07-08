@@ -261,3 +261,56 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Карточки джоб */
+.ids .case-page:not(.article) .case-jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75em;
+}
+
+.ids .case-page:not(.article) .case-job-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(var(--ids__surface-RGB), 0.3);
+  font-family: var(--mono);
+  font-size: 0.75em;
+  line-height: 1.35;
+}
+
+.ids .case-page:not(.article) .case-job-card__body {
+  padding: 0.75em 0.85em 0.9em;
+}
+
+.ids .case-page:not(.article) .case-job-card__title {
+  margin: 0 0 0.45em;
+  font-size: 1.05em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ids .case-page:not(.article) .case-job-card__text {
+  margin: 0;
+  color: rgba(var(--ids__text-RGB), 0.82);
+}
+
+.ids .case-page:not(.article) .promo-table ul {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.ids .case-page:not(.article) .promo-table li + li {
+  margin-top: 0.25em;
+}
+
+@media (width < 1100px) {
+  .ids .case-page:not(.article) .case-jobs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width < 768px) {
+  .ids .case-page:not(.article) .case-jobs-grid {
+    grid-template-columns: 1fr;
+  }
+}

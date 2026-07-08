@@ -222,7 +222,9 @@ body.logo-viewbox-debug .home-hero-columns .logo-wall-item svg {
 }
 
 .author-portrait--placeholder {
-  aspect-ratio: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 849 / 1001;
   background-color: rgba(var(--ids__surface-RGB), 1);
 }
 
