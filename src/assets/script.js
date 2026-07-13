@@ -447,6 +447,111 @@ function initLogoViewboxDebug() {
   });
 }
 
+function initCaseFieldPromoTranscripts() {
+  const transcripts = document.querySelectorAll(".case-field-promo-transcript");
+  if (transcripts.length === 0) return;
+
+  const EPS = 1;
+
+  function clearChildStyles(child) {
+    child.hidden = false;
+    child.style.removeProperty("-webkit-line-clamp");
+    child.style.removeProperty("display");
+    child.style.removeProperty("-webkit-box-orient");
+    child.style.removeProperty("overflow");
+  }
+
+  function elementFits(el, maxBottom) {
+    const rects = el.getClientRects();
+    if (rects.length === 0) return true;
+
+    for (const rect of rects) {
+      if (rect.bottom > maxBottom + EPS) return false;
+    }
+
+    return true;
+  }
+
+  function maxParagraphLines(el, maxBottom) {
+    el.style.display = "-webkit-box";
+    el.style.webkitBoxOrient = "vertical";
+    el.style.overflow = "hidden";
+
+    let lo = 1;
+    let hi = 500;
+    let best = 0;
+
+    while (lo <= hi) {
+      const mid = (lo + hi) >> 1;
+      el.style.webkitLineClamp = String(mid);
+
+      if (elementFits(el, maxBottom)) {
+        best = mid;
+        lo = mid + 1;
+      } else {
+        hi = mid - 1;
+      }
+    }
+
+    return best;
+  }
+
+  function trimTranscript(transcript) {
+    Array.from(transcript.children).forEach(clearChildStyles);
+
+    const maxBottom = transcript.getBoundingClientRect().bottom;
+
+    for (let i = 0; i < transcript.children.length; i++) {
+      const child = transcript.children[i];
+
+      if (elementFits(child, maxBottom)) continue;
+
+      if (child.tagName === "P") {
+        const lines = maxParagraphLines(child, maxBottom);
+
+        if (lines === 0) {
+          clearChildStyles(child);
+          child.hidden = true;
+        } else {
+          child.style.webkitLineClamp = String(lines);
+        }
+      } else {
+        clearChildStyles(child);
+        child.hidden = true;
+      }
+
+      for (let j = i + 1; j < transcript.children.length; j++) {
+        clearChildStyles(transcript.children[j]);
+        transcript.children[j].hidden = true;
+      }
+
+      break;
+    }
+
+    transcript.classList.add("case-field-promo-transcript--ready");
+  }
+
+  let rafId = null;
+
+  function scheduleTrim() {
+    if (rafId !== null) return;
+
+    rafId = requestAnimationFrame(() => {
+      rafId = null;
+      transcripts.forEach(trimTranscript);
+    });
+  }
+
+  scheduleTrim();
+
+  const observer = new ResizeObserver(scheduleTrim);
+  transcripts.forEach((transcript) => observer.observe(transcript));
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(scheduleTrim);
+  }
+}
+
 
 // Инициализируем когда DOM готов
 if (document.readyState === "loading") {
@@ -461,6 +566,7 @@ if (document.readyState === "loading") {
     initCopyTable();
     initCopyField();
     initLogoViewboxDebug();
+    initCaseFieldPromoTranscripts();
   });
 } else {
   initStickyObserver();
@@ -473,4 +579,5 @@ if (document.readyState === "loading") {
   initCopyTable();
   initCopyField();
   initLogoViewboxDebug();
+  initCaseFieldPromoTranscripts();
 }

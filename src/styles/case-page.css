@@ -262,36 +262,72 @@
   }
 }
 
-/* Карточки джоб */
-.ids .case-page:not(.article) .case-jobs-grid {
+/* Карточки джоб — отдельный компонент, не pndlnk-promo-grid */
+.ids .case-page:not(.article) .case-jobs-bento {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75em;
-}
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5em;
+  margin-top: 1em;
 
-.ids .case-page:not(.article) .case-job-card {
-  display: flex;
-  flex-direction: column;
-  background: rgba(var(--ids__surface-RGB), 0.3);
-  font-family: var(--mono);
-  font-size: 0.75em;
-  line-height: 1.35;
-}
+  @media (width < 768px) {
+    font-size: 0.7em;
+    grid-template-columns: 1fr 1fr;
 
-.ids .case-page:not(.article) .case-job-card__body {
-  padding: 0.75em 0.85em 0.9em;
-}
+    .case-jobs-bento-column {
+      &:nth-child(3) {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        flex-wrap: wrap;
 
-.ids .case-page:not(.article) .case-job-card__title {
-  margin: 0 0 0.45em;
-  font-size: 1.05em;
-  font-weight: 700;
-  line-height: 1.2;
-}
+        .case-jobs-bento-card {
+          flex: 0 0 calc((100% - 0.5em) / 2);
+          min-width: 0;
+        }
+      }
+    }
+  }
 
-.ids .case-page:not(.article) .case-job-card__text {
-  margin: 0;
-  color: rgba(var(--ids__text-RGB), 0.82);
+  .case-jobs-bento-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .case-jobs-bento-card {
+    aside {
+      background: none;
+      border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+      margin-bottom: 0;
+      transition: border-color 0.5s ease;
+
+      & h6 {
+        & span {
+          font-size: 0.8em;
+        }
+      }
+
+      & h3 {
+        margin-top: 0;
+        margin-bottom: 0.4em;
+        color: rgb(var(--ids__text-RGB));
+        text-decoration: none;
+      }
+
+      & ul {
+        margin: 0;
+        padding-left: 1.1em;
+      }
+
+      & li + li {
+        margin-top: 0.25em;
+      }
+    }
+
+    &:hover aside {
+      border-color: rgba(var(--ids__hover-RGB), 0.4);
+      transition: border-color 0s ease;
+    }
+  }
 }
 
 .ids .case-page:not(.article) .promo-table ul {
@@ -303,14 +339,185 @@
   margin-top: 0.25em;
 }
 
-@media (width < 1100px) {
-  .ids .case-page:not(.article) .case-jobs-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+
+/* Горизонтальный блок скринов — гармошка внутри case-jobs-bento */
+.ids .case-page:not(.article) .case-jobs-bento.case-field-promo {
+  display: block;
 }
 
-@media (width < 768px) {
-  .ids .case-page:not(.article) .case-jobs-grid {
-    grid-template-columns: 1fr;
+.ids .case-page:not(.article) .case-field-promo-overflow-wrapper {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 52%,
+    transparent 92%
+  );
+  mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 52%,
+    transparent 92%
+  );
+
+  .case-field-promo-stack {
+    position: relative;
+  }
+
+  .case-field-promo-container {
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .case-field-promo-container--stub {
+    position: absolute;
+    inset: 0 0 auto 0;
+    pointer-events: none;
+  }
+
+  .case-field-promo-container--content .case-field-promo-image {
+    background-color: rgb(var(--ids__background-RGB));
+  }
+
+  .case-field-promo-container--stub .case-field-promo-image {
+    background-color: rgb(var(--ids__surface-RGB));
+
+    &:nth-child(-n+5) {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  .case-field-promo-image {
+    flex-shrink: 0;
+    width: 21em;
+    aspect-ratio: 210 / 297;
+    overflow: hidden;
+    transform: none;
+    border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    border-radius: 0.15em;
+    box-shadow: 0 0.8em 1.2em 0 rgba(var(--ids__text-RGB), 0.1);
+    margin-right: -14.4em;
+
+    &:nth-child(1) { z-index: 1; margin-top: 0; }
+    &:nth-child(2) { z-index: 2; margin-top: 2.6em; }
+    &:nth-child(3) { z-index: 3; margin-top: 5.2em; }
+    &:nth-child(4) { z-index: 4; margin-top: 7.8em; }
+    &:nth-child(5) { z-index: 5; margin-top: 10.4em; }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .case-field-promo-image--transcript {
+    container-type: size;
+    position: relative;
+  }
+
+  .case-field-promo-transcript {
+    position: absolute;
+    inset: 4.8cqi 3.6cqi 4.8cqi 5.2cqi;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: rgba(var(--ids__text-RGB), 0.88);
+    font-size: 2.5125cqi;
+    line-height: 1.17;
+    user-select: none;
+    pointer-events: none;
+    text-align: left;
+
+    &:not(.case-field-promo-transcript--ready) {
+      visibility: hidden;
+    }
+
+    & p {
+      margin: 0 0 0.55em;
+    }
+
+    & p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .case-field-promo-transcript-title {
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 1.48em;
+    line-height: 1.2;
+    margin: 0 0 0.85em;
+    padding: 0.15em 0.4em 0.15em 0;
+    color: rgb(var(--ids__text-RGB));
+    background-color: rgb(var(--ids__background-RGB));
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .case-field-promo-transcript-time {
+    color: rgba(var(--ids__text-RGB), 0.45);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+
+  .case-field-promo-transcript-speaker {
+    font-style: italic;
+    font-weight: 600;
+    margin-right: 0.35em;
+  }
+
+  .case-field-promo-transcript-interviewer {
+    font-weight: 600;
+  }
+
+  .case-field-promo-transcript-section {
+    font-weight: 600;
+    font-size: 1.08em;
+    line-height: 1.15;
+    margin: 0.65em 0 0.45em;
+    color: rgb(var(--ids__text-RGB));
+  }
+
+  .case-field-promo-transcript-heading {
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0.55em 0 0.4em;
+    color: rgb(var(--ids__text-RGB));
+  }
+
+  .case-field-promo-transcript strong {
+    font-weight: 600;
+  }
+
+  .case-field-promo-transcript-photo {
+    margin: 0.35em 0 0.55em;
+
+    & img {
+      display: block;
+      width: 33.333%;
+      height: auto;
+    }
+  }
+
+  @media (width < 768px) {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      #000 0%,
+      #000 38%,
+      transparent 88%
+    );
+    mask-image: linear-gradient(
+      to right,
+      #000 0%,
+      #000 38%,
+      transparent 88%
+    );
+
+    .case-field-promo-image {
+      width: 15em;
+      margin-right: -10.2em;
+    }
   }
 }
