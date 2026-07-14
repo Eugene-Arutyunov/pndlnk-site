@@ -109,16 +109,18 @@
   </div>
   <div class="ids__space M"></div>
   <div class="ids__wrapper">
-    <div class="with-sidenote">
-      <p>
-        Программа «Культура создания ценности» выстроена вокруг этой логики.
-        Сначала команда осваивает фреймворк ДКЦП как&nbsp;общий язык, затем вместе
-        собирает и&nbsp;согласует модель вашего продукта, а&nbsp;к&nbsp;финалу
-        переводит её в&nbsp;нарративы&nbsp;— для&nbsp;продаж, маркетинга,
-        поддержки и&nbsp;других точек контакта с&nbsp;клиентом.
-      </p>
-      <div class="sidenote">
-        <p><a href="/dkcp">Что такое ДКЦП</a></p>
+    <div class="ids__text-width">
+      <div class="with-sidenote">
+        <p>
+          Программа «Культура создания ценности» выстроена вокруг этой логики.
+          Сначала команда осваивает фреймворк ДКЦП как&nbsp;общий язык, затем вместе
+          собирает и&nbsp;согласует модель вашего продукта, а&nbsp;к&nbsp;финалу
+          переводит её в&nbsp;нарративы&nbsp;— для&nbsp;продаж, маркетинга,
+          поддержки и&nbsp;других точек контакта с&nbsp;клиентом.
+        </p>
+        <div class="sidenote">
+          <p><a href="/dkcp">Что такое ДКЦП</a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -131,9 +133,27 @@
     </p>
     <div class="ids__space S"></div>
     <div class="ksc-program-table">
-      
+      <div class="promo-switchers">
+        <div class="promo-switcher" role="group" aria-label="Детализация">
+          <button
+            type="button"
+            class="promo-switcher__item is-active"
+            aria-pressed="true"
+            data-ksc-detail="full">
+            Подробно
+          </button>
+          <button
+            type="button"
+            class="promo-switcher__item"
+            aria-pressed="false"
+            data-ksc-detail="short">
+            Коротко
+          </button>
+        </div>
+      </div>
+
       <div class="ids__space S"></div>
-      
+
       <div
         class="ksc-program-rows-header">
         <span
@@ -151,17 +171,8 @@
         <div
           class="ksc-program-row is-open ksc-program-row--textual">
           <div class="ksc-program-row__situation">
-            <div class="ksc-program-row__situation-main">Подготовка</div>
+            <a href="#" class="ksc-program-row__title">Подготовка</a>
             {{ dkcp.previewIcon([]) }}
-            <div class="ksc-program-row__situation-detail">
-              <div class="ksc-program-row__situation-detail-body">
-                <div class="ksc-program-row__situation-detail-inner">
-                  <a href="#" class="ksc-program-row__link"
-                    ><span>Подготовка</span></a
-                  >
-                </div>
-              </div>
-            </div>
           </div>
           <div class="ksc-program-row__products">
             <div class="ksc-program-row__summary">
@@ -195,17 +206,8 @@
 
         <div class="ksc-program-row is-open">
           <div class="ksc-program-row__situation">
-            <div class="ksc-program-row__situation-main">Модуль 1 — Компания</div>
+            <a href="/ksc" class="ksc-program-row__title">Модуль 1: Компания</a>
             {{ dkcp.previewIcon([7, 8]) }}
-            <div class="ksc-program-row__situation-detail">
-              <div class="ksc-program-row__situation-detail-body">
-                <div class="ksc-program-row__situation-detail-inner">
-                  <a href="/ksc" class="ksc-program-row__link"
-                    ><span>Модуль 1 — Компания</span></a
-                  >
-                </div>
-              </div>
-            </div>
           </div>
           <div class="ksc-program-row__products">
             <div class="ksc-program-row__summary">
@@ -244,17 +246,8 @@
 
         <div class="ksc-program-row is-open">
           <div class="ksc-program-row__situation">
-            <div class="ksc-program-row__situation-main">Модуль 2 — Клиент</div>
+            <a href="#" class="ksc-program-row__title">Модуль 2: Клиент</a>
             {{ dkcp.previewIcon([1, 2]) }}
-            <div class="ksc-program-row__situation-detail">
-              <div class="ksc-program-row__situation-detail-body">
-                <div class="ksc-program-row__situation-detail-inner">
-                  <a href="#" class="ksc-program-row__link"
-                    ><span>Модуль 2 — Клиент</span></a
-                  >
-                </div>
-              </div>
-            </div>
           </div>
           <div class="ksc-program-row__products">
             <div class="ksc-program-row__summary">
@@ -291,17 +284,8 @@
 
         <div class="ksc-program-row is-open">
           <div class="ksc-program-row__situation">
-            <div class="ksc-program-row__situation-main">Модуль 3 — Продукт</div>
+            <a href="#" class="ksc-program-row__title">Модуль 3: Продукт</a>
             {{ dkcp.previewIcon([3, 4]) }}
-            <div class="ksc-program-row__situation-detail">
-              <div class="ksc-program-row__situation-detail-body">
-                <div class="ksc-program-row__situation-detail-inner">
-                  <a href="#" class="ksc-program-row__link"
-                    ><span>Модуль 3 — Продукт</span></a
-                  >
-                </div>
-              </div>
-            </div>
           </div>
           <div class="ksc-program-row__products">
             <div class="ksc-program-row__summary">
@@ -336,17 +320,8 @@
 
         <div class="ksc-program-row is-open">
           <div class="ksc-program-row__situation">
-            <div class="ksc-program-row__situation-main">Модуль 4 — Вклад и обмен</div>
+            <a href="#" class="ksc-program-row__title">Модуль 4: Вклад и обмен</a>
             {{ dkcp.previewIcon([5, 6]) }}
-            <div class="ksc-program-row__situation-detail">
-              <div class="ksc-program-row__situation-detail-body">
-                <div class="ksc-program-row__situation-detail-inner">
-                  <a href="#" class="ksc-program-row__link"
-                    ><span>Модуль 4 — Вклад и обмен</span></a
-                  >
-                </div>
-              </div>
-            </div>
           </div>
           <div class="ksc-program-row__products">
             <div class="ksc-program-row__summary">
@@ -385,19 +360,8 @@
 
         <div class="ksc-program-row is-open">
           <div class="ksc-program-row__situation">
-            <div class="ksc-program-row__situation-main">
-              Модуль 5 — Аргументы и нарратив
-            </div>
+            <a href="#" class="ksc-program-row__title">Модуль 5: Аргументы и нарратив</a>
             {{ dkcp.previewIcon([9]) }}
-            <div class="ksc-program-row__situation-detail">
-              <div class="ksc-program-row__situation-detail-body">
-                <div class="ksc-program-row__situation-detail-inner">
-                  <a href="#" class="ksc-program-row__link"
-                    ><span>Модуль 5 — Аргументы и нарратив</span></a
-                  >
-                </div>
-              </div>
-            </div>
           </div>
           <div class="ksc-program-row__products">
             <div class="ksc-program-row__summary">
@@ -435,17 +399,8 @@
 
         <div class="ksc-program-row is-open">
           <div class="ksc-program-row__situation">
-            <div class="ksc-program-row__situation-main">Модуль 6 — Прототипирование</div>
+            <a href="/dkcp" class="ksc-program-row__title">Модуль 6: Прототипирование</a>
             {{ dkcp.previewIcon([1, 2, 3, 4, 5, 6, 7, 8, 9]) }}
-            <div class="ksc-program-row__situation-detail">
-              <div class="ksc-program-row__situation-detail-body">
-                <div class="ksc-program-row__situation-detail-inner">
-                  <a href="/dkcp" class="ksc-program-row__link"
-                    ><span>Модуль 6 — Прототипирование</span></a
-                  >
-                </div>
-              </div>
-            </div>
           </div>
           <div class="ksc-program-row__products">
             <div class="ksc-program-row__summary">
@@ -472,20 +427,9 @@
           </div>
         </div>
 
-        <div
-          class="ksc-program-row is-open ksc-program-row--textual">
+        <div class="ksc-program-row ksc-program-row--static">
           <div class="ksc-program-row__situation">
-            <div class="ksc-program-row__situation-main">Демо-день</div>
-            {{ dkcp.previewIcon([1, 2, 3, 4, 5, 6, 7, 8, 9]) }}
-            <div class="ksc-program-row__situation-detail">
-              <div class="ksc-program-row__situation-detail-body">
-                <div class="ksc-program-row__situation-detail-inner">
-                  <a href="#" class="ksc-program-row__link"
-                    ><span>Демо-день</span></a
-                  >
-                </div>
-              </div>
-            </div>
+            <div class="ksc-program-row__title">Демо-день</div>
           </div>
           <div class="ksc-program-row__products">
             <div class="ksc-program-row__summary">

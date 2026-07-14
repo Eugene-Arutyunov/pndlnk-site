@@ -167,13 +167,34 @@ function initKscProgramTable() {
   const container = document.querySelector(".ksc-program-table");
   if (!container) return;
 
-  container.querySelectorAll(".ksc-program-row").forEach((row) => {
+  const rows = container.querySelectorAll(
+    ".ksc-program-row:not(.ksc-program-row--static)"
+  );
+
+  rows.forEach((row) => {
     row.addEventListener("click", (event) => {
       const link = event.target.closest("a");
       if (link) {
         event.preventDefault();
       }
       row.classList.toggle("is-open");
+    });
+  });
+
+  const detailButtons = container.querySelectorAll("[data-ksc-detail]");
+  detailButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("is-active")) return;
+
+      detailButtons.forEach((b) => {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-pressed", "true");
+
+      const open = btn.dataset.kscDetail === "full";
+      rows.forEach((row) => row.classList.toggle("is-open", open));
     });
   });
 }
