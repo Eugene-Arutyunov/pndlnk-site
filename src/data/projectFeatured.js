@@ -1,5 +1,5 @@
 const FORCED_FEATURED_SLUGS = new Set([
-  "dodo-pitstsa-opyt-semey-s-detmi",
+  "dodo-pizza-kids",
   "yandex-opyt-voditeley-taksi",
   "europharma-razrabotka-kontseptsii-seti-magazinov-u-doma",
   "mango-telekom-kultura-sozdaniya-tsennosti",

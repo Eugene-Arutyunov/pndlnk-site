@@ -11,9 +11,17 @@
     /* left: -0.5em;
     margin-right: -0.5em; */
 
+    &.abbreviation {
+      text-transform: none;
+    }
+
     &:not(.secondary) {
       color: rgba(var(--ids__accent-RGB), 1);
     }
+  }
+
+  & .abbreviation {
+    text-transform: none;
   }
 
   & .links {

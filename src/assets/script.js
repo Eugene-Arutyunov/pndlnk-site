@@ -121,7 +121,7 @@ function initLogoDownloads() {
 
 function initPromoTable() {
   const container = document.querySelector(
-    ".promo-table-container:not(.ksc-program-table)"
+    ".promo-table-container:not(.ksc-program-table):not(.case-barriers-table)"
   );
   if (!container) return;
 
@@ -214,6 +214,45 @@ function initKscProgramTable() {
       row.classList.toggle("is-open");
     });
   });
+}
+
+function initCaseBarriersTable() {
+  const container = document.querySelector(".case-barriers-table");
+  if (!container) return;
+
+  const detailButtons = container.querySelectorAll("[data-barriers-detail]");
+
+  function switchDetail(mode) {
+    container.dataset.barriersDetail = mode;
+    container.querySelectorAll(".case-barrier-row").forEach((row) => {
+      const isPriority = row.classList.contains("is-priority");
+      row.hidden = mode === "short" && !isPriority;
+    });
+  }
+
+  detailButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("is-active")) return;
+
+      detailButtons.forEach((b) => {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-pressed", "false");
+      });
+
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-pressed", "true");
+
+      switchDetail(btn.dataset.barriersDetail);
+    });
+  });
+
+  const activeDetailButton = Array.from(detailButtons).find((btn) =>
+    btn.classList.contains("is-active")
+  );
+
+  if (activeDetailButton) {
+    switchDetail(activeDetailButton.dataset.barriersDetail);
+  }
 }
 
 function formatRgbColorValue(color) {
@@ -561,6 +600,7 @@ if (document.readyState === "loading") {
     initLogoDownloads();
     initPromoTable();
     initKscProgramTable();
+    initCaseBarriersTable();
     initColorPlates();
     initProjectCatalogFilter();
     initCopyTable();
@@ -574,6 +614,7 @@ if (document.readyState === "loading") {
   initLogoDownloads();
   initPromoTable();
   initKscProgramTable();
+  initCaseBarriersTable();
   initColorPlates();
   initProjectCatalogFilter();
   initCopyTable();

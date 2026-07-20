@@ -84,11 +84,23 @@
   }
 
   &.XL {
-    width: 100%;
-    margin: 0 auto;
-    /* padding: 0 calc(var(--ids__density) * 0.75em); */
+    width: 84%;
+    margin: 0 8%;
+    max-width: none;
+
+    & .ids__text-width {
+      width: 100%;
+      max-width: none;
+    }
+
+    & .promo-table-container {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
     @media (width < 768px) {
+      width: 100%;
+      margin: 0 auto;
       padding: 0 calc(var(--ids__density) * 0.6em);
     }
   }
