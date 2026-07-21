@@ -224,12 +224,17 @@ function initCaseBarriersTable() {
 
   function switchDetail(mode) {
     container.dataset.barriersDetail = mode;
+    const classByMode = {
+      new: "is-new",
+      unfixed: "is-unfixed",
+      "in-progress": "is-in-progress",
+    };
+    const matchClass = classByMode[mode];
     let n = 0;
     container.querySelectorAll(".case-barrier-row").forEach((row) => {
-      const isPriority = row.classList.contains("is-priority");
-      const hidden = mode === "short" && !isPriority;
-      row.hidden = hidden;
-      if (!hidden) {
+      const match = row.classList.contains(matchClass);
+      row.hidden = !match;
+      if (match) {
         n += 1;
         const numCell = row.querySelector("td");
         if (numCell) numCell.textContent = String(n);
