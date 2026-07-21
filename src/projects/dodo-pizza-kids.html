@@ -2,6 +2,7 @@
 {% from 'macros/case-page-meta.njk' import caseMeta with context %}
 {% set pageTitle = 'Опыт семей с детьми' %}
 {% block content %}
+<nav class="case-toc" aria-label="Оглавление"></nav>
 <div class="ids__wrapper case-featured case-standard case-page">
 {{ caseMeta(page) }}
 </div>
@@ -33,12 +34,13 @@
 <h2 class="project-bento">Результат</h2>
 <p><strong>Навигационная карта.</strong> Карта взаимодействий — переходы в карточки барьеров, источники, гипотезы.</p>
 <p><strong>Джобы и барьеры.</strong> Десять сценариев, 100+ барьеров на карте, матрица приоритетов для команды Додо.</p>
-<p><strong>Инициативы.</strong> 45+ проектов в 11 стримах — от лайтовых улучшений до перестройки инфраструктуры. Например:</p>
+<p><strong>Инициативы.</strong> 45+ проектов в 10 сферах — от лайтовых улучшений до перестройки инфраструктуры. Например:</p>
 <ul>
 <li>Додо Паста — детские макароны, когда ребёнку нечего выбрать в меню</li>
-<li>Папин день — айсбрейкеры в приложении и офлайн, магнитная «настенка» у витрины</li>
+<li>Папин день — айсбрейкеры в приложении и офлайн</li>
+<li>Детские аттракторы в зале — «настенка» у витрины и точки игры по пиццерии</li>
 <li>Kids Out — бейбиситтеры в пиццерии на пару часов</li>
-<li>Семейный профиль, аттракторы в зале, dodokids.ru под дни рождения</li>
+<li>Семейный профиль, dodokids.ru под дни рождения</li>
 </ul>
 </div>
 </div>
@@ -48,17 +50,17 @@
 
 <div class="ids__space XL"></div>
 
-<div class="ids__text-width">
+<div class="ids__text-width case-toc-start">
 
 <p>Додо Пицца сформировала внутри компании департамент по управлению детским опытом. В CX-стратегии был зафиксирован ключевой вопрос: <strong>как Додо стать частью счастливых детских воспоминаний</strong>. Не «сделать детскую комнату получше», не «добавить стульчик для кормления» — а войти в личную историю ребёнка так, чтобы поход в пиццерию запомнился.</p>
 
 <p>Результатом работы должны были стать списки проектов — инициатив, как мы их называем, — отсортированные по степени «драматичности»: от тех, что требуют перестройки процессов и инфраструктуры, до лайтовых улучшений, которые можно внедрить быстро. Речь шла не только о физическом опыте в зале, но и о цифровом.</p>
 
-<h2 class="S">География — от мегаполиса до города-досуга</h2>
+<h2 class="S case-toc-target" data-toc="География">География — от мегаполиса до города-досуга</h2>
 
 <p>География проекта: <strong>Россия</strong> — Москва, Санкт-Петербург, Екатеринбург, Тюмень, Первоуральск и Озёрск; <strong>Турция</strong> — Анталья и Измир; <strong>ОАЭ</strong> — Дубай. Отдельная задача — понять, отличаются ли культурные паттерны времяпрепровождения с детьми в этих странах. Смотрели города разного размера — от мегаполисов до Первоуральска и Озёрска, где Додо часто выступает городообразующим центром досуга: опыт там принципиально отличается от столиц и миллионников.</p>
 
-<h2 class="S">Зафиксировали рамки</h2>
+<h2 class="S case-toc-target" data-toc="Рамки">Зафиксировали рамки</h2>
 
 <p>На старте мы зафиксировали рамки: кого считаем ребёнком, что считается визитом «с детьми», как отличать семейный поход от похода с подростком или с взрослым ребёнком, который всё ещё требует особого внимания.</p>
 
@@ -68,13 +70,15 @@
 </div>
 <div class="ids__space XS"></div>
 <div class="ids__wrapper XL">
+<div class="case-kids-terms">
 {% include 'projects/dodo-pizza-kids-terms.html' %}
+</div>
 </div>
 <div class="ids__space S"></div>
 <div class="ids__wrapper case-featured case-standard case-page">
 <div class="ids__text-width">
 
-<h2 class="S">Провели стартовую сессию проблематизации — 63 гипотезы и черновик карты</h2>
+<h2 class="S case-toc-target" data-toc="ССП">Провели стартовую сессию проблематизации — 63 гипотезы и черновик карты</h2>
 
 <div class="with-sidenote">
 <p>Проект начался со <strong>стартовой сессии проблематизации</strong> — пятичасового офлайн-воркшопа в офисе Додо, 17 января 2024.</p>
@@ -84,6 +88,54 @@
 <p>Цели сессии: собрать единое экспертное видение текущего опыта семей в сети и отсортировать знания компании — отделить то, что команда знает наверняка, от гипотез, и наметить зону незнания для поля.</p>
 
 <p>Собрались представители разных функций: топ-менеджмент, команда Алексея и Маши, франшиза, маркетинг, производство. Вместе верифицировали модель взаимодействий — Додо как система, которая генерирует опыт. Выдвинули гипотезы сегментации: какие ситуации и социально-демографические особенности приводят семьи в пиццерию. Определили структуру пути семьи — эпизоды и этапы — и описали содержание опыта: барьеры и драйверы. Зафиксировали гипотезы причин барьеров и собрали с экспертов вопросы, которые нужно было проверить в исследовании.</p>
+
+</div>
+<div class="ids__space XS"></div>
+<div class="case-video-section">
+<figure class="case-video-featured">
+<div class="case-video-featured__player"></div>
+<figcaption>Встреча ССП</figcaption>
+</figure>
+</div>
+<div class="ids__space S"></div>
+<div class="ids__text-width">
+
+<p>Вот как участники отзываются об установочной встрече:</p>
+
+</div>
+<div class="ids__space XS"></div>
+<div class="case-video-testimonials">
+<figure class="case-video-testimonial">
+<div class="case-video-testimonial__player"></div>
+<figcaption>
+<strong>Имя Фамилия</strong>
+<span class="case-video-testimonial__role">Роль</span>
+</figcaption>
+</figure>
+<figure class="case-video-testimonial">
+<div class="case-video-testimonial__player"></div>
+<figcaption>
+<strong>Имя Фамилия</strong>
+<span class="case-video-testimonial__role">Роль</span>
+</figcaption>
+</figure>
+<figure class="case-video-testimonial">
+<div class="case-video-testimonial__player"></div>
+<figcaption>
+<strong>Имя Фамилия</strong>
+<span class="case-video-testimonial__role">Роль</span>
+</figcaption>
+</figure>
+<figure class="case-video-testimonial">
+<div class="case-video-testimonial__player"></div>
+<figcaption>
+<strong>Имя Фамилия</strong>
+<span class="case-video-testimonial__role">Роль</span>
+</figcaption>
+</figure>
+</div>
+<div class="ids__space S"></div>
+<div class="ids__text-width">
 
 <p>На выходе — черновик CJM и <strong>63 гипотезы</strong>. Команда Додо сформулировала список вопросов к полю — того, что хотелось уточнить у гостей.</p>
 
@@ -109,7 +161,7 @@
 
 <p>После ССП мы оцифровали результаты и ушли в следующие этапы с вопросным списком команды Додо.</p>
 
-<h2 class="S">Выявили десять джобов от дня рождения до папиного дня</h2>
+<h2 class="S case-toc-target" data-toc="Джобы">Выявили десять джобов от дня рождения до папиного дня</h2>
 
 <p>Прежде чем идти в пиццерии, мы разработали схему «как устроено всё». Посмотрели на взаимодействие пиццерии и её гостей как на систему взаимосвязанных акторов. Схема не ограничивалась семьёй и залом: в ней были отношения франшизы и франчайзи, семей и франчайзи, семей друг с другом на территории пиццерии. Фигурировала Додо ИС — внутренняя система стандартов и процессов.</p>
 
@@ -196,7 +248,7 @@
 <div class="ids__space XS"></div>
 <div class="ids__text-width">
 
-<h2 class="S">Исследовали 173 активности в трёх странах</h2>
+<h2 class="S case-toc-target" data-toc="Поле">Исследовали 173 активности в трёх странах</h2>
 
 <p>Мы сами проходили пути клиента. <strong>173 полевых активности</strong>:</p>
 
@@ -383,19 +435,73 @@
 <div class="ids__space XS"></div>
 <div class="ids__text-width">
 
-<h2 class="S">Сделали карту на 26 участков, 100+ барьеров, 552 гипотезы</h2>
+<h2 class="S case-toc-target" data-toc="Карта">Сделали карту на 26 участков, 100+ барьеров, 552 гипотезы</h2>
 
-<p>Мы сделали большую CJM — реально большую. Разделили всё взаимодействие с пиццерией на отдельные законченные участки, у каждого из которых есть начало и конец. Например: выйти с ребёнком в туалет, чтобы сменить подгузник. Или взаимодействие на кассе: пришёл, выбрал, оплатил. Всего 26 участков. Плюс отдельные треки для доставки и самовывоза.</p>
+<p>Мы сделали большую CJM — реально большую. Разделили всё взаимодействие с пиццерией на отдельные законченные участки, у каждого из которых есть начало и конец. Например: выйти с ребёнком в туалет, чтобы сменить подгузник. Или взаимодействие на кассе: пришёл, выбрал, оплатил. Всего 26 участков.</p>
 
 </div>
 <div class="ids__space XS"></div>
-<div class="case-jobs-bento case-field-promo">
+<div class="promo-table-container case-cjm-sections-table">
+<table class="promo-table">
+<thead>
+<tr><th>№</th><th>Участок</th><th>Барьеры</th><th>Драйверы</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Парковка транспорта</td><td>0</td><td>0</td></tr>
+<tr><td>2</td><td>Поиск места в зале пиццерии</td><td>6</td><td>0</td></tr>
+<tr><td>3</td><td>Наблюдение за процессом приготовления заказа</td><td>0</td><td>1</td></tr>
+<tr><td>4</td><td>Заказ через кассира</td><td>8</td><td>2</td></tr>
+<tr><td>5</td><td>Ожидание заказа в пиццерии</td><td>7</td><td>1</td></tr>
+<tr><td>6</td><td>Получение заказа в пиццерии</td><td>3</td><td>1</td></tr>
+<tr><td>7</td><td>Употребление заказа в зале</td><td>15</td><td>5</td></tr>
+<tr><td>8</td><td>Заказ через мобильное приложение/сайт</td><td>4</td><td>3</td></tr>
+<tr><td>9</td><td>Вступление в программу лояльности Додо</td><td>1</td><td>1</td></tr>
+<tr><td>10</td><td>Оставление обратной связи</td><td>0</td><td>1</td></tr>
+<tr><td>11</td><td>Игра в детской комнате</td><td>11</td><td>3</td></tr>
+<tr><td>12</td><td>Кормление ребёнка молоком в пиццерии</td><td>2</td><td>0</td></tr>
+<tr><td>13</td><td>Посещение туалета с ребёнком</td><td>4</td><td>4</td></tr>
+<tr><td>14</td><td>Переодевание подгузника в пиццерии</td><td>1</td><td>1</td></tr>
+<tr><td>15</td><td>Покупка комбо-набора с игрушкой</td><td>3</td><td>0</td></tr>
+<tr><td>16</td><td>Игра с игрушкой из Додо</td><td>2</td><td>2</td></tr>
+<tr><td>17</td><td>Заказ через киоск самообслуживания</td><td>6</td><td>2</td></tr>
+<tr><td>18</td><td>Запись на День рождения</td><td>5</td><td>0</td></tr>
+<tr><td>19</td><td>Запись на МК/экскурсию</td><td>4</td><td>0</td></tr>
+<tr><td>20</td><td>Участие в мастер-классе/экскурсии</td><td>12</td><td>3</td></tr>
+<tr><td>21</td><td>Употребление заказа на мероприятии</td><td>1</td><td>1</td></tr>
+<tr><td>22</td><td>Сервировка праздничного стола</td><td>2</td><td>0</td></tr>
+<tr><td>23</td><td>Заказ через колл-центр</td><td>3</td><td>1</td></tr>
+<tr><td>24</td><td>Ожидание онлайн-заказа</td><td>0</td><td>0</td></tr>
+<tr><td>25</td><td>Игра в приложении</td><td>0</td><td>1</td></tr>
+<tr><td>26</td><td>Приёмка пиццы у курьера</td><td>1</td><td>1</td></tr>
+</tbody>
+</table>
+</div>
+<div class="ids__space S"></div>
+<div class="ids__text-width">
+
+<p>Каждый участок — отдельная карта взаимодействий: кто участвует, в каком порядке идут действия, где появляются барьеры и драйверы. Вот как выглядят cjm карты участков</p>
+
+</div>
+</div>
+<div class="ids__space XS"></div>
+<div class="ids__wrapper XL case-page">
+<div class="case-jobs-bento case-field-promo case-field-promo--landscape">
 <div class="case-field-promo-overflow-wrapper">
 <div class="case-field-promo-stack">
 <div class="case-field-promo-container case-field-promo-container--content">
-<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/dodo-kids-all-cjm.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
-<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/dodo-kids-cjm-how-to-read-the-map.jpg" alt="Как читать карту" loading="lazy"/></div>
-<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/dodo-kids-cjm-bathroom-with-kid.jpg" alt="Участок: туалет с ребёнком" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/01.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/06.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/03.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/07.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/08.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/09.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/10.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/11.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/12.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/13.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/14.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/15.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/screenshots/16.jpg" alt="Фрагмент карты взаимодействий" loading="lazy"/></div>
 </div>
 <div class="case-field-promo-container case-field-promo-container--stub">
 <div class="case-field-promo-image"></div>
@@ -407,18 +513,60 @@
 </div>
 </div>
 </div>
+
+<div class="ids__space S"></div>
+
+<div class="case-jobs-bento case-field-promo case-field-promo--landscape case-field-promo--cover">
+<div class="case-field-promo-overflow-wrapper">
+<div class="case-field-promo-stack">
+<div class="case-field-promo-container case-field-promo-container--content">
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/01.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/02.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/03.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/04.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/05.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/06.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/07.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/08.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/09.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/10.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/11.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/12.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/13.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/14.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+<div class="case-field-promo-image"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/originals/15.jpg" alt="Карта взаимодействий" loading="lazy"/></div>
+</div>
+<div class="case-field-promo-container case-field-promo-container--stub">
+<div class="case-field-promo-image"></div>
+<div class="case-field-promo-image"></div>
+<div class="case-field-promo-image"></div>
+<div class="case-field-promo-image"></div>
+<div class="case-field-promo-image"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="ids__space XS"></div>
+<div class="ids__wrapper case-featured case-standard case-page">
 <div class="ids__text-width">
 
-<p>Внутри каждого участка мы описали факторы негативного опыта — <strong>барьеры</strong>. Всё, что сейчас генерирует плохой опыт для гостей с детьми:</p>
+<p>Внутри каждого участка мы описали факторы негативного опыта — <strong>барьеры</strong>. Всё, что сейчас генерирует плохой опыт для гостей с детьми: скользкое крыльцо; нет возможности подогреть молоко для вскармливания — в пиццерии только кипяток, потому что наливают кофе и чай; нет места для пеленания; низковисящие плафоны, с которыми взрослый не столкнётся, а ребёнок начнёт играть; шумные подростки, мешающие семье с малышом; неудобно раздевать ребёнка у вешалки или за маленьким столом.</p>
 
-<p>скользкое крыльцо; нет возможности подогреть молоко для вскармливания — в пиццерии только кипяток, потому что наливают кофе и чай; нет места для пеленания; низковисящие плафоны, с которыми взрослый не столкнётся, а ребёнок начнёт играть; шумные подростки, мешающие семье с малышом; неудобно раздевать ребёнка у вешалки или за маленьким столом.</p>
+</div>
+<div class="ids__space XS"></div>
+<figure class="case-ssp-cjm case-ssp-cjm--shadow">
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/dodo-kids-cjm-order-pickup.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/cjm/dodo-kids-cjm-order-pickup.jpg" alt="Карта взаимодействия «Получение заказа в пиццерии»" loading="lazy"/></a>
+<figcaption>Красные стрелки — барьеры, зелёные — драйверы</figcaption>
+</figure>
+<div class="ids__space XS"></div>
+<div class="ids__text-width">
 
 <p>Барьеров набралось <strong>больше ста</strong>. Каждый был описан, привязан к участку карты и к источнику — стандарту, наблюдению, интервью. Параллельно фиксировали <strong>драйверы</strong> — то, что гости воспринимают как приятное. Через аналитику прошло <strong>552 гипотезы</strong>. Ими мы описали обстоятельства, в которых семья «нанимает» Додо, сами взаимодействия с объектами, людьми и интерфейсами бренда, барьеры и драйверы внутри них — и инициативы по улучшению опыта.</p>
 
 
 
-<h2 class="S">Отсортировали 100+ барьеров, 30 в работу</h2>
+<h2 class="S case-toc-target" data-toc="Барьеры">Отсортировали 100+ барьеров, 30 в работу</h2>
 
 <p>Дальше начался этап сортировки. Мы попросили Машу и Алексея отметить барьеры, которые они знали и которые не знали. Из известных — пытались ли что-то с ними делать. Получилась классификация: знали — устранили; знали — не получилось устранить; не знали — будем устранять или нет. Нас особенно интересовали случаи, когда барьер был известен, с ним пытались работать — и не вышло. Почему?</p>
 
@@ -428,7 +576,7 @@
 <div class="promo-switchers">
 <div class="promo-switcher" role="group" aria-label="Список барьеров">
 <button type="button" class="promo-switcher__item is-active" aria-pressed="true" data-barriers-detail="short">В работе (33)</button>
-<button type="button" class="promo-switcher__item" aria-pressed="false" data-barriers-detail="full">Все (66)</button>
+<button type="button" class="promo-switcher__item" aria-pressed="false" data-barriers-detail="full">Все (102)</button>
 </div>
 </div>
 <div class="ids__space S"></div>
@@ -450,9 +598,84 @@
 
 <p>Из примерно сотни барьеров мы выбрали порядка тридцати приоритетных и начали с ними работать.</p>
 
-<h2 class="S">Собрали полезные образцы и шесть принципов wow-опыта</h2>
+<h2 class="S case-toc-target" data-toc="Образцы">Собрали полезные образцы и шесть принципов wow-опыта</h2>
 
 <p>Параллельно шёл отдельный стрим — поиск полезных образцов. Мы смотрели детский опыт в QSR в России и за рубежом, в парках, в поликлиниках — везде, куда ходят с детьми. Собирали инженерные находки: как устроены детские туалеты, как обрабатывают сидушки на унитазах, как решают типовые бытовые задачи родителей в общественных местах.</p>
+
+</div>
+<div class="ids__space XS"></div>
+<ids-gallery class="case-gallery-compact case-gallery-captioned">
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/01.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/01.jpg" alt="Низко висящий плафон над столом" loading="lazy"/></a>
+<figcaption>Низко висящий плафон над столом</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/02.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/02.jpg" alt="Ребёнку тесно и скучно за маленьким столом" loading="lazy"/></a>
+<figcaption>Ребёнку тесно и скучно за маленьким столом</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/03.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/03.jpg" alt="Как Додо называют в Китае: «вкусный доставлять пицца»" loading="lazy"/></a>
+<figcaption>Как Додо называют в Китае: «вкусный доставлять пицца»</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/04.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/04.jpg" alt="Коляска у столика, игровая за стеклом" loading="lazy"/></a>
+<figcaption>Коляска у столика, игровая за стеклом</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/05.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/05.jpg" alt="Лестница и стена с алфавитом" loading="lazy"/></a>
+<figcaption>Лестница и стена с алфавитом</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/06.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/06.jpg" alt="Лестница на вход — с коляской неудобно" loading="lazy"/></a>
+<figcaption>Лестница на вход — с коляской неудобно</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/07.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/07.jpg" alt="Игровая за стеклом, стульчик и вешалка рядом" loading="lazy"/></a>
+<figcaption>Игровая за стеклом, стульчик и вешалка рядом</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/08.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/08.jpg" alt="Детский стульчик у игровой с мебелью по росту" loading="lazy"/></a>
+<figcaption>Детский стульчик у игровой с мебелью по росту</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/09.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/09.jpg" alt="Стенд «Додо детям»: маски и книжки" loading="lazy"/></a>
+<figcaption>Стенд «Додо детям»: маски и книжки</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/10.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/10.jpg" alt="Афиша мастер-классов и экскурсий по кухне" loading="lazy"/></a>
+<figcaption>Афиша мастер-классов и экскурсий по кухне</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/11.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/11.jpg" alt="Туалет и подсобка без детских подсказок" loading="lazy"/></a>
+<figcaption>Туалет и подсобка без детских подсказок</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/12.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/12.jpg" alt="Разбросанные мягкие блоки в игровой" loading="lazy"/></a>
+<figcaption>Разбросанные мягкие блоки в игровой</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/13.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/13.jpg" alt="Правила игровой: возраст, обувь, еда" loading="lazy"/></a>
+<figcaption>Правила игровой: возраст, обувь, еда</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/14.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/14.jpg" alt="Мультфильм на ТВ и настенная игра" loading="lazy"/></a>
+<figcaption>Мультфильм на ТВ и настенная игра</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/15.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/15.jpg" alt="Крестики-нолики и магнитные буквы на стене" loading="lazy"/></a>
+<figcaption>Крестики-нолики и магнитные буквы на стене</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/16.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/16.jpg" alt="Детский декор на перегородке" loading="lazy"/></a>
+<figcaption>Детский декор на перегородке</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/17.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/useful-samples/17.jpg" alt="Низкий плафон над столиком" loading="lazy"/></a>
+<figcaption>Низкий плафон над столиком</figcaption>
+</figure>
+</ids-gallery>
+<div class="ids__space XS"></div>
+<div class="ids__text-width">
 
 <p>Любое наше решение должно было масштабироваться: раскататься на тысячи пиццерий сразу, одинаково. Это сильно влияло на то, что мы предлагали — и что отсеивали. Из полезных образцов вывели шесть принципов wow-опыта для детей:</p>
 
@@ -476,13 +699,11 @@
 <div class="ids__space S"></div>
 <div class="ids__text-width">
 
-<h2 class="S">Прототипировали меню, услуги, приложение и оснащение зала</h2>
-
 <p>Дальше мы перешли к прототипированию: меню, новые услуги, приложение — от детских макарон до коллаборации с бебиситтерами и игр для папиного дня.</p>
 
-<h2 class="S">Собрали 45+ инициатив в одиннадцати стримах</h2>
+<h2 class="S case-toc-target" data-toc="Инициативы">Собрали 45+ инициатив в десяти сферах</h2>
 
-<p>На выходе — более 45 инициатив: от точечных улучшений до проектов, которые требуют перестройки залов и процессов. Мы разделили рекомендации на одиннадцать стримов — области, в которых можно усилить драйверы и закрыть барьеры, не теряя масштабируемости на тысячи пиццерий.</p>
+<p>На выходе — более 45 инициатив: от точечных улучшений до проектов, которые требуют перестройки залов и процессов. Мы разделили рекомендации на десять сфер — области, в которых можно усилить драйверы и закрыть барьеры, не теряя масштабируемости на тысячи пиццерий.</p>
 
 </div>
 <div class="ids__space XS"></div>
@@ -548,6 +769,13 @@
 <div class="ids__space S"></div>
 <div class="ids__text-width">
 
+<p>Инициативы получились разными: от точечных правок сервиса и коммуникации до новых продуктов и форматов. Каждую мы прорабатывали в глубину — до экономики и финмодели, прототипа упаковки или подачи, условий пилота и того, как решение раскатывается на сеть. Ниже — краткие саммари нескольких любимых инициатив; подробные разборы вынесли в отдельные кейсы.</p>
+
+</div>
+<div class="ids__space XS"></div>
+<div class="case-initiative-teasers">
+
+<div class="case-initiative-teaser">
 <h2 class="S">Предложили Додо Пасту</h2>
 
 <p>Детские макароны в меню — для джоба «накормить ребёнка, который любит только макароны». Экономика и прототип подачи, не одна идея в таблице.</p>
@@ -559,7 +787,9 @@
 </ul>
 
 <p class="case-initiative-more"><a href="/projects/dodo-pizza-kids/dodo-pasta/">Подробнее про Додо Пасту →</a></p>
+</div>
 
+<div class="case-initiative-teaser">
 <h2 class="S">Придумали коллаборацию с Kids Out</h2>
 
 <p>Ситтеры на пару часов в зале — не няня «на вечер», а присмотр, пока родитель работает или отдыхает. Собрали пилот с Kids Out.</p>
@@ -571,20 +801,39 @@
 </ul>
 
 <p class="case-initiative-more"><a href="/projects/dodo-pizza-kids/kids-out-collaboration/">Подробнее про коллаборацию с Kids Out →</a></p>
+</div>
 
-<h2 class="S">Придумали магнитную «настенку» и айсбрейкеры для папиного дня</h2>
+<div class="case-initiative-teaser">
+<h2 class="S">Собрали пакет для папиного дня</h2>
 
-<p>Пакет для джоба «папин день»: отец редко видит ребёнка и не знает, как начать разговор. Решение — цифра + офлайн + зал, а не одна фича.</p>
+<p>Джоб «папин день»: отец редко видит ребёнка и не знает, как начать разговор. Решение — цифровой сценарий и офлайн-карточки, а не одна фича в приложении.</p>
 
 <ul>
-<li><strong>Айсбрейкеры</strong> — игра и миссия в приложении, офлайн-карточки за столом</li>
-<li><strong>«Настенка»</strong> — гексагональная коллекционная игра на магнитной стене под витриной вместо настолки на маленьком столе</li>
-<li><strong>Аттракторы</strong> — точки игры по всей пиццерии; фигурки из додобокса стыкуются с wall game</li>
+<li><strong>Айсбрейкеры в приложении</strong> — игра с карточками и специальная миссия на дату</li>
+<li><strong>Офлайн-карточки</strong> — тот же сценарий за столом, без телефона</li>
+<li><strong>Повод зайти</strong> — миссия даёт конкретную дату и ритуал визита</li>
 </ul>
 
-<p class="case-initiative-more"><a href="/projects/dodo-pizza-kids/magnetic-wall-and-icebreakers-for-fathers-day/">Подробнее про «настенку» и айсбрейкеры →</a></p>
+<p class="case-initiative-more"><a href="/projects/dodo-pizza-kids/fathers-day/">Подробнее про папин день →</a></p>
+</div>
 
-<p>Ещё из инициатив: семейный профиль и общий додакоин-счёт в приложении; офлайн-карточки с айсбрейкерами; видеопоздравления на мониторах; дода-ритуал, дода-книга, дода-настолка; бренд-медиа <strong>«Додо Семьи»</strong>; платные мастер-классы по пицце и пакет для празднования дома; доработка <strong>dodokids.ru</strong> под дни рождения; «аварийный набор для папы» в пиццериях.</p>
+<div class="case-initiative-teaser">
+<h2 class="S">Разнесли игру по стенам и залу</h2>
+
+<p>Настолка на маленьком столе мешает еде. Решение — играть на вертикальных поверхностях и точечно по всей пиццерии.</p>
+
+<ul>
+<li><strong>«Настенка»</strong> — гексагональная коллекционная игра на магнитной стене под витриной</li>
+<li><strong>Аттракторы</strong> — штуки, которые взрослый не заметит, а ребёнок у столика найдёт</li>
+<li><strong>Додобокс</strong> — фигурки из комбо стыкуются с wall game</li>
+</ul>
+
+<p class="case-initiative-more"><a href="/projects/dodo-pizza-kids/wall-attractors/">Подробнее про аттракторы в зале →</a></p>
+</div>
+
+</div>
+<div class="ids__space S"></div>
+<div class="ids__text-width">
 
 <p>Главный вывод: чтобы стать частью счастливых детских воспоминаний, нужно встраиваться в ситуации, которые уже имеют потенциал остаться в памяти ребёнка — день рождения, награда за успехи, папин день, путешествие. Не создавать опыт с нуля, а усиливать драйверы и убирать барьеры в моментах, которые и так важны.</p>
 
@@ -592,9 +841,40 @@
 <div class="ids__space S"></div>
 <div class="ids__text-width">
 
-<h2 class="S">Провели финальный воркшоп, топ-12 и видео из детских рисунков</h2>
+<h2 class="S case-toc-target" data-toc="Воркшоп">Провели финальный воркшоп, топ-12 и видео из детских рисунков</h2>
 
 <p>Мы снова собрались в офисе Додо. Показали навигационную карту взаимодействий, раздали рабочие тетради, команды презентовали барьеры друг другу. Потом — мозгоштурм на закрытие приоритетных барьеров и генерацию инициатив по джобам: как усилить драйверы, как устранить барьеры. На финале команды получили карточки топ-12 инициатив и рисовали таблички «кто что делает» — что нужно для воплощения каждой идеи.</p>
+
+</div>
+<div class="ids__space XS"></div>
+<ids-gallery class="case-gallery-compact">
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00004.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00004.jpg" alt="" loading="lazy"/></a>
+<figcaption>Финальный воркшоп</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00064.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00064.jpg" alt="" loading="lazy"/></a>
+<figcaption>Финальный воркшоп</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00172.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00172.jpg" alt="" loading="lazy"/></a>
+<figcaption>Финальный воркшоп</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09760.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09760.jpg" alt="" loading="lazy"/></a>
+<figcaption>Финальный воркшоп</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09886.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09886.jpg" alt="" loading="lazy"/></a>
+<figcaption>Финальный воркшоп</figcaption>
+</figure>
+<figure>
+<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09998.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09998.jpg" alt="" loading="lazy"/></a>
+<figcaption>Финальный воркшоп</figcaption>
+</figure>
+</ids-gallery>
+<div class="ids__space S"></div>
+<div class="ids__text-width">
 
 <p>Команда смотрела, голосовала, говорила, что нравится, а что нет. В конце сделали сюрприз: в процессе проекта попросили детей наших информантов нарисовать Додо — и собрали из рисунков короткий видеоролик. «Раз хотите стать частью приятных детских воспоминаний — вот вам ролик, сделанный из приятных детских воспоминаний».</p>
 
@@ -638,135 +918,13 @@
 <a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/children-drawings/12.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/children-drawings/12.jpg" alt="" loading="lazy"/></a>
 </figure>
 </ids-gallery>
-<div class="ids__space XS"></div>
-<ids-gallery class="case-gallery-compact">
-<figure>
-<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00004.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00004.jpg" alt="" loading="lazy"/></a>
-<figcaption>Финальный воркшоп</figcaption>
-</figure>
-<figure>
-<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00064.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00064.jpg" alt="" loading="lazy"/></a>
-<figcaption>Финальный воркшоп</figcaption>
-</figure>
-<figure>
-<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00172.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC00172.jpg" alt="" loading="lazy"/></a>
-<figcaption>Финальный воркшоп</figcaption>
-</figure>
-<figure>
-<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09760.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09760.jpg" alt="" loading="lazy"/></a>
-<figcaption>Финальный воркшоп</figcaption>
-</figure>
-<figure>
-<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09886.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09886.jpg" alt="" loading="lazy"/></a>
-<figcaption>Финальный воркшоп</figcaption>
-</figure>
-<figure>
-<a href="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09998.jpg"><img src="/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/final-workshop/DSC09998.jpg" alt="" loading="lazy"/></a>
-<figcaption>Финальный воркшоп</figcaption>
-</figure>
-</ids-gallery>
-</div>
-
-<div class="ids__space L"></div>
-
-<div class="ids__wrapper case-featured case-standard case-page">
-
-<div class="ids__text-width">
-
-<h2 class="S">Видео-отзывы</h2>
-
-</div>
-<div class="ids__space XS"></div>
-<div class="case-video-section">
-<figure class="case-video-featured">
-<div class="case-video-featured__player"></div>
-<figcaption>Встреча ССП</figcaption>
-</figure>
-<div class="ids__space S"></div>
-<div class="case-video-testimonials">
-<figure class="case-video-testimonial">
-<div class="case-video-testimonial__player"></div>
-<figcaption>
-<strong>Имя Фамилия</strong>
-<span class="case-video-testimonial__role">Роль</span>
-</figcaption>
-</figure>
-<figure class="case-video-testimonial">
-<div class="case-video-testimonial__player"></div>
-<figcaption>
-<strong>Имя Фамилия</strong>
-<span class="case-video-testimonial__role">Роль</span>
-</figcaption>
-</figure>
-<figure class="case-video-testimonial">
-<div class="case-video-testimonial__player"></div>
-<figcaption>
-<strong>Имя Фамилия</strong>
-<span class="case-video-testimonial__role">Роль</span>
-</figcaption>
-</figure>
-<figure class="case-video-testimonial">
-<div class="case-video-testimonial__player"></div>
-<figcaption>
-<strong>Имя Фамилия</strong>
-<span class="case-video-testimonial__role">Роль</span>
-</figcaption>
-</figure>
-</div>
-</div>
-<div class="ids__space L"></div>
-<div class="case-video-section">
-<figure class="case-video-featured">
-<div class="case-video-featured__player"></div>
-<figcaption>Финальный воркшоп</figcaption>
-</figure>
-<div class="ids__space S"></div>
-<div class="case-video-testimonials">
-<figure class="case-video-testimonial">
-<div class="case-video-testimonial__player"></div>
-<figcaption>
-<strong>Имя Фамилия</strong>
-<span class="case-video-testimonial__role">Роль</span>
-</figcaption>
-</figure>
-<figure class="case-video-testimonial">
-<div class="case-video-testimonial__player"></div>
-<figcaption>
-<strong>Имя Фамилия</strong>
-<span class="case-video-testimonial__role">Роль</span>
-</figcaption>
-</figure>
-<figure class="case-video-testimonial">
-<div class="case-video-testimonial__player"></div>
-<figcaption>
-<strong>Имя Фамилия</strong>
-<span class="case-video-testimonial__role">Роль</span>
-</figcaption>
-</figure>
-<figure class="case-video-testimonial">
-<div class="case-video-testimonial__player"></div>
-<figcaption>
-<strong>Имя Фамилия</strong>
-<span class="case-video-testimonial__role">Роль</span>
-</figcaption>
-</figure>
-<figure class="case-video-testimonial">
-<div class="case-video-testimonial__player"></div>
-<figcaption>
-<strong>Имя Фамилия</strong>
-<span class="case-video-testimonial__role">Роль</span>
-</figcaption>
-</figure>
-</div>
-</div>
-
 </div>
 
 <div class="ids__space L"></div>
 
 <div class="ids__wrapper XL">
 
-<h2>Люди</h2>
+<h2 class="case-toc-target" data-toc="Люди">Люди</h2>
 
 <p class="author-box"><strong class="author-box__team">Команда бюро Понедельник</strong>, <span class="author-box__role">руководитель проекта:</span> <span class="name"><span>Сергей Степанов</span></span>; <span class="author-box__role">администратор проекта:</span> <span class="name"><span>Кристина Кострова</span></span>; <span class="author-box__role">старший аналитик:</span> <span class="name"><span>Михаил Руденко</span></span>; <span class="author-box__role">старший исследователь:</span> <span class="name"><span>Анжелика Лашевская</span></span>; <span class="author-box__role">зам. старшего аналитика:</span> <span class="name"><span>Александра Руденко</span></span>; <span class="author-box__role">аналитики:</span> <span class="name"><span>Олег Волков</span></span>, <span class="name"><span>Соня Яковчук</span></span>, <span class="name"><span>Наталья Гонцова</span></span>, <span class="name"><span>Богдан Бурдин</span></span>, <span class="name"><span>Татьяна Ильина</span></span>, <span class="name"><span>Александра Руденко</span></span>; <span class="author-box__role">картограф проекта:</span> <span class="name"><span>Богдан Бурдин</span></span>; <span class="author-box__role">исследователи, этнографы:</span> <span class="name"><span>Татьяна Ильина</span></span>, <span class="name"><span>Влада Борисова</span></span>, <span class="name"><span>Светлана Фоменко</span></span>, <span class="name"><span>Леонид Борисов</span></span>, <span class="name"><span>Екатерина Дементьева</span></span>. <strong class="author-box__team">Команда ближнего Востока</strong>, <span class="author-box__role">исследователи:</span> <span class="name"><span>Сергей Мохов</span></span>, <span class="name"><span>Михаил Боде</span></span>. <strong class="author-box__team">Команда Додо Пиццы</strong>, <span class="author-box__role">менеджер по детскому опыту, куратор проекта:</span> <span class="name"><span>Маша Калинина</span></span>; <span class="author-box__role">лидер по детскому опыту:</span> <span class="name"><span>Алексей Тарандовский</span></span>.</p>
 
