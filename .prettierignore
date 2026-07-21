@@ -1,0 +1,7 @@
+_site
+node_modules
+package-lock.json
+src/assets/projects
+src/ids/js/lib
+*.min.js
+*.min.css
