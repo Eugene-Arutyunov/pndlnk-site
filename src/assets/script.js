@@ -212,34 +212,109 @@ function setDkcpPreviewActive(preview, blocks) {
   preview.dataset.dkcpPreviewActive = Array.from(active).join(",");
 }
 
+const DKCP_BLOCK_INFO = {
+  1: {
+    title: "Клиентский сегмент",
+    text: "Группа людей или компаний, объединённых по наблюдаемым признакам.",
+  },
+  2: {
+    title: "Мотивационный конфликт",
+    text: "Противоречие между драйвером и барьером, с которым живёт клиент.",
+  },
+  3: {
+    title: "Артефакт",
+    text: "Набор товаров, услуг и информации для разрешения конфликта.",
+  },
+  4: {
+    title: "Атрибуты артефакта",
+    text: "Свойства артефакта, по которым его сравнивают и выбирают.",
+  },
+  5: {
+    title: "Вклад клиента",
+    text: "Форма и размер вклада клиента в обмен — деньги и не только.",
+  },
+  6: {
+    title: "Условия обмена",
+    text: "Как процесс обмена разворачивается во времени.",
+  },
+  7: {
+    title: "Атрибуты компании",
+    text: "Свойства продавца, влияющие на восприятие продукта и доверие.",
+  },
+  8: {
+    title: "Ценность",
+    text: "Символический смысл процесса обмена, венчающий всю модель.",
+  },
+  9: {
+    title: "Аргументы",
+    text: "Сообщения о взаимосвязи блоков ценностного предложения.",
+  },
+};
+
 function initKscOutcomes() {
   const root = document.querySelector("[data-ksc-outcomes]");
   if (!root) return;
 
+  const svgNS = "http://www.w3.org/2000/svg";
   const linesLayer = root.querySelector("[data-ksc-outcomes-lines]");
-  const icon = root.querySelector("[data-ksc-outcomes-icon] .dkcp-preview");
+  const sticky = root.querySelector("[data-ksc-outcomes-icon]");
+  const icon = sticky?.querySelector(".dkcp-preview");
   const iconSvg = icon?.querySelector(".dkcp-preview-icon");
   const anchors = Array.from(root.querySelectorAll("[data-ksc-outcomes-anchor]"));
   const scenarios = Array.from(root.querySelectorAll("[data-ksc-outcome]"));
-  const sections = {
-    model: root.querySelector(".ksc-outcomes__section--model"),
-    team: root.querySelector(".ksc-outcomes__section--team"),
-  };
-  const defaultBlocks = icon?.dataset.dkcpPreviewActive
-    ? icon.dataset.dkcpPreviewActive.split(",")
-    : [];
+  const teamSection = root.querySelector(".ksc-outcomes__section--team");
+  const defaultBlocks = [];
   const allBlocks = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   const zones = [
-    sections.model && { element: sections.model, blocks: allBlocks },
     ...scenarios.map((scenario) => ({
       element: scenario,
       blocks: scenario.dataset.dkcpBlocks?.split(",") || defaultBlocks,
     })),
-    sections.team && { element: sections.team, blocks: allBlocks },
+    teamSection && { element: teamSection, blocks: allBlocks },
   ].filter(Boolean);
 
   if (!linesLayer || !icon || !iconSvg || anchors.length === 0) return;
+
+  const tooltip = document.createElement("div");
+  tooltip.className = "ksc-outcomes__tooltip";
+  tooltip.setAttribute("aria-hidden", "true");
+  const tooltipTitle = document.createElement("p");
+  tooltipTitle.className = "ksc-outcomes__tooltip-title";
+  const tooltipText = document.createElement("p");
+  tooltipText.className = "ksc-outcomes__tooltip-text";
+  tooltip.append(tooltipTitle, tooltipText);
+  root.appendChild(tooltip);
+
+  // Невидимый зонд: превращает --ksc-outcomes-line-cut (с calc) в пиксели
+  const lineCutProbe = document.createElement("div");
+  lineCutProbe.style.cssText =
+    "position:absolute;visibility:hidden;pointer-events:none;height:0;width:var(--ksc-outcomes-line-cut);";
+  root.appendChild(lineCutProbe);
+
+  function positionTooltip() {
+    const rootRect = root.getBoundingClientRect();
+    const iconRect = icon.getBoundingClientRect();
+    const gap = parseFloat(getComputedStyle(root).fontSize) * 0.8;
+    tooltip.style.left = `${iconRect.right - rootRect.left + gap}px`;
+    tooltip.style.top = `${iconRect.top - rootRect.top}px`;
+  }
+
+  iconSvg.querySelectorAll("[data-dkcp-preview-block]").forEach((segment) => {
+    segment.addEventListener("mouseenter", () => {
+      const info = DKCP_BLOCK_INFO[segment.dataset.dkcpPreviewBlock];
+      if (!info) return;
+
+      tooltipTitle.textContent = info.title;
+      tooltipText.textContent = info.text;
+      positionTooltip();
+      tooltip.classList.add("is-visible");
+    });
+
+    segment.addEventListener("mouseleave", () => {
+      tooltip.classList.remove("is-visible");
+    });
+  });
 
   function updateActiveBlocks() {
     const iconRect = icon.getBoundingClientRect();
@@ -264,25 +339,46 @@ function initKscOutcomes() {
 
   function updateLines() {
     const rootRect = root.getBoundingClientRect();
-    const iconRect = icon.getBoundingClientRect();
-    const cornerGap = Math.min(iconRect.width, iconRect.height) * 0.06;
-    const targetX = iconRect.right - cornerGap - rootRect.left;
-    const targetY = iconRect.bottom - cornerGap - rootRect.top;
+    const iconRect = iconSvg.getBoundingClientRect();
+    const startX = iconRect.left + iconRect.width / 2 - rootRect.left;
+    const centerY = iconRect.top + iconRect.height / 2 - rootRect.top;
+    const startStep = iconRect.height * 0.12;
+    const lineCut = lineCutProbe.getBoundingClientRect().width;
 
     linesLayer.setAttribute("viewBox", `0 0 ${rootRect.width} ${rootRect.height}`);
     linesLayer.replaceChildren();
 
-    anchors.forEach((anchor) => {
+    anchors.forEach((anchor, index) => {
       const anchorRect = anchor.getBoundingClientRect();
-      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      const anchorX = anchorRect.left + anchorRect.width / 2 - rootRect.left;
+      const anchorY = anchorRect.top + anchorRect.height / 2 - rootRect.top;
 
+      const x1 = startX;
+      const y1 = centerY + (index - (anchors.length - 1) / 2) * startStep;
+      const dx = anchorX - x1;
+      const dy = anchorY - y1;
+      const length = Math.hypot(dx, dy);
+      if (length <= lineCut * 2) return;
+
+      const x2 = anchorX - (dx / length) * lineCut;
+      const y2 = anchorY - (dy / length) * lineCut;
+
+      const line = document.createElementNS(svgNS, "line");
       line.setAttribute("class", "ksc-outcomes__connector-line");
-      line.setAttribute("x1", anchorRect.left + anchorRect.width / 2 - rootRect.left);
-      line.setAttribute("y1", anchorRect.top + anchorRect.height / 2 - rootRect.top);
-      line.setAttribute("x2", targetX);
-      line.setAttribute("y2", targetY);
+      line.setAttribute("x1", x1);
+      line.setAttribute("y1", y1);
+      line.setAttribute("x2", x2);
+      line.setAttribute("y2", y2);
       linesLayer.appendChild(line);
     });
+  }
+
+  function updateLinesVisibility() {
+    const stickyRect = sticky.getBoundingClientRect();
+    const stickyTop = parseFloat(getComputedStyle(sticky).top) || 0;
+    const isStuck = stickyRect.top <= stickyTop + 2;
+    const lastAnchorRect = anchors[anchors.length - 1].getBoundingClientRect();
+    linesLayer.classList.toggle("is-visible", isStuck && lastAnchorRect.bottom > 0);
   }
 
   let rafId = null;
@@ -292,6 +388,8 @@ function initKscOutcomes() {
     rafId = requestAnimationFrame(() => {
       updateLines();
       updateActiveBlocks();
+      updateLinesVisibility();
+      if (tooltip.classList.contains("is-visible")) positionTooltip();
       rafId = null;
     });
   }
@@ -300,6 +398,7 @@ function initKscOutcomes() {
   window.addEventListener("resize", scheduleUpdate);
   updateLines();
   updateActiveBlocks();
+  updateLinesVisibility();
 }
 
 function formatRgbColorValue(color) {
