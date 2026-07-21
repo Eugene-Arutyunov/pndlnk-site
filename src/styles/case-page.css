@@ -147,8 +147,9 @@
   border-bottom: 2px solid rgb(var(--ids__text-RGB));
 }
 
-/* Длинные проекты: заголовки секций */
-.ids .case-page.case-standard:not(.article) .ids__text-width h2.S {
+/* Длинные проекты: заголовки секций — только если h2 не первый в текстовом блоке
+   (между блоками h2+p ставим ids__space M явно) */
+.ids .case-page.case-standard:not(.article) .ids__text-width > h2.S:not(:first-child) {
   margin-top: calc(var(--ids__density) * 1.4em);
 }
 
