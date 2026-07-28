@@ -1,0 +1,76 @@
+<div class="initiative-catalog-panel">
+  <div class="initiative-catalog-filter">
+    <div class="initiative-catalog-filter__row" role="region" aria-label="Фильтр инициатив">
+      <p class="initiative-catalog-filter__sentence">
+        Проработали инициативы
+        <label class="initiative-catalog-filter__field">
+          <span class="visually-hidden">Сфера</span>
+          <span class="initiative-catalog-filter__select-wrap">
+            <select
+              id="initiative-filter-sphere"
+              class="initiative-catalog-filter__select"
+              aria-label="Сфера инициатив">
+              <option value="all">для&nbsp;всех сфер</option>
+              <option value="menu">для&nbsp;меню</option>
+              <option value="new-products">для&nbsp;новых продуктов и&nbsp;услуг</option>
+              <option value="birthday">для&nbsp;дней рождения и&nbsp;мастер-классов</option>
+              <option value="kids-rooms">для&nbsp;оснащения детских комнат</option>
+              <option value="app">для&nbsp;мобильного приложения</option>
+              <option value="delivery">для&nbsp;доставки</option>
+              <option value="communications">для&nbsp;коммуникаций</option>
+              <option value="service">для&nbsp;сервисных стандартов</option>
+              <option value="halls">для&nbsp;оснащения залов</option>
+              <option value="extra">для&nbsp;экстра-формата</option>
+            </select>
+          </span>
+        </label>
+      </p>
+      <label class="initiative-catalog-filter__checkbox">
+        <input type="checkbox" id="initiative-filter-featured" />
+        <span>Избранные инициативы</span>
+      </label>
+      <p class="initiative-catalog-filter__status" id="initiative-filter-status" aria-live="polite"></p>
+    </div>
+    <ul class="initiative-grid" role="list">
+      {% for initiative in dodoKidsInitiatives %}
+      <li
+        class="initiative-card"
+        data-sphere="{{ initiative.sphereKeys | join(' ') }}"
+        data-featured="{{ initiative.featured and 'true' or 'false' }}">
+        {% if initiative.url %}
+        <a class="initiative-card__link" href="{{ initiative.url }}">
+          {% else %}
+          <div class="initiative-card__inner">
+            {% endif %}
+            <div class="initiative-card__body">
+              <h3 class="initiative-card__title">{{ initiative.title }}</h3>
+              {% if initiative.principles and initiative.principles.length %}
+              <div class="initiative-card__principles">
+                {% for principle in initiative.principles %}
+                <span class="initiative-card__principle">{{ principle }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
+              <div class="initiative-card__tags">
+                {% for tag in initiative.spheres | initiativeTags %}
+                <span class="initiative-card__tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            </div>
+            {% if initiative.url %}
+        </a>
+        {% else %}
+          </div>
+          {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    <button
+      type="button"
+      class="initiative-catalog-show-all"
+      id="initiative-catalog-show-all"
+      hidden>
+      Показать все
+    </button>
+  </div>
+</div>

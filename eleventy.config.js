@@ -1,4 +1,6 @@
 const loadProjects = require("./src/data/loadProjects.js");
+const loadDodoKidsInitiatives = require("./src/data/loadDodoKidsInitiatives.js");
+const { sphereToTags } = loadDodoKidsInitiatives;
 const { HIDDEN_PROJECT_SLUGS } = require("./src/data/projectHidden.js");
 
 module.exports = function (conf) {
@@ -9,6 +11,14 @@ module.exports = function (conf) {
   const projects = loadProjects();
   conf.addGlobalData("projects", projects);
   conf.addGlobalData("homeProjects", projects);
+  conf.addGlobalData("dodoKidsInitiatives", loadDodoKidsInitiatives());
+
+  conf.addFilter("loadDodoKidsInitiatives", () => loadDodoKidsInitiatives());
+
+  conf.addFilter("initiativeTags", (spheres) => {
+    if (!Array.isArray(spheres)) return [];
+    return sphereToTags(spheres);
+  });
 
   conf.addFilter("projectBySlug", (list, slug) => {
     if (!Array.isArray(list) || slug == null || slug === "") return null;
@@ -28,6 +38,7 @@ module.exports = function (conf) {
 
   conf.addWatchTarget("./src/index.css");
   conf.addWatchTarget("./src/styles/");
+  conf.addWatchTarget("./src/data/");
   conf.addWatchTarget("./src/ids/");
 
   return {
