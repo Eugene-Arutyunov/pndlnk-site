@@ -267,6 +267,77 @@ function initCaseBarriersTable() {
   }
 }
 
+function initCaseSspHypothesesTable() {
+  const container = document.querySelector(".case-ssp-hypotheses-table");
+  if (!container) return;
+
+  const detailButtons = container.querySelectorAll("[data-ssp-hypotheses-detail]");
+  const rows = Array.from(container.querySelectorAll(".case-ssp-hypothesis-row"));
+
+  if (detailButtons.length === 0 || rows.length === 0) return;
+
+  const counts = { all: rows.length };
+  rows.forEach((row) => {
+    const key = row.dataset.sspObject;
+    if (!key) return;
+    counts[key] = (counts[key] || 0) + 1;
+  });
+
+  detailButtons.forEach((btn) => {
+    const mode = btn.dataset.sspHypothesesDetail;
+    const count = counts[mode] || 0;
+    const label = btn.textContent.replace(/\s*\(\d+\)\s*$/, "").trim();
+    btn.textContent = `${label} (${count})`;
+  });
+
+  rows.forEach((row) => {
+    if (row.dataset.originalNumber == null) {
+      const numCell = row.querySelector("td");
+      row.dataset.originalNumber = numCell ? numCell.textContent.trim() : "";
+    }
+  });
+
+  function switchDetail(mode) {
+    container.dataset.sspHypothesesDetail = mode;
+    let n = 0;
+    rows.forEach((row) => {
+      const match = mode === "all" || row.dataset.sspObject === mode;
+      row.hidden = !match;
+      const numCell = row.querySelector("td");
+      if (!numCell) return;
+      if (match) {
+        n += 1;
+        numCell.textContent =
+          mode === "all" ? row.dataset.originalNumber : String(n);
+      }
+    });
+  }
+
+  detailButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("is-active")) return;
+
+      detailButtons.forEach((b) => {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-pressed", "false");
+      });
+
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-pressed", "true");
+
+      switchDetail(btn.dataset.sspHypothesesDetail);
+    });
+  });
+
+  const activeDetailButton = Array.from(detailButtons).find((btn) =>
+    btn.classList.contains("is-active")
+  );
+
+  if (activeDetailButton) {
+    switchDetail(activeDetailButton.dataset.sspHypothesesDetail);
+  }
+}
+
 function formatRgbColorValue(color) {
   const rgbMatch = color.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
   if (rgbMatch) {
@@ -415,6 +486,94 @@ function initProjectCatalogFilter() {
   audienceSel.value = "all";
   industrySel.value = "all";
   featuredCheckbox.checked = defaultFeatured;
+  apply();
+}
+
+function initInitiativeCatalogFilter() {
+  const root = document.querySelector(".initiative-catalog-panel");
+  if (!root) return;
+
+  const grid = root.querySelector(".initiative-grid");
+  if (!grid) return;
+
+  const sphereSel = root.querySelector("#initiative-filter-sphere");
+  const featuredCheckbox = root.querySelector("#initiative-filter-featured");
+  const statusEl = root.querySelector("#initiative-filter-status");
+  const showAllEl = root.querySelector("#initiative-catalog-show-all");
+  const cards = Array.from(grid.querySelectorAll(".initiative-card"));
+
+  if (!sphereSel || !featuredCheckbox || cards.length === 0) return;
+
+  const total = cards.length;
+
+  cards.forEach((card, index) => {
+    if (card.dataset.originalOrder == null) {
+      card.dataset.originalOrder = String(index);
+    }
+  });
+
+  function splitDataset(value) {
+    return (value || "").trim().split(/\s+/).filter(Boolean);
+  }
+
+  function cardMatches(card) {
+    const sphere = sphereSel.value;
+    const onlyFeatured = featuredCheckbox.checked;
+
+    const sphereList = splitDataset(card.dataset.sphere);
+    const isFeatured = card.dataset.featured === "true";
+
+    const sphereOk =
+      sphere === "all" || (sphereList.length > 0 && sphereList.includes(sphere));
+    const featOk = !onlyFeatured || isFeatured;
+    return sphereOk && featOk;
+  }
+
+  function apply() {
+    const sphere = sphereSel.value;
+    const onlyFeatured = featuredCheckbox.checked;
+    const isFilterActive = sphere !== "all" || onlyFeatured;
+
+    const sorted = [...cards].sort((a, b) => {
+      if (!isFilterActive) {
+        return Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
+      }
+      const ma = cardMatches(a);
+      const mb = cardMatches(b);
+      if (ma !== mb) return ma ? -1 : 1;
+      return Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
+    });
+
+    sorted.forEach((c) => grid.appendChild(c));
+
+    let shown = 0;
+    sorted.forEach((card) => {
+      const m = cardMatches(card);
+      if (m) shown += 1;
+      card.classList.toggle("is-hidden", isFilterActive && !m);
+    });
+
+    if (statusEl) {
+      statusEl.textContent = isFilterActive ? `${shown} / ${total}` : String(total);
+    }
+
+    if (showAllEl) {
+      showAllEl.hidden = !isFilterActive;
+    }
+  }
+
+  function showAll() {
+    sphereSel.value = "all";
+    featuredCheckbox.checked = false;
+    apply();
+  }
+
+  sphereSel.addEventListener("change", apply);
+  featuredCheckbox.addEventListener("change", apply);
+  if (showAllEl) showAllEl.addEventListener("click", showAll);
+  window.addEventListener("pageshow", apply);
+  sphereSel.value = "all";
+  featuredCheckbox.checked = false;
   apply();
 }
 
@@ -682,8 +841,10 @@ if (document.readyState === "loading") {
     initPromoTable();
     initKscProgramTable();
     initCaseBarriersTable();
+    initCaseSspHypothesesTable();
     initColorPlates();
     initProjectCatalogFilter();
+    initInitiativeCatalogFilter();
     initCopyTable();
     initCopyField();
     initLogoViewboxDebug();
@@ -697,8 +858,10 @@ if (document.readyState === "loading") {
   initPromoTable();
   initKscProgramTable();
   initCaseBarriersTable();
+  initCaseSspHypothesesTable();
   initColorPlates();
   initProjectCatalogFilter();
+  initInitiativeCatalogFilter();
   initCopyTable();
   initCopyField();
   initLogoViewboxDebug();

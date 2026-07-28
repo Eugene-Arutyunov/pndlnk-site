@@ -1,0 +1,354 @@
+[
+  {
+    "title": "Додо Паста — детские макароны",
+    "spheres": ["Меню"],
+    "principles": ["уважение", "адаптивность"],
+    "url": "/projects/dodo-pizza-kids/dodo-pasta/",
+    "featured": true,
+    "cover": null
+  },
+  {
+    "title": "Продукт под паттерн перекуса для детей до пяти лет",
+    "spheres": ["Меню"],
+    "principles": ["уважение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Платные мастер-классы по приготовлению пиццы",
+    "spheres": ["Новые продукты и услуги", "День рождения и мастер-классы"],
+    "principles": ["значимый контекст", "вознаграждение", "совместный интерес"],
+    "url": "/projects/dodo-pizza-kids/paid-masterclasses/",
+    "featured": true,
+    "cover": null
+  },
+  {
+    "title": "Занятия с бебиситтером в игровой Додо",
+    "spheres": ["Новые продукты и услуги", "Оснащение детских комнат"],
+    "principles": ["вовлечение"],
+    "url": "/projects/dodo-pizza-kids/kids-out-collaboration/",
+    "featured": true,
+    "cover": null
+  },
+  {
+    "title": "Пакетное предложение для празднования дома: еда, декор, развлечения",
+    "spheres": ["Новые продукты и услуги"],
+    "principles": ["значимый контекст"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Семейный профиль в мобильном приложении",
+    "spheres": ["Мобильное приложение"],
+    "principles": ["совместный интерес"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Семейный додокоин-счёт",
+    "spheres": ["Мобильное приложение"],
+    "principles": ["совместный интерес", "вознаграждение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Игра с карточками айс-брейкерами",
+    "spheres": ["Мобильное приложение"],
+    "principles": ["совместный интерес", "значимый контекст"],
+    "url": "/projects/dodo-pizza-kids/fathers-day/",
+    "featured": true,
+    "cover": null
+  },
+  {
+    "title": "Цифровые ачивки для детей",
+    "spheres": ["Мобильное приложение"],
+    "principles": ["вознаграждение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "UGC-вкладыш на доставку для детей",
+    "spheres": ["Мобильное приложение", "Доставка"],
+    "principles": ["вознаграждение", "вовлечение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Специальная миссия для Папиного дня",
+    "spheres": ["Мобильное приложение"],
+    "principles": ["совместный интерес", "значимый контекст"],
+    "url": "/projects/dodo-pizza-kids/fathers-day/",
+    "featured": true,
+    "cover": null
+  },
+  {
+    "title": "Состав блюда, аллергены и КБЖУ в карточке продукта и бумажном меню",
+    "spheres": ["Мобильное приложение"],
+    "principles": ["уважение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Прямой эфир из детской комнаты",
+    "spheres": ["Мобильное приложение", "Оснащение детских комнат"],
+    "principles": [],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Бренд-медиа «Додо Семьи»",
+    "spheres": ["Коммуникации"],
+    "principles": ["совместный интерес"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "«Додо-ритуал» для завершения визита",
+    "spheres": ["Коммуникации"],
+    "principles": ["вознаграждение", "уважение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "QR-коды с материалами про продукты на упаковке",
+    "spheres": ["Коммуникации", "Доставка"],
+    "principles": [],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Мерч: Додо-книга и Додо-настолка",
+    "spheres": ["Коммуникации"],
+    "principles": ["совместный интерес", "вовлечение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Фирменный контент с персонажами Додо",
+    "spheres": ["Коммуникации"],
+    "principles": ["вовлечение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Разделять потоки гостей офферами",
+    "spheres": ["Коммуникации"],
+    "principles": [],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Доработать dodokids.ru под дни рождения и платные МК",
+    "spheres": ["День рождения и мастер-классы"],
+    "principles": ["значимый контекст"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Пакетное предложение для празднования дома",
+    "spheres": ["День рождения и мастер-классы"],
+    "principles": ["значимый контекст"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Видеопоздравления на мониторах в пиццерии",
+    "spheres": ["День рождения и мастер-классы"],
+    "principles": ["значимый контекст", "вознаграждение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Страховка от срыва запланированного праздника",
+    "spheres": ["День рождения и мастер-классы"],
+    "principles": ["значимый контекст"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Музыкальное сопровождение дня рождения",
+    "spheres": ["День рождения и мастер-классы"],
+    "principles": ["значимый контекст"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Дополнить стандарт «Детский день рождения в ресторане»",
+    "spheres": ["День рождения и мастер-классы", "Сервисные стандарты"],
+    "principles": ["значимый контекст", "уважение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Разводить игрушки на разные каналы продаж",
+    "spheres": ["Доставка"],
+    "principles": ["вознаграждение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Маленькие детские аттракторы по всей пиццерии",
+    "spheres": ["Оснащение залов"],
+    "principles": ["вовлечение"],
+    "url": "/projects/dodo-pizza-kids/wall-attractors/",
+    "featured": true,
+    "cover": null
+  },
+  {
+    "title": "Интерактивные мусорные баки",
+    "spheres": ["Оснащение залов"],
+    "principles": ["вовлечение", "адаптивность"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Удобная входная группа для колясок и людей с инвалидностью",
+    "spheres": ["Оснащение залов"],
+    "principles": ["адаптивность", "уважение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Настенные крючки вместо напольных вешалок",
+    "spheres": ["Оснащение залов"],
+    "principles": ["адаптивность"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Брендированные ветрячки вместо шариков",
+    "spheres": ["Оснащение залов"],
+    "principles": ["вознаграждение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Меню «Нравится детям» на уровне роста ребёнка",
+    "spheres": ["Оснащение залов"],
+    "principles": ["уважение", "адаптивность"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Ступенька под раковину — минимум 25 см",
+    "spheres": ["Оснащение залов"],
+    "principles": ["адаптивность"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Крючки для сумок у пеленальных столиков",
+    "spheres": ["Оснащение залов"],
+    "principles": ["адаптивность"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Стандарт по коммуникации с детьми для курьеров и кассиров",
+    "spheres": ["Сервисные стандарты"],
+    "principles": ["уважение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Обновление игровых: магнитная стена, LCD-экран, кубики",
+    "spheres": ["Оснащение детских комнат"],
+    "principles": ["вовлечение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Умная видеоаналитика детских",
+    "spheres": ["Оснащение детских комнат"],
+    "principles": [],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Повышение гигиены в игровой зоне",
+    "spheres": ["Оснащение детских комнат"],
+    "principles": [],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Сидение с местом для обуви у игровой",
+    "spheres": ["Оснащение детских комнат"],
+    "principles": ["адаптивность"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Спокойные игры для небольшой детской комнаты",
+    "spheres": ["Оснащение детских комнат"],
+    "principles": ["вовлечение"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "«Аварийный набор для папы» в пиццериях",
+    "spheres": ["Экстра-формат"],
+    "principles": ["совместный интерес", "значимый контекст"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Бебихолдер в туалете",
+    "spheres": ["Экстра-формат"],
+    "principles": ["адаптивность"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Подогреватель бутылочек в зоне доступа гостей",
+    "spheres": ["Экстра-формат"],
+    "principles": ["адаптивность"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  },
+  {
+    "title": "Складной стул для переодевания тоддлера в туалете",
+    "spheres": ["Экстра-формат"],
+    "principles": ["адаптивность"],
+    "url": null,
+    "featured": false,
+    "cover": null
+  }
+]
