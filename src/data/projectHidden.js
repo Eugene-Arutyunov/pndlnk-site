@@ -1,6 +1,7 @@
 const HIDDEN_PROJECT_SLUGS = new Set([
   "mts-issledovanie-opyta-produktovyh-komand",
   "razrabotka-kontseptsii-company-builder",
+  "lanit-issledovanie-polzovateley-kedo",
 ]);
 
 function isProjectHidden(slug) {
