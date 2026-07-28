@@ -517,7 +517,7 @@ table.ksc-open-schedule {
 .ksc-outcomes {
   --ksc-outcomes-accent: rgb(242, 86, 91);
   --ksc-outcomes-line: rgba(242, 86, 91, 0.9);
-  --ksc-outcomes-portrait: 2.2em;
+  --ksc-outcomes-portrait: 2.42em;
   /* Линия обрывается на этом расстоянии от центра кружочка */
   --ksc-outcomes-line-cut: calc(var(--ksc-outcomes-portrait) / 2 + 0.35em);
 
@@ -527,7 +527,7 @@ table.ksc-open-schedule {
   grid-template-columns: 6.5em minmax(0, 1fr);
   gap: 3em;
   background: rgba(var(--ids__surface-RGB), 0.3);
-  padding: 2em 1em 4em;
+  padding: 1em 1em 4em;
   font-family: var(--mono);
   font-size: 0.75em;
   overflow: visible;
@@ -551,7 +551,7 @@ table.ksc-open-schedule {
     grid-template-columns: 4.6em minmax(0, 1fr);
     gap: 1em;
     font-size: 0.7em;
-    padding: 1.2em 0.6em 2.4em;
+    padding: 0.6em 0.6em 2.4em;
   }
 
   & h3 {
@@ -574,11 +574,7 @@ table.ksc-open-schedule {
 }
 
 .ksc-outcomes__num {
-  display: block;
-  margin-bottom: 0.35em;
-  font-size: calc(1em / 2);
-  line-height: 1.3;
-  font-weight: 400;
+  color: var(--ksc-outcomes-accent);
 }
 
 .ksc-outcomes__connectors {
@@ -614,7 +610,6 @@ table.ksc-open-schedule {
 
   & .dkcp-preview {
     display: inline-block;
-    padding: 0.55em;
     background: var(--mock-bg);
   }
 
@@ -634,10 +629,6 @@ table.ksc-open-schedule {
   @media (width < 768px) {
     top: 3.5em;
 
-    & .dkcp-preview {
-      padding: 0.4em;
-    }
-
     & .dkcp-preview-icon {
       width: 3.6em;
     }
@@ -645,19 +636,16 @@ table.ksc-open-schedule {
 }
 
 .ksc-outcomes__tooltip {
-  position: absolute;
   box-sizing: border-box;
-  width: 18em;
-  height: 7.5em;
-  padding: 1em 1.1em;
+  width: 100%;
+  margin-top: 0.6em;
+  padding: 0.6em 0.65em;
   border-radius: 0.35em;
   background: var(--mock-bg);
   border: 1px solid rgba(var(--ids__text-RGB), 0.18);
-  box-shadow: 0 0.35em 1em rgba(var(--ids__background-RGB), 0.85);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s ease;
-  z-index: 6;
 
   @media (width < 768px) {
     display: none;
@@ -700,7 +688,7 @@ table.ksc-open-schedule {
 
 .ksc-outcomes__scenario {
   display: grid;
-  grid-template-columns: 5.2em minmax(0, 1fr);
+  grid-template-columns: 3.5em minmax(0, 1fr);
   gap: 0.8em 0.66em;
   margin-top: 1.8em;
   color: rgb(var(--ids__text-RGB));
@@ -765,7 +753,7 @@ table.ksc-open-schedule {
   background-color: var(--ksc-outcomes-accent);
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: auto 92%;
+  background-size: auto 97%;
   border: 1px solid rgba(var(--ids__text-RGB), 0.9);
   box-sizing: border-box;
 }
@@ -811,6 +799,10 @@ table.ksc-open-schedule {
   /* Полуторный масштаб всей мини-дизайн-системы */
   font-size: 1.5em;
   margin-top: 0.6em;
+}
+
+.ksc-outcomes__mock + p {
+  margin-top: 0.9em;
 }
 
 .ksc-outcomes .mock-line {
@@ -961,10 +953,11 @@ table.ksc-open-schedule {
 .ksc-outcomes__mock--slides {
   --slide-w: 8em;
   --slide-h: 5em;
-  --slide-shift: 1.4em;
+  --slide-shift-x: 2.6em;
+  --slide-shift-y: 1.4em;
   position: relative;
-  width: min(100%, calc(var(--slide-w) + var(--slide-shift) * 2));
-  height: calc(var(--slide-h) + var(--slide-shift) * 2);
+  width: min(100%, calc(var(--slide-w) + var(--slide-shift-x) * 2));
+  height: calc(var(--slide-h) + var(--slide-shift-y) * 2);
 }
 
 .ksc-outcomes .mock-slide {
@@ -986,19 +979,39 @@ table.ksc-open-schedule {
 }
 
 .ksc-outcomes .mock-slide:nth-child(2) {
-  left: var(--slide-shift);
-  top: var(--slide-shift);
+  left: var(--slide-shift-x);
+  top: var(--slide-shift-y);
   z-index: 2;
 }
 
 .ksc-outcomes .mock-slide:nth-child(3) {
-  left: calc(var(--slide-shift) * 2);
-  top: calc(var(--slide-shift) * 2);
+  left: calc(var(--slide-shift-x) * 2);
+  top: calc(var(--slide-shift-y) * 2);
   z-index: 3;
 }
 
 .ksc-outcomes .mock-slide .mock-kicker + .mock-h {
   margin-top: 0.4em;
+}
+
+.ksc-outcomes .mock-slide .mock-btn {
+  margin-top: 0.45em;
+}
+
+.ksc-outcomes .mock-slide > .mock-bars {
+  margin-top: 0.4em;
+}
+
+.ksc-outcomes .mock-slide > .mock-bars span:nth-child(1) {
+  height: 0.8em;
+}
+
+.ksc-outcomes .mock-slide > .mock-bars span:nth-child(2) {
+  height: 1.2em;
+}
+
+.ksc-outcomes .mock-slide > .mock-bars span:nth-child(3) {
+  height: 1.6em;
 }
 
 .ksc-outcomes .mock-slide-cols {
@@ -1026,7 +1039,7 @@ table.ksc-open-schedule {
 /* Вебинар: окно софта с панелью сценария справа */
 
 .ksc-outcomes__mock--webinar {
-  width: min(100%, 11em);
+  width: min(100%, 14em);
 }
 
 .ksc-outcomes .mock-webinar-layout {
@@ -1037,6 +1050,11 @@ table.ksc-open-schedule {
 .ksc-outcomes .mock-webinar-stage {
   position: relative;
   padding: 0.5em 0.55em 1.5em;
+
+  /* Приглушаем левую часть, акцент — на панели сценария справа */
+  & > * {
+    opacity: 0.55;
+  }
 }
 
 .ksc-outcomes .mock-stage-slide {

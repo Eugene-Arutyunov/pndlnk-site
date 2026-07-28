@@ -284,21 +284,13 @@ function initKscOutcomes() {
   const tooltipText = document.createElement("p");
   tooltipText.className = "ksc-outcomes__tooltip-text";
   tooltip.append(tooltipTitle, tooltipText);
-  root.appendChild(tooltip);
+  sticky.appendChild(tooltip);
 
   // Невидимый зонд: превращает --ksc-outcomes-line-cut (с calc) в пиксели
   const lineCutProbe = document.createElement("div");
   lineCutProbe.style.cssText =
     "position:absolute;visibility:hidden;pointer-events:none;height:0;width:var(--ksc-outcomes-line-cut);";
   root.appendChild(lineCutProbe);
-
-  function positionTooltip() {
-    const rootRect = root.getBoundingClientRect();
-    const iconRect = icon.getBoundingClientRect();
-    const gap = parseFloat(getComputedStyle(root).fontSize) * 0.8;
-    tooltip.style.left = `${iconRect.right - rootRect.left + gap}px`;
-    tooltip.style.top = `${iconRect.top - rootRect.top}px`;
-  }
 
   iconSvg.querySelectorAll("[data-dkcp-preview-block]").forEach((segment) => {
     segment.addEventListener("mouseenter", () => {
@@ -307,7 +299,6 @@ function initKscOutcomes() {
 
       tooltipTitle.textContent = info.title;
       tooltipText.textContent = info.text;
-      positionTooltip();
       tooltip.classList.add("is-visible");
     });
 
@@ -381,24 +372,17 @@ function initKscOutcomes() {
     linesLayer.classList.toggle("is-visible", isStuck && lastAnchorRect.bottom > 0);
   }
 
-  let rafId = null;
-  function scheduleUpdate() {
-    if (rafId !== null) return;
-
-    rafId = requestAnimationFrame(() => {
-      updateLines();
-      updateActiveBlocks();
-      updateLinesVisibility();
-      if (tooltip.classList.contains("is-visible")) positionTooltip();
-      rafId = null;
-    });
+  // Без rAF-оттяжки: линии должны перерисовываться синхронно со скроллом,
+  // иначе плавает точка прихода линии на иконке
+  function update() {
+    updateLines();
+    updateActiveBlocks();
+    updateLinesVisibility();
   }
 
-  window.addEventListener("scroll", scheduleUpdate, { passive: true });
-  window.addEventListener("resize", scheduleUpdate);
-  updateLines();
-  updateActiveBlocks();
-  updateLinesVisibility();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
 }
 
 function formatRgbColorValue(color) {
