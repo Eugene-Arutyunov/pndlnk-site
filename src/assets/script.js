@@ -207,6 +207,8 @@ function setDkcpPreviewActive(preview, blocks) {
   preview.querySelectorAll("[data-dkcp-preview-block]").forEach((block) => {
     const isActive = active.has(block.dataset.dkcpPreviewBlock);
     block.setAttribute("fill", isActive ? "currentColor" : "none");
+    // Класс позволяет CSS красить активные зоны в цвета палитры ДКЦП
+    block.classList.toggle("is-active", isActive);
   });
 
   preview.dataset.dkcpPreviewActive = Array.from(active).join(",");
@@ -219,19 +221,19 @@ const DKCP_BLOCK_INFO = {
   },
   2: {
     title: "Мотивационный конфликт",
-    text: "Противоречие между драйвером и барьером, с которым живёт клиент.",
+    text: "Противоречие между драйвером и\u00A0барьером, с\u00A0которым живёт клиент.",
   },
   3: {
     title: "Артефакт",
-    text: "Набор товаров, услуг и информации для разрешения конфликта.",
+    text: "Набор товаров, услуг и\u00A0информации для разрешения конфликта.",
   },
   4: {
     title: "Атрибуты артефакта",
-    text: "Свойства артефакта, по которым его сравнивают и выбирают.",
+    text: "Свойства артефакта, по которым его сравнивают и\u00A0выбирают.",
   },
   5: {
     title: "Вклад клиента",
-    text: "Форма и размер вклада клиента в обмен — деньги и не только.",
+    text: "Форма и\u00A0размер вклада клиента в\u00A0обмен — деньги и\u00A0не\u00A0только.",
   },
   6: {
     title: "Условия обмена",
@@ -239,7 +241,7 @@ const DKCP_BLOCK_INFO = {
   },
   7: {
     title: "Атрибуты компании",
-    text: "Свойства продавца, влияющие на восприятие продукта и доверие.",
+    text: "Свойства продавца, влияющие на восприятие продукта и\u00A0доверие.",
   },
   8: {
     title: "Ценность",
@@ -247,7 +249,7 @@ const DKCP_BLOCK_INFO = {
   },
   9: {
     title: "Аргументы",
-    text: "Сообщения о взаимосвязи блоков ценностного предложения.",
+    text: "Сообщения о\u00A0взаимосвязи блоков ценностного предложения.",
   },
 };
 
@@ -262,17 +264,12 @@ function initKscOutcomes() {
   const iconSvg = icon?.querySelector(".dkcp-preview-icon");
   const anchors = Array.from(root.querySelectorAll("[data-ksc-outcomes-anchor]"));
   const scenarios = Array.from(root.querySelectorAll("[data-ksc-outcome]"));
-  const teamSection = root.querySelector(".ksc-outcomes__section--team");
   const defaultBlocks = [];
-  const allBlocks = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-  const zones = [
-    ...scenarios.map((scenario) => ({
-      element: scenario,
-      blocks: scenario.dataset.dkcpBlocks?.split(",") || defaultBlocks,
-    })),
-    teamSection && { element: teamSection, blocks: allBlocks },
-  ].filter(Boolean);
+  const zones = scenarios.map((scenario) => ({
+    element: scenario,
+    blocks: scenario.dataset.dkcpBlocks?.split(",") || defaultBlocks,
+  }));
 
   if (!linesLayer || !icon || !iconSvg || anchors.length === 0) return;
 
@@ -292,6 +289,17 @@ function initKscOutcomes() {
     "position:absolute;visibility:hidden;pointer-events:none;height:0;width:var(--ksc-outcomes-line-cut);";
   root.appendChild(lineCutProbe);
 
+  // Невидимые расширенные хит-зоны поверх блоков: широкий прозрачный штрих
+  // закрывает щели между блоками, чтобы ховер переключался без просветов
+  iconSvg.querySelectorAll("[data-dkcp-preview-block]").forEach((block) => {
+    const hit = block.cloneNode(false);
+    hit.setAttribute("fill", "transparent");
+    hit.setAttribute("stroke", "transparent");
+    hit.setAttribute("stroke-width", "40");
+    hit.setAttribute("pointer-events", "all");
+    iconSvg.appendChild(hit);
+  });
+
   iconSvg.querySelectorAll("[data-dkcp-preview-block]").forEach((segment) => {
     segment.addEventListener("mouseenter", () => {
       const info = DKCP_BLOCK_INFO[segment.dataset.dkcpPreviewBlock];
@@ -308,15 +316,15 @@ function initKscOutcomes() {
   });
 
   function updateActiveBlocks() {
-    const iconRect = icon.getBoundingClientRect();
-    const referenceY = iconRect.top + iconRect.height / 2;
+    // Иконка переключается, когда верх блока пересекает середину экрана
+    const referenceY = window.innerHeight / 2;
     let blocks = defaultBlocks;
 
     const sorted = zones
-      .map((zone) => ({
-        ...zone,
-        top: zone.element.getBoundingClientRect().top,
-      }))
+      .map((zone) => {
+        const rect = zone.element.getBoundingClientRect();
+        return { ...zone, top: rect.top, bottom: rect.bottom };
+      })
       .sort((a, b) => a.top - b.top);
 
     for (const zone of sorted) {
@@ -325,27 +333,46 @@ function initKscOutcomes() {
       }
     }
 
+    // Когда последняя зона целиком уехала выше середины экрана — сброс
+    const lastZone = sorted[sorted.length - 1];
+    if (lastZone && referenceY > lastZone.bottom) {
+      blocks = defaultBlocks;
+    }
+
     setDkcpPreviewActive(icon, blocks);
   }
 
+  // Линия приходит в центр главного блока сценария (первого в data-dkcp-blocks)
+  const anchorStartElements = anchors.map((anchor) => {
+    const mainBlock = anchor
+      .closest("[data-ksc-outcome]")
+      ?.dataset.dkcpBlocks?.split(",")[0]
+      ?.trim();
+    return (
+      (mainBlock &&
+        iconSvg.querySelector(`[data-dkcp-preview-block="${mainBlock}"]`)) ||
+      iconSvg
+    );
+  });
+
   function updateLines() {
-    const rootRect = root.getBoundingClientRect();
-    const iconRect = iconSvg.getBoundingClientRect();
-    const startX = iconRect.left + iconRect.width / 2 - rootRect.left;
-    const centerY = iconRect.top + iconRect.height / 2 - rootRect.top;
-    const startStep = iconRect.height * 0.12;
+    // Координаты — относительно слоя линий внутри застиканной колонки:
+    // конец линии на иконке не зависит от момента перерисовки при скролле
+    const layerRect = linesLayer.getBoundingClientRect();
     const lineCut = lineCutProbe.getBoundingClientRect().width;
 
-    linesLayer.setAttribute("viewBox", `0 0 ${rootRect.width} ${rootRect.height}`);
+    // Без viewBox: координаты — просто пиксели. С viewBox изменение высоты
+    // слоя (тултип под иконкой) масштабировало линии, и они дёргались
     linesLayer.replaceChildren();
 
     anchors.forEach((anchor, index) => {
       const anchorRect = anchor.getBoundingClientRect();
-      const anchorX = anchorRect.left + anchorRect.width / 2 - rootRect.left;
-      const anchorY = anchorRect.top + anchorRect.height / 2 - rootRect.top;
+      const anchorX = anchorRect.left + anchorRect.width / 2 - layerRect.left;
+      const anchorY = anchorRect.top + anchorRect.height / 2 - layerRect.top;
 
-      const x1 = startX;
-      const y1 = centerY + (index - (anchors.length - 1) / 2) * startStep;
+      const startRect = anchorStartElements[index].getBoundingClientRect();
+      const x1 = startRect.left + startRect.width / 2 - layerRect.left;
+      const y1 = startRect.top + startRect.height / 2 - layerRect.top;
       const dx = anchorX - x1;
       const dy = anchorY - y1;
       const length = Math.hypot(dx, dy);

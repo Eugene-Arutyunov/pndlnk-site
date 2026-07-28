@@ -487,12 +487,11 @@
   <div class="ids__space L"></div>
 
   <div class="ids__wrapper">
-    <h2>С чем уйдёте после интенсива</h2>
+    <h2>С чем уйдёте после программы</h2>
 
     <div class="ids__text-width">
       <p>
-        Главный ожидаемый результат, вокруг достижения которого мы сфокусировали
-        программу:
+        Главный наблюдаемый результат:
         <mark
           >команда синхронно думает и говорит на новом языке, оптимальном для
           обсуждения создаваемой ценности</mark
@@ -504,20 +503,19 @@
     <div class="ids__space S"></div>
 
     <div class="ksc-outcomes" data-ksc-outcomes>
-      <svg
-        class="ksc-outcomes__connectors"
-        data-ksc-outcomes-lines
-        aria-hidden="true"
-      ></svg>
-
       <div class="ksc-outcomes__sticky" data-ksc-outcomes-icon>
+        <svg
+          class="ksc-outcomes__connectors"
+          data-ksc-outcomes-lines
+          aria-hidden="true"
+        ></svg>
         {{ dkcp.previewIcon([]) }}
       </div>
 
       <div class="ksc-outcomes__content">
         <section class="ksc-outcomes__section ksc-outcomes__section--model">
           <h3>
-            <span class="ksc-outcomes__num">Результат №1</span><br />Эталонная
+            <span class="ksc-outcomes__num">Результат №1:</span><br />Эталонная
             модель ценностного предложения
           </h3>
           <p>
@@ -539,39 +537,41 @@
           class="ksc-outcomes__section ksc-outcomes__section--narratives"
         >
           <h3>
-            <span class="ksc-outcomes__num">Результат №2</span><br />Маркетинговые
-            нарративы
+            <span class="ksc-outcomes__num">Результат №2:</span
+            ><br />Маркетинговые нарративы
           </h3>
 
           <article
             class="ksc-outcomes__scenario"
             data-ksc-outcome
-            data-dkcp-blocks="2,4,9"
+            data-dkcp-blocks="4,3"
           >
             <div class="ksc-outcomes__people">
               <div
                 class="ksc-outcomes__portraits ksc-outcomes__portraits--stack"
               >
                 <span
-                  class="ksc-outcomes__portrait ksc-outcomes__portrait--vasya"
-                  data-ksc-outcomes-anchor
-                ></span>
-                <span
                   class="ksc-outcomes__portrait ksc-outcomes__portrait--petya"
+                  data-ksc-outcomes-anchor
                 ></span>
                 <span
                   class="ksc-outcomes__portrait ksc-outcomes__portrait--igor"
                 ></span>
+                <span
+                  class="ksc-outcomes__portrait ksc-outcomes__portrait--vasya"
+                ></span>
               </div>
               <p class="ksc-outcomes__people-caption">
-                Вася<br />Петя<br />Игорь,<br />sales
+                Петя<br />Игорь<br />Вася,<br />sales
               </p>
             </div>
             <div class="ksc-outcomes__scenario-body">
               <p>
-                Например, слайды для отдела продаж, собранные вокруг атрибутов
-                артефакта, потому что во&nbsp;время встречи мотивационный
-                конфликт уже считается подтверждённым.
+                Например, слайды для отдела продаж, собранные вокруг
+                <span class="dkcp-term dkcp-term--4">атрибутов</span>
+                <span class="dkcp-term dkcp-term--3">артефакта</span>, потому
+                что во&nbsp;время встречи мотивационный конфликт уже считается
+                подтверждённым.
               </p>
               <div
                 class="ksc-outcomes__mock ksc-outcomes__mock--slides"
@@ -614,10 +614,133 @@
             </div>
           </article>
 
+
           <article
             class="ksc-outcomes__scenario"
             data-ksc-outcome
-            data-dkcp-blocks="2,9"
+            data-dkcp-blocks="6,5"
+          >
+            <div class="ksc-outcomes__people">
+              <div class="ksc-outcomes__portraits">
+                <span
+                  class="ksc-outcomes__portrait ksc-outcomes__portrait--egor"
+                  data-ksc-outcomes-anchor
+                ></span>
+              </div>
+              <p class="ksc-outcomes__people-caption">Егор,<br />CS</p>
+            </div>
+            <div class="ksc-outcomes__scenario-body">
+              <p>
+                Или редполитика для операторов службы поддержки, в&nbsp;которой
+                максимально детализированы ответы про атрибуты артефакта,
+                <span class="dkcp-term dkcp-term--5">вклад клиента</span>
+                и&nbsp;<span class="dkcp-term dkcp-term--6">условия обмена</span>,
+                но&nbsp;также есть ответы про все блоки модели, чтобы команда
+                поддержки могла поддержать любой разговор о&nbsp;продукте.
+              </p>
+              <div
+                class="ksc-outcomes__mock ksc-outcomes__mock--chat"
+                aria-hidden="true"
+              >
+                <div class="mock-window">
+                  <div class="mock-chat-header">
+                    <span class="mock-avatar"></span>
+                    <span class="mock-line"></span>
+                    <span class="mock-status"></span>
+                  </div>
+                  <div class="mock-chat-body">
+                    <div class="mock-bubble mock-bubble--in">
+                      <span class="mock-line w90"></span>
+                      <span class="mock-line w60"></span>
+                    </div>
+                    <div class="mock-bubble mock-bubble--out">
+                      <span class="mock-line w100"></span>
+                      <span class="mock-line w80"></span>
+                      <span class="mock-line w45"></span>
+                    </div>
+                    <div class="mock-bubble mock-bubble--in">
+                      <span class="mock-line w70"></span>
+                    </div>
+                  </div>
+                  <div class="mock-chat-input">
+                    <span class="mock-field"></span>
+                    <span class="mock-send"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="ksc-outcomes__scenario"
+            data-ksc-outcome
+            data-dkcp-blocks="8"
+          >
+            <div class="ksc-outcomes__people">
+              <div class="ksc-outcomes__portraits">
+                <span
+                  class="ksc-outcomes__portrait ksc-outcomes__portrait--anna"
+                  data-ksc-outcomes-anchor
+                ></span>
+              </div>
+              <p class="ksc-outcomes__people-caption">Анна,<br />CMO</p>
+            </div>
+            <div class="ksc-outcomes__scenario-body">
+              <p>
+                Или лендинг, который начинается с&nbsp;разговора про
+                <span class="dkcp-term dkcp-term--8">ценность</span>,
+                а&nbsp;потом раскрывает все блоки ценностного предложения.
+              </p>
+              <div
+                class="ksc-outcomes__mock ksc-outcomes__mock--landing"
+                aria-hidden="true"
+              >
+                <div class="mock-window">
+                  <div class="mock-landing-nav">
+                    <span class="mock-logo"></span>
+                    <span class="mock-navlink"></span>
+                    <span class="mock-navlink"></span>
+                    <span class="mock-navlink"></span>
+                  </div>
+                  <div class="mock-landing-hero">
+                    <span class="mock-kicker"></span>
+                    <span class="mock-h w80"></span>
+                    <span class="mock-h w55"></span>
+                    <span class="mock-line w65"></span>
+                    <span class="mock-btn"></span>
+                  </div>
+                  <div class="mock-landing-media"></div>
+                  <div class="mock-landing-cols">
+                    <div class="mock-landing-col">
+                      <span class="mock-icon"></span>
+                      <span class="mock-line w90"></span>
+                      <span class="mock-line w70"></span>
+                    </div>
+                    <div class="mock-landing-col">
+                      <span class="mock-icon mock-icon--gold"></span>
+                      <span class="mock-line w80"></span>
+                      <span class="mock-line w60"></span>
+                    </div>
+                    <div class="mock-landing-col">
+                      <span class="mock-icon mock-icon--ink"></span>
+                      <span class="mock-line w85"></span>
+                      <span class="mock-line w65"></span>
+                    </div>
+                  </div>
+                  <div class="mock-landing-cta">
+                    <span class="mock-h w60"></span>
+                    <span class="mock-line w45"></span>
+                    <span class="mock-btn"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="ksc-outcomes__scenario"
+            data-ksc-outcome
+            data-dkcp-blocks="2"
           >
             <div class="ksc-outcomes__people">
               <div class="ksc-outcomes__portraits">
@@ -630,8 +753,11 @@
             </div>
             <div class="ksc-outcomes__scenario-body">
               <p>
-                Или сценарий вебинара, который начинается с&nbsp;мотивационного
-                конфликта, а&nbsp;потом разворачивает аргументы.
+                Или сценарий вебинара, который начинается
+                с&nbsp;<span class="dkcp-term dkcp-term--2"
+                  >мотивационного конфликта</span
+                >, а&nbsp;потом последовательно разворачивает аргументы
+                из&nbsp;всех остальных блоков.
               </p>
               <div
                 class="ksc-outcomes__mock ksc-outcomes__mock--webinar"
@@ -688,134 +814,19 @@
               </div>
             </div>
           </article>
-
-          <article
-            class="ksc-outcomes__scenario"
-            data-ksc-outcome
-            data-dkcp-blocks="1,2,3,4,5,6,7,8,9"
-          >
-            <div class="ksc-outcomes__people">
-              <div class="ksc-outcomes__portraits">
-                <span
-                  class="ksc-outcomes__portrait ksc-outcomes__portrait--egor"
-                  data-ksc-outcomes-anchor
-                ></span>
-              </div>
-              <p class="ksc-outcomes__people-caption">Егор,<br />CS</p>
-            </div>
-            <div class="ksc-outcomes__scenario-body">
-              <p>
-                Или предполитика для операторов службы поддержки, в&nbsp;которой
-                есть ответы про все блоки модели, так что команда реально может
-                поддержать разговор о&nbsp;продукте.
-              </p>
-              <div
-                class="ksc-outcomes__mock ksc-outcomes__mock--chat"
-                aria-hidden="true"
-              >
-                <div class="mock-window">
-                  <div class="mock-chat-header">
-                    <span class="mock-avatar"></span>
-                    <span class="mock-line"></span>
-                    <span class="mock-status"></span>
-                  </div>
-                  <div class="mock-chat-body">
-                    <div class="mock-bubble mock-bubble--in">
-                      <span class="mock-line w90"></span>
-                      <span class="mock-line w60"></span>
-                    </div>
-                    <div class="mock-bubble mock-bubble--out">
-                      <span class="mock-line w100"></span>
-                      <span class="mock-line w80"></span>
-                      <span class="mock-line w45"></span>
-                    </div>
-                    <div class="mock-bubble mock-bubble--in">
-                      <span class="mock-line w70"></span>
-                    </div>
-                  </div>
-                  <div class="mock-chat-input">
-                    <span class="mock-field"></span>
-                    <span class="mock-send"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article
-            class="ksc-outcomes__scenario"
-            data-ksc-outcome
-            data-dkcp-blocks="8,1,2,3,4,5,6,7,9"
-          >
-            <div class="ksc-outcomes__people">
-              <div class="ksc-outcomes__portraits">
-                <span
-                  class="ksc-outcomes__portrait ksc-outcomes__portrait--anna"
-                  data-ksc-outcomes-anchor
-                ></span>
-              </div>
-              <p class="ksc-outcomes__people-caption">Анна,<br />CMO</p>
-            </div>
-            <div class="ksc-outcomes__scenario-body">
-              <p>
-                Или лендинг, который начинается с&nbsp;разговора про ценности,
-                а&nbsp;потом раскрывает все аспекты ценностного предложения.
-              </p>
-              <div
-                class="ksc-outcomes__mock ksc-outcomes__mock--landing"
-                aria-hidden="true"
-              >
-                <div class="mock-window">
-                  <div class="mock-landing-nav">
-                    <span class="mock-logo"></span>
-                    <span class="mock-navlink"></span>
-                    <span class="mock-navlink"></span>
-                    <span class="mock-navlink"></span>
-                  </div>
-                  <div class="mock-landing-hero">
-                    <span class="mock-kicker"></span>
-                    <span class="mock-h w80"></span>
-                    <span class="mock-h w55"></span>
-                    <span class="mock-line w65"></span>
-                    <span class="mock-btn"></span>
-                  </div>
-                  <div class="mock-landing-media"></div>
-                  <div class="mock-landing-cols">
-                    <div class="mock-landing-col">
-                      <span class="mock-icon"></span>
-                      <span class="mock-line w90"></span>
-                      <span class="mock-line w70"></span>
-                    </div>
-                    <div class="mock-landing-col">
-                      <span class="mock-icon mock-icon--gold"></span>
-                      <span class="mock-line w80"></span>
-                      <span class="mock-line w60"></span>
-                    </div>
-                    <div class="mock-landing-col">
-                      <span class="mock-icon mock-icon--ink"></span>
-                      <span class="mock-line w85"></span>
-                      <span class="mock-line w65"></span>
-                    </div>
-                  </div>
-                  <div class="mock-landing-cta">
-                    <span class="mock-h w60"></span>
-                    <span class="mock-line w45"></span>
-                    <span class="mock-btn"></span>
-                  </div>
-                </div>
-              </div>
-              <p>
-                Над чем захотите, над тем и&nbsp;будете работать в&nbsp;ходе
-                курса, а&nbsp;мы вам поможем.
-              </p>
-            </div>
-          </article>
+          <div class="ids__space M"></div>
+          <p>
+            У каждого бизнеса свои приоритетные точки контакта — поэтому ещё на
+            этапе адаптации программы мы обсудим, какие маркетинговые материалы
+            считать ключевыми — чтобы на их примере проверять в том числе и
+            убедительность блоков модели.
+          </p>
         </section>
 
         <section class="ksc-outcomes__section ksc-outcomes__section--team">
           <h3>
-            <span class="ksc-outcomes__num">Результат №3, главный</span><br
-            />Синхронизированная команда
+            <span class="ksc-outcomes__num">Результат №3, главный:</span
+            ><br />Синхронизированная команда
           </h3>
           <div class="ksc-outcomes__team-portraits" aria-hidden="true">
             <span
@@ -854,14 +865,14 @@
       </div>
     </div>
 
-    <div class="ids__space L"></div>
+    <div class="ids__space M"></div>
 
     <div class="ids__text-width">
       <p>
-        Приятные побочные эффекты, которые мы обычно видим&nbsp;—
-        взаимопонимание в&nbsp;команде, атмосфера продуктивности
+        А приятные побочные эффекты, которые мы обычно видим&nbsp;— это новый
+        уровень взаимного доверия в&nbsp;команде, атмосфера продуктивности
         и&nbsp;творчества, единение и&nbsp;кайф от&nbsp;покорения сложного. Это
-        бесценно.
+        бесценно!
       </p>
     </div>
   </div>
@@ -878,26 +889,15 @@
 
     <div class="ids__space XS"></div>
 
-    <div class="ids__sequence S">
+    <div class="ids__sequence">
       <div class="ids__sequence-item">
         <div class="author">
           <div class="author-portrait">
             <img src="/assets/ksc-open/m@2x-100.jpg" alt="Михаил Руденко" />
           </div>
           <p class="author-description">
-            <strong>Михаил Руденко.</strong> Предприниматель, преподаватель,
-            консультант
-          </p>
-        </div>
-      </div>
-      <div class="ids__sequence-item">
-        <div class="author">
-          <div class="author-portrait">
-            <img src="/assets/ksc-open/e@2x-100.jpg" alt="Женя Арутюнов" />
-          </div>
-          <p class="author-description">
-            <strong>Женя Арутюнов.</strong> Дизайнер, арт-директор, менеджер
-            проектов и людей, лектор, наставник
+            <strong>Михаил Руденко</strong><br />Предприниматель,
+            преподаватель, консультант
           </p>
         </div>
       </div>
@@ -910,8 +910,19 @@
             />
           </div>
           <p class="author-description">
-            <strong>Саша Родионов.</strong> Вице-президент по продуктовому
+            <strong>Саша Родионов</strong><br />Вице-президент по продуктовому
             развитию, тренер, НЛП-мастер.
+          </p>
+        </div>
+      </div>
+      <div class="ids__sequence-item">
+        <div class="author">
+          <div class="author-portrait">
+            <img src="/assets/ksc-open/e@2x-100.jpg" alt="Женя Арутюнов" />
+          </div>
+          <p class="author-description">
+            <strong>Женя Арутюнов</strong><br />Дизайнер, арт-директор, менеджер
+            проектов и людей, лектор, наставник
           </p>
         </div>
       </div>
@@ -921,7 +932,8 @@
             <img src="/assets/ksc-open/alina-raeva.png" alt="Алина" />
           </div>
           <p class="author-description">
-            <strong>Алина Раева.</strong> Ex-COO Muse Group и Tutu, руководитель
+            <strong>Алина Раева</strong><br />Ex-COO Muse Group и Tutu,
+            руководитель
             трансформации в ОТП Банке и Магните.
           </p>
         </div>
@@ -930,18 +942,18 @@
 
     <div class="ids__space M"></div>
 
-    <h3>Команда</h3>
+    <h3>Команда поддержки</h3>
 
     <div class="ids__space XS"></div>
 
-    <div class="ids__sequence S">
+    <div class="ids__sequence S ksc-support-team">
       <div class="ids__sequence-item">
         <div class="author">
           <div class="author-portrait">
             <img src="/assets/ksc-open/v@2x-100.jpg" alt="Вера Харченко" />
           </div>
           <p class="author-description">
-            <strong>Вера Харченко.</strong> Фасилитатор, наставник
+            <strong>Вера Харченко</strong><br />Фасилитатор, наставник
             по исследованиям
           </p>
         </div>
@@ -952,7 +964,7 @@
             <img src="/assets/ksc-open/s@2x-100.jpg" alt="Сергей Степанов" />
           </div>
           <p class="author-description">
-            <strong>Сергей Степанов.</strong> Руководитель проекта и куратор
+            <strong>Сергей Степанов</strong><br />Руководитель проекта и куратор
           </p>
         </div>
       </div>
@@ -962,7 +974,7 @@
             <img src="/assets/ksc-open/b@2x-100.jpg" alt="Богдан Бурдин" />
           </div>
           <p class="author-description">
-            <strong>Богдан Бурдин.</strong> Аналитик, куратор онлайн-сервисов
+            <strong>Богдан Бурдин</strong><br />Аналитик, куратор онлайн-сервисов
             и ПСК-процессов
           </p>
         </div>
@@ -973,7 +985,8 @@
             <img src="/assets/ksc-open/a@2x-100.jpg" alt="Александра Руденко" />
           </div>
           <p class="author-description">
-            <strong>Александра Руденко.</strong> Маркетолог, дизайнер, куратор
+            <strong>Александра Руденко</strong><br />Маркетолог, дизайнер,
+            куратор
           </p>
         </div>
       </div>
@@ -983,7 +996,7 @@
             <img src="/assets/ksc-open/k@2x-100.jpg" alt="Кристина Кострова" />
           </div>
           <p class="author-description">
-            <strong>Кристина Кострова.</strong> Администратор проекта,
+            <strong>Кристина Кострова</strong><br />Администратор проекта,
             супервайзер поля
           </p>
         </div>
@@ -994,7 +1007,7 @@
             <img src="/assets/ksc-open/d@2x-100.jpg" alt="Даша Коченова" />
           </div>
           <p class="author-description">
-            <strong>Даша Коченова.</strong> Редактор, комьюнити-менеджер
+            <strong>Даша Коченова</strong><br />Редактор, комьюнити-менеджер
           </p>
         </div>
       </div>

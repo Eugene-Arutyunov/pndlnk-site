@@ -527,7 +527,7 @@ table.ksc-open-schedule {
   grid-template-columns: 6.5em minmax(0, 1fr);
   gap: 3em;
   background: rgba(var(--ids__surface-RGB), 0.3);
-  padding: 1em 1em 4em;
+  padding: 1em 10em 4em 1em;
   font-family: var(--mono);
   font-size: 0.75em;
   overflow: visible;
@@ -547,11 +547,34 @@ table.ksc-open-schedule {
   --mock-gold: rgb(var(--ids__pndlnk-gold-RGB));
   --mock-gold-tinted: rgb(var(--ids__pndlnk-gold-tinted-RGB));
 
+  /* Палитра блоков ДКЦП: связывает зоны иконки и термины в тексте */
+  --dkcp-block-1: color-mix(
+    in srgb,
+    rgb(var(--ids__pndlnk-dark-gray-RGB)) 50%,
+    rgb(var(--ids__pndlnk-light-gray-RGB))
+  );
+  --dkcp-block-2: color-mix(
+    in srgb,
+    rgb(var(--ids__ink-RGB)) 55%,
+    rgb(var(--ids__pndlnk-light-gray-RGB))
+  );
+  --dkcp-block-3: rgb(var(--ids__pndlnk-red-tinted-RGB));
+  --dkcp-block-4: rgb(var(--ids__pndlnk-dark-gray-RGB));
+  --dkcp-block-5: rgb(var(--ids__pndlnk-gold-RGB));
+  --dkcp-block-6: color-mix(
+    in srgb,
+    rgb(var(--ids__pndlnk-gold-RGB)) 55%,
+    rgb(var(--ids__pndlnk-light-gray-RGB))
+  );
+  --dkcp-block-7: rgb(var(--ids__pndlnk-dark-gray-RGB));
+  --dkcp-block-8: rgb(var(--ids__pndlnk-gold-tinted-RGB));
+  --dkcp-block-9: rgb(var(--ids__pndlnk-red-RGB));
+
   @media (width < 768px) {
     grid-template-columns: 4.6em minmax(0, 1fr);
     gap: 1em;
     font-size: 0.7em;
-    padding: 0.6em 0.6em 2.4em;
+    padding: 0.6em 1.6em 2.4em;
   }
 
   & h3 {
@@ -577,10 +600,80 @@ table.ksc-open-schedule {
   color: var(--ksc-outcomes-accent);
 }
 
+/* Активные зоны иконки и термины в тексте красятся в цвета палитры */
+.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="1"].is-active {
+  fill: var(--dkcp-block-1);
+}
+
+.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="2"].is-active {
+  fill: var(--dkcp-block-2);
+}
+
+.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="3"].is-active {
+  fill: var(--dkcp-block-3);
+}
+
+.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="4"].is-active {
+  fill: var(--dkcp-block-4);
+}
+
+.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="5"].is-active {
+  fill: var(--dkcp-block-5);
+}
+
+.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="6"].is-active {
+  fill: var(--dkcp-block-6);
+}
+
+.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="7"].is-active {
+  fill: var(--dkcp-block-7);
+}
+
+.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="8"].is-active {
+  fill: var(--dkcp-block-8);
+}
+
+.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="9"].is-active {
+  fill: var(--dkcp-block-9);
+}
+
+.ksc-outcomes .dkcp-term {
+  font-weight: 700;
+}
+
+.ksc-outcomes .dkcp-term--2 {
+  color: var(--dkcp-block-2);
+}
+
+.ksc-outcomes .dkcp-term--3 {
+  color: var(--dkcp-block-3);
+}
+
+.ksc-outcomes .dkcp-term--4 {
+  color: var(--dkcp-block-4);
+}
+
+.ksc-outcomes .dkcp-term--5 {
+  color: var(--dkcp-block-5);
+}
+
+.ksc-outcomes .dkcp-term--6 {
+  color: var(--dkcp-block-6);
+}
+
+.ksc-outcomes .dkcp-term--8 {
+  color: var(--dkcp-block-8);
+}
+
+.ksc-outcomes .dkcp-term--9 {
+  color: var(--dkcp-block-9);
+}
+
+/* Слой линий живёт внутри застиканной колонки: конец линии на иконке
+   не расходится с ней, как бы ни отставала перерисовка при скролле */
 .ksc-outcomes__connectors {
   position: absolute;
   inset: 0;
-  /* Над домиком (у sticky-колонки z-index: 3) */
   z-index: 4;
   display: block;
   width: 100%;
@@ -603,13 +696,16 @@ table.ksc-open-schedule {
 
 .ksc-outcomes__sticky {
   position: sticky;
-  top: 5em;
+  top: 2.6em;
   z-index: 3;
   align-self: start;
+  /* Запас высоты: чем выше элемент, тем раньше иконка уезжает наверх */
+  min-height: 18em;
   color: rgb(var(--ids__text-RGB));
 
   & .dkcp-preview {
     display: inline-block;
+    margin-top: 0.8em;
     background: var(--mock-bg);
   }
 
@@ -637,15 +733,17 @@ table.ksc-open-schedule {
 
 .ksc-outcomes__tooltip {
   box-sizing: border-box;
-  width: 100%;
+  /* Заезжаем в гэп сетки, чтобы тултипу было чуть просторнее */
+  margin-right: -1.6em;
   margin-top: 0.6em;
-  padding: 0.6em 0.65em;
-  border-radius: 0.35em;
-  background: var(--mock-bg);
-  border: 1px solid rgba(var(--ids__text-RGB), 0.18);
+  font-size: 0.86em;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s ease;
+
+  & p {
+    line-height: 1.25;
+  }
 
   @media (width < 768px) {
     display: none;
@@ -679,7 +777,7 @@ table.ksc-open-schedule {
 }
 
 .ksc-outcomes__section {
-  margin-top: 2.4em;
+  margin-top: 4em;
 
   &:first-child {
     margin-top: 0;
@@ -753,7 +851,7 @@ table.ksc-open-schedule {
   background-color: var(--ksc-outcomes-accent);
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: auto 97%;
+  background-size: auto 118%;
   border: 1px solid rgba(var(--ids__text-RGB), 0.9);
   box-sizing: border-box;
 }
@@ -953,7 +1051,8 @@ table.ksc-open-schedule {
 .ksc-outcomes__mock--slides {
   --slide-w: 8em;
   --slide-h: 5em;
-  --slide-shift-x: 2.6em;
+  /* Итоговая ширина стопки = ширине «вебинара» (14em) */
+  --slide-shift-x: 3em;
   --slide-shift-y: 1.4em;
   position: relative;
   width: min(100%, calc(var(--slide-w) + var(--slide-shift-x) * 2));
@@ -1246,7 +1345,8 @@ table.ksc-open-schedule {
 /* Лендинг: центрированный хиро, колонки, ста-плашка */
 
 .ksc-outcomes__mock--landing {
-  width: min(100%, 10em);
+  /* Как у «чата» */
+  width: min(100%, 9em);
 }
 
 .ksc-outcomes .mock-landing-nav {
@@ -1344,26 +1444,78 @@ table.ksc-open-schedule {
 
 /* Ширины линий */
 
-.ksc-outcomes .w30 { width: 30%; }
-.ksc-outcomes .w40 { width: 40%; }
-.ksc-outcomes .w45 { width: 45%; }
-.ksc-outcomes .w50 { width: 50%; }
-.ksc-outcomes .w55 { width: 55%; }
-.ksc-outcomes .w60 { width: 60%; }
-.ksc-outcomes .w65 { width: 65%; }
-.ksc-outcomes .w70 { width: 70%; }
-.ksc-outcomes .w75 { width: 75%; }
-.ksc-outcomes .w80 { width: 80%; }
-.ksc-outcomes .w85 { width: 85%; }
-.ksc-outcomes .w90 { width: 90%; }
-.ksc-outcomes .w100 { width: 100%; }
+.ksc-outcomes .w30 {
+  width: 30%;
+}
+.ksc-outcomes .w40 {
+  width: 40%;
+}
+.ksc-outcomes .w45 {
+  width: 45%;
+}
+.ksc-outcomes .w50 {
+  width: 50%;
+}
+.ksc-outcomes .w55 {
+  width: 55%;
+}
+.ksc-outcomes .w60 {
+  width: 60%;
+}
+.ksc-outcomes .w65 {
+  width: 65%;
+}
+.ksc-outcomes .w70 {
+  width: 70%;
+}
+.ksc-outcomes .w75 {
+  width: 75%;
+}
+.ksc-outcomes .w80 {
+  width: 80%;
+}
+.ksc-outcomes .w85 {
+  width: 85%;
+}
+.ksc-outcomes .w90 {
+  width: 90%;
+}
+.ksc-outcomes .w100 {
+  width: 100%;
+}
 
 .ksc-outcomes__team-portraits {
   display: flex;
   margin: 0.5em 0 0.8em;
 
+  /* Слева направо кружочки подкладываются под предыдущие */
   & .ksc-outcomes__portrait {
+    position: relative;
     margin-right: -0.9em;
+
+    &:nth-child(1) {
+      z-index: 6;
+    }
+
+    &:nth-child(2) {
+      z-index: 5;
+    }
+
+    &:nth-child(3) {
+      z-index: 4;
+    }
+
+    &:nth-child(4) {
+      z-index: 3;
+    }
+
+    &:nth-child(5) {
+      z-index: 2;
+    }
+
+    &:nth-child(6) {
+      z-index: 1;
+    }
   }
 }
 
@@ -1421,4 +1573,14 @@ table.ksc-open-schedule {
     width: auto;
     display: block;
   }
+}
+
+/* Команда поддержки: кружочки вдвое меньше ячейки, кадрирование срезает низ */
+.ksc-support-team .author-portrait img {
+  display: block;
+  width: 50%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
 }
