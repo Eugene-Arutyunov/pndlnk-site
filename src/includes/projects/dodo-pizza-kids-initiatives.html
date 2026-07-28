@@ -37,10 +37,15 @@
         class="initiative-card"
         data-sphere="{{ initiative.sphereKeys | join(' ') }}"
         data-featured="{{ initiative.featured and 'true' or 'false' }}">
-        {% if initiative.url %}
+            {% if initiative.url %}
         <a class="initiative-card__link" href="{{ initiative.url }}">
           {% else %}
           <div class="initiative-card__inner">
+            {% endif %}
+            {% if initiative.cover %}
+            <div class="initiative-card__cover" aria-hidden="true">
+              <img src="{{ initiative.cover }}" alt="" loading="lazy" />
+            </div>
             {% endif %}
             <div class="initiative-card__body">
               <h3 class="initiative-card__title">{{ initiative.title }}</h3>
