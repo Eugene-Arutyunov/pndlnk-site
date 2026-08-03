@@ -24,19 +24,19 @@
 
 Стойка приёма заказов — справа от входа. С правого её торца — витрина с мороженым. С правого — стойка со сладостями для детей: чупа-чупсами местного бренда и пр.
 
-![фото](/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/field/observation-kahve-deryasi/01.webp)
+![фото](/assets/projects/dodo-pizza-kids/field/observation-kahve-deryasi/01.webp)
 
-![фото](/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/field/observation-kahve-deryasi/02.webp)
+![фото](/assets/projects/dodo-pizza-kids/field/observation-kahve-deryasi/02.webp)
 
-![фото](/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/field/observation-kahve-deryasi/03.webp)
+![фото](/assets/projects/dodo-pizza-kids/field/observation-kahve-deryasi/03.webp)
 
-![фото](/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/field/observation-kahve-deryasi/04.webp)
+![фото](/assets/projects/dodo-pizza-kids/field/observation-kahve-deryasi/04.webp)
 
-![фото](/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/field/observation-kahve-deryasi/05.webp)
+![фото](/assets/projects/dodo-pizza-kids/field/observation-kahve-deryasi/05.webp)
 
-![фото](/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/field/observation-kahve-deryasi/06.webp)
+![фото](/assets/projects/dodo-pizza-kids/field/observation-kahve-deryasi/06.webp)
 
-![фото](/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/field/observation-kahve-deryasi/07.webp)
+![фото](/assets/projects/dodo-pizza-kids/field/observation-kahve-deryasi/07.webp)
 
-![фото](/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/field/observation-kahve-deryasi/08.webp)
+![фото](/assets/projects/dodo-pizza-kids/field/observation-kahve-deryasi/08.webp)
 

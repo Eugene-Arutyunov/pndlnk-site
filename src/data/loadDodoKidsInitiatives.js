@@ -50,6 +50,8 @@ function loadDodoKidsInitiatives() {
     const spheres = Array.isArray(item.spheres) ? item.spheres : [];
     const sphereKeys = sphereToKeys(spheres);
 
+    const number = Number.isInteger(item.number) ? item.number : index + 1;
+
     return {
       title: item.title,
       spheres,
@@ -60,6 +62,7 @@ function loadDodoKidsInitiatives() {
       featured: Boolean(item.featured),
       cover: item.cover || null,
       order: index,
+      number,
     };
   });
 }

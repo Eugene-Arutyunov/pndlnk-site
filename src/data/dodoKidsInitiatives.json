@@ -1,5 +1,6 @@
 [
   {
+    "number": 1,
     "title": "Додо Паста — детские макароны",
     "spheres": [
       "Меню"
@@ -10,9 +11,10 @@
     ],
     "url": "/projects/dodo-pizza-kids/dodo-pasta/",
     "featured": true,
-    "cover": "/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/dodo-pasta/cover.jpg"
+    "cover": "/assets/projects/dodo-pizza-kids/tips/1.jpg"
   },
   {
+    "number": 2,
     "title": "Продукт под паттерн перекуса для детей до пяти лет",
     "spheres": [
       "Меню"
@@ -22,9 +24,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/2.jpg"
   },
   {
+    "number": 3,
     "title": "Платные мастер-классы по приготовлению пиццы",
     "spheres": [
       "Новые продукты и услуги",
@@ -37,9 +40,10 @@
     ],
     "url": "/projects/dodo-pizza-kids/paid-masterclasses/",
     "featured": true,
-    "cover": "/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/paid-mk/host-masterclass.jpg"
+    "cover": "/assets/projects/dodo-pizza-kids/paid-mk/host-masterclass.jpg"
   },
   {
+    "number": 4,
     "title": "Занятия с бебиситтером в игровой Додо",
     "spheres": [
       "Новые продукты и услуги",
@@ -50,9 +54,10 @@
     ],
     "url": "/projects/dodo-pizza-kids/kids-out-collaboration/",
     "featured": true,
-    "cover": "/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/kids-out/sitter-laugh.jpg"
+    "cover": "/assets/projects/dodo-pizza-kids/tips/4.jpg"
   },
   {
+    "number": 5,
     "title": "Пакетное предложение для празднования дома: еда, декор, развлечения",
     "spheres": [
       "Новые продукты и услуги"
@@ -62,9 +67,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/5.jpg"
   },
   {
+    "number": 6,
     "title": "Семейный профиль в мобильном приложении",
     "spheres": [
       "Мобильное приложение"
@@ -74,9 +80,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/6.jpg"
   },
   {
+    "number": 7,
     "title": "Семейный додокоин-счёт",
     "spheres": [
       "Мобильное приложение"
@@ -87,9 +94,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/7.jpg"
   },
   {
+    "number": 8,
     "title": "Игра с карточками айс-брейкерами",
     "spheres": [
       "Мобильное приложение"
@@ -100,9 +108,10 @@
     ],
     "url": "/projects/dodo-pizza-kids/icebreaker-cards/",
     "featured": true,
-    "cover": "/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/fathers-day/cover.jpg"
+    "cover": "/assets/projects/dodo-pizza-kids/tips/8.jpg"
   },
   {
+    "number": 9,
     "title": "Цифровые ачивки для детей",
     "spheres": [
       "Мобильное приложение"
@@ -112,9 +121,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/9.jpg"
   },
   {
+    "number": 10,
     "title": "UGC-вкладыш на доставку для детей",
     "spheres": [
       "Мобильное приложение",
@@ -126,9 +136,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/10.jpg"
   },
   {
+    "number": 11,
     "title": "Специальная миссия для Папиного дня",
     "spheres": [
       "Мобильное приложение"
@@ -139,9 +150,10 @@
     ],
     "url": "/projects/dodo-pizza-kids/fathers-day-mission/",
     "featured": true,
-    "cover": "/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/fathers-day-mission/cover.jpg"
+    "cover": "/assets/projects/dodo-pizza-kids/tips/11.jpg"
   },
   {
+    "number": 12,
     "title": "Состав блюда, аллергены и КБЖУ в карточке продукта и бумажном меню",
     "spheres": [
       "Мобильное приложение"
@@ -151,9 +163,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/12.jpg"
   },
   {
+    "number": 13,
     "title": "Прямой эфир из детской комнаты",
     "spheres": [
       "Мобильное приложение",
@@ -162,9 +175,10 @@
     "principles": [],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/13.jpg"
   },
   {
+    "number": 14,
     "title": "Бренд-медиа «Додо Семьи»",
     "spheres": [
       "Коммуникации"
@@ -174,9 +188,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/14.jpg"
   },
   {
+    "number": 15,
     "title": "«Додо-ритуал» для завершения визита",
     "spheres": [
       "Коммуникации"
@@ -187,9 +202,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/15.jpg"
   },
   {
+    "number": 16,
     "title": "QR-коды с материалами про продукты на упаковке",
     "spheres": [
       "Коммуникации",
@@ -198,9 +214,10 @@
     "principles": [],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/16.jpg"
   },
   {
+    "number": 17,
     "title": "Мерч: Додо-книга и Додо-настолка",
     "spheres": [
       "Коммуникации"
@@ -211,9 +228,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/12-1.jpg"
   },
   {
+    "number": 18,
     "title": "Фирменный контент с персонажами Додо",
     "spheres": [
       "Коммуникации"
@@ -223,9 +241,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/18.jpg"
   },
   {
+    "number": 19,
     "title": "Разделять потоки гостей офферами",
     "spheres": [
       "Коммуникации"
@@ -233,9 +252,10 @@
     "principles": [],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/19.jpg"
   },
   {
+    "number": 20,
     "title": "Доработать dodokids.ru под дни рождения и платные МК",
     "spheres": [
       "День рождения и мастер-классы"
@@ -245,9 +265,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/20.jpg"
   },
   {
+    "number": 21,
     "title": "Пакетное предложение для празднования дома",
     "spheres": [
       "День рождения и мастер-классы"
@@ -257,9 +278,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/21.jpg"
   },
   {
+    "number": 22,
     "title": "Видеопоздравления на мониторах в пиццерии",
     "spheres": [
       "День рождения и мастер-классы"
@@ -270,9 +292,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/22.jpg"
   },
   {
+    "number": 23,
     "title": "Страховка от срыва запланированного праздника",
     "spheres": [
       "День рождения и мастер-классы"
@@ -282,9 +305,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/23.jpg"
   },
   {
+    "number": 24,
     "title": "Музыкальное сопровождение дня рождения",
     "spheres": [
       "День рождения и мастер-классы"
@@ -294,9 +318,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/24.jpg"
   },
   {
+    "number": 25,
     "title": "Дополнить стандарт «Детский день рождения в ресторане»",
     "spheres": [
       "День рождения и мастер-классы",
@@ -308,9 +333,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/25.jpg"
   },
   {
+    "number": 26,
     "title": "Разводить игрушки на разные каналы продаж",
     "spheres": [
       "Доставка"
@@ -320,9 +346,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/26.jpg"
   },
   {
+    "number": 27,
     "title": "Маленькие детские аттракторы по всей пиццерии",
     "spheres": [
       "Оснащение залов"
@@ -332,9 +359,10 @@
     ],
     "url": "/projects/dodo-pizza-kids/wall-attractors/",
     "featured": true,
-    "cover": "/assets/projects/dodo-pitstsa-opyt-semey-s-detmi/wall-attractors/busy-house-1.jpg"
+    "cover": "/assets/projects/dodo-pizza-kids/tips/27.jpg"
   },
   {
+    "number": 28,
     "title": "Интерактивные мусорные баки",
     "spheres": [
       "Оснащение залов"
@@ -345,9 +373,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/28.jpg"
   },
   {
+    "number": 29,
     "title": "Удобная входная группа для колясок и людей с инвалидностью",
     "spheres": [
       "Оснащение залов"
@@ -358,9 +387,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/29.jpg"
   },
   {
+    "number": 30,
     "title": "Настенные крючки вместо напольных вешалок",
     "spheres": [
       "Оснащение залов"
@@ -370,9 +400,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/30.jpg"
   },
   {
+    "number": 31,
     "title": "Брендированные ветрячки вместо шариков",
     "spheres": [
       "Оснащение залов"
@@ -382,9 +413,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/31.jpg"
   },
   {
+    "number": 32,
     "title": "Меню «Нравится детям» на уровне роста ребёнка",
     "spheres": [
       "Оснащение залов"
@@ -395,9 +427,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/32.jpg"
   },
   {
+    "number": 33,
     "title": "Ступенька под раковину — минимум 25 см",
     "spheres": [
       "Оснащение залов"
@@ -410,6 +443,7 @@
     "cover": null
   },
   {
+    "number": 34,
     "title": "Крючки для сумок у пеленальных столиков",
     "spheres": [
       "Оснащение залов"
@@ -419,9 +453,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/34.jpg"
   },
   {
+    "number": 35,
     "title": "Стандарт по коммуникации с детьми для курьеров и кассиров",
     "spheres": [
       "Сервисные стандарты"
@@ -431,9 +466,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/35.jpg"
   },
   {
+    "number": 36,
     "title": "Обновление игровых: магнитная стена, LCD-экран, кубики",
     "spheres": [
       "Оснащение детских комнат"
@@ -443,9 +479,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/36.jpg"
   },
   {
+    "number": 37,
     "title": "Умная видеоаналитика детских",
     "spheres": [
       "Оснащение детских комнат"
@@ -453,9 +490,10 @@
     "principles": [],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/37.jpg"
   },
   {
+    "number": 38,
     "title": "Повышение гигиены в игровой зоне",
     "spheres": [
       "Оснащение детских комнат"
@@ -463,9 +501,10 @@
     "principles": [],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/38.jpg"
   },
   {
+    "number": 39,
     "title": "Сидение с местом для обуви у игровой",
     "spheres": [
       "Оснащение детских комнат"
@@ -475,9 +514,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/39.jpg"
   },
   {
+    "number": 40,
     "title": "Спокойные игры для небольшой детской комнаты",
     "spheres": [
       "Оснащение детских комнат"
@@ -487,9 +527,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/wall-attractors/busy-house-1.jpg"
   },
   {
+    "number": 41,
     "title": "«Аварийный набор для папы» в пиццериях",
     "spheres": [
       "Экстра-формат"
@@ -500,9 +541,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/41.jpg"
   },
   {
+    "number": 42,
     "title": "Бебихолдер в туалете",
     "spheres": [
       "Экстра-формат"
@@ -512,9 +554,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/42.jpg"
   },
   {
+    "number": 43,
     "title": "Подогреватель бутылочек в зоне доступа гостей",
     "spheres": [
       "Экстра-формат"
@@ -524,9 +567,10 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/43.jpg"
   },
   {
+    "number": 44,
     "title": "Складной стул для переодевания тоддлера в туалете",
     "spheres": [
       "Экстра-формат"
@@ -536,6 +580,6 @@
     ],
     "url": null,
     "featured": false,
-    "cover": null
+    "cover": "/assets/projects/dodo-pizza-kids/tips/44.jpg"
   }
 ]
