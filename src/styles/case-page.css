@@ -824,7 +824,7 @@
 }
 
 .ids .case-page:not(.article) .initiative-card__link .initiative-card__title {
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 1px;
   text-decoration-color: rgb(var(--ids__text-RGB));
 }
 
@@ -1225,6 +1225,13 @@
     color: rgb(var(--ids__link-RGB));
     list-style: none;
     user-select: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+    text-decoration-color: rgba(var(--ids__link-RGB), 0.35);
+    transition:
+      color 0.2s ease,
+      text-decoration-color 0.2s ease;
 
     &::-webkit-details-marker {
       display: none;
@@ -1233,6 +1240,12 @@
     &::before {
       content: "+ ";
       font-family: var(--mono);
+    }
+
+    &:hover {
+      color: rgb(var(--ids__hover-RGB));
+      text-decoration-color: rgb(var(--ids__hover-RGB));
+      transition-duration: 0s;
     }
   }
 
