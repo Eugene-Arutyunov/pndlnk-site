@@ -57,6 +57,20 @@
     "cover": "/assets/projects/dodo-pizza-kids/kids-out/sitter-laugh.jpg"
   },
   {
+    "number": 5,
+    "title": "Пакетное предложение для празднования дома: еда, декор, развлечения",
+    "spheres": [
+      "Новые продукты и услуги",
+      "День рождения и мастер-классы"
+    ],
+    "principles": [
+      "значимый контекст"
+    ],
+    "url": null,
+    "featured": false,
+    "cover": "/assets/projects/dodo-pizza-kids/tips/home-party-package.jpg"
+  },
+  {
     "number": 6,
     "title": "Семейный профиль в мобильном приложении",
     "spheres": [
@@ -253,19 +267,6 @@
     "url": null,
     "featured": false,
     "cover": "/assets/projects/dodo-pizza-kids/tips/dodokids-site.jpg"
-  },
-  {
-    "number": 21,
-    "title": "Пакетное предложение для празднования дома",
-    "spheres": [
-      "День рождения и мастер-классы"
-    ],
-    "principles": [
-      "значимый контекст"
-    ],
-    "url": null,
-    "featured": false,
-    "cover": "/assets/projects/dodo-pizza-kids/tips/home-party-package.jpg"
   },
   {
     "number": 22,

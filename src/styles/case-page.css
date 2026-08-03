@@ -4,6 +4,25 @@
   align-items: flex-start;
 }
 
+/* Широкая CTA в конце кейса Додо Kids */
+.ids button.lets-talk-button.case-kids-cta {
+  display: flex;
+  width: 100%;
+  min-height: 4.5em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.55em 1em;
+  box-sizing: border-box;
+  white-space: nowrap;
+  font-size: clamp(1.15em, 2.4vw, 1.75em);
+
+  @media (width < 768px) {
+    min-height: 3.5em;
+    font-size: 1.1em;
+  }
+}
+
 /* Оглавление кейса — как guide-nav на Shift */
 .case-toc {
   display: none;
@@ -739,15 +758,11 @@
 
 .ids .case-page:not(.article) .initiative-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.5em;
   list-style: none;
   margin: 0;
   padding: 0;
-
-  @media (width < 1100px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
   @media (width < 720px) {
     grid-template-columns: repeat(2, 1fr);
@@ -793,10 +808,10 @@
     text-decoration: none;
   }
 
-  &:hover {
+  &:has(.initiative-card__link):hover {
     .initiative-card__title {
       color: rgb(var(--ids__hover-RGB));
-      text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
+      text-decoration-color: rgb(var(--ids__text-RGB));
       transition-duration: 0s;
     }
 
@@ -806,6 +821,11 @@
       transition-duration: 0s;
     }
   }
+}
+
+.ids .case-page:not(.article) .initiative-card__link .initiative-card__title {
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgb(var(--ids__text-RGB));
 }
 
 .ids .case-page:not(.article) .initiative-card__cover {
@@ -871,17 +891,31 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.ids .case-page:not(.article) .case-principle-pill,
 .ids .case-page:not(.article) .initiative-card__principle {
   display: inline-block;
   padding: 0.12em 0.35em;
   font-family: var(--mono);
-  font-size: 0.62em;
   line-height: 1.2;
   color: rgb(var(--ids__text-RGB));
   text-decoration: none;
   border: 1px solid rgba(var(--ids__text-RGB), 0.35);
+  border-radius: 0;
   background: transparent;
+}
+
+.ids .case-page:not(.article) .initiative-card__principle {
+  font-size: 0.62em;
   transition: color 0.28s ease;
+}
+
+.ids .case-page:not(.article) .case-principles .case-principle-pill {
+  font-size: 0.85em;
+  font-weight: 700;
+}
+
+.ids .case-page:not(.article) .case-principles .ids__sequence-item > p:first-child {
+  margin-bottom: calc(var(--ids__density) * 0.35em);
 }
 
 .ids .case-page:not(.article) .initiative-card__tags {
@@ -900,6 +934,7 @@
   color: rgb(var(--ids__text-RGB));
   text-decoration: none;
   border: none;
+  border-radius: 0;
   background: rgba(var(--ids__text-RGB), 0.08);
   transition: color 0.28s ease;
 }
@@ -908,11 +943,20 @@
   background: rgba(var(--ids__surface-RGB), 0.3);
   padding: 1em;
   border-radius: 0.2em;
+
+  & .ids__sequence {
+    align-items: stretch;
+  }
+
+  & .ids__sequence-item {
+    display: flex;
+  }
 }
 
 .ids .case-kids-term {
   font-family: var(--serif);
   hyphens: auto;
+  width: 100%;
 
   & strong {
     text-transform: lowercase;
@@ -1126,13 +1170,12 @@
   }
 }
 
-.ids .case-page:not(.article) .case-principles .ids__sequence-item > p:first-child {
-  margin-bottom: calc(var(--ids__density) * 0.15em);
-}
-
 .ids
   .case-page:not(.article)
   .promo-table-container.case-barriers-table,
+.ids
+  .case-page:not(.article)
+  .promo-table-container.case-ssp-hypotheses-table,
 .ids
   .case-page:not(.article)
   .promo-table-container.case-jobs-table,
@@ -1159,21 +1202,9 @@
 }
 
 .ids .case-page:not(.article) .promo-table-container.case-ssp-hypotheses-table {
-  & .promo-table tbody td {
-    padding: 0.5em 1em 0.8em 1em;
-    vertical-align: top;
-  }
-
-  & .promo-table tbody td:first-child {
-    width: 1%;
-    white-space: nowrap;
-    padding: 0.5em 1.4em 0.8em 1em;
-    font-variant-numeric: tabular-nums;
-    color: rgba(var(--ids__text-RGB), 0.55);
-  }
-
   & .promo-table tbody td:nth-child(3) {
-    display: none;
+    white-space: nowrap;
+    color: rgba(var(--ids__text-RGB), 0.75);
   }
 }
 
@@ -1181,6 +1212,55 @@
   & .promo-table thead th:nth-child(4),
   & .promo-table tbody td:nth-child(4) {
     display: none;
+  }
+
+  & .case-job-details {
+    margin-top: 0.5em;
+    font-size: 0.92em;
+    line-height: 1.35;
+  }
+
+  & .case-job-details > summary {
+    cursor: pointer;
+    color: rgb(var(--ids__link-RGB));
+    list-style: none;
+    user-select: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::before {
+      content: "+ ";
+      font-family: var(--mono);
+    }
+  }
+
+  & .case-job-details[open] > summary::before {
+    content: "− ";
+  }
+
+  & .case-job-details__body {
+    margin-top: 0.65em;
+    padding-top: 0.65em;
+    border-top: 1px solid rgba(var(--ids__text-RGB), 0.12);
+
+    & p {
+      margin: 0 0 0.5em;
+    }
+
+    & ul {
+      margin: 0 0 0.65em;
+      padding-left: 1.2em;
+    }
+
+    & li + li {
+      margin-top: 0.25em;
+    }
+  }
+
+  & td > p:first-child {
+    margin: 0;
   }
 }
 
@@ -1251,7 +1331,7 @@
   position: relative;
   overflow-x: clip;
   overflow-y: visible;
-  padding: 5em 0 7em 1.2em;
+  padding: 3em 0 3.5em 1.2em;
   margin-left: -1.2em;
   width: calc(100% + 1.2em);
 
@@ -1303,13 +1383,34 @@
   }
 
   .case-field-promo-container--content .case-field-promo-image {
+    position: relative;
     background-color: rgb(var(--ids__background-RGB));
+    transition:
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+    &:nth-child(1) { z-index: 1; }
+    &:nth-child(2) { z-index: 2; }
+    &:nth-child(3) { z-index: 3; }
+    &:nth-child(4) { z-index: 4; }
+    &:nth-child(5) { z-index: 5; }
+    &:nth-child(6) { z-index: 6; }
+    &:nth-child(7) { z-index: 7; }
+    &:nth-child(8) { z-index: 8; }
+    &:nth-child(9) { z-index: 9; }
+    &:nth-child(10) { z-index: 10; }
+    &:nth-child(11) { z-index: 11; }
+    &:nth-child(12) { z-index: 12; }
+    &:nth-child(13) { z-index: 13; }
+    &:nth-child(14) { z-index: 14; }
+    &:nth-child(15) { z-index: 15; }
+    &:nth-child(16) { z-index: 16; }
   }
 
   .case-field-promo-container--stub .case-field-promo-image {
     background-color: rgb(var(--ids__surface-RGB));
 
-    &:nth-child(-n+5) {
+    &:nth-child(-n+6) {
       background-color: transparent;
       border-color: transparent;
       box-shadow: none;
@@ -1318,13 +1419,13 @@
 
   .case-field-promo-image {
     flex-shrink: 0;
-    width: 21em;
+    width: 17.5em;
     aspect-ratio: 210 / 297;
     overflow: hidden;
     border: 1px solid rgba(var(--ids__text-RGB), 0.2);
     border-radius: 0.15em;
     box-shadow: 0 0.8em 1.2em 0 rgba(var(--ids__text-RGB), 0.1);
-    margin-right: -14.4em;
+    margin-right: -9em;
     background-color: rgb(var(--ids__background-RGB));
     transform: skewY(-10deg) scaleY(1.1);
 
@@ -1337,13 +1438,33 @@
     }
 
     &:nth-child(1) { margin-top: 0; }
-    &:nth-child(2) { margin-top: 2.6em; }
-    &:nth-child(3) { margin-top: 5.2em; }
-    &:nth-child(4) { margin-top: 7.8em; }
-    &:nth-child(5) { margin-top: 10.4em; }
+    &:nth-child(2) { margin-top: 0.55em; }
+    &:nth-child(3) { margin-top: 1.1em; }
+    &:nth-child(4) { margin-top: 1.65em; }
+    &:nth-child(5) { margin-top: 2.2em; }
+    &:nth-child(6) { margin-top: 2.75em; }
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  @media (hover: hover) and (width >= 768px) and (prefers-reduced-motion: no-preference) {
+    .case-field-promo-container--content .case-field-promo-image:hover {
+      transform: skewY(-10deg) scaleY(1.1) translateY(-0.55em);
+      box-shadow: 0 1.2em 1.8em 0 rgba(var(--ids__text-RGB), 0.16);
+    }
+  }
+
+  @media (hover: hover) and (width >= 768px) and (prefers-reduced-motion: reduce) {
+    .case-field-promo-container--content .case-field-promo-image:hover {
+      box-shadow: 0 1.2em 1.8em 0 rgba(var(--ids__text-RGB), 0.16);
+    }
+  }
+
+  @media (width < 768px) {
+    .case-field-promo-container--content .case-field-promo-image {
+      transition: none;
     }
   }
 
@@ -1481,7 +1602,7 @@
   }
 
   @media (width < 768px) {
-    padding: 4em 0 6em 0.9em;
+    padding: 2.5em 0 3em 0.9em;
     margin-left: -0.9em;
     width: calc(100% + 0.9em);
 
@@ -1490,8 +1611,8 @@
     }
 
     .case-field-promo-image {
-      width: 15em;
-      margin-right: -10.2em;
+      width: 12.5em;
+      margin-right: -6.5em;
     }
   }
 }

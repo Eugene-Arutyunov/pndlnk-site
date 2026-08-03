@@ -229,10 +229,10 @@ function initCaseBarriersTable() {
       unfixed: "is-unfixed",
       "in-progress": "is-in-progress",
     };
-    const matchClass = classByMode[mode];
     let n = 0;
     container.querySelectorAll(".case-barrier-row").forEach((row) => {
-      const match = row.classList.contains(matchClass);
+      const match =
+        mode === "all" || row.classList.contains(classByMode[mode]);
       row.hidden = !match;
       if (match) {
         n += 1;
