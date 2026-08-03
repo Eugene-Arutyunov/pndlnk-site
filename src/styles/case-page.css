@@ -851,11 +851,6 @@
   overflow-wrap: break-word;
 }
 
-.ids .case-page:not(.article) .initiative-card__num {
-  font-variant-numeric: tabular-nums;
-  margin-right: 0.15em;
-}
-
 .ids .case-page:not(.article) .initiative-card__inner .initiative-card__title {
   text-decoration: none;
 }
