@@ -49,14 +49,12 @@
             {% endif %}
             <div class="initiative-card__body">
               <h3 class="initiative-card__title">{{ initiative.title }}</h3>
-              {% if initiative.principles and initiative.principles.length %}
-              <div class="initiative-card__principles">
+              <div class="initiative-card__meta">
+                {% if initiative.principles and initiative.principles.length %}
                 {% for principle in initiative.principles %}
                 <span class="initiative-card__principle">{{ principle }}</span>
                 {% endfor %}
-              </div>
-              {% endif %}
-              <div class="initiative-card__tags">
+                {% endif %}
                 {% for tag in initiative.spheres | initiativeTags %}
                 <span class="initiative-card__tag">{{ tag }}</span>
                 {% endfor %}

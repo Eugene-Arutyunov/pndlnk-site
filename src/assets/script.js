@@ -216,6 +216,21 @@ function initKscProgramTable() {
   });
 }
 
+function initCaseJobsTable() {
+  document
+    .querySelectorAll(".case-jobs-table .case-jobs-row--expandable")
+    .forEach((row) => {
+      const details = row.querySelector(".case-job-details");
+      if (!details) return;
+
+      row.addEventListener("click", (event) => {
+        if (event.target.closest("summary")) return;
+        if (event.target.closest("a")) return;
+        details.open = !details.open;
+      });
+    });
+}
+
 function initCaseBarriersTable() {
   const container = document.querySelector(".case-barriers-table");
   if (!container) return;
@@ -840,6 +855,7 @@ if (document.readyState === "loading") {
     initLogoDownloads();
     initPromoTable();
     initKscProgramTable();
+    initCaseJobsTable();
     initCaseBarriersTable();
     initCaseSspHypothesesTable();
     initColorPlates();
@@ -857,6 +873,7 @@ if (document.readyState === "loading") {
   initLogoDownloads();
   initPromoTable();
   initKscProgramTable();
+  initCaseJobsTable();
   initCaseBarriersTable();
   initCaseSspHypothesesTable();
   initColorPlates();
