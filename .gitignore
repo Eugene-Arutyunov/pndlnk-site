@@ -1,5 +1,7 @@
 # Generated files
 _site/
+_preview/
+_to_delete/
 
 # Dependencies
 node_modules/

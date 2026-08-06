@@ -1,8 +1,13 @@
+---
+# дубль кейса: канонический адрес — раздел /projects/
+noindex: true
+canonicalUrl: "/projects/inappstory/"
+---
 {% extends 'layout.html' %}
 {% set pageTitle = 'Кейс InAppStory' %}
 {% block extrahead %}
 <meta http-equiv="refresh" content="0; url=/projects/inappstory/" />
-<link rel="canonical" href="/projects/inappstory/" />
+{# canonical теперь ставит общий шаблон из canonicalUrl в начале файла — иначе тег дублировался #}
 {% endblock %}
 {% block content %}
 <div class="ids__wrapper L">

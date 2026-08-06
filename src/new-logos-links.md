@@ -1,3 +1,12 @@
+---
+# Внутренний рабочий список ссылок — не публикуется на сайте.
+# permalink: false означает «файл остаётся в репозитории, но страницы на сайте нет».
+# Причина: у файла нет общего шаблона, поэтому спрятать его от поисковиков
+# обычным способом нельзя — а публиковать список клиентских ссылок незачем.
+noindex: true
+permalink: false
+eleventyExcludeFromCollections: true
+---
 https://strana.com/spb/?utm_referrer=https%3A%2F%2Fwww.google.com%2F&roistat_referrer=https%3A%2F%2Fwww.google.com%2F&roistat_referrer=https://www.google.com/
 https://inappstory.ru/
 https://www.rolf.ru/
