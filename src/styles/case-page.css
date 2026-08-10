@@ -1012,6 +1012,7 @@
 }
 
 .ids .case-kids-term {
+  font-size: 0.7em;
   font-family: var(--serif);
   hyphens: auto;
   width: 100%;
