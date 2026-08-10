@@ -17,7 +17,7 @@
     <meta name="twitter:image" content="{{ ogImage }}" />
     {% endif %}
 
-    <link rel="shortcut icon" href="/assets/favicon.png" />
+    <link rel="shortcut icon" href="{{ favicon if favicon else '/assets/favicon.png' }}" />
 
     <link
       rel="preload"

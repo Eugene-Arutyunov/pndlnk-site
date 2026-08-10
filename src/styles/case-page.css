@@ -922,6 +922,10 @@
   flex-shrink: 0;
 }
 
+.ids .case-page.case-standard:not(.article) h1 {
+  margin-bottom: 0.25em;
+}
+
 .ids .case-page:not(.article) .initiative-page-tags {
   display: flex;
   flex-wrap: nowrap;
@@ -1225,21 +1229,12 @@
 .ids
   .case-page:not(.article)
   .promo-table-container.case-cjm-sections-table {
-  & .promo-table thead th:first-child,
-  & .promo-table tbody td:first-child {
-    width: 1%;
-    white-space: nowrap;
-    padding: 0.5em 1.4em 0.8em 1em;
-    font-variant-numeric: tabular-nums;
-    color: rgba(var(--ids__text-RGB), 0.55);
-  }
-
-  & .promo-table thead th:not(:first-child),
-  & .promo-table tbody td:not(:first-child) {
+  & .promo-table thead th,
+  & .promo-table tbody td {
     padding: 0.5em 1em 0.8em 1em;
   }
 
-  & .promo-table thead th:first-child {
+  & .promo-table thead th {
     padding-bottom: 0.5em;
   }
 }
@@ -1256,13 +1251,6 @@
 
   & .promo-table thead th:first-child,
   & .promo-table tbody td:first-child {
-    width: 3.5em;
-    min-width: 3.5em;
-    max-width: 3.5em;
-  }
-
-  & .promo-table thead th:nth-child(2),
-  & .promo-table tbody td:nth-child(2) {
     width: auto;
   }
 
@@ -1317,28 +1305,9 @@
   }
 }
 
-.ids .case-page:not(.article) .case-jobs-od-sidenote {
-  height: 0;
-  margin: 0;
-  overflow: visible;
-
-  & .with-sidenote .sidenote {
-    margin-bottom: 0;
-
-    @media (width > 767px) {
-      top: 4.5em;
-    }
-  }
-
-  @media (width < 768px) {
-    height: auto;
-    margin-bottom: 1em;
-  }
-}
-
 .ids .case-page:not(.article) .promo-table-container.case-jobs-table {
-  & .promo-table thead th:nth-child(4),
-  & .promo-table tbody td:nth-child(4) {
+  & .promo-table thead th:nth-child(3),
+  & .promo-table tbody td:nth-child(3) {
     display: none;
   }
 
@@ -1357,8 +1326,10 @@
   }
 
   & .case-job-details {
+    position: relative;
     font-size: inherit;
     line-height: inherit;
+    padding-bottom: 1.35em;
   }
 
   & .case-job-details > summary {
@@ -1372,8 +1343,40 @@
     }
   }
 
+  & .case-job-details__teaser {
+    display: block;
+    padding-right: 0.5em;
+  }
+
+  & .case-job-details__more {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-family: var(--gothic);
+    font-size: 0.78em;
+    font-weight: 300;
+    line-height: 1.2;
+    color: rgba(var(--ids__text-RGB), 0.55);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 1px;
+  }
+
+  & .case-job-details__more-label--close {
+    display: none;
+  }
+
+  & .case-job-details[open] .case-job-details__more-label--open {
+    display: none;
+  }
+
+  & .case-job-details[open] .case-job-details__more-label--close {
+    display: inline;
+  }
+
   & .case-job-details__body {
     margin-top: 0.65em;
+    margin-bottom: 0.35em;
     padding-top: 0.65em;
     border-top: 1px solid rgba(var(--ids__text-RGB), 0.12);
     font-size: 0.92em;
@@ -1520,9 +1523,6 @@
   .case-field-promo-container--content .case-field-promo-image {
     position: relative;
     background-color: rgb(var(--ids__background-RGB));
-    transition:
-      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 
     &:nth-child(1) { z-index: 1; }
     &:nth-child(2) { z-index: 2; }
@@ -1581,25 +1581,6 @@
 
     &:last-child {
       margin-right: 0;
-    }
-  }
-
-  @media (hover: hover) and (width >= 768px) and (prefers-reduced-motion: no-preference) {
-    .case-field-promo-container--content .case-field-promo-image:hover {
-      transform: skewY(-10deg) scaleY(1.1) translateY(-0.55em);
-      box-shadow: 0 1.2em 1.8em 0 rgba(var(--ids__text-RGB), 0.16);
-    }
-  }
-
-  @media (hover: hover) and (width >= 768px) and (prefers-reduced-motion: reduce) {
-    .case-field-promo-container--content .case-field-promo-image:hover {
-      box-shadow: 0 1.2em 1.8em 0 rgba(var(--ids__text-RGB), 0.16);
-    }
-  }
-
-  @media (width < 768px) {
-    .case-field-promo-container--content .case-field-promo-image {
-      transition: none;
     }
   }
 
@@ -1839,35 +1820,46 @@
   }
 }
 
-.ids .case-page:not(.article) .case-finmodel-overflow {
-  position: relative;
-  overflow-x: clip;
-  width: 100%;
+.ids .case-page:not(.article) .case-finmodel-table__title {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.3;
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 28%;
-    background: linear-gradient(
-      to right,
-      transparent 0%,
-      rgb(var(--ids__background-RGB)) 75%
-    );
-    pointer-events: none;
-    z-index: 2;
+.ids .case-page:not(.article) .case-finmodel-overflow {
+  --finmodel-meta-col: 8.5em;
+  --finmodel-meta-count: 2;
+  --finmodel-city-col: 11.5em;
+  --finmodel-fade: 5.5em;
+  --finmodel-label-space: 4.5em;
+  --finmodel-pad: 1em;
+
+  position: relative;
+  overflow: visible;
+  font-size: 0.75em;
+  width: min(
+    100%,
+    calc(
+      var(--finmodel-pad) + var(--finmodel-meta-col) * var(--finmodel-meta-count) +
+        var(--finmodel-city-col) * 3 + var(--finmodel-label-space)
+    )
+  );
+
+  &:has(.case-finmodel-table--single-meta) {
+    --finmodel-meta-count: 1;
+    --finmodel-meta-col: 14em;
   }
 
   .case-field-promo-more {
     position: absolute;
-    right: 0.4em;
-    bottom: 0.55em;
+    right: 0.35em;
+    top: calc(var(--finmodel-pad) + 0.5em);
     z-index: 3;
     margin: 0;
     font-family: var(--mono);
-    font-size: 0.75em;
+    font-size: 1em;
     line-height: 1.3;
     color: rgba(var(--ids__text-RGB), 0.55);
     text-align: right;
@@ -1875,33 +1867,54 @@
   }
 
   .promo-table-container.case-finmodel-table {
+    position: relative;
     width: max-content;
     max-width: none;
-    min-width: 100%;
-    padding-right: 1em;
-  }
-
-  .case-finmodel-table__title {
-    margin: 0 0 0.75em;
-    font-family: var(--mono);
+    min-width: 0;
+    padding-right: 0;
     font-size: 1em;
-    font-weight: 700;
-    line-height: 1.3;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: var(--finmodel-fade);
+      background: linear-gradient(to right, transparent 0%, #fff 70%);
+      pointer-events: none;
+      z-index: 2;
+    }
   }
 
   .promo-table {
-    width: max-content;
-    min-width: 100%;
+    width: calc(
+      var(--finmodel-meta-col) * var(--finmodel-meta-count) + var(--finmodel-city-col) * 3
+    );
+    min-width: 0;
+    table-layout: fixed;
   }
 
-  .promo-table thead th:nth-child(n + 3),
-  .promo-table tbody td:nth-child(n + 3) {
-    min-width: 6.5em;
+  .case-finmodel-col--meta {
+    width: var(--finmodel-meta-col);
+  }
+
+  .case-finmodel-col--city {
+    width: var(--finmodel-city-col);
+  }
+
+  .promo-table thead th,
+  .promo-table tbody td {
+    padding-right: 1.75em;
+  }
+
+  .promo-table thead th {
     white-space: nowrap;
   }
 
-  .promo-table thead th:nth-child(-n + 2),
-  .promo-table tbody td:nth-child(-n + 2) {
-    min-width: 7em;
+  .promo-table thead th:last-child,
+  .promo-table tbody td:last-child {
+    padding-right: 0;
   }
 }

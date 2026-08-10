@@ -46,25 +46,27 @@ function loadDodoKidsInitiatives() {
   const file = path.join(__dirname, "dodoKidsInitiatives.json");
   const raw = JSON.parse(fs.readFileSync(file, "utf8"));
 
-  return raw.map((item, index) => {
-    const spheres = Array.isArray(item.spheres) ? item.spheres : [];
-    const sphereKeys = sphereToKeys(spheres);
+  return raw
+    .filter((item) => !item.hidden)
+    .map((item, index) => {
+      const spheres = Array.isArray(item.spheres) ? item.spheres : [];
+      const sphereKeys = sphereToKeys(spheres);
 
-    const number = Number.isInteger(item.number) ? item.number : index + 1;
+      const number = Number.isInteger(item.number) ? item.number : index + 1;
 
-    return {
-      title: item.title,
-      spheres,
-      sphereKeys,
-      tags: sphereToTags(spheres),
-      principles: Array.isArray(item.principles) ? item.principles : [],
-      url: item.url || null,
-      featured: Boolean(item.featured),
-      cover: item.cover || null,
-      order: index,
-      number,
-    };
-  });
+      return {
+        title: item.title,
+        spheres,
+        sphereKeys,
+        tags: sphereToTags(spheres),
+        principles: Array.isArray(item.principles) ? item.principles : [],
+        url: item.url || null,
+        featured: Boolean(item.featured),
+        cover: item.cover || null,
+        order: index,
+        number,
+      };
+    });
 }
 
 module.exports = loadDodoKidsInitiatives;

@@ -388,6 +388,7 @@
     ],
     "url": null,
     "featured": false,
+    "hidden": true,
     "cover": "/assets/projects/dodo-pizza-kids/tips/wall-hooks.jpg"
   },
   {
@@ -401,6 +402,7 @@
     ],
     "url": null,
     "featured": false,
+    "hidden": true,
     "cover": "/assets/projects/dodo-pizza-kids/tips/branded-pinwheels.jpg"
   },
   {
@@ -542,6 +544,7 @@
     ],
     "url": null,
     "featured": false,
+    "hidden": true,
     "cover": "/assets/projects/dodo-pizza-kids/tips/toilet-baby-holder.jpg"
   },
   {
@@ -555,6 +558,7 @@
     ],
     "url": null,
     "featured": false,
+    "hidden": true,
     "cover": "/assets/projects/dodo-pizza-kids/tips/bottle-warmer.jpg"
   },
   {
@@ -568,6 +572,7 @@
     ],
     "url": null,
     "featured": false,
+    "hidden": true,
     "cover": "/assets/projects/dodo-pizza-kids/tips/toddler-changing-chair.jpg"
   }
 ]

@@ -244,16 +244,10 @@ function initCaseBarriersTable() {
       unfixed: "is-unfixed",
       "in-progress": "is-in-progress",
     };
-    let n = 0;
     container.querySelectorAll(".case-barrier-row").forEach((row) => {
       const match =
         mode === "all" || row.classList.contains(classByMode[mode]);
       row.hidden = !match;
-      if (match) {
-        n += 1;
-        const numCell = row.querySelector("td");
-        if (numCell) numCell.textContent = String(n);
-      }
     });
   }
 
@@ -305,26 +299,11 @@ function initCaseSspHypothesesTable() {
     btn.textContent = `${label} (${count})`;
   });
 
-  rows.forEach((row) => {
-    if (row.dataset.originalNumber == null) {
-      const numCell = row.querySelector("td");
-      row.dataset.originalNumber = numCell ? numCell.textContent.trim() : "";
-    }
-  });
-
   function switchDetail(mode) {
     container.dataset.sspHypothesesDetail = mode;
-    let n = 0;
     rows.forEach((row) => {
       const match = mode === "all" || row.dataset.sspObject === mode;
       row.hidden = !match;
-      const numCell = row.querySelector("td");
-      if (!numCell) return;
-      if (match) {
-        n += 1;
-        numCell.textContent =
-          mode === "all" ? row.dataset.originalNumber : String(n);
-      }
     });
   }
 
