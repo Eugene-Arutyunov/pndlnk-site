@@ -1,0 +1,16 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for item in collections.all %}
+{#- в карту сайта попадают только страницы: адрес заканчивается на «/».
+    Так отсекаются служебные файлы сборки (bundle.css) и папка assets. -#}
+{%- if not item.data.noindex and item.url and item.url.endsWith('/') and '/assets/' not in item.url %}
+  <url>
+    <loc>https://ponedelnik.ru{{ item.url }}</loc>
+  </url>
+{%- endif %}
+{%- endfor %}
+</urlset>

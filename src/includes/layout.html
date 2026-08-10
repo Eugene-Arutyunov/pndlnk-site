@@ -17,6 +17,16 @@
     <meta name="twitter:image" content="{{ ogImage }}" />
     {% endif %}
 
+    {# SEO: канонический адрес страницы — чтобы поисковик не считал копиями
+    адреса с параметрами (?utm_source=... и подобными) #}
+    <link rel="canonical" href="https://ponedelnik.ru{{ canonicalUrl if canonicalUrl else page.url }}" />
+
+    {# SEO: страницы со флагом noindex в начале файла не попадают в поиск,
+    но остаются доступны по прямой ссылке и передают вес по ссылкам дальше #}
+    {% if noindex %}
+    <meta name="robots" content="noindex, follow" />
+    {% endif %}
+
     <link rel="shortcut icon" href="/assets/favicon.png" />
 
     <link
