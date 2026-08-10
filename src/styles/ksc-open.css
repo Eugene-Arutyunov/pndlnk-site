@@ -547,29 +547,6 @@ table.ksc-open-schedule {
   --mock-gold: rgb(var(--ids__pndlnk-gold-RGB));
   --mock-gold-tinted: rgb(var(--ids__pndlnk-gold-tinted-RGB));
 
-  /* Палитра блоков ДКЦП: связывает зоны иконки и термины в тексте */
-  --dkcp-block-1: color-mix(
-    in srgb,
-    rgb(var(--ids__pndlnk-dark-gray-RGB)) 50%,
-    rgb(var(--ids__pndlnk-light-gray-RGB))
-  );
-  --dkcp-block-2: color-mix(
-    in srgb,
-    rgb(var(--ids__ink-RGB)) 55%,
-    rgb(var(--ids__pndlnk-light-gray-RGB))
-  );
-  --dkcp-block-3: rgb(var(--ids__pndlnk-red-tinted-RGB));
-  --dkcp-block-4: rgb(var(--ids__pndlnk-dark-gray-RGB));
-  --dkcp-block-5: rgb(var(--ids__pndlnk-gold-RGB));
-  --dkcp-block-6: color-mix(
-    in srgb,
-    rgb(var(--ids__pndlnk-gold-RGB)) 55%,
-    rgb(var(--ids__pndlnk-light-gray-RGB))
-  );
-  --dkcp-block-7: rgb(var(--ids__pndlnk-dark-gray-RGB));
-  --dkcp-block-8: rgb(var(--ids__pndlnk-gold-tinted-RGB));
-  --dkcp-block-9: rgb(var(--ids__pndlnk-red-RGB));
-
   @media (width < 768px) {
     grid-template-columns: 4.6em minmax(0, 1fr);
     gap: 1em;
@@ -600,73 +577,18 @@ table.ksc-open-schedule {
   color: var(--ksc-outcomes-accent);
 }
 
-/* Активные зоны иконки и термины в тексте красятся в цвета палитры */
-.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="1"].is-active {
-  fill: var(--dkcp-block-1);
-}
-
-.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="2"].is-active {
-  fill: var(--dkcp-block-2);
-}
-
-.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="3"].is-active {
-  fill: var(--dkcp-block-3);
-}
-
-.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="4"].is-active {
-  fill: var(--dkcp-block-4);
-}
-
-.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="5"].is-active {
-  fill: var(--dkcp-block-5);
-}
-
-.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="6"].is-active {
-  fill: var(--dkcp-block-6);
-}
-
-.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="7"].is-active {
-  fill: var(--dkcp-block-7);
-}
-
-.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="8"].is-active {
-  fill: var(--dkcp-block-8);
-}
-
-.ksc-outcomes .dkcp-preview-icon [data-dkcp-preview-block="9"].is-active {
-  fill: var(--dkcp-block-9);
-}
-
+/* Термины в тексте: по умолчанию цвет текста, по ховеру (своему или
+   соответствующего блока иконки — класс is-hovered ставит скрипт) — акцент.
+   Ховер мгновенный, расховер — с транзишеном */
 .ksc-outcomes .dkcp-term {
   font-weight: 700;
+  transition: color 0.3s ease;
 }
 
-.ksc-outcomes .dkcp-term--2 {
-  color: var(--dkcp-block-2);
-}
-
-.ksc-outcomes .dkcp-term--3 {
-  color: var(--dkcp-block-3);
-}
-
-.ksc-outcomes .dkcp-term--4 {
-  color: var(--dkcp-block-4);
-}
-
-.ksc-outcomes .dkcp-term--5 {
-  color: var(--dkcp-block-5);
-}
-
-.ksc-outcomes .dkcp-term--6 {
-  color: var(--dkcp-block-6);
-}
-
-.ksc-outcomes .dkcp-term--8 {
-  color: var(--dkcp-block-8);
-}
-
-.ksc-outcomes .dkcp-term--9 {
-  color: var(--dkcp-block-9);
+.ksc-outcomes .dkcp-term:hover,
+.ksc-outcomes .dkcp-term.is-hovered {
+  color: var(--ksc-outcomes-accent);
+  transition: none;
 }
 
 /* Слой линий живёт внутри застиканной колонки: конец линии на иконке
@@ -688,10 +610,17 @@ table.ksc-open-schedule {
   opacity: 1;
 }
 
+/* Видна только линия активного сценария: включается и переключается фейдом */
 .ksc-outcomes__connector-line {
   stroke: var(--ksc-outcomes-line);
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.ksc-outcomes__connector-line.is-active {
+  opacity: 1;
 }
 
 .ksc-outcomes__sticky {
@@ -703,10 +632,16 @@ table.ksc-open-schedule {
   min-height: 18em;
   color: rgb(var(--ids__text-RGB));
 
+  /* Иконка прячется вместе с линиями, когда блок результатов уехал вверх */
   & .dkcp-preview {
     display: inline-block;
     margin-top: 0.8em;
     background: var(--mock-bg);
+    transition: opacity 0.45s ease;
+  }
+
+  & .dkcp-preview.is-hidden {
+    opacity: 0;
   }
 
   & .dkcp-preview-icon {
@@ -714,19 +649,30 @@ table.ksc-open-schedule {
     width: 5.2em;
   }
 
+  /* Активные блоки заливаются цветом текста (fill: currentColor ставит
+     скрипт), по ховеру — акцент; ховер мгновенный, расховер — с транзишеном */
   & .dkcp-preview-icon [data-dkcp-preview-block] {
     pointer-events: all;
+    transition: fill 0.3s ease;
   }
 
-  & .dkcp-preview-icon [data-dkcp-preview-block]:hover {
-    fill: rgba(var(--ids__text-RGB), 0.3);
+  & .dkcp-preview-icon [data-dkcp-preview-block]:hover,
+  & .dkcp-preview-icon [data-dkcp-preview-block].is-hovered {
+    fill: var(--ksc-outcomes-accent);
+    transition: none;
   }
 
+  /* На мобиле иконка задвинута в самый угол под шапку-навигацию и крупнее */
   @media (width < 768px) {
-    top: 3.5em;
+    top: 3em;
+    margin-left: -1em;
+
+    & .dkcp-preview {
+      margin-top: 0;
+    }
 
     & .dkcp-preview-icon {
-      width: 3.6em;
+      width: 4.2em;
     }
   }
 }
@@ -762,6 +708,7 @@ table.ksc-open-schedule {
 .ksc-outcomes__tooltip-text {
   margin: 0;
   opacity: 0.75;
+  hyphens: auto;
 }
 
 .ksc-outcomes .ksc-outcomes__tooltip-text {
@@ -862,6 +809,7 @@ table.ksc-open-schedule {
 
 .ksc-outcomes__portrait--petya {
   background-image: url("/assets/ksc-open/team/petya.png");
+  background-position-x: 25%;
 }
 
 .ksc-outcomes__portrait--igor {
@@ -874,10 +822,12 @@ table.ksc-open-schedule {
 
 .ksc-outcomes__portrait--egor {
   background-image: url("/assets/ksc-open/team/egor.png");
+  background-position-x: 75%;
 }
 
 .ksc-outcomes__portrait--anna {
   background-image: url("/assets/ksc-open/team/anna.png");
+  background-position-x: 75%;
 }
 
 .ksc-outcomes__people-caption {
@@ -903,10 +853,10 @@ table.ksc-open-schedule {
   margin-top: 0.9em;
 }
 
+/* Линии, имитирующие текст, — без скруглений */
 .ksc-outcomes .mock-line {
   display: block;
   height: 0.22em;
-  border-radius: 0.11em;
   background: var(--mock-line);
 }
 
@@ -917,7 +867,6 @@ table.ksc-open-schedule {
 .ksc-outcomes .mock-h {
   display: block;
   height: 0.42em;
-  border-radius: 0.12em;
   background: var(--mock-strong);
 }
 
@@ -929,7 +878,6 @@ table.ksc-open-schedule {
   display: block;
   width: 28%;
   height: 0.22em;
-  border-radius: 0.11em;
   background: var(--mock-gold);
 }
 
@@ -950,7 +898,6 @@ table.ksc-open-schedule {
   width: 1.1em;
   height: 0.18em;
   transform: translate(-50%, -50%);
-  border-radius: 0.1em;
   background: rgba(255, 255, 255, 0.85);
 }
 
@@ -976,7 +923,6 @@ table.ksc-open-schedule {
   display: block;
   width: 0.7em;
   height: 0.7em;
-  border-radius: 0.18em;
   background: var(--mock-red-tinted);
   margin-bottom: 0.12em;
 }
@@ -998,7 +944,6 @@ table.ksc-open-schedule {
 .ksc-outcomes .mock-bars span {
   display: block;
   width: 0.55em;
-  border-radius: 0.08em 0.08em 0 0;
 }
 
 .ksc-outcomes .mock-bars span:nth-child(1) {
@@ -1057,6 +1002,12 @@ table.ksc-open-schedule {
   position: relative;
   width: min(100%, calc(var(--slide-w) + var(--slide-shift-x) * 2));
   height: calc(var(--slide-h) + var(--slide-shift-y) * 2);
+
+  /* На мобиле слайды накладываются сильнее, чтобы стопка влезала в колонку */
+  @media (width < 768px) {
+    --slide-shift-x: 1.5em;
+    --slide-shift-y: 1em;
+  }
 }
 
 .ksc-outcomes .mock-slide {
@@ -1093,23 +1044,30 @@ table.ksc-open-schedule {
   margin-top: 0.4em;
 }
 
+.ksc-outcomes .mock-slide .mock-h + .mock-line {
+  margin-top: 0.3em;
+}
+
 .ksc-outcomes .mock-slide .mock-btn {
   margin-top: 0.45em;
+  border-radius: 0;
 }
 
 .ksc-outcomes .mock-slide > .mock-bars {
   margin-top: 0.4em;
 }
 
-.ksc-outcomes .mock-slide > .mock-bars span:nth-child(1) {
+.ksc-outcomes .mock-slide .mock-bars span:nth-child(1) {
   height: 0.8em;
+  /* В гамме слайдов нет синего — первый столбик серый */
+  background: var(--mock-strong);
 }
 
-.ksc-outcomes .mock-slide > .mock-bars span:nth-child(2) {
+.ksc-outcomes .mock-slide .mock-bars span:nth-child(2) {
   height: 1.2em;
 }
 
-.ksc-outcomes .mock-slide > .mock-bars span:nth-child(3) {
+.ksc-outcomes .mock-slide .mock-bars span:nth-child(3) {
   height: 1.6em;
 }
 
@@ -1251,6 +1209,15 @@ table.ksc-open-schedule {
   width: min(100%, 9em);
 }
 
+/* В чате круги серые, а не красные */
+.ksc-outcomes__mock--chat .mock-avatar {
+  background: var(--mock-line);
+}
+
+.ksc-outcomes__mock--chat .mock-send {
+  background: var(--mock-strong);
+}
+
 .ksc-outcomes .mock-chat-header {
   display: flex;
   align-items: center;
@@ -1328,7 +1295,6 @@ table.ksc-open-schedule {
   flex: 1;
   height: 0.7em;
   border: 1px solid var(--mock-frame);
-  border-radius: 0.35em;
   background: rgba(var(--ids__background-RGB), 0.9);
   box-sizing: border-box;
 }
@@ -1361,7 +1327,6 @@ table.ksc-open-schedule {
   display: block;
   width: 0.8em;
   height: 0.2em;
-  border-radius: 0.1em;
   background: var(--mock-line);
 }
 
@@ -1394,7 +1359,6 @@ table.ksc-open-schedule {
   position: relative;
   margin: 0 0.5em;
   height: 2.6em;
-  border-radius: 0.2em;
   background: rgba(var(--ids__pndlnk-gold-tinted-RGB), 0.35);
   overflow: hidden;
 }
@@ -1425,7 +1389,6 @@ table.ksc-open-schedule {
   gap: 0.3em;
   margin: 0.1em 0.5em 0.6em;
   padding: 0.6em 0.5em 0.65em;
-  border-radius: 0.25em;
   background: rgb(var(--ids__pndlnk-black-RGB));
 }
 

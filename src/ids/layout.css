@@ -116,6 +116,8 @@
         left: 112%;
         font-size: 0.7em;
         margin-bottom: 1em;
+        /* Поверх следующих .ids__wrapper (position: relative), иначе они перехватывают клики по ссылкам в свисающем хвосте сайднота */
+        z-index: 1;
       }
     }
   }
@@ -152,6 +154,8 @@
 
           font-size: 0.7em;
           margin-bottom: 1em;
+          /* Поверх следующих .ids__wrapper (position: relative), иначе они перехватывают клики по ссылкам в свисающем хвосте сайднота */
+          z-index: 1;
         }
       }
     }
