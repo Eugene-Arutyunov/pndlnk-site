@@ -84,7 +84,7 @@
         data-audience="{{ project.audience | join(' ') }}"
         data-industry="{{ project.industryFilters | join(' ') }}"
         data-featured="{{ project.isFeatured and 'true' or 'false' }}">
-        <a class="project-card__link" href="/projects/{{ project.slug }}/">
+        <a class="project-card__link" href="{{ project.url }}">
           <div
             class="project-card__cover{% if project.coverTint %} project-card__cover--tinted{% endif %}"
             {%
