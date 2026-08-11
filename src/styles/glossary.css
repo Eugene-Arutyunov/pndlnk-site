@@ -29,3 +29,18 @@
     font-family: var(--gothic);
   }
 }
+
+/* Сетка терминов на странице глоссария: две колонки без рваных рядов */
+.glossary-terms {
+  columns: 2;
+  column-gap: calc(var(--ids__density) * 1.6em);
+
+  & .term {
+    break-inside: avoid;
+    margin-bottom: calc(var(--ids__density) * 1.2em);
+  }
+
+  @media (width < 768px) {
+    columns: 1;
+  }
+}

@@ -30,6 +30,7 @@ module.exports = function (conf) {
     return url.replace(/^\/projects\//, "").replace(/\/$/, "");
   });
 
+  conf.addPassthroughCopy("./src/robots.txt");
   conf.addPassthroughCopy("./src/ids");
   conf.addPassthroughCopy("./src/index.js");
   conf.addPassthroughCopy("./src/assets");

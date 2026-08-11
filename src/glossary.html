@@ -1,52 +1,101 @@
-{% extends 'layout.html' %} {% set pageTitle = 'Глоссарий' %} {% block content
-%}
+{% extends 'layout.html' %} {% set pageTitle = 'Глоссарий — Понедельник' %} {% set pageDesc = 'Понятия, которыми пользуется бюро Понедельник: деятельность, опыт, обмен, ценностное предложение и модель ДКЦП' %} {% block content %}
+
 <div class="ids__space XL"></div>
+
 <div class="ids__wrapper">
-  {% include 'glossary/ponedelnik.html' %}
+  <div class="ids__text-width">
+    <h1>Глоссарий</h1>
+  </div>
 
-  <div class="ids__space L"></div>
-  <div class="ids__sequence XL gap-L">
-    <div class="ids__sequence-item">{% include 'glossary/ssp.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/function.html' %}</div>
-    <div class="ids__sequence-item">
-      {% include 'glossary/processes.html' %}
-    </div>
-    <div class="ids__sequence-item">
-      {% include 'glossary/interaction.html' %}
-    </div>
-    <div class="ids__sequence-item">
-      {% include 'glossary/experience.html' %}
-    </div>
+  <div class="ids__space XS"></div>
 
-    <div class="ids__sequence-item">{% include 'glossary/artifact.html' %}</div>
+  <div class="ids__text-width">
+    <p class="loud">
+      Понятия, которыми мы пользуемся в&nbsp;проектах и&nbsp;в&nbsp;текстах
+      на&nbsp;этом сайте.
+    </p>
+    <p>
+      Многие слова здесь звучат обыденно&nbsp;— опыт, ценность, продукт,
+      задача. Но&nbsp;в&nbsp;работе они означают вполне определённые вещи,
+      и&nbsp;от&nbsp;того, одинаково&nbsp;ли мы понимаем их с&nbsp;заказчиком,
+      зависит результат. Поэтому мы договорились о&nbsp;значениях
+      и&nbsp;записали их.
+    </p>
+  </div>
 
-    <div class="ids__sequence-item">
-      {% include 'glossary/artifact-attributes.html' %}
-    </div>
-    <div class="ids__sequence-item">{% include 'glossary/activity.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/action.html' %}</div>
-    <div class="ids__sequence-item">
-      {% include 'glossary/operation.html' %}
-    </div>
-    <div class="ids__sequence-item">{% include 'glossary/idea.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/goal.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/task.html' %}</div>
-    <div class="ids__sequence-item">
-      {% include 'glossary/phenomenon.html' %}
-    </div>
-    <div class="ids__sequence-item">
-      {% include 'glossary/mental-model.html' %}
-    </div>
-    <div class="ids__sequence-item">{% include 'glossary/dkcp.html' %}</div>
-    <div class="ids__sequence-item">
-      {% include 'glossary/exchange-invariants.html' %}
-    </div>
-    <div class="ids__sequence-item">{% include 'glossary/kmc.html' %}</div>
-    <div class="ids__sequence-item">{% include 'glossary/job.html' %}</div>
-    <div class="ids__sequence-item">
-      {% include 'glossary/function-2.html' %}
-    </div>
+  <div class="ids__space S"></div>
+
+  <ul class="inline-block S">
+    <li><a href="#bureau">Бюро</a></li>
+    <li><a href="#activity">Деятельность</a></li>
+    <li><a href="#experience">Взаимодействие и опыт</a></li>
+    <li><a href="#value-proposition">Ценностное предложение</a></li>
+    <li><a href="#dkcp-blocks">Блоки ДКЦП</a></li>
+    <li><a href="#semiotics">Семиотика</a></li>
+  </ul>
+
+  <div class="ids__space L" id="bureau"></div>
+  <h2 class="S">Бюро</h2>
+  <div class="ids__text-width">{% include 'glossary/ponedelnik.html' %}</div>
+
+  <div class="ids__space L" id="activity"></div>
+  <h2 class="S">Деятельность</h2>
+  <div class="glossary-terms">
+    {% include 'glossary/activity.html' %}
+    {% include 'glossary/action.html' %}
+    {% include 'glossary/operation.html' %}
+    {% include 'glossary/task.html' %}
+    {% include 'glossary/goal.html' %}
+    {% include 'glossary/idea.html' %}
+    {% include 'glossary/function.html' %}
+    {% include 'glossary/processes.html' %}
+    {% include 'glossary/phenomenon.html' %}
+    {% include 'glossary/mental-model.html' %}
+  </div>
+
+  <div class="ids__space L" id="experience"></div>
+  <h2 class="S">Взаимодействие и опыт</h2>
+  <div class="glossary-terms">
+    {% include 'glossary/interaction.html' %}
+    {% include 'glossary/exchange.html' %}
+    {% include 'glossary/experience.html' %}
+    {% include 'glossary/referent-structure.html' %}
+  </div>
+
+  <div class="ids__space L" id="value-proposition"></div>
+  <h2 class="S">Ценностное предложение</h2>
+  <div class="glossary-terms">
+    {% include 'glossary/value-proposition.html' %}
+    {% include 'glossary/dkcp.html' %}
+    {% include 'glossary/exchange-invariants.html' %}
+    {% include 'glossary/verifiability.html' %}
+  </div>
+
+  <div class="ids__space L" id="dkcp-blocks"></div>
+  <h2 class="S">Блоки ДКЦП</h2>
+  <div class="glossary-terms">
+    {% include 'glossary/customer-segment.html' %}
+    {% include 'glossary/motivational-conflict.html' %}
+    {% include 'glossary/artifact.html' %}
+    {% include 'glossary/artifact-attributes.html' %}
+    {% include 'glossary/value-logics.html' %}
+    {% include 'glossary/client-contribution.html' %}
+    {% include 'glossary/exchange-terms.html' %}
+    {% include 'glossary/company-attributes.html' %}
+    {% include 'glossary/value.html' %}
+    {% include 'glossary/arguments.html' %}
+  </div>
+
+  <div class="ids__space L" id="semiotics"></div>
+  <h2 class="S">Семиотика</h2>
+  <div class="glossary-terms">
+    {% include 'glossary/semiotics.html' %}
+    {% include 'glossary/sign.html' %}
+    {% include 'glossary/code.html' %}
+    {% include 'glossary/sign-gap.html' %}
   </div>
 </div>
+
+<div class="ids__space XL"></div>
 
 {% endblock %}

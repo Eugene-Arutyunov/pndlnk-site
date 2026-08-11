@@ -514,311 +514,972 @@ table.ksc-open-schedule {
   margin-bottom: 0;
 }
 
-.outcomes {
-  --outcomes-gap: 1.25em;
-  --outcomes-surface: rgba(var(--ids__surface-RGB), 0.5);
+.ksc-outcomes {
+  --ksc-outcomes-accent: rgb(242, 86, 91);
+  --ksc-outcomes-line: rgba(242, 86, 91, 0.9);
+  --ksc-outcomes-portrait: 2.42em;
+  /* Линия обрывается на этом расстоянии от центра кружочка */
+  --ksc-outcomes-line-cut: calc(var(--ksc-outcomes-portrait) / 2 + 0.35em);
 
-  & .outcomes__grid {
-    display: flex;
-    align-items: stretch;
-    gap: var(--outcomes-gap);
+  position: relative;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 6.5em minmax(0, 1fr);
+  gap: 3em;
+  background: rgba(var(--ids__surface-RGB), 0.3);
+  padding: 1em 10em 4em 1em;
+  font-family: var(--mono);
+  font-size: 0.75em;
+  overflow: visible;
 
-    @media (width < 768px) {
-      flex-direction: column;
-    }
-  }
-
-  & .outcomes__card {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  & .outcomes__card--model {
-    flex: 2;
-    min-width: 0;
-  }
-
-  & .outcomes__side-stack {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--outcomes-gap);
-
-    @media (width < 768px) {
-      flex-direction: row;
-    }
-  }
-
-  & .outcomes__side-stack .outcomes__card {
-    flex: 1;
-    min-width: 0;
-    min-height: 0;
-  }
-
-  & .outcomes__card-body {
-    background: var(--outcomes-surface);
-    position: relative;
-    overflow: hidden;
-  }
-
-  & .outcomes__card--model .outcomes__card-body {
-    aspect-ratio: 5 / 4;
-    padding: 0.7em;
-
-    @media (width < 768px) {
-      padding: 0.5em;
-    }
-  }
-
-  & .outcomes__card--narratives .outcomes__card-body,
-  & .outcomes__card--team .outcomes__card-body {
-    flex: 1;
-    min-height: 0;
-  }
-
-  & .outcomes__card--narratives .outcomes__card-body {
-    background: transparent;
-    container-type: size;
-  }
+  --mock-frame: rgba(var(--ids__text-RGB), 0.4);
+  --mock-faint: rgba(var(--ids__text-RGB), 0.14);
+  --mock-line: rgba(var(--ids__text-RGB), 0.32);
+  --mock-strong: rgba(var(--ids__text-RGB), 0.75);
+  --mock-bg: color-mix(
+    in srgb,
+    rgb(var(--ids__surface-RGB)) 30%,
+    rgb(var(--ids__background-RGB)) 70%
+  );
+  --mock-red: rgb(var(--ids__pndlnk-red-RGB));
+  --mock-red-tinted: rgb(var(--ids__pndlnk-red-tinted-RGB));
+  --mock-ink: rgb(var(--ids__ink-RGB));
+  --mock-gold: rgb(var(--ids__pndlnk-gold-RGB));
+  --mock-gold-tinted: rgb(var(--ids__pndlnk-gold-tinted-RGB));
 
   @media (width < 768px) {
-    & .outcomes__card--narratives .outcomes__card-body {
-      aspect-ratio: 3 / 2;
-    }
-
-    & .outcomes__card--team .outcomes__card-body {
-      aspect-ratio: 1 / 1;
-    }
+    grid-template-columns: 4.6em minmax(0, 1fr);
+    gap: 1em;
+    font-size: 0.7em;
+    padding: 0.6em 1.6em 2.4em;
   }
 
-  & .outcomes__caption {
-    margin-top: 0.8em;
+  & h3 {
+    margin: 0 0 0.5em;
     font-family: var(--mono);
-    font-size: 1em;
+    font-size: 2em;
+    line-height: 1.15;
     font-weight: 700;
-    line-height: 1.2;
     opacity: 1;
   }
+
+  & p {
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  & p + p {
+    margin-top: 0.65em;
+  }
 }
 
-.outcomes__model {
+.ksc-outcomes__num {
+  color: var(--ksc-outcomes-accent);
+}
+
+/* Термины в тексте: по умолчанию цвет текста, по ховеру (своему или
+   соответствующего блока иконки — класс is-hovered ставит скрипт) — акцент.
+   Ховер мгновенный, расховер — с транзишеном */
+.ksc-outcomes .dkcp-term {
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.ksc-outcomes .dkcp-term:hover,
+.ksc-outcomes .dkcp-term.is-hovered {
+  color: var(--ksc-outcomes-accent);
+  transition: none;
+}
+
+/* Слой линий живёт внутри застиканной колонки: конец линии на иконке
+   не расходится с ней, как бы ни отставала перерисовка при скролле */
+.ksc-outcomes__connectors {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: block;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+  pointer-events: none;
+  overflow: visible;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.ksc-outcomes__connectors.is-visible {
+  opacity: 1;
+}
+
+/* Видна только линия активного сценария: включается и переключается фейдом */
+.ksc-outcomes__connector-line {
+  stroke: var(--ksc-outcomes-line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.ksc-outcomes__connector-line.is-active {
+  opacity: 1;
+}
+
+.ksc-outcomes__sticky {
+  position: sticky;
+  top: 2.6em;
+  z-index: 3;
+  align-self: start;
+  /* Запас высоты: чем выше элемент, тем раньше иконка уезжает наверх */
+  min-height: 18em;
+  color: rgb(var(--ids__text-RGB));
+
+  /* Иконка прячется вместе с линиями, когда блок результатов уехал вверх */
+  & .dkcp-preview {
+    display: inline-block;
+    margin-top: 0.8em;
+    background: var(--mock-bg);
+    transition: opacity 0.45s ease;
+  }
+
+  & .dkcp-preview.is-hidden {
+    opacity: 0;
+  }
+
+  & .dkcp-preview-icon {
+    display: block;
+    width: 5.2em;
+  }
+
+  /* Активные блоки заливаются цветом текста (fill: currentColor ставит
+     скрипт), по ховеру — акцент; ховер мгновенный, расховер — с транзишеном */
+  & .dkcp-preview-icon [data-dkcp-preview-block] {
+    pointer-events: all;
+    transition: fill 0.3s ease;
+  }
+
+  & .dkcp-preview-icon [data-dkcp-preview-block]:hover,
+  & .dkcp-preview-icon [data-dkcp-preview-block].is-hovered {
+    fill: var(--ksc-outcomes-accent);
+    transition: none;
+  }
+
+  /* На мобиле иконка задвинута в самый угол под шапку-навигацию и крупнее */
+  @media (width < 768px) {
+    top: 3em;
+    margin-left: -1em;
+
+    & .dkcp-preview {
+      margin-top: 0;
+    }
+
+    & .dkcp-preview-icon {
+      width: 4.2em;
+    }
+  }
+}
+
+.ksc-outcomes__tooltip {
+  box-sizing: border-box;
+  /* Заезжаем в гэп сетки, чтобы тултипу было чуть просторнее */
+  margin-right: -1.6em;
+  margin-top: 0.6em;
+  font-size: 0.86em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+
+  & p {
+    line-height: 1.25;
+  }
 
   @media (width < 768px) {
-    gap: 0.6em;
-  }
-
-  & .outcomes__top {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 0.7em;
-    row-gap: 0.6em;
-
-    @media (width < 768px) {
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 0.5em;
-    }
-  }
-
-  & .outcomes__bottom {
-    flex: 1;
-    min-height: 0;
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    column-gap: 0.8em;
-    align-items: stretch;
-
-    @media (width < 768px) {
-      grid-template-columns: 1fr 2fr 1fr;
-      column-gap: 0.4em;
-    }
-  }
-
-  & .outcomes__side {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 0.9em;
-  }
-
-  & .outcomes__point {
-    font-family: var(--mono);
-    font-size: 0.7em;
-    line-height: 1.3;
-    background: none;
-    border: 1px solid rgba(var(--ids__text-RGB), 0.2);
-    border-radius: 0.2em;
-    padding: 0.35em 0.55em;
-
-    @media (width < 768px) {
-      font-size: 0.55em;
-      padding: 0.3em 0.45em;
-    }
-  }
-
-  & .outcomes__center {
-    min-width: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  & .outcomes__center .dkcp-component {
-    font-size: 0.42em;
-    margin: 3em 0 0;
-    width: 100%;
-
-    @media (width < 768px) {
-      font-size: 0.48em;
-      margin: 2.5em 0 0;
-    }
+    display: none;
   }
 }
 
-.outcomes__illustration {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+.ksc-outcomes__tooltip.is-visible {
+  opacity: 1;
+}
+
+.ksc-outcomes__tooltip-title {
+  font-weight: 700;
+  margin: 0 0 0.25em;
+}
+
+.ksc-outcomes__tooltip-text {
+  margin: 0;
+  opacity: 0.75;
+  hyphens: auto;
+}
+
+.ksc-outcomes .ksc-outcomes__tooltip-text {
+  margin-top: 0;
+}
+
+.ksc-outcomes__content {
+  position: relative;
+  z-index: 2;
+  max-width: 44em;
+  padding-top: 0.45em;
+  padding-left: 0.5em;
+}
+
+.ksc-outcomes__section {
+  margin-top: 4em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.ksc-outcomes__scenario {
+  display: grid;
+  grid-template-columns: 3.5em minmax(0, 1fr);
+  gap: 0.8em 0.66em;
+  margin-top: 1.8em;
+  color: rgb(var(--ids__text-RGB));
+
+  @media (width < 768px) {
+    grid-template-columns: 4.6em minmax(0, 1fr);
+    gap: 0.7em 0.42em;
+  }
+}
+
+.ksc-outcomes__people {
+  min-width: 0;
+}
+
+.ksc-outcomes__portraits {
+  display: flex;
+  align-items: flex-start;
+}
+
+.ksc-outcomes__portraits--stack {
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+
+  & .ksc-outcomes__portrait {
+    position: relative;
+    margin-right: 0;
+    margin-bottom: -0.55em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(1) {
+      z-index: 1;
+    }
+
+    &:nth-child(2) {
+      z-index: 2;
+    }
+
+    &:nth-child(3) {
+      z-index: 3;
+    }
+
+    &:nth-child(4) {
+      z-index: 4;
+    }
+  }
+
+  & + .ksc-outcomes__people-caption {
+    margin-top: 0.65em;
+    line-height: 1.35;
+  }
+}
+
+.ksc-outcomes__portrait {
   display: block;
-  color: rgba(var(--ids__text-RGB), 1);
+  width: var(--ksc-outcomes-portrait);
+  height: var(--ksc-outcomes-portrait);
+  border-radius: 50%;
+  background-color: var(--ksc-outcomes-accent);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: auto 118%;
+  border: 1px solid rgba(var(--ids__text-RGB), 0.9);
+  box-sizing: border-box;
 }
 
-.outcomes__pages {
-  /*
-    Pages stack along an ascending diagonal. Flex + negative margins,
-    высчитаны по формуле, чтобы композиция:
-      — занимала всю ширину контейнера (задняя прижата к левому краю,
-        передняя — к правому),
-      — не обрезалась сверху (высота + два вертикальных шага = 100%).
+.ksc-outcomes__portrait--vasya {
+  background-image: url("/assets/ksc-open/team/vasya.png");
+}
 
-    Параметры (в % от контейнера):
-      --page-height — высота страницы
-      --v-step      — вертикальный шаг между страницами
+.ksc-outcomes__portrait--petya {
+  background-image: url("/assets/ksc-open/team/petya.png");
+  background-position-x: 25%;
+}
 
-    Ширина страницы выводится из aspect-ratio 220/300:
-      page-width  = page-height × 220/300 (в cqh)
+.ksc-outcomes__portrait--igor {
+  background-image: url("/assets/ksc-open/team/igor.png");
+}
 
-    Отрицательный margin-left подбирается так, чтобы ширина стопки
-    всех трёх страниц (3·page-width + 2·margin-left) равнялась 100cqw:
-      margin-left = (100cqw − 3·page-width) / 2
-  */
-  --page-height: 90;
-  --v-step: 5;
+.ksc-outcomes__portrait--olya {
+  background-image: url("/assets/ksc-open/team/olya.png");
+}
 
+.ksc-outcomes__portrait--egor {
+  background-image: url("/assets/ksc-open/team/egor.png");
+  background-position-x: 75%;
+}
+
+.ksc-outcomes__portrait--anna {
+  background-image: url("/assets/ksc-open/team/anna.png");
+  background-position-x: 75%;
+}
+
+.ksc-outcomes__people-caption {
+  margin-top: 0.35em;
+  font-size: 0.86em;
+  line-height: 1.15;
+}
+
+.ksc-outcomes__scenario-body {
+  min-width: 0;
+}
+
+/* Мокапы нарративов: мини-дизайн-система.
+   Текст имитируется линиями, никаких букв. Все размеры в em — резиновые. */
+
+.ksc-outcomes__mock {
+  /* Полуторный масштаб всей мини-дизайн-системы */
+  font-size: 1.5em;
+  margin-top: 0.6em;
+}
+
+.ksc-outcomes__mock + p {
+  margin-top: 0.9em;
+}
+
+/* Линии, имитирующие текст, — без скруглений */
+.ksc-outcomes .mock-line {
+  display: block;
+  height: 0.22em;
+  background: var(--mock-line);
+}
+
+.ksc-outcomes .mock-line + .mock-line {
+  margin-top: 0.28em;
+}
+
+.ksc-outcomes .mock-h {
+  display: block;
+  height: 0.42em;
+  background: var(--mock-strong);
+}
+
+.ksc-outcomes .mock-h + .mock-h {
+  margin-top: 0.3em;
+}
+
+.ksc-outcomes .mock-kicker {
+  display: block;
+  width: 28%;
+  height: 0.22em;
+  background: var(--mock-gold);
+}
+
+.ksc-outcomes .mock-btn {
+  display: block;
+  width: 2.4em;
+  height: 0.85em;
+  border-radius: 0.45em;
+  background: var(--mock-red);
+  position: relative;
+}
+
+.ksc-outcomes .mock-btn::after {
+  content: "";
   position: absolute;
-  inset: 0;
+  left: 50%;
+  top: 50%;
+  width: 1.1em;
+  height: 0.18em;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.ksc-outcomes .mock-logo {
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: var(--mock-red);
+  flex: none;
+}
+
+.ksc-outcomes .mock-avatar {
+  display: block;
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 50%;
+  background: var(--mock-red-tinted);
+  flex: none;
+}
+
+.ksc-outcomes .mock-icon {
+  display: block;
+  width: 0.7em;
+  height: 0.7em;
+  background: var(--mock-red-tinted);
+  margin-bottom: 0.12em;
+}
+
+.ksc-outcomes .mock-icon--gold {
+  background: var(--mock-gold-tinted);
+}
+
+.ksc-outcomes .mock-icon--ink {
+  background: var(--mock-ink);
+}
+
+.ksc-outcomes .mock-bars {
   display: flex;
   align-items: flex-end;
+  gap: 0.25em;
+}
+
+.ksc-outcomes .mock-bars span {
+  display: block;
+  width: 0.55em;
+}
+
+.ksc-outcomes .mock-bars span:nth-child(1) {
+  height: 1.1em;
+  background: var(--mock-ink);
+}
+
+.ksc-outcomes .mock-bars span:nth-child(2) {
+  height: 1.7em;
+  background: var(--mock-gold-tinted);
+}
+
+.ksc-outcomes .mock-bars span:nth-child(3) {
+  height: 2.3em;
+  background: var(--mock-red-tinted);
+}
+
+.ksc-outcomes .mock-window {
+  border: 1px solid var(--mock-frame);
+  border-radius: 0.3em;
+  background: var(--mock-bg);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ksc-outcomes .mock-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.22em;
+  padding: 0.32em 0.45em;
+  border-bottom: 1px solid var(--mock-faint);
+}
+
+.ksc-outcomes .mock-winbtn {
+  display: block;
+  width: 0.28em;
+  height: 0.28em;
+  border-radius: 50%;
+  background: var(--mock-line);
+  flex: none;
+}
+
+.ksc-outcomes .mock-titlebar .mock-line {
+  width: 2.2em;
+  margin-left: 0.4em;
+}
+
+/* Слайды для отдела продаж: стопка из трёх */
+
+.ksc-outcomes__mock--slides {
+  --slide-w: 8em;
+  --slide-h: 5em;
+  /* Итоговая ширина стопки = ширине «вебинара» (14em) */
+  --slide-shift-x: 3em;
+  --slide-shift-y: 1.4em;
+  position: relative;
+  width: min(100%, calc(var(--slide-w) + var(--slide-shift-x) * 2));
+  height: calc(var(--slide-h) + var(--slide-shift-y) * 2);
+
+  /* На мобиле слайды накладываются сильнее, чтобы стопка влезала в колонку */
+  @media (width < 768px) {
+    --slide-shift-x: 1.5em;
+    --slide-shift-y: 1em;
+  }
+}
+
+.ksc-outcomes .mock-slide {
+  position: absolute;
+  width: var(--slide-w);
+  height: var(--slide-h);
+  box-sizing: border-box;
+  border: 1px solid var(--mock-frame);
+  border-radius: 0.2em;
+  background: var(--mock-bg);
+  padding: 0.5em 0.55em;
   overflow: hidden;
 }
 
-.outcomes__page {
-  flex-shrink: 0;
-  height: calc(var(--page-height) * 1cqh);
-  aspect-ratio: 220 / 300;
-  position: relative;
-
-  & .outcomes__page-svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  & .outcomes__page-sheet {
-    fill: rgba(var(--ids__background-RGB), 1);
-    stroke: rgba(var(--ids__text-RGB), 0.85);
-    stroke-width: 1.2;
-    vector-effect: non-scaling-stroke;
-  }
-
-  & .outcomes__wire-block {
-    fill: rgba(var(--ids__text-RGB), 0.75);
-  }
-
-  & .outcomes__wire-line {
-    fill: rgba(var(--ids__text-RGB), 0.3);
-  }
-
-  & .outcomes__wire-image {
-    fill: rgba(var(--ids__text-RGB), 0.1);
-  }
-
-  & .outcomes__wire-card {
-    fill: none;
-    stroke: rgba(var(--ids__text-RGB), 0.45);
-    stroke-width: 0.8;
-    vector-effect: non-scaling-stroke;
-  }
-
-  & .outcomes__wire-card--accent {
-    fill: rgba(var(--ids__accent-RGB), 0.08);
-    stroke: rgba(var(--ids__accent-RGB), 0.7);
-  }
-
-  & .outcomes__wire-icon {
-    fill: rgba(var(--ids__text-RGB), 0.18);
-  }
-
-  & .outcomes__wire-block--cta {
-    fill: rgba(var(--ids__accent-RGB), 0.9);
-  }
+.ksc-outcomes .mock-slide:nth-child(1) {
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 
-.outcomes__page--back {
-  & .outcomes__page-sheet {
-    stroke: rgba(var(--ids__text-RGB), 0.45);
-  }
+.ksc-outcomes .mock-slide:nth-child(2) {
+  left: var(--slide-shift-x);
+  top: var(--slide-shift-y);
+  z-index: 2;
+}
 
-  & .outcomes__wire-block,
-  & .outcomes__wire-line,
-  & .outcomes__wire-image,
-  & .outcomes__wire-icon,
-  & .outcomes__wire-card {
+.ksc-outcomes .mock-slide:nth-child(3) {
+  left: calc(var(--slide-shift-x) * 2);
+  top: calc(var(--slide-shift-y) * 2);
+  z-index: 3;
+}
+
+.ksc-outcomes .mock-slide .mock-kicker + .mock-h {
+  margin-top: 0.4em;
+}
+
+.ksc-outcomes .mock-slide .mock-h + .mock-line {
+  margin-top: 0.3em;
+}
+
+.ksc-outcomes .mock-slide .mock-btn {
+  margin-top: 0.45em;
+  border-radius: 0;
+}
+
+.ksc-outcomes .mock-slide > .mock-bars {
+  margin-top: 0.4em;
+}
+
+.ksc-outcomes .mock-slide .mock-bars span:nth-child(1) {
+  height: 0.8em;
+  /* В гамме слайдов нет синего — первый столбик серый */
+  background: var(--mock-strong);
+}
+
+.ksc-outcomes .mock-slide .mock-bars span:nth-child(2) {
+  height: 1.2em;
+}
+
+.ksc-outcomes .mock-slide .mock-bars span:nth-child(3) {
+  height: 1.6em;
+}
+
+.ksc-outcomes .mock-slide-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55em;
+  align-items: end;
+  margin-top: 0.5em;
+}
+
+.ksc-outcomes .mock-slide-footer {
+  position: absolute;
+  left: 0.55em;
+  right: 0.55em;
+  bottom: 0.4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ksc-outcomes .mock-slide-footer .mock-line {
+  width: 1.4em;
+}
+
+/* Вебинар: окно софта с панелью сценария справа */
+
+.ksc-outcomes__mock--webinar {
+  width: min(100%, 14em);
+}
+
+.ksc-outcomes .mock-webinar-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+}
+
+.ksc-outcomes .mock-webinar-stage {
+  position: relative;
+  padding: 0.5em 0.55em 1.5em;
+
+  /* Приглушаем левую часть, акцент — на панели сценария справа */
+  & > * {
     opacity: 0.55;
   }
-
-  & .outcomes__wire-block--cta {
-    opacity: 0.7;
-  }
 }
 
-.outcomes__page--middle {
-  /* margin-left = (100cqw − 3·page-width) / 2 */
-  margin-left: calc((100cqw - var(--page-height) * 220 / 300 * 3 * 1cqh) / 2);
-  margin-bottom: calc(var(--v-step) * 1cqh);
-
-  & .outcomes__page-sheet {
-    stroke: rgba(var(--ids__text-RGB), 0.65);
-  }
-
-  & .outcomes__wire-block,
-  & .outcomes__wire-line,
-  & .outcomes__wire-image,
-  & .outcomes__wire-icon,
-  & .outcomes__wire-card {
-    opacity: 0.72;
-  }
-
-  & .outcomes__wire-block--cta {
-    opacity: 0.85;
-  }
+.ksc-outcomes .mock-stage-slide {
+  border: 1px solid var(--mock-faint);
+  border-radius: 0.15em;
+  padding: 0.45em 0.5em;
+  background: rgba(var(--ids__background-RGB), 0.55);
 }
 
-.outcomes__page--front {
-  margin-left: calc((100cqw - var(--page-height) * 220 / 300 * 3 * 1cqh) / 2);
-  margin-bottom: calc(var(--v-step) * 2 * 1cqh);
+.ksc-outcomes .mock-stage-slide .mock-h {
+  margin-bottom: 0.35em;
 }
 
-.outcomes__illustration--team {
-  object-fit: cover;
-  object-position: center bottom;
+.ksc-outcomes .mock-stage-slide .mock-bars {
+  margin-top: 0.4em;
+}
+
+.ksc-outcomes .mock-stage-slide .mock-bars span:nth-child(1) {
+  height: 0.6em;
+}
+
+.ksc-outcomes .mock-stage-slide .mock-bars span:nth-child(2) {
+  height: 0.95em;
+}
+
+.ksc-outcomes .mock-stage-slide .mock-bars span:nth-child(3) {
+  height: 1.3em;
+}
+
+.ksc-outcomes .mock-cam {
+  position: absolute;
+  left: 0.55em;
+  bottom: 0.35em;
+  width: 1.7em;
+  height: 1.05em;
+  border: 1px solid var(--mock-frame);
+  border-radius: 0.12em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--ids__surface-RGB), 0.9);
+  box-sizing: border-box;
+}
+
+.ksc-outcomes .mock-cam .mock-avatar {
+  width: 0.55em;
+  height: 0.55em;
+}
+
+.ksc-outcomes .mock-toolbar {
+  position: absolute;
+  right: 0.55em;
+  bottom: 0.35em;
+  display: flex;
+  gap: 0.22em;
+}
+
+.ksc-outcomes .mock-tool {
+  display: block;
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 0.14em;
+  background: var(--mock-line);
+}
+
+.ksc-outcomes .mock-tool--end {
+  background: var(--mock-red);
+}
+
+.ksc-outcomes .mock-script {
+  border-left: 1px solid var(--mock-faint);
+  padding: 0.45em 0.5em 0.55em;
+  background: rgba(var(--ids__surface-RGB), 0.35);
+}
+
+.ksc-outcomes .mock-script > .mock-line--label {
+  width: 55%;
+  background: var(--mock-gold);
+}
+
+.ksc-outcomes .mock-script-para {
+  margin-top: 0.45em;
+}
+
+.ksc-outcomes .mock-script-para.is-current {
+  border-left: 2px solid var(--mock-red);
+  background: rgba(var(--ids__pndlnk-red-tinted-RGB), 0.12);
+  padding: 0.25em 0.3em;
+  border-radius: 0 0.1em 0.1em 0;
+}
+
+/* Служба поддержки: минималистичное окно чата */
+
+.ksc-outcomes__mock--chat {
+  width: min(100%, 9em);
+}
+
+/* В чате круги серые, а не красные */
+.ksc-outcomes__mock--chat .mock-avatar {
+  background: var(--mock-line);
+}
+
+.ksc-outcomes__mock--chat .mock-send {
+  background: var(--mock-strong);
+}
+
+.ksc-outcomes .mock-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.4em 0.45em;
+  border-bottom: 1px solid var(--mock-faint);
+}
+
+.ksc-outcomes .mock-chat-header .mock-line {
+  width: 2.4em;
+}
+
+.ksc-outcomes .mock-status {
+  display: block;
+  width: 0.3em;
+  height: 0.3em;
+  border-radius: 50%;
+  background: var(--mock-gold);
+  margin-left: auto;
+  flex: none;
+}
+
+.ksc-outcomes .mock-chat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+  padding: 0.45em;
+}
+
+.ksc-outcomes .mock-bubble {
+  max-width: 72%;
+  padding: 0.32em 0.4em;
+  border-radius: 0.35em;
+  box-sizing: border-box;
+}
+
+.ksc-outcomes .mock-chat-body .mock-bubble:nth-child(1) {
+  width: 58%;
+}
+
+.ksc-outcomes .mock-chat-body .mock-bubble:nth-child(2) {
+  width: 70%;
+}
+
+.ksc-outcomes .mock-chat-body .mock-bubble:nth-child(3) {
+  width: 44%;
+}
+
+.ksc-outcomes .mock-bubble--in {
+  align-self: flex-start;
+  border-bottom-left-radius: 0.1em;
+  background: rgba(var(--ids__surface-RGB), 0.9);
+}
+
+.ksc-outcomes .mock-bubble--out {
+  align-self: flex-end;
+  border-bottom-right-radius: 0.1em;
+  background: var(--mock-ink);
+}
+
+.ksc-outcomes .mock-bubble--out .mock-line {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.ksc-outcomes .mock-chat-input {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.35em 0.45em 0.45em;
+  border-top: 1px solid var(--mock-faint);
+}
+
+.ksc-outcomes .mock-field {
+  display: block;
+  flex: 1;
+  height: 0.7em;
+  border: 1px solid var(--mock-frame);
+  background: rgba(var(--ids__background-RGB), 0.9);
+  box-sizing: border-box;
+}
+
+.ksc-outcomes .mock-send {
+  display: block;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  background: var(--mock-red);
+  flex: none;
+}
+
+/* Лендинг: центрированный хиро, колонки, ста-плашка */
+
+.ksc-outcomes__mock--landing {
+  /* Как у «чата» */
+  width: min(100%, 9em);
+}
+
+.ksc-outcomes .mock-landing-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.4em 0.5em;
+  border-bottom: 1px solid var(--mock-faint);
+}
+
+.ksc-outcomes .mock-navlink {
+  display: block;
+  width: 0.8em;
+  height: 0.2em;
+  background: var(--mock-line);
+}
+
+.ksc-outcomes .mock-navlink:first-of-type {
+  margin-left: auto;
+}
+
+.ksc-outcomes .mock-landing-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.8em 0.9em 0.75em;
+}
+
+.ksc-outcomes .mock-landing-hero .mock-kicker {
+  width: 22%;
+}
+
+.ksc-outcomes .mock-landing-hero .mock-h,
+.ksc-outcomes .mock-landing-hero .mock-line {
+  margin-top: 0;
+}
+
+.ksc-outcomes .mock-landing-hero .mock-btn {
+  margin-top: 0.3em;
+}
+
+.ksc-outcomes .mock-landing-media {
+  position: relative;
+  margin: 0 0.5em;
+  height: 2.6em;
+  background: rgba(var(--ids__pndlnk-gold-tinted-RGB), 0.35);
+  overflow: hidden;
+}
+
+.ksc-outcomes .mock-landing-media::after {
+  content: "";
+  position: absolute;
+  right: 0.6em;
+  bottom: -0.9em;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: var(--mock-gold);
+  opacity: 0.8;
+}
+
+.ksc-outcomes .mock-landing-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45em;
+  padding: 0.65em 0.5em;
+}
+
+.ksc-outcomes .mock-landing-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+  margin: 0.1em 0.5em 0.6em;
+  padding: 0.6em 0.5em 0.65em;
+  background: rgb(var(--ids__pndlnk-black-RGB));
+}
+
+.ksc-outcomes .mock-landing-cta .mock-h {
+  background: rgba(var(--ids__background-RGB), 0.9);
+}
+
+.ksc-outcomes .mock-landing-cta .mock-line {
+  margin-top: 0;
+  background: rgba(var(--ids__background-RGB), 0.55);
+}
+
+.ksc-outcomes .mock-landing-cta .mock-btn {
+  margin-top: 0.25em;
+}
+
+/* Ширины линий */
+
+.ksc-outcomes .w30 {
+  width: 30%;
+}
+.ksc-outcomes .w40 {
+  width: 40%;
+}
+.ksc-outcomes .w45 {
+  width: 45%;
+}
+.ksc-outcomes .w50 {
+  width: 50%;
+}
+.ksc-outcomes .w55 {
+  width: 55%;
+}
+.ksc-outcomes .w60 {
+  width: 60%;
+}
+.ksc-outcomes .w65 {
+  width: 65%;
+}
+.ksc-outcomes .w70 {
+  width: 70%;
+}
+.ksc-outcomes .w75 {
+  width: 75%;
+}
+.ksc-outcomes .w80 {
+  width: 80%;
+}
+.ksc-outcomes .w85 {
+  width: 85%;
+}
+.ksc-outcomes .w90 {
+  width: 90%;
+}
+.ksc-outcomes .w100 {
+  width: 100%;
+}
+
+.ksc-outcomes__team-portraits {
+  display: flex;
+  margin: 0.5em 0 0.8em;
+
+  /* Слева направо кружочки подкладываются под предыдущие */
+  & .ksc-outcomes__portrait {
+    position: relative;
+    margin-right: -0.9em;
+
+    &:nth-child(1) {
+      z-index: 6;
+    }
+
+    &:nth-child(2) {
+      z-index: 5;
+    }
+
+    &:nth-child(3) {
+      z-index: 4;
+    }
+
+    &:nth-child(4) {
+      z-index: 3;
+    }
+
+    &:nth-child(5) {
+      z-index: 2;
+    }
+
+    &:nth-child(6) {
+      z-index: 1;
+    }
+  }
 }
 
 .ksc-narrative-plate {
@@ -875,4 +1536,14 @@ table.ksc-open-schedule {
     width: auto;
     display: block;
   }
+}
+
+/* Команда поддержки: кружочки вдвое меньше ячейки, кадрирование срезает низ */
+.ksc-support-team .author-portrait img {
+  display: block;
+  width: 50%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
 }

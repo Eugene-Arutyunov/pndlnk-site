@@ -5,10 +5,12 @@
 Атрибуты артефакта (массив) - exchangeConditions: Условия обмена (массив) -
 priceConditions: Ценовые условия (массив) - companyAttrs: Атрибуты компании
 (массив) - arguments: Аргументы (массив) - draft: Режим черновика (boolean, по
-умолчанию false) - mini: Мини-режим (boolean, по умолчанию false) #} {% macro dkcp( values=[], segment=[], conflict=[],
-artifact=[], artifactAttrs=[], exchangeConditions=[], priceConditions=[],
-companyAttrs=[], arguments=[], draft=false, mini=false ) %}
-<div class="dkcp-component{% if draft %} dkcp-component--draft{% endif %}{% if mini %} dkcp-component--mini{% endif %}">
+умолчанию false) - mini: Мини-режим (boolean, по умолчанию false) #} {% macro
+dkcp( values=[], segment=[], conflict=[], artifact=[], artifactAttrs=[],
+exchangeConditions=[], priceConditions=[], companyAttrs=[], arguments=[],
+draft=false, mini=false ) %}
+<div
+  class="dkcp-component{% if draft %} dkcp-component--draft{% endif %}{% if mini %} dkcp-component--mini{% endif %}">
   <div class="dkcp-top">
     <div class="dkcp-block values">
       <div class="dkcp-digit">8</div>
@@ -112,4 +114,106 @@ companyAttrs=[], arguments=[], draft=false, mini=false ) %}
     </div>
   </div>
 </div>
+{% endmacro %} {% macro previewIcon(active=[]) %}
+<span class="dkcp-preview" data-dkcp-preview-active="{{ active | join(',') }}">
+  <svg
+    class="dkcp-preview-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1059.623 713.143"
+    aria-hidden="true">
+    <rect
+      data-dkcp-preview-block="1"
+      fill="{% if 1 in active %}currentColor{% else %}none{% endif %}"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+      x="22.561"
+      y="210.373"
+      width="177.611"
+      height="301.497" />
+    <rect
+      data-dkcp-preview-block="5"
+      fill="{% if 5 in active %}currentColor{% else %}none{% endif %}"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+      x="22.561"
+      y="535.651"
+      width="488.957"
+      height="69.966" />
+    <polygon
+      data-dkcp-preview-block="7"
+      fill="{% if 7 in active %}currentColor{% else %}none{% endif %}"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+      points="1054.104 638.177 5.519 638.177 5.519 708.143 1054.623 708.143 1054.104 638.177" />
+    <polyline
+      data-dkcp-preview-block="8"
+      fill="{% if 8 in active %}currentColor{% else %}none{% endif %}"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+      points="5.519 136.712 5.519 177.812 1054.623 177.812 1054.623 136.712 529.811 5 5 136.712" />
+    <rect
+      data-dkcp-preview-block="6"
+      fill="{% if 6 in active %}currentColor{% else %}none{% endif %}"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+      x="533.105"
+      y="535.651"
+      width="503.957"
+      height="69.966" />
+    <rect
+      data-dkcp-preview-block="2"
+      fill="{% if 2 in active %}currentColor{% else %}none{% endif %}"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+      x="223.953"
+      y="210.373"
+      width="184.14"
+      height="301.497" />
+    <rect
+      data-dkcp-preview-block="9"
+      fill="{% if 9 in active %}currentColor{% else %}none{% endif %}"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+      x="431.874"
+      y="210.373"
+      width="180.876"
+      height="301.497" />
+    <rect
+      data-dkcp-preview-block="4"
+      fill="{% if 4 in active %}currentColor{% else %}none{% endif %}"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+      x="636.53"
+      y="210.373"
+      width="184.14"
+      height="301.497" />
+    <rect
+      data-dkcp-preview-block="3"
+      fill="{% if 3 in active %}currentColor{% else %}none{% endif %}"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+      x="844.451"
+      y="210.373"
+      width="192.611"
+      height="301.497" />
+  </svg>
+</span>
 {% endmacro %}

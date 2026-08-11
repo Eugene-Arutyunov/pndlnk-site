@@ -167,45 +167,11 @@ function initKscProgramTable() {
   const container = document.querySelector(".ksc-program-table");
   if (!container) return;
 
-  const detailButtons = container.querySelectorAll(
-    "[data-ksc-program-table-detail]"
+  const rows = container.querySelectorAll(
+    ".ksc-program-row:not(.ksc-program-row--static)"
   );
 
-  function switchDetail(mode) {
-    const open = mode === "full";
-    container.querySelectorAll(".ksc-program-row").forEach((row) => {
-      row.classList.toggle("is-open", open);
-    });
-  }
-
-  detailButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (btn.classList.contains("is-active")) return;
-
-      detailButtons.forEach((b) => {
-        b.classList.remove("is-active");
-        b.setAttribute("aria-pressed", "false");
-      });
-
-      btn.classList.add("is-active");
-      btn.setAttribute("aria-pressed", "true");
-
-      switchDetail(btn.dataset.kscProgramTableDetail);
-    });
-  });
-
-  const activeDetailButton = Array.from(detailButtons).find((btn) =>
-    btn.classList.contains("is-active")
-  );
-  if (activeDetailButton) {
-    switchDetail(activeDetailButton.dataset.kscProgramTableDetail);
-  }
-
-  const productRows = container.querySelectorAll(
-    '[data-ksc-program-table-content="products"] .ksc-program-row'
-  );
-  productRows.forEach((row) => {
-    row.classList.add("ksc-program-row--inline-detail");
+  rows.forEach((row) => {
     row.addEventListener("click", (event) => {
       const link = event.target.closest("a");
       if (link) {
@@ -214,6 +180,294 @@ function initKscProgramTable() {
       row.classList.toggle("is-open");
     });
   });
+
+  const detailButtons = container.querySelectorAll("[data-ksc-detail]");
+  detailButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("is-active")) return;
+
+      detailButtons.forEach((b) => {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-pressed", "true");
+
+      const open = btn.dataset.kscDetail === "full";
+      rows.forEach((row) => row.classList.toggle("is-open", open));
+    });
+  });
+}
+
+function setDkcpPreviewActive(preview, blocks) {
+  if (!preview) return;
+
+  const active = new Set(blocks.map((block) => String(block).trim()).filter(Boolean));
+
+  preview.querySelectorAll("[data-dkcp-preview-block]").forEach((block) => {
+    const isActive = active.has(block.dataset.dkcpPreviewBlock);
+    block.setAttribute("fill", isActive ? "currentColor" : "none");
+    // Класс позволяет CSS красить активные зоны в цвета палитры ДКЦП
+    block.classList.toggle("is-active", isActive);
+  });
+
+  preview.dataset.dkcpPreviewActive = Array.from(active).join(",");
+}
+
+const DKCP_BLOCK_INFO = {
+  1: {
+    title: "Клиентский сегмент",
+    text: "Группа людей или компаний, объединённых по наблюдаемым признакам.",
+  },
+  2: {
+    title: "Мотивационный конфликт",
+    text: "Противоречие между драйвером и\u00A0барьером, с\u00A0которым живёт клиент.",
+  },
+  3: {
+    title: "Артефакт",
+    text: "Набор товаров, услуг и\u00A0информации для разрешения конфликта.",
+  },
+  4: {
+    title: "Атрибуты артефакта",
+    text: "Свойства артефакта, по которым его сравнивают и\u00A0выбирают.",
+  },
+  5: {
+    title: "Вклад клиента",
+    text: "Форма и\u00A0размер вклада клиента в\u00A0обмен — деньги и\u00A0не\u00A0только.",
+  },
+  6: {
+    title: "Условия обмена",
+    text: "Как процесс обмена разворачивается во времени.",
+  },
+  7: {
+    title: "Атрибуты компании",
+    text: "Свойства продавца, влияющие на восприятие продукта и\u00A0доверие.",
+  },
+  8: {
+    title: "Ценность",
+    text: "Символический смысл процесса обмена.",
+  },
+  9: {
+    title: "Аргументы",
+    text: "Сообщения о\u00A0взаимосвязи блоков ценностного предложения.",
+  },
+};
+
+function initKscOutcomes() {
+  const root = document.querySelector("[data-ksc-outcomes]");
+  if (!root) return;
+
+  const svgNS = "http://www.w3.org/2000/svg";
+  const linesLayer = root.querySelector("[data-ksc-outcomes-lines]");
+  const sticky = root.querySelector("[data-ksc-outcomes-icon]");
+  const icon = sticky?.querySelector(".dkcp-preview");
+  const iconSvg = icon?.querySelector(".dkcp-preview-icon");
+  const anchors = Array.from(root.querySelectorAll("[data-ksc-outcomes-anchor]"));
+  const scenarios = Array.from(root.querySelectorAll("[data-ksc-outcome]"));
+  const defaultBlocks = [];
+
+  const zones = scenarios.map((scenario) => ({
+    element: scenario,
+    blocks: scenario.dataset.dkcpBlocks?.split(",") || defaultBlocks,
+  }));
+
+  if (!linesLayer || !icon || !iconSvg || anchors.length === 0) return;
+
+  const tooltip = document.createElement("div");
+  tooltip.className = "ksc-outcomes__tooltip";
+  tooltip.setAttribute("aria-hidden", "true");
+  const tooltipTitle = document.createElement("p");
+  tooltipTitle.className = "ksc-outcomes__tooltip-title";
+  const tooltipText = document.createElement("p");
+  tooltipText.className = "ksc-outcomes__tooltip-text";
+  tooltip.append(tooltipTitle, tooltipText);
+  sticky.appendChild(tooltip);
+
+  // Невидимый зонд: превращает --ksc-outcomes-line-cut (с calc) в пиксели
+  const lineCutProbe = document.createElement("div");
+  lineCutProbe.style.cssText =
+    "position:absolute;visibility:hidden;pointer-events:none;height:0;width:var(--ksc-outcomes-line-cut);";
+  root.appendChild(lineCutProbe);
+
+  // Невидимые расширенные хит-зоны поверх блоков: широкий прозрачный штрих
+  // закрывает щели между блоками, чтобы ховер переключался без просветов
+  iconSvg.querySelectorAll("[data-dkcp-preview-block]").forEach((block) => {
+    const hit = block.cloneNode(false);
+    hit.setAttribute("fill", "transparent");
+    hit.setAttribute("stroke", "transparent");
+    hit.setAttribute("stroke-width", "40");
+    hit.setAttribute("pointer-events", "all");
+    iconSvg.appendChild(hit);
+  });
+
+  // Ховер связывает три вещи: блок иконки, термины в тексте и тултип.
+  // Работает в обе стороны — с блока иконки и с термина в тексте
+  const terms = Array.from(root.querySelectorAll(".dkcp-term"));
+  const termBlock = (term) => {
+    const match = Array.from(term.classList).find((cls) =>
+      /^dkcp-term--\d+$/.test(cls)
+    );
+    return match ? match.slice("dkcp-term--".length) : null;
+  };
+
+  function setBlockHover(block, isHovered) {
+    iconSvg
+      .querySelectorAll(`[data-dkcp-preview-block="${block}"]`)
+      .forEach((el) => el.classList.toggle("is-hovered", isHovered));
+
+    terms.forEach((term) => {
+      if (termBlock(term) === block) {
+        term.classList.toggle("is-hovered", isHovered);
+      }
+    });
+
+    const info = DKCP_BLOCK_INFO[block];
+    if (!info) return;
+
+    if (isHovered) {
+      tooltipTitle.textContent = info.title;
+      tooltipText.textContent = info.text;
+    }
+    tooltip.classList.toggle("is-visible", isHovered);
+  }
+
+  iconSvg.querySelectorAll("[data-dkcp-preview-block]").forEach((segment) => {
+    const block = segment.dataset.dkcpPreviewBlock;
+    segment.addEventListener("mouseenter", () => setBlockHover(block, true));
+    segment.addEventListener("mouseleave", () => setBlockHover(block, false));
+  });
+
+  terms.forEach((term) => {
+    const block = termBlock(term);
+    if (!block) return;
+    term.addEventListener("mouseenter", () => setBlockHover(block, true));
+    term.addEventListener("mouseleave", () => setBlockHover(block, false));
+  });
+
+  function updateActiveBlocks() {
+    // Иконка переключается, когда верх блока пересекает середину экрана
+    const referenceY = window.innerHeight / 2;
+    let activeIndex = -1;
+
+    const sorted = zones
+      .map((zone) => {
+        const rect = zone.element.getBoundingClientRect();
+        return { ...zone, top: rect.top, bottom: rect.bottom };
+      })
+      .sort((a, b) => a.top - b.top);
+
+    sorted.forEach((zone, index) => {
+      if (referenceY >= zone.top) {
+        activeIndex = index;
+      }
+    });
+
+    // Когда последняя зона целиком уехала выше середины экрана — сброс
+    const lastZone = sorted[sorted.length - 1];
+    if (lastZone && referenceY > lastZone.bottom) {
+      activeIndex = -1;
+    }
+
+    const activeZone = activeIndex >= 0 ? sorted[activeIndex] : null;
+    setDkcpPreviewActive(icon, activeZone ? activeZone.blocks : defaultBlocks);
+
+    // Видны линии активного сценария и его соседей сверху и снизу:
+    // линия, тянущаяся к далёкому сценарию, читается как шум
+    const visible = new Set(
+      activeIndex >= 0
+        ? sorted
+            .slice(Math.max(0, activeIndex - 1), activeIndex + 2)
+            .map((zone) => zone.element)
+        : []
+    );
+    lines.forEach((line, index) => {
+      line.classList.toggle("is-active", visible.has(anchorScenarios[index]));
+    });
+  }
+
+  // Линия приходит в центр главного блока сценария (первого в data-dkcp-blocks)
+  const anchorStartElements = anchors.map((anchor) => {
+    const mainBlock = anchor
+      .closest("[data-ksc-outcome]")
+      ?.dataset.dkcpBlocks?.split(",")[0]
+      ?.trim();
+    return (
+      (mainBlock &&
+        iconSvg.querySelector(`[data-dkcp-preview-block="${mainBlock}"]`)) ||
+      iconSvg
+    );
+  });
+
+  // Линии создаются один раз и живут постоянно: на скролле обновляются
+  // только координаты, поэтому фейд появления/переключения не сбрасывается
+  const anchorScenarios = anchors.map((anchor) =>
+    anchor.closest("[data-ksc-outcome]")
+  );
+  const lines = anchors.map(() => {
+    const line = document.createElementNS(svgNS, "line");
+    line.setAttribute("class", "ksc-outcomes__connector-line");
+    linesLayer.appendChild(line);
+    return line;
+  });
+
+  function updateLines() {
+    // Координаты — относительно слоя линий внутри застиканной колонки:
+    // конец линии на иконке не зависит от момента перерисовки при скролле.
+    // Без viewBox: координаты — просто пиксели. С viewBox изменение высоты
+    // слоя (тултип под иконкой) масштабировало линии, и они дёргались
+    const layerRect = linesLayer.getBoundingClientRect();
+    const lineCut = lineCutProbe.getBoundingClientRect().width;
+
+    anchors.forEach((anchor, index) => {
+      const line = lines[index];
+      const anchorRect = anchor.getBoundingClientRect();
+      const anchorX = anchorRect.left + anchorRect.width / 2 - layerRect.left;
+      const anchorY = anchorRect.top + anchorRect.height / 2 - layerRect.top;
+
+      const startRect = anchorStartElements[index].getBoundingClientRect();
+      const x1 = startRect.left + startRect.width / 2 - layerRect.left;
+      const y1 = startRect.top + startRect.height / 2 - layerRect.top;
+      const dx = anchorX - x1;
+      const dy = anchorY - y1;
+      const length = Math.hypot(dx, dy);
+      if (length <= lineCut * 2) {
+        line.style.display = "none";
+        return;
+      }
+      line.style.display = "";
+
+      const x2 = anchorX - (dx / length) * lineCut;
+      const y2 = anchorY - (dy / length) * lineCut;
+
+      line.setAttribute("x1", x1);
+      line.setAttribute("y1", y1);
+      line.setAttribute("x2", x2);
+      line.setAttribute("y2", y2);
+    });
+  }
+
+  function updateLinesVisibility() {
+    const stickyRect = sticky.getBoundingClientRect();
+    const stickyTop = parseFloat(getComputedStyle(sticky).top) || 0;
+    const isStuck = stickyRect.top <= stickyTop + 2;
+    const lastAnchorRect = anchors[anchors.length - 1].getBoundingClientRect();
+    const pastEnd = lastAnchorRect.bottom <= 0;
+    linesLayer.classList.toggle("is-visible", isStuck && !pastEnd);
+    // Иконка прячется и возвращается синхронно с линиями
+    icon.classList.toggle("is-hidden", pastEnd);
+  }
+
+  // Без rAF-оттяжки: линии должны перерисовываться синхронно со скроллом,
+  // иначе плавает точка прихода линии на иконке
+  function update() {
+    updateLines();
+    updateActiveBlocks();
+    updateLinesVisibility();
+  }
+
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
 }
 
 function initCaseJobsTable() {
@@ -837,6 +1091,7 @@ if (document.readyState === "loading") {
     initCaseJobsTable();
     initCaseBarriersTable();
     initCaseSspHypothesesTable();
+    initKscOutcomes();
     initColorPlates();
     initProjectCatalogFilter();
     initInitiativeCatalogFilter();
@@ -855,6 +1110,7 @@ if (document.readyState === "loading") {
   initCaseJobsTable();
   initCaseBarriersTable();
   initCaseSspHypothesesTable();
+  initKscOutcomes();
   initColorPlates();
   initProjectCatalogFilter();
   initInitiativeCatalogFilter();
