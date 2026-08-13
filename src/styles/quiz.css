@@ -17,6 +17,20 @@
 
 /* --- таблица дисциплин: только дельта поверх табличных стилей IDS --- */
 
+/* На узких экранах четыре колонки не сжимаются до читаемого:
+   даём таблице прокрутку вместо обрезки */
+
+.dq-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (width < 768px) {
+  .dq-table-scroll .dq-table {
+    min-width: 34em;
+  }
+}
+
 .dq-table {
   width: 100%;
   font-family: var(--mono);
@@ -243,52 +257,204 @@
   margin-bottom: 0;
 }
 
-/* --- маршруты: строки по образцу .course-session,
-       пропорция колонок — как у ul.tag-list --- */
+/* --- маршруты: переиспользуем компонент promo-table с /products.
+       Своё — только пропорции колонок: слева у нас короткий заголовок,
+       а не развёрнутое описание ситуации, как в исходной таблице --- */
 
 .dq-routes {
   margin: calc(var(--ids__density) * 1em) 0;
 }
 
-.dq-route {
-  display: grid;
-  grid-template-columns: 35fr 65fr;
-  gap: 0 1.15em;
-  border-top: 1px solid rgba(var(--ids__text-RGB), 0.3);
-  padding: calc(var(--ids__density) * 0.6em) 0;
+.dq-routes .promo-rows-header__label:first-child,
+.dq-routes .promo-row__situation {
+  width: 28%;
 }
 
-.dq-route:last-child {
-  border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.3);
+.dq-routes .promo-rows-header__label:last-child,
+.dq-routes .promo-row__products {
+  width: 72%;
 }
 
-.dq-route h6 {
-  grid-column: 1;
-  grid-row: 1;
-  margin-bottom: 0;
+.dq-routes .promo-row__situation {
+  padding-right: 1.5em;
 }
 
-.dq-route p {
-  grid-column: 2;
-  margin-bottom: calc(var(--ids__density) * 0.4em);
+.dq-routes .promo-row__product-item {
+  grid-template-columns: 1.25fr 1fr;
 }
 
-.dq-route .promo-link {
-  grid-column: 2;
-  justify-self: start;
+/* Названия продуктов длиннее, чем на /products, а колонка уже:
+   без этого «Стратегическая» рвётся посреди слова */
+
+.dq-routes .promo-row__products-detail .promo-row__product-link span {
+  overflow-wrap: normal;
 }
 
 @media (width < 768px) {
-  .dq-route {
+  .dq-routes .promo-rows-header__label:first-child,
+  .dq-routes .promo-row__situation {
+    width: 40%;
+  }
+
+  .dq-routes .promo-rows-header__label:last-child,
+  .dq-routes .promo-row__products {
+    width: 60%;
+  }
+
+  .dq-routes .promo-row__product-item {
     grid-template-columns: 1fr;
   }
+}
 
-  .dq-route h6 {
-    margin-bottom: 0.5em;
+/* Кнопка печати живёт в разметке таблицы продуктов,
+   но это <button> — гасим его собственную отрисовку */
+
+.dq-routes .dq-print-link {
+  appearance: none;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* ============================================================
+   Печатная версия профиля
+   ============================================================ */
+
+/* Лист ответов и шапка нужны только на бумаге */
+
+.dq-print-head,
+.dq-answers {
+  display: none;
+}
+
+@page {
+  margin: 15mm;
+}
+
+@media print {
+  /* На листе остаётся только результат */
+
+  body > *:not(.article) {
+    display: none !important;
   }
 
-  .dq-route p,
-  .dq-route .promo-link {
-    grid-column: 1;
+  .article > .ids__wrapper > *:not(.dq-result) {
+    display: none !important;
+  }
+
+  .dq-print-head,
+  .dq-answers {
+    display: block;
+  }
+
+  /* Колонка текста и таблица маршрутов разворачиваются на всю страницу */
+
+  .ids__wrapper,
+  .ids__text-width,
+  .dq-routes .promo-row__situation,
+  .dq-routes .promo-row__products {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .dq-print-head {
+    margin-bottom: calc(var(--ids__density) * 1em);
+    padding-bottom: calc(var(--ids__density) * 0.5em);
+    border-bottom: 2px solid rgba(var(--ids__text-RGB), 1);
+  }
+
+  /* Заливку шкал и подложку вердикта браузер по умолчанию срезает */
+
+  .dq-meter-track,
+  .dq-meter-fill,
+  .dq-verdict,
+  .promo-table-container,
+  .promo-row__product-icon {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .dq-meter,
+  .dq-verdict,
+  .dq-answers-group,
+  .dq-answer,
+  .promo-row {
+    break-inside: avoid;
+  }
+
+  .dq-answers {
+    margin-top: calc(var(--ids__density) * 1em);
+  }
+
+  .dq-answers h3 {
+    margin-bottom: 0.6em;
+  }
+
+  .dq-answers-group {
+    margin-bottom: calc(var(--ids__density) * 0.8em);
+  }
+
+  .dq-answers-group h4 {
+    margin-bottom: 0.3em;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.3);
+  }
+
+  .dq-answer {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 0 1em;
+    padding: 0.3em 0;
+    border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.12);
+    font-size: 0.8em;
+    line-height: 1.3;
+    break-inside: avoid;
+  }
+
+  .dq-answer-a {
+    font-family: var(--mono);
+    font-weight: 500;
+  }
+
+  /* Иконки — плотные тёмные квадраты: на бумаге съедают тонер
+     и ломают строку ссылки, в которую нужно дописать адрес */
+
+  .dq-routes .promo-row__product-icon {
+    display: none;
+  }
+
+  /* Без иконки ссылке незачем быть флекс-контейнером:
+     иначе дописанный адрес встаёт отдельной колонкой посреди названия */
+
+  .dq-routes .promo-row__products-detail .promo-row__product-link {
+    display: inline;
+  }
+
+  /* Ссылки в маршрутах: на бумаге нужен сам адрес */
+
+  .dq-routes a[href^="http"]::after {
+    content: " — " attr(href);
+    font-family: var(--mono);
+    font-weight: 400;
+    word-break: break-all;
+  }
+
+  .dq-routes a[href^="/"]::after {
+    content: " — ponedelnik.ru" attr(href);
+    font-family: var(--mono);
+    font-weight: 400;
+    word-break: break-all;
+  }
+
+  /* Кнопку печати печатать незачем */
+
+  .dq-row-print {
+    display: none !important;
   }
 }
