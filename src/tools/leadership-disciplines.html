@@ -1,0 +1,383 @@
+{% extends 'layout.html' %}
+{% set pageTitle = 'Дисциплины лидерства — самодиагностика' %}
+{% set pageDesc = 'Опросник по ценностным дисциплинам Трейси и Вирсемы: честно определите, на чём ваша компания собирается зарабатывать.' %}
+{% block content %}
+
+<div class="ids__space top-screen-space M"></div>
+
+<div class="article">
+<div class="ids__wrapper">
+  <div class="ids__text-width">
+    <h6>Инструменты · самодиагностика</h6>
+    <h1 class="L">Дисциплины лидерства</h1>
+    <p class="loud mono">Опросник для честного разговора с&nbsp;собой — или со&nbsp;своим собственником — о&nbsp;том, на&nbsp;чём ваша компания на&nbsp;самом деле собирается зарабатывать</p>
+
+    <div class="ids__space M"></div>
+
+    <p>Источник — Трейси и&nbsp;Вирсема с&nbsp;их «ценностными дисциплинами» (value disciplines), а&nbsp;на&nbsp;самом деле — Майкл Портер и&nbsp;его Generic Strategies. По&nbsp;нашему мнению, один из&nbsp;немногих действительно работающих на&nbsp;практике инструментов стратегического планирования.</p>
+
+    <p>Выбор ценностной дисциплины напрямую влияет на&nbsp;механику удержания добавленной стоимости в&nbsp;условиях конкуренции:</p>
+
+    <table class="dq-table">
+      <thead>
+        <tr>
+          <th>Дисциплина</th>
+          <th>Стратегический приоритет</th>
+          <th>Механизм удержания маржи</th>
+          <th>Кто так живёт</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Операционное совершенство</td>
+          <td>Качество процессов</td>
+          <td>Снижение издержек</td>
+          <td>Ашан, Cofix, РЖД, ИКЕА</td>
+        </tr>
+        <tr>
+          <td>Лидерство по&nbsp;продукту</td>
+          <td>Уникальное качество продукта</td>
+          <td>Клиент платит больше</td>
+          <td>Bang&amp;Olufsen, Nike</td>
+        </tr>
+        <tr>
+          <td>Клиентоцентричность</td>
+          <td>Качество сервиса, долгие отношения</td>
+          <td>Клиент с&nbsp;компанией дольше</td>
+          <td>Тинькофф, Amazon</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Почему нельзя прокачивать все три</h3>
+
+    <p>Интуитивный план — качать всё сразу. Но&nbsp;на&nbsp;практике нельзя быть одновременно самым доступным и&nbsp;дешёвым, лидировать по&nbsp;качеству продукта, да&nbsp;ещё и&nbsp;максимально удовлетворять каждого отдельного клиента. Чем-то всё равно придётся жертвовать. Причин две.</p>
+
+    <p><mark>Первая:</mark> дисциплины требуют противоречащих друг другу видов деятельности. Сотрудники требуют определённости и&nbsp;не&nbsp;способны эффективно «воевать во&nbsp;все стороны» — начинаются конфликты за&nbsp;ресурсы (<em>«на&nbsp;что потратить маркетинговый бюджет: на&nbsp;дорогого клиента или на&nbsp;толпу подешевле?»</em>) и&nbsp;избегание ответственности. В&nbsp;итоге выгоднее тратить ресурсы на&nbsp;что-то одно.</p>
+
+    <p><mark>Вторая:</mark> конкуренты, которые выберут одну-две дисциплины, будут обгонять компанию, «застрявшую на&nbsp;середине», и&nbsp;снижать её маржинальность. Эффективнее строить барьеры входа внутри дисциплины, а&nbsp;не&nbsp;по&nbsp;всем фронтам сразу.</p>
+
+    <p>И&nbsp;вот здесь важное. Выбор дисциплины — это не&nbsp;аналитический вывод. Его нельзя вычислить из&nbsp;данных, исследований или бенчмарков: это <mark class="dq-accent">волевой акт собственника</mark>. Данные описывают, как всё устроено; куда идти — решает воля. Поэтому любая трансформация начинается не&nbsp;с&nbsp;консультантов, а&nbsp;с&nbsp;признания стратегического вектора первым лицом.<span id="dq-article-slot"></span></p>
+
+    <div class="ids__space M"></div>
+
+    <h2>Опросник</h2>
+
+    <p>Ниже — три блока вопросов, по&nbsp;одному на&nbsp;дисциплину. Отвечайте честно, как есть, а&nbsp;не&nbsp;как «правильно». В&nbsp;конце каждого блока поставьте себе оценку от&nbsp;0 до&nbsp;10 — мы предложим её из&nbsp;ваших ответов, но&nbsp;финальное слово за&nbsp;вами: <span class="hand">это волевой акт, а&nbsp;не&nbsp;вывод</span>.</p>
+
+    <div class="ids__space S"></div>
+
+    <!-- ═══════ Блок 1: Операционное совершенство ═══════ -->
+    <div class="dq-block" data-block="op">
+      <h3>Операционное совершенство</h3>
+
+      <div class="dq-q">
+        <p class="dq-q-text">1. Уход самого сильного сотрудника не&nbsp;должен влиять на&nbsp;качество работы компании — процессы удержат. Согласны?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да, процессы важнее людей</button><button class="dq-opt" data-v="0">Нет, всё держится на&nbsp;людях</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">2. Что вам ближе: массовый рынок, охватывающий как можно больше людей, или нишевание?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Массовый рынок</button><button class="dq-opt" data-v="0">Нишевание</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">3. Если компания внезапно получит уникальные закупочные цены — снизите&nbsp;ли вы цену выходного продукта, чтобы получить уникальное преимущество?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да</button><button class="dq-opt" data-v="0">Нет</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">4. Можно&nbsp;ли сказать, что цена — главный критерий выбора вашего продукта?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да</button><button class="dq-opt" data-v="0">Нет</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">5. Считаете&nbsp;ли вы, что главное для бизнеса — оптимизация издержек?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да</button><button class="dq-opt" data-v="0">Нет</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">6. Могут&nbsp;ли юристы, бухгалтеры или айтишники определять, как будут выстроены процессы работы с&nbsp;клиентами?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да</button><button class="dq-opt" data-v="0">Нет</button></div>
+      </div>
+
+      <div class="dq-score">
+        <p class="dq-score-prompt"><em>Посмотрите на&nbsp;свои ответы и&nbsp;определите от&nbsp;0 до&nbsp;10: насколько вы хотите делать доступный массовый продукт, добиваясь низкой цены и&nbsp;максимально оптимизируя свои процессы?</em></p>
+        <div class="dq-slider-row"><input type="range" min="0" max="10" value="0" step="1" aria-label="Оценка: операционное совершенство"><span class="dq-score-value">0</span></div>
+        <p class="dq-score-hint">Подсказка обновится по&nbsp;вашим ответам — двигайте ползунок, если не&nbsp;согласны.</p>
+      </div>
+    </div>
+
+    <!-- ═══════ Блок 2: Продуктовое совершенство ═══════ -->
+    <div class="dq-block" data-block="pl">
+      <h3>Продуктовое совершенство</h3>
+
+      <div class="dq-q">
+        <p class="dq-q-text">1. Что вам ближе: уникальные достижения, удивляющие людей, или предсказуемая стабильность?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Уникальные достижения</button><button class="dq-opt" data-v="0">Предсказуемая стабильность</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">2. Должны&nbsp;ли дизайн и&nbsp;разработка занимать значимую часть себестоимости вашего продукта?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да, значимую</button><button class="dq-opt" data-v="0">Нет, небольшую</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">3. Как часто вы планируете пересматривать и&nbsp;улучшать технологию производства (в&nbsp;самом широком смысле)?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Постоянно</button><button class="dq-opt" data-v="0">По&nbsp;необходимости</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">4. Готовы&nbsp;ли вы нанимать специалистов, стоящих сильно дороже рынка?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да</button><button class="dq-opt" data-v="0">Нет</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">5. Нужно&nbsp;ли при разработке продуктов принимать во&nbsp;внимание мнение ваших клиентов?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Вкус и видение важнее</button><button class="dq-opt" data-v="0">Обязательно</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">6. Насколько компания готова к&nbsp;компромиссам в&nbsp;отношении того, что она делает?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Не готовы: качество святое</button><button class="dq-opt" data-v="0">Готовы, если разумно</button></div>
+      </div>
+
+      <div class="dq-score">
+        <p class="dq-score-prompt"><em>Посмотрите на&nbsp;свои ответы и&nbsp;оцените от&nbsp;0 до&nbsp;10: насколько вы хотите делать эксклюзивные высококачественные продукты, добиваясь самого лучшего результата, невзирая на&nbsp;расходы?</em></p>
+        <div class="dq-slider-row"><input type="range" min="0" max="10" value="0" step="1" aria-label="Оценка: продуктовое совершенство"><span class="dq-score-value">0</span></div>
+        <p class="dq-score-hint">Подсказка обновится по&nbsp;вашим ответам — двигайте ползунок, если не&nbsp;согласны.</p>
+      </div>
+    </div>
+
+    <!-- ═══════ Блок 3: Близость к клиенту ═══════ -->
+    <div class="dq-block" data-block="ci">
+      <h3>Близость к&nbsp;клиенту</h3>
+
+      <div class="dq-q">
+        <p class="dq-q-text">1. Готовы&nbsp;ли вы инвестировать в&nbsp;обслуживание и&nbsp;поддержку больше, чем в&nbsp;сам продукт?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да</button><button class="dq-opt" data-v="0">Нет</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">2. Насколько подробно вы планируете изучать свою целевую аудиторию?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Досконально</button><button class="dq-opt" data-v="0">В&nbsp;общих чертах</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">3. Готовы&nbsp;ли вы выделить отдельный департамент, который будет изучать обратную связь клиентов и&nbsp;превращать её в&nbsp;инициативы для улучшения продуктов?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да</button><button class="dq-opt" data-v="0">Нет</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">4. Готовы&nbsp;ли вы подчинить производство и&nbsp;маркетинг такому отделу?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да</button><button class="dq-opt" data-v="0">Нет</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">5. Готовы&nbsp;ли вы содержать собственный образовательный центр, который готовит специалистов по&nbsp;вашим клиентам?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да</button><button class="dq-opt" data-v="0">Нет</button></div>
+      </div>
+      <div class="dq-q">
+        <p class="dq-q-text">6. Готовы&nbsp;ли вы уволить мать-одиночку, которая нахамила клиенту?</p>
+        <div class="dq-opts"><button class="dq-opt" data-v="1">Да</button><button class="dq-opt" data-v="0">Нет</button></div>
+      </div>
+
+      <div class="dq-score">
+        <p class="dq-score-prompt"><em>Посмотрите на&nbsp;свои ответы и&nbsp;оцените от&nbsp;0 до&nbsp;10: насколько вы хотите строить бизнес, основанный на&nbsp;принципах радикального подчинения интересам клиентов?</em></p>
+        <div class="dq-slider-row"><input type="range" min="0" max="10" value="0" step="1" aria-label="Оценка: близость к клиенту"><span class="dq-score-value">0</span></div>
+        <p class="dq-score-hint">Подсказка обновится по&nbsp;вашим ответам — двигайте ползунок, если не&nbsp;согласны.</p>
+      </div>
+    </div>
+
+    <div class="dq-submit-row">
+      <button class="promo-link" id="dq-show-result">Показать мой профиль</button>
+      <p class="dq-submit-hint" id="dq-unanswered"></p>
+    </div>
+
+    <!-- ═══════ Результат ═══════ -->
+    <div class="dq-result" id="dq-result">
+      <h2>Ваш профиль дисциплин</h2>
+
+      <div class="ids__space S"></div>
+
+      <div class="dq-meters">
+        <div class="dq-meter" data-m="op">
+          <div class="dq-meter-label"><span>Операционное совершенство</span><span class="dq-mv">0</span></div>
+          <div class="dq-meter-track"><div class="dq-meter-fill" style="width: 0%"></div></div>
+        </div>
+        <div class="dq-meter" data-m="pl">
+          <div class="dq-meter-label"><span>Продуктовое совершенство</span><span class="dq-mv">0</span></div>
+          <div class="dq-meter-track"><div class="dq-meter-fill" style="width: 0%"></div></div>
+        </div>
+        <div class="dq-meter" data-m="ci">
+          <div class="dq-meter-label"><span>Близость к&nbsp;клиенту</span><span class="dq-mv">0</span></div>
+          <div class="dq-meter-track"><div class="dq-meter-fill" style="width: 0%"></div></div>
+        </div>
+        <div class="dq-meter-scale"><span>0</span><span>5</span><span>10</span></div>
+      </div>
+
+      <div id="dq-verdict"></div>
+
+      <h3>Что с&nbsp;этим делать дальше</h3>
+
+      <p>Дисциплина — это вектор. Дальше начинается инженерия: как из&nbsp;выбранной дисциплины вывести поведение продукта, атрибуты ценностного предложения и&nbsp;аргументы, которые услышат ваши клиенты. Этим занимается методология ДКЦП. Выберите, что вам ближе сейчас:</p>
+
+      <div class="dq-routes">
+        <div class="dq-route">
+          <h6>Разобраться самому</h6>
+          <p>Освоить методологию и&nbsp;стать тем человеком, который ведёт трансформацию — свою компанию или чужую. Курс «CX: Стратегическая логика», 6&nbsp;месяцев.</p>
+          <a class="promo-link" href="https://cxstrategy.ru" target="_blank" rel="noopener" data-dq-goal="quiz_route_course">Программа курса</a>
+        </div>
+        <div class="dq-route">
+          <h6>Провести компанию через выбор</h6>
+          <p>Если вектор нужно не&nbsp;только выбрать, но&nbsp;и&nbsp;донести до&nbsp;команды — есть корпоративная программа «Культура создания ценности».</p>
+          <a class="promo-link" href="/ksc/" data-dq-goal="quiz_route_ksc">Про программу</a>
+        </div>
+        <div class="dq-route">
+          <h6>Пока просто думаю</h6>
+          <p>Нормальная стратегия. Подпишитесь на&nbsp;канал Михаила Руденко — там регулярно про ценность, стратегию и&nbsp;трансформацию.</p>
+          <a class="promo-link" href="https://t.me/cxlogic" target="_blank" rel="noopener" data-dq-goal="quiz_route_channel">Канал в&nbsp;Телеграме</a>
+        </div>
+        <div class="dq-route">
+          <h6>Забрать с&nbsp;собой</h6>
+          <p>Опросник и&nbsp;логика выбора дисциплины одним файлом — распечатать или отправить тому, чья воля здесь решает.</p>
+          <a class="promo-link" href="/assets/tools/leadership-disciplines.pdf" download data-dq-goal="quiz_pdf_download">Скачать PDF для&nbsp;руководителя</a>
+        </div>
+      </div>
+
+      <p class="caption">Отправьте эту страницу своему генеральному или собственнику и&nbsp;сравните профили. Если они не&nbsp;совпали — у&nbsp;вас появился самый полезный разговор этого квартала.</p>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div class="ids__space XL"></div>
+
+<script>
+  (function () {
+    /* ── Конфиг кампании: заполните перед публикацией ── */
+    var CONFIG = {
+      articleUrl: "https://blog.buro.cx/vash-strategichesky-kostum/",
+      articleLinkText: "Подробнее — в статье «Стратегический костюм».",
+    };
+
+    if (CONFIG.articleUrl) {
+      var slot = document.getElementById("dq-article-slot");
+      slot.innerHTML =
+        ' <a href="' + CONFIG.articleUrl + '">' + CONFIG.articleLinkText + "</a>";
+    }
+
+    /* ── Механика опросника ── */
+    var blocks = {};
+    document.querySelectorAll(".dq-block").forEach(function (bl) {
+      var key = bl.dataset.block;
+      var slider = bl.querySelector('input[type="range"]');
+      var out = bl.querySelector(".dq-score-value");
+      var state = {
+        answers: {},
+        touched: false,
+        slider: slider,
+        total: bl.querySelectorAll(".dq-q").length,
+      };
+      blocks[key] = state;
+
+      bl.querySelectorAll(".dq-q").forEach(function (q, qi) {
+        q.querySelectorAll(".dq-opt").forEach(function (opt) {
+          opt.addEventListener("click", function () {
+            q.querySelectorAll(".dq-opt").forEach(function (o) {
+              o.classList.remove("selected");
+            });
+            opt.classList.add("selected");
+            state.answers[qi] = +opt.dataset.v;
+            if (!state.touched) {
+              var yes = 0,
+                n = 0;
+              for (var k in state.answers) {
+                yes += state.answers[k];
+                n++;
+              }
+              slider.value = Math.round((yes / Math.max(n, 1)) * 10);
+              out.textContent = slider.value;
+            }
+          });
+        });
+      });
+      slider.addEventListener("input", function () {
+        state.touched = true;
+        out.textContent = slider.value;
+      });
+    });
+
+    /* ── Интерпретации ── */
+    var DISC = {
+      op: {
+        name: "Операционное совершенство",
+        text: "Ваша компания хочет зарабатывать на&nbsp;качестве процессов: снижать издержки и выигрывать доступностью. Это значит, что ваш продукт обязан быть стандартизированным и тиражируемым, а ценностное предложение — обещать надёжность, скорость и честную цену. Противопоказаны дорогая кастомизация под&nbsp;каждого клиента и «уникальные» атрибуты, которые ломают конвейер: каждая такая уступка съедает ту самую маржу, на&nbsp;которой всё строится.",
+      },
+      pl: {
+        name: "Продуктовое совершенство",
+        text: "Ваша компания хочет зарабатывать на&nbsp;уникальном качестве продукта: клиент платит больше, потому что такого больше нет. Это значит, что в&nbsp;ценностном предложении должны доминировать атрибуты уникальности — и у&nbsp;компании должно хватать воли не&nbsp;размениваться на&nbsp;«как у&nbsp;всех, только дешевле». Противопоказана конкуренция ценой: одна распродажа разрушает символическую ценность, которую вы строили годами.",
+      },
+      ci: {
+        name: "Близость к клиенту",
+        text: "Ваша компания хочет зарабатывать на&nbsp;долгих отношениях: клиент остаётся, потому что его здесь знают и под&nbsp;него подстраиваются. Это значит, что сервисные атрибуты и глубокое знание клиента — не&nbsp;«поддержка», а ядро продукта, и ценностное предложение должно обещать именно это. Противопоказана экономия на&nbsp;обслуживании и обезличенная массовость: они убивают то единственное, за&nbsp;что вам платят дольше, чем конкурентам.",
+      },
+    };
+
+    function goal(name) {
+      if (typeof ym === "function") ym(98050329, "reachGoal", name);
+    }
+
+    document.querySelectorAll("[data-dq-goal]").forEach(function (a) {
+      a.addEventListener("click", function () {
+        goal(a.dataset.dqGoal);
+      });
+    });
+
+    document.getElementById("dq-show-result").addEventListener("click", function () {
+      var hint = document.getElementById("dq-unanswered");
+      var incomplete = Object.keys(blocks).some(function (k) {
+        return Object.keys(blocks[k].answers).length < blocks[k].total;
+      });
+      hint.textContent = incomplete
+        ? "Вы ответили не\u00A0на\u00A0все вопросы — профиль будет честнее, если пройти всё. Но можно и так: оценки 0–10 уже стоят."
+        : "";
+
+      var scores = {};
+      for (var k in blocks) scores[k] = +blocks[k].slider.value;
+
+      var sorted = Object.keys(scores)
+        .map(function (k) {
+          return [k, scores[k]];
+        })
+        .sort(function (a, b) {
+          return b[1] - a[1];
+        });
+      var domKey = sorted[0][0];
+      var domVal = sorted[0][1];
+      var gap = domVal - sorted[1][1];
+
+      document.querySelectorAll(".dq-meter").forEach(function (m) {
+        var mk = m.dataset.m;
+        m.querySelector(".dq-mv").textContent = scores[mk] + "/10";
+        m.querySelector(".dq-meter-fill").style.width = scores[mk] * 10 + "%";
+        m.classList.toggle("dominant", mk === domKey && gap >= 2);
+      });
+
+      var html = "";
+      if (gap >= 2) {
+        html =
+          '<div class="dq-verdict"><h3>Ваш вектор: ' +
+          DISC[domKey].name +
+          "</h3><p>" +
+          DISC[domKey].text +
+          "</p><p>Вторая по&nbsp;силе дисциплина — " +
+          DISC[sorted[1][0]].name.toLowerCase() +
+          "&nbsp;(" +
+          sorted[1][1] +
+          "/10). Она может жить внутри компании как поддерживающая, но ресурсы в&nbsp;конфликте должны доставаться лидеру — иначе см. «застрять на&nbsp;середине».</p></div>";
+      } else if (domVal >= 8) {
+        html =
+          '<div class="dq-verdict"><h3>Вы хотите всё сразу</h3><p>Все оценки высокие и почти равные. Понятное желание — и именно оно называется «застрять на&nbsp;середине»: конкуренты, выбравшие одну дисциплину, будут обгонять вас в&nbsp;ней и снижать вашу маржинальность. Разрыв между дисциплинами — это не&nbsp;результат теста, это решение. Данные его не&nbsp;примут за&nbsp;вас: это волевой акт собственника. Если вы не&nbsp;собственник — вы только что получили повод для&nbsp;самого важного разговора с&nbsp;ним.</p></div>';
+      } else {
+        html =
+          '<div class="dq-verdict"><h3>Вектор пока не&nbsp;выбран</h3><p>Оценки близкие — явного лидера нет. Это не&nbsp;«плохой результат», это честная фотография: стратегический вектор в&nbsp;компании пока не&nbsp;назван. Он не&nbsp;выводится ни из&nbsp;опросника, ни из&nbsp;исследований — его можно только выбрать. Если вы собственник, это ваша работа. Если нет — покажите этот профиль тому, чья воля здесь решает.</p></div>';
+      }
+
+      document.getElementById("dq-verdict").innerHTML = html;
+      var res = document.getElementById("dq-result");
+      res.classList.add("visible");
+      goal("quiz_result_shown");
+      res.scrollIntoView({ behavior: "smooth" });
+    });
+  })();
+</script>
+
+{% endblock %}
