@@ -568,6 +568,62 @@ content %}
         </div>
         <div class="style-typography-item">
           <p class="caption">
+            Пилюля принципа, <code>.case-principle-pill</code> (в контексте
+            <code>.case-page</code>)
+          </p>
+          <div class="case-page">
+            <span class="case-principle-pill">Уважение</span>
+            <span class="case-principle-pill">Вовлекающая обстановка</span>
+            <span class="case-principle-pill">Значимый контекст</span>
+          </div>
+          <p class="caption style-token-contract">
+            Токены: <code>--ids__text</code> (рамка через color-mix)
+          </p>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">
+            Карточка инициативы, <code>a.initiative-card</code> (в контексте
+            <code>.case-page</code>)
+          </p>
+          <div class="case-page" style="max-width: 16em">
+            <div class="initiative-grid" style="grid-template-columns: 1fr">
+              <a class="initiative-card" href="/projects/dodo-pizza-kids/">
+                <div
+                  class="initiative-card__cover"
+                  style="background: var(--ids__surface); aspect-ratio: 3/2"></div>
+                <div class="initiative-card__body">
+                  <h3 class="initiative-card__title">Додо Паста</h3>
+                  <ul class="initiative-card__tags">
+                    <li class="initiative-card__tag">меню</li>
+                    <li class="initiative-card__tag">новые продукты</li>
+                  </ul>
+                </div>
+              </a>
+            </div>
+          </div>
+          <p class="caption style-token-contract">
+            Токены: <code>--ids__text</code>, <code>--ids__surface</code>,
+            ховер <code>--ids__hover</code>
+          </p>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">
+            Отзыв с автором, <code>.review-author</code> +
+            <code>.author-box</code> (в контексте <code>.case-page</code>)
+          </p>
+          <div class="case-page">
+            <div class="review-author">
+              <div class="author-box">
+                <p class="name">Имя Фамилия<br /><span>Роль в компании</span></p>
+              </div>
+            </div>
+          </div>
+          <p class="caption style-token-contract">
+            Токены: <code>--ids__text</code> (подпись через color-mix)
+          </p>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">
             Карточка материала, <code>a.pndlnk-promo-link</code>
           </p>
           <div class="pndlnk-promo-column" style="max-width: 14em">
@@ -625,6 +681,26 @@ content %}
             <a href="/company-details/">реквизиты</a>
           </li>
           <li>Галерея, <code>ids-gallery</code> — страницы кейсов</li>
+          <li>
+            Саммари кейса, <code>.case-kids-summary</code> —
+            <a href="/projects/dodo-pizza-kids/">кейс Додо Kids</a>; кандидат в
+            стандартный саммари всех кейсов
+          </li>
+          <li>
+            Полевой промо-блок с транскриптами,
+            <code>.case-field-promo</code> —
+            <a href="/projects/dodo-pizza-kids/">кейс Додо Kids</a>
+          </li>
+          <li>
+            Видео в кейсе, <code>.case-video-featured</code> и
+            <code>.case-video-testimonials</code> —
+            <a href="/projects/dodo-pizza-kids/">кейс Додо Kids</a>
+          </li>
+          <li>
+            Каталог инициатив с фильтрами,
+            <code>.initiative-catalog-panel</code> —
+            <a href="/projects/dodo-pizza-kids/">кейс Додо Kids</a>
+          </li>
         </ul>
       </div>
     </ids-nav-item>

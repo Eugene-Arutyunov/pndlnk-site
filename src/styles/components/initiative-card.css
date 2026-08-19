@@ -1,0 +1,225 @@
+/* Карточка инициативы и сетка карточек; пилюли принципов.
+   Спроектированы переиспользуемыми для любого кейса */
+
+.case-page .initiative-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (width < 720px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width < 420px) {
+    grid-template-columns: 1fr;
+  }
+
+  & > li {
+    padding-left: 0;
+    margin-bottom: 0;
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.case-page .initiative-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  border-radius: 0;
+  overflow: visible;
+  background: color-mix(in srgb, var(--ids__surface) 45%, transparent);
+  font-family: var(--mono);
+  font-size: 1em;
+  transition: background var(--ids__duration-base) ease;
+
+  & .initiative-card__link,
+  & .initiative-card__inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 100%;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  & .initiative-card__link:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:has(.initiative-card__link):hover {
+    background: color-mix(in srgb, var(--ids__text) 10%, transparent);
+    transition-duration: var(--ids__duration-instant);
+
+    .initiative-card__title {
+      color: var(--ids__hover);
+      text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
+      transition-duration: var(--ids__duration-instant);
+    }
+
+    .initiative-card__tag,
+    .initiative-card__principle {
+      color: var(--ids__hover);
+      transition-duration: var(--ids__duration-instant);
+    }
+
+    .initiative-card__principle {
+      border-color: color-mix(in srgb, var(--ids__hover) 35%, transparent);
+    }
+
+    .initiative-card__cover {
+      background: color-mix(in srgb, var(--ids__text) 8%, transparent);
+      transition-duration: var(--ids__duration-instant);
+    }
+
+    .initiative-card__cover::after {
+      background: color-mix(in srgb, var(--ids__text) 10%, transparent);
+      transition-duration: var(--ids__duration-instant);
+    }
+  }
+}
+
+.case-page .initiative-card__cover {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--ids__text) 4%, transparent);
+  transition: background var(--ids__duration-base) ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    pointer-events: none;
+    transition: background var(--ids__duration-base) ease;
+  }
+}
+
+.case-page .initiative-card__cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-page .initiative-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 0.2em 0.2em 0.8em 0.2em;
+  gap: 0.35em;
+}
+
+.case-page .initiative-card__title {
+  margin: 0;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  padding-right: 0.5em;
+  color: var(--ids__text);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: none;
+  text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
+  transition:
+    color var(--ids__duration-base) ease,
+    text-decoration-color var(--ids__duration-base) ease;
+  overflow-wrap: break-word;
+}
+
+.case-page .initiative-card__inner .initiative-card__title {
+  text-decoration: none;
+}
+
+.case-page .initiative-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  flex-shrink: 0;
+}
+
+.case-page .initiative-card__principles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  flex-shrink: 0;
+}
+
+.case-page .initiative-page-tags {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.35em;
+  align-items: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.case-page .initiative-page-tags .initiative-card__tag,
+.case-page .initiative-page-tags .initiative-card__principle {
+  flex-shrink: 0;
+}
+
+.case-page .case-principle-pill,
+.case-page .initiative-card__principle {
+  display: inline-block;
+  padding: 0.12em 0.35em;
+  font-family: var(--mono);
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--ids__text);
+  text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--ids__text) 35%, transparent);
+  border-radius: 0;
+  background: transparent;
+}
+
+.case-page .initiative-card__principle {
+  font-size: 0.62em;
+  transition:
+    color var(--ids__duration-base) ease,
+    border-color var(--ids__duration-base) ease;
+}
+
+.case-page .case-principles .case-principle-pill {
+  font-size: 0.85em;
+  font-weight: 700;
+}
+
+.case-page .case-principles .ids__sequence-item > p:first-child {
+  margin-bottom: calc(var(--ids__density) * 0.35em);
+}
+
+.case-page .initiative-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  flex-shrink: 0;
+}
+
+.case-page .initiative-card__tag {
+  display: inline-block;
+  padding: 0.12em 0.35em;
+  font-family: var(--mono);
+  font-size: 0.62em;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--ids__text);
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  background: color-mix(in srgb, var(--ids__text) 8%, transparent);
+  transition: color var(--ids__duration-base) ease;
+}
