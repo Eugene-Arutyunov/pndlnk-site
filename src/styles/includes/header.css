@@ -62,7 +62,7 @@ button.lets-talk-button {
   text-transform: uppercase;
   display: inline-block;
   padding: 0.1em 0.6em 0.05em;
-  border: 2px solid black;
+  border: var(--ids__border-width-m) solid var(--ids__text);
 
   text-decoration: none;
   color: inherit;

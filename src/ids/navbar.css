@@ -3,7 +3,7 @@
 .ids__navbar {
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid var(--ids__text);
+  border: var(--ids__border-width-m) solid var(--ids__text);
   font-family: var(--mono);
   font-size: 0.75em;
   width: fit-content;
