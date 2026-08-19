@@ -11,15 +11,15 @@
     line-height: 1.35;
     margin: 0 0.2em;
     padding: 0.12em 1.55em 0.12em 0.22em;
-    border-radius: 0.2em;
+    border-radius: var(--ids__radius-s);
     color: var(--ids__code);
     background: color-mix(in srgb, var(--ids__code) 10%, transparent);
     cursor: pointer;
-    transition: background-color 0.5s ease;
+    transition: background-color var(--ids__duration-slow) ease;
 
     &:hover:not(:has(a:hover)) {
       background-color: color-mix(in srgb, var(--ids__code) 16%, transparent);
-      transition: background-color 0s;
+      transition: background-color var(--ids__duration-instant);
     }
 
     &.is-copied {
@@ -40,7 +40,7 @@
       color: color-mix(in srgb, var(--ids__text) 55%, transparent);
       line-height: 0;
       transform: translateY(-50%);
-      transition: color 0.5s ease;
+      transition: color var(--ids__duration-slow) ease;
 
       & .copy-icon {
         display: block;
@@ -57,13 +57,13 @@
 
     &:hover:not(:has(a:hover)) .copy-field__icon {
       color: color-mix(in srgb, var(--ids__text) 75%, transparent);
-      transition: color 0s;
+      transition: color var(--ids__duration-instant);
     }
 
     & .copy-field__icon:hover,
     &:hover:not(:has(a:hover)) .copy-field__icon:hover {
       color: var(--ids__hover);
-      transition: color 0s;
+      transition: color var(--ids__duration-instant);
     }
 
     &.is-copied .copy-field__icon {
@@ -72,7 +72,7 @@
 
     &.is-copying .copy-field__value {
       opacity: 0;
-      transition: opacity 0s;
+      transition: opacity var(--ids__duration-instant);
     }
 
     &.is-copying.is-copying-animate-in .copy-field__value {

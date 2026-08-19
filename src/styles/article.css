@@ -91,14 +91,14 @@
 
       font-size: 0.8em;
 
-      transition: padding 0s ease;
+      transition: padding var(--ids__duration-instant) ease;
 
       &.accent {
         & .promo-link {
           display: inline-block;
           border-radius: 0;
           padding: var(--nav-padding-top) calc(var(--padding) * 1.25) var(--nav-padding-bottom);
-          transition: padding 0s ease;
+          transition: padding var(--ids__duration-instant) ease;
 
         }
       }
@@ -137,11 +137,11 @@
         & .title-nav-item {
           --nav-padding-top: 0.5em;
           --nav-padding-bottom: 0.55em;
-          transition: padding 0.5s ease;
+          transition: padding var(--ids__duration-slow) ease;
 
           &.accent {
             & .promo-link {
-              transition: padding 0.5s ease;
+              transition: padding var(--ids__duration-slow) ease;
             }
 
 
@@ -301,6 +301,9 @@
 
   & .form-container.status-sending {
     & .promo-link.form-submit {
+      /* !important обоснован: на время отправки пульсация должна перебить
+         ховер-фон и transition кнопки promo-link, а анимации в каскаде
+         конкурируют с обычными объявлениями непредсказуемо */
       pointer-events: none !important;
       animation: form-submit-pulse 1.5s ease-in-out infinite !important;
       

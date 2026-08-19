@@ -108,7 +108,7 @@ h3.case-kids-summary__subheading {
     color: inherit;
     text-decoration: none;
     background: var(--ids__background);
-    border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+    border: 1px solid var(--ids__border);
     cursor: pointer;
     transition:
       color var(--ids__duration-base) ease,

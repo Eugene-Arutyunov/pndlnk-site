@@ -126,7 +126,7 @@
     width: 17.5em;
     aspect-ratio: 210 / 297;
     overflow: hidden;
-    border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+    border: 1px solid var(--ids__border);
     border-radius: 0.15em;
     box-shadow: 0 0.8em 1.2em 0 color-mix(in srgb, var(--ids__text) 10%, transparent);
     margin-right: -9em;

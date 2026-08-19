@@ -90,18 +90,18 @@
   border-radius: 0;
   cursor: pointer;
   transition:
-    border-color 0.5s ease,
-    background-color 0.5s ease,
-    color 0.5s ease;
+    border-color var(--ids__duration-slow) ease,
+    background-color var(--ids__duration-slow) ease,
+    color var(--ids__duration-slow) ease;
 }
 
 .dq-opt:hover {
   border-color: var(--ids__hover);
   color: var(--ids__hover);
   transition:
-    border-color 0s,
-    background-color 0s,
-    color 0s;
+    border-color var(--ids__duration-instant),
+    background-color var(--ids__duration-instant),
+    color var(--ids__duration-instant);
 }
 
 .dq-opt.selected {
@@ -340,6 +340,9 @@
 }
 
 @media print {
+  /* !important здесь обоснован: печатная версия обязана перебить экранные
+     правила произвольной специфичности, включая инлайн-стили виджетов */
+
   /* На листе остаётся только результат */
 
   body > *:not(.article) {

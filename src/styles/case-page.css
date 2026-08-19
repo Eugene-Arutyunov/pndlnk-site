@@ -381,7 +381,7 @@
   .case-jobs-bento-card {
     aside {
       background: none;
-      border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+      border: 1px solid var(--ids__border);
       margin-bottom: 0;
       transition: border-color var(--ids__duration-slow) ease;
 

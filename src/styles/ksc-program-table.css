@@ -34,11 +34,11 @@
   /* Ховер красит всю строку мгновенно, обратно — с транзишеном */
   .ksc-program-row {
     display: flex;
-    border-top: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+    border-top: 1px solid var(--ids__border);
     cursor: pointer;
     transition:
-      color 0.5s ease,
-      border-color 0.5s ease;
+      color var(--ids__duration-slow) ease,
+      border-color var(--ids__duration-slow) ease;
 
     &.is-open {
       border-top: 2px solid var(--ids__text);
@@ -48,8 +48,8 @@
       color: var(--ids__accent);
       border-top-color: var(--ids__accent);
       transition:
-        color 0s,
-        border-color 0s;
+        color var(--ids__duration-instant),
+        border-color var(--ids__duration-instant);
 
       & .ksc-program-row__title,
       & .ksc-program-row__task-item--practice,
@@ -57,12 +57,12 @@
       & .ksc-program-row__task-item--practice li,
       & .ksc-program-row__task-item p strong {
         color: var(--ids__accent);
-        transition: color 0s;
+        transition: color var(--ids__duration-instant);
       }
 
       & .ksc-program-row__products-detail-inner::before {
         border-top-color: color-mix(in srgb, var(--ids__accent) 40%, transparent);
-        transition: border-color 0s;
+        transition: border-color var(--ids__duration-instant);
       }
     }
   }
@@ -133,11 +133,11 @@
     overflow: hidden;
     min-height: 0;
     opacity: 0;
-    transition: opacity 0.25s ease 0s;
+    transition: opacity 0.25s ease var(--ids__duration-instant);
 
     .is-open & {
       opacity: 1;
-      transition: opacity 0.3s ease 0.15s;
+      transition: opacity 0.3s ease var(--ids__duration-fast);
     }
 
     &::before {
@@ -145,7 +145,7 @@
       display: block;
       margin: 0.8em 0;
       border-top: 1px solid color-mix(in srgb, var(--ids__text) 22%, transparent);
-      transition: border-color 0.5s ease;
+      transition: border-color var(--ids__duration-slow) ease;
     }
 
     &::after {
@@ -189,14 +189,14 @@
     & li {
       color: var(--ids__ink);
       font-family: var(--hand);
-      transition: color 0.5s ease;
+      transition: color var(--ids__duration-slow) ease;
     }
   }
 
   .ksc-program-row__task-item p strong {
     color: var(--ids__text);
     font-family: var(--mono);
-    transition: color 0.5s ease;
+    transition: color var(--ids__duration-slow) ease;
   }
 
   .ksc-program-row .dkcp-preview {

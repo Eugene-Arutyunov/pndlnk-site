@@ -34,11 +34,11 @@
       a {
         color: inherit;
         text-decoration: none;
-        transition: color 0.5s ease;
+        transition: color var(--ids__duration-slow) ease;
 
         &:hover {
           color: var(--ids__hover);
-          transition: color 0s;
+          transition: color var(--ids__duration-instant);
         }
       }
 
@@ -67,15 +67,15 @@ button.lets-talk-button {
   text-decoration: none;
   color: inherit;
   transition:
-    border-color 0.5s ease,
-    color 0.5s ease;
+    border-color var(--ids__duration-slow) ease,
+    color var(--ids__duration-slow) ease;
 
   &:hover {
     border-color: var(--ids__hover);
     color: var(--ids__hover);
     transition:
-      border-color 0s,
-      color 0s;
+      border-color var(--ids__duration-instant),
+      color var(--ids__duration-instant);
   }
 
   &.compact {

@@ -146,7 +146,7 @@
 
   & .pricing-feature {
     margin: 0;
-    border-top: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+    border-top: 1px solid var(--ids__border);
     padding: 0.3em 1em 0em calc(var(--ids__density) * 0.5em);
 
     &:empty {

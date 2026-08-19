@@ -7,9 +7,9 @@
   position: relative;
   display: flex;
   align-items: baseline;
-  border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+  border-bottom: 1px solid var(--ids__border);
   cursor: text;
-  transition: background-color 0.5s ease;
+  transition: background-color var(--ids__duration-slow) ease;
 
   &.form-field-error {
     background-color: color-mix(in srgb, var(--ids__accent) 30%, transparent);
@@ -17,7 +17,7 @@
 
   &:hover:not(:focus-within):not(.form-field-error) {
     background-color: color-mix(in srgb, var(--ids__surface) 20%, transparent);
-    transition: background-color 0s ease;
+    transition: background-color var(--ids__duration-instant) ease;
   }
 
   &:focus-within {
@@ -60,7 +60,7 @@
     &:-webkit-autofill:focus {
       -webkit-box-shadow: 0 0 0 1000px var(--ids__surface) inset;
       -webkit-text-fill-color: var(--ids__text);
-      transition: background-color 5000s ease-in-out 0s;
+      transition: background-color 5000s ease-in-out var(--ids__duration-instant);
     }
   }
 
@@ -74,7 +74,7 @@
 
     &:hover:not(:focus-within):not(.form-field-error) {
       background-color: color-mix(in srgb, var(--ids__surface) 80%, transparent);
-      transition: background-color 0s ease;
+      transition: background-color var(--ids__duration-instant) ease;
     }
 
     &:focus-within {

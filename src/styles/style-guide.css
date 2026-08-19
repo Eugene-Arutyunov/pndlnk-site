@@ -68,7 +68,7 @@
   background: none;
   border: 1px solid color-mix(in srgb, var(--ids__text) 30%, transparent);
   padding: 0.15em 0.35em;
-  border-radius: 0.2em;
+  border-radius: var(--ids__radius-s);
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -79,7 +79,7 @@
   &:hover {
     opacity: 1;
     border-color: var(--ids__text);
-    transition-duration: 0s;
+    transition-duration: var(--ids__duration-instant);
   }
 }
 
@@ -127,7 +127,7 @@
   & aside {
     font-size: 0.85em;
     background: none;
-    border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+    border: 1px solid var(--ids__border);
     padding: 0.35em 0.8em 0.35em 0.45em;
     margin-top: 0.5em;
   }
@@ -173,7 +173,7 @@
 .style-typography-item {
   background-color: color-mix(in srgb, var(--ids__surface) 40%, transparent);
   padding: 0.9em;
-  border-radius: 0.3em;
+  border-radius: var(--ids__radius-m);
 
   & p:last-child,
   & ul:last-child {

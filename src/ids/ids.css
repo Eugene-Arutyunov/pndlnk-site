@@ -8,15 +8,15 @@
     text-decoration-skip-ink: none;
     text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
     transition:
-      color 0.5s ease,
-      text-decoration 0.5s ease;
+      color var(--ids__duration-slow) ease,
+      text-decoration var(--ids__duration-slow) ease;
 
     &:hover {
       color: var(--ids__hover);
       text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
       transition:
-        color 0s ease,
-        text-decoration 0s ease;
+        color var(--ids__duration-instant) ease,
+        text-decoration var(--ids__duration-instant) ease;
     }
   }
 
@@ -276,7 +276,7 @@
     padding-right: calc(var(--ids__density) * 1.5em);
     padding-bottom: calc(var(--ids__density) * 0.4em);
     padding-left: calc(var(--ids__density) * 0.5em);
-    border-radius: 0.2em;
+    border-radius: var(--ids__radius-s);
 
     @media (width < 768px) {
       padding-right: calc(var(--ids__density) * 0.75em);
@@ -289,7 +289,7 @@
     letter-spacing: 0.02em;
     font-weight: 400;
     padding: 0.1em 0.25em;
-    border-radius: 0.2em;
+    border-radius: var(--ids__radius-s);
     color: var(--ids__code);
     border: 1px solid color-mix(in srgb, var(--ids__code) 10%, transparent);
     background: color-mix(in srgb, var(--ids__code) 10%, transparent);
@@ -377,11 +377,11 @@
     border-radius: 0;
     border: none;
     cursor: pointer;
-    transition: background-color 0.5s ease;
+    transition: background-color var(--ids__duration-slow) ease;
 
     &:hover {
       background-color: var(--ids__hover);
-      transition: background-color 0s;
+      transition: background-color var(--ids__duration-instant);
       color: white;
     }
 

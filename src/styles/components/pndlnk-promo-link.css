@@ -13,7 +13,7 @@ a.pndlnk-promo-link {
 
   & aside {
     background: none;
-    border: var(--ids__border-width-s) solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+    border: var(--ids__border-width-s) solid var(--ids__border);
     margin-bottom: 0;
     transition: border-color var(--ids__duration-slow) var(--ids__easing-base);
 

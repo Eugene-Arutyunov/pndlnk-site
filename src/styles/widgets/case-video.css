@@ -7,7 +7,7 @@
 .case-page .case-video-featured__player {
   aspect-ratio: 16 / 9;
   background: color-mix(in srgb, var(--ids__text) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+  border: 1px solid var(--ids__border);
 }
 
 .case-page .case-video-featured figcaption {
@@ -45,7 +45,7 @@
   margin-top: 0;
   margin-bottom: 0.65em;
   background: color-mix(in srgb, var(--ids__text) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+  border: 1px solid var(--ids__border);
   flex: 0 0 auto;
 }
 

@@ -74,11 +74,11 @@
 }
 
 .home-hero.ids ul.tag-list li:first-child {
-  transition: border-color 0.5s ease;
+  transition: border-color var(--ids__duration-slow) ease;
 
   &:has(a:hover) {
     border-top-color: var(--ids__hover);
-    transition: border-color 0s ease;
+    transition: border-color var(--ids__duration-instant) ease;
   }
 
   & a {

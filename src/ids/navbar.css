@@ -31,11 +31,11 @@
       text-decoration: none;
       color: var(--ids__text);
       border-right: 1px solid color-mix(in srgb, var(--ids__text) 25%, transparent);
-      transition: color 0.5s ease;
+      transition: color var(--ids__duration-slow) ease;
 
       &:hover {
         color: var(--ids__hover);
-        transition-duration: 0s;
+        transition-duration: var(--ids__duration-instant);
       }
     }
 

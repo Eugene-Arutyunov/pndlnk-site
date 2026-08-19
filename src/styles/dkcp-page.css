@@ -77,7 +77,7 @@
 }
 
 .divider {
-  border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+  border-bottom: 1px solid var(--ids__border);
   margin: 0.5em 0;
 }
 
@@ -117,7 +117,7 @@
 
     & thead th {
       text-align: left;
-      border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+      border-bottom: 1px solid var(--ids__border);
       padding: 0.5em 1em 0.5em 0;
 
       @media (width < 768px) {
@@ -127,7 +127,7 @@
 
     & tbody td {
       padding: 0.5em 1em 0.8em 0;
-      border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+      border-bottom: 1px solid var(--ids__border);
       vertical-align: top;
     }
 
@@ -217,7 +217,7 @@
       vertical-align: baseline;
       position: relative;
       top: 2px;
-      transition: background-color 0.28s ease;
+      transition: background-color var(--ids__duration-base) ease;
 
       &:checked {
         background-color: color-mix(in srgb, var(--ids__text) 6%, transparent);
@@ -242,7 +242,7 @@
     border: 2px solid var(--ids__text);
     border-radius: 0;
     background-color: transparent;
-    transition: background-color 0.28s ease;
+    transition: background-color var(--ids__duration-base) ease;
 
     &:focus-within {
       background-color: color-mix(in srgb, var(--ids__text) 6%, transparent);
@@ -250,7 +250,7 @@
   }
 
   .project-catalog-filter__select-wrap:hover {
-    transition-duration: 0s;
+    transition-duration: var(--ids__duration-instant);
     background-color: color-mix(in srgb, var(--ids__text) 6%, transparent);
   }
 
@@ -352,15 +352,15 @@
     text-align: center;
     color: inherit;
     transition:
-      border-color 0.5s ease,
-      color 0.5s ease;
+      border-color var(--ids__duration-slow) ease,
+      color var(--ids__duration-slow) ease;
 
     &:hover {
       border-color: var(--ids__hover);
       color: var(--ids__hover);
       transition:
-        border-color 0s,
-        color 0s;
+        border-color var(--ids__duration-instant),
+        color var(--ids__duration-instant);
     }
 
     &[hidden] {
@@ -427,18 +427,18 @@
       .project-card__title {
         color: var(--ids__hover);
         text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
-        transition-duration: 0s;
+        transition-duration: var(--ids__duration-instant);
       }
 
       .project-card__tag {
         color: var(--ids__hover);
-        transition-duration: 0s;
+        transition-duration: var(--ids__duration-instant);
       }
 
       .project-card__cover,
       .project-card__cover--tinted {
         background: color-mix(in srgb, var(--ids__hover) 8%, transparent);
-        transition-duration: 0s;
+        transition-duration: var(--ids__duration-instant);
       }
     }
   }
@@ -453,13 +453,13 @@
     justify-content: center;
     padding: 0.65em;
     background: color-mix(in srgb, var(--ids__text) 1.5%, transparent);
-    transition: background 0.28s ease;
+    transition: background var(--ids__duration-base) ease;
   }
 
   .project-card__cover--tinted {
     background: var(--ids__surface);
 
-    transition: background 0.28s ease;
+    transition: background var(--ids__duration-base) ease;
   }
 
   .project-card__cover > img {
@@ -547,8 +547,8 @@
     text-decoration-skip-ink: none;
     text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
     transition:
-      color 0.28s ease,
-      text-decoration-color 0.28s ease;
+      color var(--ids__duration-base) ease,
+      text-decoration-color var(--ids__duration-base) ease;
     overflow-wrap: break-word;
   }
 
@@ -564,7 +564,7 @@
     line-height: 1.25;
     color: color-mix(in srgb, var(--ids__text) 92%, transparent);
     text-decoration: none;
-    transition: color 0.28s ease;
+    transition: color var(--ids__duration-base) ease;
   }
 
   /* Переключатель вида таблицы (задачи / продукты) */
@@ -590,7 +590,7 @@
 
   .promo-row {
     display: flex;
-    border-top: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+    border-top: 1px solid var(--ids__border);
 
     &:last-child {
       border-bottom: none;
@@ -638,12 +638,12 @@
     overflow: hidden;
     min-height: 0;
     opacity: 0;
-    transition: opacity 0.25s ease 0s;
+    transition: opacity 0.25s ease var(--ids__duration-instant);
     padding-top: 0.5em;
 
     .is-open & {
       opacity: 1;
-      transition: opacity 0.3s ease 0.15s;
+      transition: opacity 0.3s ease var(--ids__duration-fast);
     }
   }
 
@@ -685,11 +685,11 @@
   .promo-row__products-detail-inner {
     overflow: hidden;
     opacity: 0;
-    transition: opacity 0.25s ease 0s;
+    transition: opacity 0.25s ease var(--ids__duration-instant);
 
     .is-open & {
       opacity: 1;
-      transition: opacity 0.3s ease 0.15s;
+      transition: opacity 0.3s ease var(--ids__duration-fast);
     }
   }
 
@@ -725,15 +725,15 @@
     text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
     line-height: 1.3em;
     transition:
-      color 0.5s ease,
-      text-decoration-color 0.5s ease;
+      color var(--ids__duration-slow) ease,
+      text-decoration-color var(--ids__duration-slow) ease;
 
     &:hover {
       color: var(--ids__hover);
       text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
       transition:
-        color 0s,
-        text-decoration-color 0s;
+        color var(--ids__duration-instant),
+        text-decoration-color var(--ids__duration-instant);
     }
 
     .promo-row__products-detail & {
@@ -757,7 +757,7 @@
     border-radius: 0.25em;
     overflow: hidden;
     background: var(--ids__text);
-    transition: background 0.5s ease;
+    transition: background var(--ids__duration-slow) ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -765,7 +765,7 @@
 
     .promo-row__product-link:hover & {
       background: var(--ids__hover);
-      transition: background 0s;
+      transition: background var(--ids__duration-instant);
     }
   }
 
@@ -930,7 +930,7 @@
     font-size: 0.75em;
     font-family: var(--mono);
     background: none;
-    border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+    border: 1px solid var(--ids__border);
     padding: 0.31em 0.92em 0.31em 0.43em;
 
     @media (width < 768px) {
