@@ -215,21 +215,7 @@
   border-bottom-right-radius: 0.2em;
 }
 
-.promo-link.second {
-  background-color: rgb(245, 90, 90);
-
-  &:hover {
-    background-color: var(--ids__hover);
-  }
-}
-
-.promo-link.third {
-  background-color: var(--ids__link);
-
-  &:hover {
-    background-color: var(--ids__hover);
-  }
-}
+/* Варианты .promo-link.second/.third — общий компонент, см. components/promo-link.css */
 
 .intuition-collab {
   display: inline-block;
@@ -239,17 +225,7 @@
   border: 1px dashed color-mix(in srgb, var(--ids__text) 50%, transparent);
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
+/* Утилита .visually-hidden — в ядре, см. src/ids/layout.css */
 
 .title-grid {
   --title-grid-cell-size: 5.5em;
@@ -363,34 +339,4 @@
   }
 }
 
-.logo-wall {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4em;
-  /* margin: 1em 0; */
-}
-
-.logo-wall-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6em 1em;
-  /* border: 1px solid color-mix(in srgb, var(--ids__text) 30%, transparent);
-  border-right: none;
-  border-bottom: none; */
-
-  & img {
-    height: 1.2em;
-    width: auto;
-    object-fit: contain;
-    display: block;
-  }
-
-  & .logo-wall-label {
-    font-family: var(--mono);
-    font-size: 0.85em;
-    line-height: 1.2;
-    margin: 0;
-    text-align: center;
-  }
-}
+/* Стена логотипов .logo-wall — общий компонент, см. components/logo-wall.css */

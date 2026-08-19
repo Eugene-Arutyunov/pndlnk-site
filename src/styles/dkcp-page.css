@@ -569,43 +569,7 @@
 
   /* Переключатель вида таблицы (задачи / продукты) */
 
-  .promo-switchers {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-  }
-
-  .promo-switcher {
-    display: flex;
-    flex-wrap: wrap;
-    border: 2px solid var(--ids__text);
-    width: fit-content;
-  }
-
-  .promo-switcher__item {
-    appearance: none;
-    background: none;
-    font: inherit;
-    cursor: pointer;
-    padding: 0.2em 0.5em 0.2em;
-    border: none;
-    border-right: 1px solid color-mix(in srgb, var(--ids__text) 25%, transparent);
-    color: var(--ids__text);
-    transition: color 0.5s ease;
-
-    &:last-child {
-      border-right: none;
-    }
-
-    &:hover:not(.is-active) {
-      color: var(--ids__accent);
-      transition: color 0s;
-    }
-
-    &.is-active {
-      background: color-mix(in srgb, var(--ids__text) 6%, transparent);
-    }
-  }
+  /* Сегментед-контрол .promo-switcher — общий компонент, см. components/promo-switcher.css */
 
   /* Аккордеон promo-rows */
 
@@ -907,94 +871,12 @@
     }
   }
 
+  /* Карточка .pndlnk-promo-link — общий компонент, см. components/pndlnk-promo-link.css.
+     Здесь — только раскладка колонок. */
   .pndlnk-promo-column {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-
-    .pndlnk-promo-link {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-
-      &:hover {
-        text-decoration: none;
-      }
-
-      & aside {
-        background: none;
-        border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
-        margin-bottom: 0;
-        transition: border-color 0.5s ease;
-
-        & h6 {
-          & span {
-            font-size: 0.8em;
-          }
-        }
-
-        & h3 {
-          margin-top: 0;
-          margin-bottom: 0.4em;
-          color: var(--ids__link);
-          text-decoration: underline;
-          text-decoration-thickness: 1px;
-          text-underline-offset: 0.2em;
-          text-decoration-skip-ink: none;
-          text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
-          transition:
-            color 0.5s ease,
-            text-decoration-color 0.5s ease;
-
-          & span {
-            font-size: 0.8em;
-          }
-        }
-      }
-
-      &:hover aside {
-        border-color: color-mix(in srgb, var(--ids__hover) 40%, transparent);
-        transition: border-color 0s ease;
-
-        & h3 {
-          color: var(--ids__hover);
-          text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
-          transition:
-            color 0s ease,
-            text-decoration-color 0s ease;
-        }
-      }
-
-      &.dark {
-        & aside {
-          background: rgb(45, 47, 48);
-          border-color: transparent;
-          color: rgba(240, 240, 240, 1);
-
-          & h6 {
-            color: rgba(240, 240, 240, 1);
-          }
-
-          & h3 {
-            color: rgba(240, 240, 240, 1);
-            text-decoration-color: rgba(240, 240, 240, 0.2);
-          }
-
-          & p {
-            color: rgba(240, 240, 240, 1);
-          }
-        }
-
-        &:hover aside {
-          background: rgb(245, 65, 55);
-          transition: background-color 0s ease;
-        }
-
-        &:not(:hover) aside {
-          transition: background-color 0.5s ease;
-        }
-      }
-    }
   }
 }
 

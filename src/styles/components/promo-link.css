@@ -1,0 +1,19 @@
+/* Варианты CTA-кнопки. База .promo-link — в src/ids/ids.css (внутри .ids). */
+
+.promo-link.second {
+  /* TODO: магический цвет мимо палитры (близок к --ids__hover 245,65,55 и
+     --ids__accent 255,105,105) — свести к токену или добавить ступень палитры */
+  background-color: rgb(245, 90, 90);
+
+  &:hover {
+    background-color: var(--ids__hover);
+  }
+}
+
+.promo-link.third {
+  background-color: var(--ids__link);
+
+  &:hover {
+    background-color: var(--ids__hover);
+  }
+}
