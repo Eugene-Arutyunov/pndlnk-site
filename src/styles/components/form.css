@@ -1,0 +1,106 @@
+/* Текстфилд — единый компонент полей формы.
+   База — подчёркнутый вариант (контактная форма внизу каждой страницы).
+   Модификатор .filled — залитый вариант (формы заявок КШЦ и подписки);
+   объединяет бывшие .application-form .form-field и .unisender-form-field. */
+
+.form-field {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
+  cursor: text;
+  transition: background-color 0.5s ease;
+
+  &.form-field-error {
+    background-color: color-mix(in srgb, var(--ids__accent) 30%, transparent);
+  }
+
+  &:hover:not(:focus-within):not(.form-field-error) {
+    background-color: color-mix(in srgb, var(--ids__surface) 20%, transparent);
+    transition: background-color 0s ease;
+  }
+
+  &:focus-within {
+    background-color: color-mix(in srgb, var(--ids__surface) 50%, transparent);
+  }
+
+  & label {
+    flex-shrink: 0;
+    padding: 1em 0.6em 0.2em 0;
+    font-size: 1em;
+    font-weight: normal;
+    font-family: var(--mono);
+    color: color-mix(in srgb, var(--ids__text) 60%, transparent);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  & input {
+    flex: 1;
+    width: 100%;
+    padding: 1em 0.6em 0.23em 0;
+    font-size: 1em;
+    font-family: var(--mono);
+    border: none;
+    background-color: transparent;
+    color: var(--ids__text);
+    outline: none;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &::placeholder {
+      color: color-mix(in srgb, var(--ids__text) 40%, transparent);
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0 1000px var(--ids__surface) inset;
+      -webkit-text-fill-color: var(--ids__text);
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+
+  &.filled {
+    border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 10%, transparent);
+    background-color: var(--ids__surface);
+
+    &:has(+ .form-submit-wrapper) {
+      border-bottom: none;
+    }
+
+    &:hover:not(:focus-within):not(.form-field-error) {
+      background-color: color-mix(in srgb, var(--ids__surface) 80%, transparent);
+      transition: background-color 0s ease;
+    }
+
+    &:focus-within {
+      background-color: color-mix(in srgb, var(--ids__surface) 50%, transparent);
+    }
+
+    & label {
+      padding: 0.5em 0.67em;
+
+      & b {
+        font-weight: normal;
+        color: var(--ids__accent);
+      }
+    }
+
+    & input {
+      padding: 0.5em 0.67em 0.6em 0;
+    }
+  }
+}
+
+/* Форма подписки (/subscribe) */
+.unisender-form {
+  max-width: 28em;
+}
+
+.unisender-form-submit {
+  margin-top: 1em;
+}

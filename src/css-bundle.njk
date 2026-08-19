@@ -2,6 +2,10 @@
 permalink: bundle.css
 ---
 
+{# Порядок слоёв: токены → ресет → настройки → композиция страницы → ядро →
+   компоненты → инклуды → виджеты → страницы. Порядок = каскад: страничные
+   стили ниже и потому побеждают при равной специфичности. #}
+
 {% include "../src/ids/tokens/palette.css" %}
 {% include "../src/ids/tokens/colors.css" %}
 {% include "../src/ids/tokens/scales.css" %}
@@ -9,15 +13,17 @@ permalink: bundle.css
 {% include "../src/ids/settings.css" %}
 {% include "../src/ids/layout.css" %}
 {% include "../src/ids/ids.css" %}
+{% include "../src/ids/navbar.css" %}
 {% include "../src/ids/gallery.css" %}
 {% include "../src/ids/photoswipe.css" %}
+{% include "../src/styles/components/form.css" %}
+{% include "../src/styles/components/illustrations.css" %}
+{% include "../src/styles/components/dkcp-component.css" %}
 {% include "../src/styles/includes/header.css" %}
 {% include "../src/styles/includes/footer.css" %}
 {% include "../src/styles/includes/contact-form.css" %}
 {% include "../src/styles/article.css" %}
 {% include "../src/styles/glossary.css" %}
-{% include "../src/styles/components/illustrations.css" %}
-{% include "../src/styles/components/dkcp-component.css" %}
 {% include "../src/styles/dkcp-base.css" %}
 {% include "../src/styles/dkcp-page.css" %}
 {% include "../src/styles/ksc-program-table.css" %}
@@ -27,4 +33,6 @@ permalink: bundle.css
 {% include "../src/styles/components/copy-field.css" %}
 {% include "../src/styles/ksc-open.css" %}
 {% include "../src/styles/quiz.css" %}
-{% include "../src/styles/style.css" %}
+{% include "../src/styles/home.css" %}
+{% include "../src/styles/components/logo-downloads.css" %}
+{% include "../src/styles/style-guide.css" %}
