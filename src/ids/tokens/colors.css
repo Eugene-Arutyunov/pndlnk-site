@@ -40,16 +40,18 @@ body {
 }
 
 /* Тёмные блоки: класс .dark на секции переключает семантику на тёмный набор.
-   TODO (этап зачистки): --ids__ink, --ids__code и --ids__inverted-text
-   исторически не переопределялись — добавить осветлённые варианты под визуальным контролем. */
+   TODO: --ids__ink исторически не переопределяется — понадобится осветлённая
+   ступень синего при первом использовании чернил в тёмном блоке. */
 .dark {
   color-scheme: dark;
 
   --ids__text: var(--ids__color-gray-100);
   --ids__link: var(--ids__color-gray-100);
+  --ids__code: var(--ids__color-gray-100);
   --ids__mark: var(--ids__color-yellow-500);
   --ids__surface: var(--ids__color-gray-800);
   --ids__background: var(--ids__color-gray-900);
+  --ids__inverted-text: var(--ids__color-gray-900);
 
   color: var(--ids__text);
   background-color: var(--ids__background);
