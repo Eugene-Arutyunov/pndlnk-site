@@ -29,7 +29,7 @@
       width: 15.3em;
       margin-bottom: -0.1em;
       align-self: flex-end;
-      color: rgba(var(--ids__text-RGB), 1);
+      color: var(--ids__text);
 
       a {
         color: inherit;
@@ -37,7 +37,7 @@
         transition: color 0.5s ease;
 
         &:hover {
-          color: rgb(var(--ids__hover-RGB));
+          color: var(--ids__hover);
           transition: color 0s;
         }
       }
@@ -71,8 +71,8 @@ button.lets-talk-button {
     color 0.5s ease;
 
   &:hover {
-    border-color: rgb(var(--ids__hover-RGB));
-    color: rgb(var(--ids__hover-RGB));
+    border-color: var(--ids__hover);
+    color: var(--ids__hover);
     transition:
       border-color 0s,
       color 0s;

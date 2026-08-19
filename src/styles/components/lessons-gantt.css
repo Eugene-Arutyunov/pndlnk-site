@@ -68,7 +68,7 @@
   margin-bottom: 0.1em;
   font-family: var(--mono);
   font-size: 0.7em;
-  color: rgba(var(--ids__text-RGB), 0.8);
+  color: color-mix(in srgb, var(--ids__text) 80%, transparent);
 }
 
 .gantt-bars {
@@ -80,13 +80,13 @@
   display: block;
   position: relative;
   min-height: var(--gantt-bar-height);
-  border-top: 1px solid rgba(var(--ids__text-RGB), 0.2);
+  border-top: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
 
   &:first-child {
-    border-top-color: rgba(var(--ids__text-RGB), 0.5);
+    border-top-color: color-mix(in srgb, var(--ids__text) 50%, transparent);
   }
   &:last-child {
-    border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
   }
 }
 
@@ -95,7 +95,7 @@
   top: 0;
   left: 0;
   height: var(--gantt-bar-height);
-  background-color: rgba(var(--ids__surface-RGB), 1);
+  background-color: var(--ids__surface);
   border-radius: 0;
   overflow: hidden;
 
@@ -159,7 +159,7 @@
   width: 1px;
   /* Высота: от верха timeline до низа последнего бара */
   height: calc(100%);
-  background-color: rgb(var(--ids__hover-RGB));
+  background-color: var(--ids__hover);
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.1s ease;
@@ -173,7 +173,7 @@
   left: 0.1em;
   font-family: var(--mono);
   font-size: 0.7em;
-  color: rgb(var(--ids__hover-RGB));
+  color: var(--ids__hover);
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.1s ease;
@@ -186,7 +186,7 @@
 .gantt-bar-info {
   margin-top: var(--gantt-bar-height);
   height: 0.8em;
-  background-color: rgba(var(--ids__text-RGB), 1);
+  background-color: var(--ids__text);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -224,7 +224,7 @@
 
   width: 100%;
 
-  color: rgb(var(--ids__inverted-text-RGB));
+  color: var(--ids__inverted-text);
   font-size: 0.6em;
   font-family: var(--mono);
   padding: 0 0.1em;

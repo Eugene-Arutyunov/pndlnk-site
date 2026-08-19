@@ -13,7 +13,7 @@ ids-gallery,
     flex: 0 0 5em;
 
     &:focus-within:has(a:focus-visible) {
-      outline: 2px solid rgb(var(--ids__link-RGB));
+      outline: 2px solid var(--ids__link);
       outline-offset: 2px;
     }
 
@@ -50,8 +50,8 @@ ids-gallery,
 
   figcaption {
     place-self: center;
-    color: rgb(var(--ids__background-RGB));
-    background: rgba(var(--ids__text-RGB), 0.8);
+    color: var(--ids__background);
+    background: color-mix(in srgb, var(--ids__text) 80%, transparent);
     font-size: 0.8em;
     line-height: var(--ids__density, 1.5);
     padding: 0.4em 0.8em;

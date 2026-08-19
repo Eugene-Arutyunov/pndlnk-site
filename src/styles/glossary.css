@@ -16,7 +16,7 @@
     }
 
     &:not(.secondary) {
-      color: rgba(var(--ids__accent-RGB), 1);
+      color: var(--ids__accent);
     }
   }
 

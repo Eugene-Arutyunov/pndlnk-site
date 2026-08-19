@@ -146,7 +146,7 @@
 
   & .pricing-feature {
     margin: 0;
-    border-top: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    border-top: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
     padding: 0.3em 1em 0em calc(var(--ids__density) * 0.5em);
 
     &:empty {
@@ -210,7 +210,7 @@
 }
 
 .pricing-grid-wrapper {
-  background-color: rgb(var(--ids__surface-RGB));
+  background-color: var(--ids__surface);
   border-bottom-left-radius: 0.2em;
   border-bottom-right-radius: 0.2em;
 }
@@ -219,15 +219,15 @@
   background-color: rgb(245, 90, 90);
 
   &:hover {
-    background-color: rgb(var(--ids__hover-RGB));
+    background-color: var(--ids__hover);
   }
 }
 
 .promo-link.third {
-  background-color: rgb(var(--ids__link-RGB));
+  background-color: var(--ids__link);
 
   &:hover {
-    background-color: rgb(var(--ids__hover-RGB));
+    background-color: var(--ids__hover);
   }
 }
 
@@ -236,7 +236,7 @@
   padding: 0.5em 1em;
   font-family: var(--mono);
   font-size: 0.6em;
-  border: 1px dashed rgba(var(--ids__text-RGB), 0.5);
+  border: 1px dashed color-mix(in srgb, var(--ids__text) 50%, transparent);
 }
 
 .visually-hidden {
@@ -272,7 +272,7 @@
 
   & .title-grid-cell {
     height: var(--title-grid-cell-size);
-    border: 1px solid rgba(var(--ids__text-RGB), 0.5);
+    border: 1px solid color-mix(in srgb, var(--ids__text) 50%, transparent);
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -304,7 +304,7 @@
     border-left: none;
 
     &:nth-child(2) {
-      border-left: 1px solid rgba(var(--ids__text-RGB), 0.5);
+      border-left: 1px solid color-mix(in srgb, var(--ids__text) 50%, transparent);
     }
 
     @media (width < 768px) {
@@ -314,7 +314,7 @@
       /* h1 - nth-child(1), поэтому title-grid-cell начинаются с nth-child(2) */
       &:nth-child(2) {
         order: 1;
-        border-left: 1px solid rgba(var(--ids__text-RGB), 0.5);
+        border-left: 1px solid color-mix(in srgb, var(--ids__text) 50%, transparent);
       }
 
       &:nth-child(3) {
@@ -356,7 +356,7 @@
       /* Второй пустой контейнер перескакивает в начало второй строки */
       &.title-grid-cell-empty-last {
         order: 7;
-        border-left: 1px solid rgba(var(--ids__text-RGB), 0.5);
+        border-left: 1px solid color-mix(in srgb, var(--ids__text) 50%, transparent);
         border-top: none;
       }
     }
@@ -375,7 +375,7 @@
   align-items: center;
   justify-content: center;
   padding: 0.6em 1em;
-  /* border: 1px solid rgba(var(--ids__text-RGB), 0.3);
+  /* border: 1px solid color-mix(in srgb, var(--ids__text) 30%, transparent);
   border-right: none;
   border-bottom: none; */
 

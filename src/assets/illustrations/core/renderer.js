@@ -52,18 +52,20 @@ export class BaseRenderer {
 
   /**
    * Получение цвета из CSS-переменной
-   * @param {string} cssVariable - имя CSS-переменной (например, '--ids__accent-RGB')
+   * @param {string} cssVariable - имя CSS-переменной (например, '--ids__accent')
    * @param {number} alpha - альфа-канал (0-1)
    * @param {Element} element - элемент для получения computed styles (по умолчанию container)
    * @returns {string} цвет в формате rgba()
    */
   getColorFromCSS(cssVariable, alpha = 1, element = null) {
     const el = element || this.container || document.body;
-    const rgb = getComputedStyle(el).getPropertyValue(cssVariable).trim();
-    if (rgb) {
-      return `rgba(${rgb}, ${alpha})`;
-    }
-    return null;
+    const value = getComputedStyle(el).getPropertyValue(cssVariable).trim();
+    if (!value) return null;
+    // Токен хранит полный цвет вида rgb(r, g, b); поддерживаем и голый триплет "r, g, b"
+    const triplet = value.startsWith('rgb')
+      ? value.slice(value.indexOf('(') + 1, value.indexOf(')'))
+      : value;
+    return `rgba(${triplet}, ${alpha})`;
   }
 
   /**

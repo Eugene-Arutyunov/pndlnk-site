@@ -51,11 +51,11 @@
   padding-inline: 0.35em;
   text-decoration: none;
   border-bottom: none;
-  color: rgb(var(--ids__text-RGB));
+  color: var(--ids__text);
 }
 
 .ids .case-page:not(.article) .case-inline-toc .promo-switcher__item:hover {
-  color: rgb(var(--ids__accent-RGB));
+  color: var(--ids__accent);
   border-bottom: none;
 }
 
@@ -89,7 +89,7 @@
   }
 
   .case-toc a {
-    color: rgba(var(--ids__text-RGB), 0.5);
+    color: color-mix(in srgb, var(--ids__text) 50%, transparent);
     border-bottom: none;
     text-decoration: none;
     margin-bottom: 0.85em;
@@ -101,12 +101,12 @@
   }
 
   .case-toc a:hover {
-    color: rgba(var(--ids__text-RGB), 0.85);
+    color: color-mix(in srgb, var(--ids__text) 85%, transparent);
     border-bottom: none;
   }
 
   .case-toc a.is-active {
-    color: rgb(var(--ids__text-RGB));
+    color: var(--ids__text);
   }
 }
 
@@ -171,8 +171,8 @@
   font-family: inherit;
   font-size: inherit;
   line-height: 1.25;
-  color: rgba(var(--ids__text-RGB), 0.92);
-  background: rgba(var(--ids__surface-RGB), 0.55);
+  color: color-mix(in srgb, var(--ids__text) 92%, transparent);
+  background: color-mix(in srgb, var(--ids__surface) 55%, transparent);
 }
 
 /* Без глобальных ⋅ у ul li между тегами */
@@ -190,7 +190,7 @@
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 0.35em;
-  border-bottom: 2px solid rgb(var(--ids__text-RGB));
+  border-bottom: 2px solid var(--ids__text);
 }
 
 /* Длинные проекты: заголовки секций — только если h2 не первый в текстовом блоке
@@ -231,9 +231,9 @@
   font-size: 0.875rem;
   line-height: 1.35;
   font-weight: 400;
-  color: rgba(var(--ids__text-RGB), 0.5);
+  color: color-mix(in srgb, var(--ids__text) 50%, transparent);
   text-transform: lowercase;
-  border: 1px solid rgba(var(--ids__text-RGB), 0.22);
+  border: 1px solid color-mix(in srgb, var(--ids__text) 22%, transparent);
   background: transparent;
 }
 
@@ -248,7 +248,7 @@
   font-size: 0.62em;
   line-height: 1.2;
   text-transform: lowercase;
-  border: 1px solid rgba(var(--ids__text-RGB), 0.22);
+  border: 1px solid color-mix(in srgb, var(--ids__text) 22%, transparent);
   background: transparent;
 }
 
@@ -259,7 +259,7 @@
   font-family: var(--mono);
   font-size: 0.62em;
   line-height: 1.2;
-  border: 1px solid rgba(var(--ids__text-RGB), 0.22);
+  border: 1px solid color-mix(in srgb, var(--ids__text) 22%, transparent);
   background: transparent;
 }
 
@@ -284,7 +284,7 @@
   margin-top: 0.35em;
   margin-bottom: 0.85em;
   padding: 0.4em 0.55em;
-  border: 1px solid rgba(var(--ids__text-RGB), 0.35);
+  border: 1px solid color-mix(in srgb, var(--ids__text) 35%, transparent);
   background: transparent;
   max-width: 100%;
   box-sizing: border-box;
@@ -302,7 +302,7 @@
 .ids .case-page:not(.article) .ids__text-width p.loud.mono {
   margin-top: -0.1em;
   margin-bottom: 0.9em;
-  color: rgba(var(--ids__text-RGB), 0.55);
+  color: color-mix(in srgb, var(--ids__text) 55%, transparent);
   font-style: italic;
 }
 
@@ -357,7 +357,7 @@
 .ids .case-page:not(.article) .case-standard__review-portrait {
   width: 4em;
   height: 4em;
-  background: rgba(var(--ids__text-RGB), 0.22);
+  background: color-mix(in srgb, var(--ids__text) 22%, transparent);
 }
 
 .ids .case-page:not(.article) .review-author {
@@ -376,7 +376,7 @@
   font-family: var(--mono);
   font-size: var(--smaller);
   line-height: 1.45;
-  color: rgba(var(--ids__text-RGB), 0.92);
+  color: color-mix(in srgb, var(--ids__text) 92%, transparent);
 }
 
 .ids .case-page:not(.article) .author-box:last-child {
@@ -387,12 +387,12 @@
 .ids .case-page:not(.article) .author-box .author-box__team,
 .ids .case-page:not(.article) .author-box strong.author-box__team {
   font-weight: 700;
-  color: rgb(var(--ids__text-RGB));
+  color: var(--ids__text);
 }
 
 .ids .case-people .author-box,
 .ids .case-page:not(.article) .case-people .author-box {
-  color: rgba(var(--ids__text-RGB), 0.72);
+  color: color-mix(in srgb, var(--ids__text) 72%, transparent);
   font-family: var(--mono);
   font-size: var(--smaller);
   line-height: 1.45;
@@ -408,7 +408,7 @@
   display: block;
   margin: 0 0 0.35em;
   font-weight: 700;
-  color: rgb(var(--ids__text-RGB));
+  color: var(--ids__text);
 }
 
 .ids .case-people .author-box ul,
@@ -428,7 +428,7 @@
 }
 
 .ids .case-page:not(.article) .author-box .name span {
-  color: rgb(var(--ids__text-RGB));
+  color: var(--ids__text);
 }
 
 .ids .case-page:not(.article) .author-box .links {
@@ -436,16 +436,16 @@
 }
 
 .ids .case-page:not(.article) .author-box .links a {
-  color: rgb(var(--ids__link-RGB));
+  color: var(--ids__link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.15em;
-  text-decoration-color: rgba(var(--ids__link-RGB), 0.25);
+  text-decoration-color: color-mix(in srgb, var(--ids__link) 25%, transparent);
 }
 
 .ids .case-page:not(.article) .author-box .links a:hover {
-  color: rgb(var(--ids__hover-RGB));
-  text-decoration-color: rgba(var(--ids__hover-RGB), 0.25);
+  color: var(--ids__hover);
+  text-decoration-color: color-mix(in srgb, var(--ids__hover) 25%, transparent);
 }
 
 .ids .case-page:not(.article) .case-ssp-cjm {
@@ -460,7 +460,7 @@
 
 .ids .case-page:not(.article) .case-ssp-cjm--shadow img {
   border-radius: 0.15em;
-  box-shadow: 0 0.8em 1.2em 0 rgba(var(--ids__text-RGB), 0.1);
+  box-shadow: 0 0.8em 1.2em 0 color-mix(in srgb, var(--ids__text) 10%, transparent);
 }
 
 @media (width < 768px) {
@@ -503,7 +503,7 @@
   .case-jobs-bento-card {
     aside {
       background: none;
-      border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+      border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
       margin-bottom: 0;
       transition: border-color 0.5s ease;
 
@@ -516,7 +516,7 @@
       & h3 {
         margin-top: 0;
         margin-bottom: 0.4em;
-        color: rgb(var(--ids__text-RGB));
+        color: var(--ids__text);
         text-decoration: none;
       }
 
@@ -531,7 +531,7 @@
     }
 
     &:hover aside {
-      border-color: rgba(var(--ids__hover-RGB), 0.4);
+      border-color: color-mix(in srgb, var(--ids__hover) 40%, transparent);
       transition: border-color 0s ease;
     }
   }
@@ -555,7 +555,7 @@
 }
 
 .ids .case-page:not(.article) .case-initiative-teaser {
-  background: rgba(var(--ids__surface-RGB), 0.3);
+  background: color-mix(in srgb, var(--ids__surface) 30%, transparent);
   padding: 1em;
   border-radius: 0.2em;
   margin-bottom: 1em;
@@ -571,7 +571,7 @@
 
 .ids .case-page:not(.article) .initiative-catalog-panel {
   width: 100%;
-  background: color-mix(in srgb, rgb(var(--ids__surface-RGB)) 30%, white 70%);
+  background: color-mix(in srgb, var(--ids__surface) 30%, white 70%);
   padding: 1em;
   line-height: 1.35;
 }
@@ -616,18 +616,18 @@
   vertical-align: baseline;
   max-width: 100%;
   padding: 0.1em 0.2em 0.1em 0.3em;
-  border: 2px solid rgba(var(--ids__text-RGB), 1);
+  border: 2px solid var(--ids__text);
   border-radius: 0;
   background-color: transparent;
   transition: background-color 0.28s ease;
 
   &:focus-within {
-    background-color: rgba(var(--ids__text-RGB), 0.06);
+    background-color: color-mix(in srgb, var(--ids__text) 6%, transparent);
   }
 
   &:hover {
     transition-duration: 0s;
-    background-color: rgba(var(--ids__text-RGB), 0.06);
+    background-color: color-mix(in srgb, var(--ids__text) 6%, transparent);
   }
 
   &::after {
@@ -639,7 +639,7 @@
     justify-self: end;
     align-self: center;
     pointer-events: none;
-    background-color: rgb(var(--ids__text-RGB));
+    background-color: var(--ids__text);
     opacity: 0.85;
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25' d='M3 6l5 5 5-5'/%3E%3C/svg%3E");
     mask-size: contain;
@@ -666,7 +666,7 @@
   border-radius: 0;
   background-color: transparent;
   background-image: none;
-  color: rgb(var(--ids__text-RGB));
+  color: var(--ids__text);
   appearance: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -694,7 +694,7 @@
     width: 1em;
     height: 1em;
     margin: 0;
-    border: 2px solid rgba(var(--ids__text-RGB), 1);
+    border: 2px solid var(--ids__text);
     border-radius: 0;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -709,7 +709,7 @@
     transition: background-color 0.28s ease;
 
     &:checked {
-      background-color: rgba(var(--ids__text-RGB), 0.06);
+      background-color: color-mix(in srgb, var(--ids__text) 6%, transparent);
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath stroke='%23111' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25' d='M2.5 6l2.5 2.5 5-5'/%3E%3C/svg%3E");
     }
 
@@ -724,7 +724,7 @@
   flex-shrink: 0;
   font-size: 0.65em;
   line-height: 1.4;
-  color: rgba(var(--ids__text-RGB), 0.55);
+  color: color-mix(in srgb, var(--ids__text) 55%, transparent);
   text-align: right;
   white-space: nowrap;
 }
@@ -734,7 +734,7 @@
   width: 100%;
   margin-top: 1.5em;
   padding: 0.5em 0.6em;
-  border: 1px solid rgba(var(--ids__text-RGB), 0.3);
+  border: 1px solid color-mix(in srgb, var(--ids__text) 30%, transparent);
   border-radius: 0;
   background: none;
   cursor: pointer;
@@ -749,8 +749,8 @@
     color 0.5s ease;
 
   &:hover {
-    border-color: rgb(var(--ids__hover-RGB));
-    color: rgb(var(--ids__hover-RGB));
+    border-color: var(--ids__hover);
+    color: var(--ids__hover);
     transition:
       border-color 0s,
       color 0s;
@@ -798,7 +798,7 @@
   min-width: 0;
   border-radius: 0;
   overflow: visible;
-  background: rgba(var(--ids__surface-RGB), 0.45);
+  background: color-mix(in srgb, var(--ids__surface) 45%, transparent);
   font-family: var(--mono);
   font-size: 1em;
   transition: background 0.28s ease;
@@ -819,32 +819,32 @@
   }
 
   &:has(.initiative-card__link):hover {
-    background: rgba(var(--ids__text-RGB), 0.1);
+    background: color-mix(in srgb, var(--ids__text) 10%, transparent);
     transition-duration: 0s;
 
     .initiative-card__title {
-      color: rgb(var(--ids__hover-RGB));
-      text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
+      color: var(--ids__hover);
+      text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
       transition-duration: 0s;
     }
 
     .initiative-card__tag,
     .initiative-card__principle {
-      color: rgb(var(--ids__hover-RGB));
+      color: var(--ids__hover);
       transition-duration: 0s;
     }
 
     .initiative-card__principle {
-      border-color: rgba(var(--ids__hover-RGB), 0.35);
+      border-color: color-mix(in srgb, var(--ids__hover) 35%, transparent);
     }
 
     .initiative-card__cover {
-      background: rgba(var(--ids__text-RGB), 0.08);
+      background: color-mix(in srgb, var(--ids__text) 8%, transparent);
       transition-duration: 0s;
     }
 
     .initiative-card__cover::after {
-      background: rgba(var(--ids__text-RGB), 0.1);
+      background: color-mix(in srgb, var(--ids__text) 10%, transparent);
       transition-duration: 0s;
     }
   }
@@ -856,7 +856,7 @@
   width: 100%;
   aspect-ratio: 3 / 2;
   overflow: hidden;
-  background: rgba(var(--ids__text-RGB), 0.04);
+  background: color-mix(in srgb, var(--ids__text) 4%, transparent);
   transition: background 0.28s ease;
 
   &::after {
@@ -892,12 +892,12 @@
   line-height: 1.2;
   letter-spacing: -0.01em;
   padding-right: 0.5em;
-  color: rgb(var(--ids__text-RGB));
+  color: var(--ids__text);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
   text-decoration-skip-ink: none;
-  text-decoration-color: rgba(var(--ids__link-RGB), 0.2);
+  text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
   transition:
     color 0.28s ease,
     text-decoration-color 0.28s ease;
@@ -947,9 +947,9 @@
   font-family: var(--mono);
   line-height: 1.2;
   white-space: nowrap;
-  color: rgb(var(--ids__text-RGB));
+  color: var(--ids__text);
   text-decoration: none;
-  border: 1px solid rgba(var(--ids__text-RGB), 0.35);
+  border: 1px solid color-mix(in srgb, var(--ids__text) 35%, transparent);
   border-radius: 0;
   background: transparent;
 }
@@ -984,11 +984,11 @@
   font-size: 0.62em;
   line-height: 1.2;
   white-space: nowrap;
-  color: rgb(var(--ids__text-RGB));
+  color: var(--ids__text);
   text-decoration: none;
   border: none;
   border-radius: 0;
-  background: rgba(var(--ids__text-RGB), 0.08);
+  background: color-mix(in srgb, var(--ids__text) 8%, transparent);
   transition: color 0.28s ease;
 }
 
@@ -1002,7 +1002,7 @@
 }
 
 .ids .case-kids-terms {
-  background: rgba(var(--ids__surface-RGB), 0.3);
+  background: color-mix(in srgb, var(--ids__surface) 30%, transparent);
   padding: 1em;
   border-radius: 0.2em;
 
@@ -1031,7 +1031,7 @@
     }
 
     &:not(.secondary) {
-      color: rgba(var(--ids__accent-RGB), 1);
+      color: var(--ids__accent);
     }
   }
 
@@ -1043,7 +1043,7 @@
 /* Плашка-саммари кейса Додо: контекст/запрос, процесс, результат */
 .ids .case-kids-summary {
   --summary-gap: 1.5rem;
-  background: rgba(var(--ids__surface-RGB), 0.3);
+  background: color-mix(in srgb, var(--ids__surface) 30%, transparent);
   padding: 1.35em;
   font-family: var(--mono);
   font-size: 0.75em;
@@ -1146,8 +1146,8 @@
     padding: 0.75em;
     color: inherit;
     text-decoration: none;
-    background: rgb(var(--ids__background-RGB));
-    border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    background: var(--ids__background);
+    border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
     cursor: pointer;
     transition: color 0.28s ease, border-color 0.28s ease;
 
@@ -1156,8 +1156,8 @@
     }
 
     &:hover {
-      color: rgb(var(--ids__hover-RGB));
-      border-color: rgba(var(--ids__hover-RGB), 0.45);
+      color: var(--ids__hover);
+      border-color: color-mix(in srgb, var(--ids__hover) 45%, transparent);
       transition-duration: 0s;
     }
   }
@@ -1208,7 +1208,7 @@
 
   &:hover {
     opacity: 1;
-    color: rgb(var(--ids__hover-RGB));
+    color: var(--ids__hover);
     transition-duration: 0s;
   }
 
@@ -1280,7 +1280,7 @@
   }
 
   & .promo-table tbody td:last-child {
-    color: rgba(var(--ids__text-RGB), 0.75);
+    color: color-mix(in srgb, var(--ids__text) 75%, transparent);
   }
 }
 
@@ -1315,12 +1315,12 @@
     cursor: pointer;
 
     & td {
-      background-color: rgba(var(--ids__text-RGB), 0.04);
+      background-color: color-mix(in srgb, var(--ids__text) 4%, transparent);
       transition: background-color 0.2s ease;
     }
 
     &:hover td {
-      background-color: rgba(var(--ids__text-RGB), 0.08);
+      background-color: color-mix(in srgb, var(--ids__text) 8%, transparent);
       transition-duration: 0s;
     }
   }
@@ -1356,7 +1356,7 @@
     font-size: 0.78em;
     font-weight: 300;
     line-height: 1.2;
-    color: rgba(var(--ids__text-RGB), 0.55);
+    color: color-mix(in srgb, var(--ids__text) 55%, transparent);
     text-decoration: underline;
     text-underline-offset: 0.15em;
     text-decoration-thickness: 1px;
@@ -1378,10 +1378,10 @@
     margin-top: 0.65em;
     margin-bottom: 0.35em;
     padding-top: 0.65em;
-    border-top: 1px solid rgba(var(--ids__text-RGB), 0.12);
+    border-top: 1px solid color-mix(in srgb, var(--ids__text) 12%, transparent);
     font-size: 0.92em;
     line-height: 1.35;
-    color: rgb(var(--ids__text-RGB));
+    color: var(--ids__text);
 
     & p {
       margin: 0 0 0.5em;
@@ -1404,8 +1404,8 @@
 
 .ids .case-page:not(.article) .case-video-featured__player {
   aspect-ratio: 16 / 9;
-  background: rgba(var(--ids__text-RGB), 0.1);
-  border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+  background: color-mix(in srgb, var(--ids__text) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
 }
 
 .ids .case-page:not(.article) .case-video-featured figcaption {
@@ -1442,8 +1442,8 @@
   aspect-ratio: 16 / 9;
   margin-top: 0;
   margin-bottom: 0.65em;
-  background: rgba(var(--ids__text-RGB), 0.1);
-  border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+  background: color-mix(in srgb, var(--ids__text) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
   flex: 0 0 auto;
 }
 
@@ -1455,7 +1455,7 @@
 .ids .case-page:not(.article) .case-video-testimonial__role {
   display: block;
   margin-top: 0.15em;
-  color: rgba(var(--ids__text-RGB), 0.55);
+  color: color-mix(in srgb, var(--ids__text) 55%, transparent);
   font-size: 0.9em;
 }
 
@@ -1483,7 +1483,7 @@
     background: linear-gradient(
       to right,
       transparent 0%,
-      rgb(var(--ids__background-RGB)) 85%
+      var(--ids__background) 85%
     );
     pointer-events: none;
     z-index: 20;
@@ -1498,7 +1498,7 @@
     font-family: var(--mono);
     font-size: 0.75em;
     line-height: 1.3;
-    color: rgba(var(--ids__text-RGB), 0.55);
+    color: color-mix(in srgb, var(--ids__text) 55%, transparent);
     text-align: right;
     pointer-events: none;
   }
@@ -1522,7 +1522,7 @@
 
   .case-field-promo-container--content .case-field-promo-image {
     position: relative;
-    background-color: rgb(var(--ids__background-RGB));
+    background-color: var(--ids__background);
 
     &:nth-child(1) { z-index: 1; }
     &:nth-child(2) { z-index: 2; }
@@ -1543,7 +1543,7 @@
   }
 
   .case-field-promo-container--stub .case-field-promo-image {
-    background-color: rgb(var(--ids__surface-RGB));
+    background-color: var(--ids__surface);
 
     &:nth-child(-n+6) {
       background-color: transparent;
@@ -1557,11 +1557,11 @@
     width: 17.5em;
     aspect-ratio: 210 / 297;
     overflow: hidden;
-    border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
     border-radius: 0.15em;
-    box-shadow: 0 0.8em 1.2em 0 rgba(var(--ids__text-RGB), 0.1);
+    box-shadow: 0 0.8em 1.2em 0 color-mix(in srgb, var(--ids__text) 10%, transparent);
     margin-right: -9em;
-    background-color: rgb(var(--ids__background-RGB));
+    background-color: var(--ids__background);
     transform: skewY(-10deg) scaleY(1.1);
 
     & img {
@@ -1569,7 +1569,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      background-color: rgb(var(--ids__background-RGB));
+      background-color: var(--ids__background);
     }
 
     &:nth-child(1) { margin-top: 0; }
@@ -1594,7 +1594,7 @@
     inset: 4.8cqi 3.6cqi 4.8cqi 5.2cqi;
     box-sizing: border-box;
     overflow: hidden;
-    color: rgba(var(--ids__text-RGB), 0.88);
+    color: color-mix(in srgb, var(--ids__text) 88%, transparent);
     font-size: 2.5125cqi;
     line-height: 1.17;
     user-select: none;
@@ -1622,14 +1622,14 @@
     line-height: 1.2;
     margin: 0 0 0.85em;
     padding: 0.15em 0.4em 0.15em 0;
-    color: rgb(var(--ids__text-RGB));
-    background-color: rgb(var(--ids__background-RGB));
+    color: var(--ids__text);
+    background-color: var(--ids__background);
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
   }
 
   .case-field-promo-transcript-time {
-    color: rgba(var(--ids__text-RGB), 0.45);
+    color: color-mix(in srgb, var(--ids__text) 45%, transparent);
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.02em;
   }
@@ -1649,14 +1649,14 @@
     font-size: 1.08em;
     line-height: 1.15;
     margin: 0.65em 0 0.45em;
-    color: rgb(var(--ids__text-RGB));
+    color: var(--ids__text);
   }
 
   .case-field-promo-transcript-heading {
     font-weight: 600;
     line-height: 1.15;
     margin: 0.55em 0 0.4em;
-    color: rgb(var(--ids__text-RGB));
+    color: var(--ids__text);
   }
 
   .case-field-promo-transcript strong {
@@ -1669,8 +1669,8 @@
     background-color: transparent;
     background-image: linear-gradient(
       transparent 0.2em,
-      rgba(var(--ids__text-RGB), 0.18) 0.2em,
-      rgba(var(--ids__text-RGB), 0.18) 0.9em,
+      color-mix(in srgb, var(--ids__text) 18%, transparent) 0.2em,
+      color-mix(in srgb, var(--ids__text) 18%, transparent) 0.9em,
       transparent 0.9em
     );
     border: 0;
@@ -1684,7 +1684,7 @@
     &::selection {
       color: transparent;
       -webkit-text-fill-color: transparent;
-      background-color: rgba(var(--ids__text-RGB), 0.18);
+      background-color: color-mix(in srgb, var(--ids__text) 18%, transparent);
     }
   }
 
@@ -1861,7 +1861,7 @@
     font-family: var(--mono);
     font-size: 1em;
     line-height: 1.3;
-    color: rgba(var(--ids__text-RGB), 0.55);
+    color: color-mix(in srgb, var(--ids__text) 55%, transparent);
     text-align: right;
     pointer-events: none;
   }

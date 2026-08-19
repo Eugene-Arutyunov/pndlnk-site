@@ -77,7 +77,7 @@
 }
 
 .divider {
-  border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+  border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
   margin: 0.5em 0;
 }
 
@@ -85,7 +85,7 @@
 
 .ids {
   .promo-table-container {
-    background: rgba(var(--ids__surface-RGB), 0.3);
+    background: color-mix(in srgb, var(--ids__surface) 30%, transparent);
     padding: 1em;
     font-family: var(--mono);
     font-size: 0.75em;
@@ -117,7 +117,7 @@
 
     & thead th {
       text-align: left;
-      border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+      border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
       padding: 0.5em 1em 0.5em 0;
 
       @media (width < 768px) {
@@ -127,7 +127,7 @@
 
     & tbody td {
       padding: 0.5em 1em 0.8em 0;
-      border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+      border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
       vertical-align: top;
     }
 
@@ -139,7 +139,7 @@
   /* Каталог проектов (главная) */
 
   .project-catalog-panel {
-    background: color-mix(in srgb, rgb(var(--ids__surface-RGB)) 30%, white 70%);
+    background: color-mix(in srgb, var(--ids__surface) 30%, white 70%);
     padding: 1em;
     line-height: 1.35;
   }
@@ -165,7 +165,7 @@
     font-family: var(--mono);
     font-size: 0.75em;
     line-height: 1.4;
-    background: color-mix(in srgb, rgb(var(--ids__surface-RGB)) 30%, white 70%);
+    background: color-mix(in srgb, var(--ids__surface) 30%, white 70%);
   }
 
   .project-catalog-intro {
@@ -205,7 +205,7 @@
       width: 1em;
       height: 1em;
       margin: 0;
-      border: 2px solid rgba(var(--ids__text-RGB), 1);
+      border: 2px solid var(--ids__text);
       border-radius: 0;
       background-color: transparent;
       background-repeat: no-repeat;
@@ -220,7 +220,7 @@
       transition: background-color 0.28s ease;
 
       &:checked {
-        background-color: rgba(var(--ids__text-RGB), 0.06);
+        background-color: color-mix(in srgb, var(--ids__text) 6%, transparent);
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath stroke='%23111' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25' d='M2.5 6l2.5 2.5 5-5'/%3E%3C/svg%3E");
       }
 
@@ -239,19 +239,19 @@
     vertical-align: baseline;
     max-width: 100%;
     padding: 0.1em 0.2em 0.1em 0.3em;
-    border: 2px solid rgba(var(--ids__text-RGB), 1);
+    border: 2px solid var(--ids__text);
     border-radius: 0;
     background-color: transparent;
     transition: background-color 0.28s ease;
 
     &:focus-within {
-      background-color: rgba(var(--ids__text-RGB), 0.06);
+      background-color: color-mix(in srgb, var(--ids__text) 6%, transparent);
     }
   }
 
   .project-catalog-filter__select-wrap:hover {
     transition-duration: 0s;
-    background-color: rgba(var(--ids__text-RGB), 0.06);
+    background-color: color-mix(in srgb, var(--ids__text) 6%, transparent);
   }
 
   .project-catalog-filter__select-wrap::after {
@@ -263,7 +263,7 @@
     justify-self: end;
     align-self: center;
     pointer-events: none;
-    background-color: rgb(var(--ids__text-RGB));
+    background-color: var(--ids__text);
     opacity: 0.85;
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25' d='M3 6l5 5 5-5'/%3E%3C/svg%3E");
     mask-size: contain;
@@ -289,7 +289,7 @@
     border-radius: 0;
     background-color: transparent;
     background-image: none;
-    color: rgb(var(--ids__text-RGB));
+    color: var(--ids__text);
     appearance: none;
     cursor: pointer;
     box-sizing: border-box;
@@ -308,7 +308,7 @@
     flex-shrink: 0;
     font-size: 0.65em;
     line-height: 1.4;
-    color: rgba(var(--ids__text-RGB), 0.55);
+    color: color-mix(in srgb, var(--ids__text) 55%, transparent);
     text-align: right;
     white-space: nowrap;
   }
@@ -333,7 +333,7 @@
     margin: 0;
     font-size: 0.75em;
     line-height: 1.4;
-    color: rgba(var(--ids__text-RGB), 0.75);
+    color: color-mix(in srgb, var(--ids__text) 75%, transparent);
   }
 
   .project-catalog-show-all {
@@ -341,7 +341,7 @@
     width: 100%;
     margin-top: 1.5em;
     padding: 0.5em 0.6em;
-    border: 1px solid rgba(var(--ids__text-RGB), 0.3);
+    border: 1px solid color-mix(in srgb, var(--ids__text) 30%, transparent);
     border-radius: 0;
     background: none;
     cursor: pointer;
@@ -356,8 +356,8 @@
       color 0.5s ease;
 
     &:hover {
-      border-color: rgb(var(--ids__hover-RGB));
-      color: rgb(var(--ids__hover-RGB));
+      border-color: var(--ids__hover);
+      color: var(--ids__hover);
       transition:
         border-color 0s,
         color 0s;
@@ -409,7 +409,7 @@
     min-width: 0;
     border-radius: 0;
     overflow: hidden;
-    background: rgba(var(--ids__surface-RGB), 0.45);
+    background: color-mix(in srgb, var(--ids__surface) 45%, transparent);
     font-family: var(--mono);
     font-size: 1em;
 
@@ -425,19 +425,19 @@
 
     &:hover {
       .project-card__title {
-        color: rgb(var(--ids__hover-RGB));
-        text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
+        color: var(--ids__hover);
+        text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
         transition-duration: 0s;
       }
 
       .project-card__tag {
-        color: rgb(var(--ids__hover-RGB));
+        color: var(--ids__hover);
         transition-duration: 0s;
       }
 
       .project-card__cover,
       .project-card__cover--tinted {
-        background: rgba(var(--ids__hover-RGB), 0.08);
+        background: color-mix(in srgb, var(--ids__hover) 8%, transparent);
         transition-duration: 0s;
       }
     }
@@ -452,12 +452,12 @@
     align-items: center;
     justify-content: center;
     padding: 0.65em;
-    background: rgba(var(--ids__text-RGB), 0.015);
+    background: color-mix(in srgb, var(--ids__text) 1.5%, transparent);
     transition: background 0.28s ease;
   }
 
   .project-card__cover--tinted {
-    background: rgb(var(--ids__surface-RGB));
+    background: var(--ids__surface);
 
     transition: background 0.28s ease;
   }
@@ -512,7 +512,7 @@
   }
 
   .project-card__logo--mono {
-    color: rgb(var(--ids__text-RGB));
+    color: var(--ids__text);
 
     & svg [fill]:not([fill="none"]) {
       fill: currentColor;
@@ -540,12 +540,12 @@
     line-height: 1.2;
     letter-spacing: -0.01em;
     padding-right: 0.5em;
-    color: rgb(var(--ids__text-RGB));
+    color: var(--ids__text);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
     text-decoration-skip-ink: none;
-    text-decoration-color: rgba(var(--ids__link-RGB), 0.2);
+    text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
     transition:
       color 0.28s ease,
       text-decoration-color 0.28s ease;
@@ -562,7 +562,7 @@
     display: inline-block;
     font-size: 0.6em;
     line-height: 1.25;
-    color: rgba(var(--ids__text-RGB), 0.92);
+    color: color-mix(in srgb, var(--ids__text) 92%, transparent);
     text-decoration: none;
     transition: color 0.28s ease;
   }
@@ -578,7 +578,7 @@
   .promo-switcher {
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid rgba(var(--ids__text-RGB), 1);
+    border: 2px solid var(--ids__text);
     width: fit-content;
   }
 
@@ -589,8 +589,8 @@
     cursor: pointer;
     padding: 0.2em 0.5em 0.2em;
     border: none;
-    border-right: 1px solid rgba(var(--ids__text-RGB), 0.25);
-    color: rgb(var(--ids__text-RGB));
+    border-right: 1px solid color-mix(in srgb, var(--ids__text) 25%, transparent);
+    color: var(--ids__text);
     transition: color 0.5s ease;
 
     &:last-child {
@@ -598,12 +598,12 @@
     }
 
     &:hover:not(.is-active) {
-      color: rgb(var(--ids__accent-RGB));
+      color: var(--ids__accent);
       transition: color 0s;
     }
 
     &.is-active {
-      background: rgba(var(--ids__text-RGB), 0.06);
+      background: color-mix(in srgb, var(--ids__text) 6%, transparent);
     }
   }
 
@@ -626,14 +626,14 @@
 
   .promo-row {
     display: flex;
-    border-top: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    border-top: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
 
     &:last-child {
       border-bottom: none;
     }
 
     &.is-open {
-      border-top: 2px solid rgba(var(--ids__text-RGB), 1);
+      border-top: 2px solid var(--ids__text);
     }
   }
 
@@ -690,10 +690,10 @@
   .promo-row__roles {
     margin-top: 0.65em;
     padding-top: 0.5em;
-    border-top: 1px solid rgba(var(--ids__text-RGB), 0.12);
+    border-top: 1px solid color-mix(in srgb, var(--ids__text) 12%, transparent);
     font-size: 0.88em;
     line-height: 1.35;
-    color: rgba(var(--ids__text-RGB), 0.62);
+    color: color-mix(in srgb, var(--ids__text) 62%, transparent);
   }
 
   .promo-row__products-summary {
@@ -734,7 +734,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 1em;
     padding: 0.35em 0 0.6em;
-    border-top: 1px solid rgba(var(--ids__text-RGB), 0.1);
+    border-top: 1px solid color-mix(in srgb, var(--ids__text) 10%, transparent);
 
     &:first-child {
       border-top: none;
@@ -754,19 +754,19 @@
       font-weight: 700;
     }
 
-    color: rgb(var(--ids__link-RGB));
+    color: var(--ids__link);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
-    text-decoration-color: rgba(var(--ids__link-RGB), 0.2);
+    text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
     line-height: 1.3em;
     transition:
       color 0.5s ease,
       text-decoration-color 0.5s ease;
 
     &:hover {
-      color: rgb(var(--ids__hover-RGB));
-      text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
+      color: var(--ids__hover);
+      text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
       transition:
         color 0s,
         text-decoration-color 0s;
@@ -792,7 +792,7 @@
     height: 2.8em;
     border-radius: 0.25em;
     overflow: hidden;
-    background: rgb(var(--ids__text-RGB));
+    background: var(--ids__text);
     transition: background 0.5s ease;
     display: flex;
     align-items: center;
@@ -800,7 +800,7 @@
     box-sizing: border-box;
 
     .promo-row__product-link:hover & {
-      background: rgb(var(--ids__hover-RGB));
+      background: var(--ids__hover);
       transition: background 0s;
     }
   }
@@ -814,12 +814,12 @@
   .promo-row__product-description {
     margin-top: 0.65em;
     line-height: 1.3em;
-    color: rgba(var(--ids__text-RGB), 0.62);
+    color: color-mix(in srgb, var(--ids__text) 62%, transparent);
   }
 
   .promo-row__task-item {
     padding: 0.35em 0 0.6em;
-    border-top: 1px solid rgba(var(--ids__text-RGB), 0.1);
+    border-top: 1px solid color-mix(in srgb, var(--ids__text) 10%, transparent);
     line-height: 1.3em;
 
     &:first-child {
@@ -923,7 +923,7 @@
 
       & aside {
         background: none;
-        border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+        border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
         margin-bottom: 0;
         transition: border-color 0.5s ease;
 
@@ -936,12 +936,12 @@
         & h3 {
           margin-top: 0;
           margin-bottom: 0.4em;
-          color: rgb(var(--ids__link-RGB));
+          color: var(--ids__link);
           text-decoration: underline;
           text-decoration-thickness: 1px;
           text-underline-offset: 0.2em;
           text-decoration-skip-ink: none;
-          text-decoration-color: rgba(var(--ids__link-RGB), 0.2);
+          text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
           transition:
             color 0.5s ease,
             text-decoration-color 0.5s ease;
@@ -953,12 +953,12 @@
       }
 
       &:hover aside {
-        border-color: rgba(var(--ids__hover-RGB), 0.4);
+        border-color: color-mix(in srgb, var(--ids__hover) 40%, transparent);
         transition: border-color 0s ease;
 
         & h3 {
-          color: rgb(var(--ids__hover-RGB));
-          text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
+          color: var(--ids__hover);
+          text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
           transition:
             color 0s ease,
             text-decoration-color 0s ease;
@@ -999,7 +999,7 @@
 }
 
 .methodology-wrapper {
-  background: rgba(var(--ids__surface-RGB), 0.3);
+  background: color-mix(in srgb, var(--ids__surface) 30%, transparent);
   padding: calc(var(--ids__density) * 1em);
 
   & h3 {
@@ -1015,7 +1015,7 @@
   width: 7em;
   margin: 0 auto;
   opacity: 0.2;
-  color: rgba(var(--ids__text-RGB), 1);
+  color: var(--ids__text);
 
   svg {
     width: 100%;
@@ -1048,7 +1048,7 @@
     font-size: 0.75em;
     font-family: var(--mono);
     background: none;
-    border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    border: 1px solid color-mix(in srgb, var(--ids__text) 20%, transparent);
     padding: 0.31em 0.92em 0.31em 0.43em;
 
     @media (width < 768px) {
