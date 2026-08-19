@@ -162,114 +162,88 @@ content %}
     </ids-nav-item>
 
     <div class="ids__space L"></div>
-    <ids-nav-item id="colors" label="Цвета">
+    <ids-nav-item id="tokens" label="Токены">
       <div class="ids__space S"></div>
       <section>
-        <h2>Цвета</h2>
+        <h2>Токены</h2>
       </section>
-      <h3>Интерфейсная палитра</h3>
-      <div class="style-color-grid">
-        <div
-          class="guide-color-plate guide-color-plate--dark"
-          style="background-color: var(--ids__text)">
-          <p class="guide-color-plate__name">--ids__text</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate guide-color-plate--dark"
-          style="background-color: var(--ids__link)">
-          <p class="guide-color-plate__name">--ids__link</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: var(--ids__hover)">
-          <p class="guide-color-plate__name">--ids__hover</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: var(--ids__accent)">
-          <p class="guide-color-plate__name">--ids__accent</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: var(--ids__mark)">
-          <p class="guide-color-plate__name">--ids__mark</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: var(--ids__surface)">
-          <p class="guide-color-plate__name">--ids__surface</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: var(--ids__background)">
-          <p class="guide-color-plate__name">--ids__background</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: var(--ids__inverted-text)">
-          <p class="guide-color-plate__name">--ids__inverted-text</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
+      <div class="ids__text-width">
+        <p>
+          Токены — жёсткий контракт системы: именованные CSS-переменные с
+          конкретными значениями. Использовать как есть: не переименовывать, не
+          заводить алиасы, не обобщать. Все списки ниже собираются из живого CSS
+          при загрузке страницы — витрина не может разойтись с кодом. Клик по
+          токену копирует <code>var(…)</code>.
+        </p>
       </div>
+
+      <h3>Палитра</h3>
+      <div class="ids__text-width">
+        <p class="caption">
+          Сырые значения цвета, не зависящие от темы. В вёрстке напрямую не
+          используются — только через семантические роли.
+        </p>
+      </div>
+      <div data-tokens-prefix="color" data-tokens-render="swatch"></div>
+
       <div class="ids__space M"></div>
-      <h3>Брендовая палитра</h3>
-      <div class="style-color-grid">
-        <div
-          class="guide-color-plate guide-color-plate--dark"
-          style="background-color: var(--ids__pndlnk-black)">
-          <p class="guide-color-plate__name">--ids__pndlnk-black</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate guide-color-plate--dark"
-          style="background-color: var(--ids__pndlnk-dark-gray)">
-          <p class="guide-color-plate__name">--ids__pndlnk-dark-gray</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: var(--ids__pndlnk-red)">
-          <p class="guide-color-plate__name">--ids__pndlnk-red</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: var(--ids__pndlnk-red-tinted)">
-          <p class="guide-color-plate__name">--ids__pndlnk-red-tinted</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate guide-color-plate--dark"
-          style="background-color: var(--ids__ink)">
-          <p class="guide-color-plate__name">--ids__ink</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: var(--ids__pndlnk-light-gray)">
-          <p class="guide-color-plate__name">--ids__pndlnk-light-gray</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: var(--ids__pndlnk-gold)">
-          <p class="guide-color-plate__name">--ids__pndlnk-gold</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: var(--ids__pndlnk-gold-tinted)">
-          <p class="guide-color-plate__name">--ids__pndlnk-gold-tinted</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
+      <h3>Семантические роли</h3>
+      <div class="ids__text-width">
+        <p class="caption">
+          Каждая роль ссылается на палитру. Тёмные блоки
+          (<code>.dark-theme</code>) переключают значения ролей — палитра при
+          этом не меняется. Слева светлый набор, справа тёмный.
+        </p>
       </div>
+      <div class="style-semantic-pair">
+        <div
+          data-tokens-prefix=""
+          data-tokens-exclude="color-,pndlnk-,spacer-,gap-,radius,border-width-,duration-,easing-,density,border"
+          data-tokens-render="swatch"></div>
+        <div
+          class="dark-theme"
+          data-tokens-prefix=""
+          data-tokens-exclude="color-,pndlnk-,spacer-,gap-,radius,border-width-,duration-,easing-,density,border"
+          data-tokens-render="swatch"></div>
+      </div>
+
+      <div class="ids__space M"></div>
+      <h3>Брендовые роли</h3>
+      <div class="ids__text-width">
+        <p class="caption">
+          Роли для витрины, графики и логотипов — тоже алиасы палитры. В вёрстке
+          компонентов использовать семантические роли.
+        </p>
+      </div>
+      <div data-tokens-prefix="pndlnk" data-tokens-render="swatch"></div>
+
+      <div class="ids__space M"></div>
+      <h3>Шкалы</h3>
+      <div class="ids__text-width">
+        <p class="caption">
+          Именованные шаги вместо магических значений. Спейсеры и гэпы — в em
+          (масштабируются от фонт-сайза окружения), радиусы — в em
+          (масштабируются с текстом компонента).
+        </p>
+      </div>
+      <h4>Спейсеры</h4>
+      <div data-tokens-prefix="spacer" data-tokens-render="space"></div>
+      <h4>Гэпы</h4>
+      <div data-tokens-prefix="gap" data-tokens-render="gap"></div>
+      <h4>Радиусы</h4>
+      <div data-tokens-prefix="radius" data-tokens-render="radius"></div>
+      <h4>Толщины границ</h4>
+      <div data-tokens-prefix="border-width" data-tokens-render="border-width"></div>
+      <h4>Движение</h4>
+      <div class="ids__text-width">
+        <p class="caption">
+          Наведите на строку: полоска анимируется с длительностью токена.
+          Ховер всегда мгновенный (<code>--ids__duration-instant</code>),
+          возврат — плавный.
+        </p>
+      </div>
+      <div data-tokens-prefix="duration" data-tokens-render="motion"></div>
+      <div data-tokens-prefix="easing" data-tokens-render="motion"></div>
     </ids-nav-item>
 
     <div class="ids__space L"></div>
@@ -481,20 +455,54 @@ content %}
         </div>
       </div>
 
-      <div class="ids__space M"></div>
-      <h3>Интерфейсные компоненты</h3>
+    </ids-nav-item>
+
+    <div class="ids__space L"></div>
+    <ids-nav-item id="components" label="Компоненты">
+      <div class="ids__space S"></div>
+      <section>
+        <h2>Компоненты</h2>
+      </section>
+      <div class="ids__text-width">
+        <p>
+          Компоненты — референсные образцы: показывают, как элемент выглядит и
+          ведёт себя. Под каждым — его токен-контракт: семантические токены,
+          которые компонент потребляет. Всё, что помечено «магическое значение»
+          — кандидат на токенизацию в следующих этапах рефакторинга.
+        </p>
+      </div>
       <div class="style-typography-grid">
         <div class="style-typography-item">
           <p class="caption">CTA-кнопка, <code>button.promo-link</code></p>
           <button type="button" class="promo-link">
             Заказать за 14&thinsp;900&thinsp;₽
           </button>
+          <p class="caption style-token-contract">
+            Токены: <code>--ids__accent</code>, ховер
+            <code>--ids__hover</code>; цвет текста — магический
+            <code>white</code>
+          </p>
+        </div>
+        <div class="style-typography-item">
+          <p class="caption">
+            CTA-кнопка алая, <code>button.promo-link.second</code>
+          </p>
+          <button type="button" class="promo-link second">
+            Записаться на курс
+          </button>
+          <p class="caption style-token-contract">
+            Токены: магический <code>rgb(245, 90, 90)</code> мимо палитры,
+            ховер <code>--ids__hover</code>
+          </p>
         </div>
         <div class="style-typography-item">
           <p class="caption">
             CTA-кнопка тёмная, <code>button.promo-link.third</code>
           </p>
           <button type="button" class="promo-link third">Запросить счёт</button>
+          <p class="caption style-token-contract">
+            Токены: <code>--ids__link</code>, ховер <code>--ids__hover</code>
+          </p>
         </div>
         <div class="style-typography-item">
           <p class="caption">
@@ -506,25 +514,31 @@ content %}
             style="font-size: var(--smaller)">
             Обсудить проект
           </button>
+          <p class="caption style-token-contract">
+            Токены: ховер <code>--ids__hover</code>; рамка — магический
+            <code>2px solid black</code> (в тёмной теме невидима)
+          </p>
         </div>
         <div class="style-typography-item">
           <p class="caption">Текстфилд, <code>div.form-field</code></p>
           <div class="ids__text-width">
             <div class="contact-form-form">
-              <div
-                class="form-field"
-                style="background-color: var(--ids__surface)">
+              <div class="form-field">
                 <label>Ваше имя:</label>
                 <input type="text" placeholder="" />
               </div>
-              <div
-                class="form-field"
-                style="background-color: var(--ids__surface)">
+              <div class="form-field">
                 <label>Название компании:</label>
                 <input type="text" placeholder="" />
               </div>
             </div>
           </div>
+          <p class="caption style-token-contract">
+            Токены: рамка <code>--ids__text</code> 20%, ховер и фокус
+            <code>--ids__surface</code>, ошибка <code>--ids__accent</code>.
+            Фон по умолчанию закомментирован в CSS — компонент показан как
+            есть.
+          </p>
         </div>
         <div class="style-typography-item">
           <p class="caption">
@@ -548,6 +562,9 @@ content %}
               </button>
             </div>
           </div>
+          <p class="caption style-token-contract">
+            Токены: <code>--ids__text</code>, <code>--ids__accent</code>
+          </p>
         </div>
         <div class="style-typography-item">
           <p class="caption">
@@ -565,7 +582,50 @@ content %}
               </aside>
             </a>
           </div>
+          <p class="caption style-token-contract">
+            Токены: <code>--ids__text</code>, <code>--ids__link</code>, ховер
+            <code>--ids__hover</code>
+          </p>
         </div>
+      </div>
+    </ids-nav-item>
+
+    <div class="ids__space L"></div>
+    <ids-nav-item id="widgets" label="Виджеты">
+      <div class="ids__space S"></div>
+      <section>
+        <h2>Виджеты</h2>
+      </section>
+      <div class="ids__text-width">
+        <p>
+          Виджеты — крупные куски функциональности, собранные из компонентов и
+          токенов. Их образцы переедут на витрину по мере разбора семейств
+          стилей; пока — каталог с местами обитания.
+        </p>
+        <ul>
+          <li>
+            Контактная форма, <code>.contact-form</code> — внизу каждой
+            страницы
+          </li>
+          <li>
+            Квиз, <code>.quiz</code> —
+            <a href="/dkcp-checkup/">чекап ДКЦП</a>
+          </li>
+          <li>
+            Гант программы, <code>.lessons-gantt</code> —
+            <a href="/ksc-open/">открытый КШЦ</a>
+          </li>
+          <li>
+            Компонент ДКЦП, <code>.dkcp-component</code> —
+            <a href="/dkcp/">страница ДКЦП</a>
+          </li>
+          <li>
+            Копируемая таблица, <code>.copy-table</code> и поле,
+            <code>.copy-field</code> —
+            <a href="/company-details/">реквизиты</a>
+          </li>
+          <li>Галерея, <code>ids-gallery</code> — страницы кейсов</li>
+        </ul>
       </div>
     </ids-nav-item>
 
@@ -677,5 +737,6 @@ content %}
 <div class="ids__space XL"></div>
 
 <script src="/assets/navbar.js"></script>
+<script src="/assets/tokens-dump.js"></script>
 <script type="module" src="/assets/illustrations/init.js"></script>
 {% endblock %}

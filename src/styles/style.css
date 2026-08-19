@@ -709,3 +709,129 @@ body.logo-viewbox-debug .home-hero-columns .logo-wall-item svg {
   line-height: 1.35;
   color: color-mix(in srgb, var(--ids__text) 70%, transparent);
 }
+
+/* Живой дамп токенов (tokens-dump.js) */
+
+.style-semantic-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+
+  @media (width < 900px) {
+    grid-template-columns: 1fr;
+  }
+
+  & .style-color-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  & > .dark-theme {
+    padding: 0;
+  }
+}
+
+.style-token-contract {
+  margin-top: 0.6em;
+  font-size: 0.62em;
+  opacity: 0.75;
+
+  & code {
+    font-size: inherit;
+  }
+}
+
+.guide-tokens__rows {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+}
+
+.guide-tokens__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr) minmax(0, 1.2fr);
+  gap: 1em;
+  align-items: center;
+  padding: 0.45em 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 12%, transparent);
+
+  @media (width < 768px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    & .guide-tokens__row-value {
+      display: none;
+    }
+  }
+
+  &.guide-tokens__row--header {
+    font-size: 0.62em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.6;
+  }
+}
+
+.guide-tokens__row-label code {
+  font-size: 0.72em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+
+  &:hover {
+    color: var(--ids__hover);
+  }
+}
+
+.guide-tokens__row-value {
+  font-family: var(--mono);
+  font-size: 0.62em;
+  opacity: 0.7;
+}
+
+.guide-tokens__sample {
+  min-width: 0;
+}
+
+.guide-tokens__space-bar {
+  background-color: color-mix(in srgb, var(--ids__accent) 45%, transparent);
+  width: 100%;
+
+  &.guide-tokens__space-bar--gap {
+    width: auto;
+    height: 0.8em;
+  }
+}
+
+.guide-tokens__radius-sample {
+  width: 3.4em;
+  height: 3.4em;
+  background-color: color-mix(in srgb, var(--ids__surface) 90%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ids__text) 25%, transparent);
+}
+
+.guide-tokens__border-line {
+  background-color: var(--ids__text);
+  width: 100%;
+}
+
+.guide-tokens__bar-track {
+  width: 100%;
+  height: 0.8em;
+  background-color: color-mix(in srgb, var(--ids__surface) 60%, transparent);
+  overflow: hidden;
+}
+
+.guide-tokens__bar-fill {
+  width: 0%;
+  height: 100%;
+  background-color: var(--ids__accent);
+  transition-property: width;
+
+  &.is-active {
+    width: 100%;
+  }
+}
+
+.guide-color-plate--outlined {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ids__text) 15%, transparent);
+}
