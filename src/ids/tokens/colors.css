@@ -8,14 +8,14 @@
 :root {
   color-scheme: light;
 
-  --ids__text: var(--ids__color-gray-850);
-  --ids__link: var(--ids__color-gray-850);
+  --ids__text: var(--ids__color-gray-800);
+  --ids__link: var(--ids__color-gray-800);
   --ids__hover: var(--ids__color-red-500);
   --ids__accent: var(--ids__color-red-300);
   --ids__ink: var(--ids__color-blue-500);
   --ids__mark: var(--ids__color-gray-200);
   --ids__surface: var(--ids__color-gray-200);
-  --ids__code: var(--ids__color-gray-850);
+  --ids__code: var(--ids__color-gray-800);
   --ids__background: var(--ids__color-white);
   --ids__inverted-text: var(--ids__color-white);
 
@@ -25,7 +25,7 @@
 /* Брендовые роли Понедельника — для витрины, графики и логотипов.
    В вёрстке компонентов использовать семантические токены выше. */
 :root {
-  --ids__pndlnk-black: var(--ids__color-gray-850);
+  --ids__pndlnk-black: var(--ids__color-gray-800);
   --ids__pndlnk-red: var(--ids__color-red-500);
   --ids__pndlnk-dark-gray: var(--ids__color-gray-600);
   --ids__pndlnk-red-tinted: var(--ids__color-red-300);
