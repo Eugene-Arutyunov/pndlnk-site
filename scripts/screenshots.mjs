@@ -49,6 +49,18 @@ const PAGES = [
 
 const WIDTHS = [390, 1440];
 
+// --all-cases: добавить в обход все собранные страницы кейсов (для этапов,
+// трогающих общий case-page.css)
+if (process.argv.includes("--all-cases")) {
+  const { readdirSync, statSync } = await import("node:fs");
+  const projDir = join(SITE, "projects");
+  for (const name of readdirSync(projDir)) {
+    if (!statSync(join(projDir, name)).isDirectory()) continue;
+    const url = `/projects/${name}/`;
+    if (!PAGES.includes(url)) PAGES.push(url);
+  }
+}
+
 const MIME = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css",
