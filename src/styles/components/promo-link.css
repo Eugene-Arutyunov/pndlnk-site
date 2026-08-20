@@ -1,0 +1,19 @@
+/* Варианты CTA-кнопки. База .promo-link — в src/ids/ids.css (внутри .ids). */
+
+.promo-link.second {
+  /* Прямое обращение к палитре: кнопки стоят вплотную, нужен промежуточный
+     красный между accent и hover — семантической роли у него нет намеренно */
+  background-color: var(--ids__color-red-400);
+
+  &:hover {
+    background-color: var(--ids__hover);
+  }
+}
+
+.promo-link.third {
+  background-color: var(--ids__link);
+
+  &:hover {
+    background-color: var(--ids__hover);
+  }
+}

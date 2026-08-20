@@ -1,0 +1,134 @@
+/* Скачиваемые плашки логотипов (витрина /style) */
+
+.logo-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+
+  & .logo-download {
+    width: 100%;
+
+    &.M {
+      width: calc(50% - 0.5em);
+    }
+
+    .download-plate {
+      position: relative;
+      width: 100%;
+
+      .download-plate-container {
+        position: relative;
+        padding: 1.5em 1.5em 2em 1.5em;
+        top: 0;
+        box-sizing: border-box;
+        background-color: var(--ids__surface);
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+
+      .download-caption {
+        opacity: 0;
+        position: absolute;
+        bottom: 0.5em;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: color-mix(in srgb, var(--ids__text) 40%, transparent);
+        font-size: 0.8em;
+        font-family: var(--mono);
+        transition: opacity var(--ids__duration-slow) ease;
+      }
+
+      &.hover {
+        cursor: pointer;
+
+        .download-plate-container {
+          top: -0.2em;
+        }
+
+        .download-caption {
+          opacity: 1;
+          transition: opacity 0.2s ease;
+        }
+      }
+
+      &:not(.hover) .download-plate-container {
+        transition: top 0.1s ease;
+      }
+
+      .download-menu {
+        position: relative;
+        text-align: center;
+        width: 100%;
+
+        .download-menu-plate {
+          display: inline-block;
+          position: absolute;
+          top: -1.5em;
+          z-index: 1;
+          width: 18em;
+          margin-left: -9em;
+          font-size: 0.9em;
+          line-height: 1.3;
+          text-align: left;
+          padding: 0.5em 0.8em 0.2em 0.8em;
+          box-sizing: border-box;
+          border-radius: var(--ids__radius-l);
+          background-color: var(--ids__background);
+          box-shadow: 0 1em 2em 0 var(--ids__surface);
+          opacity: 0;
+          transition:
+            top 0.2s ease,
+            opacity 0.2s ease;
+          pointer-events: none;
+
+          @media (width < 768px) {
+            width: 27em;
+            margin-left: -13.5em;
+            font-size: 0.85em;
+            line-height: 1.3;
+          }
+
+          p {
+            width: 90%;
+          }
+
+          .logo-download-links {
+            .logo-download-link {
+              width: 100%;
+
+              a {
+                padding-bottom: 0.3em;
+                color: var(--ids__text);
+                font-family: var(--mono);
+                display: block;
+
+                &:hover {
+                  color: var(--ids__hover);
+                }
+              }
+
+              &:last-child {
+                a {
+                  border-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+
+        &.visible {
+          .download-menu-plate {
+            top: -1.7em;
+            pointer-events: auto;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

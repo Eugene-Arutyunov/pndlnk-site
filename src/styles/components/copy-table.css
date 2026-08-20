@@ -28,15 +28,15 @@
 
     & .copy-table__cell {
       cursor: pointer;
-      transition: background-color 0.5s ease;
+      transition: background-color var(--ids__duration-slow) ease;
 
       &:hover:not(:has(a:hover)) {
-        background-color: rgba(var(--ids__surface-RGB), 0.28);
-        transition: background-color 0s;
+        background-color: color-mix(in srgb, var(--ids__surface) 28%, transparent);
+        transition: background-color var(--ids__duration-instant);
       }
 
       &.is-copied {
-        background-color: rgba(var(--ids__surface-RGB), 0.28);
+        background-color: color-mix(in srgb, var(--ids__surface) 28%, transparent);
       }
     }
 
@@ -47,9 +47,9 @@
       z-index: 1;
       width: 1.4em;
       height: 1.4em;
-      color: rgba(var(--ids__text-RGB), 0.55);
+      color: color-mix(in srgb, var(--ids__text) 55%, transparent);
       line-height: 0;
-      transition: color 0.5s ease;
+      transition: color var(--ids__duration-slow) ease;
 
       @media (width < 768px) {
         top: 0.85em;
@@ -72,18 +72,18 @@
     }
 
     & .copy-table__cell:hover:not(:has(a:hover)) .copy-table__icon {
-      color: rgba(var(--ids__text-RGB), 0.75);
-      transition: color 0s;
+      color: color-mix(in srgb, var(--ids__text) 75%, transparent);
+      transition: color var(--ids__duration-instant);
     }
 
     & .copy-table__icon:hover,
     & .copy-table__cell:hover:not(:has(a:hover)) .copy-table__icon:hover {
-      color: rgb(var(--ids__hover-RGB));
-      transition: color 0s;
+      color: var(--ids__hover);
+      transition: color var(--ids__duration-instant);
     }
 
     & .copy-table__cell.is-copied .copy-table__icon {
-      color: rgb(var(--ids__text-RGB));
+      color: var(--ids__text);
     }
 
     & .copy-table__value {
@@ -92,7 +92,7 @@
 
     & .copy-table__cell.is-copying .copy-table__value {
       opacity: 0;
-      transition: opacity 0s;
+      transition: opacity var(--ids__duration-instant);
     }
 
     & .copy-table__cell.is-copying.is-copying-animate-in .copy-table__value {
@@ -123,7 +123,7 @@
       font-family: inherit;
       font-size: inherit;
       line-height: inherit;
-      color: rgb(var(--ids__text-RGB));
+      color: var(--ids__text);
       transform-origin: center center;
       animation: copy-table-copy-flash 0.48s ease-in-out forwards;
     }

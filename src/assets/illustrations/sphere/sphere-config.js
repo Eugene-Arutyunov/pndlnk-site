@@ -24,7 +24,7 @@ export function parseSphereConfig(container) {
     },
     lineWidth: 2,
     pointRadius: 4,
-    accentColor: '--ids__accent-RGB'
+    accentColor: '--ids__accent'
   };
 
   // Парсинг data-атрибутов

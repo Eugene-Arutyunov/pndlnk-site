@@ -1,0 +1,95 @@
+/* Отзыв и карточка автора в кейсах: .review-author, .author-box */
+
+.case-page .case-standard__review-portrait {
+  width: 4em;
+  height: 4em;
+  background: color-mix(in srgb, var(--ids__text) 22%, transparent);
+}
+
+.case-page .review-author {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5em;
+}
+
+.case-page .review-name {
+  width: 70%;
+  font-size: 0.8rem;
+}
+
+.case-page .author-box {
+  margin: 0 0 1em;
+  font-family: var(--mono);
+  font-size: var(--smaller);
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--ids__text) 92%, transparent);
+}
+
+.case-page .author-box:last-child {
+  margin-bottom: 0;
+}
+
+.case-people .author-box__team,
+.case-page .author-box .author-box__team,
+.case-page .author-box strong.author-box__team {
+  font-weight: 700;
+  color: var(--ids__text);
+}
+
+.case-people .author-box,
+.case-page .case-people .author-box {
+  color: color-mix(in srgb, var(--ids__text) 72%, transparent);
+  font-family: var(--mono);
+  font-size: var(--smaller);
+  line-height: 1.45;
+}
+
+.case-people .author-box p,
+.case-page .case-people .author-box p {
+  margin: 0;
+}
+
+.case-people .author-box .author-box__team,
+.case-page .case-people .author-box .author-box__team {
+  display: block;
+  margin: 0 0 0.35em;
+  font-weight: 700;
+  color: var(--ids__text);
+}
+
+.case-people .author-box ul,
+.case-page .case-people .author-box ul {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.case-people .author-box li,
+.case-page .case-people .author-box li {
+  margin: 0;
+}
+
+.case-people .author-box + .author-box,
+.case-page .case-people .author-box + .author-box {
+  margin-top: 1em;
+}
+
+.case-page .author-box .name span {
+  color: var(--ids__text);
+}
+
+.case-page .author-box .links {
+  white-space: nowrap;
+}
+
+.case-page .author-box .links a {
+  color: var(--ids__link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  text-decoration-color: color-mix(in srgb, var(--ids__link) 25%, transparent);
+}
+
+.case-page .author-box .links a:hover {
+  color: var(--ids__hover);
+  text-decoration-color: color-mix(in srgb, var(--ids__hover) 25%, transparent);
+}

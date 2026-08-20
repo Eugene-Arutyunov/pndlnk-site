@@ -1,0 +1,56 @@
+/* Навбар витрины — стили веб-компонентов <ids-navbar> / <ids-nav-item> (src/assets/navbar.js) */
+
+.ids__navbar {
+  display: flex;
+  flex-wrap: wrap;
+  border: var(--ids__border-width-m) solid var(--ids__text);
+  font-family: var(--mono);
+  font-size: 0.75em;
+  width: fit-content;
+
+  ul {
+    display: contents;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul li {
+    margin-bottom: 0;
+    padding: 0;
+    padding-left: 0;
+    position: static;
+
+    &::before {
+      content: "";
+    }
+
+    a {
+      display: block;
+      padding: 0.3em 0.6em 0.2em;
+      text-decoration: none;
+      color: var(--ids__text);
+      border-right: 1px solid color-mix(in srgb, var(--ids__text) 25%, transparent);
+      transition: color var(--ids__duration-slow) ease;
+
+      &:hover {
+        color: var(--ids__hover);
+        transition-duration: var(--ids__duration-instant);
+      }
+    }
+
+    &:last-child a {
+      border-right: none;
+    }
+
+    &.current > a {
+      color: var(--ids__background);
+      background-color: var(--ids__text);
+      transition: none;
+    }
+  }
+}
+
+.ids__nav-item {
+  display: block;
+}

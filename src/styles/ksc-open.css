@@ -14,7 +14,7 @@
 }
 
 .contour {
-  border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+  border: 1px solid var(--ids__border);
 }
 
 .problem-summary {
@@ -34,8 +34,8 @@
     position: absolute;
     left: 103%;
     width: 25%;
-    color: rgba(var(--ids__accent-RGB), 1);
-    --ids__link-RGB: var(--ids__accent-RGB);
+    color: var(--ids__accent);
+    --ids__link: var(--ids__accent);
     /* background-color: yellow; */
     display: flex;
     flex-direction: column;
@@ -43,22 +43,22 @@
     text-align: center;
     font-family: var(--mono);
     font-weight: 500;
-    transition: transform 0.5s ease;
+    transition: transform var(--ids__duration-slow) ease;
 
     @media (width < 768px) {
       left: 67%;
       width: 30%;
       font-size: 0.8em;
-      background-color: rgba(var(--ids__background-RGB), 1);
-      border: 1px solid rgba(var(--ids__accent-RGB), 0.3);
+      background-color: var(--ids__background);
+      border: 1px solid color-mix(in srgb, var(--ids__accent) 30%, transparent);
       padding: 0.5em 0.4em 0.2em;
-      border-radius: 0.5em;
+      border-radius: var(--ids__radius-l);
     }
 
     &.is-sleeping {
       opacity: 0;
       transform: translateX(1em);
-      transition: transform 0s ease;
+      transition: transform var(--ids__duration-instant) ease;
     }
 
     & .initial-text {
@@ -156,67 +156,67 @@
     left: -0.3em;
     right: -0.3em;
     bottom: -0.3em;
-    border: 1px solid rgba(var(--ids__text-RGB), 0.1);
+    border: 1px solid color-mix(in srgb, var(--ids__text) 10%, transparent);
     border-radius: 0.6em 0.6em 0.6em 0.9em;
     pointer-events: none;
-    transition: border-color 0.5s ease;
+    transition: border-color var(--ids__duration-slow) ease;
   }
 
   &:has(.culture-radio-input:checked)::before,
   &.is-checked::before {
-    border-color: rgba(var(--ids__text-RGB), 0.4);
-    transition: border-color 0s ease;
+    border-color: color-mix(in srgb, var(--ids__text) 40%, transparent);
+    transition: border-color var(--ids__duration-instant) ease;
   }
 
   &:not(:has(.culture-radio-input:checked)):not(.is-checked):hover::before {
-    border-color: rgba(var(--ids__hover-RGB), 0.3);
-    transition: border-color 0s ease;
+    border-color: color-mix(in srgb, var(--ids__hover) 30%, transparent);
+    transition: border-color var(--ids__duration-instant) ease;
   }
 
   &:has(.culture-radio-input:checked),
   &.is-checked {
     & .culture-radio-content {
-      color: rgba(var(--ids__text-RGB), 1);
-      transition: color 0s ease;
+      color: var(--ids__text);
+      transition: color var(--ids__duration-instant) ease;
     }
 
     & .culture-radio-indicator {
-      border-color: rgba(var(--ids__text-RGB), 1);
+      border-color: var(--ids__text);
       border-width: 2px;
-      transition: border-color 0s ease;
+      transition: border-color var(--ids__duration-instant) ease;
     }
 
     & .culture-radio-dot {
-      background-color: rgba(var(--ids__text-RGB), 1);
-      transition: background-color 0s ease;
+      background-color: var(--ids__text);
+      transition: background-color var(--ids__duration-instant) ease;
     }
 
     & .culture-radio-label {
       opacity: 1;
-      color: rgba(var(--ids__text-RGB), 1);
+      color: var(--ids__text);
       transition:
-        opacity 0s ease,
-        color 0s ease;
+        opacity var(--ids__duration-instant) ease,
+        color var(--ids__duration-instant) ease;
     }
   }
 
   &:not(:has(.culture-radio-input:checked)):not(.is-checked):hover {
     & .culture-radio-indicator {
-      border-color: rgb(var(--ids__hover-RGB));
-      transition: border-color 0s ease;
+      border-color: var(--ids__hover);
+      transition: border-color var(--ids__duration-instant) ease;
     }
 
     & .culture-radio-label {
       opacity: 1;
-      color: rgb(var(--ids__hover-RGB));
+      color: var(--ids__hover);
       transition:
-        opacity 0s ease,
-        color 0s ease;
+        opacity var(--ids__duration-instant) ease,
+        color var(--ids__duration-instant) ease;
     }
 
     & .culture-radio-content {
-      color: rgb(var(--ids__hover-RGB));
-      transition: color 0s ease;
+      color: var(--ids__hover);
+      transition: color var(--ids__duration-instant) ease;
     }
   }
 
@@ -227,7 +227,7 @@
   }
 
   & .culture-radio-content {
-    transition: color 0.5s ease;
+    transition: color var(--ids__duration-slow) ease;
 
     & .width-90 {
       width: 90%;
@@ -253,21 +253,21 @@
   & .culture-radio-indicator {
     width: 1.2em;
     height: 1.2em;
-    border: 1px solid rgba(var(--ids__text-RGB), 0.4);
+    border: 1px solid color-mix(in srgb, var(--ids__text) 40%, transparent);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: border-color 0.5s ease;
+    transition: border-color var(--ids__duration-slow) ease;
   }
 
   & .culture-radio-dot {
     width: 0.5em;
     height: 0.5em;
     border-radius: 50%;
-    background-color: rgba(var(--ids__text-RGB), 0);
-    transition: background-color 0.5s ease;
+    background-color: color-mix(in srgb, var(--ids__text) 0%, transparent);
+    transition: background-color var(--ids__duration-slow) ease;
   }
 
   & .culture-radio-label {
@@ -275,8 +275,8 @@
     font-family: var(--mono);
     opacity: 0;
     transition:
-      opacity 0.5s ease,
-      color 0.5s ease;
+      opacity var(--ids__duration-slow) ease,
+      color var(--ids__duration-slow) ease;
     pointer-events: none;
   }
 }
@@ -324,9 +324,9 @@ table.ksc-open-schedule {
           display: inline-block;
           font-size: 0.7em;
           font-family: var(--mono);
-          border: 1px solid rgba(var(--ids__text-RGB), 0.2);
+          border: 1px solid var(--ids__border);
           padding: 0.2em 0.5em 0.15em;
-          border-radius: 0.3em;
+          border-radius: var(--ids__radius-m);
 
           @media (width < 768px) {
             font-size: 0.6em;
@@ -465,7 +465,7 @@ table.ksc-open-schedule {
   padding-right: calc(var(--ids__density) * 1.5em);
   padding-bottom: calc(var(--ids__density) * 0.4em);
   padding-left: calc(var(--ids__density) * 0.5em);
-  border-radius: 0.2em;
+  border-radius: var(--ids__radius-s);
   background: transparent;
 
   @media (width < 768px) {
@@ -489,16 +489,16 @@ table.ksc-open-schedule {
   font-size: 0.9em;
   font-weight: 500;
   padding: 0.35em 0.75em 0.3em;
-  color: rgb(var(--ids__text-RGB));
-  background: rgba(var(--ids__surface-RGB), 1);
-  border: 2px solid rgba(var(--ids__text-RGB), 0.35);
-  border-radius: 0.2em;
+  color: var(--ids__text);
+  background: var(--ids__surface);
+  border: 2px solid color-mix(in srgb, var(--ids__text) 35%, transparent);
+  border-radius: var(--ids__radius-s);
   cursor: pointer;
 }
 
 .ksc-course-requests__next:hover {
-  border-color: rgba(var(--ids__link-RGB), 0.6);
-  color: rgb(var(--ids__link-RGB));
+  border-color: color-mix(in srgb, var(--ids__link) 60%, transparent);
+  color: var(--ids__link);
 }
 
 .ksc-course-requests__counter {
@@ -526,26 +526,26 @@ table.ksc-open-schedule {
   display: grid;
   grid-template-columns: 6.5em minmax(0, 1fr);
   gap: 3em;
-  background: rgba(var(--ids__surface-RGB), 0.3);
+  background: color-mix(in srgb, var(--ids__surface) 30%, transparent);
   padding: 1em 10em 4em 1em;
   font-family: var(--mono);
   font-size: 0.75em;
   overflow: visible;
 
-  --mock-frame: rgba(var(--ids__text-RGB), 0.4);
-  --mock-faint: rgba(var(--ids__text-RGB), 0.14);
-  --mock-line: rgba(var(--ids__text-RGB), 0.32);
-  --mock-strong: rgba(var(--ids__text-RGB), 0.75);
+  --mock-frame: color-mix(in srgb, var(--ids__text) 40%, transparent);
+  --mock-faint: color-mix(in srgb, var(--ids__text) 14%, transparent);
+  --mock-line: color-mix(in srgb, var(--ids__text) 32%, transparent);
+  --mock-strong: color-mix(in srgb, var(--ids__text) 75%, transparent);
   --mock-bg: color-mix(
     in srgb,
-    rgb(var(--ids__surface-RGB)) 30%,
-    rgb(var(--ids__background-RGB)) 70%
+    var(--ids__surface) 30%,
+    var(--ids__background) 70%
   );
-  --mock-red: rgb(var(--ids__pndlnk-red-RGB));
-  --mock-red-tinted: rgb(var(--ids__pndlnk-red-tinted-RGB));
-  --mock-ink: rgb(var(--ids__ink-RGB));
-  --mock-gold: rgb(var(--ids__pndlnk-gold-RGB));
-  --mock-gold-tinted: rgb(var(--ids__pndlnk-gold-tinted-RGB));
+  --mock-red: var(--ids__pndlnk-red);
+  --mock-red-tinted: var(--ids__pndlnk-red-tinted);
+  --mock-ink: var(--ids__ink);
+  --mock-gold: var(--ids__pndlnk-gold);
+  --mock-gold-tinted: var(--ids__pndlnk-gold-tinted);
 
   @media (width < 768px) {
     grid-template-columns: 4.6em minmax(0, 1fr);
@@ -630,7 +630,7 @@ table.ksc-open-schedule {
   align-self: start;
   /* Запас высоты: чем выше элемент, тем раньше иконка уезжает наверх */
   min-height: 18em;
-  color: rgb(var(--ids__text-RGB));
+  color: var(--ids__text);
 
   /* Иконка прячется вместе с линиями, когда блок результатов уехал вверх */
   & .dkcp-preview {
@@ -685,7 +685,7 @@ table.ksc-open-schedule {
   font-size: 0.86em;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.15s ease;
+  transition: opacity var(--ids__duration-fast) ease;
 
   & p {
     line-height: 1.25;
@@ -736,7 +736,7 @@ table.ksc-open-schedule {
   grid-template-columns: 3.5em minmax(0, 1fr);
   gap: 0.8em 0.66em;
   margin-top: 1.8em;
-  color: rgb(var(--ids__text-RGB));
+  color: var(--ids__text);
 
   @media (width < 768px) {
     grid-template-columns: 4.6em minmax(0, 1fr);
@@ -799,7 +799,7 @@ table.ksc-open-schedule {
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: auto 118%;
-  border: 1px solid rgba(var(--ids__text-RGB), 0.9);
+  border: 1px solid color-mix(in srgb, var(--ids__text) 90%, transparent);
   box-sizing: border-box;
 }
 
@@ -963,7 +963,7 @@ table.ksc-open-schedule {
 
 .ksc-outcomes .mock-window {
   border: 1px solid var(--mock-frame);
-  border-radius: 0.3em;
+  border-radius: var(--ids__radius-m);
   background: var(--mock-bg);
   overflow: hidden;
   box-sizing: border-box;
@@ -1016,7 +1016,7 @@ table.ksc-open-schedule {
   height: var(--slide-h);
   box-sizing: border-box;
   border: 1px solid var(--mock-frame);
-  border-radius: 0.2em;
+  border-radius: var(--ids__radius-s);
   background: var(--mock-bg);
   padding: 0.5em 0.55em;
   overflow: hidden;
@@ -1118,7 +1118,7 @@ table.ksc-open-schedule {
   border: 1px solid var(--mock-faint);
   border-radius: 0.15em;
   padding: 0.45em 0.5em;
-  background: rgba(var(--ids__background-RGB), 0.55);
+  background: color-mix(in srgb, var(--ids__background) 55%, transparent);
 }
 
 .ksc-outcomes .mock-stage-slide .mock-h {
@@ -1152,7 +1152,7 @@ table.ksc-open-schedule {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(var(--ids__surface-RGB), 0.9);
+  background: color-mix(in srgb, var(--ids__surface) 90%, transparent);
   box-sizing: border-box;
 }
 
@@ -1184,7 +1184,7 @@ table.ksc-open-schedule {
 .ksc-outcomes .mock-script {
   border-left: 1px solid var(--mock-faint);
   padding: 0.45em 0.5em 0.55em;
-  background: rgba(var(--ids__surface-RGB), 0.35);
+  background: color-mix(in srgb, var(--ids__surface) 35%, transparent);
 }
 
 .ksc-outcomes .mock-script > .mock-line--label {
@@ -1198,7 +1198,7 @@ table.ksc-open-schedule {
 
 .ksc-outcomes .mock-script-para.is-current {
   border-left: 2px solid var(--mock-red);
-  background: rgba(var(--ids__pndlnk-red-tinted-RGB), 0.12);
+  background: color-mix(in srgb, var(--ids__pndlnk-red-tinted) 12%, transparent);
   padding: 0.25em 0.3em;
   border-radius: 0 0.1em 0.1em 0;
 }
@@ -1269,7 +1269,7 @@ table.ksc-open-schedule {
 .ksc-outcomes .mock-bubble--in {
   align-self: flex-start;
   border-bottom-left-radius: 0.1em;
-  background: rgba(var(--ids__surface-RGB), 0.9);
+  background: color-mix(in srgb, var(--ids__surface) 90%, transparent);
 }
 
 .ksc-outcomes .mock-bubble--out {
@@ -1295,7 +1295,7 @@ table.ksc-open-schedule {
   flex: 1;
   height: 0.7em;
   border: 1px solid var(--mock-frame);
-  background: rgba(var(--ids__background-RGB), 0.9);
+  background: color-mix(in srgb, var(--ids__background) 90%, transparent);
   box-sizing: border-box;
 }
 
@@ -1359,7 +1359,7 @@ table.ksc-open-schedule {
   position: relative;
   margin: 0 0.5em;
   height: 2.6em;
-  background: rgba(var(--ids__pndlnk-gold-tinted-RGB), 0.35);
+  background: color-mix(in srgb, var(--ids__pndlnk-gold-tinted) 35%, transparent);
   overflow: hidden;
 }
 
@@ -1389,16 +1389,16 @@ table.ksc-open-schedule {
   gap: 0.3em;
   margin: 0.1em 0.5em 0.6em;
   padding: 0.6em 0.5em 0.65em;
-  background: rgb(var(--ids__pndlnk-black-RGB));
+  background: var(--ids__pndlnk-black);
 }
 
 .ksc-outcomes .mock-landing-cta .mock-h {
-  background: rgba(var(--ids__background-RGB), 0.9);
+  background: color-mix(in srgb, var(--ids__background) 90%, transparent);
 }
 
 .ksc-outcomes .mock-landing-cta .mock-line {
   margin-top: 0;
-  background: rgba(var(--ids__background-RGB), 0.55);
+  background: color-mix(in srgb, var(--ids__background) 55%, transparent);
 }
 
 .ksc-outcomes .mock-landing-cta .mock-btn {

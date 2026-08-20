@@ -1,0 +1,87 @@
+/* Карточка материала/продукта — самостоятельный компонент.
+   Раскладка карточек (.pndlnk-promo-grid / .pndlnk-promo-column) живёт
+   на страницах, где применяется (dkcp-page.css). */
+
+a.pndlnk-promo-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  & aside {
+    background: none;
+    border: var(--ids__border-width-s) solid var(--ids__border);
+    margin-bottom: 0;
+    transition: border-color var(--ids__duration-slow) var(--ids__easing-base);
+
+    & h6 {
+      & span {
+        font-size: 0.8em;
+      }
+    }
+
+    & h3 {
+      margin-top: 0;
+      margin-bottom: 0.4em;
+      color: var(--ids__link);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+      text-decoration-skip-ink: none;
+      text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
+      transition:
+        color var(--ids__duration-slow) var(--ids__easing-base),
+        text-decoration-color var(--ids__duration-slow) var(--ids__easing-base);
+
+      & span {
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  &:hover aside {
+    border-color: color-mix(in srgb, var(--ids__hover) 40%, transparent);
+    transition-duration: var(--ids__duration-instant);
+
+    & h3 {
+      color: var(--ids__hover);
+      text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
+      transition-duration: var(--ids__duration-instant);
+    }
+  }
+
+  /* Инвертированная (всегда тёмная) карточка. Цвета из палитры напрямую —
+     карточка не должна зависеть от темы. */
+  &.inverted {
+    & aside {
+      background: var(--ids__color-gray-800);
+      border-color: transparent;
+      color: var(--ids__color-gray-100);
+
+      & h6 {
+        color: var(--ids__color-gray-100);
+      }
+
+      & h3 {
+        color: var(--ids__color-gray-100);
+        text-decoration-color: color-mix(in srgb, var(--ids__color-gray-100) 20%, transparent);
+      }
+
+      & p {
+        color: var(--ids__color-gray-100);
+      }
+    }
+
+    &:hover aside {
+      background: var(--ids__color-red-500);
+      transition: background-color var(--ids__duration-instant) var(--ids__easing-base);
+    }
+
+    &:not(:hover) aside {
+      transition: background-color var(--ids__duration-slow) var(--ids__easing-base);
+    }
+  }
+}

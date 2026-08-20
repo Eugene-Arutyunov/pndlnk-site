@@ -1,22 +1,22 @@
 .ids {
   & a {
-    color: rgb(var(--ids__link-RGB));
+    color: var(--ids__link);
     text-decoration: underline;
     will-change: color;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
     text-decoration-skip-ink: none;
-    text-decoration-color: rgba(var(--ids__link-RGB), 0.2);
+    text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
     transition:
-      color 0.5s ease,
-      text-decoration 0.5s ease;
+      color var(--ids__duration-slow) ease,
+      text-decoration var(--ids__duration-slow) ease;
 
     &:hover {
-      color: rgb(var(--ids__hover-RGB));
-      text-decoration-color: rgba(var(--ids__hover-RGB), 0.2);
+      color: var(--ids__hover);
+      text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
       transition:
-        color 0s ease,
-        text-decoration 0s ease;
+        color var(--ids__duration-instant) ease,
+        text-decoration var(--ids__duration-instant) ease;
     }
   }
 
@@ -82,7 +82,7 @@
       font-size: 3.9em;
       line-height: 0.9;
       letter-spacing: -0.04em;
-      color: rgb(var(--ids__accent-RGB));
+      color: var(--ids__accent);
 
       @media (width < 768px) {
         font-size: 2.55em;
@@ -180,7 +180,7 @@
   & mark {
     color: inherit;
 
-    background-color: rgb(var(--ids__mark-RGB));
+    background-color: var(--ids__mark);
   }
 
   & ul,
@@ -217,7 +217,7 @@
     & li {
       display: inline-block;
       padding: 0.3em 0.5em 0.2em;
-      border: 2px solid rgba(var(--ids__text-RGB), 1);
+      border: 2px solid var(--ids__text);
       border-right: none;
       border-bottom: none;
 
@@ -242,7 +242,7 @@
     & li {
       padding: 0.2em 0 0;
       border: none;
-      border-top: 0.6em solid rgb(var(--ids__accent-RGB));
+      border-top: 0.6em solid var(--ids__accent);
 
       &:first-child {
         grid-column: 1 / -1;
@@ -271,12 +271,12 @@
   & aside {
     margin: 0;
     margin-bottom: calc(var(--ids__density) * 0.5em);
-    background: rgb(var(--ids__surface-RGB));
+    background: var(--ids__surface);
     padding-top: calc(var(--ids__density) * 0.4em);
     padding-right: calc(var(--ids__density) * 1.5em);
     padding-bottom: calc(var(--ids__density) * 0.4em);
     padding-left: calc(var(--ids__density) * 0.5em);
-    border-radius: 0.2em;
+    border-radius: var(--ids__radius-s);
 
     @media (width < 768px) {
       padding-right: calc(var(--ids__density) * 0.75em);
@@ -289,10 +289,10 @@
     letter-spacing: 0.02em;
     font-weight: 400;
     padding: 0.1em 0.25em;
-    border-radius: 0.2em;
-    color: rgba(var(--ids__code-RGB), 1);
-    border: 1px solid rgba(var(--ids__code-RGB), 0.1);
-    background: rgba(var(--ids__code-RGB), 0.1);
+    border-radius: var(--ids__radius-s);
+    color: var(--ids__code);
+    border: 1px solid color-mix(in srgb, var(--ids__code) 10%, transparent);
+    background: color-mix(in srgb, var(--ids__code) 10%, transparent);
   }
 
   & figure {
@@ -324,11 +324,9 @@
   & details {
     padding: 0.5em;
     cursor: pointer;
-    border-radius: var(--ids__radius);
-
-    & summary {
-      padding-bottom: var(--ids__micro-padding);
-    }
+    /* border-radius и padding-bottom у summary исторически ссылались на несуществующие
+       токены (--ids__radius, --ids__micro-padding) и не применялись — убраны, чтобы
+       появившийся токен --ids__radius не изменил рендер незаметно */
   }
 
   & table {
@@ -342,7 +340,7 @@
       & th {
         text-align: left;
         vertical-align: top;
-        border-bottom: 2px solid rgba(var(--ids__text-RGB), 1);
+        border-bottom: 2px solid var(--ids__text);
         padding-bottom: 0.3em;
 
         @media (max-width: 768px) {
@@ -352,7 +350,7 @@
 
       & td {
         padding: 0.8em 0.5em 1em 0;
-        border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.5);
+        border-bottom: 1px solid color-mix(in srgb, var(--ids__text) 50%, transparent);
         vertical-align: top;
       }
 
@@ -365,7 +363,7 @@
   }
 
   & hr {
-    border-top-color: rgba(var(--ids__text-RGB), 0.2);
+    border-top-color: color-mix(in srgb, var(--ids__text) 20%, transparent);
     border-bottom: 0;
   }
 
@@ -373,17 +371,17 @@
     font-family: var(--mono);
     display: inline-block;
     padding: 0.5em 1em;
-    background-color: rgb(var(--ids__accent-RGB));
+    background-color: var(--ids__accent);
     text-decoration: none;
     color: white;
     border-radius: 0;
     border: none;
     cursor: pointer;
-    transition: background-color 0.5s ease;
+    transition: background-color var(--ids__duration-slow) ease;
 
     &:hover {
-      background-color: rgb(var(--ids__hover-RGB));
-      transition: background-color 0s;
+      background-color: var(--ids__hover);
+      transition: background-color var(--ids__duration-instant);
       color: white;
     }
 

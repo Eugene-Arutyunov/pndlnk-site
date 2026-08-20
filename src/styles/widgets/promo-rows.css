@@ -1,0 +1,279 @@
+/* Виджет «промо-строки продуктов»: аккордеон задач/продуктов с иконками.
+   Используется на /products и в промо-таблицах. Обёртка .ids сохраняет специфичность. */
+
+.ids {
+  /* Аккордеон promo-rows */
+
+  .promo-rows-header {
+    display: flex;
+    margin: 0.75em 0;
+  }
+
+  .promo-rows-header__label {
+    width: 50%;
+
+    font-weight: 700;
+  }
+
+  .promo-rows {
+    margin-top: 0;
+  }
+
+  .promo-row {
+    display: flex;
+    border-top: 1px solid var(--ids__border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.is-open {
+      border-top: 2px solid var(--ids__text);
+    }
+  }
+
+  .promo-row__situation,
+  .promo-row__products {
+    width: 50%;
+    padding: 0.4em 0 0.9em 0;
+
+    .is-open & {
+      padding-bottom: 1.6em;
+    }
+  }
+
+  .promo-row__situation {
+    padding-right: 2em;
+  }
+
+  .promo-row__situation-main {
+    line-height: 1.3em;
+
+    .is-open & {
+      font-weight: 700;
+    }
+  }
+
+  .promo-row__situation-detail {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+    min-height: 0;
+
+    .is-open & {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  .promo-row__situation-detail-body {
+    overflow: hidden;
+    min-height: 0;
+    opacity: 0;
+    transition: opacity 0.25s ease var(--ids__duration-instant);
+    padding-top: 0.5em;
+
+    .is-open & {
+      opacity: 1;
+      transition: opacity 0.3s ease var(--ids__duration-fast);
+    }
+  }
+
+  .promo-row__situation-detail-inner {
+    line-height: 1.3em;
+  }
+
+  .promo-row__roles {
+    margin-top: 0.65em;
+    padding-top: 0.5em;
+    border-top: 1px solid color-mix(in srgb, var(--ids__text) 12%, transparent);
+    font-size: 0.88em;
+    line-height: 1.35;
+    color: color-mix(in srgb, var(--ids__text) 62%, transparent);
+  }
+
+  .promo-row__products-summary {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    line-height: 1.3em;
+
+    .is-open & {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+    }
+  }
+
+  .promo-row__products-detail {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+
+    .is-open & {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  .promo-row__products-detail-inner {
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease var(--ids__duration-instant);
+
+    .is-open & {
+      opacity: 1;
+      transition: opacity 0.3s ease var(--ids__duration-fast);
+    }
+  }
+
+  .promo-row__product-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    padding: 0.35em 0 0.6em;
+    border-top: 1px solid color-mix(in srgb, var(--ids__text) 10%, transparent);
+
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  .promo-row__condition {
+    min-width: 0;
+    line-height: 1.3em;
+  }
+
+  .promo-row__product-link {
+    min-width: 0;
+
+    .is-open & {
+      font-weight: 700;
+    }
+
+    color: var(--ids__link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: color-mix(in srgb, var(--ids__link) 20%, transparent);
+    line-height: 1.3em;
+    transition:
+      color var(--ids__duration-slow) ease,
+      text-decoration-color var(--ids__duration-slow) ease;
+
+    &:hover {
+      color: var(--ids__hover);
+      text-decoration-color: color-mix(in srgb, var(--ids__hover) 20%, transparent);
+      transition:
+        color var(--ids__duration-instant),
+        text-decoration-color var(--ids__duration-instant);
+    }
+
+    .promo-row__products-detail & {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4em;
+      text-decoration: none;
+
+      & span {
+        min-width: 0;
+        flex: 1;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+
+  .promo-row__product-icon {
+    flex-shrink: 0;
+    width: 2.8em;
+    height: 2.8em;
+    border-radius: 0.25em;
+    overflow: hidden;
+    background: var(--ids__text);
+    transition: background var(--ids__duration-slow) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    .promo-row__product-link:hover & {
+      background: var(--ids__hover);
+      transition: background var(--ids__duration-instant);
+    }
+  }
+
+  .promo-row__product-icon-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .promo-row__product-description {
+    margin-top: 0.65em;
+    line-height: 1.3em;
+    color: color-mix(in srgb, var(--ids__text) 62%, transparent);
+  }
+
+  .promo-row__task-item {
+    padding: 0.35em 0 0.6em;
+    border-top: 1px solid color-mix(in srgb, var(--ids__text) 10%, transparent);
+    line-height: 1.3em;
+
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  [data-promo-content="tasks"] {
+    @media (width < 768px) {
+      & .promo-row__situation {
+        width: 40%;
+      }
+      & .promo-row__products {
+        width: 60%;
+      }
+
+      & .promo-rows-header__label:first-child {
+        width: 40%;
+      }
+      & .promo-rows-header__label:last-child {
+        width: 60%;
+      }
+
+      & .promo-row__product-item {
+        grid-template-columns: 2fr 1fr;
+      }
+
+      & .promo-row__products-detail .promo-row__product-link {
+        flex-direction: column;
+        gap: 0.3em;
+      }
+
+      & .promo-row__situation-main,
+      & .promo-row__condition {
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
+    }
+  }
+
+  [data-promo-content="products"] {
+    & .is-open .promo-row__situation-main {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    & .promo-row__situation-detail-inner .promo-row__product-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4em;
+      text-decoration: none;
+
+      & span {
+        min-width: 0;
+        flex: 1;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}

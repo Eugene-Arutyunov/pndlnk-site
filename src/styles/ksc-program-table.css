@@ -1,6 +1,6 @@
 .ids {
   .ksc-program-table {
-    background: rgba(var(--ids__surface-RGB), 0.3);
+    background: color-mix(in srgb, var(--ids__surface) 30%, transparent);
     padding: 1em;
     font-family: var(--mono);
     font-size: 0.75em;
@@ -34,35 +34,35 @@
   /* Ховер красит всю строку мгновенно, обратно — с транзишеном */
   .ksc-program-row {
     display: flex;
-    border-top: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    border-top: 1px solid var(--ids__border);
     cursor: pointer;
     transition:
-      color 0.5s ease,
-      border-color 0.5s ease;
+      color var(--ids__duration-slow) ease,
+      border-color var(--ids__duration-slow) ease;
 
     &.is-open {
-      border-top: 2px solid rgba(var(--ids__text-RGB), 1);
+      border-top: 2px solid var(--ids__text);
     }
 
     &:not(.ksc-program-row--static):hover {
-      color: rgb(var(--ids__accent-RGB));
-      border-top-color: rgb(var(--ids__accent-RGB));
+      color: var(--ids__accent);
+      border-top-color: var(--ids__accent);
       transition:
-        color 0s,
-        border-color 0s;
+        color var(--ids__duration-instant),
+        border-color var(--ids__duration-instant);
 
       & .ksc-program-row__title,
       & .ksc-program-row__task-item--practice,
       & .ksc-program-row__task-item--practice p,
       & .ksc-program-row__task-item--practice li,
       & .ksc-program-row__task-item p strong {
-        color: rgb(var(--ids__accent-RGB));
-        transition: color 0s;
+        color: var(--ids__accent);
+        transition: color var(--ids__duration-instant);
       }
 
       & .ksc-program-row__products-detail-inner::before {
-        border-top-color: rgba(var(--ids__accent-RGB), 0.4);
-        transition: border-color 0s;
+        border-top-color: color-mix(in srgb, var(--ids__accent) 40%, transparent);
+        transition: border-color var(--ids__duration-instant);
       }
     }
   }
@@ -133,19 +133,19 @@
     overflow: hidden;
     min-height: 0;
     opacity: 0;
-    transition: opacity 0.25s ease 0s;
+    transition: opacity 0.25s ease var(--ids__duration-instant);
 
     .is-open & {
       opacity: 1;
-      transition: opacity 0.3s ease 0.15s;
+      transition: opacity 0.3s ease var(--ids__duration-fast);
     }
 
     &::before {
       content: "";
       display: block;
       margin: 0.8em 0;
-      border-top: 1px solid rgba(var(--ids__text-RGB), 0.22);
-      transition: border-color 0.5s ease;
+      border-top: 1px solid color-mix(in srgb, var(--ids__text) 22%, transparent);
+      transition: border-color var(--ids__duration-slow) ease;
     }
 
     &::after {
@@ -187,16 +187,16 @@
     &,
     & p,
     & li {
-      color: rgba(var(--ids__ink-RGB), 1);
+      color: var(--ids__ink);
       font-family: var(--hand);
-      transition: color 0.5s ease;
+      transition: color var(--ids__duration-slow) ease;
     }
   }
 
   .ksc-program-row__task-item p strong {
-    color: rgb(var(--ids__text-RGB));
+    color: var(--ids__text);
     font-family: var(--mono);
-    transition: color 0.5s ease;
+    transition: color var(--ids__duration-slow) ease;
   }
 
   .ksc-program-row .dkcp-preview {

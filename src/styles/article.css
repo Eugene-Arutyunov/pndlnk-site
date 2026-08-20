@@ -8,7 +8,7 @@
     
     min-height: 21em;
     max-height: 24em;
-    background-color: rgba(var(--ids__surface-RGB), 1);
+    background-color: var(--ids__surface);
     overflow: hidden;
 
     @media (width < 768px) {
@@ -26,7 +26,7 @@
       text-underline-offset: 0.1em;
       text-decoration-thickness: 0.3em;
       text-decoration-skip-ink: none;
-      text-decoration-color: rgba(var(--ids__accent-RGB), 1);
+      text-decoration-color: var(--ids__accent);
     }
   }
 
@@ -91,14 +91,14 @@
 
       font-size: 0.8em;
 
-      transition: padding 0s ease;
+      transition: padding var(--ids__duration-instant) ease;
 
       &.accent {
         & .promo-link {
           display: inline-block;
           border-radius: 0;
           padding: var(--nav-padding-top) calc(var(--padding) * 1.25) var(--nav-padding-bottom);
-          transition: padding 0s ease;
+          transition: padding var(--ids__duration-instant) ease;
 
         }
       }
@@ -137,11 +137,11 @@
         & .title-nav-item {
           --nav-padding-top: 0.5em;
           --nav-padding-bottom: 0.55em;
-          transition: padding 0.5s ease;
+          transition: padding var(--ids__duration-slow) ease;
 
           &.accent {
             & .promo-link {
-              transition: padding 0.5s ease;
+              transition: padding var(--ids__duration-slow) ease;
             }
 
 
@@ -182,7 +182,7 @@
   }
 
   & .tile {
-    border: 1px solid rgba(var(--ids__text-RGB), 0.3);
+    border: 1px solid color-mix(in srgb, var(--ids__text) 30%, transparent);
     border-right: none;
     border-bottom: none;
     padding: 0.5em;
@@ -192,7 +192,7 @@
     display: flex;
     gap: 1em;
     margin-bottom: 1em;
-    border-top: 1px solid rgba(var(--ids__text-RGB), 0.3);
+    border-top: 1px solid color-mix(in srgb, var(--ids__text) 30%, transparent);
     padding-top: 0.5em;
 
     & .session-number {
@@ -211,7 +211,7 @@
 
       width: 8em;
       height: 4.5em;
-      background-color: rgba(var(--ids__text-RGB), 0.3);
+      background-color: color-mix(in srgb, var(--ids__text) 30%, transparent);
       border-radius: 1em;
       corner-shape: squircle;
 
@@ -230,8 +230,8 @@
   }
 
   & .ksc-title {
-    background-color: rgba(var(--ids__surface-RGB), 1);
-    /* border: 2px solid rgba(var(--ids__text-RGB), 1); */
+    background-color: var(--ids__surface);
+    /* border: 2px solid var(--ids__text); */
 
     padding-right: 1em;
 
@@ -248,81 +248,7 @@
   }
 
   & .application-form {
-    & .form-field {
-      position: relative;
-      display: flex;
-      align-items: baseline;
-      border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.1);
-      background-color: rgba(var(--ids__surface-RGB), 1);
-      cursor: text;
-      transition: background-color 0.5s ease;
-
-      &:has(+ .form-submit-wrapper) {
-        border-bottom: none;
-      }
-
-      &.form-field-error {
-        background-color: rgba(var(--ids__accent-RGB), 0.3);
-      }
-
-      &:hover:not(:focus-within):not(.form-field-error) {
-        background-color: rgba(var(--ids__surface-RGB), 0.8);
-        transition: background-color 0s ease;
-      }
-
-      & label {
-        flex-shrink: 0;
-        padding: 0.5em 0.67em;
-        font-size: 1em;
-        font-weight: normal;
-        font-family: var(--mono);
-        color: rgba(var(--ids__text-RGB), 0.6);
-        pointer-events: none;
-        white-space: nowrap;
-      }
-
-      & input {
-        flex: 1;
-        width: 100%;
-        padding: 0.5em 0.67em 0.6em 0.67em;
-        padding-left: 0;
-        font-size: 1em;
-        font-family: var(--mono);
-        border: none;
-        background-color: transparent;
-        color: rgba(var(--ids__text-RGB), 1);
-        outline: none;
-
-        &:focus {
-          outline: none;
-        }
-
-        &:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
-        }
-
-        &::placeholder {
-          color: rgba(var(--ids__text-RGB), 0.4);
-        }
-
-        &:-webkit-autofill,
-        &:-webkit-autofill:hover,
-        &:-webkit-autofill:focus {
-          -webkit-box-shadow: 0 0 0 1000px rgba(var(--ids__surface-RGB), 1) inset;
-          -webkit-text-fill-color: rgba(var(--ids__text-RGB), 1);
-          transition: background-color 5000s ease-in-out 0s;
-        }
-      }
-
-      &:has(input:-webkit-autofill) {
-        background-color: rgba(var(--ids__surface-RGB), 1);
-      }
-
-      &:focus-within {
-        background-color: rgba(var(--ids__surface-RGB), 0.5);
-      }
-    }
+    /* Текстфилд .form-field.filled — общий компонент, см. components/form.css */
 
     & .form-submit-wrapper {
       display: flex;
@@ -358,28 +284,31 @@
 
       &.status-sending {
         display: block;
-        color: rgba(var(--ids__text-RGB), 0.8);
+        color: color-mix(in srgb, var(--ids__text) 80%, transparent);
       }
 
       &.status-success {
         display: block;
-        color: rgba(var(--ids__text-RGB), 1);
+        color: var(--ids__text);
       }
 
       &.status-error {
         display: block;
-        color: rgba(var(--ids__accent-RGB), 1);
+        color: var(--ids__accent);
       }
     }
   }
 
   & .form-container.status-sending {
     & .promo-link.form-submit {
+      /* !important обоснован: на время отправки пульсация должна перебить
+         ховер-фон и transition кнопки promo-link, а анимации в каскаде
+         конкурируют с обычными объявлениями непредсказуемо */
       pointer-events: none !important;
       animation: form-submit-pulse 1.5s ease-in-out infinite !important;
       
       &:hover {
-        background-color: rgba(var(--ids__accent-RGB), 0.8) !important;
+        background-color: color-mix(in srgb, var(--ids__accent) 80%, transparent) !important;
         transition: none !important;
       }
     }
@@ -388,9 +317,9 @@
 
 @keyframes form-submit-pulse {
   0%, 100% {
-    background-color: rgba(var(--ids__accent-RGB), 0.8);
+    background-color: color-mix(in srgb, var(--ids__accent) 80%, transparent);
   }
   50% {
-    background-color: rgba(var(--ids__accent-RGB), 0.5);
+    background-color: color-mix(in srgb, var(--ids__accent) 50%, transparent);
   }
 }

@@ -12,7 +12,7 @@ export function parseLayeredHouseConfig(container) {
     layerSpacing: 130,
     offsetX: 15, // смещение по X (в пикселях системы 1000x1000)
     offsetY: -0, // смещение по Y (в пикселях системы 1000x1000)
-    accentColor: '--ids__accent-RGB',
+    accentColor: '--ids__accent',
     backgroundColor: null, // обязательный параметр
     lineWidth: 4,
     scale: null, // автоматический расчёт

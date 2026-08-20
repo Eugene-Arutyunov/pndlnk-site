@@ -1,0 +1,59 @@
+/* Семантические цвета — каждое значение указывает на палитру.
+   Именование функциональное: для чего используется, так и называется.
+   Переключение темы (тёмные блоки .dark) происходит здесь, а не в палитре.
+
+   В вёрстке — только семантические токены. Прозрачность выводится на месте:
+   color-mix(in srgb, var(--ids__text) 20%, transparent). */
+
+:root {
+  color-scheme: light;
+
+  --ids__text: var(--ids__color-gray-800);
+  --ids__link: var(--ids__color-gray-800);
+  --ids__hover: var(--ids__color-red-500);
+  --ids__accent: var(--ids__color-red-300);
+  --ids__ink: var(--ids__color-blue-500);
+  --ids__mark: var(--ids__color-gray-200);
+  --ids__surface: var(--ids__color-gray-200);
+  --ids__code: var(--ids__color-gray-800);
+  --ids__background: var(--ids__color-white);
+  --ids__inverted-text: var(--ids__color-white);
+
+  --ids__border: color-mix(in srgb, var(--ids__text) 20%, transparent);
+}
+
+/* Брендовые роли Понедельника — для витрины, графики и логотипов.
+   В вёрстке компонентов использовать семантические токены выше.
+   Порядок объявления = порядок показа на витрине /style. */
+:root {
+  --ids__pndlnk-black: var(--ids__color-gray-800);
+  --ids__pndlnk-dark-gray: var(--ids__color-gray-600);
+  --ids__pndlnk-red: var(--ids__color-red-500);
+  --ids__pndlnk-red-tinted: var(--ids__color-red-300);
+  --ids__pndlnk-gold: var(--ids__color-gold-500);
+  --ids__pndlnk-gold-tinted: var(--ids__color-gold-400);
+  --ids__pndlnk-light-gray: var(--ids__color-gray-200);
+}
+
+body {
+  color: var(--ids__text);
+  background-color: var(--ids__background);
+}
+
+/* Тёмные блоки: класс .dark на секции переключает семантику на тёмный набор.
+   TODO: --ids__ink исторически не переопределяется — понадобится осветлённая
+   ступень синего при первом использовании чернил в тёмном блоке. */
+.dark {
+  color-scheme: dark;
+
+  --ids__text: var(--ids__color-gray-100);
+  --ids__link: var(--ids__color-gray-100);
+  --ids__code: var(--ids__color-gray-100);
+  --ids__mark: var(--ids__color-yellow-500);
+  --ids__surface: var(--ids__color-gray-800);
+  --ids__background: var(--ids__color-gray-900);
+  --ids__inverted-text: var(--ids__color-gray-900);
+
+  color: var(--ids__text);
+  background-color: var(--ids__background);
+}

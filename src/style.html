@@ -1,4 +1,4 @@
-{% extends 'layout.html' %} {% set pageTitle = 'Визуальный стиль' %} {% block
+{% extends 'layout.html' %} {% set pageTitle = 'Визуальный стиль' %} {% import 'dkcp-component.html' as dkcp %} {% block
 content %}
 <div class="ids__space XL"></div>
 <div class="ids__wrapper">
@@ -162,412 +162,566 @@ content %}
     </ids-nav-item>
 
     <div class="ids__space L"></div>
-    <ids-nav-item id="colors" label="Цвета">
+    <ids-nav-item id="tokens" label="Токены">
       <div class="ids__space S"></div>
       <section>
-        <h2>Цвета</h2>
+        <h2>Токены</h2>
       </section>
-      <h3>Интерфейсная палитра</h3>
-      <div class="style-color-grid">
-        <div
-          class="guide-color-plate guide-color-plate--dark"
-          style="background-color: rgb(var(--ids__text-RGB))">
-          <p class="guide-color-plate__name">--ids__text-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate guide-color-plate--dark"
-          style="background-color: rgb(var(--ids__link-RGB))">
-          <p class="guide-color-plate__name">--ids__link-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: rgb(var(--ids__hover-RGB))">
-          <p class="guide-color-plate__name">--ids__hover-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: rgb(var(--ids__accent-RGB))">
-          <p class="guide-color-plate__name">--ids__accent-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: rgb(var(--ids__mark-RGB))">
-          <p class="guide-color-plate__name">--ids__mark-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: rgb(var(--ids__surface-RGB))">
-          <p class="guide-color-plate__name">--ids__surface-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: rgb(var(--ids__background-RGB))">
-          <p class="guide-color-plate__name">--ids__background-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: rgb(var(--ids__inverted-text-RGB))">
-          <p class="guide-color-plate__name">--ids__inverted-text-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
+      <div class="ids__text-width">
+        <p>
+          Сайт построен на дизайн-системе
+          <a href="https://intuition-tech.github.io/ids/">IDS</a> — её ядро
+          завендорено в проект и адаптировано под Понедельник. Токены — жёсткий
+          контракт системы: именованные CSS-переменные с конкретными
+          значениями. Использовать как есть: не переименовывать, не заводить
+          алиасы, не обобщать. Все списки ниже собираются из живого CSS при
+          загрузке страницы. Клик по токену копирует <code>var(…)</code>.
+        </p>
       </div>
+
+      <div class="ids__space S"></div>
+      <h3>Палитра</h3>
+      <div class="ids__text-width">
+        <p class="caption">
+          Сырые значения цвета, не зависящие от темы. В вёрстке напрямую не
+          используются — только через семантические роли.
+        </p>
+      </div>
+      <div
+        class="style-breakout"
+        data-tokens-prefix="color"
+        data-tokens-render="swatch"></div>
+
       <div class="ids__space M"></div>
-      <h3>Брендовая палитра</h3>
-      <div class="style-color-grid">
-        <div
-          class="guide-color-plate guide-color-plate--dark"
-          style="background-color: rgb(var(--ids__pndlnk-black-RGB))">
-          <p class="guide-color-plate__name">--ids__pndlnk-black-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate guide-color-plate--dark"
-          style="background-color: rgb(var(--ids__pndlnk-dark-gray-RGB))">
-          <p class="guide-color-plate__name">--ids__pndlnk-dark-gray-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: rgb(var(--ids__pndlnk-red-RGB))">
-          <p class="guide-color-plate__name">--ids__pndlnk-red-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: rgb(var(--ids__pndlnk-red-tinted-RGB))">
-          <p class="guide-color-plate__name">--ids__pndlnk-red-tinted-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate guide-color-plate--dark"
-          style="background-color: rgb(var(--ids__ink-RGB))">
-          <p class="guide-color-plate__name">--ids__ink-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: rgb(var(--ids__pndlnk-light-gray-RGB))">
-          <p class="guide-color-plate__name">--ids__pndlnk-light-gray-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: rgb(var(--ids__pndlnk-gold-RGB))">
-          <p class="guide-color-plate__name">--ids__pndlnk-gold-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
-        <div
-          class="guide-color-plate"
-          style="background-color: rgb(var(--ids__pndlnk-gold-tinted-RGB))">
-          <p class="guide-color-plate__name">--ids__pndlnk-gold-tinted-RGB</p>
-          <button class="guide-color-plate__value"></button>
-        </div>
+      <h3>Семантические роли</h3>
+      <div class="ids__text-width">
+        <p class="caption">
+          Каждая роль ссылается на палитру. Тёмные блоки
+          (<code>.dark</code>) переключают значения ролей — палитра при этом не
+          меняется. Сначала светлый набор, ниже — тёмный.
+        </p>
       </div>
+      <div
+        data-tokens-prefix=""
+        data-tokens-exclude="color-,pndlnk-,spacer-,gap-,radius,border-width-,duration-,easing-,density,border"
+        data-tokens-render="swatch"></div>
+      <div class="ids__space M"></div>
+      <div
+        class="dark style-dark-frame"
+        data-tokens-prefix=""
+        data-tokens-exclude="color-,pndlnk-,spacer-,gap-,radius,border-width-,duration-,easing-,density,border"
+        data-tokens-render="swatch"></div>
+
+      <div class="ids__space M"></div>
+      <h3>Брендовые роли</h3>
+      <div class="ids__text-width">
+        <p class="caption">
+          Роли для витрины, графики и логотипов — тоже алиасы палитры. В вёрстке
+          компонентов использовать семантические роли.
+        </p>
+      </div>
+      <div data-tokens-prefix="pndlnk" data-tokens-render="swatch"></div>
+
+      <div class="ids__space M"></div>
+      <h3>Шкалы</h3>
+      <div class="ids__text-width">
+        <p class="caption">
+          Именованные шаги размеров. Спейсеры и гэпы — в em (масштабируются от
+          фонт-сайза окружения), радиусы — в em (масштабируются с текстом
+          компонента).
+        </p>
+      </div>
+      <div class="ids__space XS"></div>
+      <h4>Спейсеры</h4>
+      <div data-tokens-prefix="spacer" data-tokens-render="space"></div>
+      <div class="ids__space XS"></div>
+      <h4>Гэпы</h4>
+      <div data-tokens-prefix="gap" data-tokens-render="gap"></div>
+      <div class="ids__space XS"></div>
+      <h4>Радиусы</h4>
+      <div data-tokens-prefix="radius" data-tokens-render="radius"></div>
+      <div class="ids__space XS"></div>
+      <h4>Толщины границ</h4>
+      <div data-tokens-prefix="border-width" data-tokens-render="border-width"></div>
+      <div class="ids__space XS"></div>
+      <h4>Движение</h4>
+      <div class="ids__text-width">
+        <p class="caption">
+          Наведите на строку: полоска анимируется с длительностью токена.
+          Ховер всегда мгновенный (<code>--ids__duration-instant</code>),
+          возврат — плавный.
+        </p>
+      </div>
+      <div data-tokens-prefix="duration" data-tokens-render="motion"></div>
+      <div data-tokens-prefix="easing" data-tokens-render="motion"></div>
     </ids-nav-item>
 
     <div class="ids__space L"></div>
     <ids-nav-item id="typography" label="Типографика">
       <div class="ids__space S"></div>
       <h2>Типографика</h2>
+
+      <div class="ids__space S"></div>
+      <h3>Шрифты</h3>
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--header">
+          <span>Шрифт</span><span>Образец</span><span>Начертания</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">CoFo Gothic<br /><code>--gothic</code></span>
+          <div class="guide-tokens__sample">
+            <p>Понедельник — это опыто-конструкторское бюро. Мы проектируем взаимодействия людей и компаний так, чтобы они были логичными, честными и выгодными для обеих сторон.</p>
+          </div>
+          <span class="guide-tokens__row-value">400<br />500<br />700</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">CoFo Sans Semi-Mono<br /><code>--mono</code></span>
+          <div class="guide-tokens__sample" style="font-family: var(--mono)">
+            <p>Наши проекты — очень разные истории, от дизайна тележек для супермаркетов до процессов найма в крупнейшие корпорации.</p>
+          </div>
+          <span class="guide-tokens__row-value">400<br />700</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Newton<br /><code>--serif</code></span>
+          <div class="guide-tokens__sample" style="font-family: var(--serif)">
+            <p><em>Ценностное предложение</em> — совокупность ответов на основные вопросы об обмене: кто клиент, что его приводит к покупке, что компания ему предлагает.</p>
+          </div>
+          <span class="guide-tokens__row-value">400<br />italic<br />700</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">CoFo Hand<br /><code>--hand</code></span>
+          <div class="guide-tokens__sample">
+            <p style="font-family: var(--hand); color: var(--ids__ink); line-height: 1.3">Совместные сессии решают проблему «понять задачу, чтобы выбрать агентство» за счёт вводного интервью и карты открытых вопросов.</p>
+          </div>
+          <span class="guide-tokens__row-value">--hand<br />--ids__ink</span>
+        </div>
+      </div>
+
+      <div class="ids__space S"></div>
+      <h3>Текстовые элементы</h3>
+      <div class="style-breakout">
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--header">
+          <span>Элемент</span><span>Образец</span><span>Шрифт и токены</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Заголовок страницы<br /><code>h1.L</code></span>
+          <div class="guide-tokens__sample"><h1 class="L">Дизайн-система</h1></div>
+          <span class="guide-tokens__row-value">--gothic<br />4em</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Уменьшенный заголовок страницы<br /><code>h1.S</code></span>
+          <div class="guide-tokens__sample"><h1 class="S">Юридическая информация</h1></div>
+          <span class="guide-tokens__row-value">--gothic<br />2.8em</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Акцентный заголовок<br /><code>h1.accent</code></span>
+          <div class="guide-tokens__sample"><h1 class="accent">Чекап</h1></div>
+          <span class="guide-tokens__row-value">--mono<br />3.9em<br />--ids__accent</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Заголовок раздела<br /><code>h2</code></span>
+          <div class="guide-tokens__sample"><h2>Логотип и графика</h2></div>
+          <span class="guide-tokens__row-value">--gothic<br />2.8em</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Заголовок секции кейса<br /><code>h2.S</code></span>
+          <div class="guide-tokens__sample"><h2 class="S">Контекст</h2></div>
+          <span class="guide-tokens__row-value">--gothic<br />1.65em</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Подзаголовок<br /><code>h3</code></span>
+          <div class="guide-tokens__sample"><h3>Единый визуальный язык для всех носителей</h3></div>
+          <span class="guide-tokens__row-value">--gothic<br />1.15em</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Основной абзац<br /><code>p</code></span>
+          <div class="guide-tokens__sample">
+            <p>Мы используем системную типографику как основу для интерфейсов, презентаций и продуктовых материалов.</p>
+          </div>
+          <span class="guide-tokens__row-value">--gothic<br />1em</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Крупный абзац<br /><code>p.loud</code></span>
+          <div class="guide-tokens__sample">
+            <p class="loud">Важные мысли и вводные тезисы выделяются более крупным набором.</p>
+          </div>
+          <span class="guide-tokens__row-value">--gothic<br />1.5em</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Маркированный список<br /><code>ul li</code></span>
+          <div class="guide-tokens__sample">
+            <ul>
+              <li>Логика иерархии заголовков</li>
+              <li>Единые интервалы и ритм</li>
+              <li>Читаемость в длинных текстах</li>
+            </ul>
+          </div>
+          <span class="guide-tokens__row-value">--gothic<br />1em</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Текстовая ссылка<br /><code>a</code></span>
+          <div class="guide-tokens__sample">
+            <p><a href="/type">Перейти на страницу типографики</a></p>
+          </div>
+          <span class="guide-tokens__row-value">--ids__link<br />--ids__hover</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Инлайновые элементы<br /><code>em</code> <code>strong</code> <code>mark</code> <code>code</code></span>
+          <div class="guide-tokens__sample">
+            <p>Текст может содержать <em>акцент</em>, <strong>усиление</strong>, <mark>подсветку</mark> и <code>кодовый фрагмент</code>.</p>
+          </div>
+          <span class="guide-tokens__row-value">--serif<br />--ids__mark<br />--ids__code</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Тегообразный список<br /><code>ul.inline-block</code></span>
+          <div class="guide-tokens__sample">
+            <ul class="inline-block S">
+              <li>Что продаётся?</li>
+              <li>Кто продаёт?</li>
+              <li>Кому он это продаёт?</li>
+              <li>Сколько это стоит?</li>
+            </ul>
+          </div>
+          <span class="guide-tokens__row-value">0.8em<br />--ids__text</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Крупный моно с акцентом<br /><code>p.loud.mono</code> <code>mark</code></span>
+          <div class="guide-tokens__sample">
+            <p class="loud mono" style="font-family: var(--mono)">
+              <mark style="background-color: transparent; text-decoration: underline; text-decoration-thickness: 0.3em; text-decoration-skip-ink: none; text-decoration-color: var(--ids__accent)">Открытый интенсив.</mark>
+              Серия лекций и практик.
+            </p>
+          </div>
+          <span class="guide-tokens__row-value">--mono<br />1.35em<br />--ids__accent</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Таблица<br /><code>table.promo-table</code></span>
+          <div class="guide-tokens__sample">
+            <div class="promo-table-container style-sample">
+              <table class="promo-table">
+                <thead>
+                  <tr>
+                    <th class="ids__table-head">Ситуация</th>
+                    <th class="ids__table-head">Кто применяет</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Запуск нового продукта</td>
+                    <td>Компания и её клиент</td>
+                  </tr>
+                  <tr>
+                    <td>Питчинг инвестору</td>
+                    <td>Компания и инвестор</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <span class="guide-tokens__row-value">--mono<br />0.75em</span>
+        </div>
+      </div>
+      </div>
+    </ids-nav-item>
+
+    <div class="ids__space L"></div>
+    <ids-nav-item id="components" label="Компоненты">
+      <div class="ids__space S"></div>
+      <section>
+        <h2>Компоненты</h2>
+      </section>
       <div class="ids__text-width">
-        <ul>
-          <li>
-            Основной шрифт для текста и заголовков — CoFo Gothic, начертания
-            Regular (400), Medium (500), Bold (700)
-          </li>
-          <li>
-            Дополнительный шрифт — CoFo Sans Semi-Mono, начертания Regular (400)
-            и Bold (700)
-          </li>
-          <li>
-            Шрифт для глоссария и сравочной информации — Newton, начертания
-            Regular (400), Italic, Bold (700), Bold Italic.
-          </li>
-          <li>Шрифт для имитации рукописного текста — CoFo Hand.</li>
-        </ul>
+        <p>
+          Компоненты — референсные образцы: показывают, как элемент выглядит и
+          ведёт себя. В третьей колонке — токен-контракт: токены и значения,
+          которые компонент потребляет.
+        </p>
       </div>
-
-      <div class="ids__sequence XL gap-S">
-        <div class="ids__sequence-item">
-          <div class="style-font-sample style-font-sample--gothic">
-            <h3>CoFo Gothic</h3>
-            <p>
-              Понедельник — это опыто-конструкторское бюро. Мы проектируем
-              взаимодействия людей и компаний так, чтобы они были логичными,
-              честными и выгодными для обеих сторон.
-            </p>
+      <div class="ids__space S"></div>
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--header">
+          <span>Компонент</span><span>Образец</span><span>Токены</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">CTA-кнопка<br /><code>button.promo-link</code></span>
+          <div class="guide-tokens__sample">
+            <button type="button" class="promo-link">Заказать за 14&thinsp;900&thinsp;₽</button>
           </div>
+          <span class="guide-tokens__row-value">--ids__accent<br />--ids__hover<br />white</span>
         </div>
-        <div class="ids__sequence-item">
-          <div class="style-font-sample style-font-sample--mono">
-            <h3>CoFo Sans Semi-Mono</h3>
-            <p>
-              Наши проекты — это очень разные истории, от дизайна тележек для
-              супермаркетов до дизайна процессов найма в крупнейшие корпорации.
-              Их объединяет одно: желание компании улучшить взаимодействие с
-              людьми.
-            </p>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">CTA-кнопка алая<br /><code>button.promo-link.second</code></span>
+          <div class="guide-tokens__sample">
+            <button type="button" class="promo-link second">Записаться на курс</button>
           </div>
+          <span class="guide-tokens__row-value">--ids__color-red-400<br />--ids__hover</span>
         </div>
-        <div class="ids__sequence-item">
-          <div class="style-font-sample style-font-sample--serif term">
-            <h3>Newton</h3>
-            <p>
-              <em>Ценностное предложение</em> — это совокупность ответов на
-              основные вопросы об обмене: кто клиент; что его приводит к
-              покупке; что компания ему предлагает; почему нужно купить именно у
-              нее, а не у конкурентов; каков денежный и неденежный вклад
-              клиента; как организован обмен во времени; какой смысл покупка
-              имеет для сторон.
-            </p>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">CTA-кнопка тёмная<br /><code>button.promo-link.third</code></span>
+          <div class="guide-tokens__sample">
+            <button type="button" class="promo-link third">Запросить счёт</button>
           </div>
+          <span class="guide-tokens__row-value">--ids__link<br />--ids__hover</span>
         </div>
-        <div class="ids__sequence-item">
-          <div class="style-font-sample style-font-sample--hand">
-            <h3>CoFo Hand</h3>
-
-            <p class="style-font-sample-hand-note">
-              Совместные сессии решают проблему «понять задачу, чтобы выбрать
-              агентство» за счёт вводного интервью и карты открытых вопросов.
-              Так создаётся понимание задачи, с которым согласен клиент, и
-              которое понятно агентствам.
-            </p>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Outlined-кнопка<br /><code>button.lets-talk-button</code></span>
+          <div class="guide-tokens__sample">
+            <button type="button" class="lets-talk-button" style="font-size: var(--smaller)">Обсудить проект</button>
           </div>
+          <span class="guide-tokens__row-value">--ids__border-width-m<br />--ids__text<br />--ids__hover</span>
         </div>
-      </div>
-
-      <div class="ids__space M"></div>
-      <h3>Текстовые компоненты</h3>
-      <div class="style-typography-grid">
-        <div class="style-typography-item">
-          <p class="caption">Заголовок страницы, <code>h1.L</code></p>
-          <h1 class="L">Дизайн-система</h1>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">
-            Уменьшенный заголовок страницы, <code>h1.S</code>
-          </p>
-          <h1 class="S">Юридическая информация для партнёров</h1>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">Акцентный заголовок, <code>h1.accent</code></p>
-          <h1 class="accent">Понедельник</h1>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">Заголовок раздела, <code>h2</code></p>
-          <h2>Логотип и графика</h2>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">Заголовок секции кейса, <code>h2.S</code></p>
-          <h2 class="S">Контекст</h2>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">Подзаголовок, <code>h3</code></p>
-          <h3>Единый визуальный язык для всех носителей</h3>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">Основной абзац, <code>p</code></p>
-          <p>
-            Мы используем системную типографику как основу для интерфейсов,
-            презентаций и продуктовых материалов.
-          </p>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">Крупный абзац, <code>p.loud</code></p>
-          <p class="loud">
-            Важные мысли и вводные тезисы выделяются более крупным набором.
-          </p>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">Маркированный список, <code>ul li</code></p>
-          <ul>
-            <li>Логика иерархии заголовков</li>
-            <li>Единые интервалы и ритм</li>
-            <li>Читаемость в длинных текстах</li>
-          </ul>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">Текстовая ссылка, <code>a</code></p>
-          <p><a href="/type">Перейти на страницу типографики</a></p>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">Промо-кнопка, <code>a.promo-link</code></p>
-          <p><a class="promo-link" href="/course">Промо-кнопка</a></p>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">
-            Инлайновые компоненты, <code>em</code>, <code>strong</code>,
-            <code>mark</code>, <code>code</code>
-          </p>
-          <p>
-            Текст может содержать <em>акцент</em>, <strong>усиление</strong>,
-            <mark>подсветку</mark> и <code>кодовый фрагмент</code>.
-          </p>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">
-            Тегообразный список, <code>ul.inline-block</code>
-          </p>
-          <ul class="inline-block S">
-            <li>Что продаётся?</li>
-            <li>Какие у этого свойства?</li>
-            <li>Кто продаёт?</li>
-            <li>Почему ему можно доверять?</li>
-            <li>Кому он это продаёт?</li>
-            <li>Какие это люди?</li>
-            <li>Зачем или почему они это покупают?</li>
-            <li>Сколько это стоит?</li>
-            <li>Когда и как платить?</li>
-            <li>Что ещё нужно сделать, кроме денег?</li>
-            <li>Зачем это нужно «на самом деле», в чём истинный смысл?</li>
-          </ul>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">
-            Крупный моно с акцентом, <code>p.loud.mono</code> +
-            <code>mark</code>
-          </p>
-          <p class="loud mono" style="font-family: var(--mono)">
-            <mark
-              style="
-                background-color: transparent;
-                text-decoration: underline;
-                text-decoration-thickness: 0.3em;
-                text-decoration-skip-ink: none;
-                text-decoration-color: rgba(var(--ids__accent-RGB), 1);
-              "
-              >Открытый интенсив.</mark
-            >
-            Серия лекций и практик по сборке ценностного предложения.
-          </p>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">Таблица, <code>table.promo-table</code></p>
-          <div class="promo-table-container">
-            <table class="promo-table">
-              <thead>
-                <tr>
-                  <th class="ids__table-head">В какой ситуации применять</th>
-                  <th class="ids__table-head">Кто применяет</th>
-                  <th class="ids__table-head">Зачем применяет</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Запуск нового продукта</td>
-                  <td>Компания и её клиент</td>
-                  <td>Покупка или понимание причины непокупки</td>
-                </tr>
-                <tr>
-                  <td>Объединение портфеля в экосистему</td>
-                  <td>Лидер трансформации и его сотрудники</td>
-                  <td>Согласованные действия руководителей продукта</td>
-                </tr>
-                <tr>
-                  <td>Выход фаундера из операционки</td>
-                  <td>Фаундер и топ-менеджеры</td>
-                  <td>Перенятие и развитие видения компании</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div class="ids__space M"></div>
-      <h3>Интерфейсные компоненты</h3>
-      <div class="style-typography-grid">
-        <div class="style-typography-item">
-          <p class="caption">CTA-кнопка, <code>button.promo-link</code></p>
-          <button type="button" class="promo-link">
-            Заказать за 14&thinsp;900&thinsp;₽
-          </button>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">
-            CTA-кнопка тёмная, <code>button.promo-link.third</code>
-          </p>
-          <button type="button" class="promo-link third">Запросить счёт</button>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">
-            Outlined-кнопка, <code>button.lets-talk-button</code>
-          </p>
-          <button
-            type="button"
-            class="lets-talk-button"
-            style="font-size: var(--smaller)">
-            Обсудить проект
-          </button>
-        </div>
-        <div class="style-typography-item">
-          <p class="caption">Текстфилд, <code>div.form-field</code></p>
-          <div class="ids__text-width">
-            <div class="contact-form-form">
-              <div
-                class="form-field"
-                style="background-color: rgba(var(--ids__surface-RGB), 1)">
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Текстфилд<br /><code>div.form-field</code></span>
+          <div class="guide-tokens__sample">
+            <div class="contact-form-form" style="margin-top: 0">
+              <div class="form-field">
                 <label>Ваше имя:</label>
                 <input type="text" placeholder="" />
               </div>
-              <div
-                class="form-field"
-                style="background-color: rgba(var(--ids__surface-RGB), 1)">
-                <label>Название компании:</label>
+            </div>
+          </div>
+          <span class="guide-tokens__row-value">--ids__text<br />--ids__surface<br />--ids__accent</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Текстфилд залитый<br /><code>div.form-field.filled</code></span>
+          <div class="guide-tokens__sample">
+            <div class="contact-form-form" style="margin-top: 0">
+              <div class="form-field filled">
+                <label>E-mail</label>
                 <input type="text" placeholder="" />
               </div>
             </div>
           </div>
+          <span class="guide-tokens__row-value">--ids__surface<br />--ids__text</span>
         </div>
-        <div class="style-typography-item">
-          <p class="caption">
-            Сегментед-контрол, <code>div.promo-switcher</code>
-          </p>
-          <div
-            class="promo-table-container"
-            style="padding: 0; background: none">
-            <div class="promo-switcher" role="group">
-              <button
-                type="button"
-                class="promo-switcher__item is-active"
-                aria-pressed="true">
-                По продуктам
-              </button>
-              <button
-                type="button"
-                class="promo-switcher__item"
-                aria-pressed="false">
-                По задачам
-              </button>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Сегментед-контрол<br /><code>div.promo-switcher</code></span>
+          <div class="guide-tokens__sample">
+            <div class="promo-table-container style-sample" style="padding: 0; background: none">
+              <div class="promo-switcher" role="group">
+                <button type="button" class="promo-switcher__item is-active" aria-pressed="true">По продуктам</button>
+                <button type="button" class="promo-switcher__item" aria-pressed="false">По задачам</button>
+              </div>
             </div>
           </div>
+          <span class="guide-tokens__row-value">--ids__text<br />--ids__accent</span>
         </div>
-        <div class="style-typography-item">
-          <p class="caption">
-            Карточка материала, <code>a.pndlnk-promo-link</code>
-          </p>
-          <div class="pndlnk-promo-column" style="max-width: 14em">
-            <a class="pndlnk-promo-link" href="/glossary/">
-              <aside>
-                <h6>Статья</h6>
-                <h3>Архитектоника ценностного предложения</h3>
-                <p>
-                  Как системно создавать ценностные предложения, которые
-                  выдерживают проверку логикой и рынком.
-                </p>
-              </aside>
-            </a>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Пилюля принципа<br /><code>.case-principle-pill</code><br /><code>.case-page</code></span>
+          <div class="guide-tokens__sample">
+            <div class="case-page">
+              <span class="case-principle-pill">Экологичность</span>
+              <span class="case-principle-pill">Доступность</span>
+            </div>
           </div>
+          <span class="guide-tokens__row-value">--ids__text</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Карточка инициативы<br /><code>a.initiative-card</code><br /><code>.case-page</code></span>
+          <div class="guide-tokens__sample">
+            <div class="case-page" style="max-width: 16em">
+              <div class="initiative-grid" style="grid-template-columns: 1fr">
+                <a class="initiative-card" href="#">
+                  <div class="initiative-card__cover" style="background: var(--ids__surface); aspect-ratio: 3/2"></div>
+                  <div class="initiative-card__body">
+                    <h3 class="initiative-card__title">Додо Паста</h3>
+                    <ul class="initiative-card__tags">
+                      <li class="initiative-card__tag">меню</li>
+                      <li class="initiative-card__tag">новые продукты</li>
+                    </ul>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <span class="guide-tokens__row-value">--ids__text<br />--ids__surface<br />--ids__hover</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Отзыв с автором<br /><code>.review-author</code> <code>.author-box</code><br /><code>.case-page</code></span>
+          <div class="guide-tokens__sample">
+            <div class="case-page">
+              <div class="review-author">
+                <div class="author-box">
+                  <p class="name">Имя Фамилия<br /><span>Роль в компании</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="guide-tokens__row-value">--ids__text</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Карточка материала<br /><code>a.pndlnk-promo-link</code></span>
+          <div class="guide-tokens__sample">
+            <div class="pndlnk-promo-column" style="max-width: 14em">
+              <a class="pndlnk-promo-link" href="/glossary/">
+                <aside>
+                  <h6>Статья</h6>
+                  <h3>Архитектоника ценностного предложения</h3>
+                  <p>Как системно создавать ценностные предложения.</p>
+                </aside>
+              </a>
+            </div>
+          </div>
+          <span class="guide-tokens__row-value">--ids__text<br />--ids__link<br />--ids__hover</span>
+        </div>
+        <div class="guide-tokens__row">
+          <span class="guide-tokens__row-label">Карточка материала тёмная<br /><code>a.pndlnk-promo-link.inverted</code></span>
+          <div class="guide-tokens__sample">
+            <div class="pndlnk-promo-column" style="max-width: 14em">
+              <a class="pndlnk-promo-link inverted" href="/glossary/">
+                <aside>
+                  <h6>Подкаст</h6>
+                  <h3>Вам помочь?</h3>
+                  <p>Подкаст для предпринимателей, которые думают о сервисе.</p>
+                </aside>
+              </a>
+            </div>
+          </div>
+          <span class="guide-tokens__row-value">--ids__color-gray-800<br />--ids__color-gray-100<br />--ids__color-red-500</span>
         </div>
       </div>
     </ids-nav-item>
+  </div>
+</div>
+
+<div class="ids__space L"></div>
+<div class="ids__wrapper L">
+  <div class="ids style-page">
+    <ids-nav-item id="widgets" label="Виджеты">
+      <div class="ids__space S"></div>
+      <section>
+        <h2>Виджеты</h2>
+      </section>
+      <div class="ids__text-width">
+        <p>
+          Виджеты — крупные куски функциональности, собранные из компонентов и
+          токенов. Каждый виджет отрисован целиком, в той ширине, в которой
+          используется.
+        </p>
+      </div>
+
+      <div class="ids__space M"></div>
+      <h3>Промо-таблица продуктов</h3>
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--two">
+          <span class="guide-tokens__row-label"><code>.promo-rows</code><br /><code>.promo-switcher</code></span>
+          <span class="guide-tokens__row-value"><a href="/products/">Продукты</a><br /><a href="/">Главная</a></span>
+        </div>
+      </div>
+      <div class="ids__space S"></div>
+      {% include 'sections/products-promo-table.html' %}
+
+      <div class="ids__space L"></div>
+      <h3>Каталог проектов</h3>
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--two">
+          <span class="guide-tokens__row-label"><code>.project-catalog-panel</code><br /><code>.project-grid</code><br /><code>.project-card</code></span>
+          <span class="guide-tokens__row-value"><a href="/projects/">Проекты</a><br /><a href="/">Главная</a></span>
+        </div>
+      </div>
+      <div class="ids__space S"></div>
+      {% include 'sections/projects-catalog.html' %}
+
+      <div class="ids__space L"></div>
+      <h3>Компонент ДКЦП</h3>
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--two">
+          <span class="guide-tokens__row-label"><code>.dkcp-component</code></span>
+          <span class="guide-tokens__row-value"><a href="/dkcp/">Страница ДКЦП</a></span>
+        </div>
+      </div>
+      <div class="ids__space S"></div>
+      <div class="style-narrow">
+        {% set values = ['Экологичность'] %}
+        {% set segment = ['Молодые родители в крупных городах'] %}
+        {% set conflict = ['Хотят здоровую еду для детей, но нет времени готовить'] %}
+        {% set artifact = ['Готовая органическая детская еда'] %}
+        {% set artifactAttrs = ['Без консервантов', 'Местные продукты', 'Возрастная маркировка'] %}
+        {% set arguments = ['Здоровое питание для занятых родителей без компромиссов'] %}
+        {% set priceConditions = ['500₽ за порцию', 'Скидка при подписке'] %}
+        {% set exchangeConditions = ['Доставка в день заказа', 'Возврат в течение недели'] %}
+        {% set companyAttrs = ['10 лет на рынке', 'Сертификат качества'] %}
+        {% set draft = true %}
+        {{ dkcp.dkcp(
+          values=values,
+          segment=segment,
+          conflict=conflict,
+          artifact=artifact,
+          artifactAttrs=artifactAttrs,
+          arguments=arguments,
+          priceConditions=priceConditions,
+          exchangeConditions=exchangeConditions,
+          companyAttrs=companyAttrs,
+          draft=draft
+        ) }}
+      </div>
+
+      <div class="ids__space L"></div>
+      <h3>Квиз</h3>
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--two">
+          <span class="guide-tokens__row-label"><code>.dq-block</code><br /><code>.dq-result</code></span>
+          <span class="guide-tokens__row-value"><a href="/tools/leadership-disciplines/">Дисциплины лидерства</a></span>
+        </div>
+      </div>
+      <div class="ids__space S"></div>
+      <div class="style-narrow">
+        {% include 'style-widgets/quiz-sample.html' %}
+      </div>
+
+      <div class="ids__space L"></div>
+      <h3>Гант программы</h3>
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--two">
+          <span class="guide-tokens__row-label"><code>.lessons-gantt</code></span>
+          <span class="guide-tokens__row-value"><a href="/dkcp-base/">База ДКЦП</a></span>
+        </div>
+      </div>
+      <div class="ids__space S"></div>
+      <div class="style-narrow">
+        {% include 'sections/lessons-gantt.html' %}
+      </div>
+
+      <div class="ids__space L"></div>
+      <h3>Копируемые таблица и поле</h3>
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--two">
+          <span class="guide-tokens__row-label"><code>.copy-table</code><br /><code>.copy-field</code></span>
+          <span class="guide-tokens__row-value"><a href="/company-details/">Реквизиты</a></span>
+        </div>
+      </div>
+      <div class="ids__space S"></div>
+      <div class="style-narrow">
+        {% include 'style-widgets/copy-table-sample.html' %}
+        {% include 'components/copy-table-setup.html' %}
+      </div>
+
+      <div class="ids__space L"></div>
+      <h3>Галерея</h3>
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--two">
+          <span class="guide-tokens__row-label"><code>ids-gallery</code></span>
+          <span class="guide-tokens__row-value">Страницы кейсов</span>
+        </div>
+      </div>
+      <div class="ids__space S"></div>
+      {% include 'style-widgets/gallery-sample.html' %}
+
+      <div class="ids__space L"></div>
+      <h3>Контактная форма</h3>
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--two">
+          <span class="guide-tokens__row-label"><code>.contact-form</code></span>
+          <span class="guide-tokens__row-value">Внизу каждой страницы — отрисована внизу этой</span>
+        </div>
+      </div>
+    </ids-nav-item>
+  </div>
+</div>
+
+<div class="ids__wrapper">
+  <div class="ids style-page">
 
     <ids-nav-item id="graphics" label="Графика">
       <div class="ids__space XL"></div>
@@ -577,7 +731,7 @@ content %}
       <div class="ids__sequence XL gap-S">
         <div class="ids__sequence-item">
           <div
-            class="illustration-container dark-theme"
+            class="illustration-container dark"
             data-illustration-type="sphere">
             <canvas class="illustration-canvas"></canvas>
           </div>
@@ -586,8 +740,8 @@ content %}
           <div
             class="illustration-container"
             data-illustration-type="layered-house"
-            data-background-color="--ids__surface-RGB"
-            style="background-color: rgba(var(--ids__surface-RGB), 1)">
+            data-background-color="--ids__surface"
+            style="background-color: var(--ids__surface)">
             <canvas class="illustration-canvas"></canvas>
           </div>
         </div>
@@ -595,8 +749,8 @@ content %}
           <div
             class="illustration-container"
             data-illustration-type="splash"
-            data-background-color="--ids__surface-RGB"
-            style="background-color: rgba(var(--ids__surface-RGB), 1)">
+            data-background-color="--ids__surface"
+            style="background-color: var(--ids__surface)">
             <canvas class="illustration-canvas"></canvas>
           </div>
         </div>
@@ -604,9 +758,9 @@ content %}
           <div
             class="illustration-container"
             data-illustration-type="pndlnk"
-            data-background-color="--ids__surface-RGB"
+            data-background-color="--ids__surface"
             style="
-              background-color: rgba(var(--ids__surface-RGB), 1);
+              background-color: var(--ids__surface);
               aspect-ratio: 2 / 1;
             ">
             <canvas class="illustration-canvas"></canvas>
@@ -677,5 +831,8 @@ content %}
 <div class="ids__space XL"></div>
 
 <script src="/assets/navbar.js"></script>
+<script src="/assets/tokens-dump.js"></script>
+<script src="/assets/lessons-gantt.js" defer></script>
+<script src="/ids/js/gallery.js"></script>
 <script type="module" src="/assets/illustrations/init.js"></script>
 {% endblock %}

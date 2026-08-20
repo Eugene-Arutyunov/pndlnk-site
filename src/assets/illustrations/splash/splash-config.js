@@ -14,7 +14,7 @@ export function parseSplashConfig(container) {
   // Значения по умолчанию
   const defaults = {
     zCoordinates: defaultZCoordinates,
-    accentColor: '--ids__accent-RGB',
+    accentColor: '--ids__accent',
     backgroundColor: null, // обязательный параметр
     lineWidth: 3,
     offsetX: 0,

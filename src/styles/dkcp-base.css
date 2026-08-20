@@ -146,7 +146,7 @@
 
   & .pricing-feature {
     margin: 0;
-    border-top: 1px solid rgba(var(--ids__text-RGB), 0.2);
+    border-top: 1px solid var(--ids__border);
     padding: 0.3em 1em 0em calc(var(--ids__density) * 0.5em);
 
     &:empty {
@@ -210,46 +210,22 @@
 }
 
 .pricing-grid-wrapper {
-  background-color: rgb(var(--ids__surface-RGB));
+  background-color: var(--ids__surface);
   border-bottom-left-radius: 0.2em;
   border-bottom-right-radius: 0.2em;
 }
 
-.promo-link.second {
-  background-color: rgb(245, 90, 90);
-
-  &:hover {
-    background-color: rgb(var(--ids__hover-RGB));
-  }
-}
-
-.promo-link.third {
-  background-color: rgb(var(--ids__link-RGB));
-
-  &:hover {
-    background-color: rgb(var(--ids__hover-RGB));
-  }
-}
+/* Варианты .promo-link.second/.third — общий компонент, см. components/promo-link.css */
 
 .intuition-collab {
   display: inline-block;
   padding: 0.5em 1em;
   font-family: var(--mono);
   font-size: 0.6em;
-  border: 1px dashed rgba(var(--ids__text-RGB), 0.5);
+  border: 1px dashed color-mix(in srgb, var(--ids__text) 50%, transparent);
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
+/* Утилита .visually-hidden — в ядре, см. src/ids/layout.css */
 
 .title-grid {
   --title-grid-cell-size: 5.5em;
@@ -272,7 +248,7 @@
 
   & .title-grid-cell {
     height: var(--title-grid-cell-size);
-    border: 1px solid rgba(var(--ids__text-RGB), 0.5);
+    border: 1px solid color-mix(in srgb, var(--ids__text) 50%, transparent);
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -304,7 +280,7 @@
     border-left: none;
 
     &:nth-child(2) {
-      border-left: 1px solid rgba(var(--ids__text-RGB), 0.5);
+      border-left: 1px solid color-mix(in srgb, var(--ids__text) 50%, transparent);
     }
 
     @media (width < 768px) {
@@ -314,7 +290,7 @@
       /* h1 - nth-child(1), поэтому title-grid-cell начинаются с nth-child(2) */
       &:nth-child(2) {
         order: 1;
-        border-left: 1px solid rgba(var(--ids__text-RGB), 0.5);
+        border-left: 1px solid color-mix(in srgb, var(--ids__text) 50%, transparent);
       }
 
       &:nth-child(3) {
@@ -356,41 +332,11 @@
       /* Второй пустой контейнер перескакивает в начало второй строки */
       &.title-grid-cell-empty-last {
         order: 7;
-        border-left: 1px solid rgba(var(--ids__text-RGB), 0.5);
+        border-left: 1px solid color-mix(in srgb, var(--ids__text) 50%, transparent);
         border-top: none;
       }
     }
   }
 }
 
-.logo-wall {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4em;
-  /* margin: 1em 0; */
-}
-
-.logo-wall-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6em 1em;
-  /* border: 1px solid rgba(var(--ids__text-RGB), 0.3);
-  border-right: none;
-  border-bottom: none; */
-
-  & img {
-    height: 1.2em;
-    width: auto;
-    object-fit: contain;
-    display: block;
-  }
-
-  & .logo-wall-label {
-    font-family: var(--mono);
-    font-size: 0.85em;
-    line-height: 1.2;
-    margin: 0;
-    text-align: center;
-  }
-}
+/* Стена логотипов .logo-wall — общий компонент, см. components/logo-wall.css */

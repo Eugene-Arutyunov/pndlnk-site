@@ -1,0 +1,42 @@
+/* Сегментед-контрол. Обёртка .ids сохраняет исходную специфичность (0,2,0):
+   страничные переопределения (case-page) рассчитаны на неё. */
+
+.ids {
+  .promo-switchers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ids__gap-s);
+  }
+
+  .promo-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    border: var(--ids__border-width-m) solid var(--ids__text);
+    width: fit-content;
+  }
+
+  .promo-switcher__item {
+    appearance: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0.2em 0.5em 0.2em;
+    border: none;
+    border-right: var(--ids__border-width-s) solid color-mix(in srgb, var(--ids__text) 25%, transparent);
+    color: var(--ids__text);
+    transition: color var(--ids__duration-slow) var(--ids__easing-base);
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover:not(.is-active) {
+      color: var(--ids__accent);
+      transition-duration: var(--ids__duration-instant);
+    }
+
+    &.is-active {
+      background: color-mix(in srgb, var(--ids__text) 6%, transparent);
+    }
+  }
+}

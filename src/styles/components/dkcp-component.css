@@ -11,7 +11,7 @@
   & .dkcp-top {
     position: relative;
     height: 1.625em;
-    background-color: rgba(var(--ids__surface-RGB), 1);
+    background-color: var(--ids__surface);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +29,7 @@
 
       width: 100%;
       height: 5.01em;
-      background-color: rgba(var(--ids__surface-RGB), 1);
+      background-color: var(--ids__surface);
 
       clip-path: polygon(0 100%, 50% 0, 100% 100%);
       z-index: -1;
@@ -97,7 +97,7 @@
 
 .dkcp-block {
   padding: 0.3em;
-  background-color: rgba(var(--ids__surface-RGB), 1);
+  background-color: var(--ids__surface);
 
   @media (width < 768px) {
     padding: 0.15em;
@@ -141,7 +141,7 @@
 
   & .dkcp-hint {
     font-family: var(--hand);
-    color: rgba(var(--ids__ink-RGB), 1);
+    color: var(--ids__ink);
   }
 }
 
@@ -151,17 +151,17 @@
 
   & .dkcp-top {
     background-color: transparent;
-    border-left: 2px solid rgba(var(--ids__text-RGB), 1);
-    filter: drop-shadow(0px -2px 0px rgba(var(--ids__text-RGB), 1));
+    border-left: 2px solid var(--ids__text);
+    filter: drop-shadow(0px -2px 0px var(--ids__text));
     height: 1em;
 
     @media (width < 768px) {
-      border-left: 1px solid rgba(var(--ids__text-RGB), 1);
-      filter: drop-shadow(0px -1px 0px rgba(var(--ids__text-RGB), 1));
+      border-left: 1px solid var(--ids__text);
+      filter: drop-shadow(0px -1px 0px var(--ids__text));
     }
 
     &:before {
-      background-color: rgba(var(--ids__background-RGB), 1);
+      background-color: var(--ids__background);
       clip-path: polygon(0 100%, 0 95%, 50% 0, 100% 95%, 100% 100%);
       border-bottom: none;
       top: -3.33em;
@@ -204,12 +204,12 @@
 
   & .dkcp-block {
     background-color: transparent;
-    border: 2px solid rgba(var(--ids__text-RGB), 1);
+    border: 2px solid var(--ids__text);
     border-right: none;
     border-bottom: none;
 
     @media (width < 768px) {
-      border: 1px solid rgba(var(--ids__text-RGB), 1);
+      border: 1px solid var(--ids__text);
       border-right: none;
       border-bottom: none;
     }
@@ -240,7 +240,7 @@
 
     & .dkcp-definition {
       font-family: var(--hand);
-      color: rgba(var(--ids__ink-RGB), 1);
+      color: var(--ids__ink);
 
       @media (width < 768px) {
         /*font-size: 0.5em;*/

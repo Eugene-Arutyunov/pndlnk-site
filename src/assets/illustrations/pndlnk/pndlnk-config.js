@@ -7,7 +7,7 @@ export function parsePndlnkConfig(container) {
     numLayers: 10,
     offsetX: 0,
     offsetY: -35,
-    accentColor: '--ids__accent-RGB',
+    accentColor: '--ids__accent',
     backgroundColor: null,
     lineWidth: 3,
     scale: 1.99,

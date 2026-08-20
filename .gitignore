@@ -1,5 +1,6 @@
 # Generated files
 _site/
+screenshots/
 _preview/
 _to_delete/
 
@@ -47,3 +48,4 @@ $RECYCLE.BIN/
 *.bak
 *.backup
 *.log
+node_modules/.package-lock.json
