@@ -48,3 +48,4 @@ $RECYCLE.BIN/
 *.bak
 *.backup
 *.log
+node_modules/.package-lock.json
