@@ -1,0 +1,143 @@
+    <div class="case-kids-summary">
+      <div class="case-kids-summary__row case-kids-summary__row--intro">
+        <div class="case-kids-summary__block">
+          <h2 class="case-kids-summary__heading">Контекст</h2>
+          <p>
+            Сеть Додо Пицца растёт и выходит на новые рынки, и параллельно усиливает образ «семейной
+            пиццерии». Задача сформулирована в CX-стратегии: концепция семейного опыта, при которой
+            ДОДО-опыт становится частью счастливых детских воспоминаний.
+          </p>
+        </div>
+        <div class="case-kids-summary__block">
+          <h2 class="case-kids-summary__heading">Запрос</h2>
+          <p>
+            Наглядно показать, как выглядит гостевой опыт для родителей с детьми сегодня, и куда
+            вкладываться, чтобы этот опыт ощущался цельным и запоминающимся.
+          </p>
+        </div>
+      </div>
+      <div class="case-kids-summary__section">
+        <h2 class="case-kids-summary__heading">Результат</h2>
+        <div class="case-kids-summary__row case-kids-summary__row--results">
+          <div class="case-kids-summary__block case-kids-summary__block--half">
+            <h3 class="case-kids-summary__subheading">Открыли новые барьеры</h3>
+            <p>
+              О части барьеров команда не знала — теперь все они на карте, с источниками и матрицей
+              приоритетов. Например:
+            </p>
+            <ul>
+              <li>Родителям неудобно раздевать ребёнка стоя у вешалки</li>
+              <li>Детских стульев не хватает или они вне зоны видимости</li>
+              <li>Ребёнку сложно открыть упаковку с игрушкой без ножниц</li>
+              <li>Стойка с шариками может упасть на ребёнка</li>
+              <li>Детская подставка низкая</li>
+            </ul>
+            <p class="case-kids-summary__more">и ещё 95</p>
+          </div>
+          <div class="case-kids-summary__block case-kids-summary__block--half">
+            <h3 class="case-kids-summary__subheading">Сформулировали принципы</h3>
+            <p>
+              Принципы wow-опыта — фильтр для идей: каждую инициативу проверяли на соответствие им.
+            </p>
+            <ul>
+              <li>Уважение</li>
+              <li>Адаптированная для самостоятельности среда</li>
+              <li>Вовлекающая обстановка</li>
+              <li>Вознаграждение</li>
+              <li>Совместный со взрослыми интерес</li>
+              <li>Значимый контекст</li>
+            </ul>
+          </div>
+        </div>
+        <div class="case-kids-summary__block case-kids-summary__block--full">
+          <h3 class="case-kids-summary__subheading">Подготовили инициативы</h3>
+          <p>
+            Для избранных инициативы посчитана экономика и подготовлен план запуска — от пилота до
+            раскатки на сеть.
+          </p>
+          <div class="case-kids-summary__initiatives">
+            <ul class="initiative-grid case-kids-summary__initiative-grid" role="list">
+              {% for initiative in dodoKidsInitiatives %}
+              {% if initiative.featured %}
+              <li class="initiative-card">
+                {% if initiative.url %}
+                <a class="initiative-card__link" href="{{ initiative.url }}">
+                {% else %}
+                <div class="initiative-card__inner">
+                {% endif %}
+                  {% if initiative.cover %}
+                  <div class="initiative-card__cover" aria-hidden="true">
+                    <img src="{{ initiative.cover }}" alt="" loading="lazy" />
+                  </div>
+                  {% endif %}
+                  <div class="initiative-card__body">
+                    <h3 class="initiative-card__title">{{ initiative.title }}</h3>
+                    <div class="initiative-card__meta">
+                      {% if initiative.principles and initiative.principles.length %}
+                      {% for principle in initiative.principles %}
+                      <span class="initiative-card__principle">{{ principle }}</span>
+                      {% endfor %}
+                      {% endif %}
+                      {% for tag in initiative.spheres | initiativeTags %}
+                      <span class="initiative-card__tag">{{ tag }}</span>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% if initiative.url %}
+                </a>
+                {% else %}
+                </div>
+                {% endif %}
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+            <a class="case-kids-summary__initiatives-more" href="#case-initiatives">+40</a>
+          </div>
+        </div>
+      </div>
+      <div class="case-kids-summary__section">
+        <h2 class="case-kids-summary__heading">Процесс</h2>
+        <div class="case-kids-summary__process">
+          <a class="case-kids-summary__step" href="#case-geo">
+            <p>
+              <strong>Контекст и термины.</strong> 64 материала из архива, география, глоссарий,
+              схема обменов
+            </p>
+          </a>
+          <a class="case-kids-summary__step" href="#case-ssp">
+            <p>
+              <strong>ССП.</strong> Стартовая сессия, черновик карты, первые гипотезы
+            </p>
+          </a>
+          <a class="case-kids-summary__step" href="#case-field">
+            <p><strong>Поле.</strong> 173 активности в трёх странах, 102 информанта</p>
+          </a>
+          <a class="case-kids-summary__step" href="#case-samples">
+            <p><strong>Полезные образцы.</strong> Бенчмарки QSR и смежных отраслей</p>
+          </a>
+          <a class="case-kids-summary__step" href="#case-jobs">
+            <p>
+              <strong>Синтез.</strong> Джобы, карта опыта, барьеры и принципы; 552 гипотезы в
+              работе
+            </p>
+          </a>
+          <a class="case-kids-summary__step" href="#case-initiatives">
+            <p>
+              <strong>Инициативы.</strong> 45+ идей и сессии с командой
+            </p>
+          </a>
+          <a class="case-kids-summary__step" href="#case-prototypes">
+            <p>
+              <strong>Прототипы.</strong> Экономика, пилоты и прототипы избранных инициатив
+            </p>
+          </a>
+          <a class="case-kids-summary__step" href="#case-workshop">
+            <p>
+              <strong>Финальный воркшоп.</strong> Оценка инициатив и готовность команды помочь в
+              реализации
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>

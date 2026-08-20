@@ -1,4 +1,4 @@
-{% extends 'layout.html' %} {% set pageTitle = 'Визуальный стиль' %} {% block
+{% extends 'layout.html' %} {% set pageTitle = 'Визуальный стиль' %} {% import 'dkcp-component.html' as dkcp %} {% block
 content %}
 <div class="ids__space XL"></div>
 <div class="ids__wrapper">
@@ -268,87 +268,88 @@ content %}
           <span>Шрифт</span><span>Образец</span><span>Начертания</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">CoFo Gothic, <code>--gothic</code></span>
+          <span class="guide-tokens__row-label">CoFo Gothic<br /><code>--gothic</code></span>
           <div class="guide-tokens__sample">
             <p>Понедельник — это опыто-конструкторское бюро. Мы проектируем взаимодействия людей и компаний так, чтобы они были логичными, честными и выгодными для обеих сторон.</p>
           </div>
-          <span class="guide-tokens__row-value">400, 500, 700</span>
+          <span class="guide-tokens__row-value">400<br />500<br />700</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">CoFo Sans Semi-Mono, <code>--mono</code></span>
+          <span class="guide-tokens__row-label">CoFo Sans Semi-Mono<br /><code>--mono</code></span>
           <div class="guide-tokens__sample" style="font-family: var(--mono)">
             <p>Наши проекты — очень разные истории, от дизайна тележек для супермаркетов до процессов найма в крупнейшие корпорации.</p>
           </div>
-          <span class="guide-tokens__row-value">400, 700</span>
+          <span class="guide-tokens__row-value">400<br />700</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Newton, <code>--serif</code></span>
+          <span class="guide-tokens__row-label">Newton<br /><code>--serif</code></span>
           <div class="guide-tokens__sample" style="font-family: var(--serif)">
             <p><em>Ценностное предложение</em> — совокупность ответов на основные вопросы об обмене: кто клиент, что его приводит к покупке, что компания ему предлагает.</p>
           </div>
-          <span class="guide-tokens__row-value">400, курсив, 700</span>
+          <span class="guide-tokens__row-value">400<br />italic<br />700</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">CoFo Hand, <code>--hand</code></span>
+          <span class="guide-tokens__row-label">CoFo Hand<br /><code>--hand</code></span>
           <div class="guide-tokens__sample">
-            <p class="style-font-sample-hand-note">Совместные сессии решают проблему «понять задачу, чтобы выбрать агентство» за счёт вводного интервью и карты открытых вопросов.</p>
+            <p style="font-family: var(--hand); color: var(--ids__ink); line-height: 1.3">Совместные сессии решают проблему «понять задачу, чтобы выбрать агентство» за счёт вводного интервью и карты открытых вопросов.</p>
           </div>
-          <span class="guide-tokens__row-value">рукописный</span>
+          <span class="guide-tokens__row-value">--hand<br />--ids__ink</span>
         </div>
       </div>
 
       <div class="ids__space S"></div>
       <h3>Текстовые элементы</h3>
+      <div class="style-breakout">
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--header">
           <span>Элемент</span><span>Образец</span><span>Шрифт и токены</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Заголовок страницы, <code>h1.L</code></span>
+          <span class="guide-tokens__row-label">Заголовок страницы<br /><code>h1.L</code></span>
           <div class="guide-tokens__sample"><h1 class="L">Дизайн-система</h1></div>
-          <span class="guide-tokens__row-value">--gothic · 4em</span>
+          <span class="guide-tokens__row-value">--gothic<br />4em</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Уменьшенный заголовок страницы, <code>h1.S</code></span>
+          <span class="guide-tokens__row-label">Уменьшенный заголовок страницы<br /><code>h1.S</code></span>
           <div class="guide-tokens__sample"><h1 class="S">Юридическая информация</h1></div>
-          <span class="guide-tokens__row-value">--gothic · 2.8em</span>
+          <span class="guide-tokens__row-value">--gothic<br />2.8em</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Акцентный заголовок, <code>h1.accent</code></span>
+          <span class="guide-tokens__row-label">Акцентный заголовок<br /><code>h1.accent</code></span>
           <div class="guide-tokens__sample"><h1 class="accent">Чекап</h1></div>
-          <span class="guide-tokens__row-value">--mono · 3.9em · --ids__accent</span>
+          <span class="guide-tokens__row-value">--mono<br />3.9em<br />--ids__accent</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Заголовок раздела, <code>h2</code></span>
+          <span class="guide-tokens__row-label">Заголовок раздела<br /><code>h2</code></span>
           <div class="guide-tokens__sample"><h2>Логотип и графика</h2></div>
-          <span class="guide-tokens__row-value">--gothic · 2.8em</span>
+          <span class="guide-tokens__row-value">--gothic<br />2.8em</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Заголовок секции кейса, <code>h2.S</code></span>
+          <span class="guide-tokens__row-label">Заголовок секции кейса<br /><code>h2.S</code></span>
           <div class="guide-tokens__sample"><h2 class="S">Контекст</h2></div>
-          <span class="guide-tokens__row-value">--gothic · 1.65em</span>
+          <span class="guide-tokens__row-value">--gothic<br />1.65em</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Подзаголовок, <code>h3</code></span>
+          <span class="guide-tokens__row-label">Подзаголовок<br /><code>h3</code></span>
           <div class="guide-tokens__sample"><h3>Единый визуальный язык для всех носителей</h3></div>
-          <span class="guide-tokens__row-value">--gothic · 1.15em</span>
+          <span class="guide-tokens__row-value">--gothic<br />1.15em</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Основной абзац, <code>p</code></span>
+          <span class="guide-tokens__row-label">Основной абзац<br /><code>p</code></span>
           <div class="guide-tokens__sample">
             <p>Мы используем системную типографику как основу для интерфейсов, презентаций и продуктовых материалов.</p>
           </div>
-          <span class="guide-tokens__row-value">--gothic · 1em</span>
+          <span class="guide-tokens__row-value">--gothic<br />1em</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Крупный абзац, <code>p.loud</code></span>
+          <span class="guide-tokens__row-label">Крупный абзац<br /><code>p.loud</code></span>
           <div class="guide-tokens__sample">
             <p class="loud">Важные мысли и вводные тезисы выделяются более крупным набором.</p>
           </div>
-          <span class="guide-tokens__row-value">--gothic · 1.5em</span>
+          <span class="guide-tokens__row-value">--gothic<br />1.5em</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Маркированный список, <code>ul li</code></span>
+          <span class="guide-tokens__row-label">Маркированный список<br /><code>ul li</code></span>
           <div class="guide-tokens__sample">
             <ul>
               <li>Логика иерархии заголовков</li>
@@ -356,24 +357,24 @@ content %}
               <li>Читаемость в длинных текстах</li>
             </ul>
           </div>
-          <span class="guide-tokens__row-value">--gothic · 1em</span>
+          <span class="guide-tokens__row-value">--gothic<br />1em</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Текстовая ссылка, <code>a</code></span>
+          <span class="guide-tokens__row-label">Текстовая ссылка<br /><code>a</code></span>
           <div class="guide-tokens__sample">
             <p><a href="/type">Перейти на страницу типографики</a></p>
           </div>
-          <span class="guide-tokens__row-value">--ids__link, ховер --ids__hover</span>
+          <span class="guide-tokens__row-value">--ids__link<br />--ids__hover</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Инлайновые элементы, <code>em</code>, <code>strong</code>, <code>mark</code>, <code>code</code></span>
+          <span class="guide-tokens__row-label">Инлайновые элементы<br /><code>em</code> <code>strong</code> <code>mark</code> <code>code</code></span>
           <div class="guide-tokens__sample">
             <p>Текст может содержать <em>акцент</em>, <strong>усиление</strong>, <mark>подсветку</mark> и <code>кодовый фрагмент</code>.</p>
           </div>
-          <span class="guide-tokens__row-value">--serif · --ids__mark · --ids__code</span>
+          <span class="guide-tokens__row-value">--serif<br />--ids__mark<br />--ids__code</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Тегообразный список, <code>ul.inline-block</code></span>
+          <span class="guide-tokens__row-label">Тегообразный список<br /><code>ul.inline-block</code></span>
           <div class="guide-tokens__sample">
             <ul class="inline-block S">
               <li>Что продаётся?</li>
@@ -382,20 +383,20 @@ content %}
               <li>Сколько это стоит?</li>
             </ul>
           </div>
-          <span class="guide-tokens__row-value">0.8em · рамка --ids__text</span>
+          <span class="guide-tokens__row-value">0.8em<br />--ids__text</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Крупный моно с акцентом, <code>p.loud.mono</code> + <code>mark</code></span>
+          <span class="guide-tokens__row-label">Крупный моно с акцентом<br /><code>p.loud.mono</code> <code>mark</code></span>
           <div class="guide-tokens__sample">
             <p class="loud mono" style="font-family: var(--mono)">
               <mark style="background-color: transparent; text-decoration: underline; text-decoration-thickness: 0.3em; text-decoration-skip-ink: none; text-decoration-color: var(--ids__accent)">Открытый интенсив.</mark>
               Серия лекций и практик.
             </p>
           </div>
-          <span class="guide-tokens__row-value">--mono · 1.35em · --ids__accent</span>
+          <span class="guide-tokens__row-value">--mono<br />1.35em<br />--ids__accent</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Таблица, <code>table.promo-table</code></span>
+          <span class="guide-tokens__row-label">Таблица<br /><code>table.promo-table</code></span>
           <div class="guide-tokens__sample">
             <div class="promo-table-container style-sample">
               <table class="promo-table">
@@ -418,8 +419,9 @@ content %}
               </table>
             </div>
           </div>
-          <span class="guide-tokens__row-value">--mono · 0.75em</span>
+          <span class="guide-tokens__row-value">--mono<br />0.75em</span>
         </div>
+      </div>
       </div>
     </ids-nav-item>
 
@@ -432,7 +434,7 @@ content %}
       <div class="ids__text-width">
         <p>
           Компоненты — референсные образцы: показывают, как элемент выглядит и
-          ведёт себя. В третьей колонке — токен-контракт: семантические токены,
+          ведёт себя. В третьей колонке — токен-контракт: токены и значения,
           которые компонент потребляет.
         </p>
       </div>
@@ -442,35 +444,35 @@ content %}
           <span>Компонент</span><span>Образец</span><span>Токены</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">CTA-кнопка, <code>button.promo-link</code></span>
+          <span class="guide-tokens__row-label">CTA-кнопка<br /><code>button.promo-link</code></span>
           <div class="guide-tokens__sample">
             <button type="button" class="promo-link">Заказать за 14&thinsp;900&thinsp;₽</button>
           </div>
-          <span class="guide-tokens__row-value">--ids__accent, ховер --ids__hover, текст белый</span>
+          <span class="guide-tokens__row-value">--ids__accent<br />--ids__hover<br />white</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">CTA-кнопка алая, <code>button.promo-link.second</code></span>
+          <span class="guide-tokens__row-label">CTA-кнопка алая<br /><code>button.promo-link.second</code></span>
           <div class="guide-tokens__sample">
             <button type="button" class="promo-link second">Записаться на курс</button>
           </div>
-          <span class="guide-tokens__row-value">--ids__color-red-400 (из палитры: кнопки стоят вплотную), ховер --ids__hover</span>
+          <span class="guide-tokens__row-value">--ids__color-red-400<br />--ids__hover</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">CTA-кнопка тёмная, <code>button.promo-link.third</code></span>
+          <span class="guide-tokens__row-label">CTA-кнопка тёмная<br /><code>button.promo-link.third</code></span>
           <div class="guide-tokens__sample">
             <button type="button" class="promo-link third">Запросить счёт</button>
           </div>
-          <span class="guide-tokens__row-value">--ids__link, ховер --ids__hover</span>
+          <span class="guide-tokens__row-value">--ids__link<br />--ids__hover</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Outlined-кнопка, <code>button.lets-talk-button</code></span>
+          <span class="guide-tokens__row-label">Outlined-кнопка<br /><code>button.lets-talk-button</code></span>
           <div class="guide-tokens__sample">
             <button type="button" class="lets-talk-button" style="font-size: var(--smaller)">Обсудить проект</button>
           </div>
-          <span class="guide-tokens__row-value">рамка --ids__border-width-m + --ids__text, ховер --ids__hover</span>
+          <span class="guide-tokens__row-value">--ids__border-width-m<br />--ids__text<br />--ids__hover</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Текстфилд, <code>div.form-field</code></span>
+          <span class="guide-tokens__row-label">Текстфилд<br /><code>div.form-field</code></span>
           <div class="guide-tokens__sample">
             <div class="contact-form-form" style="margin-top: 0">
               <div class="form-field">
@@ -479,10 +481,10 @@ content %}
               </div>
             </div>
           </div>
-          <span class="guide-tokens__row-value">рамка --ids__text 20%, ховер и фокус --ids__surface, ошибка --ids__accent</span>
+          <span class="guide-tokens__row-value">--ids__text<br />--ids__surface<br />--ids__accent</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Текстфилд залитый, <code>div.form-field.filled</code></span>
+          <span class="guide-tokens__row-label">Текстфилд залитый<br /><code>div.form-field.filled</code></span>
           <div class="guide-tokens__sample">
             <div class="contact-form-form" style="margin-top: 0">
               <div class="form-field filled">
@@ -491,10 +493,10 @@ content %}
               </div>
             </div>
           </div>
-          <span class="guide-tokens__row-value">фон --ids__surface, рамка --ids__text 10%</span>
+          <span class="guide-tokens__row-value">--ids__surface<br />--ids__text</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Сегментед-контрол, <code>div.promo-switcher</code></span>
+          <span class="guide-tokens__row-label">Сегментед-контрол<br /><code>div.promo-switcher</code></span>
           <div class="guide-tokens__sample">
             <div class="promo-table-container style-sample" style="padding: 0; background: none">
               <div class="promo-switcher" role="group">
@@ -503,20 +505,20 @@ content %}
               </div>
             </div>
           </div>
-          <span class="guide-tokens__row-value">--ids__text, --ids__accent</span>
+          <span class="guide-tokens__row-value">--ids__text<br />--ids__accent</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Пилюля принципа, <code>.case-principle-pill</code> в контексте <code>.case-page</code></span>
+          <span class="guide-tokens__row-label">Пилюля принципа<br /><code>.case-principle-pill</code><br /><code>.case-page</code></span>
           <div class="guide-tokens__sample">
             <div class="case-page">
               <span class="case-principle-pill">Уважение</span>
               <span class="case-principle-pill">Значимый контекст</span>
             </div>
           </div>
-          <span class="guide-tokens__row-value">рамка --ids__text</span>
+          <span class="guide-tokens__row-value">--ids__text</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Карточка инициативы, <code>a.initiative-card</code> в контексте <code>.case-page</code></span>
+          <span class="guide-tokens__row-label">Карточка инициативы<br /><code>a.initiative-card</code><br /><code>.case-page</code></span>
           <div class="guide-tokens__sample">
             <div class="case-page" style="max-width: 16em">
               <div class="initiative-grid" style="grid-template-columns: 1fr">
@@ -533,10 +535,10 @@ content %}
               </div>
             </div>
           </div>
-          <span class="guide-tokens__row-value">--ids__text, --ids__surface, ховер --ids__hover</span>
+          <span class="guide-tokens__row-value">--ids__text<br />--ids__surface<br />--ids__hover</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Отзыв с автором, <code>.review-author</code> + <code>.author-box</code> в контексте <code>.case-page</code></span>
+          <span class="guide-tokens__row-label">Отзыв с автором<br /><code>.review-author</code> <code>.author-box</code><br /><code>.case-page</code></span>
           <div class="guide-tokens__sample">
             <div class="case-page">
               <div class="review-author">
@@ -549,7 +551,7 @@ content %}
           <span class="guide-tokens__row-value">--ids__text</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Карточка материала, <code>a.pndlnk-promo-link</code></span>
+          <span class="guide-tokens__row-label">Карточка материала<br /><code>a.pndlnk-promo-link</code></span>
           <div class="guide-tokens__sample">
             <div class="pndlnk-promo-column" style="max-width: 14em">
               <a class="pndlnk-promo-link" href="/glossary/">
@@ -561,10 +563,10 @@ content %}
               </a>
             </div>
           </div>
-          <span class="guide-tokens__row-value">--ids__text, --ids__link, ховер --ids__hover</span>
+          <span class="guide-tokens__row-value">--ids__text<br />--ids__link<br />--ids__hover</span>
         </div>
         <div class="guide-tokens__row">
-          <span class="guide-tokens__row-label">Карточка материала тёмная, <code>a.pndlnk-promo-link.inverted</code></span>
+          <span class="guide-tokens__row-label">Карточка материала тёмная<br /><code>a.pndlnk-promo-link.inverted</code></span>
           <div class="guide-tokens__sample">
             <div class="pndlnk-promo-column" style="max-width: 14em">
               <a class="pndlnk-promo-link inverted" href="/glossary/">
@@ -576,7 +578,7 @@ content %}
               </a>
             </div>
           </div>
-          <span class="guide-tokens__row-value">палитра напрямую (карточка не зависит от темы): gray-800, gray-100, ховер red-500</span>
+          <span class="guide-tokens__row-value">--ids__color-gray-800<br />--ids__color-gray-100<br />--ids__color-red-500</span>
         </div>
       </div>
     </ids-nav-item>
@@ -594,18 +596,17 @@ content %}
       <div class="ids__text-width">
         <p>
           Виджеты — крупные куски функциональности, собранные из компонентов и
-          токенов. Виджет показывается целиком, в той ширине, в которой
-          используется. Если виджет привязан к контенту конкретной страницы —
-          смотреть по ссылке.
+          токенов. Каждый виджет отрисован целиком, в той ширине, в которой
+          используется.
         </p>
       </div>
 
-      <div class="ids__space S"></div>
+      <div class="ids__space M"></div>
       <h3>Промо-таблица продуктов</h3>
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--two">
-          <span class="guide-tokens__row-label"><code>.promo-rows</code>, <code>.promo-switcher</code></span>
-          <span class="guide-tokens__row-value"><a href="/products/">Продукты</a>, <a href="/">главная</a></span>
+          <span class="guide-tokens__row-label"><code>.promo-rows</code><br /><code>.promo-switcher</code></span>
+          <span class="guide-tokens__row-value"><a href="/products/">Продукты</a><br /><a href="/">Главная</a></span>
         </div>
       </div>
       <div class="ids__space S"></div>
@@ -615,77 +616,112 @@ content %}
       <h3>Каталог проектов</h3>
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--two">
-          <span class="guide-tokens__row-label"><code>.project-catalog-panel</code>, <code>.project-grid</code>, <code>.project-card</code></span>
-          <span class="guide-tokens__row-value"><a href="/projects/">Проекты</a>, <a href="/">главная</a></span>
+          <span class="guide-tokens__row-label"><code>.project-catalog-panel</code><br /><code>.project-grid</code><br /><code>.project-card</code></span>
+          <span class="guide-tokens__row-value"><a href="/projects/">Проекты</a><br /><a href="/">Главная</a></span>
         </div>
       </div>
       <div class="ids__space S"></div>
       {% include 'sections/projects-catalog.html' %}
 
       <div class="ids__space L"></div>
-      <h3>Контактная форма</h3>
-      <div class="guide-tokens__rows">
-        <div class="guide-tokens__row guide-tokens__row--two">
-          <span class="guide-tokens__row-label"><code>.contact-form</code></span>
-          <span class="guide-tokens__row-value">Внизу каждой страницы, включая эту</span>
-        </div>
-      </div>
-
-      <div class="ids__space S"></div>
       <h3>Компонент ДКЦП</h3>
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--two">
           <span class="guide-tokens__row-label"><code>.dkcp-component</code></span>
-          <span class="guide-tokens__row-value"><a href="/dkcp/">Страница ДКЦП</a> — виджет собирается макросом с параметрами</span>
+          <span class="guide-tokens__row-value"><a href="/dkcp/">Страница ДКЦП</a></span>
         </div>
       </div>
-
       <div class="ids__space S"></div>
+      <div class="style-narrow">
+        {% set values = ['Экологичность'] %}
+        {% set segment = ['Молодые родители в крупных городах'] %}
+        {% set conflict = ['Хотят здоровую еду для детей, но нет времени готовить'] %}
+        {% set artifact = ['Готовая органическая детская еда'] %}
+        {% set artifactAttrs = ['Без консервантов', 'Местные продукты', 'Возрастная маркировка'] %}
+        {% set arguments = ['Здоровое питание для занятых родителей без компромиссов'] %}
+        {% set priceConditions = ['500₽ за порцию', 'Скидка при подписке'] %}
+        {% set exchangeConditions = ['Доставка в день заказа', 'Возврат в течение недели'] %}
+        {% set companyAttrs = ['10 лет на рынке', 'Сертификат качества'] %}
+        {% set draft = true %}
+        {{ dkcp.dkcp(
+          values=values,
+          segment=segment,
+          conflict=conflict,
+          artifact=artifact,
+          artifactAttrs=artifactAttrs,
+          arguments=arguments,
+          priceConditions=priceConditions,
+          exchangeConditions=exchangeConditions,
+          companyAttrs=companyAttrs,
+          draft=draft
+        ) }}
+      </div>
+
+      <div class="ids__space L"></div>
       <h3>Квиз</h3>
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--two">
-          <span class="guide-tokens__row-label"><code>.quiz</code></span>
-          <span class="guide-tokens__row-value"><a href="/dkcp-checkup/">Чекап ДКЦП</a> — виджет привязан к вопросам чекапа</span>
+          <span class="guide-tokens__row-label"><code>.dq-block</code><br /><code>.dq-result</code></span>
+          <span class="guide-tokens__row-value"><a href="/tools/leadership-disciplines/">Дисциплины лидерства</a></span>
         </div>
       </div>
-
       <div class="ids__space S"></div>
+      <div class="style-narrow">
+        {% include 'style-widgets/quiz-sample.html' %}
+      </div>
+
+      <div class="ids__space L"></div>
       <h3>Гант программы</h3>
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--two">
           <span class="guide-tokens__row-label"><code>.lessons-gantt</code></span>
-          <span class="guide-tokens__row-value"><a href="/ksc-open/">Открытый КШЦ</a> — виджет привязан к программе курса</span>
+          <span class="guide-tokens__row-value"><a href="/dkcp-base/">База ДКЦП</a></span>
         </div>
       </div>
-
       <div class="ids__space S"></div>
+      <div class="style-narrow">
+        {% include 'sections/lessons-gantt.html' %}
+      </div>
+
+      <div class="ids__space L"></div>
       <h3>Копируемые таблица и поле</h3>
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--two">
-          <span class="guide-tokens__row-label"><code>.copy-table</code>, <code>.copy-field</code></span>
+          <span class="guide-tokens__row-label"><code>.copy-table</code><br /><code>.copy-field</code></span>
           <span class="guide-tokens__row-value"><a href="/company-details/">Реквизиты</a></span>
         </div>
       </div>
-
       <div class="ids__space S"></div>
+      <div class="style-narrow">
+        {% include 'style-widgets/copy-table-sample.html' %}
+        {% include 'components/copy-table-setup.html' %}
+      </div>
+
+      <div class="ids__space L"></div>
       <h3>Галерея</h3>
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--two">
           <span class="guide-tokens__row-label"><code>ids-gallery</code></span>
-          <span class="guide-tokens__row-value">Страницы кейсов</span>
+          <span class="guide-tokens__row-value"><a href="/projects/dodo-pizza-kids/">Кейс Додо Kids</a><br />Страницы кейсов</span>
         </div>
       </div>
-
       <div class="ids__space S"></div>
+      {% include 'style-widgets/gallery-sample.html' %}
+
+      <div class="ids__space L"></div>
       <h3>Саммари кейса</h3>
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--two">
           <span class="guide-tokens__row-label"><code>.case-kids-summary</code></span>
-          <span class="guide-tokens__row-value"><a href="/projects/dodo-pizza-kids/">Кейс Додо Kids</a> — кандидат в стандартный саммари всех кейсов</span>
+          <span class="guide-tokens__row-value"><a href="/projects/dodo-pizza-kids/">Кейс Додо Kids</a></span>
         </div>
       </div>
-
       <div class="ids__space S"></div>
+      <div class="case-page">
+        {% include 'style-widgets/case-summary-sample.html' %}
+      </div>
+
+      <div class="ids__space L"></div>
       <h3>Полевой промо-блок с транскриптами</h3>
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--two">
@@ -693,22 +729,43 @@ content %}
           <span class="guide-tokens__row-value"><a href="/projects/dodo-pizza-kids/">Кейс Додо Kids</a></span>
         </div>
       </div>
-
       <div class="ids__space S"></div>
+      <div class="case-page">
+        {% include 'style-widgets/field-promo-sample.html' %}
+      </div>
+
+      <div class="ids__space L"></div>
       <h3>Видео в кейсе</h3>
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--two">
-          <span class="guide-tokens__row-label"><code>.case-video-featured</code>, <code>.case-video-testimonials</code></span>
+          <span class="guide-tokens__row-label"><code>.case-video-featured</code><br /><code>.case-video-testimonials</code></span>
           <span class="guide-tokens__row-value"><a href="/projects/dodo-pizza-kids/">Кейс Додо Kids</a></span>
         </div>
       </div>
-
       <div class="ids__space S"></div>
+      <div class="case-page">
+        {% include 'style-widgets/case-video-sample.html' %}
+      </div>
+
+      <div class="ids__space L"></div>
       <h3>Каталог инициатив</h3>
       <div class="guide-tokens__rows">
         <div class="guide-tokens__row guide-tokens__row--two">
-          <span class="guide-tokens__row-label"><code>.initiative-catalog-panel</code>, <code>.initiative-grid</code></span>
+          <span class="guide-tokens__row-label"><code>.initiative-catalog-panel</code><br /><code>.initiative-grid</code></span>
           <span class="guide-tokens__row-value"><a href="/projects/dodo-pizza-kids/">Кейс Додо Kids</a></span>
+        </div>
+      </div>
+      <div class="ids__space S"></div>
+      <div class="case-page">
+        {% include 'projects/dodo-pizza-kids-initiatives.html' %}
+      </div>
+
+      <div class="ids__space L"></div>
+      <h3>Контактная форма</h3>
+      <div class="guide-tokens__rows">
+        <div class="guide-tokens__row guide-tokens__row--two">
+          <span class="guide-tokens__row-label"><code>.contact-form</code></span>
+          <span class="guide-tokens__row-value">Внизу каждой страницы — отрисована внизу этой</span>
         </div>
       </div>
     </ids-nav-item>
@@ -827,5 +884,7 @@ content %}
 
 <script src="/assets/navbar.js"></script>
 <script src="/assets/tokens-dump.js"></script>
+<script src="/assets/lessons-gantt.js" defer></script>
+<script src="/ids/js/gallery.js"></script>
 <script type="module" src="/assets/illustrations/init.js"></script>
 {% endblock %}
