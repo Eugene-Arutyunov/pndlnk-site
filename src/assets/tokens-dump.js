@@ -120,11 +120,16 @@
       var parsed = parseRgb(resolved);
       if (parsed && isDarkBg(parsed)) plate.classList.add("guide-color-plate--dark");
       // Цвет подписи — явно по светлоте плашки: наследование ломается в тёмном контейнере
-      if (parsed) plate.style.color = isDarkBg(parsed) ? "#f0f0f0" : "#2c2c2c";
-      // Совсем светлые плашки сливаются с фоном — лёгкая обводка
-      if (parsed && parsed[0] >= 248 && parsed[1] >= 248 && parsed[2] >= 248) {
-        plate.classList.add("guide-color-plate--outlined");
-      }
+      if (parsed) plate.style.color = isDarkBg(parsed) ? "#f0f0f0" : "#2d2f30";
+      // Плашка цвета фона контейнера сливается с ним — лёгкая обводка
+      var containerBgRaw = getComputedStyle(container).backgroundColor;
+      var containerBg = /rgba\([^)]+,\s*0\)/.test(containerBgRaw)
+        ? null
+        : parseRgb(containerBgRaw);
+      var blendsIn = containerBg
+        ? parsed && parsed.every(function (v, i) { return Math.abs(v - containerBg[i]) <= 2; })
+        : parsed && parsed[0] >= 248 && parsed[1] >= 248 && parsed[2] >= 248;
+      if (blendsIn) plate.classList.add("guide-color-plate--outlined");
 
       plate.appendChild(el("p", "guide-color-plate__name", t.name));
       var btn = el("button", "guide-color-plate__value", formatRgb(resolved));

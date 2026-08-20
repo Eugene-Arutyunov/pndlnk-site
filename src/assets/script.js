@@ -121,7 +121,7 @@ function initLogoDownloads() {
 
 function initPromoTable() {
   const container = document.querySelector(
-    ".promo-table-container:not(.ksc-program-table):not(.case-barriers-table)"
+    ".promo-table-container:not(.ksc-program-table):not(.case-barriers-table):not(.style-sample)"
   );
   if (!container) return;
 

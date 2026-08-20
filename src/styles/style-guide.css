@@ -233,21 +233,31 @@
 }
 /* Живой дамп токенов (tokens-dump.js) */
 
-.style-semantic-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-
-  @media (width < 900px) {
-    grid-template-columns: 1fr;
+/* Палитра — широкий врапперный брейкаут с сеткой 6 плиток в строке */
+.style-breakout {
+  @media (width >= 768px) {
+    /* 68% → 84% ширины страницы: как .ids__wrapper.L, не меняя структуру */
+    width: 123.5%;
   }
 
   & .style-color-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+    grid-template-columns: repeat(6, minmax(0, 1fr));
 
-  & > .dark {
-    padding: 0;
+    @media (width < 900px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
+
+/* Тёмный набор семантических ролей: внешняя рамка цвета тёмного фона,
+   негативные поля компенсируют паддинг — плитки того же размера, что светлые */
+.style-dark-frame {
+  margin: 0 -3rem;
+  padding: 3rem;
+
+  @media (width < 768px) {
+    margin: 0;
+    padding: 1rem;
   }
 }
 
@@ -311,6 +321,28 @@
 
 .guide-tokens__sample {
   min-width: 0;
+
+  /* Образцы в таблице не добавляют собственный вертикальный ритм */
+  & > :is(h1, h2, h3, p, ul, div):last-child {
+    margin-bottom: 0;
+  }
+
+  & :is(h1, h2, h3) {
+    margin-bottom: 0;
+  }
+}
+
+/* Двухколоночная мета-табличка виджета: класс + места обитания */
+.guide-tokens__row--two {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 2.8fr);
+
+  @media (width < 768px) {
+    grid-template-columns: minmax(0, 1fr);
+
+    & .guide-tokens__row-value {
+      display: block;
+    }
+  }
 }
 
 .guide-tokens__space-bar {
@@ -355,4 +387,9 @@
 
 .guide-color-plate--outlined {
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ids__text) 15%, transparent);
+}
+
+/* Крупные образцы не выползают на колонку значений */
+.guide-tokens__row .guide-tokens__sample {
+  overflow-x: hidden;
 }
