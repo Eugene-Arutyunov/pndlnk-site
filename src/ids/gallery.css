@@ -1,16 +1,16 @@
 ids-gallery,
 .ids__gallery {
+  /* Ширина фигуры и свес подписи вправо (в межколоночный гэп) */
+  --gallery-figure: 5em;
+  --gallery-caption-hang: calc(var(--gallery-figure) / 4);
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2.5em 5em;
 
-  @media (width < 768px) {
-    gap: 3em;
-  }
-
   figure {
-    flex: 0 0 5em;
+    flex: 0 0 var(--gallery-figure);
 
     &:focus-within:has(a:focus-visible) {
       outline: 2px solid var(--ids__link);
@@ -29,7 +29,22 @@ ids-gallery,
     }
 
     figcaption {
-      margin-right: -25%;
+      margin-right: calc(var(--gallery-caption-hang) * -1);
+    }
+  }
+
+  /* На мобиле без свеса: у последней колонки он вылезал за вьюпорт.
+     Компенсация — фигура шире на величину свеса, горизонтальный гэп
+     на столько же уже */
+  @media (width < 768px) {
+    gap: 3em calc(3em - var(--gallery-caption-hang));
+
+    figure {
+      flex-basis: calc(var(--gallery-figure) + var(--gallery-caption-hang));
+
+      figcaption {
+        margin-right: 0;
+      }
     }
   }
 }

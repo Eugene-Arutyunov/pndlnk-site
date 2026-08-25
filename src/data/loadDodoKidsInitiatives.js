@@ -62,6 +62,7 @@ function loadDodoKidsInitiatives() {
         principles: Array.isArray(item.principles) ? item.principles : [],
         url: item.url || null,
         featured: Boolean(item.featured),
+        featuredOrder: Number.isInteger(item.featuredOrder) ? item.featuredOrder : null,
         cover: item.cover || null,
         order: index,
         number,

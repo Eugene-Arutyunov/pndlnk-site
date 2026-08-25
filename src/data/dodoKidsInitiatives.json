@@ -11,7 +11,8 @@
     ],
     "url": "/projects/dodo-pizza-kids/dodo-pasta/",
     "featured": true,
-    "cover": "/assets/projects/dodo-pizza-kids/tips/dodo-pasta.jpg"
+    "cover": "/assets/projects/dodo-pizza-kids/tips/dodo-pasta.jpg",
+    "featuredOrder": 3
   },
   {
     "number": 2,
@@ -40,7 +41,8 @@
     ],
     "url": "/projects/dodo-pizza-kids/paid-masterclasses/",
     "featured": true,
-    "cover": "/assets/projects/dodo-pizza-kids/paid-mk/host-masterclass.jpg"
+    "cover": "/assets/projects/dodo-pizza-kids/paid-mk/host-masterclass.jpg",
+    "featuredOrder": 2
   },
   {
     "number": 4,
@@ -50,11 +52,14 @@
       "Оснащение детских комнат"
     ],
     "principles": [
-      "вовлечение"
+      "вовлечение",
+      "адаптивность",
+      "значимый контекст"
     ],
     "url": "/projects/dodo-pizza-kids/kids-out-collaboration/",
     "featured": true,
-    "cover": "/assets/projects/dodo-pizza-kids/tips/babysitter-new.jpg"
+    "cover": "/assets/projects/dodo-pizza-kids/tips/babysitter-new.jpg",
+    "featuredOrder": 1
   },
   {
     "number": 5,

@@ -1,8 +1,8 @@
-{% macro caseMeta(page) %}
+{% macro caseMeta(page, topSpace=true, h1Space='M') %}
   {% set slug = page.url | projectSlugFromUrl %}
   {% set p = projects | projectBySlug(slug) %}
   {% if p %}
-  <div class="ids__space XL"></div>
+  {% if topSpace %}<div class="ids__space XL"></div>{% endif %}
   <div class="case-page__header">
     <a href="/projects/">← Все проекты</a>
     {% if p.logo and p.logo.kind == 'include' and p.logo.path %}
@@ -42,6 +42,6 @@
   </div>
   <div class="ids__space XS"></div>
   <h1>{{ p.title }}</h1>
-  <div class="ids__space M"></div>
+  <div class="ids__space {{ h1Space }}"></div>
   {% endif %}
 {% endmacro %}

@@ -1,0 +1,257 @@
+/* Виджет «саммари-дашборд» кейса: плашка article-title с шапкой кейса,
+   запросом/контекстом и результатом; под плашкой — строка скролл-навигации
+   по процессу (article-title-nav + .sticky, см. article.css и script.js).
+   Пока исключение кейса Додо Kids; скорее конструктор элементов для будущих
+   длинных кейсов, чем жёсткий шаблон. */
+
+/* Модификатор плашки: убирает ограничение высоты, нужное только лендингам
+   с иллюстрациями, и возвращает симметричные паддинги. Верхний — половинный:
+   над заголовком кейса стоит лёгкая строка шапки (ссылка назад, лого, теги),
+   полный отступ делает её оторванной от контента */
+.article .article-title.case-summary-title {
+  min-height: 0;
+  max-height: none;
+  padding: calc(var(--padding) / 2) var(--padding) var(--padding);
+}
+
+/* Якоря на страницах с саммари-дашбордом: прилипшая навигация (3em ≈ 3rem)
+   перекрывает верх вьюпорта, поэтому базового scroll-margin-top: 1.5em
+   (case-page.css) мало — цель ныряет под плашку. Воздух под плашкой держим
+   меньше естественного зазора над заголовком, иначе в просвет свисает хвост
+   последней строки предыдущего абзаца */
+:root:has(.case-summary-title) :is(.case-toc-target, #case-prototypes) {
+  scroll-margin-top: calc(3rem + 0.5rem);
+}
+
+/* Цель кнопки «Читать полностью» — спейсер сразу под навигацией. Отступ
+   на волосок меньше высоты навигации, чтобы после скролла она гарантированно
+   прошла порог прилипания (script.js: rect.top <= 0) */
+:root:has(.case-summary-title) .case-summary__intro-anchor {
+  scroll-margin-top: calc(3rem - var(--ids__border-width-s));
+}
+
+/* Мобильная навигация: гэпы втрое меньше, у пунктов боковые паддинги */
+@media (width < 768px) {
+  .article .article-title-nav.case-summary__nav {
+    gap: calc(var(--ids__gap-m) / 3);
+
+    & .title-nav-item:not(.accent) {
+      padding-left: calc(var(--ids__density) * 0.4em);
+      padding-right: calc(var(--ids__density) * 0.4em);
+    }
+  }
+}
+
+.case-summary {
+  --summary-gap: var(--ids__gap-l);
+  /* Вертикальный модуль колонок результата: строка списка = 1 модуль,
+     строка таблицы = 2 модуля (+ компенсация отсутствующей внутренней
+     линии), шапка таблицы = 1 модуль — так линии-разделители левой и
+     правой колонок ложатся на общую сетку. В rem: блочная геометрия */
+  --summary-rhythm: 1.6rem;
+  font-family: var(--mono);
+  font-size: 0.75em;
+
+  @media (width < 768px) {
+    font-size: 0.7em;
+  }
+
+  & p {
+    margin: 0 0 0.6em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & ul {
+    margin: 0 0 0.6em;
+
+    & li {
+      margin-bottom: 0.25em;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+h2.case-summary__heading {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.4;
+  margin: 0 0 0.5em;
+}
+
+h3.case-summary__subheading {
+  font-family: var(--mono);
+  /* Шаг шкалы типографики h2.S («заголовок секции кейса», см. /style) */
+  font-size: 1.65em;
+  font-weight: 700;
+  margin: 0 0 0.5em;
+}
+
+.case-summary__section {
+  margin-top: var(--summary-gap);
+}
+
+.case-summary__row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--summary-gap);
+
+  @media (width < 768px) {
+    flex-direction: column;
+  }
+}
+
+.case-summary__row--intro .case-summary__block {
+  width: calc((100% - var(--summary-gap)) / 2);
+
+  @media (width < 768px) {
+    width: 100%;
+  }
+}
+
+.case-summary__row--results {
+  & .case-summary__block--half {
+    width: calc((100% - var(--summary-gap)) / 2);
+  }
+
+  @media (width < 768px) {
+    & .case-summary__block--half {
+      width: 100%;
+    }
+  }
+}
+
+/* Список с крестиками вместо интерпунктов, свёрстанный как таблица:
+   без колонок и заголовков, только полупрозрачные линии-разделители.
+   Каждая строка — один вертикальный модуль, линия под последней тоже есть */
+ul.case-summary__cross-list {
+  margin-bottom: 0;
+
+  & li {
+    box-sizing: border-box;
+    height: var(--summary-rhythm);
+    line-height: calc(var(--summary-rhythm) - var(--ids__border-width-s));
+    margin-bottom: 0;
+    border-bottom: var(--ids__border-width-s) solid var(--ids__border);
+
+    &::before {
+      content: "×";
+    }
+  }
+}
+
+/* Ссылка «и ещё N» — под списком/таблицей, обычной ссылкой */
+p.case-summary__more {
+  margin-top: 0.6em;
+}
+
+/* Таблица инициатив: линии как у table.promo-table — однопиксельная чёрная
+   под th, дальше полупрозрачные. Паддинги ячеек — в rem: в ячейках разный
+   кегль (название 1rem, теги мельче), em-паддинги давали бы разную высоту
+   строк. Обложка держит пропорции карточки (3:2) при высоте 3em */
+/* Селекторы с tr — чтобы перебить глобальные `.ids table tr td/th`
+   (0-1-3) из ids.css: у них em-паддинги и двухпиксельная линия th.
+   Бордеры separate + border-box: линия-разделитель входит в высоту
+   строки, и строки ложатся на модульную сетку без дробей коллапса */
+table.case-summary__initiative-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  & tr th {
+    box-sizing: border-box;
+    height: var(--summary-rhythm);
+    text-align: left;
+    vertical-align: bottom;
+    font-weight: 400;
+    padding: 0 0.5rem 0.3rem 0;
+    border-bottom: var(--ids__border-width-s) solid var(--ids__text);
+  }
+
+  & tr td {
+    box-sizing: border-box;
+    /* Строка таблицы = два модуля ритма; своя линия уже внутри модуля */
+    height: calc(var(--summary-rhythm) * 2);
+    padding: 0.2rem 0.5rem 0.2rem 0;
+    border-bottom: var(--ids__border-width-s) solid var(--ids__border);
+    vertical-align: top;
+    transition:
+      color var(--ids__duration-base) var(--ids__easing-base),
+      border-bottom-color var(--ids__duration-base) var(--ids__easing-base);
+  }
+
+  /* Линия и под последней строкой: перебивает `.ids table tr:last-child td` */
+  & tbody tr:last-child td {
+    border-bottom: var(--ids__border-width-s) solid var(--ids__border);
+  }
+
+  /* Стек чипов-принципов не должен вырастать выше двух модулей */
+  & tr td.case-summary__initiative-tags {
+    line-height: 1.15;
+  }
+
+  /* Вся строка — ссылка: растянутый ::after у ссылки в названии.
+     Ховер красит строку целиком — текст, чипы, нижнюю линию */
+  & tbody tr {
+    position: relative;
+
+    &:hover {
+      & td {
+        color: var(--ids__hover);
+        border-bottom-color: color-mix(in srgb, var(--ids__hover) 45%, transparent);
+        transition-duration: var(--ids__duration-instant);
+      }
+
+      & .initiative-card__principle {
+        color: var(--ids__hover);
+        border-color: color-mix(in srgb, var(--ids__hover) 35%, transparent);
+        transition-duration: var(--ids__duration-instant);
+      }
+    }
+  }
+
+  & tr td.case-summary__initiative-cover {
+    width: 4.5em;
+    /* Обложка — сплошной блок без просвета строки, чипам в третьей колонке
+       полупросвет добавляет ~0.2rem: выравниваем верх картинки с ними */
+    padding-top: 0.4rem;
+  }
+
+  & tr td.case-summary__initiative-title {
+    font-size: 1rem;
+    font-weight: 700;
+    width: 14em;
+
+    & a {
+      color: inherit;
+      text-decoration: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+    }
+  }
+}
+
+.case-summary__cover-frame {
+  width: 4.5em;
+  height: 3em;
+  overflow: hidden;
+
+  & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
