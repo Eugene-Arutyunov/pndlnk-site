@@ -213,6 +213,39 @@
     }
   }
 
+  /* Сквозная многоуровневая нумерация (1. / 1.1. / 1.1.1.) для документов
+     с иерархией пунктов: номер собирается CSS-счётчиками по вложенности ol.
+     Заголовок раздела — первый h2/h3 внутри li верхнего уровня. */
+  & ol.multilevel {
+    counter-reset: item;
+
+    & li {
+      list-style: none;
+    }
+
+    & > li,
+    & ol > li {
+      counter-increment: item;
+    }
+
+    & > li {
+      margin-bottom: var(--ids__spacer-l);
+
+      & > h2:first-child::before,
+      & > h3:first-child::before {
+        content: counters(item, ".") ". ";
+      }
+    }
+
+    & ol {
+      counter-reset: item;
+
+      & > li::before {
+        content: counters(item, ".") ". ";
+      }
+    }
+  }
+
   & ul.inline-block {
     & li {
       display: inline-block;

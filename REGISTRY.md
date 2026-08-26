@@ -98,7 +98,7 @@
 - `!important` внутри `@media print` обоснован комментарием: печать перебивает экранные стили
 
 ### Прочее
-- `src/styles/glossary.css` — глоссарий; `src/subscribe.html` — подписка (форма `.form-field.filled`); `src/company-details.html` — реквизиты; `src/illustrations.html` — демо иллюстраций
+- `src/styles/glossary.css` — глоссарий; `src/subscribe.html` — подписка (форма `.form-field.filled`); `src/company-details.html` — реквизиты; `src/politika.html` — политика обработки персональных данных (сквозная многоуровневая нумерация — `ol.multilevel` в `src/ids/ids.css`); `src/illustrations.html` — демо иллюстраций
 - Инклуды: `src/includes/layout.html` (базовый шаблон; контактная форма — внизу каждой страницы), `header.html`/`footer.html` + `src/styles/includes/*`
 
 ## Инфраструктура
