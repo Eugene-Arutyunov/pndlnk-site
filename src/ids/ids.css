@@ -77,6 +77,14 @@
       font-size: 2.5em;
     }
 
+    /* Модификатор: на мобиле в полтора раза крупнее мобильного h1 (2.5em),
+       десктоп не меняется */
+    &.mobile-L {
+      @media (width < 768px) {
+        font-size: 3.75em;
+      }
+    }
+
     &.accent {
       font-family: var(--mono);
       font-size: 3.9em;

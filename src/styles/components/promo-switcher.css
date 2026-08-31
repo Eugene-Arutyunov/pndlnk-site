@@ -13,6 +13,18 @@
     flex-wrap: wrap;
     border: var(--ids__border-width-m) solid var(--ids__text);
     width: fit-content;
+    /* Прячет линию-разделитель у первой строки пунктов (см. margin-top ниже) */
+    overflow: hidden;
+
+    /* На мобиле пункты растягиваются на всю ширину рамки: при переносе
+       на две строки линия-разделитель между строками идёт от края до края */
+    @media (width < 768px) {
+      width: 100%;
+
+      & .promo-switcher__item {
+        flex: 1 0 auto;
+      }
+    }
   }
 
   .promo-switcher__item {
@@ -23,6 +35,12 @@
     padding: 0.2em 0.5em 0.2em;
     border: none;
     border-right: var(--ids__border-width-s) solid color-mix(in srgb, var(--ids__text) 25%, transparent);
+    /* Когда пункты переносятся на вторую строку, между строками появляется
+       такая же тонкая линия, как вертикальные разделители: border-top есть
+       у каждого пункта, но у первой строки он утоплен за край контейнера
+       отрицательным марджином (overflow: hidden на контейнере) */
+    border-top: var(--ids__border-width-s) solid color-mix(in srgb, var(--ids__text) 25%, transparent);
+    margin-top: calc(var(--ids__border-width-s) * -1);
     color: var(--ids__text);
     transition: color var(--ids__duration-slow) var(--ids__easing-base);
 
@@ -38,5 +56,35 @@
     &.is-active {
       background: color-mix(in srgb, var(--ids__text) 6%, transparent);
     }
+  }
+
+  /* Кнопка с пилюлей — флекс: пилюля центрируется по вертикали строки,
+     а не сидит на базовой линии текста */
+  .promo-switcher__item:has(.promo-switcher__count) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+  }
+
+  /* Счётчик-пилюля в пункте свитчера — одновременно диаграмма: левая часть
+     фона закрашена красным пропорционально доле числа от «всех» (--share
+     задаётся в разметке). Ширина фиксирована под трёхзначное число */
+  .promo-switcher__count {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: calc(3ch + 0.9em);
+    padding: 0.15em 0.45em;
+    border-radius: 1em;
+    font-family: var(--mono);
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--ids__background);
+    background: linear-gradient(
+      to right,
+      var(--ids__pndlnk-red) var(--share, 0%),
+      var(--ids__text) var(--share, 0%)
+    );
   }
 }

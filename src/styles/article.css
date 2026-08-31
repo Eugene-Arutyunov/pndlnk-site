@@ -89,6 +89,12 @@
       --nav-padding-top: 0.7em;
       --nav-padding-bottom: 0.75em;
 
+      /* На мобиле строка навигации вдвое ниже */
+      @media (width < 768px) {
+        --nav-padding-top: 0.35em;
+        --nav-padding-bottom: 0.375em;
+      }
+
       font-size: 0.8em;
 
       transition: padding var(--ids__duration-instant) ease;
@@ -112,7 +118,10 @@
   & .sticky {
     position: sticky;
     top: 0px;
-    z-index: 2;
+    /* Выше любых контентных слоёв: у полевого промо z-index доходит до 21
+       (карточки, градиент, подпись «и ещё»), у ганта — 10. Плашка навигации
+       должна перекрывать их все; выше только оверлеи (форма 1000, photoswipe) */
+    z-index: 30;
     height: 3em;
     will-change: transform;
     transform: translateZ(0);
@@ -137,6 +146,11 @@
         & .title-nav-item {
           --nav-padding-top: 0.5em;
           --nav-padding-bottom: 0.55em;
+
+          @media (width < 768px) {
+            --nav-padding-top: 0.25em;
+            --nav-padding-bottom: 0.275em;
+          }
           transition: padding var(--ids__duration-slow) ease;
 
           &.accent {

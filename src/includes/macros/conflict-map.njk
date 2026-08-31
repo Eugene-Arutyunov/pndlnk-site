@@ -1,0 +1,39 @@
+{# Карта мотивационного конфликта (стили — components/conflict-map.css).
+   Названия ячеек и стрелки зашиты, тексты передаются с заглавной буквы.
+   activity — деятельность, course — образ действия (ОД),
+   barrier — барьер, newCourse — новый образ действия (ОД'),
+   driver — драйвер, goal — общая цель #}
+{% macro conflictMap(activity, course, barrier, newCourse, driver, goal) %}
+<table class="conflict-map">
+  <tbody>
+    <tr>
+      <td rowspan="2">
+        <p class="conflict-map__label">Деятельность</p>
+        <p>{{ activity }}</p>
+      </td>
+      <td>
+        <p class="conflict-map__label">→<br />Образ действия (ОД)</p>
+        <p>{{ course }}</p>
+      </td>
+      <td>
+        <p class="conflict-map__label">→<br />Барьер</p>
+        <p>{{ barrier }}</p>
+      </td>
+      <td rowspan="2">
+        <p class="conflict-map__label">Общая цель</p>
+        <p>{{ goal }}</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="conflict-map__label">→<br />Новый образ действия (ОД')</p>
+        <p>{{ newCourse }}</p>
+      </td>
+      <td>
+        <p class="conflict-map__label">↗<br />Драйвер</p>
+        <p>{{ driver }}</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+{% endmacro %}

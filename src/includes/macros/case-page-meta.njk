@@ -1,4 +1,4 @@
-{% macro caseMeta(page, topSpace=true, h1Space='M') %}
+{% macro caseMeta(page, topSpace=true, h1Space='M', h1Class='') %}
   {% set slug = page.url | projectSlugFromUrl %}
   {% set p = projects | projectBySlug(slug) %}
   {% if p %}
@@ -41,7 +41,7 @@
     {% endif %}
   </div>
   <div class="ids__space XS"></div>
-  <h1>{{ p.title }}</h1>
-  <div class="ids__space {{ h1Space }}"></div>
+  <h1{% if h1Class %} class="{{ h1Class }}"{% endif %}>{{ p.title }}</h1>
+  {% if h1Space != 'none' %}<div class="ids__space {{ h1Space }}"></div>{% endif %}
   {% endif %}
 {% endmacro %}

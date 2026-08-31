@@ -1,20 +1,70 @@
-/* Отзыв и карточка автора в кейсах: .review-author, .author-box */
+/* Отзыв — универсальный компонент. Обязательное (редакторски): имя с подписью
+   и текст; фотка и видео — опциональные части конкретного отзыва. Отзывы
+   хранятся инклюдами в src/includes/reviews/ и не знают своей ширины:
+   страница раскладывает их сеткой .reviews-grid (см. ниже).
+   Также здесь: карточка автора .author-box (блок людей кейса — не отзыв). */
 
-.case-page .case-standard__review-portrait {
-  width: 4em;
-  height: 4em;
-  background: color-mix(in srgb, var(--ids__text) 22%, transparent);
-}
-
-.case-page .review-author {
+.review-author {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 0.5em;
 }
 
-.case-page .review-name {
-  width: 70%;
+.review-portrait img {
+  width: 4em;
+  height: 4em;
+  object-fit: cover;
+}
+
+.review-name {
+  /* Занимает всю ширину рядом с фоткой (и без неё): жёсткие 70% давали
+     ранний перенос подписи при свободном месте */
+  flex: 1;
+  min-width: 0;
   font-size: 0.8rem;
+}
+
+/* Плеер видео-отзыва: без рамок и фона — у плеера свои скругления,
+   из-под них просвечивала бы подложка */
+.review-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 0.65em;
+
+  & iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+/* Сетка отзывов на стороне страницы — универсальный принцип для всего
+   сайта: всегда три колонки, ячейка — простой div-враппер вокруг инклюда,
+   ширину задаёт страница модификатором .wide (две колонки из трёх);
+   сам отзыв своей ширины не знает.
+   Редакторские правила: сетка всегда стоит в большом враппере
+   (ids__wrapper L), никогда в текстовой ширине или обычном враппере;
+   три одиночных отзыва в строке не верстаем — каждая строка собирается
+   как 2+1 или 1+2 */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ids__gap-l);
+
+  & > .wide {
+    grid-column: span 2;
+  }
+
+  @media (width < 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    /* На мобиле любые ячейки в полширины — и широкие, и одиночные */
+    & > .wide {
+      grid-column: auto;
+    }
+  }
 }
 
 .case-page .author-box {
@@ -36,12 +86,52 @@
   color: var(--ids__text);
 }
 
+/* Блок людей — грид 3 колонки: заголовок первой команды тянется на две
+   колонки, списки всех колонок стартуют с одной строки */
+.case-people {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 var(--ids__gap-m);
+
+  & .case-people__team-wide {
+    grid-column: span 2;
+  }
+
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+
+    & .case-people__team-wide {
+      grid-column: auto;
+      order: 1;
+    }
+
+    & .case-people__col-1 {
+      order: 2;
+    }
+
+    & .case-people__col-2 {
+      order: 3;
+    }
+
+    & .case-people__team-east {
+      order: 4;
+      margin-top: 1em;
+    }
+
+    & .case-people__col-3 {
+      order: 5;
+    }
+  }
+}
+
 .case-people .author-box,
 .case-page .case-people .author-box {
   color: color-mix(in srgb, var(--ids__text) 72%, transparent);
   font-family: var(--mono);
   font-size: var(--smaller);
-  line-height: 1.45;
+  /* Плотный интерлиньяж внутри пункта, воздух — между пунктами */
+  line-height: 1.25;
 }
 
 .case-people .author-box p,
@@ -52,25 +142,53 @@
 .case-people .author-box .author-box__team,
 .case-page .case-people .author-box .author-box__team {
   display: block;
-  margin: 0 0 0.35em;
+  margin: 0 0 var(--ids__gap-s);
   font-weight: 700;
   color: var(--ids__text);
 }
 
+/* Список людей — просто строчки: без отступа слева и без интерпунктов ids */
 .case-people .author-box ul,
 .case-page .case-people .author-box ul {
   margin: 0;
-  padding-left: 1.1em;
+  padding-left: 0;
 }
 
 .case-people .author-box li,
 .case-page .case-people .author-box li {
-  margin: 0;
+  margin: 0 0 0.45em;
+  padding-left: 0;
+
+  &::before {
+    content: none;
+  }
 }
 
 .case-people .author-box + .author-box,
 .case-page .case-people .author-box + .author-box {
   margin-top: 1em;
+}
+
+/* Ячейки грида без внешних полей author-box — иначе строки колонок разъезжаются */
+.case-people > .author-box,
+.case-page .case-people > .author-box,
+.case-page .case-people > .author-box + .author-box {
+  margin: 0;
+}
+
+/* Воздух после блока команды Понедельника: на мобиле заголовок Ближнего
+   Востока прилипал к списку. `.author-box` в селекторе — перебить сбросное
+   правило `... > .author-box + .author-box { margin: 0 }` выше */
+.case-people > .author-box.case-people__col-2,
+.case-page .case-people > .author-box.case-people__col-2 {
+  margin-bottom: var(--ids__gap-m);
+}
+
+/* Кастомный отступ: заголовок второй команды в третьей колонке встаёт
+   на одну строку с третьим пунктом соседней колонки (2 пункта + двустрочный) */
+.case-people .case-people__col-3 .author-box + .author-box,
+.case-page .case-people .case-people__col-3 .author-box + .author-box {
+  margin-top: 1.7em;
 }
 
 .case-page .author-box .name span {

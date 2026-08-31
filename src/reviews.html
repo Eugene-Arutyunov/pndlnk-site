@@ -1,0 +1,53 @@
+---
+noindex: true
+---
+
+{% extends 'layout.html' %}
+{% set pageTitle = 'Все отзывы — Понедельник' %}
+{% set pageDesc = 'Служебный каталог отзывов сайта' %}
+{% block content %}
+
+<div class="ids__space XL"></div>
+
+<div class="ids__wrapper L">
+  <h1 class="S">Все отзывы</h1>
+
+  <div class="ids__space M"></div>
+
+  {# Каждая строка сетки — 2+1 или 1+2: три одиночных отзыва в строке не верстаем #}
+  <div class="reviews-grid">
+    <div class="wide">{% include 'reviews/tatyana-yanysheva.html' %}</div>
+    <div>{% include 'reviews/vladimir-lastovskiy.html' %}</div>
+
+    <div>{% include 'reviews/polina-barabanova.html' %}</div>
+    <div class="wide">{% include 'reviews/anton-but.html' %}</div>
+
+    <div class="wide">{% include 'reviews/artem-nikshin.html' %}</div>
+    <div>{% include 'reviews/pavel-murkin.html' %}</div>
+
+    <div>{% include 'reviews/mariya-chicherova.html' %}</div>
+    <div class="wide">{% include 'reviews/dima-solomakin.html' %}</div>
+
+    <div class="wide">{% include 'reviews/aleksandr.html' %}</div>
+    <div>{% include 'reviews/valentina-sergeeva.html' %}</div>
+
+    <div>{% include 'reviews/elena-rudenskaya.html' %}</div>
+    <div class="wide">{% include 'reviews/sofiya-kuzmina.html' %}</div>
+
+    <div class="wide">{% include 'reviews/natasha-kukhta-masha-kroshkina.html' %}</div>
+    <div>{% include 'reviews/maks-fedorov.html' %}</div>
+
+    <div>{% include 'reviews/lena-savikhina.html' %}</div>
+    <div class="wide">{% include 'reviews/masha-kalinina.html' %}</div>
+
+    <div class="wide">{% include 'reviews/andrey-yamschikov.html' %}</div>
+    <div>{% include 'reviews/polina-volkova.html' %}</div>
+
+    <div>{% include 'reviews/anya-putsman.html' %}</div>
+    <div class="wide">{% include 'reviews/ramilya-starodubtseva.html' %}</div>
+  </div>
+
+  <div class="ids__space XL"></div>
+</div>
+
+{% endblock %}
