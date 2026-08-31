@@ -154,9 +154,12 @@
           --nav-padding-top: 0.5em;
           --nav-padding-bottom: 0.55em;
 
+          /* На мобиле паддинги прилипшей не меньше обычных: высота навигации
+             в обоих состояниях одна, и scroll-margin якорей
+             (--sticky-nav-height) не оставляет просвета под хвост строки */
           @media (width < 768px) {
-            --nav-padding-top: 0.25em;
-            --nav-padding-bottom: 0.275em;
+            --nav-padding-top: 0.35em;
+            --nav-padding-bottom: 0.375em;
           }
           transition: padding var(--ids__duration-slow) ease;
 

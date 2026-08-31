@@ -1,3 +1,51 @@
+function initAnchorScrollCorrection() {
+  // Плавный скролл к якорю едет заметное время, и пока он идёт, ленивый
+  // контент выше цели успевает подрасти — цель уезжает из-под рассчитанной
+  // точки и из-под стики-навигации выглядывают чужие строки. После окончания
+  // прокрутки доводим позицию мгновенным повторным scrollIntoView (он сам
+  // учитывает scroll-margin цели). Если человек начал скроллить — не мешаем.
+  let cleanup = null;
+
+  function correctTo(hash) {
+    if (cleanup) cleanup();
+    if (!hash || hash.length < 2) return;
+
+    let target;
+    try {
+      target = document.getElementById(decodeURIComponent(hash.slice(1)));
+    } catch {
+      return;
+    }
+    if (!target) return;
+
+    const finish = () => {
+      dispose();
+      target.scrollIntoView({ behavior: "instant", block: "start" });
+    };
+    const abort = () => dispose();
+
+    const supportsScrollEnd = "onscrollend" in window;
+    const timer = setTimeout(finish, supportsScrollEnd ? 3000 : 1200);
+
+    function dispose() {
+      clearTimeout(timer);
+      if (supportsScrollEnd) window.removeEventListener("scrollend", finish);
+      window.removeEventListener("wheel", abort);
+      window.removeEventListener("touchstart", abort);
+      cleanup = null;
+    }
+
+    if (supportsScrollEnd) {
+      window.addEventListener("scrollend", finish, { once: true });
+    }
+    window.addEventListener("wheel", abort, { once: true, passive: true });
+    window.addEventListener("touchstart", abort, { once: true, passive: true });
+    cleanup = dispose;
+  }
+
+  window.addEventListener("hashchange", () => correctTo(location.hash));
+}
+
 function initStickyObserver() {
   const stickyElement = document.querySelector(".sticky");
 
@@ -35,6 +83,9 @@ function initStickyObserver() {
       } else {
         stickyElement.classList.remove("stuck");
       }
+      // Прилипшая навигация может отличаться по высоте (другая ширина,
+      // другие переносы) — держим переменную честной в обоих состояниях
+      updateNavHeight();
     }
   }
 
@@ -1048,6 +1099,7 @@ function initCaseFieldPromoTranscripts() {
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     initStickyObserver();
+    initAnchorScrollCorrection();
     initSleepyObserver();
     initLogoDownloads();
     initPromoTable();
@@ -1065,6 +1117,7 @@ if (document.readyState === "loading") {
   });
 } else {
   initStickyObserver();
+  initAnchorScrollCorrection();
   initSleepyObserver();
   initLogoDownloads();
   initPromoTable();
