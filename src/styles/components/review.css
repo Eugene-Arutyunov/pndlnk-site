@@ -36,12 +36,52 @@
   color: var(--ids__text);
 }
 
+/* Блок людей — грид 3 колонки: заголовок первой команды тянется на две
+   колонки, списки всех колонок стартуют с одной строки */
+.case-people {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 var(--ids__gap-m);
+
+  & .case-people__team-wide {
+    grid-column: span 2;
+  }
+
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+
+    & .case-people__team-wide {
+      grid-column: auto;
+      order: 1;
+    }
+
+    & .case-people__col-1 {
+      order: 2;
+    }
+
+    & .case-people__col-2 {
+      order: 3;
+    }
+
+    & .case-people__team-east {
+      order: 4;
+      margin-top: 1em;
+    }
+
+    & .case-people__col-3 {
+      order: 5;
+    }
+  }
+}
+
 .case-people .author-box,
 .case-page .case-people .author-box {
   color: color-mix(in srgb, var(--ids__text) 72%, transparent);
   font-family: var(--mono);
   font-size: var(--smaller);
-  line-height: 1.45;
+  /* Плотный интерлиньяж внутри пункта, воздух — между пунктами */
+  line-height: 1.25;
 }
 
 .case-people .author-box p,
@@ -52,25 +92,45 @@
 .case-people .author-box .author-box__team,
 .case-page .case-people .author-box .author-box__team {
   display: block;
-  margin: 0 0 0.35em;
+  margin: 0 0 var(--ids__gap-s);
   font-weight: 700;
   color: var(--ids__text);
 }
 
+/* Список людей — просто строчки: без отступа слева и без интерпунктов ids */
 .case-people .author-box ul,
 .case-page .case-people .author-box ul {
   margin: 0;
-  padding-left: 1.1em;
+  padding-left: 0;
 }
 
 .case-people .author-box li,
 .case-page .case-people .author-box li {
-  margin: 0;
+  margin: 0 0 0.45em;
+  padding-left: 0;
+
+  &::before {
+    content: none;
+  }
 }
 
 .case-people .author-box + .author-box,
 .case-page .case-people .author-box + .author-box {
   margin-top: 1em;
+}
+
+/* Ячейки грида без внешних полей author-box — иначе строки колонок разъезжаются */
+.case-people > .author-box,
+.case-page .case-people > .author-box,
+.case-page .case-people > .author-box + .author-box {
+  margin: 0;
+}
+
+/* Кастомный отступ: заголовок второй команды в третьей колонке встаёт
+   на одну строку с третьим пунктом соседней колонки (2 пункта + двустрочный) */
+.case-people .case-people__col-3 .author-box + .author-box,
+.case-page .case-people .case-people__col-3 .author-box + .author-box {
+  margin-top: 1.7em;
 }
 
 .case-page .author-box .name span {
