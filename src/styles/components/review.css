@@ -1,20 +1,65 @@
-/* Отзыв и карточка автора в кейсах: .review-author, .author-box */
+/* Отзыв — универсальный компонент. Обязательное (редакторски): имя с подписью
+   и текст; фотка и видео — опциональные части конкретного отзыва. Отзывы
+   хранятся инклюдами в src/includes/reviews/ и не знают своей ширины:
+   страница раскладывает их сеткой .reviews-grid (см. ниже).
+   Также здесь: карточка автора .author-box (блок людей кейса — не отзыв). */
 
-.case-page .case-standard__review-portrait {
-  width: 4em;
-  height: 4em;
-  background: color-mix(in srgb, var(--ids__text) 22%, transparent);
-}
-
-.case-page .review-author {
+.review-author {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 0.5em;
 }
 
-.case-page .review-name {
-  width: 70%;
+.review-portrait img {
+  width: 4em;
+  height: 4em;
+  object-fit: cover;
+}
+
+.review-name {
+  /* Занимает всю ширину рядом с фоткой (и без неё): жёсткие 70% давали
+     ранний перенос подписи при свободном месте */
+  flex: 1;
+  min-width: 0;
   font-size: 0.8rem;
+}
+
+/* Плеер видео-отзыва: без рамок и фона — у плеера свои скругления,
+   из-под них просвечивала бы подложка */
+.review-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 0.65em;
+
+  & iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+/* Сетка отзывов на стороне страницы — универсальный принцип для всего
+   сайта: всегда три колонки, ячейка — простой div-враппер вокруг инклюда,
+   ширину задаёт страница модификатором .wide (две колонки из трёх);
+   сам отзыв своей ширины не знает.
+   Редакторские правила: сетка всегда стоит в большом враппере
+   (ids__wrapper L), никогда в текстовой ширине или обычном враппере;
+   три одиночных отзыва в строке не верстаем — каждая строка собирается
+   как 2+1 или 1+2 */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ids__gap-l);
+
+  & > .wide {
+    grid-column: span 2;
+  }
+
+  @media (width < 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .case-page .author-box {

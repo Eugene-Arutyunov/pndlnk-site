@@ -405,21 +405,7 @@ table.ksc-open-schedule {
   }
 }
 
-.review-author {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 0.5em;
-
-  & .review-author-portrait img {
-    width: 4em;
-    height: 4em;
-    object-fit: cover;
-  }
-  & .review-name {
-    width: 70%;
-    font-size: 0.8rem;
-  }
-}
+/* Отзывы: универсальный компонент .review — components/review.css */
 
 .logo-box {
   display: flex;
