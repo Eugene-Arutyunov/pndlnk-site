@@ -8,6 +8,22 @@ function initStickyObserver() {
   let rafId = null;
   let isStuck = false;
 
+  // Фактическая высота стики-контейнера — для scroll-margin якорей:
+  // на мобиле пункты навигации переносятся на несколько строк, и константа
+  // 3rem в CSS врёт. Меряем контейнер (3em на десктопе, по контенту на
+  // мобиле): его высота задаёт и порог прилипания, и перекрытие контента
+  function updateNavHeight() {
+    document.documentElement.style.setProperty(
+      "--sticky-nav-height",
+      `${stickyElement.offsetHeight}px`
+    );
+  }
+
+  updateNavHeight();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(updateNavHeight);
+  }
+
   function checkSticky() {
     const rect = stickyElement.getBoundingClientRect();
     const shouldBeStuck = rect.top <= cachedStickyTop;
@@ -38,6 +54,7 @@ function initStickyObserver() {
   // Проверяем при изменении размера окна (пересчитываем кэш)
   window.addEventListener("resize", () => {
     cachedStickyTop = parseInt(getComputedStyle(stickyElement).top) || 0;
+    updateNavHeight();
     checkSticky();
   });
 
