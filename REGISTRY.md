@@ -48,7 +48,7 @@
 | `promo-switcher.css` | Сегментед-контрол (обёртка `.ids` сохраняет специфичность) | ДКЦП, КШЦ, кейсы, продукты |
 | `pndlnk-promo-link.css` | Карточка материала `a.pndlnk-promo-link` (+`.inverted` — всегда тёмная) | главная, ДКЦП |
 | `logo-wall.css` | Стена логотипов клиентов | главная, ДКЦП База |
-| `review.css` | Отзыв `.review-author` + карточка автора `.author-box` | кейсы |
+| `review.css` | Отзыв `.review` (имя с подписью + текст; фотка `.review-portrait` и видео `.review-video` — опциональные свойства отзыва) + сетка страницы `.reviews-grid`: всегда 3 колонки, всегда в `ids__wrapper L`, строки 2+1/1+2 (`.wide` = 2 колонки); сами отзывы — инклюды `src/includes/reviews/*` и своей ширины не знают + карточка автора `.author-box` | /ksc-open, /ksc, /dkcp, кейсы, /reviews |
 | `initiative-card.css` | Карточка инициативы, сетка, пилюли принципов | кейс Додо Kids (спроектированы для любого кейса) |
 | `logo-downloads.css` | Плашки скачивания логотипов | витрина |
 | `illustrations.css` | Контейнеры канвас-иллюстраций | главная, ДКЦП, витрина |
@@ -89,7 +89,7 @@
 - Data: `src/data/loadDodoKidsInitiatives.js`
 
 ### КШЦ
-- Pages: `src/ksc.html`, `src/ksc-open.html`, `src/ksc-full.html` + `src/includes/ksc-open-rest.html`
+- Pages: `src/ksc.html`, `src/ksc-open.html`, `src/ksc-full.html` (редирект на /ksc/)
 - Styles: `src/styles/ksc-open.css`, `src/styles/ksc-program-table.css`, `src/styles/article.css` (каркас статьи-лендинга)
 - В ksc-open.css мокапы интерфейсов используют локальные переменные `--mock-*` — все указывают на токены; это законные локальные переменные виджета
 
@@ -98,8 +98,8 @@
 - `!important` внутри `@media print` обоснован комментарием: печать перебивает экранные стили
 
 ### Прочее
-- `src/styles/glossary.css` — глоссарий; `src/subscribe.html` — подписка (форма `.form-field.filled`); `src/company-details.html` — реквизиты; `src/politika.html` — политика обработки персональных данных (сквозная многоуровневая нумерация — `ol.multilevel` в `src/ids/ids.css`); `src/illustrations.html` — демо иллюстраций
-- Инклуды: `src/includes/layout.html` (базовый шаблон; контактная форма — внизу каждой страницы), `header.html`/`footer.html` + `src/styles/includes/*`
+- `src/styles/glossary.css` — глоссарий; `src/subscribe.html` — подписка (форма `.form-field.filled`); `src/company-details.html` — реквизиты; `src/politika.html` — политика обработки персональных данных (сквозная многоуровневая нумерация — `ol.multilevel` в `src/ids/ids.css`); `src/illustrations.html` — демо иллюстраций; `src/reviews.html` → `/reviews/` (noindex) — служебный каталог всех отзывов из инклюдов
+- Инклуды: `src/includes/layout.html` (базовый шаблон; контактная форма — внизу каждой страницы), `header.html`/`footer.html` + `src/styles/includes/*`; `src/includes/reviews/*` — отзывы, по одному на файл (см. `review.css` в компонентах)
 
 ## Инфраструктура
 
