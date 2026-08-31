@@ -1,0 +1,35 @@
+/* Карта мотивационного конфликта: «Деятельность» и «Общая цель» на всю
+   высоту по краям, между ними строки «образ действия → барьер» и «новый
+   образ действия → драйвер». Стрелки в лейблах — часть дизайна.
+   Разметку собирает макрос macros/conflict-map.njk: названия ячеек зашиты,
+   тексты передаются параметрами.
+   Селекторы с `.ids` и `tbody` — ради специфичности: правила промо-таблиц
+   (`.ids .promo-table tbody tr:last-child td`, 0-3-3) дотягиваются до
+   вложенной карты и гасят её линии и паддинги */
+
+.ids table.conflict-map {
+  width: 100%;
+  margin: 0 0 0.65em;
+  border-collapse: collapse;
+  /* Ступень --smaller: карта плотнее окружающего текста */
+  font-size: var(--smaller);
+}
+
+.ids table.conflict-map tbody tr td {
+  vertical-align: top;
+  padding: 0.2rem 0.4rem 0.3rem 0.2rem;
+  border: var(--ids__border-width-s) solid var(--ids__border);
+
+  & p {
+    margin: 0;
+  }
+}
+
+.ids table.conflict-map tbody tr:last-child td {
+  border-bottom: var(--ids__border-width-s) solid var(--ids__border);
+}
+
+.ids table.conflict-map .conflict-map__label {
+  margin-bottom: 0.2em;
+  color: color-mix(in srgb, var(--ids__text) 55%, transparent);
+}

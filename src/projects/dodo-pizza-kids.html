@@ -7,6 +7,7 @@ noindex: true
   from 'macros/case-page-meta.njk' import caseMeta
   with context
 %}
+{% from 'macros/conflict-map.njk' import conflictMap %}
 {% set pageTitle = 'Опыт семей с детьми' %}
 {% block content %}
   <div class="ids__space top-screen-space M"></div>
@@ -14,15 +15,15 @@ noindex: true
   <div class="article">
     <div class="ids__wrapper L case-featured case-standard case-page">
       <div class="article-title case-summary-title">
-        {{ caseMeta(page, topSpace=false, h1Space='S') }}
+        {{ caseMeta(page, topSpace=false, h1Space='none', h1Class='mobile-L') }}
         <div class="case-summary">
           <div class="case-summary__row case-summary__row--intro">
             <div class="case-summary__block">
               <h2 class="case-summary__heading">Запрос</h2>
               <p>
-                <mark>Исследовать опыт родителей с детьми</mark>,
-                <mark>предложить идеи, во что вкладываться</mark>, чтобы сделать этот опыт цельным,
-                качественным и запоминающимся.
+                <mark>Исследовать опыт родителей с детьми, предложить идеи, во что
+                вкладываться, чтобы сделать этот опыт цельным, качественным
+                и запоминающимся.</mark>
               </p>
             </div>
             <div class="case-summary__block">
@@ -30,7 +31,7 @@ noindex: true
               <p>
                 Додо Пицца выходит на новые рынки и параллельно с этим усиливает образ семейной
                 пиццерии. Стратегическая задача:
-                <mark>Додо-опыт должен быть частью счастливых детских воспоминаний</mark>.
+                Додо-опыт должен быть частью счастливых детских воспоминаний.
               </p>
             </div>
           </div>
@@ -39,29 +40,22 @@ noindex: true
             <div class="case-summary__row case-summary__row--results">
               <div class="case-summary__block case-summary__block--half">
                 <h3 class="case-summary__subheading">Нашли барьеры</h3>
-                <p>
-                  О части барьеров команда не знала — теперь все они на карте, с&nbsp;источниками и
-                  матрицей приоритетов
-                </p>
+                <p>В том числе новые, о которых в Додо ещё не знали.</p>
                 <ul class="case-summary__cross-list">
-                  <li>Родителям неудобно раздевать ребёнка стоя у вешалки</li>
-                  <li>Детских стульев не хватает или они вне зоны видимости</li>
-                  <li>Ребёнку сложно открыть упаковку с игрушкой без ножниц</li>
-                  <li>Стойка с шариками может упасть на ребёнка</li>
-                  <li>Детская подставка низкая</li>
-                  <li>В детской комнате скользкий пол</li>
-                  <li>В зале играет слишком громкая музыка для малышей</li>
+                  <li>Родителям <span class="case-summary__pain">неудобно раздевать</span> ребёнка стоя у вешалки</li>
+                  <li>Детских <span class="case-summary__pain">стульев не хватает</span> или они вне зоны видимости</li>
+                  <li>Ребёнку <span class="case-summary__pain">сложно открыть</span> упаковку с игрушкой без ножниц</li>
+                  <li>Стойка с шариками <span class="case-summary__pain">может упасть</span> на ребёнка</li>
+                  <li>В детской комнате <span class="case-summary__pain">скользкий пол</span></li>
+                  <li>В зале играет слишком <span class="case-summary__pain">громкая музыка</span> для малышей</li>
                 </ul>
                 <p class="case-summary__more">
-                  <a href="#case-barriers-sorted">и ещё 93</a>
+                  <a href="#case-barriers-sorted">и ещё 94</a>
                 </p>
               </div>
               <div class="case-summary__block case-summary__block--half">
-                <h3 class="case-summary__subheading">Предложили идеи</h3>
-                <p>
-                  Чтобы лучше понимать, какие инициативы релевантны, мы сформулировали принципы,
-                  они работают как фильтр для идей
-                </p>
+                <h3 class="case-summary__subheading">Предложили инициативы</h3>
+                <p>Сформулировали принципы как фильтры для валидации идей.</p>
                 <table class="case-summary__initiative-table">
                   <thead>
                     <tr>
@@ -222,8 +216,8 @@ noindex: true
         </p>
       </div>
       <div class="ids__space XS"></div>
-      <div class="case-video-section">
-        <figure class="case-video-featured">
+      <div class="ids__text-width">
+        <figure class="case-video-featured case-video-featured--text">
           <div class="case-video-featured__player" style="position: relative; overflow: hidden">
             <iframe
               src="https://kinescope.io/embed/kaybgNPk8d1Gbn65gR4z1t"
@@ -288,7 +282,7 @@ noindex: true
               aria-pressed="true"
               data-ssp-hypotheses-detail="all"
             >
-              Все
+              Все <span class="promo-switcher__count" style="--share: 100%">62</span>
             </button>
             <button
               type="button"
@@ -296,7 +290,7 @@ noindex: true
               aria-pressed="false"
               data-ssp-hypotheses-detail="interaction"
             >
-              о взаимодействиях
+              о взаимодействиях <span class="promo-switcher__count" style="--share: 34%">21</span>
             </button>
             <button
               type="button"
@@ -304,7 +298,7 @@ noindex: true
               aria-pressed="false"
               data-ssp-hypotheses-detail="driver"
             >
-              о драйверах
+              о драйверах <span class="promo-switcher__count" style="--share: 19%">12</span>
             </button>
             <button
               type="button"
@@ -312,7 +306,7 @@ noindex: true
               aria-pressed="false"
               data-ssp-hypotheses-detail="barrier"
             >
-              о барьерах
+              о барьерах <span class="promo-switcher__count" style="--share: 34%">21</span>
             </button>
             <button
               type="button"
@@ -320,7 +314,7 @@ noindex: true
               aria-pressed="false"
               data-ssp-hypotheses-detail="job"
             >
-              о джобах
+              о джобах <span class="promo-switcher__count" style="--share: 13%">8</span>
             </button>
           </div>
         </div>
@@ -391,31 +385,18 @@ noindex: true
                       и он уже старается не ради дела, а ради приза.
                     </span>
                     <span class="case-job-details__more">
-                      <span class="case-job-details__more-label case-job-details__more-label--open"
-                        >Подробнее</span
-                      >
-                      <span class="case-job-details__more-label case-job-details__more-label--close"
-                        >Свернуть</span
-                      >
+                      <span class="outline-button">Как формулируется мотивационный конфликт</span>
                     </span>
                   </summary>
                   <div class="case-job-details__body">
-                    <p>
-                      <strong>Деятельность:</strong> воспитание в ребёнке стремления к достижениям
-                    </p>
-                    <p>
-                      <strong>Образ действия (ОД):</strong> награждать успех ощутимым призом (вещью,
-                      деньгами, покупкой)
-                    </p>
-                    <p>
-                      <strong>Новый образ действия (ОД'):</strong> ограничиваться похвалой и словами
-                    </p>
-                    <p><strong>Барьер:</strong> дать ребёнку почувствовать весомость его успеха</p>
-                    <p>
-                      <strong>Драйвер:</strong> сохранить внутреннюю мотивацию ребёнка (чтобы
-                      старался ради дела, а не ради платы)
-                    </p>
-                    <p><strong>Общая цель:</strong> ребёнок, который сам стремится к достижениям</p>
+                    {{ conflictMap(
+                      activity='Воспитание в ребёнке стремления к достижениям',
+                      course='Награждать успех ощутимым призом (вещью, деньгами, покупкой)',
+                      barrier='Дать ребёнку почувствовать весомость его успеха',
+                      newCourse='Ограничиваться похвалой и словами',
+                      driver='Сохранить внутреннюю мотивацию ребёнка (чтобы старался ради дела, а не ради платы)',
+                      goal='Ребёнок, который сам стремится к достижениям'
+                    ) }}
                     <p><strong>Проверки стрелок</strong></p>
                     <ul>
                       <li>
@@ -2320,7 +2301,7 @@ noindex: true
               aria-pressed="true"
               data-barriers-detail="all"
             >
-              Все (102)
+              Все <span class="promo-switcher__count" style="--share: 100%">102</span>
             </button>
             <button
               type="button"
@@ -2328,7 +2309,7 @@ noindex: true
               aria-pressed="false"
               data-barriers-detail="new"
             >
-              Не знали (53)
+              Не знали <span class="promo-switcher__count" style="--share: 52%">53</span>
             </button>
             <button
               type="button"
@@ -2336,7 +2317,7 @@ noindex: true
               aria-pressed="false"
               data-barriers-detail="in-progress"
             >
-              Пробовали устранить (12)
+              Пробовали устранить <span class="promo-switcher__count" style="--share: 12%">12</span>
             </button>
             <button
               type="button"
@@ -2344,7 +2325,7 @@ noindex: true
               aria-pressed="false"
               data-barriers-detail="unfixed"
             >
-              Знали, но не устраняли (25)
+              Знали, но не устраняли <span class="promo-switcher__count" style="--share: 25%">25</span>
             </button>
           </div>
         </div>
@@ -3075,8 +3056,8 @@ noindex: true
         </p>
       </div>
       <div class="ids__space XS"></div>
-      <div class="case-video-section">
-        <figure class="case-video-featured">
+      <div class="ids__text-width">
+        <figure class="case-video-featured case-video-featured--text">
           <div class="case-video-featured__player" style="position: relative; overflow: hidden">
             <iframe
               src="https://kinescope.io/embed/3zc855vYmiZTKy45Y9kT53"

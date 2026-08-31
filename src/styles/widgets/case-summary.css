@@ -11,7 +11,26 @@
 .article .article-title.case-summary-title {
   min-height: 0;
   max-height: none;
-  padding: calc(var(--padding) / 2) var(--padding) var(--padding);
+  padding: calc(var(--padding) / 2) var(--padding) calc(var(--padding) / 2);
+
+  @media (width < 768px) {
+    padding-left: var(--ids__gap-s);
+    padding-right: var(--ids__gap-s);
+  }
+}
+
+/* Мобильная шапка кейса: кегль как у мобильного текста саммари, гэпы плотнее —
+   строка «назад · лого · теги» должна умещаться в одну строку */
+@media (width < 768px) {
+  .article .article-title.case-summary-title .case-page__header {
+    font-size: 0.7em;
+    gap: var(--ids__gap-m);
+  }
+}
+
+/* Логотип клиента в шапке дашборда — компактнее общего 1.75em */
+.article .article-title.case-summary-title .case-page__brand-logo img {
+  height: 1.35em;
 }
 
 /* Якоря на страницах с саммари-дашбордом: прилипшая навигация (3em ≈ 3rem)
@@ -79,12 +98,22 @@
 
 h2.case-summary__heading {
   font-family: var(--mono);
-  font-size: 0.75rem;
+  /* Кегль и интерлиньяж ровно как у текста саммари: наследуются, а не свои —
+     глобальный `.ids h2 { line-height: 1 }` заставлял заголовок в подборе
+     подскакивать над строкой */
+  font-size: inherit;
+  line-height: inherit;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   opacity: 0.4;
   margin: 0 0 0.5em;
+}
+
+/* Заголовки «Запрос» и «Контекст» — в подбор с первой строчкой текста */
+.case-summary__row--intro h2.case-summary__heading {
+  float: left;
+  margin: 0 0.4rem 0 0;
 }
 
 h3.case-summary__subheading {
@@ -146,6 +175,11 @@ ul.case-summary__cross-list {
       content: "×";
     }
   }
+
+  /* Болевые фрагменты барьеров — просто красным текстом */
+  & .case-summary__pain {
+    color: var(--ids__pndlnk-red);
+  }
 }
 
 /* Ссылка «и ещё N» — под списком/таблицей, обычной ссылкой */
@@ -165,6 +199,13 @@ table.case-summary__initiative-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
+
+  /* Глобальная мобильная адаптация `.ids table { font-size: 0.7em }`
+     умножалась на кегль саммари — заголовки колонок и чипы становились
+     нечитаемыми. Таблице кегль контекста */
+  @media (width < 768px) {
+    font-size: 1em;
+  }
 
   & tr th {
     box-sizing: border-box;
@@ -226,9 +267,19 @@ table.case-summary__initiative-table {
   }
 
   & tr td.case-summary__initiative-title {
-    font-size: 1rem;
-    font-weight: 700;
+    /* Рукописный, но чёрным — не чернильно-синим, как hand обычно.
+       Кегль — ступень h3 шкалы /style, в rem: в ячейках разный кегль;
+       на мобиле ступенью ниже — rem от мобильного корня выходит крупнее
+       окружения */
+    font-family: var(--hand);
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.1;
     width: 14em;
+
+    @media (width < 768px) {
+      font-size: 1rem;
+    }
 
     & a {
       color: inherit;

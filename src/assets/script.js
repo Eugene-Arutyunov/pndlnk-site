@@ -470,20 +470,8 @@ function initKscOutcomes() {
   update();
 }
 
-function initCaseJobsTable() {
-  document
-    .querySelectorAll(".case-jobs-table .case-jobs-row--expandable")
-    .forEach((row) => {
-      const details = row.querySelector(".case-job-details");
-      if (!details) return;
-
-      row.addEventListener("click", (event) => {
-        if (event.target.closest("summary")) return;
-        if (event.target.closest("a")) return;
-        details.open = !details.open;
-      });
-    });
-}
+/* Раскрытие джоба работает нативно: кнопка внутри <summary>.
+   Кликабельность всей строки убрана намеренно (сворачивания нет). */
 
 function initCaseBarriersTable() {
   const container = document.querySelector(".case-barriers-table");
@@ -546,11 +534,14 @@ function initCaseSspHypothesesTable() {
     counts[key] = (counts[key] || 0) + 1;
   });
 
+  // Счётчик живёт в пилюле-диаграмме: число + доля от «всех» для заливки
   detailButtons.forEach((btn) => {
     const mode = btn.dataset.sspHypothesesDetail;
     const count = counts[mode] || 0;
-    const label = btn.textContent.replace(/\s*\(\d+\)\s*$/, "").trim();
-    btn.textContent = `${label} (${count})`;
+    const pill = btn.querySelector(".promo-switcher__count");
+    if (!pill) return;
+    pill.textContent = count;
+    pill.style.setProperty("--share", `${Math.round((count / counts.all) * 100)}%`);
   });
 
   function switchDetail(mode) {
@@ -1044,7 +1035,6 @@ if (document.readyState === "loading") {
     initLogoDownloads();
     initPromoTable();
     initKscProgramTable();
-    initCaseJobsTable();
     initCaseBarriersTable();
     initCaseSspHypothesesTable();
     initKscOutcomes();
@@ -1062,7 +1052,6 @@ if (document.readyState === "loading") {
   initLogoDownloads();
   initPromoTable();
   initKscProgramTable();
-  initCaseJobsTable();
   initCaseBarriersTable();
   initCaseSspHypothesesTable();
   initKscOutcomes();

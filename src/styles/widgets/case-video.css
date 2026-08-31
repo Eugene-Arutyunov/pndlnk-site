@@ -5,10 +5,10 @@
   margin: 0;
 }
 
+/* Как у .review-video: без рамки и фона — у плеера свои скругления,
+   из-под них просвечивала бы подложка */
 .case-page .case-video-featured__player {
   aspect-ratio: 16 / 9;
-  background: color-mix(in srgb, var(--ids__text) 10%, transparent);
-  border: 1px solid var(--ids__border);
 }
 
 .case-page .case-video-featured figcaption {

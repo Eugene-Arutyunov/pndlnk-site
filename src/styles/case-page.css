@@ -323,8 +323,9 @@
   margin-bottom: calc(var(--ids__density) * 0.9em);
 }
 
+/* Цитата — просто крупная, без псевдокурсива; кегль — ступень p.loud */
 .case-page blockquote {
-  font-style: italic;
+  font-size: 1.5em;
 }
 
 .case-page .case-ssp-cjm {
@@ -429,9 +430,6 @@
   margin-bottom: 0.25em;
 }
 
-.case-page .promo-table-container.case-barriers-table,
-.case-page .promo-table-container.case-ssp-hypotheses-table,
-.case-page .promo-table-container.case-jobs-table,
 .case-page .promo-table-container.case-cjm-sections-table {
   & .promo-table thead th,
   & .promo-table tbody td {
@@ -440,6 +438,18 @@
 
   & .promo-table thead th {
     padding-bottom: 0.5em;
+  }
+}
+
+/* Без левого паддинга (ячейки начинаются от края таблицы),
+   нижний паддинг равен верхнему. Только прямые ячейки — без `>` правило
+   дотягивалось бы до вложенной карты конфликта */
+.case-page .promo-table-container.case-barriers-table,
+.case-page .promo-table-container.case-ssp-hypotheses-table,
+.case-page .promo-table-container.case-jobs-table {
+  & .promo-table > thead > tr > th,
+  & .promo-table > tbody > tr > td {
+    padding: 0.5em 1em 0.5em 0;
   }
 }
 
@@ -497,6 +507,13 @@
   }
 }
 
+/* Модификатор: видео строго в текстовой колонке — фигура обёрнута
+   в .ids__text-width и занимает её целиком, ограничение 80% не нужно */
+.ids__wrapper.case-page:not(.L) .case-video-featured--text {
+  width: 100%;
+  max-width: none;
+}
+
 /* Сноски чуть правее края текста/таблиц — небольшой зазор */
 .ids__wrapper.case-page:not(.L) .ids__text-width .with-sidenote .sidenote {
   @media (width > 767px) {
@@ -506,79 +523,70 @@
 }
 
 .case-page .promo-table-container.case-jobs-table {
-  & .promo-table thead th:nth-child(3),
-  & .promo-table tbody td:nth-child(3) {
+  /* Колонки не гуляют при раскрытии первой строки */
+  & .promo-table {
+    table-layout: fixed;
+  }
+
+  & .promo-table > thead > tr > th:first-child {
+    width: 24%;
+  }
+
+  /* Вторая колонка — последняя видимая: правый паддинг не нужен */
+  & .promo-table > thead > tr > th:nth-child(2),
+  & .promo-table > tbody > tr > td:nth-child(2) {
+    padding-right: 0;
+  }
+
+  /* Только ячейки самой джобс-таблицы: без `>` правило пряталo бы
+     и третью ячейку вложенной карты конфликта */
+  & .promo-table > thead > tr > th:nth-child(3),
+  & .promo-table > tbody > tr > td:nth-child(3) {
     display: none;
   }
 
-  & .promo-table tbody tr.case-jobs-row--expandable {
-    cursor: pointer;
-
-    & td {
-      background-color: color-mix(in srgb, var(--ids__text) 4%, transparent);
-      transition: background-color 0.2s ease;
-    }
-
-    &:hover td {
-      background-color: color-mix(in srgb, var(--ids__text) 8%, transparent);
-      transition-duration: var(--ids__duration-instant);
-    }
-  }
-
   & .case-job-details {
-    position: relative;
+    /* Перебивает глобальные `.ids details`: паддинг не нужен (ячейка даёт
+       свои), а курсор-поинтер без сворачивания вводит в заблуждение */
+    padding: 0;
+    cursor: auto;
     font-size: inherit;
     line-height: inherit;
-    padding-bottom: 1.35em;
   }
 
+  /* Кликабельна только контурная кнопка, не тизер и не строка;
+     клик по кнопке всплывает в summary и раскрывает details */
   & .case-job-details > summary {
-    cursor: pointer;
+    pointer-events: none;
     color: inherit;
-    user-select: none;
     list-style: none;
 
     &::-webkit-details-marker {
       display: none;
     }
+
+    & .outline-button {
+      pointer-events: auto;
+    }
   }
 
   & .case-job-details__teaser {
     display: block;
-    padding-right: 0.5em;
   }
 
   & .case-job-details__more {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    font-family: var(--gothic);
-    font-size: 0.78em;
-    font-weight: 300;
-    line-height: 1.2;
-    color: color-mix(in srgb, var(--ids__text) 55%, transparent);
-    text-decoration: underline;
-    text-underline-offset: 0.15em;
-    text-decoration-thickness: 1px;
+    display: block;
+    margin-top: 0.65em;
   }
 
-  & .case-job-details__more-label--close {
+  /* Сворачивания нет: после раскрытия кнопка исчезает */
+  & .case-job-details[open] .case-job-details__more {
     display: none;
-  }
-
-  & .case-job-details[open] .case-job-details__more-label--open {
-    display: none;
-  }
-
-  & .case-job-details[open] .case-job-details__more-label--close {
-    display: inline;
   }
 
   & .case-job-details__body {
     margin-top: 0.65em;
     margin-bottom: 0.35em;
-    padding-top: 0.65em;
-    border-top: 1px solid color-mix(in srgb, var(--ids__text) 12%, transparent);
     font-size: 0.92em;
     line-height: 1.35;
     color: var(--ids__text);
@@ -587,9 +595,10 @@
       margin: 0 0 0.5em;
     }
 
+    /* Списки в раскрытом тексте — от края, без левого паддинга */
     & ul {
       margin: 0 0 0.65em;
-      padding-left: 1.2em;
+      padding-left: 0;
     }
 
     & li + li {
@@ -598,6 +607,10 @@
   }
 }
 
+/* Карта мотивационного конфликта в раскрытом джобе: деятельность и общая
+   цель на всю высоту, между ними две строки «образ действия → барьер» и
+   «новый образ действия → драйвер». Стрелки в лейблах — часть дизайна.
+   border: hidden гасит внешние линии коллапса — остаются только внутренние */
 .case-page .case-finmodel-table__title {
   margin: 0;
   font-family: var(--mono);

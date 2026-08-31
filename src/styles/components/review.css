@@ -59,6 +59,11 @@
 
   @media (width < 768px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    /* На мобиле любые ячейки в полширины — и широкие, и одиночные */
+    & > .wide {
+      grid-column: auto;
+    }
   }
 }
 
@@ -169,6 +174,14 @@
 .case-page .case-people > .author-box,
 .case-page .case-people > .author-box + .author-box {
   margin: 0;
+}
+
+/* Воздух после блока команды Понедельника: на мобиле заголовок Ближнего
+   Востока прилипал к списку. `.author-box` в селекторе — перебить сбросное
+   правило `... > .author-box + .author-box { margin: 0 }` выше */
+.case-people > .author-box.case-people__col-2,
+.case-page .case-people > .author-box.case-people__col-2 {
+  margin-bottom: var(--ids__gap-m);
 }
 
 /* Кастомный отступ: заголовок второй команды в третьей колонке встаёт
