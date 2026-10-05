@@ -279,6 +279,139 @@
   font-style: italic;
 }
 
+.case-inappstory p.caption,
+.case-inappstory figure figcaption {
+  color: color-mix(in srgb, var(--ids__text) 55%, transparent);
+}
+
+.case-inappstory figure figcaption {
+  opacity: 1;
+}
+
+.case-inappstory .case-ksc-module:not(:has(.ksc-program-row__products-detail)) {
+  padding-bottom: 0.85em;
+}
+
+.case-inappstory .case-company-attrs__title {
+  margin: 0 0 1em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.case-inappstory .case-company-attrs__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.7em;
+  align-items: start;
+}
+
+.case-inappstory .case-company-attrs__group {
+  margin: 0 0 0.55em;
+  padding: 0.45em 0.4em;
+  background: var(--ids__surface);
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.case-inappstory .case-company-attrs__grid ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-inappstory .case-company-attrs__grid li {
+  margin: 0;
+  padding: 0.45em 0.4em;
+  border: 1px solid var(--ids__border);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.case-inappstory .case-company-attrs__grid li:before {
+  content: none;
+}
+
+.case-inappstory .case-company-attrs__grid li.is-marked {
+  background: color-mix(in srgb, rgb(32, 138, 72) 16%, var(--ids__background));
+  border-color: color-mix(in srgb, rgb(32, 138, 72) 45%, var(--ids__border));
+}
+
+@media (width < 900px) {
+  .case-inappstory .case-company-attrs__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-inappstory .case-conflict-shift {
+  margin: 0 0 1.15em;
+}
+
+.case-inappstory .case-conflict-shift p {
+  margin: 0;
+  font-size: 1.2em;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.case-inappstory .case-conflict-shift__arrow {
+  margin: 0.2em 0;
+  font-size: 1em;
+  font-style: normal;
+  line-height: 1;
+  color: color-mix(in srgb, var(--ids__text) 55%, transparent);
+}
+
+/* Строка программы KSC под заголовком модуля: схема дворца + аннотация */
+.case-page .case-ksc-module {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1em;
+  background: color-mix(in srgb, var(--ids__surface) 30%, transparent);
+  padding: 0.85em 1em 0.35em;
+  margin: 0 0 1.15em;
+  font-family: var(--mono);
+  font-size: 0.85em;
+  line-height: 1.35;
+}
+
+.case-page .case-ksc-module__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.case-page .case-ksc-module .dkcp-preview {
+  display: block;
+  flex: 0 0 auto;
+  margin-top: 0.15em;
+}
+
+.case-page .case-ksc-module .dkcp-preview-icon {
+  display: block;
+  width: 4.2em;
+  height: auto;
+}
+
+.case-page .case-ksc-module .ksc-program-row__products-detail {
+  display: block;
+}
+
+.case-page .case-ksc-module .ksc-program-row__products-detail-inner {
+  overflow: visible;
+  opacity: 1;
+}
+
+.case-page .case-ksc-module .ksc-program-row__products-detail-inner::before {
+  margin: 0.7em 0;
+}
+
+.case-page .case-ksc-module .ksc-program-row__products-detail-inner::after {
+  display: none;
+}
+
 .case-page figure {
   margin-top: calc(var(--ids__density) * 1.1em);
 }

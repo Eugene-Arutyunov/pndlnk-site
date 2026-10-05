@@ -990,6 +990,8 @@ function initCaseToc() {
 }
 
 function initCaseFieldPromoTranscripts() {
+  paginateCheckupPages();
+
   const transcripts = document.querySelectorAll(".case-field-promo-transcript");
   if (transcripts.length === 0) return;
 
@@ -1039,6 +1041,11 @@ function initCaseFieldPromoTranscripts() {
   }
 
   function trimTranscript(transcript) {
+    if (transcript.closest(".case-field-promo-image--checkup")) {
+      transcript.classList.add("case-field-promo-transcript--ready");
+      return;
+    }
+
     Array.from(transcript.children).forEach(clearChildStyles);
 
     const maxBottom = transcript.getBoundingClientRect().bottom;
@@ -1080,6 +1087,7 @@ function initCaseFieldPromoTranscripts() {
 
     rafId = requestAnimationFrame(() => {
       rafId = null;
+      paginateCheckupPages();
       transcripts.forEach(trimTranscript);
     });
   }
@@ -1090,10 +1098,222 @@ function initCaseFieldPromoTranscripts() {
   transcripts.forEach((transcript) => observer.observe(transcript));
 
   if (document.fonts?.ready) {
-    document.fonts.ready.then(scheduleTrim);
+    document.fonts.ready.then(() => {
+      checkupPageWidth = -1;
+      scheduleTrim();
+    });
   }
 }
 
+let checkupPageWidth = -1;
+let checkupPaginating = false;
+
+function paginateCheckupPages() {
+  if (checkupPaginating) return;
+
+  const sources = [...document.querySelectorAll("[data-checkup-source]")];
+  if (sources.length === 0) return;
+
+  const width = Math.round(sources[0].getBoundingClientRect().width);
+  if (width < 20 || width === checkupPageWidth) return;
+
+  checkupPaginating = true;
+  checkupPageWidth = width;
+
+  const containers = [...new Set(sources.map((source) => source.parentElement))];
+  let container;
+  const EPS = 1;
+
+  function fits(el, maxBottom) {
+    const rects = el.getClientRects();
+    if (rects.length === 0) return true;
+
+    for (const rect of rects) {
+      if (rect.bottom > maxBottom + EPS) return false;
+    }
+
+    return true;
+  }
+
+  function restoreSources() {
+    container.querySelectorAll(".case-field-promo-image--checkup-page").forEach((card) => {
+      card.remove();
+    });
+
+    container.querySelectorAll("[data-checkup-source]").forEach((source) => {
+      const transcript = source.querySelector(".case-field-promo-transcript");
+      if (!source.dataset.checkupOriginal) {
+        source.dataset.checkupOriginal = transcript.innerHTML;
+      } else {
+        transcript.innerHTML = source.dataset.checkupOriginal;
+      }
+      transcript.classList.remove("case-field-promo-transcript--ready");
+    });
+  }
+
+  function splitParagraph(paragraph, maxBottom) {
+    const textNode = [...paragraph.childNodes]
+      .reverse()
+      .find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+    if (!textNode) return null;
+
+    const words = textNode.textContent.trim().split(/\s+/);
+    if (words.length < 2) return null;
+
+    const original = textNode.textContent;
+    let lo = 1;
+    let hi = words.length - 1;
+    let best = 0;
+
+    while (lo <= hi) {
+      const mid = (lo + hi) >> 1;
+      textNode.textContent = ` ${words.slice(0, mid).join(" ")}`;
+
+      if (fits(paragraph, maxBottom)) {
+        best = mid;
+        lo = mid + 1;
+      } else {
+        hi = mid - 1;
+      }
+    }
+
+    if (best === 0) {
+      textNode.textContent = original;
+      return null;
+    }
+
+    textNode.textContent = ` ${words.slice(0, best).join(" ")}`;
+    const rest = paragraph.cloneNode(false);
+    rest.textContent = words.slice(best).join(" ");
+    return rest;
+  }
+
+  function isPageChrome(el) {
+    return (
+      el.classList.contains("case-field-promo-transcript-title") ||
+      el.classList.contains("case-checkup-verdict")
+    );
+  }
+
+  function takeOverflow(transcript) {
+    const maxBottom = transcript.getBoundingClientRect().bottom;
+    const children = [...transcript.children];
+    let start = 0;
+    while (start < children.length && isPageChrome(children[start])) start += 1;
+
+    for (let i = start; i < children.length; i++) {
+      const child = children[i];
+      if (fits(child, maxBottom)) continue;
+
+      if (child.tagName === "UL") {
+        const items = [...child.children];
+        let splitAt = items.findIndex((item) => !fits(item, maxBottom));
+        if (splitAt === -1) splitAt = 0;
+        if (splitAt === 0) {
+          const overflow = children.slice(i);
+          overflow.forEach((node) => node.remove());
+          return overflow;
+        }
+
+        const rest = child.cloneNode(false);
+        items.slice(splitAt).forEach((item) => rest.appendChild(item));
+        const overflow = [rest, ...children.slice(i + 1)];
+        children.slice(i + 1).forEach((node) => node.remove());
+        return overflow;
+      }
+
+      if (
+        child.tagName === "P" &&
+        !child.classList.contains("case-field-promo-transcript-heading")
+      ) {
+        const rest = splitParagraph(child, maxBottom);
+        if (rest) {
+          const overflow = [rest, ...children.slice(i + 1)];
+          children.slice(i + 1).forEach((node) => node.remove());
+          return pullOrphanHeading(transcript, overflow);
+        }
+      }
+
+      const overflow = children.slice(i);
+      overflow.forEach((node) => node.remove());
+      return pullOrphanHeading(transcript, overflow);
+    }
+
+    return [];
+  }
+
+  function pullOrphanHeading(transcript, overflow) {
+    const last = transcript.lastElementChild;
+    if (
+      last &&
+      last !== transcript.firstElementChild &&
+      last.classList.contains("case-field-promo-transcript-heading")
+    ) {
+      overflow.unshift(last);
+    }
+    return overflow;
+  }
+
+  function createPage(source, card, nodes) {
+    const page = source.cloneNode(false);
+    page.classList.add("case-field-promo-image--checkup-page");
+    page.removeAttribute("data-checkup-source");
+    page.removeAttribute("data-checkup-original");
+    page.dataset.checkupFor = source.dataset.checkupId;
+
+    const transcript = document.createElement("div");
+    transcript.className = "case-field-promo-transcript";
+    nodes.forEach((node) => transcript.appendChild(node));
+    page.appendChild(transcript);
+
+    return page;
+  }
+
+  containers.forEach((nextContainer) => {
+    container = nextContainer;
+    restoreSources();
+
+    let checkupIndex = 0;
+    [...container.querySelectorAll("[data-checkup-source]")].forEach((source) => {
+      if (!source.dataset.checkupId) {
+        checkupIndex += 1;
+        source.dataset.checkupId = String(checkupIndex);
+      }
+
+      let card = source;
+      let guard = 0;
+
+      while (guard < 80) {
+        guard += 1;
+        const transcript = card.querySelector(".case-field-promo-transcript");
+        const overflow = takeOverflow(transcript);
+        if (overflow.length === 0) break;
+
+        const page = createPage(source, card, overflow);
+        card.after(page);
+
+        const leftBehind = [...transcript.children].filter((el) => !isPageChrome(el));
+        if (leftBehind.length === 0) {
+          page.remove();
+          overflow.forEach((node) => transcript.appendChild(node));
+          break;
+        }
+
+        card = page;
+      }
+    });
+
+    [...container.querySelectorAll(".case-field-promo-image--checkup")].forEach((card, index) => {
+      card.style.zIndex = String(Math.min(index + 1, 19));
+      card.style.marginTop = `${index * 0.55}em`;
+      card.querySelector(".case-field-promo-transcript")?.classList.add(
+        "case-field-promo-transcript--ready",
+      );
+    });
+  });
+
+  checkupPaginating = false;
+}
 
 // Инициализируем когда DOM готов
 if (document.readyState === "loading") {

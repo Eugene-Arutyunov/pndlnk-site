@@ -11,6 +11,7 @@
 .article .article-title.case-summary-title {
   min-height: 0;
   max-height: none;
+  overflow: visible;
   padding: calc(var(--padding) / 2) var(--padding) calc(var(--padding) / 2);
 
   @media (width < 768px) {
@@ -53,6 +54,12 @@
 }
 
 /* Мобильная навигация: гэпы втрое меньше, у пунктов боковые паддинги */
+/* Длинные пункты оглавления (модули) переносятся — высота по контенту,
+   иначе 3em у .sticky обрезает вторую строку и наезжает на текст ниже */
+.article .sticky:has(.case-summary__nav) {
+  height: auto;
+}
+
 @media (width < 768px) {
   .article .article-title-nav.case-summary__nav {
     gap: calc(var(--ids__gap-m) / 3);
@@ -183,6 +190,15 @@ ul.case-summary__cross-list {
   & .case-summary__pain {
     color: var(--ids__pndlnk-red);
   }
+}
+
+/* Многострочные пункты: фиксированная высота строки обрезает текст */
+ul.case-summary__cross-list.case-summary__cross-list--wrap li {
+  height: auto;
+  min-height: var(--summary-rhythm);
+  line-height: 1.35;
+  padding-top: 0.35em;
+  padding-bottom: 0.3em;
 }
 
 /* Ссылка «и ещё N» — под списком/таблицей, обычной ссылкой */

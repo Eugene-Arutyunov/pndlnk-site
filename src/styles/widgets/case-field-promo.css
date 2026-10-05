@@ -170,6 +170,35 @@
     position: relative;
   }
 
+  .case-field-promo-image--checkup .case-field-promo-transcript ul {
+    margin: 0 0 0.55em;
+    padding: 0 0 0 1.15em;
+  }
+
+  .case-field-promo-image--checkup .case-field-promo-transcript li {
+    margin: 0 0 0.28em;
+  }
+
+  .case-field-promo-transcript-title:has(+ .case-checkup-verdict) {
+    margin-bottom: 0.15em;
+  }
+
+  .case-checkup-verdict {
+    margin: 0 0 0.85em;
+    font-size: 1.15em;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ids__text);
+  }
+
+  .case-checkup-verdict--ok {
+    color: rgb(32, 138, 72);
+  }
+
+  .case-checkup-verdict--bad {
+    color: var(--ids__pndlnk-red);
+  }
+
   .case-field-promo-transcript {
     position: absolute;
     inset: 4.8cqi 3.6cqi 4.8cqi 5.2cqi;

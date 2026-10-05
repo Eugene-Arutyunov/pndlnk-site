@@ -22,6 +22,16 @@ button.lets-talk-button.case-kids-cta {
   }
 }
 
+/* Длиннее «Обсудить проект»: на узком экране nowrap обрезает края */
+@media (width < 768px) {
+  button.lets-talk-button.case-kids-cta.case-ksc-cta {
+    font-size: 1.45em;
+    white-space: normal;
+    line-height: 1.05;
+    padding: 0.4em 0.6em;
+  }
+}
+
 .case-page .case-initiative-more {
   text-align: right;
 }
