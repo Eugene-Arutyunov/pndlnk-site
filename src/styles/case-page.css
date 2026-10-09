@@ -284,6 +284,60 @@
   color: color-mix(in srgb, var(--ids__text) 55%, transparent);
 }
 
+.case-inappstory .case-tight-list li {
+  margin-bottom: 0.15em;
+}
+
+.case-inappstory .case-hand-line {
+  font-family: var(--hand);
+  font-size: 0.8em;
+  line-height: 1.1;
+  color: var(--ids__ink);
+}
+
+.case-inappstory .case-list-note {
+  font-size: 0.8em;
+  color: color-mix(in srgb, var(--ids__text) 55%, transparent);
+}
+
+.case-inappstory .case-sidenote-kicker {
+  color: var(--ids__pndlnk-red);
+}
+
+.case-inappstory .dkcp-component--draft .dkcp-block--bad {
+  border-top-color: var(--ids__pndlnk-red);
+  border-left-color: var(--ids__pndlnk-red);
+}
+
+.case-inappstory .dkcp-component--draft .dkcp-block--ok {
+  border-top-color: var(--ids__pndlnk-black);
+  border-left-color: var(--ids__pndlnk-black);
+}
+
+.case-inappstory .case-page .case-jobs-bento.case-field-promo .case-field-promo-image--checkup {
+  margin-right: calc(17.5em * -2 / 3);
+}
+
+.case-inappstory .case-page .case-jobs-bento.case-field-promo .case-field-promo-image--checkup:last-child {
+  margin-right: 0;
+}
+
+.case-inappstory .case-field-promo-image--checkup .case-checkup-verdict {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.2;
+  text-align: right;
+  background-color: var(--ids__background);
+}
+
+.case-inappstory .case-field-promo-image--checkup .case-field-promo-transcript-title:has(+ .case-checkup-verdict) {
+  padding-right: 9em;
+}
+
 .case-inappstory figure figcaption {
   opacity: 1;
 }
@@ -336,14 +390,87 @@
 }
 
 .case-inappstory .case-company-attrs__grid li.is-marked {
-  background: color-mix(in srgb, rgb(32, 138, 72) 16%, var(--ids__background));
-  border-color: color-mix(in srgb, rgb(32, 138, 72) 45%, var(--ids__border));
+  background: color-mix(in srgb, var(--ids__pndlnk-gold) 16%, var(--ids__background));
+  border-color: color-mix(in srgb, var(--ids__pndlnk-gold) 45%, var(--ids__border));
 }
 
 @media (width < 900px) {
   .case-inappstory .case-company-attrs__grid {
     grid-template-columns: 1fr;
   }
+}
+
+.case-inappstory .case-dkcp-step {
+  position: relative;
+  padding-top: 4em;
+}
+
+.case-inappstory .case-dkcp-step .dkcp-component--draft {
+  margin-top: 0;
+}
+
+.case-inappstory .case-dkcp-step__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.case-inappstory .case-dkcp-step__button {
+  position: absolute;
+  top: 0.35em;
+  right: 0;
+  z-index: 2;
+  margin: 0;
+  padding: 0.35em 0.7em;
+  border: 1px solid var(--ids__border);
+  background: var(--ids__background);
+  color: var(--ids__text);
+  font-family: var(--mono);
+  font-size: 0.75em;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.case-inappstory .case-dkcp-step__input:focus-visible + .case-dkcp-step__button {
+  outline: 1px solid var(--ids__text);
+  outline-offset: 2px;
+}
+
+.case-inappstory .case-dkcp-step__label-before {
+  display: none;
+}
+
+.case-inappstory .case-dkcp-step__input:checked + .case-dkcp-step__button .case-dkcp-step__label-after {
+  display: none;
+}
+
+.case-inappstory .case-dkcp-step__input:checked + .case-dkcp-step__button .case-dkcp-step__label-before {
+  display: inline;
+}
+
+.case-inappstory .case-dkcp-step__after {
+  display: none;
+}
+
+.case-inappstory .case-dkcp-step__input:checked ~ .case-dkcp-step__before {
+  display: none;
+}
+
+.case-inappstory .case-dkcp-step__input:checked ~ .case-dkcp-step__after {
+  display: block;
+}
+
+.case-inappstory .dkcp-component--draft .dkcp-block--focus:not(.values) {
+  background: color-mix(in srgb, var(--ids__text) 10%, transparent);
+}
+
+.case-inappstory .dkcp-component--draft .dkcp-top:has(.values.dkcp-block--focus)::before {
+  background: color-mix(in srgb, var(--ids__text) 10%, var(--ids__background));
 }
 
 .case-inappstory .case-conflict-shift {

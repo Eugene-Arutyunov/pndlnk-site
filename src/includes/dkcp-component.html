@@ -8,11 +8,11 @@ priceConditions: Ценовые условия (массив) - companyAttrs: А
 умолчанию false) - mini: Мини-режим (boolean, по умолчанию false) #} {% macro
 dkcp( values=[], segment=[], conflict=[], artifact=[], artifactAttrs=[],
 exchangeConditions=[], priceConditions=[], companyAttrs=[], arguments=[],
-draft=false, mini=false ) %}
+draft=false, mini=false, highlight=[], ok=[], bad=[] ) %}
 <div
   class="dkcp-component{% if draft %} dkcp-component--draft{% endif %}{% if mini %} dkcp-component--mini{% endif %}">
   <div class="dkcp-top">
-    <div class="dkcp-block values">
+    <div class="dkcp-block values{% if 8 in highlight %} dkcp-block--focus{% endif %}{% if 8 in ok %} dkcp-block--ok{% endif %}{% if 8 in bad %} dkcp-block--bad{% endif %}">
       <div class="dkcp-digit">8</div>
       <div class="dkcp-title">Ценность</div>
       <div class="dkcp-definition">
@@ -25,7 +25,7 @@ draft=false, mini=false ) %}
 
   <div class="dkcp-facade">
     <div class="dkcp-row columns">
-      <div class="dkcp-block segment">
+      <div class="dkcp-block segment{% if 1 in highlight %} dkcp-block--focus{% endif %}{% if 1 in ok %} dkcp-block--ok{% endif %}{% if 1 in bad %} dkcp-block--bad{% endif %}">
         <div class="dkcp-digit">1</div>
         <div class="dkcp-title">Клиентский сегмент</div>
         <div class="dkcp-definition">
@@ -36,7 +36,7 @@ draft=false, mini=false ) %}
         <div class="dkcp-hint"></div>
       </div>
 
-      <div class="dkcp-block conflict">
+      <div class="dkcp-block conflict{% if 2 in highlight %} dkcp-block--focus{% endif %}{% if 2 in ok %} dkcp-block--ok{% endif %}{% if 2 in bad %} dkcp-block--bad{% endif %}">
         <div class="dkcp-digit">2</div>
         <div class="dkcp-title">Мотивационный конфликт</div>
         <div class="dkcp-definition">
@@ -47,7 +47,7 @@ draft=false, mini=false ) %}
         <div class="dkcp-hint"></div>
       </div>
 
-      <div class="dkcp-block arguments">
+      <div class="dkcp-block arguments{% if 9 in highlight %} dkcp-block--focus{% endif %}{% if 9 in ok %} dkcp-block--ok{% endif %}{% if 9 in bad %} dkcp-block--bad{% endif %}">
         <div class="dkcp-digit">9</div>
         <div class="dkcp-title">Аргументы</div>
         <div class="dkcp-definition">
@@ -58,7 +58,7 @@ draft=false, mini=false ) %}
         <div class="dkcp-hint"></div>
       </div>
 
-      <div class="dkcp-block artifact-attrs">
+      <div class="dkcp-block artifact-attrs{% if 4 in highlight %} dkcp-block--focus{% endif %}{% if 4 in ok %} dkcp-block--ok{% endif %}{% if 4 in bad %} dkcp-block--bad{% endif %}">
         <div class="dkcp-digit">4</div>
         <div class="dkcp-title">Атрибуты артефакта</div>
         <div class="dkcp-definition">
@@ -68,7 +68,7 @@ draft=false, mini=false ) %}
         </div>
         <div class="dkcp-hint"></div>
       </div>
-      <div class="dkcp-block artifact">
+      <div class="dkcp-block artifact{% if 3 in highlight %} dkcp-block--focus{% endif %}{% if 3 in ok %} dkcp-block--ok{% endif %}{% if 3 in bad %} dkcp-block--bad{% endif %}">
         <div class="dkcp-digit">3</div>
         <div class="dkcp-title">Артефакт</div>
         <div class="dkcp-definition">
@@ -81,7 +81,7 @@ draft=false, mini=false ) %}
     </div>
 
     <div class="dkcp-row bottom-row">
-      <div class="dkcp-block price">
+      <div class="dkcp-block price{% if 5 in highlight %} dkcp-block--focus{% endif %}{% if 5 in ok %} dkcp-block--ok{% endif %}{% if 5 in bad %} dkcp-block--bad{% endif %}">
         <div class="dkcp-digit">5</div>
         <div class="dkcp-title">Вклад клиента</div>
         <div class="dkcp-definition">
@@ -90,7 +90,7 @@ draft=false, mini=false ) %}
           {% endfor %} {% endif %}
         </div>
       </div>
-      <div class="dkcp-block exchange">
+      <div class="dkcp-block exchange{% if 6 in highlight %} dkcp-block--focus{% endif %}{% if 6 in ok %} dkcp-block--ok{% endif %}{% if 6 in bad %} dkcp-block--bad{% endif %}">
         <div class="dkcp-digit">6</div>
         <div class="dkcp-title">Условия обмена</div>
         <div class="dkcp-definition">
@@ -103,7 +103,7 @@ draft=false, mini=false ) %}
   </div>
 
   <div class="dkcp-bottom">
-    <div class="dkcp-block company">
+    <div class="dkcp-block company{% if 7 in highlight %} dkcp-block--focus{% endif %}{% if 7 in ok %} dkcp-block--ok{% endif %}{% if 7 in bad %} dkcp-block--bad{% endif %}">
       <div class="dkcp-digit">7</div>
       <div class="dkcp-title">Атрибуты компании</div>
       <div class="dkcp-definition">
