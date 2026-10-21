@@ -295,6 +295,33 @@
   color: var(--ids__ink);
 }
 
+.case-inappstory .case-hand-list--keep .case-hand-line {
+  color: color-mix(in srgb, var(--ids__text) 45%, transparent);
+}
+
+.case-inappstory .case-hand-list--drop .case-hand-line {
+  color: var(--ids__pndlnk-red);
+}
+
+/* Восемь пунктов не влезают в строку: «Демо-день» падает один на вторую.
+   На десктопе держим оглавление в одну строку. */
+@media (width >= 960px) {
+  .case-inappstory .article-title-nav.case-summary__nav {
+    flex-wrap: nowrap;
+    gap: 0.55em;
+  }
+
+  .case-inappstory .article-title-nav.case-summary__nav .title-nav-item {
+    font-size: 0.74em;
+    white-space: nowrap;
+  }
+
+  .case-inappstory .article-title-nav.case-summary__nav .title-nav-item.accent .promo-link {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
 .case-inappstory .case-list-note {
   font-size: 0.8em;
   color: color-mix(in srgb, var(--ids__text) 55%, transparent);
@@ -304,14 +331,39 @@
   color: var(--ids__pndlnk-red);
 }
 
-.case-inappstory .dkcp-component--draft .dkcp-block--bad {
-  border-top-color: var(--ids__pndlnk-red);
-  border-left-color: var(--ids__pndlnk-red);
+.case-inappstory .dkcp-scheme--first .dkcp-component--draft .dkcp-definition {
+  color: color-mix(in srgb, var(--ids__text) 45%, transparent);
 }
 
-.case-inappstory .dkcp-component--draft .dkcp-block--ok {
-  border-top-color: var(--ids__pndlnk-black);
-  border-left-color: var(--ids__pndlnk-black);
+/* Две строки в ценности не влезают в крышу и садятся на её нижнюю грань. */
+.case-inappstory .dkcp-component--draft:has(.dkcp-top .dkcp-definition p + p) {
+  margin-top: 6.7em;
+}
+
+.case-inappstory .dkcp-component--draft .dkcp-top:has(.dkcp-definition p + p)::before {
+  top: -5.83em;
+  height: 6em;
+}
+
+.case-inappstory .dkcp-component--draft .dkcp-top:has(.dkcp-definition p + p) .dkcp-block {
+  margin-top: -5.8em;
+}
+
+.case-inappstory .dkcp-component--draft .dkcp-block--bad .dkcp-definition {
+  color: var(--ids__pndlnk-red);
+}
+
+.case-inappstory .dkcp-component--draft .dkcp-definition .is-struck {
+  text-decoration: line-through;
+  text-decoration-skip-ink: none;
+}
+
+.case-inappstory .dkcp-component--draft .dkcp-definition .is-struck:not(.is-ok) {
+  color: var(--ids__pndlnk-red);
+}
+
+.case-inappstory .dkcp-definition p:has(.is-struck) + p:not(:has(.is-struck)) {
+  margin-top: 0.55em;
 }
 
 .case-inappstory .case-page .case-jobs-bento.case-field-promo .case-field-promo-image--checkup {
@@ -319,6 +371,20 @@
 }
 
 .case-inappstory .case-page .case-jobs-bento.case-field-promo .case-field-promo-image--checkup:last-child {
+  margin-right: 0;
+}
+
+/* Плотность стопки: --case-page-cover — доля ширины страницы, которую закрывает следующая.
+   0.5 оставляет видимой половину предыдущей. Класс у страниц модулей «Компания» и «Аргументы». */
+.case-inappstory .case-pages--half {
+  --case-page-cover: 0.5;
+}
+
+.case-inappstory .case-page .case-jobs-bento.case-field-promo.case-pages--half .case-field-promo-image--checkup {
+  margin-right: calc(17.5em * var(--case-page-cover) * -1);
+}
+
+.case-inappstory .case-page .case-jobs-bento.case-field-promo.case-pages--half .case-field-promo-image--checkup:last-child {
   margin-right: 0;
 }
 
@@ -346,131 +412,89 @@
   padding-bottom: 0.85em;
 }
 
-.case-inappstory .case-company-attrs__title {
-  margin: 0 0 1em;
-  font-weight: 600;
-  text-align: center;
+.ids__wrapper.case-page:not(.L) .ids__text-width .case-company-attrs.promo-table-container {
+  width: 100%;
+  max-width: none;
+  margin-top: 1.15em;
 }
 
-.case-inappstory .case-company-attrs__grid {
+.case-inappstory .case-company-attrs .promo-table tbody th {
+  width: 11em;
+  padding: 0.5em 1em 0.8em 0;
+  border-bottom: none;
+  vertical-align: top;
+  text-align: left;
+  font-weight: 600;
+}
+
+.case-inappstory .case-logics {
+  margin: 1.1em 0 1.5em;
+  padding-top: 0;
+}
+
+.case-inappstory .case-logics__row {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.7em;
-  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1em;
+  align-items: stretch;
 }
 
-.case-inappstory .case-company-attrs__group {
-  margin: 0 0 0.55em;
-  padding: 0.45em 0.4em;
-  background: var(--ids__surface);
-  font-weight: 600;
-  line-height: 1.25;
-  text-align: center;
+.case-inappstory .case-logics__cell {
+  border-top: 2px solid var(--ids__text);
+  border-left: 2px solid var(--ids__text);
+  padding: 0.65em 0.7em 0.85em;
 }
 
-.case-inappstory .case-company-attrs__grid ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45em;
+.case-inappstory .case-logics__name,
+.case-inappstory .case-logics__title {
   margin: 0;
-  padding: 0;
-  list-style: none;
+  font-family: var(--mono);
+  font-weight: 500;
+  line-height: 1.2;
 }
 
-.case-inappstory .case-company-attrs__grid li {
+.case-inappstory .case-logics__name {
+  margin-bottom: 0.55em;
+  font-size: 0.85em;
+}
+
+.case-inappstory .case-logics__title {
+  margin-bottom: 0.3em;
+  font-size: 0.75em;
+}
+
+.case-inappstory .case-logics__figure {
+  margin-bottom: 0.65em;
+}
+
+.case-inappstory .case-logics__figure svg {
+  display: block;
+  width: 100%;
+  height: 2.8em;
+}
+
+.case-inappstory .case-logics__text {
   margin: 0;
-  padding: 0.45em 0.4em;
-  border: 1px solid var(--ids__border);
-  line-height: 1.3;
-  text-align: center;
+  font-family: var(--hand);
+  font-size: 0.8em;
+  line-height: 1.15;
+  color: var(--ids__ink);
 }
 
-.case-inappstory .case-company-attrs__grid li:before {
-  content: none;
+.case-inappstory .case-logics__cell.is-muted {
+  border-top-color: color-mix(in srgb, var(--ids__text) 28%, transparent);
+  border-left-color: color-mix(in srgb, var(--ids__text) 28%, transparent);
 }
 
-.case-inappstory .case-company-attrs__grid li.is-marked {
-  background: color-mix(in srgb, var(--ids__pndlnk-gold) 16%, var(--ids__background));
-  border-color: color-mix(in srgb, var(--ids__pndlnk-gold) 45%, var(--ids__border));
-}
-
-@media (width < 900px) {
-  .case-inappstory .case-company-attrs__grid {
+@media (width < 700px) {
+  .case-inappstory .case-logics__row {
     grid-template-columns: 1fr;
   }
-}
 
-.case-inappstory .case-dkcp-step {
-  position: relative;
-  padding-top: 4em;
-}
-
-.case-inappstory .case-dkcp-step .dkcp-component--draft {
-  margin-top: 0;
-}
-
-.case-inappstory .case-dkcp-step__input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-.case-inappstory .case-dkcp-step__button {
-  position: absolute;
-  top: 0.35em;
-  right: 0;
-  z-index: 2;
-  margin: 0;
-  padding: 0.35em 0.7em;
-  border: 1px solid var(--ids__border);
-  background: var(--ids__background);
-  color: var(--ids__text);
-  font-family: var(--mono);
-  font-size: 0.75em;
-  line-height: 1.3;
-  cursor: pointer;
-}
-
-.case-inappstory .case-dkcp-step__input:focus-visible + .case-dkcp-step__button {
-  outline: 1px solid var(--ids__text);
-  outline-offset: 2px;
-}
-
-.case-inappstory .case-dkcp-step__label-before {
-  display: none;
-}
-
-.case-inappstory .case-dkcp-step__input:checked + .case-dkcp-step__button .case-dkcp-step__label-after {
-  display: none;
-}
-
-.case-inappstory .case-dkcp-step__input:checked + .case-dkcp-step__button .case-dkcp-step__label-before {
-  display: inline;
-}
-
-.case-inappstory .case-dkcp-step__after {
-  display: none;
-}
-
-.case-inappstory .case-dkcp-step__input:checked ~ .case-dkcp-step__before {
-  display: none;
-}
-
-.case-inappstory .case-dkcp-step__input:checked ~ .case-dkcp-step__after {
-  display: block;
-}
-
-.case-inappstory .dkcp-component--draft .dkcp-block--focus:not(.values) {
-  background: color-mix(in srgb, var(--ids__text) 10%, transparent);
-}
-
-.case-inappstory .dkcp-component--draft .dkcp-top:has(.values.dkcp-block--focus)::before {
-  background: color-mix(in srgb, var(--ids__text) 10%, var(--ids__background));
+  .case-inappstory .case-logics__cell {
+    border-top-width: 1px;
+    border-left-width: 1px;
+  }
 }
 
 .case-inappstory .case-conflict-shift {

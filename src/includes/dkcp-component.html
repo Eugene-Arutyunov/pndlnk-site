@@ -17,7 +17,7 @@ draft=false, mini=false, highlight=[], ok=[], bad=[] ) %}
       <div class="dkcp-title">Ценность</div>
       <div class="dkcp-definition">
         {% if values %} {% for item in values %}
-        <p>{{ item }}</p>
+        <p>{% if '<' in item %}{{ item | safe }}{% else %}{{ item }}{% endif %}</p>
         {% endfor %} {% endif %}
       </div>
     </div>
@@ -30,7 +30,7 @@ draft=false, mini=false, highlight=[], ok=[], bad=[] ) %}
         <div class="dkcp-title">Клиентский сегмент</div>
         <div class="dkcp-definition">
           {% if segment %} {% for item in segment %}
-          <p>{{ item }}</p>
+          <p>{% if '<' in item %}{{ item | safe }}{% else %}{{ item }}{% endif %}</p>
           {% endfor %} {% endif %}
         </div>
         <div class="dkcp-hint"></div>
@@ -41,7 +41,7 @@ draft=false, mini=false, highlight=[], ok=[], bad=[] ) %}
         <div class="dkcp-title">Мотивационный конфликт</div>
         <div class="dkcp-definition">
           {% if conflict %} {% for item in conflict %}
-          <p>{{ item }}</p>
+          <p>{% if '<' in item %}{{ item | safe }}{% else %}{{ item }}{% endif %}</p>
           {% endfor %} {% endif %}
         </div>
         <div class="dkcp-hint"></div>
@@ -52,7 +52,7 @@ draft=false, mini=false, highlight=[], ok=[], bad=[] ) %}
         <div class="dkcp-title">Аргументы</div>
         <div class="dkcp-definition">
           {% if arguments %} {% for item in arguments %}
-          <p>{{ item }}</p>
+          <p>{% if '<' in item %}{{ item | safe }}{% else %}{{ item }}{% endif %}</p>
           {% endfor %} {% endif %}
         </div>
         <div class="dkcp-hint"></div>
@@ -63,7 +63,7 @@ draft=false, mini=false, highlight=[], ok=[], bad=[] ) %}
         <div class="dkcp-title">Атрибуты артефакта</div>
         <div class="dkcp-definition">
           {% if artifactAttrs %} {% for item in artifactAttrs %}
-          <p>{{ item }}</p>
+          <p>{% if '<' in item %}{{ item | safe }}{% else %}{{ item }}{% endif %}</p>
           {% endfor %} {% endif %}
         </div>
         <div class="dkcp-hint"></div>
@@ -73,7 +73,7 @@ draft=false, mini=false, highlight=[], ok=[], bad=[] ) %}
         <div class="dkcp-title">Артефакт</div>
         <div class="dkcp-definition">
           {% if artifact %} {% for item in artifact %}
-          <p>{{ item }}</p>
+          <p>{% if '<' in item %}{{ item | safe }}{% else %}{{ item }}{% endif %}</p>
           {% endfor %} {% endif %}
         </div>
         <div class="dkcp-hint"></div>
@@ -86,7 +86,7 @@ draft=false, mini=false, highlight=[], ok=[], bad=[] ) %}
         <div class="dkcp-title">Вклад клиента</div>
         <div class="dkcp-definition">
           {% if priceConditions %} {% for item in priceConditions %}
-          <p>{{ item }}</p>
+          <p>{% if '<' in item %}{{ item | safe }}{% else %}{{ item }}{% endif %}</p>
           {% endfor %} {% endif %}
         </div>
       </div>
@@ -95,7 +95,7 @@ draft=false, mini=false, highlight=[], ok=[], bad=[] ) %}
         <div class="dkcp-title">Условия обмена</div>
         <div class="dkcp-definition">
           {% if exchangeConditions %} {% for item in exchangeConditions %}
-          <p>{{ item }}</p>
+          <p>{% if '<' in item %}{{ item | safe }}{% else %}{{ item }}{% endif %}</p>
           {% endfor %} {% endif %}
         </div>
       </div>
@@ -108,7 +108,7 @@ draft=false, mini=false, highlight=[], ok=[], bad=[] ) %}
       <div class="dkcp-title">Атрибуты компании</div>
       <div class="dkcp-definition">
         {% if companyAttrs %} {% for item in companyAttrs %}
-        <p>{{ item }}</p>
+        <p>{% if '<' in item %}{{ item | safe }}{% else %}{{ item }}{% endif %}</p>
         {% endfor %} {% endif %}
       </div>
     </div>

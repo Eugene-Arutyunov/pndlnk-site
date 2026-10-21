@@ -1315,6 +1315,54 @@ function paginateCheckupPages() {
   checkupPaginating = false;
 }
 
+function alignCaseArtifactRows() {
+  document.querySelectorAll(".case-inappstory .dkcp-component").forEach((component) => {
+    if (component.getClientRects().length === 0) return;
+
+    const artBlock = component.querySelector(".artifact");
+    const attrBlock = component.querySelector(".artifact-attrs");
+    if (!artBlock || !attrBlock) return;
+
+    const arts = [...artBlock.querySelectorAll(".dkcp-definition > p")];
+    const attrs = [...attrBlock.querySelectorAll(".dkcp-definition > p")];
+    const artTitle = artBlock.querySelector(".dkcp-title");
+    const attrTitle = attrBlock.querySelector(".dkcp-title");
+
+    [artTitle, attrTitle, ...arts, ...attrs].forEach((el) => {
+      if (el) el.style.minHeight = "";
+    });
+
+    if (artTitle && attrTitle) {
+      const titleHeight = Math.max(
+        artTitle.getBoundingClientRect().height,
+        attrTitle.getBoundingClientRect().height,
+      );
+      artTitle.style.minHeight = `${titleHeight}px`;
+      attrTitle.style.minHeight = `${titleHeight}px`;
+    }
+
+    if (arts.length < 2 || arts.length !== attrs.length) return;
+
+    arts.forEach((paragraph, index) => {
+      const rowHeight = Math.max(
+        paragraph.getBoundingClientRect().height,
+        attrs[index].getBoundingClientRect().height,
+      );
+      paragraph.style.minHeight = `${rowHeight}px`;
+      attrs[index].style.minHeight = `${rowHeight}px`;
+    });
+  });
+}
+
+function initCaseArtifactRows() {
+  const run = () => requestAnimationFrame(alignCaseArtifactRows);
+  run();
+  window.addEventListener("resize", run);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(run);
+  }
+}
+
 // Инициализируем когда DOM готов
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
@@ -1334,6 +1382,7 @@ if (document.readyState === "loading") {
     initLogoViewboxDebug();
     initCaseToc();
     initCaseFieldPromoTranscripts();
+    initCaseArtifactRows();
   });
 } else {
   initStickyObserver();
@@ -1352,4 +1401,5 @@ if (document.readyState === "loading") {
   initLogoViewboxDebug();
   initCaseToc();
   initCaseFieldPromoTranscripts();
+  initCaseArtifactRows();
 }
