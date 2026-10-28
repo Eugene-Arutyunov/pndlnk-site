@@ -331,8 +331,15 @@
   color: var(--ids__pndlnk-red);
 }
 
-.case-inappstory .dkcp-scheme--first .dkcp-component--draft .dkcp-definition {
+.case-inappstory .dkcp-component--draft .dkcp-definition {
   color: color-mix(in srgb, var(--ids__text) 45%, transparent);
+}
+
+.case-inappstory .dkcp-scheme--after-client .dkcp-component--draft :is(.segment, .conflict) .dkcp-definition p:not(:has(.is-struck)),
+.case-inappstory .dkcp-scheme--after-company .dkcp-component--draft :is(.segment, .conflict, .values, .company) .dkcp-definition p:not(:has(.is-struck)),
+.case-inappstory .dkcp-scheme--after-product .dkcp-component--draft :is(.segment, .conflict, .values, .company, .artifact, .artifact-attrs) .dkcp-definition p:not(:has(.is-struck)),
+.case-inappstory .dkcp-scheme--final .dkcp-component--draft :is(.segment, .conflict, .values, .company, .artifact, .artifact-attrs, .price, .exchange, .arguments) .dkcp-definition p:not(:has(.is-struck)) {
+  color: var(--ids__ink);
 }
 
 /* Две строки в ценности не влезают в крышу и садятся на её нижнюю грань. */

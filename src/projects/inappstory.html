@@ -2750,6 +2750,7 @@
       {% set revArtifact = ['<span class="dkcp-rev is-struck is-ok">' ~ chkArtifact[0] ~ '</span>', endArtifact[0], endArtifact[1], endArtifact[2]] %}
       {% set revAttrs = ['<span class="dkcp-rev is-struck">' ~ chkArtifactAttrs[0] ~ '</span><br><span class="dkcp-rev is-struck">' ~ chkArtifactAttrs[1] ~ '</span><br><span class="dkcp-rev is-struck">' ~ chkArtifactAttrs[2] ~ '</span><br><span class="dkcp-rev is-struck">' ~ chkArtifactAttrs[3] ~ '</span><br><span class="dkcp-rev is-struck">' ~ chkArtifactAttrs[4] ~ '</span>', endArtifactAttrs[0], endArtifactAttrs[1], endArtifactAttrs[2]] %}
       {% set revArguments = ['<span class="dkcp-rev is-struck">' ~ chkArguments[0] ~ '</span>', endArguments[0]] %}
+      <div class="dkcp-scheme dkcp-scheme--after-client">
       {{
         dkcp.dkcp(
           values=chkValues,
@@ -2765,6 +2766,7 @@
           bad=[4, 7, 9]
         )
       }}
+      </div>
       <div class="ids__space M"></div>
       <div class="ids__text-width">
         <h2 class="S case-toc-target" id="case-company">Модуль 2. Компания</h2>
@@ -3063,6 +3065,7 @@
         </p>
       </div>
       <div class="ids__space S"></div>
+      <div class="dkcp-scheme dkcp-scheme--after-company">
       {{
         dkcp.dkcp(
           values=revValues,
@@ -3078,6 +3081,7 @@
           bad=[4, 9]
         )
       }}
+      </div>
     </div>
     <div class="ids__wrapper case-featured case-standard case-page">
       <div class="ids__space M"></div>
@@ -3227,6 +3231,7 @@
           Таким образом из одного артефакта у нас получилось три со своими атрибутами.
         </p>
       </div>
+      <div class="dkcp-scheme dkcp-scheme--after-product">
       {{
         dkcp.dkcp(
           values=revValues,
@@ -3242,6 +3247,7 @@
           bad=[9]
         )
       }}
+      </div>
       <div class="ids__space M"></div>
       <div class="ids__text-width">
         <h2 class="S case-toc-target" id="case-exchange">Модуль 4. Вклад и процесс обмена</h2>
@@ -3564,6 +3570,7 @@
           под этим — как сформулировали к концу.
         </p>
       </div>
+      <div class="dkcp-scheme dkcp-scheme--final">
       {{
         dkcp.dkcp(
           values=revValues,
@@ -3578,6 +3585,7 @@
           draft=true
         )
       }}
+      </div>
       <div class="ids__text-width">
         <p class="caption">
           <em>Финальная схема: модель ДКЦП, как команда собрала её к концу интенсива</em>
