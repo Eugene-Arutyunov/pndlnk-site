@@ -189,26 +189,29 @@ https://crm.pndlnk.ru/object/person/{personId}             # контакт
 **Конфиг:** константы `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `TELEGRAM_PROXY` в начале `server.py`  
 Сбой отправки в Telegram логируется как WARNING и **не** ломает приём заявки.
 
-### Доставка через SOCKS5-прокси (обход блокировки Telegram)
+### Доставка через локальный прокси (обход блокировки Telegram)
 
 `api.telegram.org` заблокирован с РФ-серверов (TCP до его IP таймаутит). Поэтому
-запрос к Bot API идёт **через SOCKS5-прокси в Хельсинки** (`relay-hel.pndlnk.ru`,
-`194.76.217.181:1080`). Реализовано через `curl -x socks5h://…` (см. `send_telegram`):
-схема `socks5h` резолвит DNS на стороне прокси, поэтому заблокированный IP не мешает.
+запрос к Bot API идёт через локальный мост на apps: `sing-box-ai` слушает
+`socks5h://127.0.0.1:10808` и выводит трафик по HTTPS-прокси на hostkey
+(`hel2.pndlnk.ru:2054`, резерв sto1). Реализовано через `curl -x socks5h://…`
+(см. `send_telegram`): схема `socks5h` резолвит DNS на стороне прокси.
 
 ```python
-TELEGRAM_PROXY = "socks5h://bureau:…@194.76.217.181:1080"
+TELEGRAM_PROXY = "socks5h://127.0.0.1:10808"
 ```
 
-> Детали прокси — в `~/admin/proxy2.md`. Резервного прокси пока нет (планируется
-> поднять позже), так что доставка зависит от доступности Хельсинки.
+> Детали моста в `~/admin/apps.md` (раздел sing-box-ai). До 2026-09-11 использовался
+> SOCKS на Aeza (`relay-hel.pndlnk.ru`), адрес заблокирован по IP.
 
-Если уведомления перестанут приходить — проверь прокси:
+Если уведомления перестанут приходить, проверь мост:
 ```bash
-# Bot API через прокси должен вернуть {"ok":true,...}
-ssh apps "curl -s -m 12 -x 'socks5h://bureau:ПАРОЛЬ@194.76.217.181:1080' https://api.telegram.org/bot<TOKEN>/getMe"
-# статус прокси-сервисов
-ssh proxy2 "systemctl status danted xray"
+# выходной IP должен быть 148.135.184.204 (hostkey) или 65.20.113.113 (sto1)
+ssh apps "curl -s -m 12 --socks5-hostname 127.0.0.1:10808 https://api.ipify.org"
+# Bot API через мост должен вернуть 200
+ssh apps "curl -s -m 12 -x socks5h://127.0.0.1:10808 -o /dev/null -w '%{http_code}\n' https://api.telegram.org/bot<TOKEN>/getMe"
+# статус моста
+ssh apps "systemctl status sing-box-ai"
 ```
 
 ### Email-уведомления (выключены)
