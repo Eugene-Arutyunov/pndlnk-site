@@ -17,11 +17,11 @@ const EDUCATION_LABELS = {
 };
 
 // Плитка на /people: форма фото, цвет блока вместо фото, графика.
-// Логика выбора — docs/people-card-templates.md.
-// Два вида фото: мелкое в углу (circle | square) и крупное на всю ширину
-// (wide) — у крупного ограничена высота, справа от него подложка цвета
-// из фотографии (photoBackdrop, hex), подбирается агентом при вёрстке.
-const PHOTO_SHAPES = new Set(["circle", "square", "wide"]);
+// Как заводить человека и выбирать параметры — docs/people-onboarding.md.
+// Два вида фото: мелкое в углу (circle — всегда кружок) и крупное на всю
+// ширину (wide); подложка крупного — цвет из фотографии (photoBackdrop, hex),
+// подбирается агентом при вёрстке, видна пока фото грузится.
+const PHOTO_SHAPES = new Set(["circle", "wide"]);
 const HEX_COLOR = /^#[0-9a-f]{6}$/i;
 const FALLBACK_COLORS = new Set([
   "pndlnk-dark-gray",
@@ -31,10 +31,6 @@ const FALLBACK_COLORS = new Set([
   "pndlnk-gold-tinted",
 ]);
 const CANVAS_TYPES = new Set(["sphere", "layered-house", "pndlnk", "splash"]);
-// Положение логотипа pndlnk по вертикали (у остальной графики угол фиксирован):
-// top — вверху с малым отступом, middle — по центру, photo-bottom — нижний
-// край логотипа по нижнему краю квадратного крупного фото
-const PNDLNK_ALIGNS = new Set(["top", "middle", "photo-bottom"]);
 const ICON_TYPES = new Set([
   "etalon",
   "base",
@@ -118,15 +114,7 @@ function normalizeGraphic(raw, slug, education) {
     console.warn(`[people] ${slug}: неизвестная графика ${raw.kind}:${raw.type} — пропущена`);
     return null;
   }
-  const graphic = { kind: raw.kind, type: raw.type };
-  if (raw.align) {
-    if (raw.type === "pndlnk" && PNDLNK_ALIGNS.has(raw.align)) {
-      graphic.align = raw.align;
-    } else {
-      console.warn(`[people] ${slug}: align "${raw.align}" только для pndlnk (top | middle | photo-bottom) — пропущен`);
-    }
-  }
-  return graphic;
+  return { kind: raw.kind, type: raw.type };
 }
 
 function normalizeCard(raw, hasPhoto) {

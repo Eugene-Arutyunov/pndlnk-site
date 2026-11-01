@@ -64,7 +64,7 @@
 |---|---|---|
 | `project-catalog.css` | Каталог проектов: фильтр-панель, сетка, карточки | главная, /projects |
 | `promo-rows.css` | Промо-строки продуктов: аккордеон задач/продуктов с иконками | /products, промо-таблицы |
-| `people-cards.css` | Плитки людей `a.people-card` на сетке `.ids__sequence`: пять в ряд, пропорции 2:3, гэп `--ids__gap-xs` паддингом ссылки (ховер соседей без зазора); фото мелкое в углу (кружок/квадрат) или крупное квадратом на всю ширину (cover), без фото — цветной квадрат на всю ширину; имя в одну строку, под ним статус и роли, канвас-иллюстрация или иконка продукта в правом нижнем углу; параметры — `card` в `people.json`, логика выбора — `docs/people-card-templates.md` | /people |
+| `people-cards.css` | Плитки людей `a.people-card` на сетке `.ids__sequence`: пять в ряд, пропорции 3:4, гэп `--ids__gap-xs` паддингом ссылки (ховер соседей без зазора); фото мелкое в углу (кружок) или крупное на всю ширину 7:6 (cover), без фото — цветной блок на всю ширину 7:6; имя в одну строку, под ним статус и роли, иконка продукта под ними размером с иконку, анимированный канвас крупно в правом нижнем углу; параметры — `card` в `people.json`, норма и заведение человека — `docs/people-onboarding.md` | /people |
 | `initiative-catalog.css` | Фильтр-панель каталога инициатив | Додо Kids |
 | `case-field-promo.css` | Полевой промо-блок: фото/скрины с гармошкой и транскриптами | Додо Kids |
 | `case-video.css` | Главное видео и сетка видео-отзывов кейса | Додо Kids |
@@ -89,7 +89,7 @@
 ### Люди
 - Pages: `src/people.html` → `/people/` (плитки, виджет `people-cards.css`), `src/people/*.html` → `/people/<slug>/` (текст о человеке — в HTML, как у кейсов; фото необязательно)
 - Styles: `src/styles/person-page.css` (шапка `.person-page__header`, статусы, таблица проектов на `.promo-table`); портрет в шапке — `.author-portrait` (dkcp-base.css)
-- Data: `src/data/people.json` (канон человека: статусы с периодами, обучение, согласие, фото, параметры плитки `card`), `src/data/project-roles.json` (роли «проект × человек», зеркало таблицы Богдана), `src/data/loadPeople.js` (джойн с проектами, rowspan-ы таблицы, нормализация `card`); схема — `docs/people-data.md`, выбор компоновки плитки — `docs/people-card-templates.md`
+- Data: `src/data/people.json` (канон человека: статусы с периодами, обучение, согласие, фото, параметры плитки `card`), `src/data/project-roles.json` (роли «проект × человек», зеркало таблицы Богдана), `src/data/loadPeople.js` (джойн с проектами, rowspan-ы таблицы, нормализация `card`); схема — `docs/people-data.md`; заведение нового человека (опросник редактора, фото, роли, страница) — `docs/people-onboarding.md`
 - Macros: `src/includes/macros/person-page-meta.njk` (`personMeta` с текстом через `call`, `personProjects`), `src/includes/macros/people-card.njk` (`peopleCard`); импорт только `with context`
 
 ### Царь-кейс Додо Пицца Kids

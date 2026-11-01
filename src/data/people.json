@@ -17,12 +17,8 @@
       "card": {
         "photoShape": "wide",
         "photoBackdrop": "#7e7e80",
-        "graphic": {
-          "kind": "canvas",
-          "type": "pndlnk",
-          "align": "photo-bottom"
-        },
-        "note": "Логотип pndlnk по нижнему краю фото; студийное квадратное фото крупно"
+        "graphic": null,
+        "note": "студийное квадратное фото крупно; графика снята (была pndlnk)"
       }
     },
     {
@@ -41,11 +37,8 @@
       "photo": "/assets/ksc-open/v@2x-100.jpg",
       "card": {
         "photoShape": "circle",
-        "graphic": {
-          "kind": "canvas",
-          "type": "layered-house"
-        },
-        "note": "КСЦ — Вера фасилитатор и наставник по исследованиям"
+        "graphic": null,
+        "note": "КСЦ — Вера фасилитатор и наставник по исследованиям; графика снята (была layered-house)"
       }
     },
     {
@@ -64,11 +57,8 @@
       "photo": "/assets/ksc-open/s@2x-100.jpg",
       "card": {
         "photoShape": "circle",
-        "graphic": {
-          "kind": "icon",
-          "type": "evp-dev"
-        },
-        "note": "ЕВП — руководитель проектов и оргдизайнер (кружок: иконка в углу)"
+        "graphic": null,
+        "note": "ЕВП — руководитель проектов и оргдизайнер (кружок: иконка в углу); графика снята (была evp-dev)"
       }
     },
     {
@@ -86,7 +76,7 @@
       "public_profile": true,
       "photo": "/assets/ksc-open/k@2x-100.jpg",
       "card": {
-        "photoShape": "square",
+        "photoShape": "circle",
         "tone": "dark",
         "graphic": {
           "kind": "canvas",
@@ -110,12 +100,9 @@
       "public_profile": true,
       "photo": "/assets/ksc-open/b@2x-100.jpg",
       "card": {
-        "photoShape": "square",
-        "graphic": {
-          "kind": "icon",
-          "type": "goals"
-        },
-        "note": "Мишень из квадратов — статичная иконка «Цели компании» (квадрат: иконка под именем)"
+        "photoShape": "circle",
+        "graphic": null,
+        "note": "Мишень из квадратов — статичная иконка «Цели компании» (квадрат: иконка под именем); графика снята (была goals)"
       }
     },
     {
@@ -163,28 +150,23 @@
       }
     },
     {
-      "slug": "dasha-kochenova",
-      "name": "Даша Коченова",
+      "slug": "sasha-rodionov",
+      "name": "Саша Родионов",
       "statuses": [
         {
-          "status": "mid",
-          "from": 2026,
+          "status": "partner",
+          "from": null,
           "to": null
         }
       ],
       "education": [],
       "certificate": false,
       "public_profile": true,
-      "photo": "/assets/people/dasha-kochenova.jpg",
+      "photo": "/assets/ksc-open/rodionov-aleksandr.png",
       "card": {
-        "photoShape": "wide",
-        "photoBackdrop": "#b8b2ae",
-        "graphic": {
-          "kind": "canvas",
-          "type": "pndlnk",
-          "align": "photo-bottom"
-        },
-        "note": "Логотип pndlnk по нижнему краю фото; вертикальное фото крупно, кадр по центру"
+        "photoShape": "circle",
+        "graphic": null,
+        "note": "четвёртый канвас — всплеск ДКЦП; графика снята (была splash)"
       }
     },
     {
@@ -214,26 +196,24 @@
       }
     },
     {
-      "slug": "sasha-rodionov",
-      "name": "Саша Родионов",
+      "slug": "dasha-kochenova",
+      "name": "Даша Коченова",
       "statuses": [
         {
-          "status": "partner",
-          "from": null,
+          "status": "mid",
+          "from": 2026,
           "to": null
         }
       ],
       "education": [],
       "certificate": false,
       "public_profile": true,
-      "photo": "/assets/ksc-open/rodionov-aleksandr.png",
+      "photo": "/assets/people/dasha-kochenova.jpg",
       "card": {
-        "photoShape": "square",
-        "graphic": {
-          "kind": "canvas",
-          "type": "splash"
-        },
-        "note": "Спикер КСЦ; четвёртый канвас — всплеск ДКЦП"
+        "photoShape": "wide",
+        "photoBackdrop": "#b8b2ae",
+        "graphic": null,
+        "note": "вертикальное фото крупно, кадр по центру; графика снята (была pndlnk)"
       }
     },
     {
@@ -253,11 +233,8 @@
       "card": {
         "photoShape": "circle",
         "tone": "dark",
-        "graphic": {
-          "kind": "icon",
-          "type": "cxsl"
-        },
-        "note": "Приглашённый спикер КСЦ, выпускница CX:SL — иконка курса"
+        "graphic": null,
+        "note": "Приглашённый спикер КСЦ, выпускница CX:SL — иконка курса; графика снята (была cxsl)"
       }
     },
     {
@@ -319,7 +296,7 @@
       "public_profile": true,
       "photo": "/assets/people/evgeny-khomich.png",
       "card": {
-        "photoShape": "square",
+        "photoShape": "circle",
         "tone": "dark",
         "graphic": {
           "kind": "icon",

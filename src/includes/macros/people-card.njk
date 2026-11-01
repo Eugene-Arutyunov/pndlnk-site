@@ -1,6 +1,6 @@
-{# Плитка человека на /people: фото (или цветной блок) → имя →
-   графика в правом нижнем углу. Параметры — person.card из loadPeople,
-   логика выбора — docs/people-card-templates.md.
+{# Плитка человека на /people: фото (или цветной блок) → имя → статус и
+   роли → графика под ними размером с иконку. Параметры — person.card из loadPeople,
+   норма и заведение человека — docs/people-onboarding.md.
    Ссылка — внешняя обёртка на всю ячейку сетки, гэп между плитками — её
    паддинг: зоны ховера соседей смыкаются без зазора. Видимая плашка — .people-card__plate #}
 {% macro peopleCard(person) %}
@@ -32,7 +32,7 @@
   {% endif %}
   {% if card.graphic %}
   <div
-    class="people-card__graphic people-card__graphic--{{ card.graphic.kind }} people-card__graphic--{{ card.graphic.type }}{% if card.graphic.align %} people-card__graphic--align-{{ card.graphic.align }}{% endif %}"
+    class="people-card__graphic people-card__graphic--{{ card.graphic.kind }} people-card__graphic--{{ card.graphic.type }}"
     aria-hidden="true">
     {% if card.graphic.kind == 'canvas' %}
     {# Линии толще стандартных: канвас на плитке мелкий; у сферы крупнее и точки #}
