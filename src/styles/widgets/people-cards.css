@@ -1,78 +1,109 @@
-/* Плитки людей на /people: плитка целиком — ссылка, пропорции 3:4, шесть
-   в ряд с малым гэпом (.ids__sequence gap-S), без рамок. Компоновка сверху вниз:
-   фото в левом верхнем углу (кружок / квадрат / горизонтальный 4:3 /
-   вертикальный 3:4, без фото — цветной блок 4:3), сразу под ним имя в две
-   строки моно, графика в правом нижнем углу с ограничением по высоте.
+/* Плитки людей на /people: плитка целиком — ссылка, пропорции 2:3, пять
+   в ряд с минимальным гэпом, без рамок. Гэп — не у сетки, а паддинг ссылки
+   справа и снизу: ячейки сетки смыкаются, ховер переключается между соседями
+   без «мёртвой» зоны; видимая плашка — .people-card__plate внутри ссылки.
+   Компоновка сверху вниз:
+   фото в левом верхнем углу — два вида: мелкое в углу (кружок / квадрат)
+   или крупное на всю ширину с ограниченной высотой (wide); без фото —
+   цветной блок, тоже квадрат на всю ширину. Сразу под фото имя моно, графика в правом
+   нижнем углу с ограничением по высоте.
    Правило: при квадратном фото графика стоит под именем, не в углу.
    Логотип pndlnk — абсолютом в правом верхнем углу на 60% ширины.
-   Поля — не паддингом плитки, а отступами элементов: фото «без полей»
-   прижимается к краю. Тёмная плитка — класс .dark (токены переключаются).
+   Поля — не паддингом плитки, а отступами элементов: крупное фото и цветной
+   блок прижимаются к краю. Тёмная плитка — класс .dark (токены переключаются).
    Обёртка .ids сохраняет специфичность и перебивает подчёркивание .ids a */
 .ids {
+  /* Сетка: пять в ряд без собственного гэпа. Гэп несут ссылки (справа и
+     снизу), поэтому у правого края сетка выступает на один гэп — компенсируем
+     отрицательным полем, чтобы последняя плашка встала по краю обёртки */
+  .people-cards {
+    --gap: 0em;
+    margin-right: calc(-1 * var(--ids__gap-xs));
+
+    .ids__sequence-item {
+      --columns: 5;
+    }
+  }
+
   .people-card {
     --people-card-pad: var(--ids__spacer-xs);
 
-    position: relative;
-    display: grid;
-    grid-template-rows: auto auto minmax(0, 1fr);
-    aspect-ratio: 3 / 4;
-    box-sizing: border-box;
-    overflow: hidden;
-    /* База светлее сёрфейса, на ховере — сёрфейс; наведение мгновенно, уход плавно */
-    background: color-mix(in srgb, var(--ids__surface) 40%, var(--ids__background));
+    display: block;
+    padding: 0 var(--ids__gap-xs) var(--ids__gap-xs) 0;
+    /* Ссылка — только зона ховера, фон несёт плашка: .dark сам красит фон
+       элемента, иначе тёмная плитка залила бы и гэп */
+    background: transparent;
     /* Цвет — свой токен, не inherit: в .dark плитке текст и канвас светлые */
     color: var(--ids__text);
     text-decoration: none;
-    transition: background var(--ids__duration-slow) var(--ids__easing-base);
 
     &:hover {
       color: var(--ids__text);
       text-decoration: none;
-      background: var(--ids__surface);
-      transition-duration: var(--ids__duration-instant);
     }
   }
 
-  /* Фото: img не стилизуем — размер и обрезка через обёртку. Вертикальные
-     портреты режутся снизу, лицо вверху. Ширина по умолчанию от формы,
-     точечно — инлайном из данных (card.photoWidth) */
+  .people-card__plate {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto auto minmax(0, 1fr);
+    aspect-ratio: 2 / 3;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* База — сёрфейс на 40%, на ховере — на 70% (полпути к чистому сёрфейсу);
+       наведение мгновенно, уход плавно */
+    background: color-mix(in srgb, var(--ids__surface) 40%, var(--ids__background));
+    transition: background var(--ids__duration-slow) var(--ids__easing-base);
+  }
+
+  .people-card:hover .people-card__plate {
+    background: color-mix(in srgb, var(--ids__surface) 70%, var(--ids__background));
+    transition-duration: var(--ids__duration-instant);
+  }
+
+  /* Фото: размер и обрезка через обёртку, мелкое фото режется по квадрату */
   .people-card__photo {
     justify-self: start;
     margin: var(--people-card-pad) 0 0 var(--people-card-pad);
     overflow: hidden;
   }
 
-  .people-card__photo--bleed,
+  .people-card__photo--wide,
   .people-card__photo--block {
     margin: 0;
   }
 
-  /* Кружок и квадрат одного размера */
+  /* Мелкое фото: кружок и квадрат одного размера */
   .people-card__photo--circle {
-    width: 33%;
+    width: 25%;
     aspect-ratio: 1;
     border-radius: 50%;
   }
 
   .people-card__photo--square {
-    width: 33%;
+    width: 25%;
     aspect-ratio: 1;
   }
 
-  .people-card__photo--landscape {
-    width: 60%;
-    aspect-ratio: 4 / 3;
+  /* Крупное фото: квадрат на всю ширину плитки (при 2:3 — верхние две
+     трети), кадр заполняет квадрат и центрируется (cover). Подложка —
+     цвет из фотографии инлайном из данных (card.photoBackdrop), видна
+     только пока фото грузится */
+  .people-card__photo--wide {
+    width: 100%;
+    aspect-ratio: 1;
+
+    & > img {
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
-  .people-card__photo--portrait {
-    width: 35%;
-    aspect-ratio: 3 / 4;
-  }
-
-  /* Без фото: прямоугольник 4:3 фирменного цвета, цвет — инлайном из данных */
+  /* Без фото: квадрат фирменного цвета на всю ширину, как крупное фото;
+     цвет — инлайном из данных */
   .people-card__photo--block {
-    width: 60%;
-    aspect-ratio: 4 / 3;
+    width: 100%;
+    aspect-ratio: 1;
   }
 
   /* Имя: сразу под фото; моно и кегль как в таблице проектов (.promo-table-container) */
@@ -94,6 +125,23 @@
         color var(--ids__duration-base) var(--ids__easing-base),
         text-decoration-color var(--ids__duration-base) var(--ids__easing-base);
     }
+  }
+
+  /* Под именем: текущие статусы без периодов и до трёх ролей из проектов;
+     тот же моно, приглушённо, на ховере красится вместе с именем */
+  .people-card__status {
+    margin: 0 var(--people-card-pad);
+    font-family: var(--mono);
+    font-size: 0.75em; /* шаг шкалы: таблица */
+    line-height: 1.25;
+    text-align: left;
+    color: color-mix(in srgb, var(--ids__text) 55%, transparent);
+    transition: color var(--ids__duration-base) var(--ids__easing-base);
+  }
+
+  .people-card:hover .people-card__status {
+    color: color-mix(in srgb, var(--ids__hover) 55%, transparent);
+    transition-duration: var(--ids__duration-instant);
   }
 
   .people-card:hover .people-card__name span {
@@ -144,15 +192,38 @@
     justify-content: flex-end;
   }
 
+  /* Поправочные коэффициенты по типу графики: оптический размер фигур
+     разный, подобраны глазом. splash — 133% базовой ширины канваса (60%)
+     и сдвиг вправо-вниз на 10% своего размера: фигура тяготеет к центру
+     канваса, в углу её надо выдвинуть за край (плитка режет) */
+  .people-card__graphic--splash,
+  .people-card--square .people-card__graphic--splash {
+    width: 80%;
+    transform: translate(10%, 10%);
+  }
+
+  /* Логотип pndlnk: отступ справа свой, меньше общего поля плитки — буквы
+     логотипа имеют собственное поле внутри канваса. По вертикали — из данных
+     (graphic.align): по умолчанию вверху с малым отступом */
   .people-card__graphic--pndlnk,
   .people-card--square .people-card__graphic--pndlnk {
-    top: 0;
+    --people-card-pndlnk-right: var(--ids__gap-xs);
+
+    top: var(--ids__spacer-s);
+    right: var(--people-card-pndlnk-right);
     bottom: auto;
   }
 
-  .people-card--square .people-card__graphic--pndlnk {
+  .people-card__graphic--pndlnk.people-card__graphic--align-middle {
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  /* Нижний край логотипа по нижнему краю квадратного крупного фото:
+     при плитке 2:3 квадрат занимает верхние две трети, снизу остаётся треть */
+  .people-card__graphic--pndlnk.people-card__graphic--align-photo-bottom {
+    top: auto;
+    bottom: 33.333%;
   }
 
   .people-card__graphic--pndlnk .illustration-container {
@@ -175,6 +246,11 @@
     }
   }
 
+  /* База ДКЦП — 90% базовой высоты иконки (2.8rem): плашка тяжелее остальных */
+  .people-card__graphic--base {
+    height: 2.52rem;
+  }
+
   .people-card__graphic--base .people-card__icon {
     background: var(--ids__text);
     transition: background var(--ids__duration-slow) var(--ids__easing-base);
@@ -192,3 +268,4 @@
   }
 
 }
+

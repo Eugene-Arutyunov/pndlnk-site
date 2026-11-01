@@ -12,6 +12,7 @@
   --ids__spacer-l: calc(var(--ids__density) * 2.4em);
   --ids__spacer-xl: calc(var(--ids__density) * 4em);
 
+  --ids__gap-xs: 0.15em;
   --ids__gap-s: 0.5em;
   --ids__gap-m: 1em;
   --ids__gap-l: 1.5em;

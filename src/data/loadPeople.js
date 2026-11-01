@@ -8,6 +8,7 @@ const STATUS_LABELS = {
   buro: "Бюрошник",
   mid: "Срединник",
   partner: "Партнёр",
+  graduate: "Выпускник",
 };
 
 const EDUCATION_LABELS = {
@@ -17,7 +18,11 @@ const EDUCATION_LABELS = {
 
 // Плитка на /people: форма фото, цвет блока вместо фото, графика.
 // Логика выбора — docs/people-card-templates.md.
-const PHOTO_SHAPES = new Set(["circle", "square", "landscape", "portrait"]);
+// Два вида фото: мелкое в углу (circle | square) и крупное на всю ширину
+// (wide) — у крупного ограничена высота, справа от него подложка цвета
+// из фотографии (photoBackdrop, hex), подбирается агентом при вёрстке.
+const PHOTO_SHAPES = new Set(["circle", "square", "wide"]);
+const HEX_COLOR = /^#[0-9a-f]{6}$/i;
 const FALLBACK_COLORS = new Set([
   "pndlnk-dark-gray",
   "pndlnk-red",
@@ -26,6 +31,10 @@ const FALLBACK_COLORS = new Set([
   "pndlnk-gold-tinted",
 ]);
 const CANVAS_TYPES = new Set(["sphere", "layered-house", "pndlnk", "splash"]);
+// Положение логотипа pndlnk по вертикали (у остальной графики угол фиксирован):
+// top — вверху с малым отступом, middle — по центру, photo-bottom — нижний
+// край логотипа по нижнему краю квадратного крупного фото
+const PNDLNK_ALIGNS = new Set(["top", "middle", "photo-bottom"]);
 const ICON_TYPES = new Set([
   "etalon",
   "base",
@@ -109,7 +118,15 @@ function normalizeGraphic(raw, slug, education) {
     console.warn(`[people] ${slug}: неизвестная графика ${raw.kind}:${raw.type} — пропущена`);
     return null;
   }
-  return { kind: raw.kind, type: raw.type };
+  const graphic = { kind: raw.kind, type: raw.type };
+  if (raw.align) {
+    if (raw.type === "pndlnk" && PNDLNK_ALIGNS.has(raw.align)) {
+      graphic.align = raw.align;
+    } else {
+      console.warn(`[people] ${slug}: align "${raw.align}" только для pndlnk (top | middle | photo-bottom) — пропущен`);
+    }
+  }
+  return graphic;
 }
 
 function normalizeCard(raw, hasPhoto) {
@@ -135,15 +152,18 @@ function normalizeCard(raw, hasPhoto) {
     fallbackColor = DEFAULT_COLOR;
   }
 
-  // Ширина фото в процентах плитки и «без полей» (вплотную к краю)
-  let photoWidth = Number(card.photoWidth);
-  if (!(photoWidth > 0 && photoWidth <= 100)) {
-    if (card.photoWidth != null) {
+  // Подложка крупного фото: цвет из фотографии, только для wide
+  let photoBackdrop = null;
+  if (hasPhoto && photoShape === "wide") {
+    if (HEX_COLOR.test(String(card.photoBackdrop || ""))) {
+      photoBackdrop = String(card.photoBackdrop).toLowerCase();
+    } else {
       console.warn(
-        `[people] ${raw.slug}: ширина фото "${card.photoWidth}" вне 1–100 — взят дефолт формы`,
+        `[people] ${raw.slug}: у крупного фото нет подложки photoBackdrop (#rrggbb) — будет фон плитки`,
       );
     }
-    photoWidth = null;
+  } else if (card.photoBackdrop) {
+    console.warn(`[people] ${raw.slug}: photoBackdrop нужен только форме wide — пропущен`);
   }
 
   // Тёмная плитка: класс .dark переключает токены на тёмный набор
@@ -154,8 +174,7 @@ function normalizeCard(raw, hasPhoto) {
 
   return {
     photoShape,
-    photoWidth,
-    photoBleed: Boolean(card.photoBleed),
+    photoBackdrop,
     tone,
     fallbackColor,
     graphic: normalizeGraphic(card.graphic, raw.slug, raw.education),
@@ -163,14 +182,6 @@ function normalizeCard(raw, hasPhoto) {
     explicit: Boolean(card.photoShape || (!hasPhoto && card.fallbackColor)),
     note: card.note || "",
   };
-}
-
-// Имя на плитке всегда в две строки: имя / фамилия по первому пробелу
-function splitName(name) {
-  const text = String(name || "").trim();
-  const space = text.indexOf(" ");
-  if (space < 0) return [text, ""];
-  return [text.slice(0, space), text.slice(space + 1)];
 }
 
 function buildRolesByPerson(roles, projects, peopleSlugs) {
@@ -222,8 +233,29 @@ function addRowSpans(list) {
   return list;
 }
 
+// Роли для плитки: роли из проектов режутся по запятой на атомарные
+// («Старший аналитик, методолог» → две), склеиваются без учёта регистра,
+// берутся не больше трёх самых частых, по убыванию частоты; в нижнем регистре —
+// идут в строке после статуса
+const CARD_ROLES_MAX = 3;
+function cardRoles(personProjects) {
+  const counts = new Map();
+  for (const p of personProjects) {
+    for (const part of String(p.role || "").split(",")) {
+      const role = part.trim().toLowerCase();
+      if (!role) continue;
+      counts.set(role, (counts.get(role) || 0) + 1);
+    }
+  }
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, CARD_ROLES_MAX)
+    .map(([role]) => role);
+}
+
 function normalizePerson(raw, roles, projects) {
   const statusLines = normalizeStatuses(raw.statuses);
+  const card = normalizeCard(raw, Boolean(raw.photo));
   // Порядок проектов наследуется от loadProjects: год по убыванию, потом название.
   const personProjects = addRowSpans(
     projects.filter((p) => roles.has(p.slug)).map((p) => ({ ...p, role: roles.get(p.slug) }))
@@ -232,19 +264,22 @@ function normalizePerson(raw, roles, projects) {
   return {
     slug: raw.slug,
     name: raw.name,
-    nameLines: splitName(raw.name),
     url: `/people/${raw.slug}/`,
     photo: raw.photo || null,
     hasPhoto: Boolean(raw.photo),
-    // "large" — большой вертикальный прямоугольник, "small" — кружок вдвое мельче
-    portrait: raw.portrait === "large" ? "large" : "small",
+    // Портрет в шапке внутренней страницы следует форме фото на плитке:
+    // крупное (wide) — большой квадрат, мелкое — кружок
+    portrait: card.photoShape === "wide" ? "large" : "small",
     publicProfile: Boolean(raw.public_profile),
     statuses: raw.statuses || [],
     statusLines,
     primaryStatus: statusLines[0] || null,
+    // На плитке: только текущие статусы, без периодов
+    cardStatuses: statusLines.filter((s) => s.current).map((s) => s.label),
+    cardRoles: cardRoles(personProjects),
     educationLines: normalizeEducation(raw.education, raw.certificate),
     hasCertificate: Boolean(raw.certificate),
-    card: normalizeCard(raw, Boolean(raw.photo)),
+    card,
     projects: personProjects,
   };
 }

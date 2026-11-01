@@ -14,16 +14,15 @@
       "certificate": false,
       "public_profile": true,
       "photo": "/assets/people/mikhail-rudenko.jpg",
-      "portrait": "small",
       "card": {
-        "photoShape": "square",
-        "photoWidth": 80,
-        "photoBleed": true,
+        "photoShape": "wide",
+        "photoBackdrop": "#7e7e80",
         "graphic": {
           "kind": "canvas",
-          "type": "pndlnk"
+          "type": "pndlnk",
+          "align": "photo-bottom"
         },
-        "note": "Логотип ПНДЛНК поверх фото, как у Даши; фото 80% без полей"
+        "note": "Логотип pndlnk по нижнему краю фото; студийное квадратное фото крупно"
       }
     },
     {
@@ -40,7 +39,6 @@
       "certificate": false,
       "public_profile": true,
       "photo": "/assets/ksc-open/v@2x-100.jpg",
-      "portrait": "small",
       "card": {
         "photoShape": "circle",
         "graphic": {
@@ -64,64 +62,13 @@
       "certificate": false,
       "public_profile": true,
       "photo": "/assets/ksc-open/s@2x-100.jpg",
-      "portrait": "small",
-      "card": {
-        "photoShape": "square",
-        "graphic": {
-          "kind": "icon",
-          "type": "evp-dev"
-        },
-        "note": "ЕВП — руководитель проектов и оргдизайнер"
-      }
-    },
-    {
-      "slug": "evgeny-arutyunov",
-      "name": "Женя Арутюнов",
-      "statuses": [
-        {
-          "status": "partner",
-          "from": null,
-          "to": null
-        }
-      ],
-      "education": [],
-      "certificate": false,
-      "public_profile": true,
-      "photo": "/assets/ea.jpg",
-      "portrait": "small",
-      "card": {
-        "photoShape": "landscape",
-        "photoWidth": 100,
-        "photoBleed": true,
-        "graphic": {
-          "kind": "icon",
-          "type": "base"
-        },
-        "note": "База ДКЦП; горизонтальное фото со страницы /dkcp-base на всю ширину без полей"
-      }
-    },
-    {
-      "slug": "bogdan-burdin",
-      "name": "Богдан Бурдин",
-      "statuses": [
-        {
-          "status": "buro",
-          "from": null,
-          "to": null
-        }
-      ],
-      "education": [],
-      "certificate": false,
-      "public_profile": true,
-      "photo": "/assets/ksc-open/b@2x-100.jpg",
-      "portrait": "small",
       "card": {
         "photoShape": "circle",
         "graphic": {
           "kind": "icon",
-          "type": "goals"
+          "type": "evp-dev"
         },
-        "note": "Мишень из кругов — статичная иконка «Цели компании»"
+        "note": "ЕВП — руководитель проектов и оргдизайнер (кружок: иконка в углу)"
       }
     },
     {
@@ -138,7 +85,6 @@
       "certificate": false,
       "public_profile": true,
       "photo": "/assets/ksc-open/k@2x-100.jpg",
-      "portrait": "small",
       "card": {
         "photoShape": "square",
         "tone": "dark",
@@ -147,6 +93,29 @@
           "type": "sphere"
         },
         "note": "Сфера — индивидуальные проекты, которые Кристина администрирует"
+      }
+    },
+    {
+      "slug": "bogdan-burdin",
+      "name": "Богдан Бурдин",
+      "statuses": [
+        {
+          "status": "buro",
+          "from": null,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/ksc-open/b@2x-100.jpg",
+      "card": {
+        "photoShape": "square",
+        "graphic": {
+          "kind": "icon",
+          "type": "goals"
+        },
+        "note": "Мишень из квадратов — статичная иконка «Цели компании» (квадрат: иконка под именем)"
       }
     },
     {
@@ -163,11 +132,34 @@
       "certificate": false,
       "public_profile": true,
       "photo": "/assets/ksc-open/a@2x-100.jpg",
-      "portrait": "small",
       "card": {
         "photoShape": "circle",
         "graphic": null,
         "note": "Графика не назначена"
+      }
+    },
+    {
+      "slug": "evgeny-arutyunov",
+      "name": "Женя Арутюнов",
+      "statuses": [
+        {
+          "status": "partner",
+          "from": null,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/people/evgeny-arutyunov.jpg",
+      "card": {
+        "photoShape": "wide",
+        "photoBackdrop": "#c3c6cb",
+        "graphic": {
+          "kind": "icon",
+          "type": "base"
+        },
+        "note": "База ДКЦП; горизонтальное студийное фото крупно, подложка — холодный светло-серый фона съёмки"
       }
     },
     {
@@ -184,16 +176,15 @@
       "certificate": false,
       "public_profile": true,
       "photo": "/assets/people/dasha-kochenova.jpg",
-      "portrait": "large",
       "card": {
-        "photoShape": "portrait",
-        "photoWidth": 50,
-        "photoBleed": true,
+        "photoShape": "wide",
+        "photoBackdrop": "#b8b2ae",
         "graphic": {
           "kind": "canvas",
-          "type": "pndlnk"
+          "type": "pndlnk",
+          "align": "photo-bottom"
         },
-        "note": "Логотип ПНДЛНК — редактор бюро; вертикальное студийное фото"
+        "note": "Логотип pndlnk по нижнему краю фото; вертикальное фото крупно, кадр по центру"
       }
     },
     {
@@ -215,7 +206,6 @@
       "certificate": false,
       "public_profile": true,
       "photo": null,
-      "portrait": "small",
       "card": {
         "photoShape": "circle",
         "fallbackColor": "pndlnk-gold-tinted",
@@ -237,7 +227,6 @@
       "certificate": false,
       "public_profile": true,
       "photo": "/assets/ksc-open/rodionov-aleksandr.png",
-      "portrait": "small",
       "card": {
         "photoShape": "square",
         "graphic": {
@@ -261,7 +250,6 @@
       "certificate": false,
       "public_profile": true,
       "photo": "/assets/ksc-open/alina-raeva.png",
-      "portrait": "small",
       "card": {
         "photoShape": "circle",
         "tone": "dark",
@@ -275,7 +263,13 @@
     {
       "slug": "galiya-kuzakhmetova",
       "name": "Галия Кузахметова",
-      "statuses": [],
+      "statuses": [
+        {
+          "status": "graduate",
+          "from": 2026,
+          "to": null
+        }
+      ],
       "education": [
         {
           "kind": "cxsl",
@@ -288,22 +282,26 @@
       },
       "public_profile": true,
       "photo": "/assets/people/galiya-kuzakhmetova.jpg",
-      "portrait": "small",
       "card": {
-        "photoShape": "square",
-        "photoWidth": 60,
-        "photoBleed": true,
+        "photoShape": "wide",
+        "photoBackdrop": "#d2d2d2",
         "graphic": {
           "kind": "icon",
           "type": "cxsl"
         },
-        "note": "Выпускница CX:Стратегической логики 2.0; квадратное ч/б фото"
+        "note": "CX:SL; ч/б квадратное фото крупно на всю ширину, подложка — светло-серый стены у правого края"
       }
     },
     {
       "slug": "evgeny-khomich",
       "name": "Евгений Хомич",
-      "statuses": [],
+      "statuses": [
+        {
+          "status": "graduate",
+          "from": 2026,
+          "to": null
+        }
+      ],
       "education": [
         {
           "kind": "cxsl",
@@ -320,7 +318,6 @@
       },
       "public_profile": true,
       "photo": "/assets/people/evgeny-khomich.png",
-      "portrait": "small",
       "card": {
         "photoShape": "square",
         "tone": "dark",
@@ -334,7 +331,13 @@
     {
       "slug": "roman-nokhrin",
       "name": "Роман Нохрин",
-      "statuses": [],
+      "statuses": [
+        {
+          "status": "graduate",
+          "from": 2026,
+          "to": null
+        }
+      ],
       "education": [
         {
           "kind": "cxsl",
@@ -347,7 +350,6 @@
       },
       "public_profile": true,
       "photo": "/assets/people/roman-nokhrin.jpg",
-      "portrait": "small",
       "card": {
         "photoShape": "circle",
         "graphic": {

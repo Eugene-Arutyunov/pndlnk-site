@@ -1,15 +1,20 @@
-{# Плитка человека на /people: фото (или цветной блок) → имя в две строки →
+{# Плитка человека на /people: фото (или цветной блок) → имя →
    графика в правом нижнем углу. Параметры — person.card из loadPeople,
-   логика выбора — docs/people-card-templates.md #}
+   логика выбора — docs/people-card-templates.md.
+   Ссылка — внешняя обёртка на всю ячейку сетки, гэп между плитками — её
+   паддинг: зоны ховера соседей смыкаются без зазора. Видимая плашка — .people-card__plate #}
 {% macro peopleCard(person) %}
 {% set card = person.card %}
 <a
   class="people-card people-card--{{ card.photoShape if person.photo else 'block' }}{% if card.tone == 'dark' %} dark{% endif %}"
   href="{{ person.url }}">
+  <div class="people-card__plate">
   {% if person.photo %}
+  {# Крупное фото (wide): квадрат на всю ширину, кадр по центру (cover);
+     подложка цвета из фотографии (card.photoBackdrop) видна, пока фото грузится #}
   <div
-    class="people-card__photo people-card__photo--{{ card.photoShape }}{% if card.photoBleed %} people-card__photo--bleed{% endif %}"
-    {% if card.photoWidth %}style="width: {{ card.photoWidth }}%"{% endif %}>
+    class="people-card__photo people-card__photo--{{ card.photoShape }}"
+    {% if card.photoBackdrop %}style="background-color: {{ card.photoBackdrop }}"{% endif %}>
     <img src="{{ person.photo }}" alt="" loading="lazy" />
   </div>
   {% else %}
@@ -18,20 +23,26 @@
     style="background-color: var(--ids__{{ card.fallbackColor }})"></div>
   {% endif %}
   <p class="people-card__name">
-    <span>{{ person.nameLines[0] }}<br />{{ person.nameLines[1] }}</span>
+    <span>{{ person.name }}</span>
   </p>
+  {# Под именем: текущие статусы и до трёх ролей из проектов, одной строкой #}
+  {% set statusParts = person.cardStatuses.concat(person.cardRoles) %}
+  {% if statusParts.length %}
+  <p class="people-card__status">{{ statusParts | join(', ') }}</p>
+  {% endif %}
   {% if card.graphic %}
   <div
-    class="people-card__graphic people-card__graphic--{{ card.graphic.kind }} people-card__graphic--{{ card.graphic.type }}"
+    class="people-card__graphic people-card__graphic--{{ card.graphic.kind }} people-card__graphic--{{ card.graphic.type }}{% if card.graphic.align %} people-card__graphic--align-{{ card.graphic.align }}{% endif %}"
     aria-hidden="true">
     {% if card.graphic.kind == 'canvas' %}
-    {# Линии толще стандартных: канвас на плитке мелкий #}
+    {# Линии толще стандартных: канвас на плитке мелкий; у сферы крупнее и точки #}
     <div
       class="illustration-container"
       data-illustration-type="{{ card.graphic.type }}"
       data-background-color="background"
       data-transparent="true"
-      data-line-width="{{ {'sphere': 5, 'layered-house': 8, 'splash': 6, 'pndlnk': 3}[card.graphic.type] }}">
+      data-line-width="{{ {'sphere': 9, 'layered-house': 8, 'splash': 6, 'pndlnk': 3}[card.graphic.type] }}"
+      {% if card.graphic.type == 'sphere' %}data-point-radius="10"{% endif %}>
       <canvas class="illustration-canvas"></canvas>
     </div>
     {% else %}
@@ -41,5 +52,6 @@
     {% endif %}
   </div>
   {% endif %}
+  </div>
 </a>
 {% endmacro %}

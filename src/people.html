@@ -9,20 +9,18 @@
     <h1>Люди</h1>
   </div>
 
-  <div class="ids__space XS"></div>
-
   <div class="ids__text-width">
     <p>
       Понедельник — это коллектив единомышленников и сообщество людей,
       объединённых любовью к&nbsp;фундаментальному знанию. К&nbsp;нам можно
-      легко присоединиться и поработать вместе на один проект или остаться
+      присоединиться и поработать вместе на один проект или остаться
       надолго.
     </p>
   </div>
 
   <div class="ids__space S"></div>
 
-  <div class="ids__sequence S gap-S people-cards">
+  <div class="ids__sequence S people-cards">
     {% for person in people %}
     <div class="ids__sequence-item">{{ peopleCard(person) }}</div>
     {% endfor %}

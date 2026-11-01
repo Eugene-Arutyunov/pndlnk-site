@@ -31,14 +31,20 @@
   width: 5.6rem;
 }
 
+/* Оба портрета квадратные, кадр по центру (cover), как крупное фото на
+   плитке; мелкий — кружок. Вид следует форме фото на плитке (loadPeople) */
 .person-page .person-page__portrait .author-portrait {
   margin-bottom: 0;
-}
-
-/* Кружок: квадратная обёртка режет вертикальное фото снизу, лицо вверху */
-.person-page .person-page__portrait--small .author-portrait {
   aspect-ratio: 1;
   overflow: hidden;
+
+  & > img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.person-page .person-page__portrait--small .author-portrait {
   border-radius: 50%;
 }
 
@@ -133,8 +139,6 @@
 
   /* На мобиле большой портрет тоже кружок — разница видов только на десктопе */
   .person-page .person-page__portrait--large .author-portrait {
-    aspect-ratio: 1;
-    overflow: hidden;
     border-radius: 50%;
   }
 
