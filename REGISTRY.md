@@ -64,6 +64,7 @@
 |---|---|---|
 | `project-catalog.css` | Каталог проектов: фильтр-панель, сетка, карточки | главная, /projects |
 | `promo-rows.css` | Промо-строки продуктов: аккордеон задач/продуктов с иконками | /products, промо-таблицы |
+| `people-cards.css` | Плитки людей `a.people-card` на сетке `.ids__sequence`: фото четырёх форм или цветной блок 4:3, имя в две строки, канвас-иллюстрация или иконка продукта в правом нижнем углу; параметры — `card` в `people.json`, логика выбора — `docs/people-card-templates.md` | /people |
 | `initiative-catalog.css` | Фильтр-панель каталога инициатив | Додо Kids |
 | `case-field-promo.css` | Полевой промо-блок: фото/скрины с гармошкой и транскриптами | Додо Kids |
 | `case-video.css` | Главное видео и сетка видео-отзывов кейса | Додо Kids |
@@ -84,6 +85,12 @@
 - Pages: `src/projects/*.html` (~67 штук) → `/projects/<slug>/`
 - Styles: `src/styles/case-page.css` (общие стили кейсов)
 - Data: `src/data/loadProjects.js`, скрытые слаги — `src/data/projectHidden.js`
+
+### Люди
+- Pages: `src/people.html` → `/people/` (плитки, виджет `people-cards.css`), `src/people/*.html` → `/people/<slug>/` (текст о человеке — в HTML, как у кейсов; фото необязательно)
+- Styles: `src/styles/person-page.css` (шапка `.person-page__header`, статусы, таблица проектов на `.promo-table`); портрет в шапке — `.author-portrait` (dkcp-base.css)
+- Data: `src/data/people.json` (канон человека: статусы с периодами, обучение, согласие, фото, параметры плитки `card`), `src/data/project-roles.json` (роли «проект × человек», зеркало таблицы Богдана), `src/data/loadPeople.js` (джойн с проектами, rowspan-ы таблицы, нормализация `card`); схема — `docs/people-data.md`, выбор компоновки плитки — `docs/people-card-templates.md`
+- Macros: `src/includes/macros/person-page-meta.njk` (`personMeta` с текстом через `call`, `personProjects`), `src/includes/macros/people-card.njk` (`peopleCard`); импорт только `with context`
 
 ### Царь-кейс Додо Пицца Kids
 - Pages: `src/projects/dodo-pizza-kids.html` (длинная версия, noindex, не согласована с заказчиком, доступна по ссылке) + 6 подстраниц в `src/projects/dodo-pizza-kids/`; `src/projects/dodo-pizza-kids-case-v1.html` — опубликованная версия, открывается со страницы проектов

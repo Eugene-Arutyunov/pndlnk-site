@@ -1,0 +1,45 @@
+{# Плитка человека на /people: фото (или цветной блок) → имя в две строки →
+   графика в правом нижнем углу. Параметры — person.card из loadPeople,
+   логика выбора — docs/people-card-templates.md #}
+{% macro peopleCard(person) %}
+{% set card = person.card %}
+<a
+  class="people-card people-card--{{ card.photoShape if person.photo else 'block' }}{% if card.tone == 'dark' %} dark{% endif %}"
+  href="{{ person.url }}">
+  {% if person.photo %}
+  <div
+    class="people-card__photo people-card__photo--{{ card.photoShape }}{% if card.photoBleed %} people-card__photo--bleed{% endif %}"
+    {% if card.photoWidth %}style="width: {{ card.photoWidth }}%"{% endif %}>
+    <img src="{{ person.photo }}" alt="" loading="lazy" />
+  </div>
+  {% else %}
+  <div
+    class="people-card__photo people-card__photo--block"
+    style="background-color: var(--ids__{{ card.fallbackColor }})"></div>
+  {% endif %}
+  <p class="people-card__name">
+    <span>{{ person.nameLines[0] }}<br />{{ person.nameLines[1] }}</span>
+  </p>
+  {% if card.graphic %}
+  <div
+    class="people-card__graphic people-card__graphic--{{ card.graphic.kind }} people-card__graphic--{{ card.graphic.type }}"
+    aria-hidden="true">
+    {% if card.graphic.kind == 'canvas' %}
+    {# Линии толще стандартных: канвас на плитке мелкий #}
+    <div
+      class="illustration-container"
+      data-illustration-type="{{ card.graphic.type }}"
+      data-background-color="background"
+      data-transparent="true"
+      data-line-width="{{ {'sphere': 5, 'layered-house': 8, 'splash': 6, 'pndlnk': 3}[card.graphic.type] }}">
+      <canvas class="illustration-canvas"></canvas>
+    </div>
+    {% else %}
+    <div class="people-card__icon">
+      {% include 'assets/product-icon-' + card.graphic.type + '.html' %}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+</a>
+{% endmacro %}

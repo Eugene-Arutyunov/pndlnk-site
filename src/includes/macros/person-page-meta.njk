@@ -1,0 +1,68 @@
+{% macro personMeta(page, topSpace=true, h1Space='M') %}
+  {% set slug = page.url | personSlugFromUrl %}
+  {% set person = people | personBySlug(slug) %}
+  {% if person %}
+  {% if topSpace %}<div class="ids__space XL"></div>{% endif %}
+  <div class="person-page__header">
+    {% if person.photo %}
+    <div class="person-page__portrait person-page__portrait--{{ person.portrait }}">
+      <div class="author-portrait">
+        <img src="{{ person.photo }}" alt="{{ person.name }}" />
+      </div>
+    </div>
+    {% endif %}
+    <div class="person-page__title">
+      {% if person.statusLines.length %}
+      <ul class="person-page__statuses" aria-label="Статус в бюро">
+        {% for line in person.statusLines %}
+        <li class="person-page__status{% if not line.current %} person-page__status--past{% endif %}">{{ line.text }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <h1 class="S">{{ person.name }}</h1>
+      {% if caller %}
+      <div class="ids__space XS"></div>
+      <div class="person-page__about">{{ caller() }}</div>
+      {% endif %}
+    </div>
+  </div>
+  {% if h1Space != 'none' %}<div class="ids__space {{ h1Space }}"></div>{% endif %}
+  {% endif %}
+{% endmacro %}
+
+{% macro personProjects(page) %}
+  {% set slug = page.url | personSlugFromUrl %}
+  {% set person = people | personBySlug(slug) %}
+  {% if person %}
+  {% if person.projects.length %}
+  <div class="promo-table-container person-projects">
+    <table class="promo-table">
+      <thead>
+        <tr>
+          <th class="ids__table-head" colspan="4">Проекты и продукты</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in person.projects %}
+        <tr>
+          {% if p.yearSpan %}<td class="person-projects__year{% if p.yearLast %} person-projects__cell--last{% endif %}" rowspan="{{ p.yearSpan }}">{{ p.year }}</td>{% endif %}
+          <td class="person-projects__client">{{ p.companyLabel }}</td>
+          <td class="person-projects__title"><a href="{{ p.url }}">{{ p.title }}</a></td>
+          {% if p.roleSpan %}<td class="person-projects__role{% if p.roleLast %} person-projects__cell--last{% endif %}" rowspan="{{ p.roleSpan }}">{{ p.role }}</td>{% endif %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+  {% if person.educationLines.length %}
+  <div class="ids__space M"></div>
+  <h2 class="S">Обучение</h2>
+  <ul class="person-education">
+    {% for line in person.educationLines %}
+    <li>{{ line }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endif %}
+{% endmacro %}

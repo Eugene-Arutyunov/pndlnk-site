@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% from 'macros/person-page-meta.njk' import personMeta, personProjects with context %}
+{% set pageTitle = 'Сергей Петречук — Понедельник' %}
+{% block content %}
+<div class="ids__wrapper person-page">
+  {% call personMeta(page) %}
+    <p>
+      Сергей хорош там, где нужно сорваться вечером и поехать в другой город
+      на наблюдение, попутно переодевшись в клерка, менеджера по продажам на
+      автозаправочной станции или шахтёра.
+    </p>
+    <p>
+      Если у вас возникает такая задача, которую в здравом уме никто не
+      решится бы взять, вы можете смело отдать её Сергею Петречуку.
+    </p>
+  {% endcall %}
+  {{ personProjects(page) }}
+</div>
+<div class="ids__space XL"></div>
+{% endblock %}

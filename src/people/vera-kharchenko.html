@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% from 'macros/person-page-meta.njk' import personMeta, personProjects with context %}
+{% set pageTitle = 'Вера Харченко — Понедельник' %}
+{% block content %}
+<div class="ids__wrapper person-page">
+  {% call personMeta(page) %}
+    <p>
+      Вера — руководитель практики «опыт сотрудников». Самый въедливый,
+      безжалостный и непримиримый член команды.
+    </p>
+    <p>
+      Не терпит халтуры и поверхностности. Преподаёт студентам науку
+      социологию. Любит культурную жизнь: в любых командировках, после
+      исследования, Вера идёт в театр. Ну или сначала со всеми в бар, а потом
+      в театр.
+    </p>
+  {% endcall %}
+  {{ personProjects(page) }}
+</div>
+<div class="ids__space XL"></div>
+{% endblock %}

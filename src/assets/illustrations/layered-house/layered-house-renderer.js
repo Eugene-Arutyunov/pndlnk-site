@@ -46,7 +46,7 @@ export class LayeredHouseRenderer extends BaseRenderer {
 
     // Очищаем canvas и заливаем фоном контейнера
     this.clear();
-    if (containerBackgroundColor && this.ctx) {
+    if (containerBackgroundColor && this.ctx && !this.config.transparent) {
       const rect = this.container.getBoundingClientRect();
       const size = Math.min(rect.width, rect.height);
       this.ctx.fillStyle = containerBackgroundColor;

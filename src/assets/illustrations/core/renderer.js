@@ -59,6 +59,14 @@ export class BaseRenderer {
    */
   getColorFromCSS(cssVariable, alpha = 1, element = null) {
     const el = element || this.container || document.body;
+    // Особое значение "transparent": заливок нет, сквозь фигуры видна подложка
+    if (cssVariable === 'transparent') return 'rgba(0, 0, 0, 0)';
+    // Особое значение "background": фон ближайшего непрозрачного предка —
+    // канвас следует за фоном плитки, в том числе на ховере
+    if (cssVariable === 'background') {
+      const triplet = this.getAncestorBackgroundTriplet(el);
+      return triplet ? `rgba(${triplet}, ${alpha})` : null;
+    }
     const value = getComputedStyle(el).getPropertyValue(cssVariable).trim();
     if (!value) return null;
     // Токен хранит полный цвет вида rgb(r, g, b); поддерживаем и голый триплет "r, g, b"
@@ -66,6 +74,56 @@ export class BaseRenderer {
       ? value.slice(value.indexOf('(') + 1, value.indexOf(')'))
       : value;
     return `rgba(${triplet}, ${alpha})`;
+  }
+
+  /**
+   * Триплет "r, g, b" фона ближайшего предка с непрозрачным background-color.
+   * Вычисленный цвет может быть rgb(...) или color(srgb r g b) — после color-mix.
+   * @param {Element} start - откуда идти вверх
+   * @returns {string|null}
+   */
+  getAncestorBackgroundTriplet(start) {
+    let el = start;
+    while (el && el !== document.documentElement) {
+      const bg = getComputedStyle(el).backgroundColor;
+      const triplet = this.parseColorTriplet(bg);
+      if (triplet) return triplet;
+      el = el.parentElement;
+    }
+    return null;
+  }
+
+  /**
+   * Разбор вычисленного цвета в триплет "r, g, b"; прозрачный цвет → null.
+   * Во время транзишена браузер отдаёт цвет в oklab()/color(srgb …), поэтому
+   * разбираем не строку, а пиксель: красим им служебный канвас 1×1 и читаем.
+   * @param {string} value
+   * @returns {string|null}
+   */
+  parseColorTriplet(value) {
+    if (!value) return null;
+    const ctx = BaseRenderer.probeContext();
+    if (!ctx) return null;
+    ctx.clearRect(0, 0, 1, 1);
+    ctx.fillStyle = value;
+    ctx.fillRect(0, 0, 1, 1);
+    const [r, g, b, a] = ctx.getImageData(0, 0, 1, 1).data;
+    if (a === 0) return null;
+    return `${r}, ${g}, ${b}`;
+  }
+
+  /**
+   * Общий служебный контекст 1×1 для разбора цветов
+   * @returns {CanvasRenderingContext2D|null}
+   */
+  static probeContext() {
+    if (!BaseRenderer._probeCtx) {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1;
+      canvas.height = 1;
+      BaseRenderer._probeCtx = canvas.getContext('2d', { willReadFrequently: true });
+    }
+    return BaseRenderer._probeCtx;
   }
 
   /**

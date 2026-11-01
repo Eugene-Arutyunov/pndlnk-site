@@ -1,4 +1,5 @@
 const loadProjects = require("./src/data/loadProjects.js");
+const loadPeople = require("./src/data/loadPeople.js");
 const loadDodoKidsInitiatives = require("./src/data/loadDodoKidsInitiatives.js");
 const { sphereToTags } = loadDodoKidsInitiatives;
 const { HIDDEN_PROJECT_SLUGS } = require("./src/data/projectHidden.js");
@@ -11,6 +12,13 @@ module.exports = function (conf) {
   const projects = loadProjects();
   conf.addGlobalData("projects", projects);
   conf.addGlobalData("homeProjects", projects);
+
+  // Люди без согласия на публичный профиль: страница не собирается
+  const { people, hiddenPeopleSlugs } = loadPeople(projects);
+  for (const slug of hiddenPeopleSlugs) {
+    conf.ignores.add(`src/people/${slug}.html`);
+  }
+  conf.addGlobalData("people", people);
   conf.addGlobalData("dodoKidsInitiatives", loadDodoKidsInitiatives());
 
   conf.addFilter("loadDodoKidsInitiatives", () => loadDodoKidsInitiatives());
@@ -28,6 +36,16 @@ module.exports = function (conf) {
   conf.addFilter("projectSlugFromUrl", (url) => {
     if (!url || typeof url !== "string") return "";
     return url.replace(/^\/projects\//, "").replace(/\/$/, "");
+  });
+
+  conf.addFilter("personBySlug", (list, slug) => {
+    if (!Array.isArray(list) || slug == null || slug === "") return null;
+    return list.find((p) => p.slug === slug) || null;
+  });
+
+  conf.addFilter("personSlugFromUrl", (url) => {
+    if (!url || typeof url !== "string") return "";
+    return url.replace(/^\/people\//, "").replace(/\/$/, "");
   });
 
   conf.addPassthroughCopy("./src/robots.txt");

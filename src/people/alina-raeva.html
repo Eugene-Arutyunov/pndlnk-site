@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% from 'macros/person-page-meta.njk' import personMeta, personProjects with context %}
+{% set pageTitle = 'Алина Раева — Понедельник' %}
+{% block content %}
+<div class="ids__wrapper person-page">
+  {{ personMeta(page) }}
+  {{ personProjects(page) }}
+</div>
+<div class="ids__space XL"></div>
+{% endblock %}

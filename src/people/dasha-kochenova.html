@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% from 'macros/person-page-meta.njk' import personMeta, personProjects with context %}
+{% set pageTitle = 'Даша Коченова — Понедельник' %}
+{% block content %}
+<div class="ids__wrapper person-page">
+  {% call personMeta(page) %}
+    <p>
+      Даша — человек-редактор. Ей можно выдать задачу, уехать на две недели
+      в тайгу без связи, а по возвращении получить не вопросы, а законченный
+      текст.
+    </p>
+    <p>
+      Мы до сих пор не понимаем, как это работает, и на всякий случай не
+      трогаем. Ни разу не была замечена в глупых вопросах. Мы бы сказали, что
+      на неё можно положиться, но это и так понятно по тому, что мы на неё
+      уже положились.
+    </p>
+  {% endcall %}
+  {{ personProjects(page) }}
+</div>
+<div class="ids__space XL"></div>
+{% endblock %}

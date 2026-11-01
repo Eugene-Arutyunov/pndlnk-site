@@ -1,0 +1,361 @@
+{
+  "people": [
+    {
+      "slug": "mikhail-rudenko",
+      "name": "Михаил Руденко",
+      "statuses": [
+        {
+          "status": "buro",
+          "from": null,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/people/mikhail-rudenko.jpg",
+      "portrait": "small",
+      "card": {
+        "photoShape": "square",
+        "photoWidth": 80,
+        "photoBleed": true,
+        "graphic": {
+          "kind": "canvas",
+          "type": "pndlnk"
+        },
+        "note": "Логотип ПНДЛНК поверх фото, как у Даши; фото 80% без полей"
+      }
+    },
+    {
+      "slug": "vera-kharchenko",
+      "name": "Вера Харченко",
+      "statuses": [
+        {
+          "status": "buro",
+          "from": 2020,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/ksc-open/v@2x-100.jpg",
+      "portrait": "small",
+      "card": {
+        "photoShape": "circle",
+        "graphic": {
+          "kind": "canvas",
+          "type": "layered-house"
+        },
+        "note": "КСЦ — Вера фасилитатор и наставник по исследованиям"
+      }
+    },
+    {
+      "slug": "sergey-stepanov",
+      "name": "Сергей Степанов",
+      "statuses": [
+        {
+          "status": "buro",
+          "from": null,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/ksc-open/s@2x-100.jpg",
+      "portrait": "small",
+      "card": {
+        "photoShape": "square",
+        "graphic": {
+          "kind": "icon",
+          "type": "evp-dev"
+        },
+        "note": "ЕВП — руководитель проектов и оргдизайнер"
+      }
+    },
+    {
+      "slug": "evgeny-arutyunov",
+      "name": "Женя Арутюнов",
+      "statuses": [
+        {
+          "status": "partner",
+          "from": null,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/ea.jpg",
+      "portrait": "small",
+      "card": {
+        "photoShape": "landscape",
+        "photoWidth": 100,
+        "photoBleed": true,
+        "graphic": {
+          "kind": "icon",
+          "type": "base"
+        },
+        "note": "База ДКЦП; горизонтальное фото со страницы /dkcp-base на всю ширину без полей"
+      }
+    },
+    {
+      "slug": "bogdan-burdin",
+      "name": "Богдан Бурдин",
+      "statuses": [
+        {
+          "status": "buro",
+          "from": null,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/ksc-open/b@2x-100.jpg",
+      "portrait": "small",
+      "card": {
+        "photoShape": "circle",
+        "graphic": {
+          "kind": "icon",
+          "type": "goals"
+        },
+        "note": "Мишень из кругов — статичная иконка «Цели компании»"
+      }
+    },
+    {
+      "slug": "kristina-kostrova",
+      "name": "Кристина Кострова",
+      "statuses": [
+        {
+          "status": "buro",
+          "from": null,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/ksc-open/k@2x-100.jpg",
+      "portrait": "small",
+      "card": {
+        "photoShape": "square",
+        "tone": "dark",
+        "graphic": {
+          "kind": "canvas",
+          "type": "sphere"
+        },
+        "note": "Сфера — индивидуальные проекты, которые Кристина администрирует"
+      }
+    },
+    {
+      "slug": "aleksandra-rudenko",
+      "name": "Александра Руденко",
+      "statuses": [
+        {
+          "status": "buro",
+          "from": null,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/ksc-open/a@2x-100.jpg",
+      "portrait": "small",
+      "card": {
+        "photoShape": "circle",
+        "graphic": null,
+        "note": "Графика не назначена"
+      }
+    },
+    {
+      "slug": "dasha-kochenova",
+      "name": "Даша Коченова",
+      "statuses": [
+        {
+          "status": "mid",
+          "from": 2026,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/people/dasha-kochenova.jpg",
+      "portrait": "large",
+      "card": {
+        "photoShape": "portrait",
+        "photoWidth": 50,
+        "photoBleed": true,
+        "graphic": {
+          "kind": "canvas",
+          "type": "pndlnk"
+        },
+        "note": "Логотип ПНДЛНК — редактор бюро; вертикальное студийное фото"
+      }
+    },
+    {
+      "slug": "sergey-petrechuk",
+      "name": "Сергей Петречук",
+      "statuses": [
+        {
+          "status": "mid",
+          "from": 2026,
+          "to": null
+        },
+        {
+          "status": "buro",
+          "from": 2021,
+          "to": 2022
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": null,
+      "portrait": "small",
+      "card": {
+        "photoShape": "circle",
+        "fallbackColor": "pndlnk-gold-tinted",
+        "graphic": null,
+        "note": "Фото ещё нет — цветной блок"
+      }
+    },
+    {
+      "slug": "sasha-rodionov",
+      "name": "Саша Родионов",
+      "statuses": [
+        {
+          "status": "partner",
+          "from": null,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/ksc-open/rodionov-aleksandr.png",
+      "portrait": "small",
+      "card": {
+        "photoShape": "square",
+        "graphic": {
+          "kind": "canvas",
+          "type": "splash"
+        },
+        "note": "Спикер КСЦ; четвёртый канвас — всплеск ДКЦП"
+      }
+    },
+    {
+      "slug": "alina-raeva",
+      "name": "Алина Раева",
+      "statuses": [
+        {
+          "status": "partner",
+          "from": null,
+          "to": null
+        }
+      ],
+      "education": [],
+      "certificate": false,
+      "public_profile": true,
+      "photo": "/assets/ksc-open/alina-raeva.png",
+      "portrait": "small",
+      "card": {
+        "photoShape": "circle",
+        "tone": "dark",
+        "graphic": {
+          "kind": "icon",
+          "type": "cxsl"
+        },
+        "note": "Приглашённый спикер КСЦ, выпускница CX:SL — иконка курса"
+      }
+    },
+    {
+      "slug": "galiya-kuzakhmetova",
+      "name": "Галия Кузахметова",
+      "statuses": [],
+      "education": [
+        {
+          "kind": "cxsl",
+          "flow": "2.0",
+          "year": 2026
+        }
+      ],
+      "certificate": {
+        "number": "1221"
+      },
+      "public_profile": true,
+      "photo": "/assets/people/galiya-kuzakhmetova.jpg",
+      "portrait": "small",
+      "card": {
+        "photoShape": "square",
+        "photoWidth": 60,
+        "photoBleed": true,
+        "graphic": {
+          "kind": "icon",
+          "type": "cxsl"
+        },
+        "note": "Выпускница CX:Стратегической логики 2.0; квадратное ч/б фото"
+      }
+    },
+    {
+      "slug": "evgeny-khomich",
+      "name": "Евгений Хомич",
+      "statuses": [],
+      "education": [
+        {
+          "kind": "cxsl",
+          "flow": "1.0"
+        },
+        {
+          "kind": "cxsl",
+          "flow": "2.0",
+          "year": 2026
+        }
+      ],
+      "certificate": {
+        "number": "1241"
+      },
+      "public_profile": true,
+      "photo": "/assets/people/evgeny-khomich.png",
+      "portrait": "small",
+      "card": {
+        "photoShape": "square",
+        "tone": "dark",
+        "graphic": {
+          "kind": "icon",
+          "type": "cxsl"
+        },
+        "note": "Два сертификата CX:SL (№ 474 и № 1241); небольшое ч/б фото — кружок"
+      }
+    },
+    {
+      "slug": "roman-nokhrin",
+      "name": "Роман Нохрин",
+      "statuses": [],
+      "education": [
+        {
+          "kind": "cxsl",
+          "flow": "2.0",
+          "year": 2026
+        }
+      ],
+      "certificate": {
+        "number": "1228"
+      },
+      "public_profile": true,
+      "photo": "/assets/people/roman-nokhrin.jpg",
+      "portrait": "small",
+      "card": {
+        "photoShape": "circle",
+        "graphic": {
+          "kind": "icon",
+          "type": "cxsl"
+        },
+        "note": "Фото уже вырезано в круг на жёлтом фоне — только circle"
+      }
+    }
+  ]
+}

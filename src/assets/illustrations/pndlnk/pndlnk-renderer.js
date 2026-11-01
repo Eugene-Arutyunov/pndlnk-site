@@ -56,7 +56,7 @@ export class PndlnkRenderer extends BaseRenderer {
     const containerBackgroundColor = this.getColorFromCSS(this.config.backgroundColor, 1);
 
     this.clear();
-    if (containerBackgroundColor && this.ctx) {
+    if (containerBackgroundColor && this.ctx && !this.config.transparent) {
       const rect = this.container.getBoundingClientRect();
       this.ctx.fillStyle = containerBackgroundColor;
       this.ctx.fillRect(0, 0, rect.width, rect.height);

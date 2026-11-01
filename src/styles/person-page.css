@@ -1,0 +1,144 @@
+/* Страница человека: шапка (портрет + статусы + имя) и список проектов.
+   Класс .case-page сюда не вешаем — стили кейса завязаны на него. */
+
+.person-page .person-page__statuses {
+  font-family: var(--mono);
+  font-size: var(--smaller); /* шаг шкалы: подписи */
+}
+
+.person-page .person-page__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ids__gap-l);
+}
+
+.person-page .person-page__title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* img не стилизуем — размер через обёртку, блочная геометрия в rem.
+   Два вида портрета: большой вертикальный прямоугольник и кружок вдвое мельче */
+.person-page .person-page__portrait {
+  flex: 0 0 auto;
+}
+
+.person-page .person-page__portrait--large {
+  width: 17.6rem;
+}
+
+.person-page .person-page__portrait--small {
+  width: 5.6rem;
+}
+
+.person-page .person-page__portrait .author-portrait {
+  margin-bottom: 0;
+}
+
+/* Кружок: квадратная обёртка режет вертикальное фото снизу, лицо вверху */
+.person-page .person-page__portrait--small .author-portrait {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.person-page .person-page__title h1 {
+  margin-bottom: 0;
+}
+
+/* Статусы в одну строку, между ними интерпункт как у тегов кейса */
+.person-page .person-page__statuses {
+  list-style: none;
+  margin: 0 0 0.5em;
+  padding: 0;
+}
+
+.person-page .person-page__statuses > li {
+  display: inline;
+}
+
+.person-page .person-page__statuses > li + li::before {
+  content: "\00a0· ";
+  position: static;
+  color: color-mix(in srgb, var(--ids__text) 55%, transparent);
+}
+
+/* Глушим глобальный интерпункт у ul li из ids.css */
+.person-page .person-page__statuses > li,
+.person-page .person-education > li {
+  padding-left: 0;
+}
+
+.person-page .person-page__statuses > li:first-child::before,
+.person-page .person-education > li::before {
+  content: none;
+}
+
+.person-page .person-page__status--past {
+  color: color-mix(in srgb, var(--ids__text) 55%, transparent);
+}
+
+.person-page .person-page__about {
+  max-width: 36em;
+}
+
+.person-page .person-education {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Таблица проектов: плашка и шрифты от .promo-table, колонки по содержимому,
+   название тянется. Цвета — как в списке раньше: год/клиент/роль приглушены */
+.person-page .person-projects .promo-table td {
+  white-space: nowrap;
+}
+
+.person-page .person-projects .promo-table .person-projects__title {
+  width: 100%;
+  white-space: normal;
+}
+
+.person-page .person-projects__year,
+.person-page .person-projects__client,
+.person-page .person-projects__role {
+  color: color-mix(in srgb, var(--ids__text) 72%, transparent);
+}
+
+.person-page .person-projects .promo-table .person-projects__role {
+  padding-left: 1em;
+}
+
+/* Ячейка, дотянутая rowspan-ом до низа таблицы, — без нижней линейки,
+   как последняя строка */
+.person-page .person-projects .promo-table tbody td.person-projects__cell--last {
+  border-bottom: none;
+}
+
+/* Мобила: те же две колонки — портрет 20% ширины, текст на остаток */
+@media (width < 768px) {
+  .person-page .person-page__header {
+    gap: var(--ids__gap-s);
+  }
+
+  .person-page .person-page__portrait--large,
+  .person-page .person-page__portrait--small {
+    flex: 0 0 20%;
+    width: 20%;
+  }
+
+  .person-page .person-page__title {
+    flex: 1 1 80%;
+  }
+
+  /* На мобиле большой портрет тоже кружок — разница видов только на десктопе */
+  .person-page .person-page__portrait--large .author-portrait {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .person-page .person-projects .promo-table td {
+    white-space: normal;
+  }
+}

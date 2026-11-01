@@ -9,6 +9,7 @@ export function parsePndlnkConfig(container) {
     offsetY: -35,
     accentColor: '--ids__accent',
     backgroundColor: null,
+    transparent: false, // data-transparent: не заливать канвас фоном, только фигуры
     lineWidth: 3,
     scale: 1.99,
     animationBaseAngle: 15,
@@ -31,6 +32,7 @@ export function parsePndlnkConfig(container) {
   if (container.dataset.offsetY) config.offsetY = parseFloat(container.dataset.offsetY);
   if (container.dataset.accentColor) config.accentColor = container.dataset.accentColor;
   if (container.dataset.backgroundColor) config.backgroundColor = container.dataset.backgroundColor;
+  if (container.dataset.transparent != null) config.transparent = container.dataset.transparent !== 'false';
   if (container.dataset.lineWidth) config.lineWidth = parseFloat(container.dataset.lineWidth);
   if (container.dataset.scale) config.scale = parseFloat(container.dataset.scale);
   if (container.dataset.animationBaseAngle) config.animationBaseAngle = parseFloat(container.dataset.animationBaseAngle);
