@@ -296,11 +296,25 @@
 }
 
 .case-inappstory .case-hand-list--keep .case-hand-line {
-  color: color-mix(in srgb, var(--ids__text) 45%, transparent);
+  color: var(--ids__ink);
 }
 
 .case-inappstory .case-hand-list--drop .case-hand-line {
   color: var(--ids__pndlnk-red);
+}
+
+.case-inappstory .case-hand-list--mixed .case-hand-line {
+  color: color-mix(in srgb, var(--ids__text) 45%, transparent);
+}
+
+@media (hover: hover) {
+  .case-inappstory .case-hand-list--mixed:hover .case-hand-line--keep {
+    color: var(--ids__ink);
+  }
+
+  .case-inappstory .case-hand-list--mixed:hover .case-hand-line--drop {
+    color: var(--ids__pndlnk-red);
+  }
 }
 
 /* Восемь пунктов не влезают в строку: «Демо-день» падает один на вторую.
