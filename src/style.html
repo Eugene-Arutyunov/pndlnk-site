@@ -841,6 +841,8 @@ content %}
 <script src="/assets/navbar.js"></script>
 <script src="/assets/tokens-dump.js"></script>
 <script src="/assets/lessons-gantt.js" defer></script>
-<script src="/ids/js/gallery.js"></script>
 <script type="module" src="/assets/illustrations/init.js"></script>
+{% endblock %}
+{% block extrabody %}
+  {% include 'gallery-scripts.html' %}
 {% endblock %}
