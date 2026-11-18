@@ -518,21 +518,14 @@
   }
 }
 
-.case-inappstory .case-conflict-shift {
-  margin: 0 0 1.15em;
-}
-
+/* Цепочка вопросов — блоккуот: кегль и интерлиньяж его, без псевдокурсива */
 .case-inappstory .case-conflict-shift p {
   margin: 0;
-  font-size: 1.2em;
-  font-style: italic;
-  line-height: 1.35;
 }
 
 .case-inappstory .case-conflict-shift__arrow {
   margin: 0.2em 0;
   font-size: 1em;
-  font-style: normal;
   line-height: 1;
   color: color-mix(in srgb, var(--ids__text) 55%, transparent);
 }

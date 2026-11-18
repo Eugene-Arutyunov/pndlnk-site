@@ -171,7 +171,7 @@ h3.case-summary__subheading {
 /* Список с крестиками вместо интерпунктов, свёрстанный как таблица:
    без колонок и заголовков, только полупрозрачные линии-разделители.
    Каждая строка — один вертикальный модуль, линия под последней тоже есть */
-ul.case-summary__cross-list {
+ul:is(.case-summary__cross-list, .case-summary__rule-list) {
   margin-bottom: 0;
 
   & li {
@@ -181,8 +181,19 @@ ul.case-summary__cross-list {
     margin-bottom: 0;
     border-bottom: var(--ids__border-width-s) solid var(--ids__border);
 
+  }
+
+  &.case-summary__cross-list li::before {
+    content: "×";
+  }
+
+  /* Список сделанного: те же строки-модули с линиями, но без маркера —
+     крестики остаются оформлением барьеров */
+  &.case-summary__rule-list li {
+    padding-left: 0;
+
     &::before {
-      content: "×";
+      content: none;
     }
   }
 
@@ -193,7 +204,7 @@ ul.case-summary__cross-list {
 }
 
 /* Многострочные пункты: фиксированная высота строки обрезает текст */
-ul.case-summary__cross-list.case-summary__cross-list--wrap li {
+ul:is(.case-summary__cross-list--wrap, .case-summary__rule-list--wrap) li {
   height: auto;
   min-height: var(--summary-rhythm);
   line-height: 1.35;
@@ -324,4 +335,67 @@ table.case-summary__initiative-table {
     height: 100%;
     object-fit: cover;
   }
+}
+
+/* Колонка «Формат работы»: текст слева, иллюстрация продукта справа.
+   Блок под подписью «Формат работы» — ссылка на страницу программы
+   и по ховеру перекрашивается весь, вместе с иллюстрацией.
+
+   Цвет блока живёт в зарегистрированном свойстве --case-summary-ink:
+   у него тип <color>, поэтому переход анимируется, а канвас иллюстрации
+   (data-accent-color) каждый кадр читает уже интерполированное значение —
+   линии домика идут тем же переходом, что и текст. Текст при этом красится
+   обычным переходом color, а не через var(--case-summary-ink): браузер
+   считает промежуточные значения свойства, но текст по ним не перерисовывает.
+   Паттерн переходов как у ссылок в ids.css: ховер мгновенный, расховер
+   плавный */
+@property --case-summary-ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(0, 0, 0);
+}
+
+.case-summary a.case-summary__format {
+  --case-summary-ink: var(--ids__text);
+  display: flex;
+  align-items: flex-start;
+  /* Гэпа нет: у иллюстрации свои поля внутри канваса */
+  gap: 0;
+  color: var(--ids__text);
+  text-decoration: none;
+  transition:
+    color var(--ids__duration-slow) ease,
+    --case-summary-ink var(--ids__duration-slow) ease;
+
+  &:hover {
+    --case-summary-ink: var(--ids__hover);
+    color: var(--ids__hover);
+    transition-duration: var(--ids__duration-instant);
+  }
+}
+
+.case-summary__format-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Иллюстрация узкая: первая строка описания («Корпоративная
+   трансформационная программа») должна умещаться целиком */
+.case-summary__format-illustration {
+  flex: none;
+  width: 27%;
+  /* Оптическая подвижка: в раскладке место то же, рисунок левее и выше */
+  position: relative;
+  left: -1rem;
+  top: -0.5rem;
+}
+
+/* «О программе» — не ссылка, а текст внутри блочной ссылки,
+   подчёркнутый как обычная ссылка */
+.case-summary__format-more {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: none;
+  text-decoration-color: color-mix(in srgb, currentColor 20%, transparent);
 }
